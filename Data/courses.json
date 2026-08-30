@@ -1,0 +1,51 @@
+[
+  {
+    "id": "15-112",
+    "name": "Fundamentals of Programming and Computer Science",
+    "units": 12,
+    "prerequisites": [],
+    "offered": ["fall", "spring"]
+  },
+  {
+    "id": "21-127",
+    "name": "Concepts of Mathematics",
+    "units": 10,
+    "prerequisites": [],
+    "offered": ["fall", "spring"]
+  },
+  {
+    "id": "15-122",
+    "name": "Principles of Imperative Computation",
+    "units": 10,
+    "prerequisites": ["15-112"],
+    "offered": ["fall", "spring"]
+  },
+  {
+    "id": "15-150",
+    "name": "Principles of Functional Programming",
+    "units": 10,
+    "prerequisites": ["21-127"],
+    "offered": ["fall", "spring"]
+  },
+  {
+    "id": "15-210",
+    "name": "Parallel and Sequential Data Structures and Algorithms",
+    "units": 12,
+    "prerequisites": ["15-150"],
+    "offered": ["fall", "spring"]
+  },
+  {
+    "id": "15-213",
+    "name": "Introduction to Computer Systems",
+    "units": 12,
+    "prerequisites": ["15-122"],
+    "offered": ["fall", "spring"]
+  },
+  {
+    "id": "15-251",
+    "name": "Great Ideas in Theoretical Computer Science",
+    "units": 12,
+    "prerequisites": ["15-150", "21-127"],
+    "offered": ["fall", "spring"]
+  }
+]
