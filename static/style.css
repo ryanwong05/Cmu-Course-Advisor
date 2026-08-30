@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background: #f7f7f5;
+    color: #181817;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.container {
+    width: min(820px, 90%);
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.topbar {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.prototype {
+    padding: 6px 10px;
+
+    border: 1px solid #ddd;
+    border-radius: 100px;
+
+    color: #777;
+    font-size: 12px;
+}
+
+.screen {
+    padding-top: 80px;
+}
+
+.hidden {
+    display: none;
+}
+
+.eyebrow {
+    margin: 0 0 12px;
+
+    color: #888;
+
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.12em;
+}
+
+h1 {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size: 48px;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+h2 {
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    max-width: 600px;
+
+    margin: 16px 0 42px;
+
+    color: #70706c;
+
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+label {
+    display: block;
+
+    margin-top: 22px;
+
+    font-size: 14px;
+    font-weight: 650;
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+
+    margin-top: 8px;
+    padding: 14px 15px;
+
+    border: 1px solid #d7d7d2;
+    border-radius: 11px;
+
+    background: white;
+
+    font-size: 16px;
+}
+
+.primary-button,
+.secondary-button {
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 11px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+}
+
+.primary-button {
+    margin-top: 32px;
+
+    border: 0;
+
+    background: #151514;
+    color: white;
+}
+
+.secondary-button {
+    margin-top: 32px;
+
+    border: 1px solid #d7d7d2;
+
+    background: transparent;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 15px;
+}
+
+.goal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+}
+
+.goal-card {
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 22px;
+
+    border: 1px solid #d7d7d2;
+    border-radius: 15px;
+
+    background: white;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.goal-card.selected {
+    border: 2px solid #222;
+}
+
+.goal-card.disabled {
+    opacity: 0.48;
+    cursor: default;
+}
+
+.goal-title {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.goal-description {
+    margin-top: 10px;
+
+    color: #777;
+
+    line-height: 1.45;
+}
+
+.coming-soon {
+    margin-top: auto;
+    padding-top: 15px;
+
+    color: #999;
+
+    font-size: 12px;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.course-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin: 0;
+    padding: 17px;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.course-option input {
+    width: 18px;
+    height: 18px;
+}
+
+.course-option span {
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    color: #777;
+}
+
+.course-option strong {
+    color: #222;
+}
+
+.settings-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+
+    margin-top: 30px;
+}
+
+.result-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    margin-bottom: 28px;
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-summary > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    padding: 20px 0;
+}
+
+.summary-label {
+    color: #888;
+
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+}
+
+.semester-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+
+    gap: 14px;
+}
+
+.semester-card {
+    min-height: 190px;
+
+    padding: 21px;
+
+    border: 1px solid #ddd;
+    border-radius: 15px;
+
+    background: white;
+}
+
+.semester-name {
+    margin-bottom: 24px;
+
+    color: #888;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+}
+
+.course {
+    margin-top: 10px;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.units {
+    margin-top: 25px;
+
+    color: #999;
+
+    font-size: 13px;
+}
+
+.insight-card {
+    margin-top: 22px;
+    padding: 28px;
+
+    border-radius: 15px;
+
+    background: #ecece8;
+}
+
+.insight-card h2 {
+    margin: 7px 0 10px;
+
+    font-size: 24px;
+}
+
+.insight-card p:last-child {
+    max-width: 620px;
+
+    margin-bottom: 0;
+
+    color: #62625e;
+
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+
+    .screen {
+        padding-top: 45px;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .goal-grid,
+    .settings-row,
+    .result-summary {
+        grid-template-columns: 1fr;
+    }
+}

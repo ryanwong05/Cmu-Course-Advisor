@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CMU Path</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container">
+
+    <header class="topbar">
+        <div class="logo">CMU Path</div>
+        <div class="prototype">Prototype</div>
+    </header>
+
+
+    <!-- STEP 1 -->
+    <section class="screen" id="step1">
+
+        <p class="eyebrow">STEP 1 OF 3</p>
+
+        <h1>Where are you now?</h1>
+
+        <p class="subtitle">
+            Start with your current academic situation.
+        </p>
+
+
+        <label>
+            College
+
+            <select id="college">
+                <option>Dietrich College</option>
+                <option>College of Engineering</option>
+                <option>Mellon College of Science</option>
+                <option>School of Computer Science</option>
+            </select>
+        </label>
+
+
+        <label>
+            Current major
+
+            <select id="major">
+                <option>Statistics & Machine Learning</option>
+                <option>Undeclared</option>
+                <option>Computer Science</option>
+                <option>Electrical & Computer Engineering</option>
+            </select>
+        </label>
+
+
+        <label>
+            Year
+
+            <select id="year">
+                <option>Freshman</option>
+                <option>Sophomore</option>
+                <option>Junior</option>
+                <option>Senior</option>
+            </select>
+        </label>
+
+
+        <button class="primary-button" id="step1Next">
+            Continue →
+        </button>
+
+    </section>
+
+
+    <!-- STEP 2 -->
+    <section class="screen hidden" id="step2">
+
+        <p class="eyebrow">STEP 2 OF 3</p>
+
+        <h1>What are you trying to do?</h1>
+
+        <p class="subtitle">
+            Choose the goal that best matches what you're thinking about.
+        </p>
+
+
+        <div class="goal-grid">
+
+            <button
+                class="goal-card selected"
+                data-goal="cs-transfer"
+            >
+                <span class="goal-title">
+                    Transfer to Computer Science
+                </span>
+
+                <span class="goal-description">
+                    Find the best route toward an internal transfer.
+                </span>
+            </button>
+
+
+            <button
+                class="goal-card disabled"
+                disabled
+            >
+                <span class="goal-title">
+                    Add Robotics
+                </span>
+
+                <span class="goal-description">
+                    Explore the Robotics Additional Major.
+                </span>
+
+                <span class="coming-soon">
+                    Coming soon
+                </span>
+            </button>
+
+
+            <button
+                class="goal-card disabled"
+                disabled
+            >
+                <span class="goal-title">
+                    Explore AI / ML
+                </span>
+
+                <span class="goal-description">
+                    Build a strong academic path toward AI and ML.
+                </span>
+
+                <span class="coming-soon">
+                    Coming soon
+                </span>
+            </button>
+
+
+            <button
+                class="goal-card disabled"
+                disabled
+            >
+                <span class="goal-title">
+                    I'm not sure yet
+                </span>
+
+                <span class="goal-description">
+                    Explore majors and possible directions.
+                </span>
+
+                <span class="coming-soon">
+                    Coming soon
+                </span>
+            </button>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button class="secondary-button" id="step2Back">
+                ← Back
+            </button>
+
+            <button class="primary-button" id="step2Next">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- STEP 3 -->
+    <section class="screen hidden" id="step3">
+
+        <p class="eyebrow">STEP 3 OF 3</p>
+
+        <h1>What have you already taken?</h1>
+
+        <p class="subtitle">
+            Select the courses you've completed.
+        </p>
+
+
+        <div class="course-list">
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="15-112"
+                    checked
+                >
+
+                <span>
+                    <strong>15-112</strong>
+                    Fundamentals of Programming and Computer Science
+                </span>
+            </label>
+
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="21-127"
+                    checked
+                >
+
+                <span>
+                    <strong>21-127</strong>
+                    Concepts of Mathematics
+                </span>
+            </label>
+
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="15-122"
+                    checked
+                >
+
+                <span>
+                    <strong>15-122</strong>
+                    Principles of Imperative Computation
+                </span>
+            </label>
+
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="15-150"
+                >
+
+                <span>
+                    <strong>15-150</strong>
+                    Principles of Functional Programming
+                </span>
+            </label>
+
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="15-210"
+                >
+
+                <span>
+                    <strong>15-210</strong>
+                    Parallel and Sequential Data Structures and Algorithms
+                </span>
+            </label>
+
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="15-213"
+                >
+
+                <span>
+                    <strong>15-213</strong>
+                    Introduction to Computer Systems
+                </span>
+            </label>
+
+
+            <label class="course-option">
+                <input
+                    type="checkbox"
+                    value="15-251"
+                >
+
+                <span>
+                    <strong>15-251</strong>
+                    Great Ideas in Theoretical Computer Science
+                </span>
+            </label>
+
+        </div>
+
+
+        <div class="settings-row">
+
+            <label>
+                Starting semester
+
+                <select id="semester">
+                    <option value="spring">Spring</option>
+                    <option value="fall">Fall</option>
+                </select>
+            </label>
+
+
+            <label>
+                Max goal units / semester
+
+                <input
+                    id="units"
+                    type="number"
+                    value="24"
+                >
+            </label>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button class="secondary-button" id="step3Back">
+                ← Back
+            </button>
+
+            <button class="primary-button" id="generateButton">
+                Generate my path →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+    <section class="screen hidden" id="results">
+
+        <p class="eyebrow">YOUR RECOMMENDED PATH</p>
+
+        <h1>Here's your route.</h1>
+
+        <p class="subtitle">
+            Based on your current courses and your goal.
+        </p>
+
+
+        <div class="result-summary">
+
+            <div>
+                <span class="summary-label">
+                    GOAL
+                </span>
+
+                <strong>
+                    Transfer to Computer Science
+                </strong>
+            </div>
+
+
+            <div>
+                <span class="summary-label">
+                    STATUS
+                </span>
+
+                <strong id="goalStatus">
+                    Path found
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div
+            class="semester-grid"
+            id="semesterResults"
+        >
+        </div>
+
+
+        <section class="insight-card">
+
+            <p class="eyebrow">
+                WHY THIS PATH?
+            </p>
+
+            <h2 id="insightTitle">
+                Calculating your critical course...
+            </h2>
+
+            <p id="insightText">
+            </p>
+
+        </section>
+
+
+        <button
+            class="secondary-button"
+            id="restartButton"
+        >
+            ← Change my plan
+        </button>
+
+    </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>

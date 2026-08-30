@@ -1,0 +1,16 @@
+{
+  "cs-transfer": {
+    "required_courses": [
+      "15-122",
+      "15-150",
+      "15-210",
+      "15-213",
+      "15-251",
+      "21-127"
+    ]
+  },
+
+  "robotics-additional-major": {
+    "required_courses": []
+  }
+}

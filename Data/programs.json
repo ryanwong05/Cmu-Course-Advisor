@@ -1,0 +1,12 @@
+[
+  {
+    "id": "cs-transfer",
+    "name": "Transfer to Computer Science",
+    "type": "internal-transfer"
+  },
+  {
+    "id": "robotics-additional-major",
+    "name": "Robotics Additional Major",
+    "type": "additional-major"
+  }
+]
