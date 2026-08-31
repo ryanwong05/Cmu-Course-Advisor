@@ -1,170 +1,350 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CMU Path</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <title>
+        CMU Path
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
+
 <main class="container">
 
+
+    <!-- #region 0. TOP BAR -->
+    <!-- ======================================================
+         TOP BAR
+
+         This is shared across every screen.
+
+         Later we can add:
+         - User profile
+         - Saved plans
+         - About / Help
+         ====================================================== -->
+
     <header class="topbar">
-        <div class="logo">CMU Path</div>
-        <div class="prototype">Prototype</div>
+
+        <div class="logo">
+            CMU Path
+        </div>
+
+        <div class="prototype">
+            Prototype
+        </div>
+
     </header>
 
+    <!-- #endregion -->
 
-    <!-- STEP 1 -->
-    <section class="screen" id="step1">
 
-        <p class="eyebrow">STEP 1 OF 3</p>
+    <!-- #region 1. STEP 1 — CURRENT ACADEMIC STATE -->
+    <!-- ======================================================
+         STEP 1
 
-        <h1>Where are you now?</h1>
+         Purpose:
+         Understand where the student currently is.
 
-        <p class="subtitle">
-            Start with your current academic situation.
+         Current fields:
+         - College
+         - Current major
+         - Year
+
+         Later we can add:
+         - Expected graduation year
+         - Double major / minor
+         - AP / IB credit
+         - Completed units
+         ====================================================== -->
+
+    <section
+        class="screen"
+        id="step1"
+    >
+
+        <p class="eyebrow">
+            STEP 1
         </p>
 
 
+        <h1>
+            Where are you now?
+        </h1>
+
+
+        <p class="subtitle">
+
+            Start with your current
+            academic situation.
+
+        </p>
+
+
+
+        <!-- COLLEGE -->
+
         <label>
+
             College
 
             <select id="college">
-                <option>Dietrich College</option>
-                <option>College of Engineering</option>
-                <option>Mellon College of Science</option>
-                <option>School of Computer Science</option>
+
+                <option>
+                    Dietrich College
+                </option>
+
+                <option>
+                    College of Engineering
+                </option>
+
+                <option>
+                    Mellon College of Science
+                </option>
+
+                <option>
+                    School of Computer Science
+                </option>
+
             </select>
+
         </label>
 
 
+
+        <!-- CURRENT MAJOR -->
+
         <label>
+
             Current major
 
             <select id="major">
-                <option>Statistics & Machine Learning</option>
-                <option>Undeclared</option>
-                <option>Computer Science</option>
-                <option>Electrical & Computer Engineering</option>
+
+                <option value="stats-ml">
+                    Statistics & Machine Learning
+                </option>
+
+                <option value="undeclared">
+                    Undeclared
+                </option>
+
+                <option value="computer-science">
+                    Computer Science
+                </option>
+
+                <option value="ece">
+                    Electrical & Computer Engineering
+                </option>
+
             </select>
+
         </label>
 
 
+
+        <!-- YEAR -->
+
         <label>
+
             Year
 
             <select id="year">
-                <option>Freshman</option>
-                <option>Sophomore</option>
-                <option>Junior</option>
-                <option>Senior</option>
+
+                <option>
+                    Freshman
+                </option>
+
+                <option>
+                    Sophomore
+                </option>
+
+                <option>
+                    Junior
+                </option>
+
+                <option>
+                    Senior
+                </option>
+
             </select>
+
         </label>
 
 
-        <button class="primary-button" id="step1Next">
+
+        <!-- CONTINUE -->
+
+        <button
+            class="primary-button"
+            id="step1Next"
+        >
+
             Continue →
+
         </button>
 
     </section>
 
+    <!-- #endregion -->
 
-    <!-- STEP 2 -->
-    <section class="screen hidden" id="step2">
 
-        <p class="eyebrow">STEP 2 OF 3</p>
+    <!-- #region 2. STEP 2 — GOAL TYPE -->
+    <!-- ======================================================
+        STEP 2
 
-        <h1>What are you trying to do?</h1>
+        User chooses WHAT they want to explore.
+
+        IMPORTANT:
+        Clicking a card only SELECTS it.
+        It does NOT immediately navigate.
+
+        User must click Continue.
+        ====================================================== -->
+
+    <section
+        class="screen hidden"
+        id="step2"
+    >
+
+        <p class="eyebrow">
+            STEP 2
+        </p>
+
+        <h1>
+            What are you trying to do?
+        </h1>
 
         <p class="subtitle">
-            Choose the goal that best matches what you're thinking about.
+            Choose one direction. You can always come back and change it.
         </p>
 
 
         <div class="goal-grid">
 
+
+            <!-- EXPLORE CURRENT MAJOR -->
+
             <button
-                class="goal-card selected"
-                data-goal="cs-transfer"
+                class="goal-card"
+                data-goal-type="explore-current"
+                type="button"
             >
+
                 <span class="goal-title">
-                    Transfer to Computer Science
+                    Explore my current major
                 </span>
 
                 <span class="goal-description">
-                    Find the best route toward an internal transfer.
+                    Understand your current major,
+                    workload, flexibility,
+                    and possible combinations.
                 </span>
+
             </button>
 
 
+            <!-- TRANSFER -->
+
             <button
-                class="goal-card disabled"
-                disabled
+                class="goal-card"
+                data-goal-type="transfer"
+                type="button"
             >
+
                 <span class="goal-title">
-                    Add Robotics
+                    Transfer majors
                 </span>
 
                 <span class="goal-description">
-                    Explore the Robotics Additional Major.
+                    Compare realistic transfer paths
+                    across CMU schools and majors.
                 </span>
 
-                <span class="coming-soon">
-                    Coming soon
-                </span>
             </button>
 
 
+            <!-- ADDITIONAL MAJOR / MINOR -->
+
             <button
-                class="goal-card disabled"
-                disabled
+                class="goal-card"
+                data-goal-type="add-program"
+                type="button"
             >
+
                 <span class="goal-title">
-                    Explore AI / ML
+                    Additional Major / Minor
                 </span>
 
                 <span class="goal-description">
-                    Build a strong academic path toward AI and ML.
+                    Explore ways to expand your degree
+                    and compare the extra workload.
                 </span>
 
-                <span class="coming-soon">
-                    Coming soon
-                </span>
             </button>
 
 
+            <!-- UNDECIDED -->
+
             <button
-                class="goal-card disabled"
-                disabled
+                class="goal-card"
+                data-goal-type="undecided"
+                type="button"
             >
+
                 <span class="goal-title">
-                    I'm not sure yet
+                    I'm undecided
                 </span>
 
                 <span class="goal-description">
-                    Explore majors and possible directions.
+                    Explore academic combinations
+                    that match your interests.
                 </span>
 
-                <span class="coming-soon">
-                    Coming soon
-                </span>
             </button>
+
 
         </div>
 
 
         <div class="actions">
 
-            <button class="secondary-button" id="step2Back">
+            <button
+                class="secondary-button"
+                id="step2Back"
+                type="button"
+            >
                 ← Back
             </button>
 
-            <button class="primary-button" id="step2Next">
+
+            <!--
+                IMPORTANT:
+                Disabled until user selects a goal card.
+            -->
+
+            <button
+                class="primary-button"
+                id="step2Next"
+                type="button"
+                disabled
+            >
                 Continue →
             </button>
 
@@ -172,149 +352,314 @@
 
     </section>
 
+    <!-- #endregion -->
 
-    <!-- STEP 3 -->
-    <section class="screen hidden" id="step3">
 
-        <p class="eyebrow">STEP 3 OF 3</p>
+    <!-- #region 3. STEP 2B — SCHOOL + PROGRAM -->
+    <!-- ======================================================
+        STEP 2B
 
-        <h1>What have you already taken?</h1>
+        Used for:
+        - Transfer majors
+        - Additional Major / Minor
 
-        <p class="subtitle">
-            Select the courses you've completed.
+        New layout:
+
+        School dropdown
+            ↓
+        Large program cards
+
+        Only SCS is implemented right now.
+        ====================================================== -->
+
+    <section
+        class="screen hidden"
+        id="step2b"
+    >
+
+        <p class="eyebrow">
+            EXPLORE PROGRAMS
         </p>
 
 
-        <div class="course-list">
+        <h1 id="explorerTitle">
+            Choose a program
+        </h1>
 
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="15-112"
-                    checked
+
+        <p
+            class="subtitle"
+            id="explorerDescription"
+        >
+            Choose a school first, then explore its programs.
+        </p>
+
+
+
+        <!-- ================================================
+            PROGRAM EXPLORER PANEL
+            ================================================ -->
+
+        <div class="program-explorer-panel">
+
+
+            <!-- SCHOOL DROPDOWN -->
+
+            <div class="explorer-field">
+
+                <label for="schoolSelect">
+                    School
+                </label>
+
+                <select id="schoolSelect">
+
+                    <option value="">
+                        Select a school
+                    </option>
+
+                    <option value="scs">
+                        School of Computer Science
+                    </option>
+
+                    <option
+                        value="engineering"
+                        disabled
+                    >
+                        College of Engineering — Coming soon
+                    </option>
+
+                    <option
+                        value="dietrich"
+                        disabled
+                    >
+                        Dietrich College — Coming soon
+                    </option>
+
+                    <option
+                        value="mcs"
+                        disabled
+                    >
+                        Mellon College of Science — Coming soon
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PROGRAM AREA -->
+
+            <div
+                class="program-section hidden"
+                id="programSection"
+            >
+
+                <div class="program-section-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SCHOOL OF COMPUTER SCIENCE
+                        </p>
+
+                        <h2>
+                            Choose a program
+                        </h2>
+
+                    </div>
+
+
+                    <p class="program-helper">
+                        Select one to continue.
+                    </p>
+
+                </div>
+
+
+                <!--
+                    app.js dynamically inserts
+                    the SCS program cards here.
+                -->
+
+                <div
+                    class="program-grid"
+                    id="programOptions"
                 >
+                </div>
 
-                <span>
-                    <strong>15-112</strong>
-                    Fundamentals of Programming and Computer Science
-                </span>
-            </label>
+            </div>
 
-
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="21-127"
-                    checked
-                >
-
-                <span>
-                    <strong>21-127</strong>
-                    Concepts of Mathematics
-                </span>
-            </label>
-
-
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="15-122"
-                    checked
-                >
-
-                <span>
-                    <strong>15-122</strong>
-                    Principles of Imperative Computation
-                </span>
-            </label>
-
-
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="15-150"
-                >
-
-                <span>
-                    <strong>15-150</strong>
-                    Principles of Functional Programming
-                </span>
-            </label>
-
-
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="15-210"
-                >
-
-                <span>
-                    <strong>15-210</strong>
-                    Parallel and Sequential Data Structures and Algorithms
-                </span>
-            </label>
-
-
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="15-213"
-                >
-
-                <span>
-                    <strong>15-213</strong>
-                    Introduction to Computer Systems
-                </span>
-            </label>
-
-
-            <label class="course-option">
-                <input
-                    type="checkbox"
-                    value="15-251"
-                >
-
-                <span>
-                    <strong>15-251</strong>
-                    Great Ideas in Theoretical Computer Science
-                </span>
-            </label>
 
         </div>
+
+
+
+        <div class="actions">
+
+            <button
+                class="secondary-button"
+                id="step2bBack"
+                type="button"
+            >
+                ← Back
+            </button>
+
+
+            <button
+                class="primary-button"
+                id="step2bNext"
+                type="button"
+                disabled
+            >
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- #endregion -->
+
+
+    <!-- #region 4. STEP 3 — COURSE HISTORY -->
+    <!-- ======================================================
+        STEP 3
+
+        IMPORTANT:
+
+        This page is now DYNAMIC.
+
+        Examples:
+
+        Explore Current Major
+            + Statistics & Machine Learning
+                ↓
+            Statistics & ML course screen
+
+        Transfer
+            + SCS
+            + Computer Science
+                ↓
+            CS Transfer course screen
+
+        app.js controls:
+        - step3Eyebrow
+        - step3Title
+        - step3Description
+        - courseList
+        ====================================================== -->
+
+    <section
+        class="screen hidden"
+        id="step3"
+    >
+
+        <p
+            class="eyebrow"
+            id="step3Eyebrow"
+        >
+            ACADEMIC HISTORY
+        </p>
+
+
+        <h1 id="step3Title">
+            What have you already taken?
+        </h1>
+
+
+        <p
+            class="subtitle"
+            id="step3Description"
+        >
+            Select the relevant courses you've completed.
+        </p>
+
+
+
+        <!--
+            NO MORE HARDCODED CS COURSES HERE.
+
+            app.js renders the correct course list
+            based on the user's selected goal/program.
+        -->
+
+        <div
+            class="course-list"
+            id="courseList"
+        >
+        </div>
+
 
 
         <div class="settings-row">
 
             <label>
+
                 Starting semester
 
                 <select id="semester">
-                    <option value="spring">Spring</option>
-                    <option value="fall">Fall</option>
+
+                    <option value="spring">
+                        Spring
+                    </option>
+
+                    <option value="fall">
+                        Fall
+                    </option>
+
                 </select>
+
             </label>
 
 
             <label>
+
                 Max goal units / semester
 
                 <input
                     id="units"
                     type="number"
                     value="24"
+                    min="1"
+                    max="60"
                 >
+
             </label>
 
         </div>
 
 
+
+        <!--
+            Displayed when a frontend screen exists,
+            but its planner has not been connected yet.
+        -->
+
+        <p
+            class="planner-note hidden"
+            id="plannerNote"
+        >
+        </p>
+
+
+
         <div class="actions">
 
-            <button class="secondary-button" id="step3Back">
+            <button
+                class="secondary-button"
+                id="step3Back"
+                type="button"
+            >
                 ← Back
             </button>
 
-            <button class="primary-button" id="generateButton">
+
+            <button
+                class="primary-button"
+                id="generateButton"
+                type="button"
+            >
                 Generate my path →
             </button>
 
@@ -322,80 +667,247 @@
 
     </section>
 
+    <!-- #endregion -->
 
-    <!-- RESULTS -->
-    <section class="screen hidden" id="results">
 
-        <p class="eyebrow">YOUR RECOMMENDED PATH</p>
+    <!-- #region 5. RESULTS -->
+    <!-- ======================================================
+         RESULTS PAGE
 
-        <h1>Here's your route.</h1>
+         Displays:
 
-        <p class="subtitle">
-            Based on your current courses and your goal.
+         - Goal
+         - Status
+         - Fastest Path
+         - Lower Workload Path
+         - Why This Path?
+
+         Most content is inserted dynamically by app.js.
+         ====================================================== -->
+
+    <section
+        class="screen hidden"
+        id="results"
+    >
+
+
+        <p class="eyebrow">
+
+            YOUR RECOMMENDED PATH
+
         </p>
 
 
+        <h1>
+
+            Here's your route.
+
+        </h1>
+
+
+        <p class="subtitle">
+
+            Based on your current courses,
+            constraints, and academic goal.
+
+        </p>
+
+
+
+        <!-- ================================================
+             RESULT SUMMARY
+             ================================================ -->
+
         <div class="result-summary">
 
+
+            <!-- GOAL -->
+
             <div>
+
                 <span class="summary-label">
+
                     GOAL
+
                 </span>
 
-                <strong>
-                    Transfer to Computer Science
+
+                <!--
+                    IMPORTANT:
+
+                    app.js dynamically updates this.
+
+                    Do NOT hardcode
+                    "Transfer to Computer Science" here.
+                -->
+
+                <strong id="goalName">
+
+                    Academic path
+
                 </strong>
+
             </div>
 
 
+
+            <!-- STATUS -->
+
             <div>
+
                 <span class="summary-label">
+
                     STATUS
+
                 </span>
+
 
                 <strong id="goalStatus">
-                    Path found
+
+                    Calculating...
+
                 </strong>
+
             </div>
 
+
         </div>
 
 
-        <div
-            class="semester-grid"
-            id="semesterResults"
-        >
+
+        <!-- ================================================
+             FASTEST PATH
+             ================================================ -->
+
+        <div class="path-option">
+
+
+            <h2>
+
+                ⚡ Fastest Path
+
+            </h2>
+
+
+            <p id="fastestSummary">
+            </p>
+
+
+            <div
+                class="semester-grid"
+                id="fastestResults"
+            >
+            </div>
+
+
         </div>
 
+
+
+        <!-- ================================================
+             LOWER WORKLOAD PATH
+             ================================================ -->
+
+        <div class="path-option">
+
+
+            <h2>
+
+                ⚖ Lower Workload
+
+            </h2>
+
+
+            <p id="lowerWorkloadSummary">
+            </p>
+
+
+            <div
+                class="semester-grid"
+                id="lowerWorkloadResults"
+            >
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================================================
+             WHY THIS PATH?
+             ================================================ -->
 
         <section class="insight-card">
 
+
             <p class="eyebrow">
+
                 WHY THIS PATH?
+
             </p>
 
+
             <h2 id="insightTitle">
+
                 Calculating your critical course...
+
             </h2>
+
 
             <p id="insightText">
             </p>
 
+
         </section>
 
+
+
+        <!-- CHANGE PLAN -->
 
         <button
             class="secondary-button"
             id="restartButton"
         >
+
             ← Change my plan
+
         </button>
+
 
     </section>
 
+    <!-- #endregion -->
+
+
 </main>
+
+
+
+<!-- #region 6. JAVASCRIPT -->
+<!-- ==========================================================
+     MAIN FRONTEND CONTROLLER
+
+     Current:
+
+     app.js handles everything.
+
+     Future structure:
+
+     app.js
+     goals.js
+     program-explorer.js
+     course-selection.js
+     results.js
+
+     For now we keep one script
+     so the prototype remains stable.
+     ========================================================== -->
 
 <script src="app.js"></script>
 
+<!-- #endregion -->
+
+
 </body>
+
 </html>

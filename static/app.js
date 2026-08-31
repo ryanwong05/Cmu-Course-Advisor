@@ -1,27 +1,348 @@
+// #region 0. APP OVERVIEW
+// ============================================================
+// APP.JS — Main controller for the CMU Course Advisor frontend
+//
+// This file is responsible for:
+//
+// 1. Keeping track of the user's current selections
+// 2. Moving between screens
+// 3. Rendering temporary SCS program choices
+// 4. Sending plan requests to the FastAPI backend
+// 5. Rendering planner results
+//
+// IMPORTANT:
+//
+// We are intentionally keeping the current SCS program list here
+// only as a TEMPORARY frontend placeholder.
+//
+// Later, this should move to:
+//
+//     Data/programs.json
+//
+// and be loaded through:
+//
+//     GET /api/programs
+//
+// VS Code:
+// Sections wrapped in "#region" / "#endregion" can be folded.
+// Click the small arrow in the gutter next to each region.
+// ============================================================
+// #endregion
+
+
+
+// #region 1. SCREEN REFERENCES
+// ============================================================
+// Each constant points to one major screen in index.html.
+//
+// Current flow:
+//
+// Step 1  → Current student information
+// Step 2  → Goal type
+// Step 2B → School + program explorer
+// Step 3  → Completed courses / planning inputs
+// Results → Generated paths
+// ============================================================
+
 const step1 = document.getElementById("step1");
 const step2 = document.getElementById("step2");
+const step2b = document.getElementById("step2b");
 const step3 = document.getElementById("step3");
 const results = document.getElementById("results");
 
-const semesterResults =
-    document.getElementById("semesterResults");
+// #endregion
 
+
+
+// #region 2. GLOBAL APP STATE
+// ============================================================
+// These variables describe what the user has selected.
+//
+// Example:
+//
+// selectedGoalType = "transfer"
+// selectedSchool   = "scs"
+// selectedProgram  = "computer-science"
+//
+// Later we can replace this with one appState object,
+// for example:
+//
+// const appState = {
+//     goalType: null,
+//     school: null,
+//     program: null
+// };
+//
+// For now, separate variables are easier to understand.
+// ============================================================
+
+let selectedGoalType = null;
+let selectedSchool = null;
+let selectedProgram = null;
+
+
+// ------------------------------------------------------------
+// LEGACY / PLANNER GOAL
+// ------------------------------------------------------------
+//
+// The current backend planner still expects goal IDs like:
+//
+// "cs-transfer"
+// "robotics-additional-major"
+//
+// So we temporarily keep selectedGoal.
+//
+// Later:
+//
+// selectedGoalType + selectedSchool + selectedProgram
+//
+// should be sent directly to the backend instead.
+//
+// ------------------------------------------------------------
+
+let selectedGoal = "cs-transfer";
+
+// #endregion
+
+
+
+// #region 3. DISPLAY NAME HELPERS
+// ============================================================
+// Backend IDs are machine-readable.
+//
+// Example:
+//
+// cs-transfer
+//
+// UI should show:
+//
+// Transfer to Computer Science
+//
+// Later, these display names should come from programs.json.
+// ============================================================
+
+const goalNames = {
+
+    "cs-transfer":
+        "Transfer to Computer Science",
+
+    "robotics-additional-major":
+        "Robotics Additional Major"
+
+};
+
+// #endregion
+
+
+
+// #region 4. TEMPORARY SCS PROGRAM DATA
+// ============================================================
+// TEMPORARY ONLY.
+//
+// We are keeping these here so we can finish the frontend
+// architecture before connecting programs.json.
+//
+// Later, delete this whole region and replace it with:
+//
+// const response = await fetch("/api/programs");
+// const programData = await response.json();
+//
+// ============================================================
+
+const temporarySCSPrograms = [
+
+    {
+        id: "computer-science",
+        name: "Computer Science"
+    },
+
+    {
+        id: "artificial-intelligence",
+        name: "Artificial Intelligence"
+    },
+
+    {
+        id: "robotics",
+        name: "Robotics"
+    },
+
+    {
+        id: "human-computer-interaction",
+        name: "Human-Computer Interaction"
+    },
+
+    {
+        id: "computational-biology",
+        name: "Computational Biology"
+    }
+
+];
+
+// #endregion
+
+// #region 4B. TEMPORARY COURSE SELECTION DATA
+// ============================================================
+// Determines what appears on Step 3.
+//
+// IMPORTANT:
+//
+// CS Transfer courses belong ONLY to:
+//
+// Transfer
+// → School of Computer Science
+// → Computer Science
+//
+// They are NOT the default course list anymore.
+//
+// Stats & ML is currently used for:
+// Explore My Current Major
+//
+// Later:
+// this data moves to requirements.json / courses.json.
+// ============================================================
+
+const step3CourseData = {
+
+
+    // --------------------------------------------------------
+    // SCS → Computer Science → Transfer
+    // --------------------------------------------------------
+
+    "cs-transfer": {
+
+        eyebrow:
+            "SCS · COMPUTER SCIENCE · TRANSFER",
+
+        title:
+            "What have you already completed?",
+
+        description:
+            "Select the courses relevant to the Computer Science transfer path.",
+
+
+        courses: [
+
+            {
+                id: "15-112",
+                name:
+                    "Fundamentals of Programming and Computer Science"
+            },
+
+            {
+                id: "21-127",
+                name:
+                    "Concepts of Mathematics"
+            },
+
+            {
+                id: "15-122",
+                name:
+                    "Principles of Imperative Computation"
+            },
+
+            {
+                id: "15-150",
+                name:
+                    "Principles of Functional Programming"
+            },
+
+            {
+                id: "15-210",
+                name:
+                    "Parallel and Sequential Data Structures and Algorithms"
+            },
+
+            {
+                id: "15-213",
+                name:
+                    "Introduction to Computer Systems"
+            },
+
+            {
+                id: "15-251",
+                name:
+                    "Great Ideas in Theoretical Computer Science"
+            }
+
+        ],
+
+        plannerReady:
+            true
+
+    },
+
+
+
+    // --------------------------------------------------------
+    // EXPLORE CURRENT MAJOR → STATISTICS & ML
+    //
+    // This is currently a FRONTEND FRAMEWORK PLACEHOLDER.
+    //
+    // We should populate the exact major requirements from
+    // our verified Stats & ML requirements data next.
+    // --------------------------------------------------------
+
+    "stats-ml-major": {
+
+        eyebrow:
+            "DIETRICH · STATISTICS & MACHINE LEARNING",
+
+        title:
+            "Explore Statistics & Machine Learning",
+
+        description:
+            "Tell us which parts of your current major you've already completed.",
+
+
+        courses: [],
+
+
+        plannerReady:
+            false
+
+    }
+
+};
+
+// #endregion
+
+
+// #region 5. SCREEN NAVIGATION
+// ============================================================
+// showScreen()
+//
+// Purpose:
+//
+// Hide all screens,
+// then reveal the screen we want.
+//
+// This prevents us from repeating the same hide/show logic
+// throughout the file.
+// ============================================================
 
 function showScreen(screen) {
 
     step1.classList.add("hidden");
     step2.classList.add("hidden");
+    step2b.classList.add("hidden");
     step3.classList.add("hidden");
     results.classList.add("hidden");
 
+
     screen.classList.remove("hidden");
+
 
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 }
 
+
+// ------------------------------------------------------------
+// STEP 1 → STEP 2
+// ------------------------------------------------------------
 
 document
     .getElementById("step1Next")
@@ -32,6 +353,10 @@ document
     });
 
 
+// ------------------------------------------------------------
+// STEP 2 → STEP 1
+// ------------------------------------------------------------
+
 document
     .getElementById("step2Back")
     .addEventListener("click", () => {
@@ -41,14 +366,36 @@ document
     });
 
 
+// ------------------------------------------------------------
+// STEP 2B → STEP 2
+// ------------------------------------------------------------
+
 document
-    .getElementById("step2Next")
+    .getElementById("step2bBack")
     .addEventListener("click", () => {
 
-        showScreen(step3);
+        showScreen(step2);
 
     });
 
+
+// ------------------------------------------------------------
+// STEP 3 → STEP 2
+// ------------------------------------------------------------
+//
+// NOTE:
+//
+// Later this should probably be context-aware.
+//
+// Example:
+//
+// Transfer → SCS → CS → Step 3
+//
+// pressing Back should ideally return to SCS → CS,
+// not all the way back to Step 2.
+//
+// We can improve that later.
+// ------------------------------------------------------------
 
 document
     .getElementById("step3Back")
@@ -59,6 +406,10 @@ document
     });
 
 
+// ------------------------------------------------------------
+// RESULTS → START OVER
+// ------------------------------------------------------------
+
 document
     .getElementById("restartButton")
     .addEventListener("click", () => {
@@ -67,169 +418,1695 @@ document
 
     });
 
-
-document
-    .getElementById("generateButton")
-    .addEventListener("click", async () => {
-
-        const checkedCourses =
-            document.querySelectorAll(
-                '.course-option input[type="checkbox"]:checked'
-            );
-
-        const completedCourses =
-            Array.from(checkedCourses)
-                .map(input => input.value);
+// #endregion
 
 
-        const requestBody = {
-
-            completed_courses: completedCourses,
-
-            goal: "cs-transfer",
-
-            start_semester:
-                document.getElementById("semester").value,
-
-            max_units:
-                Number(
-                    document.getElementById("units").value
-                )
-
-        };
+// #region 6. STEP 2 — GOAL TYPE SELECTION
+// ============================================================
+// STEP 2
+//
+// Clicking a goal card only SELECTS it.
+// The page changes only after the user clicks Continue.
+// ============================================================
 
 
-        const response =
-            await fetch("/api/plan", {
-
-                method: "POST",
-
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body:
-                    JSON.stringify(requestBody)
-
-            });
+// Get all four goal cards
+const goalTypeCards =
+    document.querySelectorAll(
+        ".goal-card[data-goal-type]"
+    );
 
 
-        const data =
-            await response.json();
-        
-        const insightTitle =
-            document.getElementById("insightTitle");
-        
-        const insightText =
-            document.getElementById("insightText");
-
-        if (data.explanation) {
-
-    const explanation = data.explanation;
-
-    insightTitle.textContent =
-        `Your critical next course is ${explanation.critical_course}.`;
-
-    let text =
-        `${explanation.critical_course} currently has the biggest impact on your path.`;
+// Continue button on Step 2
+const step2Next =
+    document.getElementById(
+        "step2Next"
+    );
 
 
-    if (
-        explanation.unlocks &&
-        explanation.unlocks.length > 0
-    ) {
+// ------------------------------------------------------------
+// SELECT A GOAL CARD
+// ------------------------------------------------------------
 
-        text +=
-            ` It directly unlocks ${explanation.unlocks.join(", ")}.`;
+goalTypeCards.forEach(card => {
 
-    }
+    card.addEventListener("click", () => {
 
-
-    if (
-        explanation.delay_if_skipped !== null &&
-        explanation.delay_if_skipped > 0
-    ) {
-
-        text +=
-            ` Delaying it may delay this path by ${explanation.delay_if_skipped} semester(s).`;
-
-    }
+        // Remove selection from every card
+        goalTypeCards.forEach(otherCard => {
+            otherCard.classList.remove("selected");
+        });
 
 
-    insightText.textContent = text;
-
-}
-else {
-
-    insightTitle.textContent =
-        "No critical next course found.";
-
-    insightText.textContent =
-        "You may already have completed the key prerequisites for this path.";
-
-}
+        // Highlight the card that was clicked
+        card.classList.add("selected");
 
 
-        semesterResults.innerHTML = "";
+        // Save the user's choice
+        selectedGoalType =
+            card.dataset.goalType;
 
 
-        for (const semester of data.path) {
-
-            const card =
-                document.createElement("div");
-
-            card.className = "semester-card";
+        // Enable Continue
+        step2Next.disabled = false;
 
 
-            const coursesHtml =
-                semester.courses
-                    .map(course => `
-                        <div class="course">
-                            ${course}
-                        </div>
-                    `)
-                    .join("");
-
-
-            card.innerHTML = `
-
-                <div class="semester-name">
-                    Semester ${semester.semester_number}
-                    ·
-                    ${semester.semester}
-                </div>
-
-                ${coursesHtml}
-
-                <div class="units">
-                    ${semester.units} goal units
-                </div>
-
-            `;
-
-
-            semesterResults.appendChild(card);
-
-        }
-
-
-        const goalStatus =
-            document.getElementById("goalStatus");
-
-
-        if (data.goal_complete) {
-
-            goalStatus.textContent =
-                "Requirements mapped ✓";
-
-        } else {
-
-            goalStatus.textContent =
-                `${data.remaining.length} courses remaining`;
-
-        }
-
-
-        showScreen(results);
+        console.log(
+            "Selected goal type:",
+            selectedGoalType
+        );
 
     });
+
+});
+
+
+// ------------------------------------------------------------
+// CONTINUE FROM STEP 2
+// ------------------------------------------------------------
+
+step2Next.addEventListener("click", () => {
+
+    // Safety check
+    if (!selectedGoalType) {
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // EXPLORE CURRENT MAJOR
+    //
+    // We already know the student's major from Step 1,
+    // so no school/program selection is needed.
+    // --------------------------------------------------------
+
+    if (selectedGoalType === "explore-current") {
+
+        prepareCurrentMajorStep();
+
+        showScreen(step3);
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // TRANSFER MAJOR
+    // --------------------------------------------------------
+
+    if (selectedGoalType === "transfer") {
+
+        resetProgramExplorer();
+
+        updateExplorerCopy();
+
+        showScreen(step2b);
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // ADDITIONAL MAJOR / MINOR
+    // --------------------------------------------------------
+
+    if (selectedGoalType === "add-program") {
+
+        resetProgramExplorer();
+
+        updateExplorerCopy();
+
+        showScreen(step2b);
+
+        return;
+    }
+
+
+    // --------------------------------------------------------
+    // UNDECIDED
+    //
+    // Temporary behavior:
+    // use the program explorer.
+    //
+    // Later this will have its own discovery page.
+    // --------------------------------------------------------
+
+    if (selectedGoalType === "undecided") {
+
+        resetProgramExplorer();
+
+        updateExplorerCopy();
+
+        showScreen(step2b);
+
+    }
+
+});
+
+// ------------------------------------------------------------
+// UPDATE PROGRAM EXPLORER TEXT
+//
+// Changes the Step 2B title and description depending on
+// what the user selected on Step 2.
+// ------------------------------------------------------------
+
+function updateExplorerCopy() {
+
+    const title =
+        document.getElementById(
+            "explorerTitle"
+        );
+
+    const description =
+        document.getElementById(
+            "explorerDescription"
+        );
+
+
+    // --------------------------------------------------------
+    // TRANSFER MAJOR
+    // --------------------------------------------------------
+
+    if (selectedGoalType === "transfer") {
+
+        title.textContent =
+            "Where are you considering transferring?";
+
+        description.textContent =
+            "Choose a school, then choose a major.";
+
+    }
+
+
+    // --------------------------------------------------------
+    // ADDITIONAL MAJOR / MINOR
+    // --------------------------------------------------------
+
+    else if (selectedGoalType === "add-program") {
+
+        title.textContent =
+            "What would you like to add?";
+
+        description.textContent =
+            "Choose a school, then explore its additional majors and minors.";
+
+    }
+
+
+    // --------------------------------------------------------
+    // UNDECIDED
+    // --------------------------------------------------------
+
+    else if (selectedGoalType === "undecided") {
+
+        title.textContent =
+            "Explore academic options";
+
+        description.textContent =
+            "Browse schools and programs to discover possible academic paths.";
+
+    }
+
+}
+
+// #endregion
+
+
+// #region 7. STEP 2B — SCHOOL SELECTION
+// ============================================================
+// School selection now uses ONE dropdown.
+//
+// This gives the page more space and lets program cards
+// become the main visual focus.
+//
+// Future benefit:
+// Adding more CMU schools will not make the page huge.
+// ============================================================
+
+const schoolSelect =
+    document.getElementById(
+        "schoolSelect"
+    );
+
+
+schoolSelect.addEventListener(
+    "change",
+    () => {
+
+        selectedSchool =
+            schoolSelect.value;
+
+
+        // Changing school invalidates old program choice.
+        selectedProgram =
+            null;
+
+
+        // Disable Continue until program selected.
+        document
+            .getElementById(
+                "step2bNext"
+            )
+            .disabled = true;
+
+
+        const programSection =
+            document.getElementById(
+                "programSection"
+            );
+
+
+        const programOptions =
+            document.getElementById(
+                "programOptions"
+            );
+
+
+        // Clear previous programs.
+        programOptions.innerHTML =
+            "";
+
+
+        // No school selected.
+        if (!selectedSchool) {
+
+            programSection
+                .classList
+                .add("hidden");
+
+            return;
+
+        }
+
+
+        // SCS currently implemented.
+        if (
+            selectedSchool === "scs"
+        ) {
+
+            renderTemporarySCSPrograms();
+
+        }
+
+
+        console.log(
+            "Selected school:",
+            selectedSchool
+        );
+
+    }
+);
+
+// #endregion
+
+
+// #region 8. STEP 2B — PROGRAM SELECTION
+// ============================================================
+// After choosing SCS, we dynamically create:
+//
+// Computer Science
+// Artificial Intelligence
+// Robotics
+// Human-Computer Interaction
+// Computational Biology
+//
+// Later:
+//
+// this should be generic:
+//
+// selectedSchool
+//      ↓
+// programs.json
+//      ↓
+// render available programs
+//
+// ============================================================
+
+function renderTemporarySCSPrograms() {
+
+    const programSection =
+        document.getElementById(
+            "programSection"
+        );
+
+    const programOptions =
+        document.getElementById(
+            "programOptions"
+        );
+
+
+    // --------------------------------------------------------
+    // Remove old program cards before rendering again
+    // --------------------------------------------------------
+
+    programOptions.innerHTML = "";
+
+
+    // --------------------------------------------------------
+    // Create one button per program
+    // --------------------------------------------------------
+
+    for (
+        const program
+        of temporarySCSPrograms
+    ) {
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "program-card";
+
+
+        button.dataset.program =
+            program.id;
+
+
+        button.textContent =
+            program.name;
+
+
+        // ----------------------------------------------------
+        // PROGRAM CLICK EVENT
+        // ----------------------------------------------------
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                // --------------------------------------------
+                // Clear previous program selection
+                // --------------------------------------------
+
+                document
+                    .querySelectorAll(
+                        ".program-card"
+                    )
+                    .forEach(otherCard => {
+
+                        otherCard
+                            .classList
+                            .remove(
+                                "selected"
+                            );
+
+                    });
+
+
+                // --------------------------------------------
+                // Highlight current program
+                // --------------------------------------------
+
+                button.classList.add(
+                    "selected"
+                );
+
+
+                // --------------------------------------------
+                // Save program
+                // --------------------------------------------
+
+                selectedProgram =
+                    program.id;
+
+
+                console.log(
+                    "Selected program:",
+                    selectedProgram
+                );
+
+
+                // --------------------------------------------
+                // Convert new frontend selection into
+                // old backend planner goal
+                // --------------------------------------------
+
+                updateLegacyPlannerGoal();
+
+
+                // --------------------------------------------
+                // Allow user to continue
+                // --------------------------------------------
+
+                document
+                    .getElementById(
+                        "step2bNext"
+                    )
+                    .disabled = false;
+
+            }
+        );
+
+
+        programOptions.appendChild(
+            button
+        );
+
+    }
+
+
+    // --------------------------------------------------------
+    // Reveal program section
+    // --------------------------------------------------------
+
+    programSection.classList.remove(
+        "hidden"
+    );
+
+}
+
+
+
+// ------------------------------------------------------------
+// RESET PROGRAM EXPLORER
+//
+// Why?
+//
+// Imagine:
+//
+// 1. User chooses Transfer → SCS → CS
+// 2. Goes back
+// 3. Chooses Additional Major / Minor
+//
+// We do NOT want CS to remain selected.
+//
+// This function resets those old choices.
+// ------------------------------------------------------------
+
+function resetProgramExplorer() {
+
+    selectedSchool = null;
+    selectedProgram = null;
+
+
+    // Reset school dropdown.
+    const schoolSelect =
+        document.getElementById(
+            "schoolSelect"
+        );
+
+    schoolSelect.value =
+        "";
+
+
+    // Hide program section.
+    const programSection =
+        document.getElementById(
+            "programSection"
+        );
+
+
+    const programOptions =
+        document.getElementById(
+            "programOptions"
+        );
+
+
+    programOptions.innerHTML =
+        "";
+
+
+    programSection
+        .classList
+        .add("hidden");
+
+
+    // Disable Continue.
+    document
+        .getElementById(
+            "step2bNext"
+        )
+        .disabled = true;
+
+}
+
+
+
+// ------------------------------------------------------------
+// TEMPORARY BACKEND GOAL MAPPING
+//
+// NEW frontend architecture:
+//
+// goalType
+// +
+// school
+// +
+// program
+//
+// Example:
+//
+// transfer
+// + scs
+// + computer-science
+//
+// OLD backend architecture:
+//
+// "cs-transfer"
+//
+// This function temporarily connects the two systems.
+//
+// Eventually:
+//
+// DELETE THIS FUNCTION.
+//
+// Backend should directly accept:
+//
+// {
+//     goal_type: "transfer",
+//     school: "scs",
+//     program: "computer-science"
+// }
+//
+// ------------------------------------------------------------
+
+function updateLegacyPlannerGoal() {
+
+    // --------------------------------------------------------
+    // Transfer → Computer Science
+    // --------------------------------------------------------
+
+    if (
+        selectedGoalType ===
+        "transfer" &&
+        selectedProgram ===
+        "computer-science"
+    ) {
+
+        selectedGoal =
+            "cs-transfer";
+
+    }
+
+
+    // --------------------------------------------------------
+    // Additional Major → Robotics
+    // --------------------------------------------------------
+
+    else if (
+        selectedGoalType ===
+        "add-program" &&
+        selectedProgram ===
+        "robotics"
+    ) {
+
+        selectedGoal =
+            "robotics-additional-major";
+
+    }
+
+
+    // --------------------------------------------------------
+    // Not connected to backend yet
+    // --------------------------------------------------------
+
+    else {
+
+        console.warn(
+            "This UI selection does not yet have a backend planner goal:",
+            {
+
+                goalType:
+                    selectedGoalType,
+
+                school:
+                    selectedSchool,
+
+                program:
+                    selectedProgram
+
+            }
+        );
+
+    }
+
+}
+
+
+
+// ------------------------------------------------------------
+// STEP 2B → STEP 3
+// ------------------------------------------------------------
+
+document
+    .getElementById(
+        "step2bNext"
+    )
+    .addEventListener(
+        "click",
+        () => {
+
+
+            // ------------------------------------------------
+            // TRANSFER → SCS → COMPUTER SCIENCE
+            // ------------------------------------------------
+
+            if (
+                selectedGoalType ===
+                "transfer" &&
+
+                selectedSchool ===
+                "scs" &&
+
+                selectedProgram ===
+                "computer-science"
+            ) {
+
+                selectedGoal =
+                    "cs-transfer";
+
+
+                renderCourseSelection(
+                    "cs-transfer"
+                );
+
+
+                showScreen(step3);
+
+                return;
+
+            }
+
+
+
+            // ------------------------------------------------
+            // OTHER PROGRAMS
+            //
+            // UI works, but requirements are not connected yet.
+            // ------------------------------------------------
+
+            console.log(
+                "Selected future program:",
+                {
+                    goalType:
+                        selectedGoalType,
+
+                    school:
+                        selectedSchool,
+
+                    program:
+                        selectedProgram
+                }
+            );
+
+
+            // For now we do NOT accidentally show
+            // the Computer Science transfer courses.
+            //
+            // We'll create program-specific pages next.
+
+        }
+    );
+
+// #endregion
+
+
+// #region 8B. STEP 3 PREPARATION
+// ============================================================
+// These functions decide WHAT Step 3 represents.
+//
+// Step 3 is no longer "the CS transfer page".
+//
+// It is a reusable academic-history screen.
+// ============================================================
+
+
+
+// ------------------------------------------------------------
+// EXPLORE CURRENT MAJOR
+// ------------------------------------------------------------
+
+function prepareCurrentMajorStep() {
+
+    const currentMajor =
+        document.getElementById(
+            "major"
+        ).value;
+
+
+    // --------------------------------------------------------
+    // Statistics & Machine Learning
+    // --------------------------------------------------------
+
+    if (
+        currentMajor === "stats-ml"
+    ) {
+
+        selectedGoal =
+            "stats-ml-major";
+
+
+        renderCourseSelection(
+            "stats-ml-major"
+        );
+
+
+        return;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Other majors are not implemented yet.
+    // --------------------------------------------------------
+
+    console.warn(
+        "Current-major explorer not implemented yet:",
+        currentMajor
+    );
+
+}
+
+
+
+// ------------------------------------------------------------
+// RENDER STEP 3
+// ------------------------------------------------------------
+
+function renderCourseSelection(
+    pathKey
+) {
+
+    const data =
+        step3CourseData[pathKey];
+
+
+    if (!data) {
+
+        console.error(
+            "No Step 3 data found for:",
+            pathKey
+        );
+
+        return;
+
+    }
+
+
+    const eyebrow =
+        document.getElementById(
+            "step3Eyebrow"
+        );
+
+
+    const title =
+        document.getElementById(
+            "step3Title"
+        );
+
+
+    const description =
+        document.getElementById(
+            "step3Description"
+        );
+
+
+    const courseList =
+        document.getElementById(
+            "courseList"
+        );
+
+
+    const generateButton =
+        document.getElementById(
+            "generateButton"
+        );
+
+
+    const plannerNote =
+        document.getElementById(
+            "plannerNote"
+        );
+
+
+    // --------------------------------------------------------
+    // Update page copy.
+    // --------------------------------------------------------
+
+    eyebrow.textContent =
+        data.eyebrow;
+
+
+    title.textContent =
+        data.title;
+
+
+    description.textContent =
+        data.description;
+
+
+    // --------------------------------------------------------
+    // Clear old course list.
+    // --------------------------------------------------------
+
+    courseList.innerHTML =
+        "";
+
+
+    // --------------------------------------------------------
+    // Render courses.
+    // --------------------------------------------------------
+
+    for (
+        const course
+        of data.courses
+    ) {
+
+        const label =
+            document.createElement(
+                "label"
+            );
+
+
+        label.className =
+            "course-option";
+
+
+        label.innerHTML = `
+
+            <input
+                type="checkbox"
+                value="${course.id}"
+            >
+
+            <span>
+
+                <strong>
+                    ${course.id}
+                </strong>
+
+                ${course.name}
+
+            </span>
+
+        `;
+
+
+        courseList.appendChild(
+            label
+        );
+
+    }
+
+
+    // --------------------------------------------------------
+    // No requirement data yet.
+    // --------------------------------------------------------
+
+    if (
+        data.courses.length === 0
+    ) {
+
+        courseList.innerHTML = `
+
+            <div class="empty-course-state">
+
+                <strong>
+                    Statistics & Machine Learning
+                </strong>
+
+                <p>
+                    The major explorer is connected.
+                    Next we'll populate its verified
+                    requirement groups and course history.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    // --------------------------------------------------------
+    // Planner availability.
+    // --------------------------------------------------------
+
+    if (
+        data.plannerReady
+    ) {
+
+        generateButton.disabled =
+            false;
+
+
+        generateButton.textContent =
+            "Generate my path →";
+
+
+        plannerNote
+            .classList
+            .add("hidden");
+
+    }
+
+
+    else {
+
+        generateButton.disabled =
+            true;
+
+
+        generateButton.textContent =
+            "Planner coming next";
+
+
+        plannerNote.textContent =
+            "This major is connected to the new interface, but its requirement engine has not been populated yet.";
+
+
+        plannerNote
+            .classList
+            .remove("hidden");
+
+    }
+
+}
+
+// #endregion
+
+
+// #region 9. PATH RENDERING
+// ============================================================
+// Converts backend semester data into visual semester cards.
+//
+// Expected backend structure:
+//
+// {
+//     semester_number: 1,
+//     semester: "spring",
+//     courses: [
+//         "15-150",
+//         "15-213"
+//     ],
+//     units: 22,
+//
+//     workload: {
+//         hours_per_week: 25,
+//         average_workload: 4.3,
+//         average_difficulty: 4.2,
+//         average_stress: 4.2
+//     }
+// }
+//
+// ============================================================
+
+function renderPath(
+    pathData,
+    container
+) {
+
+    container.innerHTML = "";
+
+
+    for (
+        const semester
+        of pathData.path
+    ) {
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "semester-card";
+
+
+        // ----------------------------------------------------
+        // Convert course array into HTML
+        // ----------------------------------------------------
+
+        const coursesHtml =
+            semester.courses
+
+                .map(course => `
+                    <div class="course">
+                        ${course}
+                    </div>
+                `)
+
+                .join("");
+
+
+        // ----------------------------------------------------
+        // Build semester card
+        // ----------------------------------------------------
+
+        card.innerHTML = `
+
+            <div class="semester-name">
+
+                Semester
+                ${semester.semester_number}
+
+                ·
+
+                ${semester.semester}
+
+            </div>
+
+
+            ${coursesHtml}
+
+
+            <div class="units">
+
+                ${semester.units}
+                goal units
+
+            </div>
+
+
+            <div class="semester-metrics">
+
+                <div>
+
+                    ~${semester.workload.hours_per_week}
+                    hrs/week
+
+                </div>
+
+
+                <div>
+
+                    Workload
+
+                    ${semester.workload.average_workload}
+                    / 5
+
+                </div>
+
+
+                <div>
+
+                    Difficulty
+
+                    ${semester.workload.average_difficulty}
+                    / 5
+
+                </div>
+
+
+                <div>
+
+                    Stress
+
+                    ${semester.workload.average_stress}
+                    / 5
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(
+            card
+        );
+
+    }
+
+}
+
+
+
+// ------------------------------------------------------------
+// RESULT CONTAINERS
+// ------------------------------------------------------------
+
+const fastestResults =
+    document.getElementById(
+        "fastestResults"
+    );
+
+
+const lowerWorkloadResults =
+    document.getElementById(
+        "lowerWorkloadResults"
+    );
+
+// #endregion
+
+
+
+// #region 10. GENERATE PATH — REQUEST
+// ============================================================
+// Runs when user clicks:
+//
+// "Generate my path"
+//
+// Flow:
+//
+// 1. Collect completed courses
+// 2. Build request body
+// 3. POST to FastAPI
+// 4. Parse response
+// 5. Render fastest path
+// 6. Render lower-workload path
+// 7. Render explanation
+// 8. Render goal status
+// 9. Show results
+//
+// ============================================================
+
+document
+    .getElementById(
+        "generateButton"
+    )
+    .addEventListener(
+        "click",
+        async () => {
+
+
+            // #region 10A. COLLECT COMPLETED COURSES
+            // ------------------------------------------------
+
+            const checkedCourses =
+                document.querySelectorAll(
+                    '.course-option input[type="checkbox"]:checked'
+                );
+
+
+            const completedCourses =
+                Array
+                    .from(
+                        checkedCourses
+                    )
+                    .map(
+                        input =>
+                            input.value
+                    );
+
+            // #endregion
+
+
+
+            // #region 10B. BUILD REQUEST BODY
+            // ------------------------------------------------
+
+            const requestBody = {
+
+                completed_courses:
+                    completedCourses,
+
+
+                goal:
+                    selectedGoal,
+
+
+                start_semester:
+                    document
+                        .getElementById(
+                            "semester"
+                        )
+                        .value,
+
+
+                max_units:
+                    Number(
+                        document
+                            .getElementById(
+                                "units"
+                            )
+                            .value
+                    )
+
+            };
+
+
+            console.log(
+                "Sending plan request:",
+                requestBody
+            );
+
+            // #endregion
+
+
+
+            // #region 10C. SEND REQUEST
+            // ------------------------------------------------
+
+            const response =
+                await fetch(
+                    "/api/plan",
+                    {
+
+                        method:
+                            "POST",
+
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+
+                        body:
+                            JSON.stringify(
+                                requestBody
+                            )
+
+                    }
+                );
+
+            // #endregion
+
+
+
+            // #region 10D. HANDLE BACKEND ERRORS
+            // ------------------------------------------------
+
+            if (
+                !response.ok
+            ) {
+
+                const errorText =
+                    await response.text();
+
+
+                console.error(
+                    "Backend error:",
+                    errorText
+                );
+
+
+                return;
+
+            }
+
+            // #endregion
+
+
+
+            // #region 10E. PARSE RESPONSE
+            // ------------------------------------------------
+
+            const data =
+                await response.json();
+
+
+            console.log(
+                "Planner response:",
+                data
+            );
+
+            // #endregion
+
+
+
+            // #region 10F. RENDER PATHS
+            // ------------------------------------------------
+
+            renderPath(
+                data.fastest,
+                fastestResults
+            );
+
+
+            renderPath(
+                data.lower_workload,
+                lowerWorkloadResults
+            );
+
+            // #endregion
+
+
+
+            // #region 10G. PATH SUMMARIES
+            // ------------------------------------------------
+
+            document
+                .getElementById(
+                    "fastestSummary"
+                )
+                .textContent =
+                `${data.fastest.path.length} semester(s)`;
+
+
+            document
+                .getElementById(
+                    "lowerWorkloadSummary"
+                )
+                .textContent =
+                `${data.lower_workload.path.length} semester(s)`;
+
+            // #endregion
+
+
+
+            // #region 10H. WHY THIS PATH?
+            // ------------------------------------------------
+
+            renderPathExplanation(
+                data.explanation
+            );
+
+            // #endregion
+
+
+
+            // #region 10I. GOAL STATUS
+            // ------------------------------------------------
+
+            renderGoalStatus(
+                data
+            );
+
+            // #endregion
+
+
+
+            // #region 10J. GOAL NAME
+            // ------------------------------------------------
+
+            renderGoalName();
+
+            // #endregion
+
+
+
+            // #region 10K. SHOW RESULTS
+            // ------------------------------------------------
+
+            showScreen(
+                results
+            );
+
+            // #endregion
+
+        }
+    );
+
+// #endregion
+
+
+
+// #region 11. RESULT HELPERS
+// ============================================================
+// Small rendering functions.
+//
+// These used to live inside the giant Generate button handler.
+//
+// Moving them here makes the request code much easier to read.
+// ============================================================
+
+
+
+// ------------------------------------------------------------
+// 11A. WHY THIS PATH?
+// ------------------------------------------------------------
+
+function renderPathExplanation(
+    explanation
+) {
+
+    const insightTitle =
+        document.getElementById(
+            "insightTitle"
+        );
+
+
+    const insightText =
+        document.getElementById(
+            "insightText"
+        );
+
+
+    // --------------------------------------------------------
+    // Explanation exists
+    // --------------------------------------------------------
+
+    if (
+        explanation
+    ) {
+
+        insightTitle.textContent =
+            `Your critical next course is ${explanation.critical_course}.`;
+
+
+        let text =
+            `${explanation.critical_course} currently has the biggest impact on your path.`;
+
+
+        // ----------------------------------------------------
+        // Show courses directly unlocked
+        // ----------------------------------------------------
+
+        if (
+            explanation.unlocks &&
+            explanation.unlocks.length > 0
+        ) {
+
+            text +=
+                ` It directly unlocks ${explanation.unlocks.join(", ")}.`;
+
+        }
+
+
+        // ----------------------------------------------------
+        // Show delay impact
+        // ----------------------------------------------------
+
+        if (
+            explanation.delay_if_skipped !== null &&
+            explanation.delay_if_skipped > 0
+        ) {
+
+            text +=
+                ` Delaying it may delay this path by ${explanation.delay_if_skipped} semester(s).`;
+
+        }
+
+
+        insightText.textContent =
+            text;
+
+    }
+
+
+    // --------------------------------------------------------
+    // No explanation
+    // --------------------------------------------------------
+
+    else {
+
+        insightTitle.textContent =
+            "No critical next course found.";
+
+
+        insightText.textContent =
+            "You may already have completed the key prerequisites for this path.";
+
+    }
+
+}
+
+
+
+// ------------------------------------------------------------
+// 11B. GOAL STATUS
+// ------------------------------------------------------------
+
+function renderGoalStatus(
+    data
+) {
+
+    const goalStatus =
+        document.getElementById(
+            "goalStatus"
+        );
+
+
+    // --------------------------------------------------------
+    // Goal course path complete
+    // --------------------------------------------------------
+
+    if (
+        data.fastest.goal_complete
+    ) {
+
+        goalStatus.textContent =
+            "Course Path Mapped ✓";
+
+    }
+
+
+    // --------------------------------------------------------
+    // Courses still remaining
+    // --------------------------------------------------------
+
+    else {
+
+        goalStatus.textContent =
+            `${data.fastest.remaining.length} courses remaining`;
+
+    }
+
+}
+
+
+
+// ------------------------------------------------------------
+// 11C. GOAL DISPLAY NAME
+//
+// Safe:
+// If index.html does not contain:
+//
+// id="goalName"
+//
+// this function simply exits.
+// ------------------------------------------------------------
+
+function renderGoalName() {
+
+    const goalNameElement =
+        document.getElementById(
+            "goalName"
+        );
+
+
+    if (
+        !goalNameElement
+    ) {
+
+        return;
+
+    }
+
+
+    goalNameElement.textContent =
+
+        goalNames[selectedGoal]
+
+        ??
+
+        selectedGoal;
+
+}
+
+// #endregion
+
+
+
+// #region 12. NEXT REFACTOR CHECKLIST
+// ============================================================
+// DOCUMENTATION ONLY.
+//
+// Nothing below here runs.
+//
+// This is a reminder of the architecture we want to move toward.
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 1
+//
+// Move:
+//
+// temporarySCSPrograms
+//
+// into:
+//
+// Data/programs.json
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 2
+//
+// Add backend endpoint:
+//
+// GET /api/programs
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 3
+//
+// Create:
+//
+// static/program-explorer.js
+//
+// Move:
+//
+// School Selection
+// Program Selection
+//
+// out of app.js.
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 4
+//
+// Create:
+//
+// static/course-selection.js
+//
+// Step 3 should become:
+//
+// selected goal
+//      ↓
+// requirements.json
+//      ↓
+// dynamically generated relevant courses
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 5
+//
+// Create:
+//
+// static/results.js
+//
+// Move:
+//
+// renderPath()
+// renderPathExplanation()
+// renderGoalStatus()
+//
+// out of app.js.
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 6
+//
+// Remove legacy:
+//
+// selectedGoal
+//
+// Instead backend should understand:
+//
+// {
+//     goal_type: "transfer",
+//     school: "scs",
+//     program: "computer-science"
+// }
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 7
+//
+// Add:
+//
+// Additional Major
+// vs
+// Minor
+//
+// comparison page.
+//
+// ------------------------------------------------------------
+//
+// NEXT STEP 8
+//
+// Add:
+//
+// Undecided
+//
+// academic combinations / exploration page.
+//
+// ============================================================
+// #endregion

@@ -1,4 +1,33 @@
 {
+  "stats-ml-major": {
+  "requirement_groups": [
+    {
+      "id": "mathematical-foundations",
+      "name": "Mathematical Foundations",
+      "type": "group",
+      "requirements": []
+    },
+    {
+      "id": "statistics-core",
+      "name": "Statistics Core",
+      "type": "group",
+      "requirements": []
+    },
+    {
+      "id": "advanced-data-analysis",
+      "name": "Advanced Data Analysis",
+      "type": "group",
+      "requirements": []
+    },
+    {
+      "id": "machine-learning-cs",
+      "name": "Machine Learning / Computer Science",
+      "type": "group",
+      "requirements": []
+            }
+        ]
+    },
+
   "cs-transfer": {
     "required_courses": [
       "15-122",

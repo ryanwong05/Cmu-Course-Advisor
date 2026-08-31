@@ -1,5 +1,10 @@
 [
   {
+    "id": "stats-ml-major",
+    "name": "Statistics & Machine Learning",
+    "type": "primary-major"
+  },
+  {
     "id": "cs-transfer",
     "name": "Transfer to Computer Science",
     "type": "internal-transfer"
