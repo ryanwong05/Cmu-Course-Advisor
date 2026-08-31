@@ -438,3 +438,35 @@ def generate_semester_path(
         "remaining": remaining_after_plan,
         "goal_complete": len(remaining_after_plan) == 0
     }
+
+def generate_multiple_paths(
+    completed_courses,
+    courses,
+    program_id,
+    requirements,
+    start_semester
+):
+    fastest = generate_semester_path(
+        completed_courses=completed_courses,
+        courses=courses,
+        program_id=program_id,
+        requirements=requirements,
+        start_semester=start_semester,
+        num_semesters=4,
+        max_units=24
+    )
+
+    lower_workload = generate_semester_path(
+        completed_courses=completed_courses,
+        courses=courses,
+        program_id=program_id,
+        requirements=requirements,
+        start_semester=start_semester,
+        num_semesters=6,
+        max_units=12
+    )
+
+    return {
+        "fastest": fastest,
+        "lower_workload": lower_workload
+    }
