@@ -2,16 +2,29 @@
   {
     "id": "stats-ml-major",
     "name": "Statistics & Machine Learning",
-    "type": "primary-major"
+    "college": "Dietrich",
+    "program_type": "primary_major",
+    "change_type": null
   },
   {
     "id": "cs-transfer",
     "name": "Transfer to Computer Science",
-    "type": "internal-transfer"
+    "college": "SCS",
+    "program_type": "primary_major",
+    "change_type": "internal_transfer"
+  },
+  {
+    "id": "robotics-transfer",
+    "name": "Transfer to Robotics",
+    "college": "SCS",
+    "program_type": "primary_major",
+    "change_type": "internal_transfer"
   },
   {
     "id": "robotics-additional-major",
     "name": "Robotics Additional Major",
-    "type": "additional-major"
+    "college": "SCS",
+    "program_type": "additional_major",
+    "change_type": null
   }
 ]

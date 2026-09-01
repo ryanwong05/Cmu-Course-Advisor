@@ -1,6 +1,16 @@
 from Engine.availability import get_available_courses
 
-def count_downstream_courses(course_id, courses, remaining_courses):
+def count_downstream_courses(
+    course_id,
+    courses,
+    remaining_courses,
+    visited=None
+):
+    visited = set() if visited is None else set(visited)
+    if course_id in visited:
+        return 0
+    visited.add(course_id)
+
     total = 0
 
     for course in courses:
@@ -15,7 +25,8 @@ def count_downstream_courses(course_id, courses, remaining_courses):
             total += count_downstream_courses(
                 other_course_id,
                 courses,
-                remaining_courses
+                remaining_courses,
+                visited
             )
 
     return total
@@ -444,7 +455,8 @@ def generate_multiple_paths(
     courses,
     program_id,
     requirements,
-    start_semester
+    start_semester,
+    max_units=24
 ):
     fastest = generate_semester_path(
         completed_courses=completed_courses,
@@ -453,7 +465,7 @@ def generate_multiple_paths(
         requirements=requirements,
         start_semester=start_semester,
         num_semesters=4,
-        max_units=24
+        max_units=max_units
     )
 
     lower_workload = generate_semester_path(
@@ -463,7 +475,7 @@ def generate_multiple_paths(
         requirements=requirements,
         start_semester=start_semester,
         num_semesters=6,
-        max_units=12
+        max_units=min(max_units, 12)
     )
 
     return {

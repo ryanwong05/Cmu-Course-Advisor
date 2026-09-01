@@ -1,0 +1,21 @@
+Information for SCS Students
+Have successfully completed the required courses, which are:
+Probability: one of 36-225, 21-325, 36-218 or 15-259.
+Concepts of Math 21-127
+Principles of Imperative Computation 15-122
+Introduction to Computer Systems 15-213
+Great Ideas in Theoretical Computer Science 15-251
+Sophomore-level RI course one of 16-299, 16-280, 16-281, 16-211, or 16-220
+Complete the Internal Transfer Form, including an essay describing interest in robotics.
+Students should consult with their current advisor and the BSR Director.
+Information for Non-SCS Students
+Students interested in transferring into the BSR program from a CMU college other than SCS must maintain at least a 3.0 QPA and complete the six courses below (some of which have options) with at least a 3.6 cumulative QPA in those courses.
+Probability: one of 36-225, 21-325, 36-218 or 15-259.
+Concepts of Math 21-127
+Principles of Imperative Computation 15-122
+Introduction to Computer Systems 15-213
+Great Ideas in Theoretical Computer Science 15-251
+Sophomore-level RI course one of 16-299, 16-280, 16-281, 16-211, or 16-220
+Students should meet with the BSR Director and submit an essay.
+Transfer into the Robotics program is not guaranteed.
+Back to Academic Programs
