@@ -34,7 +34,13 @@
 // #region 1. SCREEN REFERENCES
 // ============================================================
 // Each constant points to one major screen in index.html.
-//
+// 它是在 JS 里给 HTML 的几个主要页面取“快捷名字”
+
+// index.html
+//    ↓ 浏览器加载
+// DOM
+//    ↓
+// document.getElementById("step2b")
 // Current flow:
 //
 // Step 1  → Current student information
@@ -51,7 +57,6 @@ const step3 = document.getElementById("step3");
 const results = document.getElementById("results");
 
 // #endregion
-
 
 
 // #region 2. GLOBAL APP STATE
@@ -105,7 +110,6 @@ let selectedGoal = "cs-transfer";
 // #endregion
 
 
-
 // #region 3. DISPLAY NAME HELPERS
 // ============================================================
 // Backend IDs are machine-readable.
@@ -126,13 +130,15 @@ const goalNames = {
     "cs-transfer":
         "Transfer to Computer Science",
 
+    "robotics-transfer":
+        "Transfer to Robotics",
+
     "robotics-additional-major":
         "Robotics Additional Major"
 
 };
 
 // #endregion
-
 
 
 // #region 4. TEMPORARY SCS PROGRAM DATA
@@ -179,6 +185,7 @@ const temporarySCSPrograms = [
 ];
 
 // #endregion
+
 
 // #region 4B. TEMPORARY COURSE SELECTION DATA
 // ============================================================
@@ -271,6 +278,42 @@ const step3CourseData = {
 
     },
 
+
+
+    "robotics-transfer": {
+
+        eyebrow:
+            "SCS · ROBOTICS · INTERNAL TRANSFER",
+
+        title:
+            "Review the Robotics transfer requirements",
+
+        description:
+            "Select courses you have completed. QPA and application requirements depend on whether you are currently in SCS.",
+
+        courses: [
+            { id: "36-225", name: "Probability option" },
+            { id: "21-325", name: "Probability option" },
+            { id: "36-218", name: "Probability option" },
+            { id: "15-259", name: "Probability option" },
+            { id: "21-127", name: "Concepts of Mathematics" },
+            { id: "15-122", name: "Principles of Imperative Computation" },
+            { id: "15-213", name: "Introduction to Computer Systems" },
+            { id: "15-251", name: "Great Ideas in Theoretical Computer Science" },
+            { id: "16-299", name: "Sophomore-level RI option" },
+            { id: "16-280", name: "Sophomore-level RI option" },
+            { id: "16-281", name: "Sophomore-level RI option" },
+            { id: "16-211", name: "Sophomore-level RI option" },
+            { id: "16-220", name: "Sophomore-level RI option" }
+        ],
+
+        plannerReady:
+            false,
+
+        plannerNote:
+            "The verified Robotics requirements are available, but path generation is paused until one-of course groups and the SCS/non-SCS policy choice are supported."
+
+    },
 
 
     // --------------------------------------------------------
@@ -1007,6 +1050,19 @@ function updateLegacyPlannerGoal() {
 
     else if (
         selectedGoalType ===
+        "transfer" &&
+        selectedProgram ===
+        "robotics"
+    ) {
+
+        selectedGoal =
+            "robotics-transfer";
+
+    }
+
+
+    else if (
+        selectedGoalType ===
         "add-program" &&
         selectedProgram ===
         "robotics"
@@ -1059,34 +1115,12 @@ document
         () => {
 
 
-            // ------------------------------------------------
-            // TRANSFER → SCS → COMPUTER SCIENCE
-            // ------------------------------------------------
+            updateLegacyPlannerGoal();
 
-            if (
-                selectedGoalType ===
-                "transfer" &&
-
-                selectedSchool ===
-                "scs" &&
-
-                selectedProgram ===
-                "computer-science"
-            ) {
-
-                selectedGoal =
-                    "cs-transfer";
-
-
-                renderCourseSelection(
-                    "cs-transfer"
-                );
-
-
+            if (step3CourseData[selectedGoal]) {
+                renderCourseSelection(selectedGoal);
                 showScreen(step3);
-
                 return;
-
             }
 
 
@@ -1374,7 +1408,8 @@ function renderCourseSelection(
 
 
         plannerNote.textContent =
-            "This major is connected to the new interface, but its requirement engine has not been populated yet.";
+            data.plannerNote
+            ?? "This major is connected to the new interface, but its requirement engine has not been populated yet.";
 
 
         plannerNote
@@ -1551,7 +1586,6 @@ const lowerWorkloadResults =
     );
 
 // #endregion
-
 
 
 // #region 10. GENERATE PATH — REQUEST
@@ -1807,7 +1841,6 @@ document
 // #endregion
 
 
-
 // #region 11. RESULT HELPERS
 // ============================================================
 // Small rendering functions.
@@ -1992,7 +2025,6 @@ function renderGoalName() {
 }
 
 // #endregion
-
 
 
 // #region 12. NEXT REFACTOR CHECKLIST
