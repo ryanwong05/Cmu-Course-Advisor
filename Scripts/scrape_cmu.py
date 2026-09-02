@@ -7,7 +7,8 @@ from bs4 import BeautifulSoup
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_PATH = PROJECT_ROOT / "Data" / "scraped_programs.json"
+DEFAULT_OUTPUT_PATH = (PROJECT_ROOT / "Data" / "scraped_programs.json")
+COLLEGE_OUTPUT_PATH = (PROJECT_ROOT/ "Data"/ "scraped_college_requirements.json")
 
 PROGRAM_SOURCES = [
     {
@@ -22,6 +23,7 @@ PROGRAM_SOURCES = [
             "bachelor-of-science-in-robotics/transfer-guidelines/"
         ),
     },
+    
     {
         "id": "cs-transfer",
         "college": "SCS",
@@ -36,6 +38,15 @@ PROGRAM_SOURCES = [
     },
 ]
 
+COLLEGE_SOURCES = [
+    {
+        "id": "dietrich",
+        "college": "Dietrich College",
+        "catalog_year": "2026-2027",
+        "requirement_type": "general_education",
+        "url": "https://www.cmu.edu/dietrich/gened/curriculum/index.html",
+    }
+]
 
 def fetch_page(url):
     response = requests.get(
@@ -226,6 +237,244 @@ def parse_robotics_policies(text):
         parse_policy(non_scs_section, "non_scs_students"),
     ]
 
+# =========================
+# Dietrich GenEd Parser
+# =========================
+
+DIETRICH_REQUIREMENT_CATEGORIES = [
+    {
+        "id": "communication",
+        "name": "Communication",
+        "group": "foundations",
+    },
+    {
+        "id": "data-analysis",
+        "name": "Data Analysis",
+        "group": "foundations",
+    },
+    {
+        "id": "computational-thinking",
+        "name": "Computational Thinking",
+        "group": "foundations",
+    },
+    {
+        "id": "contextual-thinking",
+        "name": "Contextual Thinking",
+        "group": "foundations",
+    },
+    {
+        "id": "intercultural-global-inquiry",
+        "name": "Intercultural and Global Inquiry",
+        "group": "foundations",
+    },
+    {
+        "id": "scientific-inquiry",
+        "name": "Scientific Inquiry",
+        "group": "foundations",
+    },
+
+    {
+        "id": "humanities",
+        "name": "Humanities",
+        "group": "disciplinary_perspectives",
+    },
+    {
+        "id": "social-sciences",
+        "name": "Social Sciences",
+        "group": "disciplinary_perspectives",
+    },
+    {
+        "id": "logic-mathematical-reasoning",
+        "name": "Logic/Mathematical Reasoning",
+        "group": "disciplinary_perspectives",
+    },
+    {
+        "id": "arts",
+        "name": "The Arts",
+        "group": "disciplinary_perspectives",
+    },
+    {
+        "id": "additional-disciplines",
+        "name": "Additional Disciplines: Business, Design, or Engineering",
+        "group": "disciplinary_perspectives",
+    },
+
+    {
+        "id": "grand-challenge-seminar",
+        "name": "Grand Challenge Seminar",
+        "group": "special_seminars",
+    },
+    {
+        "id": "justice-injustice",
+        "name": "Perspectives on Justice and Injustice",
+        "group": "special_seminars",
+    },
+
+    {
+        "id": "experiential-learning",
+        "name": "Experiential Learning Activity",
+        "group": "experiential_learning",
+    },
+]
+
+
+def extract_units(text):
+    """
+    Find something like:
+        9 units
+        6 units
+        1 unit
+
+    Returns an int or None.
+    """
+    match = re.search(
+        r"\b(\d+)\s+units?\b",
+        text,
+        re.IGNORECASE,
+    )
+
+    if match:
+        return int(match.group(1))
+
+    return None
+
+
+def extract_timeline(text):
+    """
+    Convert Dietrich timeline text into a structured form
+    that the planner can eventually understand.
+    """
+
+    lower_text = text.lower()
+
+    if "required in year 1 or 2" in lower_text:
+        return {
+            "type": "complete_by",
+            "year": 2,
+            "source_text": "Required in Year 1 or 2",
+        }
+
+    if "required in year 1" in lower_text:
+        return {
+            "type": "complete_by",
+            "year": 1,
+            "source_text": "Required in Year 1",
+        }
+
+    if "year 1, 2, or 3" in lower_text:
+        return {
+            "type": "complete_by",
+            "year": 3,
+            "source_text": "Can be completed in Year 1, 2, or 3",
+        }
+
+    if "anytime in a student" in lower_text:
+        return {
+            "type": "complete_by",
+            "year": 4,
+            "source_text": "Can be completed anytime",
+        }
+
+    if "after first semester" in lower_text:
+        return {
+            "type": "after_semester",
+            "semester": 1,
+            "source_text": "Must be completed after first semester",
+        }
+
+    return {
+        "type": "unknown",
+        "source_text": None,
+    }
+
+
+def extract_dietrich_requirement_section(
+    text,
+    current_name,
+    next_name=None,
+):
+    """
+    Grab the text belonging to one Dietrich GenEd category.
+
+    Example:
+        Data Analysis
+        ...description...
+        9 units
+        Required in Year 1
+        36-200
+    """
+
+    start = text.find(current_name)
+
+    if start == -1:
+        return None
+
+    if next_name:
+        end = text.find(next_name, start + len(current_name))
+
+        if end == -1:
+            end = len(text)
+    else:
+        end = len(text)
+
+    return text[start:end].strip()
+
+
+def parse_dietrich_requirements(text):
+    requirements = []
+
+    for index, category in enumerate(
+        DIETRICH_REQUIREMENT_CATEGORIES
+    ):
+        current_name = category["name"]
+
+        if index + 1 < len(DIETRICH_REQUIREMENT_CATEGORIES):
+            next_name = (
+                DIETRICH_REQUIREMENT_CATEGORIES[index + 1]["name"]
+            )
+        else:
+            next_name = None
+
+        section = extract_dietrich_requirement_section(
+            text,
+            current_name,
+            next_name,
+        )
+
+        if section is None:
+            print(
+                f"Warning: Dietrich requirement not found: "
+                f"{current_name}"
+            )
+            continue
+
+        courses = extract_course_numbers(section)
+
+        requirement = {
+            "id": category["id"],
+            "name": category["name"],
+            "group": category["group"],
+            "type": "category",
+            "units": extract_units(section),
+            "timeline": extract_timeline(section),
+            "courses": courses,
+            "source_text": section,
+        }
+
+        # Special case:
+        # Dietrich says choose one course from
+        # Business, Design, or Engineering.
+        if category["id"] == "additional-disciplines":
+            requirement["type"] = "choose_one_discipline"
+            requirement["options"] = [
+                "Business",
+                "Design",
+                "Engineering",
+            ]
+
+        requirements.append(requirement)
+
+    return requirements
 
 def scrape_program(source):
     text = html_to_text(fetch_page(source["url"]))
@@ -268,11 +517,58 @@ def save_results(results, output_path=DEFAULT_OUTPUT_PATH):
     )
 
 
-def main():
-    results = [scrape_program(source) for source in PROGRAM_SOURCES]
-    save_results(results)
-    print(f"Saved {len(results)} program(s) to {DEFAULT_OUTPUT_PATH}")
+def scrape_college(source):
+    text = html_to_text(
+        fetch_page(source["url"])
+    )
 
+    result = {
+        "id": source["id"],
+        "college": source["college"],
+        "catalog_year": source["catalog_year"],
+        "requirement_type": source["requirement_type"],
+        "source_url": source["url"],
+    }
+
+    if source["id"] == "dietrich":
+        result["requirements"] = (
+            parse_dietrich_requirements(text)
+        )
+    else:
+        result["requirements"] = []
+
+    return result
+
+def main():
+    program_results = [
+        scrape_program(source)
+        for source in PROGRAM_SOURCES
+    ]
+
+    save_results(
+        program_results,
+        DEFAULT_OUTPUT_PATH
+    )
+
+    college_results = [
+        scrape_college(source)
+        for source in COLLEGE_SOURCES
+    ]
+
+    save_results(
+        college_results,
+        COLLEGE_OUTPUT_PATH
+    )
+
+    print(
+        f"Saved {len(program_results)} program(s) "
+        f"to {DEFAULT_OUTPUT_PATH}"
+    )
+
+    print(
+        f"Saved {len(college_results)} college(s) "
+        f"to {COLLEGE_OUTPUT_PATH}"
+    )
 
 if __name__ == "__main__":
     main()

@@ -81,31 +81,25 @@ const results = document.getElementById("results");
 // For now, separate variables are easier to understand.
 // ============================================================
 
-let selectedGoalType = null;
-let selectedSchool = null;
-let selectedProgram = null;
-
-
-// ------------------------------------------------------------
-// LEGACY / PLANNER GOAL
-// ------------------------------------------------------------
-//
-// The current backend planner still expects goal IDs like:
-//
-// "cs-transfer"
-// "robotics-additional-major"
-//
-// So we temporarily keep selectedGoal.
-//
-// Later:
-//
-// selectedGoalType + selectedSchool + selectedProgram
-//
-// should be sent directly to the backend instead.
-//
-// ------------------------------------------------------------
-
-let selectedGoal = "cs-transfer";
+const appState = {
+    student: {
+        college: "dietrich",
+        primary_major: "stats-ml",
+        year: 1,
+        completed_courses: []
+    },
+    goals: [],
+    constraints: {
+        start_semester: "spring",
+        max_units: 24
+    },
+    selection: {
+        goalType: null,
+        school: null,
+        program: null
+    },
+    plannerKey: null
+};
 
 // #endregion
 
@@ -316,6 +310,28 @@ const step3CourseData = {
     },
 
 
+    "robotics-additional-major": {
+
+        eyebrow:
+            "SCS · ROBOTICS · ADDITIONAL MAJOR",
+
+        title:
+            "Explore the Robotics additional major",
+
+        description:
+            "Your current-college baseline is available below. Verified path requirements are not configured yet.",
+
+        courses: [],
+
+        plannerReady:
+            false,
+
+        plannerNote:
+            "The Robotics additional-major goal is connected, but its verified requirement planner is not configured yet."
+
+    },
+
+
     // --------------------------------------------------------
     // EXPLORE CURRENT MAJOR → STATISTICS & ML
     //
@@ -390,6 +406,13 @@ function showScreen(screen) {
 document
     .getElementById("step1Next")
     .addEventListener("click", () => {
+
+        appState.student = {
+            college: document.getElementById("college").value,
+            primary_major: document.getElementById("major").value,
+            year: Number(document.getElementById("year").value),
+            completed_courses: appState.student.completed_courses
+        };
 
         showScreen(step2);
 
@@ -506,7 +529,7 @@ goalTypeCards.forEach(card => {
 
 
         // Save the user's choice
-        selectedGoalType =
+        appState.selection.goalType =
             card.dataset.goalType;
 
 
@@ -516,7 +539,7 @@ goalTypeCards.forEach(card => {
 
         console.log(
             "Selected goal type:",
-            selectedGoalType
+            appState.selection.goalType
         );
 
     });
@@ -531,7 +554,7 @@ goalTypeCards.forEach(card => {
 step2Next.addEventListener("click", () => {
 
     // Safety check
-    if (!selectedGoalType) {
+    if (!appState.selection.goalType) {
         return;
     }
 
@@ -543,7 +566,7 @@ step2Next.addEventListener("click", () => {
     // so no school/program selection is needed.
     // --------------------------------------------------------
 
-    if (selectedGoalType === "explore-current") {
+    if (appState.selection.goalType === "explore-current") {
 
         prepareCurrentMajorStep();
 
@@ -557,7 +580,7 @@ step2Next.addEventListener("click", () => {
     // TRANSFER MAJOR
     // --------------------------------------------------------
 
-    if (selectedGoalType === "transfer") {
+    if (appState.selection.goalType === "transfer") {
 
         resetProgramExplorer();
 
@@ -573,7 +596,7 @@ step2Next.addEventListener("click", () => {
     // ADDITIONAL MAJOR / MINOR
     // --------------------------------------------------------
 
-    if (selectedGoalType === "add-program") {
+    if (appState.selection.goalType === "add-program") {
 
         resetProgramExplorer();
 
@@ -594,7 +617,7 @@ step2Next.addEventListener("click", () => {
     // Later this will have its own discovery page.
     // --------------------------------------------------------
 
-    if (selectedGoalType === "undecided") {
+    if (appState.selection.goalType === "undecided") {
 
         resetProgramExplorer();
 
@@ -630,7 +653,7 @@ function updateExplorerCopy() {
     // TRANSFER MAJOR
     // --------------------------------------------------------
 
-    if (selectedGoalType === "transfer") {
+    if (appState.selection.goalType === "transfer") {
 
         title.textContent =
             "Where are you considering transferring?";
@@ -645,7 +668,7 @@ function updateExplorerCopy() {
     // ADDITIONAL MAJOR / MINOR
     // --------------------------------------------------------
 
-    else if (selectedGoalType === "add-program") {
+    else if (appState.selection.goalType === "add-program") {
 
         title.textContent =
             "What would you like to add?";
@@ -660,7 +683,7 @@ function updateExplorerCopy() {
     // UNDECIDED
     // --------------------------------------------------------
 
-    else if (selectedGoalType === "undecided") {
+    else if (appState.selection.goalType === "undecided") {
 
         title.textContent =
             "Explore academic options";
@@ -696,12 +719,12 @@ schoolSelect.addEventListener(
     "change",
     () => {
 
-        selectedSchool =
+        appState.selection.school =
             schoolSelect.value;
 
 
         // Changing school invalidates old program choice.
-        selectedProgram =
+        appState.selection.program =
             null;
 
 
@@ -731,7 +754,7 @@ schoolSelect.addEventListener(
 
 
         // No school selected.
-        if (!selectedSchool) {
+        if (!appState.selection.school) {
 
             programSection
                 .classList
@@ -744,7 +767,7 @@ schoolSelect.addEventListener(
 
         // SCS currently implemented.
         if (
-            selectedSchool === "scs"
+            appState.selection.school === "scs"
         ) {
 
             renderTemporarySCSPrograms();
@@ -754,7 +777,7 @@ schoolSelect.addEventListener(
 
         console.log(
             "Selected school:",
-            selectedSchool
+            appState.selection.school
         );
 
     }
@@ -872,13 +895,13 @@ function renderTemporarySCSPrograms() {
                 // Save program
                 // --------------------------------------------
 
-                selectedProgram =
+                appState.selection.program =
                     program.id;
 
 
                 console.log(
                     "Selected program:",
-                    selectedProgram
+                    appState.selection.program
                 );
 
 
@@ -887,7 +910,7 @@ function renderTemporarySCSPrograms() {
                 // old backend planner goal
                 // --------------------------------------------
 
-                updateLegacyPlannerGoal();
+                updatePlanningGoal();
 
 
                 // --------------------------------------------
@@ -941,8 +964,8 @@ function renderTemporarySCSPrograms() {
 
 function resetProgramExplorer() {
 
-    selectedSchool = null;
-    selectedProgram = null;
+    appState.selection.school = null;
+    appState.selection.program = null;
 
 
     // Reset school dropdown.
@@ -1025,79 +1048,85 @@ function resetProgramExplorer() {
 //
 // ------------------------------------------------------------
 
-function updateLegacyPlannerGoal() {
+function updatePlanningGoal() {
+    const { goalType, school, program } = appState.selection;
 
-    // --------------------------------------------------------
-    // Transfer → Computer Science
-    // --------------------------------------------------------
-
-    if (
-        selectedGoalType ===
-        "transfer" &&
-        selectedProgram ===
-        "computer-science"
-    ) {
-
-        selectedGoal =
-            "cs-transfer";
-
+    if (goalType === "explore-current") {
+        appState.goals = [{
+            type: "current_major",
+            program: appState.student.primary_major
+        }];
+        return;
     }
 
-
-    // --------------------------------------------------------
-    // Additional Major → Robotics
-    // --------------------------------------------------------
-
-    else if (
-        selectedGoalType ===
-        "transfer" &&
-        selectedProgram ===
-        "robotics"
-    ) {
-
-        selectedGoal =
-            "robotics-transfer";
-
+    if (goalType === "transfer") {
+        appState.goals = [{
+            type: "internal_transfer",
+            college: school,
+            program
+        }];
+        return;
     }
 
+    if (goalType === "add-program") {
+        appState.goals = [{
+            type: "additional_major",
+            college: school,
+            program
+        }];
+    }
+}
 
-    else if (
-        selectedGoalType ===
-        "add-program" &&
-        selectedProgram ===
-        "robotics"
-    ) {
 
-        selectedGoal =
-            "robotics-additional-major";
+function plannerKeyForGoal(goal) {
+    const keys = {
+        "current_major:stats-ml": "stats-ml-major",
+        "internal_transfer:computer-science": "cs-transfer",
+        "internal_transfer:robotics": "robotics-transfer",
+        "additional_major:robotics": "robotics-additional-major"
+    };
+    return keys[`${goal.type}:${goal.program}`] ?? null;
+}
 
+
+function buildPlanningRequest() {
+    appState.constraints = {
+        start_semester: document.getElementById("semester").value,
+        max_units: Number(document.getElementById("units").value)
+    };
+
+    return {
+        student: appState.student,
+        goals: appState.goals,
+        constraints: appState.constraints
+    };
+}
+
+
+async function loadBaseline() {
+    const baselineSummary = document.getElementById("baselineSummary");
+    baselineSummary.textContent = "Loading your current-college baseline…";
+
+    const response = await fetch("/api/baseline", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(buildPlanningRequest())
+    });
+
+    if (!response.ok) {
+        baselineSummary.textContent = "Baseline could not be loaded.";
+        return;
     }
 
-
-    // --------------------------------------------------------
-    // Not connected to backend yet
-    // --------------------------------------------------------
-
-    else {
-
-        console.warn(
-            "This UI selection does not yet have a backend planner goal:",
-            {
-
-                goalType:
-                    selectedGoalType,
-
-                school:
-                    selectedSchool,
-
-                program:
-                    selectedProgram
-
-            }
-        );
-
-    }
-
+    const data = await response.json();
+    appState.plannerKey = data.planner_key;
+    const requirementNames = data.baseline.requirements
+        .map(requirement => requirement.name)
+        .join(", ");
+    baselineSummary.textContent =
+        `Current baseline: ${data.baseline.college} · ` +
+        `${data.baseline.total_units} due unit(s)` +
+        (requirementNames ? ` · ${requirementNames}` : "");
 }
 
 
@@ -1115,11 +1144,13 @@ document
         () => {
 
 
-            updateLegacyPlannerGoal();
+            updatePlanningGoal();
+            appState.plannerKey = plannerKeyForGoal(appState.goals[0]);
 
-            if (step3CourseData[selectedGoal]) {
-                renderCourseSelection(selectedGoal);
+            if (step3CourseData[appState.plannerKey]) {
+                renderCourseSelection(appState.plannerKey);
                 showScreen(step3);
+                loadBaseline();
                 return;
             }
 
@@ -1135,13 +1166,13 @@ document
                 "Selected future program:",
                 {
                     goalType:
-                        selectedGoalType,
+                        appState.selection.goalType,
 
                     school:
-                        selectedSchool,
+                        appState.selection.school,
 
                     program:
-                        selectedProgram
+                        appState.selection.program
                 }
             );
 
@@ -1188,13 +1219,16 @@ function prepareCurrentMajorStep() {
         currentMajor === "stats-ml"
     ) {
 
-        selectedGoal =
+        updatePlanningGoal();
+        appState.plannerKey =
             "stats-ml-major";
 
 
         renderCourseSelection(
             "stats-ml-major"
         );
+
+        loadBaseline();
 
 
         return;
@@ -1636,6 +1670,9 @@ document
                             input.value
                     );
 
+            appState.student.completed_courses =
+                completedCourses;
+
             // #endregion
 
 
@@ -1643,34 +1680,7 @@ document
             // #region 10B. BUILD REQUEST BODY
             // ------------------------------------------------
 
-            const requestBody = {
-
-                completed_courses:
-                    completedCourses,
-
-
-                goal:
-                    selectedGoal,
-
-
-                start_semester:
-                    document
-                        .getElementById(
-                            "semester"
-                        )
-                        .value,
-
-
-                max_units:
-                    Number(
-                        document
-                            .getElementById(
-                                "units"
-                            )
-                            .value
-                    )
-
-            };
+            const requestBody = buildPlanningRequest();
 
 
             console.log(
@@ -2014,13 +2024,10 @@ function renderGoalName() {
     }
 
 
+    const goal = appState.goals[0];
     goalNameElement.textContent =
-
-        goalNames[selectedGoal]
-
-        ??
-
-        selectedGoal;
+        goalNames[appState.plannerKey]
+        ?? `${goal.type}: ${goal.program}`;
 
 }
 
