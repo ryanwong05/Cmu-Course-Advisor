@@ -37,7 +37,7 @@ def main():
         requirements,
         start_semester="spring",
         num_semesters=4,
-        max_units=24,
+        max_units=52,
     )
 
     print("Requirement status:", result)

@@ -457,6 +457,47 @@ input[type="number"]:focus {
     background: #f2f2ef;
 }
 
+.program-type-choices {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.program-type-choice {
+    border: 1px solid #b8b8b8;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+.comparison-panel {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #ddd;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.comparison-card {
+    border: 1px solid #d7d7d7;
+    border-radius: 16px;
+    padding: 20px;
+    background: #fff;
+}
+
+.comparison-card p {
+    color: #666;
+    line-height: 1.45;
+}
+
+@media (max-width: 760px) {
+    .comparison-grid { grid-template-columns: 1fr; }
+}
+
 /* #endregion */
 
 
@@ -532,11 +573,40 @@ input[type="number"]:focus {
 
 .settings-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 16px;
 
     margin-top: 30px;
+}
+
+.history-section {
+    margin-top: 34px;
+    padding-top: 28px;
+    border-top: 1px solid #ddd;
+}
+
+.history-helper {
+    margin: -2px 0 16px;
+    color: #777;
+    line-height: 1.5;
+}
+
+.no-courses-option {
+    border-style: dashed;
+}
+
+.free-choice {
+    margin-top: 9px;
+    color: #55705a;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+    .settings-row {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* #endregion */
@@ -699,6 +769,62 @@ input[type="number"]:focus {
 
     font-size: 21px;
     font-weight: 700;
+}
+
+.shared-course {
+    color: #25613b;
+}
+
+.shared-course span {
+    display: block;
+    margin-top: 3px;
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.overlap-summary {
+    margin: 22px 0 8px;
+    padding: 18px 20px;
+    border: 1px solid #b9dac4;
+    border-radius: 16px;
+    background: #f3faf5;
+}
+
+.overlap-summary p {
+    margin: 7px 0 0;
+}
+
+.workload-warning {
+    margin-bottom: 8px;
+    padding: 9px 11px;
+    border-radius: 9px;
+    background: #fff0f0;
+    color: #b42318;
+    font-weight: 750;
+}
+
+.semester-section-label {
+    margin-top: 18px;
+    color: #888;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.baseline-slot {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.semester-empty {
+    margin-top: 7px;
+    color: #aaa;
+    font-size: 13px;
 }
 
 .units {

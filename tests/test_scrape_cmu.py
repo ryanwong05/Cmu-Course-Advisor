@@ -1,7 +1,10 @@
 import unittest
 from pathlib import Path
 
-from Scripts.scrape_cmu import parse_robotics_policies
+from Scripts.scrape_cmu import (
+    extract_dietrich_requirement_section,
+    parse_robotics_policies,
+)
 
 
 FIXTURE = Path(__file__).parent / "fixtures" / "robotics_transfer.txt"
@@ -33,6 +36,19 @@ class RoboticsScraperTests(unittest.TestCase):
             len(qpa["course_group"]["applies_to"]["requirement_ids"]),
             6,
         )
+
+    def test_final_dietrich_section_stops_before_repeated_page_content(self):
+        text = (
+            "\nExperiential Learning Activity\n1 unit\n"
+            "Must be completed after first semester\n"
+            "Total General Education\n115 units\n"
+            "Foundations\n36-200, Reasoning with Data\n"
+        )
+        section = extract_dietrich_requirement_section(
+            text,
+            "Experiential Learning Activity",
+        )
+        self.assertNotIn("36-200", section)
 
 
 if __name__ == "__main__":
