@@ -388,37 +388,65 @@ def extract_timeline(text):
     }
 
 
+# def extract_dietrich_requirement_section(
+#     text,
+#     current_name,
+#     next_name=None,
+# ):
+#     """
+#     Grab the text belonging to one Dietrich GenEd category.
+
+#     Example:
+#         Data Analysis
+#         ...description...
+#         9 units
+#         Required in Year 1
+#         36-200
+#     """
+
+#     start = text.find(current_name)
+
+#     if start == -1:
+#         return None
+
+#     if next_name:
+#         end = text.find(next_name, start + len(current_name))
+
+#         if end == -1:
+#             end = len(text)
+#     else:
+#         end = len(text)
+
+#     return text[start:end].strip()
+
 def extract_dietrich_requirement_section(
     text,
     current_name,
     next_name=None,
 ):
-    """
-    Grab the text belonging to one Dietrich GenEd category.
-
-    Example:
-        Data Analysis
-        ...description...
-        9 units
-        Required in Year 1
-        36-200
-    """
-
-    start = text.find(current_name)
+    start_marker = f"\n{current_name}\n"
+    start = text.find(start_marker)
 
     if start == -1:
         return None
 
+    start += 1
+
     if next_name:
-        end = text.find(next_name, start + len(current_name))
+        next_marker = f"\n{next_name}\n"
+        end = text.find(next_marker,start + len(current_name),)
 
         if end == -1:
             end = len(text)
     else:
-        end = len(text)
+        end_candidates = [
+            text.find(marker, start + len(current_name))
+            for marker in ("\nTotal General Education\n", "\nRelated Links\n")
+        ]
+        valid_ends = [candidate for candidate in end_candidates if candidate != -1]
+        end = min(valid_ends) if valid_ends else len(text)
 
     return text[start:end].strip()
-
 
 def parse_dietrich_requirements(text):
     requirements = []

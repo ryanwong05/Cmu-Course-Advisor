@@ -12,6 +12,8 @@ def calculate_semester_load(
     total_stress = 0
 
     rated_courses = 0
+    high_intensity_courses = []
+    data_statuses = set()
 
     for course_id in course_ids:
 
@@ -27,6 +29,9 @@ def calculate_semester_load(
         total_workload += metrics["workload"]
         total_difficulty += metrics["difficulty"]
         total_stress += metrics["stress"]
+        data_statuses.add(metrics.get("source_status", "unknown"))
+        if metrics.get("intensity") == "high_intensity":
+            high_intensity_courses.append(course_id)
 
         rated_courses += 1
 
@@ -35,9 +40,13 @@ def calculate_semester_load(
             "hours_per_week": 0,
             "average_workload": 0,
             "average_difficulty": 0,
-            "average_stress": 0
+            "average_stress": 0,
+            "high_intensity_courses": [],
+            "warning_level": "none",
+            "data_status": "unrated",
         }
 
+    high_count = len(high_intensity_courses)
     return {
         "hours_per_week": total_hours,
 
@@ -54,5 +63,10 @@ def calculate_semester_load(
         "average_stress": round(
             total_stress / rated_courses,
             1
-        )
+        ),
+        "high_intensity_courses": high_intensity_courses,
+        "warning_level": "high" if high_count >= 2 else "none",
+        "data_status": (
+            "estimated" if "estimated" in data_statuses else "verified"
+        ),
     }

@@ -1,5 +1,12 @@
 [
   {
+    "id": "21-120",
+    "name": "Differential and Integral Calculus",
+    "units": 10,
+    "prerequisites": [],
+    "offered": ["fall", "spring"]
+  },
+  {
     "id": "15-112",
     "name": "Fundamentals of Programming and Computer Science",
     "units": 12,
@@ -9,21 +16,34 @@
   {
     "id": "21-127",
     "name": "Concepts of Mathematics",
-    "units": 10,
+    "units": 12,
     "prerequisites": [],
+    "prerequisite_expression": {
+      "type": "any_of",
+      "options": [
+        {"course_id": "15-112", "minimum_grade": "C"},
+        {"course_id": "02-120", "minimum_grade": "C"},
+        {"course_id": "21-108", "minimum_grade": "C"},
+        {"course_id": "21-090", "minimum_grade": "A"},
+        {"course_id": "21-120", "minimum_grade": "C"},
+        {"course_id": "21-112", "minimum_grade": "C"}
+      ],
+      "source_status": "verified",
+      "catalog_year": "2026-2027"
+    },
     "offered": ["fall", "spring"]
   },
   {
     "id": "15-122",
     "name": "Principles of Imperative Computation",
-    "units": 10,
+    "units": 12,
     "prerequisites": ["15-112"],
     "offered": ["fall", "spring"]
   },
   {
     "id": "15-150",
     "name": "Principles of Functional Programming",
-    "units": 10,
+    "units": 12,
     "prerequisites": ["21-127"],
     "offered": ["fall", "spring"]
   },

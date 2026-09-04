@@ -86,17 +86,24 @@ const appState = {
         college: "dietrich",
         primary_major: "stats-ml",
         year: 1,
-        completed_courses: []
+        enrollment_status: "enrolled",
+        current_term: "fall",
+        completed_courses: [],
+        completed_requirement_ids: []
     },
     goals: [],
     constraints: {
         start_semester: "spring",
-        max_units: 24
+        max_units: 52,
+        first_semester_max_units: 52,
+        semester_unit_limits: [],
+        planning_year: 1
     },
     selection: {
         goalType: null,
         school: null,
-        program: null
+        program: null,
+        programType: null
     },
     plannerKey: null
 };
@@ -149,7 +156,7 @@ const goalNames = {
 //
 // ============================================================
 
-const temporarySCSPrograms = [
+let temporarySCSPrograms = [
 
     {
         id: "computer-science",
@@ -177,6 +184,17 @@ const temporarySCSPrograms = [
     }
 
 ];
+
+async function loadProgramRegistry() {
+    try {
+        const response = await fetch("/api/programs");
+        if (response.ok) temporarySCSPrograms = await response.json();
+    } catch (error) {
+        console.warn("Using bundled program fallback:", error);
+    }
+}
+
+loadProgramRegistry();
 
 // #endregion
 
@@ -222,6 +240,12 @@ const step3CourseData = {
 
 
         courses: [
+
+            {
+                id: "21-120",
+                name:
+                    "Differential and Integral Calculus"
+            },
 
             {
                 id: "15-112",
@@ -411,8 +435,19 @@ document
             college: document.getElementById("college").value,
             primary_major: document.getElementById("major").value,
             year: Number(document.getElementById("year").value),
-            completed_courses: appState.student.completed_courses
+            enrollment_status: document.getElementById("enrollmentStatus").value,
+            current_term: document.getElementById("currentTerm").value,
+            completed_courses: appState.student.completed_courses,
+            completed_requirement_ids: appState.student.completed_requirement_ids
         };
+
+        if (appState.student.enrollment_status === "precollege") {
+            document.getElementById("planningYear").value = "1";
+            document.getElementById("semester").value = "fall";
+        } else {
+            document.getElementById("planningYear").value = String(appState.student.year);
+            document.getElementById("semester").value = appState.student.current_term;
+        }
 
         showScreen(step2);
 
@@ -851,8 +886,17 @@ function renderTemporarySCSPrograms() {
             program.id;
 
 
-        button.textContent =
-            program.name;
+        button.innerHTML = `<strong>${program.name}</strong>`;
+
+        if (appState.selection.goalType === "add-program") {
+            const choices = document.createElement("span");
+            choices.className = "program-type-choices";
+            choices.innerHTML = `
+                <span class="program-type-choice" data-program-type="additional_major">Additional Major</span>
+                <span class="program-type-choice" data-program-type="minor">Minor</span>
+            `;
+            button.appendChild(choices);
+        }
 
 
         // ----------------------------------------------------
@@ -861,7 +905,7 @@ function renderTemporarySCSPrograms() {
 
         button.addEventListener(
             "click",
-            () => {
+            event => {
 
                 // --------------------------------------------
                 // Clear previous program selection
@@ -897,6 +941,12 @@ function renderTemporarySCSPrograms() {
 
                 appState.selection.program =
                     program.id;
+
+                if (appState.selection.goalType === "add-program") {
+                    appState.selection.programType =
+                        event.target.dataset.programType || "additional_major";
+                    renderProgramComparison(program.id);
+                }
 
 
                 console.log(
@@ -966,6 +1016,7 @@ function resetProgramExplorer() {
 
     appState.selection.school = null;
     appState.selection.program = null;
+    appState.selection.programType = null;
 
 
     // Reset school dropdown.
@@ -992,7 +1043,11 @@ function resetProgramExplorer() {
 
 
     programOptions.innerHTML =
-        "";
+            "";
+
+    const comparison = document.getElementById("programComparison");
+    comparison.innerHTML = "";
+    comparison.classList.add("hidden");
 
 
     programSection
@@ -1070,7 +1125,7 @@ function updatePlanningGoal() {
 
     if (goalType === "add-program") {
         appState.goals = [{
-            type: "additional_major",
+            type: appState.selection.programType || "additional_major",
             college: school,
             program
         }];
@@ -1085,14 +1140,64 @@ function plannerKeyForGoal(goal) {
         "internal_transfer:robotics": "robotics-transfer",
         "additional_major:robotics": "robotics-additional-major"
     };
-    return keys[`${goal.type}:${goal.program}`] ?? null;
+    if (keys[`${goal.type}:${goal.program}`]) {
+        return keys[`${goal.type}:${goal.program}`];
+    }
+    const suffix = {
+        internal_transfer: "transfer",
+        additional_major: "additional-major",
+        minor: "minor"
+    }[goal.type];
+    return suffix ? `${goal.program}-${suffix}` : null;
+}
+
+async function renderProgramComparison(programId) {
+    const container = document.getElementById("programComparison");
+    container.classList.remove("hidden");
+    container.innerHTML = "Loading opportunity-cost comparison…";
+    const response = await fetch("/api/program-comparison", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            student: appState.student,
+            programs: [programId],
+            goal_types: ["additional_major", "minor"]
+        })
+    });
+    if (!response.ok) {
+        container.textContent = "Comparison could not be loaded.";
+        return;
+    }
+    const data = await response.json();
+    container.innerHTML = `
+        <p class="eyebrow">OPPORTUNITY COST · ${data.catalog_year}</p>
+        <div class="comparison-grid">
+            ${data.comparisons.map(item => `
+                <article class="comparison-card">
+                    <h3>${item.goal_type === "minor" ? "Minor" : "Additional Major"}</h3>
+                    <strong>${item.minimum_courses}+ courses · ≈${item.minimum_units}+ units</strong>
+                    <p>${item.potential_overlap_courses.length
+                        ? `${item.potential_overlap_courses.join(", ")} potentially overlap with your currently verified curriculum.`
+                        : "No overlap is confirmed from the currently verified subset."}</p>
+                    <p>${item.double_count_limit === null
+                        ? "Double-counting must be reviewed under program-specific rules."
+                        : `At most ${item.double_count_limit} courses may double-count under the published general rule.`}</p>
+                    <p>${item.eligibility}</p>
+                </article>
+            `).join("")}
+        </div>
+        <p class="history-helper">Catalog minimums are not a promised graduation plan. Elective choices and advisor decisions can increase the cost.</p>
+    `;
 }
 
 
 function buildPlanningRequest() {
     appState.constraints = {
         start_semester: document.getElementById("semester").value,
-        max_units: Number(document.getElementById("units").value)
+        max_units: Number(document.getElementById("units").value),
+        first_semester_max_units: 52,
+        semester_unit_limits: [],
+        planning_year: Number(document.getElementById("planningYear").value)
     };
 
     return {
@@ -1120,13 +1225,20 @@ async function loadBaseline() {
 
     const data = await response.json();
     appState.plannerKey = data.planner_key;
-    const requirementNames = data.baseline.requirements
-        .map(requirement => requirement.name)
-        .join(", ");
+    const genedHistory = document.getElementById("genedHistory");
+    genedHistory.innerHTML = data.baseline.requirements.map(requirement => `
+        <label class="course-option gened-option">
+            <input type="checkbox" value="${requirement.id}"
+                ${appState.student.completed_requirement_ids.includes(requirement.id) ? "checked" : ""}>
+            <span>
+                <strong>${requirement.name}</strong>
+                ${requirement.units} ${requirement.units === 1 ? "unit" : "units"} · ${requirement.timeline.source_text}
+            </span>
+        </label>
+    `).join("");
     baselineSummary.textContent =
-        `Current baseline: ${data.baseline.college} · ` +
-        `${data.baseline.total_units} due unit(s)` +
-        (requirementNames ? ` · ${requirementNames}` : "");
+        `${data.baseline.college} baseline · ` +
+        `${data.baseline.total_units} remaining units will be scheduled with your goal`;
 }
 
 
@@ -1141,13 +1253,37 @@ document
     )
     .addEventListener(
         "click",
-        () => {
+        async () => {
 
 
             updatePlanningGoal();
             appState.plannerKey = plannerKeyForGoal(appState.goals[0]);
 
             if (step3CourseData[appState.plannerKey]) {
+                renderCourseSelection(appState.plannerKey);
+                showScreen(step3);
+                loadBaseline();
+                return;
+            }
+
+            const goal = appState.goals[0];
+            if (goal && ["additional_major", "minor"].includes(goal.type)) {
+                const response = await fetch(
+                    `/api/programs/${goal.program}/${goal.type}`
+                );
+                if (!response.ok) {
+                    console.error("Program profile could not be loaded");
+                    return;
+                }
+                const detail = await response.json();
+                step3CourseData[appState.plannerKey] = {
+                    eyebrow: `SCS · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : "ADDITIONAL MAJOR"}`,
+                    title: "Which fixed requirements have you completed?",
+                    description: `Select completed fixed courses. This path also contains ${detail.profile.choice_slots} choice/elective requirement slots.`,
+                    courses: detail.fixed_courses,
+                    plannerNote: `Catalog ${detail.catalog_year}: comparison is ready. Semester planning will unlock after the ${detail.profile.choice_slots} choice/elective slots are selected.`,
+                    plannerReady: false
+                };
                 renderCourseSelection(appState.plannerKey);
                 showScreen(step3);
                 loadBaseline();
@@ -1308,7 +1444,6 @@ function renderCourseSelection(
             "plannerNote"
         );
 
-
     // --------------------------------------------------------
     // Update page copy.
     // --------------------------------------------------------
@@ -1331,6 +1466,27 @@ function renderCourseSelection(
 
     courseList.innerHTML =
         "";
+
+    if (pathKey === "cs-transfer") {
+        const noneLabel = document.createElement("label");
+        noneLabel.className = "course-option no-courses-option";
+        noneLabel.innerHTML = `
+            <input type="checkbox" id="noCompletedCourses">
+            <span>
+                <strong>No college courses completed yet</strong>
+                Best for incoming freshmen.
+            </span>
+        `;
+        courseList.appendChild(noneLabel);
+        noneLabel.querySelector("input").addEventListener("change", event => {
+            courseList
+                .querySelectorAll('input[type="checkbox"]:not(#noCompletedCourses)')
+                .forEach(input => {
+                    input.checked = false;
+                    input.disabled = event.target.checked;
+                });
+        });
+    }
 
 
     // --------------------------------------------------------
@@ -1510,7 +1666,7 @@ function renderPath(
         // ----------------------------------------------------
 
         const coursesHtml =
-            semester.courses
+            (semester.goal_courses ?? semester.courses)
 
                 .map(course => `
                     <div class="course">
@@ -1519,6 +1675,28 @@ function renderPath(
                 `)
 
                 .join("");
+        const currentMajorHtml = (semester.current_major_courses ?? [])
+            .map(course => `
+                <div class="course">
+                    ${course}
+                </div>
+            `)
+            .join("");
+        const sharedHtml = (semester.shared_courses ?? [])
+            .map(course => `
+                <div class="course shared-course">
+                    ${course} <span>Counts toward both paths</span>
+                </div>
+            `)
+            .join("");
+        const baselineHtml = (semester.baseline_requirements ?? [])
+            .map(requirement => `
+                <div class="baseline-slot">
+                    <span>${requirement.name}</span>
+                    <span>${requirement.units}u</span>
+                </div>
+            `)
+            .join("");
 
 
         // ----------------------------------------------------
@@ -1539,18 +1717,43 @@ function renderPath(
             </div>
 
 
-            ${coursesHtml}
+            <div class="semester-section-label">Goal courses</div>
+            ${coursesHtml || '<div class="semester-empty">None scheduled</div>'}
+
+            <div class="semester-section-label">Current major</div>
+            ${currentMajorHtml || '<div class="semester-empty">None scheduled</div>'}
+
+            <div class="semester-section-label">Shared — current + goal</div>
+            ${sharedHtml || '<div class="semester-empty">None scheduled</div>'}
+
+            <div class="semester-section-label">Baseline / GenEd requirements</div>
+            ${baselineHtml || '<div class="semester-empty">None scheduled</div>'}
 
 
             <div class="units">
 
-                ${semester.units}
-                goal units
+                ${semester.goal_units ?? semester.units} goal +
+                ${semester.current_major_units ?? 0} current major +
+                ${semester.shared_units ?? 0} shared +
+                ${semester.baseline_units ?? 0} baseline =
+                ${semester.total_units ?? semester.units} total units
 
+            </div>
+
+            <div class="free-choice">
+                ${semester.free_choice_units === null
+                    ? "No planner hard limit for additional electives"
+                    : `${semester.free_choice_units} units available for math or other electives`}
             </div>
 
 
             <div class="semester-metrics">
+
+                ${semester.workload.warning_level === "high" ? `
+                    <div class="workload-warning">
+                        High academic workload: ${semester.workload.high_intensity_courses.join(", ")}
+                    </div>
+                ` : ""}
 
                 <div>
 
@@ -1656,7 +1859,7 @@ document
 
             const checkedCourses =
                 document.querySelectorAll(
-                    '.course-option input[type="checkbox"]:checked'
+                    '#courseList .course-option input[type="checkbox"]:checked:not(#noCompletedCourses)'
                 );
 
 
@@ -1672,6 +1875,9 @@ document
 
             appState.student.completed_courses =
                 completedCourses;
+            appState.student.completed_requirement_ids = Array.from(
+                document.querySelectorAll('#genedHistory input[type="checkbox"]:checked')
+            ).map(input => input.value);
 
             // #endregion
 
@@ -1832,6 +2038,8 @@ document
 
             renderGoalName();
 
+            renderOverlapSummary(data.overlap_summary);
+
             // #endregion
 
 
@@ -1951,6 +2159,20 @@ function renderPathExplanation(
 
 }
 
+
+function renderOverlapSummary(summary) {
+    const container = document.getElementById("overlapSummary");
+    if (!summary || !summary.courses.length) {
+        container.classList.add("hidden");
+        return;
+    }
+    container.classList.remove("hidden");
+    container.innerHTML = `
+        <strong>${summary.courses.length} shared courses make this path more efficient</strong>
+        <p>${summary.courses.join(", ")} advance both your current major and transfer goal (${summary.units} units scheduled once).</p>
+        <p class="history-helper">Based on the currently verified subset of your current-major curriculum.</p>
+    `;
+}
 
 
 // ------------------------------------------------------------

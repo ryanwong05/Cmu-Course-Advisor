@@ -1064,3 +1064,248 @@ The product should always be able to answer:
 > Are you still on track?
 
 If a feature does not help answer one of these questions, it is probably not a priority.
+
+---
+
+# 23. Placeholder and Incomplete Feature Registry
+
+This registry records behavior that appears in the product but is not yet a
+complete, authoritative implementation. A placeholder must never silently
+become a permanent academic rule.
+
+## Status Vocabulary
+
+Use one of these statuses in data, code comments, tests, and this registry:
+
+```text
+verified       Backed by a current authoritative source and tested.
+partial        Real implementation, but only some programs or cases are covered.
+placeholder    Temporary behavior used to support the current prototype.
+estimated      Derived from incomplete or non-authoritative evidence.
+not_configured The option is visible, but the planner cannot generate it yet.
+blocked        Cannot be completed until a named data source or policy is obtained.
+```
+
+Every `placeholder`, `partial`, or `estimated` feature should record:
+
+```text
+Current behavior
+Why it exists
+What it cannot claim
+Replacement data or logic
+User-facing disclosure
+```
+
+## Current Registry
+
+### P-001 — Supported Academic Goals
+
+- **Status:** `partial`
+- **Current behavior:** The interface can show several SCS programs, but only
+  configured requirement keys can generate a plan.
+- **Cannot claim:** That every visible major, minor, additional major, or
+  transfer path is supported.
+- **Replacement:** Add verified program requirements, prerequisites, policies,
+  and tests one program at a time.
+- **Disclosure:** Show `Not configured yet` instead of generating an inferred
+  plan.
+
+### P-002 — Current-Major Curriculum
+
+- **Status:** `partial`
+- **Current behavior:** The planner can reserve the Stats/ML calculus foundation
+  (`21-120`) as a current-major course. The baseline also contains selected
+  Dietrich GenEd slots, but the rest of the current-major curriculum is not yet
+  loaded.
+- **Cannot claim:** That a transfer plan leaves enough space to make normal
+  progress in the student's current major.
+- **Replacement:** First implement the verified Statistics & Machine Learning
+  curriculum, including required groups, alternatives, prerequisites, and
+  recommended timing. Then add other current majors incrementally.
+- **Disclosure:** Label available units as unallocated space, not truly free
+  elective units, until current-major requirements are loaded.
+
+### P-003 — Dietrich GenEd Coverage
+
+- **Status:** `partial`
+- **Current behavior:** Planning currently loads the early baseline through
+  Year 2 and schedules requirement slots rather than concrete courses.
+- **Cannot claim:** That the displayed slots represent the complete 115-unit
+  Dietrich GenEd curriculum or that a specific course satisfies a slot.
+- **Replacement:** Model all categories, approved course options, timelines,
+  cohort rules, and double-counting policies from official sources.
+- **Disclosure:** Continue displaying these as requirement slots.
+
+### P-004 — Experiential Learning
+
+- **Status:** `partial`
+- **Current behavior:** Represented as a one-unit slot after the first semester;
+  the known scraper error mapping it to `36-200` has been removed.
+- **Known gap:** It applies only to eligible cohorts (beginning with the Class
+  of 2028), and its one unit should not consume the normal semester maximum.
+- **Replacement:** Add entry year / graduation cohort and a
+  `counts_toward_semester_limit` field.
+- **Disclosure:** Do not present it as a conventional scheduled course.
+
+### P-005 — Semester Unit Limits
+
+- **Status:** `placeholder`
+- **Current behavior:** `52` is the current user-facing default capacity.
+- **Cannot claim:** That 52 is a universal official maximum for every student
+  and every semester.
+- **Replacement:** Separate official limit, preferred workload, approved
+  overload, and per-semester overrides. Confirm policies by cohort and student
+  standing.
+- **Disclosure:** Describe 52 as a planner setting until policy data is verified.
+
+### P-006 — Course Difficulty and Workload
+
+- **Status:** `estimated`
+- **Current behavior:** Every course currently supported by the planner has an
+  explicit `standard`, `demanding`, or `high_intensity` tier. Three
+  high-intensity courses are blocked from the same semester; two are allowed
+  with a prominent warning. Results also display estimated workload,
+  difficulty, stress, and weekly hours.
+- **Cannot claim:** That a numerical score predicts how difficult the course
+  will be for an individual student.
+- **Replacement:** Store source-backed course workload plus broad intensity
+  tiers (`standard`, `demanding`, `high_intensity`). Later personalize using
+  preparation, prior courses, interests, and opt-in feedback.
+- **Current policy:** Three high-intensity courses in one semester are blocked;
+  two produce a prominent high-workload warning. This rule remains configurable
+  until validated with advisors and student testing.
+- **Data limitation:** ScottyLabs CMU Courses exposes FCE data only to signed-in
+  users. Current values remain `estimated`; they must not be labeled as FCE
+  observations until an authorized import includes semester range, respondent
+  count, and retrieval date.
+- **Disclosure:** Mark values as estimates and explain their inputs.
+
+### P-007 — Placement, AP, IB, and Transfer Credit
+
+- **Status:** `partial`
+- **Current behavior:** Students check SIO and mark `21-120` as completed in the
+  same course-history checklist used for other relevant courses. The planner
+  does not ask how the credit or waiver was earned.
+- **Cannot claim:** That selecting a course always grants units or satisfies all
+  downstream degree rules.
+- **Replacement:** Model separate outcomes:
+  `completed_course`, `transfer_credit`, `placement_only`,
+  `requirement_waiver`, and `not_completed`. Ask only about courses relevant to
+  the selected current-major and goal pair.
+- **Product decision:** Credit source and awarded-unit auditing stay in SIO;
+  this product only needs the resulting course/requirement status.
+- **Remaining priority cases:** Apply the same simple pattern to introductory
+  programming, data analysis, and mathematical foundations.
+
+### P-008 — Prerequisites and Course Availability
+
+- **Status:** `partial`
+- **Current behavior:** The supported CS path uses a limited prerequisite graph.
+- **Cannot claim:** That every planned course is offered in the displayed term,
+  has available seats, or includes every co-requisite and grade requirement.
+- **Replacement:** Add verified prerequisites, co-requisites, Fall/Spring
+  offering patterns, minimum grades, and later live availability where possible.
+- **Disclosure:** Separate `academically eligible` from `confirmed available`.
+
+### P-009 — Cross-Program Overlap and Double Counting
+
+- **Status:** `partial`
+- **Current behavior:** For the verified Stats/ML subset and CS transfer pair,
+  the planner identifies `15-112`, `15-122`, and `21-127` as shared courses,
+  schedules each once, counts its units once, prioritizes it within the combined
+  path, and explains the overlap in Results.
+- **Cannot claim:** That every shared course is legally double-countable under
+  both programs' policies.
+- **Replacement:** Map each course to requirement slots, distinguish
+  `advances_both_paths` from `officially_double_countable`, and encode program
+  policy limits. Prioritize shared courses before unique goal courses when safe.
+- **Remaining work:** Expand the full Stats/ML curriculum and encode formal
+  double-counting policies. Shared requirement membership does not by itself
+  prove that a department permits double counting.
+
+### P-010 — Math Course Recommendation
+
+- **Status:** `placeholder`
+- **Current behavior:** Results report space available for math but do not select
+  a justified course.
+- **Cannot claim:** That `21-241` is required for every Statistics & Machine
+  Learning student.
+- **Replacement:** Model alternative requirement groups such as
+  `21-240 | 21-241 | 21-242`, prerequisites, student preparation, and preference
+  for applied versus theoretical mathematics.
+- **Disclosure:** Show a generic math slot until a choice is supported.
+
+### P-011 — Free or Reserved Units
+
+- **Status:** `placeholder`
+- **Current behavior:** Remaining capacity is described as available for math or
+  electives.
+- **Cannot claim:** That this space is genuinely free before the complete
+  current-major curriculum, GenEd curriculum, and graduation-unit requirement
+  are included.
+- **Replacement:** Divide space into current-major, GenEd, goal, shared,
+  reserved/elective, and truly unallocated units.
+- **Disclosure:** Use `unallocated units` instead of `free units` for now.
+
+### P-012 — Plan Horizon and Completion
+
+- **Status:** `placeholder`
+- **Current behavior:** Fastest and lower-workload paths use fixed planning
+  horizons.
+- **Cannot claim:** That courses listed as remaining are impossible to schedule
+  or that a goal is infeasible.
+- **Replacement:** Derive the horizon from the student's starting term,
+  graduation target, goal deadline, and remaining prerequisite chain.
+- **Disclosure:** Explain when results are outside the currently displayed
+  horizon.
+
+### P-013 — Transfer Feasibility and GPA
+
+- **Status:** `partial`
+- **Current behavior:** The engine schedules required courses but does not model
+  the required transfer-course QPA, overall QPA, application timing, seat
+  availability, or committee review.
+- **Cannot claim:** That completing a generated course path guarantees transfer.
+- **Replacement:** Add verified thresholds, grade scenarios, application dates,
+  and non-course milestones without inventing an admission probability.
+- **Disclosure:** Call the result a course plan, not a transfer guarantee.
+
+### P-014 — Standardized Course-Catalog Ingestion
+
+- **Status:** `partial`
+- **Current behavior:** Program and Dietrich GenEd pages have dedicated parsers;
+  course prerequisites are still curated in `courses.json`. The prerequisite
+  model now supports typed `any_of` and `all_of` expressions with minimum-grade
+  metadata, but grades are not yet collected from students.
+- **Cannot claim:** That every prerequisite was automatically discovered or
+  that a raw scrape is safe to publish directly to the planner.
+- **Replacement pipeline:**
+
+```text
+Official source registry
+→ dated raw snapshot
+→ source-specific extraction
+→ normalized prerequisite expression (AND / OR / grade / co-requisite)
+→ schema validation
+→ regression fixtures
+→ explicit human overrides with reasons
+→ reviewed production dataset
+```
+
+- **Required provenance:** Store source URL, catalog year, retrieval date,
+  parser version, source text, verification status, and any override reason.
+- **Failure policy:** A parse ambiguity becomes `needs_review`; it must never be
+  converted into an empty prerequisite list.
+- **Change detection:** Re-scrapes produce a reviewable diff and do not replace
+  production data automatically.
+
+## Maintenance Rule
+
+Whenever a new placeholder is introduced:
+
+1. Add it to this registry in the same change.
+2. Give it a stable ID and explicit status.
+3. Add a user-facing disclosure if it can affect a recommendation.
+4. Add at least one test that prevents the placeholder from being presented as
+   verified fact.
+5. Update or remove the entry when authoritative data replaces it.

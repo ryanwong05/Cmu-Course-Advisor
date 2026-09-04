@@ -1,50 +1,10 @@
 {
-  "15-112": {
-    "workload": 3.5,
-    "difficulty": 3.2,
-    "stress": 3.3,
-    "hours_per_week": 8
-  },
-
-  "21-127": {
-    "workload": 4.0,
-    "difficulty": 4.2,
-    "stress": 4.0,
-    "hours_per_week": 10
-  },
-
-  "15-122": {
-    "workload": 4.3,
-    "difficulty": 4.0,
-    "stress": 4.2,
-    "hours_per_week": 12
-  },
-
-  "15-150": {
-    "workload": 4.1,
-    "difficulty": 4.2,
-    "stress": 4.0,
-    "hours_per_week": 11
-  },
-
-  "15-210": {
-    "workload": 4.4,
-    "difficulty": 4.4,
-    "stress": 4.3,
-    "hours_per_week": 13
-  },
-
-  "15-213": {
-    "workload": 4.5,
-    "difficulty": 4.2,
-    "stress": 4.5,
-    "hours_per_week": 14
-  },
-
-  "15-251": {
-    "workload": 4.5,
-    "difficulty": 4.7,
-    "stress": 4.5,
-    "hours_per_week": 14
-  }
+  "21-120": {"workload": 3.2, "difficulty": 3.2, "stress": 3.0, "hours_per_week": 8, "intensity": "standard", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "15-112": {"workload": 3.5, "difficulty": 3.2, "stress": 3.3, "hours_per_week": 8, "intensity": "standard", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "21-127": {"workload": 4.0, "difficulty": 4.2, "stress": 4.0, "hours_per_week": 10, "intensity": "demanding", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "15-122": {"workload": 4.3, "difficulty": 4.0, "stress": 4.2, "hours_per_week": 12, "intensity": "demanding", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "15-150": {"workload": 4.1, "difficulty": 4.2, "stress": 4.0, "hours_per_week": 11, "intensity": "demanding", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "15-210": {"workload": 4.4, "difficulty": 4.4, "stress": 4.3, "hours_per_week": 13, "intensity": "high_intensity", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "15-213": {"workload": 4.5, "difficulty": 4.2, "stress": 4.5, "hours_per_week": 14, "intensity": "high_intensity", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"},
+  "15-251": {"workload": 4.5, "difficulty": 4.7, "stress": 4.5, "hours_per_week": 14, "intensity": "high_intensity", "source_status": "estimated", "source": "prototype estimate; replace with authenticated FCE aggregate"}
 }

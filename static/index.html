@@ -17,7 +17,7 @@
 
     <link
         rel="stylesheet"
-        href="style.css"
+        href="style.css?v=20260903-program-compare"
     >
 
 </head>
@@ -98,6 +98,14 @@
         </p>
 
 
+
+        <label>
+            Student stage
+            <select id="enrollmentStatus">
+                <option value="precollege">Incoming freshman — not enrolled yet</option>
+                <option value="enrolled" selected>Current CMU student</option>
+            </select>
+        </label>
 
         <!-- COLLEGE -->
 
@@ -185,6 +193,14 @@
 
             </select>
 
+        </label>
+
+        <label>
+            Current term
+            <select id="currentTerm">
+                <option value="fall">Fall</option>
+                <option value="spring">Spring</option>
+            </select>
         </label>
 
 
@@ -488,6 +504,8 @@
                 >
                 </div>
 
+                <div id="programComparison" class="comparison-panel hidden"></div>
+
             </div>
 
 
@@ -590,9 +608,23 @@
         >
         </div>
 
-
+        <div class="history-section">
+            <p class="eyebrow">COMPLETED BASELINE / GENED</p>
+            <p class="history-helper">Select requirement slots you have already completed. Course history alone does not guess these.</p>
+            <div class="course-list" id="genedHistory"></div>
+        </div>
 
         <div class="settings-row">
+
+            <label>
+                Plan for year
+                <select id="planningYear">
+                    <option value="1">Freshman year</option>
+                    <option value="2">Sophomore year</option>
+                    <option value="3">Junior year</option>
+                    <option value="4">Senior year</option>
+                </select>
+            </label>
 
             <label>
 
@@ -615,12 +647,12 @@
 
             <label>
 
-                Max goal units / semester
+                Max total units after first semester
 
                 <input
                     id="units"
                     type="number"
-                    value="24"
+                    value="52"
                     min="1"
                     max="60"
                 >
@@ -777,7 +809,7 @@
 
         </div>
 
-
+        <div class="overlap-summary hidden" id="overlapSummary"></div>
 
         <!-- ================================================
              FASTEST PATH
@@ -907,7 +939,7 @@
      so the prototype remains stable.
      ========================================================== -->
 
-<script src="app.js?v=20260831-robotics"></script>
+<script src="app.js?v=20260903-program-compare"></script>
 
 <!-- #endregion -->
 
