@@ -1,0 +1,20 @@
+{
+  "catalog_year": "2026-2027",
+  "source_url": "https://www.cmu.edu/hub/registrar/registration/ap-transfer-credit.html",
+  "policy": "Only official course equivalencies are treated as completed courses. Placement-only and attainment-exam outcomes require confirmation.",
+  "course_awards": {
+    "21-120": ["AP Calculus AB: 5", "AP Calculus BC: 5", "IB Mathematics HL: 6 or 7"],
+    "21-122": ["AP Calculus BC: 5", "IB Mathematics HL: 7"],
+    "15-110": ["AP Computer Science A: 4", "AP Computer Science Principles: 4 or 5"],
+    "15-112": ["AP Computer Science A: 5", "IB Computer Science HL: 6 or 7"],
+    "36-200": ["AP Statistics: 5"],
+    "09-105": ["AP Chemistry: 5", "IB Chemistry HL: 7"],
+    "33-141": ["AP Physics C—Mechanics: 5", "IB Physics HL: 7"],
+    "03-121": ["AP Biology: 4 or 5 plus CMU attainment exam", "IB Biology HL: 6 or 7 plus CMU attainment exam"]
+  },
+  "non_equivalent_awards": {
+    "85-110/85-150/85-213": "AP Psychology and IB Psychology award 85-011/85-012; the catalog does not list them as direct substitutes for these HCI/AI choices.",
+    "21-127/21-128/15-151": "No direct AP/IB course equivalency is listed; placement or advisor-approved transfer credit must be recorded separately.",
+    "upper_level_courses": "CMU's published AP/IB tables do not directly award the 200–500 level program core courses not explicitly listed above."
+  }
+}

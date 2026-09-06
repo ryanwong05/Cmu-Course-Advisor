@@ -7,6 +7,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 COLLEGE_REQUIREMENTS_PATH = (
     PROJECT_ROOT
     / "Data"
+    / "scraped"
     / "scraped_college_requirements.json"
 )
 

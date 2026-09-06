@@ -1,0 +1,7 @@
+[
+  {"id":"artificial-intelligence","name":"Artificial Intelligence","college":"scs","available_goal_types":["internal_transfer","additional_major","minor"],"catalog_year":"2026-2027","source_url":"https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/"},
+  {"id":"computational-biology","name":"Computational Biology","college":"scs","available_goal_types":["internal_transfer","additional_major","minor"],"catalog_year":"2026-2027","source_url":"https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/"},
+  {"id":"computer-science","name":"Computer Science","college":"scs","available_goal_types":["internal_transfer","additional_major","minor"],"catalog_year":"2026-2027","source_url":"https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/"},
+  {"id":"human-computer-interaction","name":"Human-Computer Interaction","college":"scs","available_goal_types":["internal_transfer","additional_major","minor"],"catalog_year":"2026-2027","source_url":"https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/"},
+  {"id":"robotics","name":"Robotics","college":"scs","available_goal_types":["internal_transfer","additional_major","minor"],"catalog_year":"2026-2027","source_url":"https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/"}
+]

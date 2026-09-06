@@ -7,7 +7,9 @@ from bs4 import BeautifulSoup
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT_PATH = (PROJECT_ROOT / "Data" / "scraped_programs.json")
+DEFAULT_OUTPUT_PATH = (
+    PROJECT_ROOT / "Data" / "scraped" / "scraped_programs.json"
+)
 COLLEGE_OUTPUT_PATH = (PROJECT_ROOT/ "Data"/ "scraped_college_requirements.json")
 
 PROGRAM_SOURCES = [

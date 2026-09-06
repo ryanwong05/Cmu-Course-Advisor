@@ -9,7 +9,7 @@ from Engine.requirements import check_requirements
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-DATA_DIR = PROJECT_ROOT / "Data"
+DATA_DIR = PROJECT_ROOT / "Data" / "processed"
 
 
 def load_json(path):

@@ -1,0 +1,163 @@
+[
+  {
+    "id": "21-120",
+    "name": "Differential and Integral Calculus",
+    "units": 10,
+    "prerequisites": [],
+    "offered": ["fall", "spring"],
+    "minimum_year": 1
+  },
+  {
+    "id": "15-112",
+    "name": "Fundamentals of Programming and Computer Science",
+    "units": 12,
+    "prerequisites": [],
+    "offered": ["fall", "spring"],
+    "minimum_year": 1
+  },
+  {
+    "id": "21-127",
+    "name": "Concepts of Mathematics",
+    "units": 12,
+    "prerequisites": [],
+    "prerequisite_expression": {
+      "type": "any_of",
+      "options": [
+        {"course_id": "15-112", "minimum_grade": "C"},
+        {"course_id": "02-120", "minimum_grade": "C"},
+        {"course_id": "21-108", "minimum_grade": "C"},
+        {"course_id": "21-090", "minimum_grade": "A"},
+        {"course_id": "21-120", "minimum_grade": "C"},
+        {"course_id": "21-112", "minimum_grade": "C"}
+      ],
+      "source_status": "verified",
+      "catalog_year": "2026-2027"
+    },
+    "offered": ["fall", "spring"],
+    "minimum_year": 1
+  },
+  {
+    "id": "15-122",
+    "name": "Principles of Imperative Computation",
+    "units": 12,
+    "prerequisites": ["15-112"],
+    "offered": ["fall", "spring"],
+    "minimum_year": 1
+  },
+  {
+    "id": "15-150",
+    "name": "Principles of Functional Programming",
+    "units": 12,
+    "prerequisites": ["21-127"],
+    "offered": ["fall", "spring"],
+    "minimum_year": 1
+  },
+  {
+    "id": "15-210",
+    "name": "Parallel and Sequential Data Structures and Algorithms",
+    "units": 12,
+    "prerequisites": ["15-150"],
+    "offered": ["fall", "spring"],
+    "minimum_year": 2
+  },
+  {
+    "id": "15-213",
+    "name": "Introduction to Computer Systems",
+    "units": 12,
+    "prerequisites": ["15-122"],
+    "offered": ["fall", "spring"],
+    "minimum_year": 2
+  },
+  {
+    "id": "15-251",
+    "name": "Great Ideas in Theoretical Computer Science",
+    "units": 12,
+    "prerequisites": ["15-150", "21-127"],
+    "offered": ["fall", "spring"],
+    "minimum_year": 2
+  },
+  {
+    "id": "21-122", "name": "Integration and Approximation", "units": 10,
+    "prerequisites": ["21-120"], "offered": ["fall", "spring"], "minimum_year": 1
+  },
+  {
+    "id": "21-241", "name": "Matrices and Linear Transformations", "units": 11,
+    "prerequisites": ["21-122"], "offered": ["fall", "spring"], "minimum_year": 1
+  },
+  {
+    "id": "21-259", "name": "Calculus in Three Dimensions", "units": 10,
+    "prerequisites": ["21-122"], "offered": ["fall", "spring"], "minimum_year": 2
+  },
+  {
+    "id": "15-451", "name": "Algorithm Design and Analysis", "units": 12,
+    "prerequisites": ["15-210", "15-251"], "offered": ["fall", "spring"], "minimum_year": 3
+  },
+  {
+    "id": "36-401", "name": "Modern Regression", "units": 9,
+    "prerequisites": [], "offered": ["spring"], "minimum_year": 3, "prerequisite_data_status": "pending_catalog_expression"
+  },
+  {
+    "id": "07-280", "name": "Artificial Intelligence and Machine Learning I", "units": 12,
+    "prerequisites": ["15-122"], "offered": ["fall", "spring"], "minimum_year": 2
+  },
+  {
+    "id": "07-380", "name": "Artificial Intelligence and Machine Learning II", "units": 12,
+    "prerequisites": ["07-280"], "offered": ["fall", "spring"], "minimum_year": 3
+  },
+  {
+    "id": "09-105", "name": "Introduction to Modern Chemistry I", "units": 10,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 1
+  },
+  {
+    "id": "33-121", "name": "Physics I for Science Students", "units": 12,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 1
+  },
+  {
+    "id": "03-221", "name": "Genomes, Evolution, and Disease", "units": 9,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 2, "prerequisite_data_status": "pending_catalog_expression"
+  },
+  {
+    "id": "03-232", "name": "Biochemistry I", "units": 9,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 2, "prerequisite_data_status": "pending_catalog_expression"
+  },
+  {
+    "id": "03-320", "name": "Cell Biology", "units": 9,
+    "prerequisites": ["03-232"], "offered": ["fall", "spring"], "minimum_year": 3
+  },
+  {
+    "id": "02-135", "name": "Computational Biology and Society", "units": 3,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 1
+  },
+  {
+    "id": "02-402", "name": "Computational Biology Seminar", "units": 3,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 3
+  },
+  {
+    "id": "02-510", "name": "Computational Genomics", "units": 12,
+    "prerequisites": [], "offered": ["fall"], "minimum_year": 3, "prerequisite_data_status": "pending_catalog_expression"
+  },
+  {
+    "id": "02-512", "name": "Computational Methods for Biological Modeling and Simulation", "units": 9,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 3, "prerequisite_data_status": "pending_catalog_expression"
+  },
+  {
+    "id": "05-360", "name": "Interaction Design Fundamentals", "units": 12,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 2
+  },
+  {
+    "id": "05-391", "name": "Designing Human Centered Software", "units": 12,
+    "prerequisites": [], "offered": ["fall", "spring"], "minimum_year": 2, "prerequisite_data_status": "pending_catalog_expression"
+  },
+  {
+    "id": "05-410", "name": "User-Centered Research and Evaluation", "units": 12,
+    "prerequisites": [], "offered": ["fall"], "minimum_year": 3
+  },
+  {
+    "id": "05-571", "name": "Undergraduate Project in HCI", "units": 12,
+    "prerequisites": ["05-360", "05-410"], "offered": ["spring"], "minimum_year": 4
+  },
+  {
+    "id": "16-450", "name": "Robotics Systems Engineering", "units": 12,
+    "prerequisites": [], "offered": ["fall"], "minimum_year": 4
+  }
+]

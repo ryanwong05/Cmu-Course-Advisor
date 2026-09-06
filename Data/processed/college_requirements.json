@@ -1,0 +1,31 @@
+{
+  "dietrich": {
+    "status": "placeholder",
+    "requirements": []
+  },
+
+  "scs": {
+    "status": "placeholder",
+    "requirements": []
+  },
+
+  "engineering": {
+    "status": "placeholder",
+    "requirements": []
+  },
+
+  "mcs": {
+    "status": "placeholder",
+    "requirements": []
+  },
+
+  "tepper": {
+    "status": "placeholder",
+    "requirements": []
+  },
+
+  "cfa": {
+    "status": "placeholder",
+    "requirements": []
+  }
+}
