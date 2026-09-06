@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "updated_at": "2026-04-07",
+  "status": "manual_curated_from_fce_and_public_cmu_sources",
+  "legacy_code_map": {
+    "ISR": "S3D",
+    "IPS": "CST",
+    "ISH": "ISP",
+    "ML": "LCL"
+  },
+  "manual_prefix_map": {
+    "17": "S3D",
+    "32": "ROTC",
+    "67": "ISP",
+    "69": "ATH",
+    "82": "LCL",
+    "84": "CST",
+    "90": "PPP",
+    "92": "PMP",
+    "93": "AEM",
+    "94": "HC",
+    "95": "ISM"
+  },
+  "departments": [
+    {
+      "dept_code": "AEM",
+      "dept_full_name": "Arts, Entertainment, and Media Management",
+      "school_or_college": "Heinz College",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Heinz arts management / entertainment-related courses."
+    },
+    {
+      "dept_code": "ARC",
+      "dept_full_name": "Architecture",
+      "school_or_college": "College of Fine Arts",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "School of Architecture."
+    },
+    {
+      "dept_code": "ART",
+      "dept_full_name": "Art",
+      "school_or_college": "College of Fine Arts",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "School of Art."
+    },
+    {
+      "dept_code": "ATH",
+      "dept_full_name": "Athletics and Physical Education",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [
+        "Department of Athletics and Physical Education"
+      ],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Official CMU course catalog label for 69-prefix physical education and athletics courses."
+    },
+    {
+      "dept_code": "BMD",
+      "dept_full_name": "Biomedical Engineering",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Biomedical Engineering courses."
+    },
+    {
+      "dept_code": "BSC",
+      "dept_full_name": "Biological Sciences",
+      "school_or_college": "Mellon College of Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Biological Sciences."
+    },
+    {
+      "dept_code": "BUS",
+      "dept_full_name": "Business",
+      "school_or_college": "Tepper School of Business",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Tepper business courses."
+    },
+    {
+      "dept_code": "BXA",
+      "dept_full_name": "BXA Intercollege Degree Programs",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Intercollege BXA programs."
+    },
+    {
+      "dept_code": "CAS",
+      "dept_full_name": "Center for the Arts in Society",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Inferred from course themes and CMU CAS naming."
+    },
+    {
+      "dept_code": "CB",
+      "dept_full_name": "Computational Biology",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Computational Biology / Comp Bio program."
+    },
+    {
+      "dept_code": "CEE",
+      "dept_full_name": "Civil and Environmental Engineering",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Civil and Environmental Engineering."
+    },
+    {
+      "dept_code": "CFA",
+      "dept_full_name": "College of Fine Arts Interdisciplinary",
+      "school_or_college": "College of Fine Arts",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "CFA interdisciplinary/shared courses."
+    },
+    {
+      "dept_code": "CHE",
+      "dept_full_name": "Chemical Engineering",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Chemical Engineering courses."
+    },
+    {
+      "dept_code": "CIT",
+      "dept_full_name": "Carnegie Institute of Technology Interdisciplinary",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "CIT-wide or interdisciplinary engineering courses."
+    },
+    {
+      "dept_code": "CMU",
+      "dept_full_name": "Carnegie Mellon University-Wide Studies",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "University-wide courses."
+    },
+    {
+      "dept_code": "CMY",
+      "dept_full_name": "Chemistry",
+      "school_or_college": "Mellon College of Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Chemistry courses."
+    },
+    {
+      "dept_code": "CS",
+      "dept_full_name": "Computer Science",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Computer Science Department."
+    },
+    {
+      "dept_code": "CST",
+      "dept_full_name": "Carnegie Mellon Institute for Strategy and Technology",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Web-verified via CMU course catalog search."
+    },
+    {
+      "dept_code": "DES",
+      "dept_full_name": "Design",
+      "school_or_college": "College of Fine Arts",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "School of Design."
+    },
+    {
+      "dept_code": "DRA",
+      "dept_full_name": "Drama",
+      "school_or_college": "College of Fine Arts",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "School of Drama."
+    },
+    {
+      "dept_code": "ECE",
+      "dept_full_name": "Electrical and Computer Engineering",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Web-verified via CMU course catalog search."
+    },
+    {
+      "dept_code": "ECO",
+      "dept_full_name": "Economics",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Economics."
+    },
+    {
+      "dept_code": "ENG",
+      "dept_full_name": "English",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of English."
+    },
+    {
+      "dept_code": "EPP",
+      "dept_full_name": "Engineering and Public Policy",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Engineering and Public Policy."
+    },
+    {
+      "dept_code": "ETC",
+      "dept_full_name": "Entertainment Technology Center",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Entertainment Technology Center courses."
+    },
+    {
+      "dept_code": "H00",
+      "dept_full_name": "Humanities Scholars / Dietrich Interdisciplinary Humanities",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Inferred from Humanities Scholars and Dietrich interdisciplinary course listings."
+    },
+    {
+      "dept_code": "HC",
+      "dept_full_name": "Heinz College",
+      "school_or_college": "Heinz College",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Generic Heinz College designation; includes Decision Analytics and Systems examples."
+    },
+    {
+      "dept_code": "HCI",
+      "dept_full_name": "Human-Computer Interaction",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Human-Computer Interaction Institute."
+    },
+    {
+      "dept_code": "HIS",
+      "dept_full_name": "History",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of History."
+    },
+    {
+      "dept_code": "HSS",
+      "dept_full_name": "Humanities and Social Sciences Interdisciplinary",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "General/interdisciplinary H&SS courses."
+    },
+    {
+      "dept_code": "ICT",
+      "dept_full_name": "Information and Communication Technology",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "ICT / software development related courses."
+    },
+    {
+      "dept_code": "III",
+      "dept_full_name": "Integrated Innovation Institute",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Web-verified through CMU Integrated Innovation Institute / EDIE references."
+    },
+    {
+      "dept_code": "INI",
+      "dept_full_name": "Information Networking Institute",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "INI courses."
+    },
+    {
+      "dept_code": "IPS",
+      "dept_full_name": "Institute for Politics and Strategy",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Older/common name; overlaps with newer CMIST naming in catalog."
+    },
+    {
+      "dept_code": "ISH",
+      "dept_full_name": "Information Systems",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Information Systems-related courses; likely local label variant in FCE export."
+    },
+    {
+      "dept_code": "ISM",
+      "dept_full_name": "Information Systems Management",
+      "school_or_college": "Heinz College",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Heinz Information Systems Management courses."
+    },
+    {
+      "dept_code": "ISP",
+      "dept_full_name": "Information Systems Program",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Web-verified via CMU course catalog search."
+    },
+    {
+      "dept_code": "ISR",
+      "dept_full_name": "Information Security, Privacy, and Policy",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Security/privacy/policy course cluster; FCE label may predate newer S3D/CMIST structures."
+    },
+    {
+      "dept_code": "LCL",
+      "dept_full_name": "Languages, Cultures and Applied Linguistics",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Languages, Cultures & Applied Linguistics."
+    },
+    {
+      "dept_code": "LTI",
+      "dept_full_name": "Language Technologies Institute",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Language Technologies Institute."
+    },
+    {
+      "dept_code": "MCS",
+      "dept_full_name": "Mellon College of Science Interdisciplinary",
+      "school_or_college": "Mellon College of Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "General/interdisciplinary MCS courses."
+    },
+    {
+      "dept_code": "MEG",
+      "dept_full_name": "Mechanical Engineering",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Mechanical Engineering courses."
+    },
+    {
+      "dept_code": "ML",
+      "dept_full_name": "Modern Languages",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Legacy/short label for modern languages courses."
+    },
+    {
+      "dept_code": "MLG",
+      "dept_full_name": "Machine Learning",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Machine Learning Department."
+    },
+    {
+      "dept_code": "MSC",
+      "dept_full_name": "Mathematical Sciences",
+      "school_or_college": "Mellon College of Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Mathematical Sciences / mathematics course prefix."
+    },
+    {
+      "dept_code": "MSE",
+      "dept_full_name": "Materials Science and Engineering",
+      "school_or_college": "Carnegie Institute of Technology",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Materials Science and Engineering."
+    },
+    {
+      "dept_code": "MUS",
+      "dept_full_name": "Music",
+      "school_or_college": "College of Fine Arts",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "School of Music."
+    },
+    {
+      "dept_code": "NSI",
+      "dept_full_name": "Neuroscience Institute",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Neuroscience Institute / neural computation related courses."
+    },
+    {
+      "dept_code": "PHI",
+      "dept_full_name": "Philosophy",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Philosophy."
+    },
+    {
+      "dept_code": "PHY",
+      "dept_full_name": "Physics",
+      "school_or_college": "Mellon College of Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Physics."
+    },
+    {
+      "dept_code": "PMP",
+      "dept_full_name": "Public Policy and Management",
+      "school_or_college": "Heinz College",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Likely Heinz public policy/management core or shared professional coursework."
+    },
+    {
+      "dept_code": "PPP",
+      "dept_full_name": "Public Policy / Heinz Professional Practice",
+      "school_or_college": "Heinz College",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "low",
+      "notes": "Best-effort label for 90-prefix Heinz coursework; should be reviewed if exact official expansion matters."
+    },
+    {
+      "dept_code": "PROJECT",
+      "dept_full_name": "Project / Systems Synthesis Capstone",
+      "school_or_college": "Heinz College",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "medium",
+      "notes": "Inferred from Systems Synthesis capstone/project courses."
+    },
+    {
+      "dept_code": "PSY",
+      "dept_full_name": "Psychology",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Psychology."
+    },
+    {
+      "dept_code": "ROB",
+      "dept_full_name": "Robotics",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Robotics Institute / robotics courses."
+    },
+    {
+      "dept_code": "ROTC",
+      "dept_full_name": "Reserve Officers' Training Corps",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [
+        "ROTC"
+      ],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Official CMU course catalog label for 32-prefix ROTC courses."
+    },
+    {
+      "dept_code": "S3D",
+      "dept_full_name": "Software and Societal Systems",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Web-verified via S3D site."
+    },
+    {
+      "dept_code": "SCS",
+      "dept_full_name": "School of Computer Science General",
+      "school_or_college": "School of Computer Science",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "General/interdisciplinary SCS courses."
+    },
+    {
+      "dept_code": "SDS",
+      "dept_full_name": "Social and Decision Sciences",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Web-verified via CMU course catalog search."
+    },
+    {
+      "dept_code": "STA",
+      "dept_full_name": "Statistics",
+      "school_or_college": "Dietrich College of Humanities and Social Sciences",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "Department of Statistics & Data Science / statistics courses."
+    },
+    {
+      "dept_code": "STU",
+      "dept_full_name": "Student-Taught / StuCo",
+      "school_or_college": "Carnegie Mellon University",
+      "aliases": [],
+      "source": "manual_curated",
+      "confidence": "high",
+      "notes": "StuCo / student-taught courses."
+    }
+  ]
+}

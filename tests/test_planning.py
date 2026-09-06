@@ -45,7 +45,7 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertEqual(result["student"]["college"], "dietrich")
         self.assertEqual(result["baseline"]["college"], "dietrich")
         self.assertEqual(result["planner_key"], "robotics-additional-major")
-        self.assertEqual(result["planner_status"], "choice_required")
+        self.assertEqual(result["planner_status"], "ready_with_requirement_slots")
 
     def test_all_five_scs_programs_expose_three_paths(self):
         self.assertEqual(len(app.programs), 5)
@@ -80,6 +80,97 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertEqual(result["goal_type"], "minor")
         self.assertGreater(len(result["fixed_courses"]), 0)
         self.assertGreater(result["profile"]["choice_slots"], 0)
+
+    def test_all_five_additional_majors_and_minors_generate_plans(self):
+        for program in app.programs:
+            for goal_type in ("additional_major", "minor"):
+                request = self.shared_request({
+                    "type": goal_type,
+                    "college": "scs",
+                    "program": program["id"],
+                })
+                result = app.create_plan(request)
+                self.assertTrue(result["fastest"]["path"])
+                self.assertIsNotNone(result["program_profile"])
+                self.assertTrue(any(
+                    semester["program_requirements"]
+                    for semester in result["fastest"]["path"]
+                ) or result["fastest"]["remaining_program_requirements"])
+
+    def test_program_slots_participate_in_capacity(self):
+        request = self.shared_request({
+            "type": "minor",
+            "college": "scs",
+            "program": "robotics",
+        })
+        request.constraints.max_units = 24
+        result = app.create_plan(request)
+        for semester in result["fastest"]["path"]:
+            self.assertLessEqual(semester["total_units"], 24)
+            self.assertEqual(
+                semester["free_choice_units"],
+                semester["unit_limit"] - semester["total_units"],
+            )
+
+    def test_semesters_use_academic_year_names_and_five_blocks_max(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        request.constraints.start_semester = "fall"
+        request.constraints.planning_year = 1
+        path = app.create_plan(request)["fastest"]["path"]
+        self.assertEqual(
+            [(path[0]["academic_year_name"], path[0]["semester"]),
+             (path[1]["academic_year_name"], path[1]["semester"]),
+             (path[2]["academic_year_name"], path[2]["semester"])],
+            [("Freshman", "fall"), ("Freshman", "spring"), ("Sophomore", "fall")],
+        )
+        self.assertTrue(all(len(semester["course_blocks"]) <= 5 for semester in path))
+
+    def test_additional_major_plan_marks_minor_foundation_and_extension(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        result = app.create_plan(request)
+        blocks = [
+            block for semester in result["fastest"]["path"]
+            for block in semester["course_blocks"]
+        ]
+        tiers = {block.get("program_tier") for block in blocks}
+        self.assertIn("minor_foundation", tiers)
+        self.assertIn("additional_major", tiers)
+
+    def test_additional_major_secondary_path_is_the_actual_minor_foundation(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        result = app.create_plan(request)
+        self.assertEqual(result["secondary_path_type"], "minor_foundation")
+        blocks = [
+            block for semester in result["lower_workload"]["path"]
+            for block in semester["course_blocks"]
+        ]
+        self.assertTrue(blocks)
+        self.assertNotIn(
+            "additional_major",
+            {block.get("program_tier") for block in blocks},
+        )
+
+    def test_scs_student_gets_minor_unavailable_warning_for_ai(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        request.student.college = "scs"
+        result = app.create_plan(request)
+        self.assertFalse(result["minor_status"]["available"])
 
     def test_shared_request_still_generates_existing_cs_plan(self):
         request = self.shared_request({
@@ -129,6 +220,35 @@ class PlanningIntegrationTests(unittest.TestCase):
             for course in semester["courses"]
         }
         self.assertNotIn("21-120", scheduled)
+
+    def test_completed_21_122_implies_21_120_and_is_not_scheduled_twice(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        request.student.completed_courses = ["21-122"]
+        result = app.create_plan(request)
+        scheduled = [
+            course
+            for semester in result["fastest"]["path"]
+            for course in semester["courses"]
+        ]
+        self.assertNotIn("21-120", scheduled)
+        self.assertNotIn("21-122", scheduled)
+        self.assertEqual(len(scheduled), len(set(scheduled)))
+
+    def test_profile_required_courses_are_stably_deduplicated(self):
+        goal = app.PlanningGoal(
+            type="additional_major",
+            college="scs",
+            program="artificial-intelligence",
+        )
+        inputs = app.planning_inputs_for_profile(goal, [])
+        self.assertEqual(
+            len(inputs["required_courses"]),
+            len(set(inputs["required_courses"])),
+        )
 
     def test_21_127_is_not_scheduled_with_21_120(self):
         request = self.shared_request({

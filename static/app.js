@@ -105,7 +105,10 @@ const appState = {
         program: null,
         programType: null
     },
-    plannerKey: null
+    plannerKey: null,
+    latestProgramProfile: null,
+    latestCourseCatalog: {},
+    latestSecondaryPathType: null
 };
 
 // #endregion
@@ -441,13 +444,16 @@ document
             completed_requirement_ids: appState.student.completed_requirement_ids
         };
 
-        if (appState.student.enrollment_status === "precollege") {
-            document.getElementById("planningYear").value = "1";
-            document.getElementById("semester").value = "fall";
-        } else {
-            document.getElementById("planningYear").value = String(appState.student.year);
-            document.getElementById("semester").value = appState.student.current_term;
-        }
+        const [status, currentYear, currentTerm, planYear, planTerm] =
+            document.getElementById("planningStart").value.split("|");
+        appState.student.enrollment_status = status;
+        appState.student.year = Number(currentYear);
+        appState.student.current_term = currentTerm;
+        document.getElementById("enrollmentStatus").value = status;
+        document.getElementById("year").value = currentYear;
+        document.getElementById("currentTerm").value = currentTerm;
+        document.getElementById("planningYear").value = planYear;
+        document.getElementById("semester").value = planTerm;
 
         showScreen(step2);
 
@@ -502,7 +508,14 @@ document
     .getElementById("step3Back")
     .addEventListener("click", () => {
 
-        showScreen(step2);
+        // Course history is reached from the program picker for transfer,
+        // additional-major, and minor paths.  Preserve that selection instead
+        // of sending the student back to the beginning of goal selection.
+        if (["transfer", "add-program"].includes(appState.selection.goalType)) {
+            showScreen(step2b);
+        } else {
+            showScreen(step2);
+        }
 
     });
 
@@ -515,7 +528,7 @@ document
     .getElementById("restartButton")
     .addEventListener("click", () => {
 
-        showScreen(step1);
+        showScreen(step3);
 
     });
 
@@ -889,13 +902,10 @@ function renderTemporarySCSPrograms() {
         button.innerHTML = `<strong>${program.name}</strong>`;
 
         if (appState.selection.goalType === "add-program") {
-            const choices = document.createElement("span");
-            choices.className = "program-type-choices";
-            choices.innerHTML = `
-                <span class="program-type-choice" data-program-type="additional_major">Additional Major</span>
-                <span class="program-type-choice" data-program-type="minor">Minor</span>
-            `;
-            button.appendChild(choices);
+            const route = document.createElement("span");
+            route.className = "program-upgrade-label";
+            route.textContent = "Minor foundation → Additional Major";
+            button.appendChild(route);
         }
 
 
@@ -943,8 +953,7 @@ function renderTemporarySCSPrograms() {
                     program.id;
 
                 if (appState.selection.goalType === "add-program") {
-                    appState.selection.programType =
-                        event.target.dataset.programType || "additional_major";
+                    appState.selection.programType = "additional_major";
                     renderProgramComparison(program.id);
                 }
 
@@ -1169,23 +1178,19 @@ async function renderProgramComparison(programId) {
         return;
     }
     const data = await response.json();
+    const minor = data.comparisons.find(item => item.goal_type === "minor");
+    const major = data.comparisons.find(item => item.goal_type === "additional_major");
     container.innerHTML = `
-        <p class="eyebrow">OPPORTUNITY COST · ${data.catalog_year}</p>
-        <div class="comparison-grid">
-            ${data.comparisons.map(item => `
-                <article class="comparison-card">
-                    <h3>${item.goal_type === "minor" ? "Minor" : "Additional Major"}</h3>
-                    <strong>${item.minimum_courses}+ courses · ≈${item.minimum_units}+ units</strong>
-                    <p>${item.potential_overlap_courses.length
-                        ? `${item.potential_overlap_courses.join(", ")} potentially overlap with your currently verified curriculum.`
-                        : "No overlap is confirmed from the currently verified subset."}</p>
-                    <p>${item.double_count_limit === null
-                        ? "Double-counting must be reviewed under program-specific rules."
-                        : `At most ${item.double_count_limit} courses may double-count under the published general rule.`}</p>
-                    <p>${item.eligibility}</p>
-                </article>
-            `).join("")}
-        </div>
+        <p class="eyebrow">ONE UPGRADE PATH · ${data.catalog_year}</p>
+        <article class="comparison-card upgrade-comparison-card">
+            <h3>Minor foundation → Additional Major</h3>
+            <p><strong>Foundation:</strong> ${minor?.minimum_courses ?? "—"}+ courses · ≈${minor?.minimum_units ?? "—"}+ units</p>
+            <p class="major-extension-copy"><strong>Green extension:</strong> approximately ${Math.max(0, (major?.minimum_courses || 0) - (minor?.minimum_courses || 0))} additional courses and ${Math.max(0, (major?.minimum_units || 0) - (minor?.minimum_units || 0))} additional units at the published minimum.</p>
+            <p>${major?.potential_overlap_courses.length
+                ? `${major.potential_overlap_courses.join(", ")} may overlap with your currently verified curriculum.`
+                : "No overlap is confirmed from the currently verified subset."}</p>
+            <p><strong>Minor eligibility:</strong> ${minor?.eligibility || "Review with the program advisor."}</p>
+        </article>
         <p class="history-helper">Catalog minimums are not a promised graduation plan. Elective choices and advisor decisions can increase the cost.</p>
     `;
 }
@@ -1259,13 +1264,6 @@ document
             updatePlanningGoal();
             appState.plannerKey = plannerKeyForGoal(appState.goals[0]);
 
-            if (step3CourseData[appState.plannerKey]) {
-                renderCourseSelection(appState.plannerKey);
-                showScreen(step3);
-                loadBaseline();
-                return;
-            }
-
             const goal = appState.goals[0];
             if (goal && ["additional_major", "minor"].includes(goal.type)) {
                 const response = await fetch(
@@ -1276,14 +1274,34 @@ document
                     return;
                 }
                 const detail = await response.json();
+                const currentMajorHistory = appState.student.primary_major === "stats-ml"
+                    ? [
+                        {id: "21-120", name: "Differential and Integral Calculus"},
+                        {id: "21-127", name: "Concepts of Mathematics"},
+                        {id: "15-112", name: "Fundamentals of Programming and Computer Science"},
+                        {id: "15-122", name: "Principles of Imperative Computation"}
+                    ]
+                    : [];
+                const historyCourses = [...currentMajorHistory, ...detail.fixed_courses]
+                    .filter((course, index, all) =>
+                        all.findIndex(other => other.id === course.id) === index
+                    );
                 step3CourseData[appState.plannerKey] = {
                     eyebrow: `SCS · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : "ADDITIONAL MAJOR"}`,
                     title: "Which fixed requirements have you completed?",
-                    description: `Select completed fixed courses. This path also contains ${detail.profile.choice_slots} choice/elective requirement slots.`,
-                    courses: detail.fixed_courses,
-                    plannerNote: `Catalog ${detail.catalog_year}: comparison is ready. Semester planning will unlock after the ${detail.profile.choice_slots} choice/elective slots are selected.`,
-                    plannerReady: false
+                    description: `Select completed fixed courses. Choice categories stay visible with their real catalog options until you choose a course.`,
+                    courses: historyCourses,
+                    choiceGroups: detail.requirement_groups,
+                    plannerNote: `Catalog ${detail.catalog_year}: ${detail.requirement_groups.map(group => `${group.name} (${group.options.join(" / ")})`).join("; ") || "all listed requirements are fixed courses"}.`,
+                    plannerReady: true
                 };
+                renderCourseSelection(appState.plannerKey);
+                showScreen(step3);
+                loadBaseline();
+                return;
+            }
+
+            if (step3CourseData[appState.plannerKey]) {
                 renderCourseSelection(appState.plannerKey);
                 showScreen(step3);
                 loadBaseline();
@@ -1523,6 +1541,10 @@ function renderCourseSelection(
 
                 ${course.name}
 
+                ${course.advanced_credit?.length
+                    ? `<small class="advanced-credit-note">High-school credit: ${course.advanced_credit.join("; ")}</small>`
+                    : ""}
+
             </span>
 
         `;
@@ -1533,6 +1555,9 @@ function renderCourseSelection(
         );
 
     }
+
+    // Choice groups belong in the semester builder on Results.  Keeping them
+    // off this history screen prevents a long catalog dump before planning.
 
 
     // --------------------------------------------------------
@@ -1642,167 +1667,263 @@ function renderPath(
     pathData,
     container
 ) {
-
     container.innerHTML = "";
+    const kindLabels = {
+        goal: "Goal program",
+        current_major: "Current major",
+        shared: "Current + goal",
+        baseline: "GenEd requirement",
+        program_choice: "Program choice"
+    };
 
+    const fixedBlock = (block, number) => `
+        <div class="planner-course-block fixed-block ${block.program_tier === "additional_major" ? "additional-major-block" : "minor-foundation-block"}" data-units="${block.units}" data-course-id="${block.id}" draggable="true">
+            <span class="block-number">${number}</span>
+            <span class="block-main">
+                <small>${block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
+                <strong>${block.id}</strong>
+                <span>${block.name}</span>
+            </span>
+            <strong class="block-units">${block.units}u</strong>
+        </div>`;
 
-    for (
-        const semester
-        of pathData.path
-    ) {
+    const choiceBlock = (block, number) => {
+        const options = block.options || [];
+        const isBaseline = block.kind === "baseline";
+        return `
+            <div class="planner-course-block choice-block ${block.program_tier === "additional_major" ? "additional-major-block" : "minor-foundation-block"}" data-units="${block.units}" draggable="true">
+                <span class="block-number">${number}</span>
+                <span class="block-main">
+                    <select class="block-category" aria-label="Block ${number} category">
+                        <option selected>${block.name}</option>
+                    </select>
+                    <select class="block-course" aria-label="Block ${number} course">
+                        <option value="" data-units="${block.units}">${isBaseline
+                            ? "Choose an approved course in SIO"
+                            : "Choose a course"}</option>
+                        ${options.map(option => `<option value="${option}" data-units="${appState.latestCourseCatalog[option]?.units || block.units}">${option}${appState.latestCourseCatalog[option]?.name ? ` · ${appState.latestCourseCatalog[option].name}` : ""}</option>`).join("")}
+                    </select>
+                </span>
+                <strong class="block-units">${block.units}u</strong>
+            </div>`;
+    };
 
-        const card =
-            document.createElement(
-                "div"
-            );
+    const emptyBlock = number => `
+        <div class="planner-course-block choice-block empty-block" data-units="0" draggable="true">
+            <span class="block-number">${number}</span>
+            <span class="block-main">
+                <select class="block-category" aria-label="Block ${number} category">
+                    <option value="">Choose a category</option>
+                    <option value="humanities">Humanities</option>
+                    <option value="social-sciences">Social Sciences</option>
+                    <option value="communication">Communication</option>
+                    <option value="data-analysis">Data Analysis</option>
+                    <option value="current-major">Current major course</option>
+                    <option value="goal-program">Goal program course</option>
+                    <option value="free-elective">Free elective</option>
+                </select>
+                <select class="block-course" aria-label="Block ${number} course" disabled>
+                    <option value="" data-units="0">Select a category first</option>
+                </select>
+            </span>
+            <strong class="block-units">0u</strong>
+        </div>`;
 
-
-        card.className =
-            "semester-card";
-
-
-        // ----------------------------------------------------
-        // Convert course array into HTML
-        // ----------------------------------------------------
-
-        const coursesHtml =
-            (semester.goal_courses ?? semester.courses)
-
-                .map(course => `
-                    <div class="course">
-                        ${course}
-                    </div>
-                `)
-
-                .join("");
-        const currentMajorHtml = (semester.current_major_courses ?? [])
-            .map(course => `
-                <div class="course">
-                    ${course}
-                </div>
-            `)
-            .join("");
-        const sharedHtml = (semester.shared_courses ?? [])
-            .map(course => `
-                <div class="course shared-course">
-                    ${course} <span>Counts toward both paths</span>
-                </div>
-            `)
-            .join("");
-        const baselineHtml = (semester.baseline_requirements ?? [])
-            .map(requirement => `
-                <div class="baseline-slot">
-                    <span>${requirement.name}</span>
-                    <span>${requirement.units}u</span>
-                </div>
-            `)
-            .join("");
-
-
-        // ----------------------------------------------------
-        // Build semester card
-        // ----------------------------------------------------
+    for (const semester of pathData.path) {
+        const card = document.createElement("div");
+        card.className = "semester-card semester-builder";
+        const blocks = (semester.course_blocks || []).slice(0, 5);
+        const blocksHtml = blocks.map((block, index) =>
+            block.locked ? fixedBlock(block, index + 1) : choiceBlock(block, index + 1)
+        );
+        while (blocksHtml.length < 5) blocksHtml.push(emptyBlock(blocksHtml.length + 1));
 
         card.innerHTML = `
+            <div class="semester-name">${semester.academic_year_name || "Year"} ${semester.semester}</div>
+            <div class="five-course-blocks">${blocksHtml.join("")}</div>
+            <div class="units semester-total">${semester.total_units ?? semester.units} total units</div>
+            <div class="free-choice semester-remaining"></div>
+            <div class="semester-metrics"></div>`;
 
-            <div class="semester-name">
+        const updateTotal = () => {
+            const total = Array.from(card.querySelectorAll(".planner-course-block"))
+                .reduce((sum, block) => sum + Number(block.dataset.units || 0), 0);
+            card.querySelector(".semester-total").textContent = `${total} total units`;
+            const limit = semester.unit_limit;
+            const remaining = card.querySelector(".semester-remaining");
+            remaining.classList.toggle("over-unit-limit", limit !== null && total > limit);
+            remaining.textContent = limit === null
+                ? "No planner hard limit; confirm overload with your advisor."
+                : total > limit
+                    ? `${total - limit} units over this semester's limit`
+                    : `${limit - total} units still available`;
 
-                Semester
-                ${semester.semester_number}
+            const blocks = Array.from(card.querySelectorAll(".planner-course-block"));
+            const loads = blocks.map(block => {
+                const units = Number(block.dataset.units || 0);
+                const metrics = appState.latestCourseCatalog[block.dataset.courseId]?.metrics;
+                return {
+                    hours: metrics?.hours_per_week ?? units / 3,
+                    workload: metrics?.workload,
+                    difficulty: metrics?.difficulty,
+                    stress: metrics?.stress,
+                    high: metrics?.intensity === "high_intensity",
+                    courseId: block.dataset.courseId
+                };
+            }).filter(load => load.hours > 0);
+            const rated = loads.filter(load => Number.isFinite(load.workload));
+            const hours = Math.round(loads.reduce((sum, load) => sum + load.hours, 0));
+            const highCourses = loads.filter(load => load.high).map(load => load.courseId);
+            const level = highCourses.length >= 2 || hours >= 35
+                ? "high"
+                : highCourses.length === 1 || hours >= 22
+                    ? "medium"
+                    : "easy";
+            const average = key => rated.length
+                ? (rated.reduce((sum, load) => sum + load[key], 0) / rated.length).toFixed(1)
+                : "—";
+            const term = card.querySelector(".semester-name").textContent.toLowerCase().endsWith("fall")
+                ? "fall" : "spring";
+            const wrongTerm = blocks
+                .map(block => block.dataset.courseId)
+                .filter(Boolean)
+                .filter(courseId => {
+                    const offered = appState.latestCourseCatalog[courseId]?.offered || [];
+                    return offered.length && !offered.includes(term);
+                });
+            card.querySelector(".semester-metrics").innerHTML = `
+                <div class="workload-level workload-${level}">${level[0].toUpperCase() + level.slice(1)} workload</div>
+                ${highCourses.length >= 2 ? `<div class="workload-warning">High-intensity combination: ${highCourses.join(", ")}</div>` : ""}
+                ${wrongTerm.length ? `<div class="term-warning">Not listed for ${term}: ${wrongTerm.join(", ")}</div>` : ""}
+                <div>~${hours} hrs/week</div>
+                <div>Workload ${average("workload")} / 5</div>
+                <div>Difficulty ${average("difficulty")} / 5</div>
+                <div>Stress ${average("stress")} / 5</div>`;
+        };
+        card.updatePlannerTotal = updateTotal;
 
-                ·
-
-                ${semester.semester}
-
-            </div>
-
-
-            <div class="semester-section-label">Goal courses</div>
-            ${coursesHtml || '<div class="semester-empty">None scheduled</div>'}
-
-            <div class="semester-section-label">Current major</div>
-            ${currentMajorHtml || '<div class="semester-empty">None scheduled</div>'}
-
-            <div class="semester-section-label">Shared — current + goal</div>
-            ${sharedHtml || '<div class="semester-empty">None scheduled</div>'}
-
-            <div class="semester-section-label">Baseline / GenEd requirements</div>
-            ${baselineHtml || '<div class="semester-empty">None scheduled</div>'}
-
-
-            <div class="units">
-
-                ${semester.goal_units ?? semester.units} goal +
-                ${semester.current_major_units ?? 0} current major +
-                ${semester.shared_units ?? 0} shared +
-                ${semester.baseline_units ?? 0} baseline =
-                ${semester.total_units ?? semester.units} total units
-
-            </div>
-
-            <div class="free-choice">
-                ${semester.free_choice_units === null
-                    ? "No planner hard limit for additional electives"
-                    : `${semester.free_choice_units} units available for math or other electives`}
-            </div>
-
-
-            <div class="semester-metrics">
-
-                ${semester.workload.warning_level === "high" ? `
-                    <div class="workload-warning">
-                        High academic workload: ${semester.workload.high_intensity_courses.join(", ")}
-                    </div>
-                ` : ""}
-
-                <div>
-
-                    ~${semester.workload.hours_per_week}
-                    hrs/week
-
-                </div>
-
-
-                <div>
-
-                    Workload
-
-                    ${semester.workload.average_workload}
-                    / 5
-
-                </div>
-
-
-                <div>
-
-                    Difficulty
-
-                    ${semester.workload.average_difficulty}
-                    / 5
-
-                </div>
-
-
-                <div>
-
-                    Stress
-
-                    ${semester.workload.average_stress}
-                    / 5
-
-                </div>
-
-            </div>
-
-        `;
-
-
-        container.appendChild(
-            card
-        );
-
+        card.querySelectorAll(".empty-block .block-category").forEach(select => {
+            select.addEventListener("change", event => {
+                const block = event.target.closest(".planner-course-block");
+                const courseSelect = block.querySelector(".block-course");
+                const gened = ["humanities", "social-sciences", "communication", "data-analysis"].includes(event.target.value);
+                courseSelect.disabled = false;
+                const goalOptions = (appState.latestProgramProfile?.requirement_groups || [])
+                    .flatMap(group => group.options || [])
+                    .filter(option => /^\d{2}-\d{3}$/.test(option));
+                if (gened) {
+                    courseSelect.innerHTML = '<option value="approved-gened" data-units="9">Approved course (confirm in SIO)</option>';
+                } else if (event.target.value === "goal-program" && goalOptions.length) {
+                    courseSelect.innerHTML = '<option value="" data-units="0">Choose a course</option>' +
+                        goalOptions.map(option => `<option value="${option}" data-units="${appState.latestCourseCatalog[option]?.units || 9}">${option}${appState.latestCourseCatalog[option]?.name ? ` · ${appState.latestCourseCatalog[option].name}` : ""}</option>`).join("");
+                } else if (event.target.value === "current-major") {
+                    courseSelect.innerHTML = '<option value="" data-units="0">Choose a course</option>' +
+                        ["21-120", "21-127", "15-112", "15-122"].map(option => `<option value="${option}" data-units="${["15-112", "15-122", "21-127"].includes(option) ? 12 : 10}">${option}</option>`).join("");
+                } else {
+                    courseSelect.innerHTML = '<option value="" data-units="0">Choose course load</option><option value="9" data-units="9">9-unit course</option><option value="10" data-units="10">10-unit course</option><option value="12" data-units="12">12-unit course</option>';
+                }
+                courseSelect.dispatchEvent(new Event("change"));
+            });
+        });
+        card.querySelectorAll(".block-course").forEach(select => {
+            select.addEventListener("change", event => {
+                const block = event.target.closest(".planner-course-block");
+                const option = event.target.selectedOptions[0];
+                block.dataset.units = option?.dataset.units || block.dataset.units || 0;
+                block.dataset.courseId = option?.value || "";
+                block.querySelector(".block-units").textContent = `${block.dataset.units}u`;
+                updateTotal();
+            });
+        });
+        updateTotal();
+        container.appendChild(card);
     }
 
+    let draggedBlock = null;
+    const swapBlocks = (source, target) => {
+        if (!source || !target || source === target) return;
+        if (source.closest(".semester-card") === target.closest(".semester-card")) return;
+        const sourceParent = source.parentNode;
+        const targetParent = target.parentNode;
+        const marker = document.createComment("planner-swap");
+        sourceParent.replaceChild(marker, source);
+        targetParent.replaceChild(source, target);
+        marker.parentNode.replaceChild(target, marker);
+        refreshCards();
+    };
+    const refreshCards = () => {
+        container.querySelectorAll(".semester-card").forEach(card => {
+            card.querySelectorAll(".planner-course-block").forEach((block, index) => {
+                block.querySelector(".block-number").textContent = index + 1;
+            });
+            card.updatePlannerTotal?.();
+        });
+
+        const completed = new Set(appState.student.completed_courses);
+        const cards = Array.from(container.querySelectorAll(".semester-card"));
+        const scheduledBefore = courseId => {
+            const block = container.querySelector(`[data-course-id="${courseId}"]`);
+            return block ? cards.indexOf(block.closest(".semester-card")) : -1;
+        };
+        container.querySelectorAll(".fixed-block[data-course-id]").forEach(block => {
+            const courseId = block.dataset.courseId;
+            const detail = appState.latestCourseCatalog[courseId] || {};
+            const semesterIndex = cards.indexOf(block.closest(".semester-card"));
+            const expression = detail.prerequisite_expression;
+            const prerequisites = expression?.options?.map(option => option.course_id)
+                || detail.prerequisites || [];
+            const satisfied = prerequisite => completed.has(prerequisite)
+                || (scheduledBefore(prerequisite) >= 0 && scheduledBefore(prerequisite) < semesterIndex);
+            const valid = expression?.type === "any_of"
+                ? prerequisites.some(satisfied)
+                : prerequisites.every(satisfied);
+            block.classList.toggle("prerequisite-order-warning", prerequisites.length > 0 && !valid);
+            block.title = prerequisites.length > 0 && !valid
+                ? `Check prerequisite order: ${prerequisites.join(" or ")}`
+                : "Drag to another semester";
+        });
+    };
+
+    container.querySelectorAll(".planner-course-block").forEach(block => {
+        block.addEventListener("dragstart", event => {
+            draggedBlock = event.currentTarget;
+            draggedBlock.classList.add("dragging");
+            event.dataTransfer.effectAllowed = "move";
+        });
+        block.addEventListener("dragend", () => {
+            draggedBlock?.classList.remove("dragging");
+            draggedBlock = null;
+            refreshCards();
+        });
+        block.addEventListener("dragover", event => event.preventDefault());
+        block.addEventListener("drop", event => {
+            event.preventDefault();
+            const target = event.currentTarget;
+            swapBlocks(draggedBlock, target);
+        });
+    });
+
+    // Pointer fallback makes cross-semester rearranging reliable in browsers
+    // whose native HTML drag-and-drop is inconsistent. The numbered circle is
+    // the drag handle so selects remain easy to use.
+    let pointerDraggedBlock = null;
+    container.querySelectorAll(".block-number").forEach(handle => {
+        handle.addEventListener("mousedown", event => {
+            event.preventDefault();
+            pointerDraggedBlock = event.currentTarget.closest(".planner-course-block");
+            pointerDraggedBlock.classList.add("dragging");
+        });
+    });
+    document.addEventListener("mouseup", event => {
+        if (!pointerDraggedBlock) return;
+        const target = event.target.closest?.(".planner-course-block");
+        pointerDraggedBlock.classList.remove("dragging");
+        if (target && container.contains(target)) {
+            swapBlocks(pointerDraggedBlock, target);
+        }
+        pointerDraggedBlock = null;
+    });
+    refreshCards();
 }
 
 
@@ -1961,6 +2082,23 @@ document
             const data =
                 await response.json();
 
+            appState.latestProgramProfile = data.program_profile;
+            appState.latestCourseCatalog = data.course_catalog || {};
+            appState.latestSecondaryPathType = data.secondary_path_type;
+            const programPathNote = document.getElementById("programPathNote");
+            if (data.minor_status) {
+                programPathNote.classList.remove("hidden");
+                programPathNote.classList.toggle("minor-unavailable", !data.minor_status.available);
+                programPathNote.innerHTML = `
+                    <strong>Minor foundation → Additional Major</strong>
+                    <span>Standard blocks form the minor foundation. Green blocks are additional courses required to continue to the major.</span>
+                    <span>Drag a block onto another semester to swap their positions; totals and prerequisite warnings update immediately.</span>
+                    ${data.minor_status.note ? `<span>${data.minor_status.note}</span>` : ""}
+                `;
+            } else {
+                programPathNote.classList.add("hidden");
+            }
+
 
             console.log(
                 "Planner response:",
@@ -1997,7 +2135,9 @@ document
                     "fastestSummary"
                 )
                 .textContent =
-                `${data.fastest.path.length} semester(s)`;
+                data.fastest.path.length
+                    ? `${data.fastest.path[0].academic_year_name} ${data.fastest.path[0].semester} → ${data.fastest.path.at(-1).academic_year_name} ${data.fastest.path.at(-1).semester}`
+                    : "No semesters needed";
 
 
             document
@@ -2005,7 +2145,9 @@ document
                     "lowerWorkloadSummary"
                 )
                 .textContent =
-                `${data.lower_workload.path.length} semester(s)`;
+                data.lower_workload.path.length
+                    ? `${data.lower_workload.path[0].academic_year_name} ${data.lower_workload.path[0].semester} → ${data.lower_workload.path.at(-1).academic_year_name} ${data.lower_workload.path.at(-1).semester}`
+                    : "No semesters needed";
 
             // #endregion
 
@@ -2169,7 +2311,7 @@ function renderOverlapSummary(summary) {
     container.classList.remove("hidden");
     container.innerHTML = `
         <strong>${summary.courses.length} shared courses make this path more efficient</strong>
-        <p>${summary.courses.join(", ")} advance both your current major and transfer goal (${summary.units} units scheduled once).</p>
+        <p>${summary.courses.join(", ")} advance both your current major and selected goal (${summary.units} units scheduled once).</p>
         <p class="history-helper">Based on the currently verified subset of your current-major curriculum.</p>
     `;
 }
@@ -2208,9 +2350,11 @@ function renderGoalStatus(
     // --------------------------------------------------------
 
     else {
-
+        const remainingCourses = data.fastest.remaining.length;
+        const remainingSlots =
+            (data.fastest.remaining_program_requirements ?? []).length;
         goalStatus.textContent =
-            `${data.fastest.remaining.length} courses remaining`;
+            `${remainingCourses} courses + ${remainingSlots} requirement slots remaining`;
 
     }
 
@@ -2247,9 +2391,36 @@ function renderGoalName() {
 
 
     const goal = appState.goals[0];
-    goalNameElement.textContent =
-        goalNames[appState.plannerKey]
-        ?? `${goal.type}: ${goal.program}`;
+    const programName = temporarySCSPrograms.find(
+        program => program.id === goal.program
+    )?.name ?? goal.program;
+    const typeName = {
+        current_major: "Current Major",
+        internal_transfer: "Transfer to",
+        additional_major: "Additional Major in",
+        minor: "Minor in"
+    }[goal.type] ?? goal.type;
+    const fullGoalName = goal.type === "additional_major"
+        ? `${programName}: Minor foundation → Additional Major`
+        : (goalNames[appState.plannerKey] ?? `${typeName} ${programName}`);
+    goalNameElement.textContent = fullGoalName;
+
+    const pathType = goal.type === "additional_major"
+        ? "Minor → Additional Major"
+        : goal.type === "minor"
+            ? "Minor"
+            : typeName;
+    const contextText = `${programName} · ${pathType}`;
+    document.getElementById("fastestGoalContext").textContent = contextText;
+    const secondaryIsMinor = appState.latestSecondaryPathType === "minor_foundation";
+    document.getElementById("lowerWorkloadGoalContext").textContent = secondaryIsMinor
+        ? `${programName} · Minor foundation`
+        : contextText;
+    document.getElementById("fastestPathTitle").textContent =
+        `⚡ Fastest ${pathType} Path`;
+    document.getElementById("lowerWorkloadTitle").textContent = secondaryIsMinor
+        ? `◆ ${programName} Minor Foundation Path`
+        : `⚖ Lower Workload ${pathType} Path`;
 
 }
 

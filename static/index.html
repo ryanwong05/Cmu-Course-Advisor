@@ -100,6 +100,20 @@
 
 
         <label>
+            Which semester are you planning for?
+            <select id="planningStart">
+                <option value="precollege|1|fall|1|fall">Incoming freshman — plan Freshman Fall</option>
+                <option value="enrolled|1|fall|1|spring">Currently Freshman Fall — plan Freshman Spring</option>
+                <option value="enrolled|1|spring|2|fall">Currently Freshman Spring — plan Sophomore Fall</option>
+                <option value="enrolled|2|fall|2|spring">Currently Sophomore Fall — plan Sophomore Spring</option>
+                <option value="enrolled|2|spring|3|fall">Currently Sophomore Spring — plan Junior Fall</option>
+                <option value="enrolled|3|fall|3|spring">Currently Junior Fall — plan Junior Spring</option>
+                <option value="enrolled|3|spring|4|fall">Currently Junior Spring — plan Senior Fall</option>
+                <option value="enrolled|4|fall|4|spring">Currently Senior Fall — plan Senior Spring</option>
+            </select>
+        </label>
+
+        <label class="hidden">
             Student stage
             <select id="enrollmentStatus">
                 <option value="precollege">Incoming freshman — not enrolled yet</option>
@@ -169,7 +183,7 @@
 
         <!-- YEAR -->
 
-        <label>
+        <label class="hidden">
 
             Year
 
@@ -195,7 +209,7 @@
 
         </label>
 
-        <label>
+        <label class="hidden">
             Current term
             <select id="currentTerm">
                 <option value="fall">Fall</option>
@@ -616,7 +630,7 @@
 
         <div class="settings-row">
 
-            <label>
+            <label class="hidden">
                 Plan for year
                 <select id="planningYear">
                     <option value="1">Freshman year</option>
@@ -626,7 +640,7 @@
                 </select>
             </label>
 
-            <label>
+            <label class="hidden">
 
                 Starting semester
 
@@ -810,6 +824,7 @@
         </div>
 
         <div class="overlap-summary hidden" id="overlapSummary"></div>
+        <div class="program-path-note hidden" id="programPathNote"></div>
 
         <!-- ================================================
              FASTEST PATH
@@ -818,11 +833,13 @@
         <div class="path-option">
 
 
-            <h2>
+            <h2 id="fastestPathTitle">
 
                 ⚡ Fastest Path
 
             </h2>
+
+            <div class="path-goal-context" id="fastestGoalContext"></div>
 
 
             <p id="fastestSummary">
@@ -847,11 +864,13 @@
         <div class="path-option">
 
 
-            <h2>
+            <h2 id="lowerWorkloadTitle">
 
                 ⚖ Lower Workload
 
             </h2>
+
+            <div class="path-goal-context" id="lowerWorkloadGoalContext"></div>
 
 
             <p id="lowerWorkloadSummary">
@@ -905,7 +924,7 @@
             id="restartButton"
         >
 
-            ← Change my plan
+            ← Back to requirements
 
         </button>
 
