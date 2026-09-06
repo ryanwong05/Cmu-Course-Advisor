@@ -3,15 +3,16 @@ from __future__ import annotations
 import csv
 import hashlib
 import re
-import shutil
 import sqlite3
 from pathlib import Path
 from typing import Iterable
 
-ROOT = Path(__file__).resolve().parents[1]
-RAW_DIR = ROOT / "data" / "raw"
-PROCESSED_DIR = ROOT / "data" / "processed"
-DB_PATH = ROOT / "data" / "fce.sqlite"
+ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = ROOT / "Data"
+RAW_DIR = DATA_DIR / "raw"
+PROCESSED_DIR = DATA_DIR / "processed"
+PROCESSED_FCE_DIR = PROCESSED_DIR / "fce"
+DB_PATH = PROCESSED_DIR / "courses.sqlite"
 TABLE_NAME = "fce_courses"
 
 HEADER_RENAMES = {
@@ -47,6 +48,15 @@ RATING_FIELDS = [
     "overall_teaching_rate",
     "overall_course_rate",
 ]
+
+
+def normalize_course_id(value: str | None) -> str | None:
+    """Convert CMU course numbers to NN-NNN, restoring a leading zero."""
+    raw_value = clean_text(value)
+    if not raw_value.isdigit() or len(raw_value) not in {4, 5}:
+        return None
+    digits = raw_value.zfill(5)
+    return f"{digits[:2]}-{digits[2:]}"
 
 
 def snake_case(name: str) -> str:
@@ -107,6 +117,9 @@ def normalize_row(raw_row: dict[str, str], headers: Iterable[str]) -> dict[str, 
         row[header] = clean_text(raw_row.get(header, ""))
 
     row["year"] = to_int(str(row["year"]))
+    row["sem"] = clean_text(str(row["sem"])).title()
+    row["dept"] = clean_text(str(row["dept"])).upper()
+    row["canonical_course_id"] = normalize_course_id(str(row["num"]))
     row["total_students"] = to_int(str(row["total_students"]))
     row["response_count"] = to_int(str(row["response_count"]))
     row["response_rate_pct"] = parse_pct(str(row["response_rate_raw"]))
@@ -135,6 +148,7 @@ def normalize_row(raw_row: dict[str, str], headers: Iterable[str]) -> dict[str, 
 def ensure_dirs() -> None:
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    PROCESSED_FCE_DIR.mkdir(parents=True, exist_ok=True)
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -142,9 +156,8 @@ def load_and_clean_rows(source_csv: Path) -> tuple[list[str], list[dict[str, obj
     if not source_csv.exists():
         raise FileNotFoundError(f"Source CSV not found: {source_csv}")
 
-    raw_csv = RAW_DIR / source_csv.name
-    clean_csv = PROCESSED_DIR / source_csv.name.replace("_FULL.csv", "_clean.csv")
-    shutil.copy2(source_csv, raw_csv)
+    raw_csv = source_csv
+    clean_csv = PROCESSED_FCE_DIR / source_csv.name.replace("_FULL.csv", "_clean.csv")
 
     with source_csv.open("r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
@@ -156,6 +169,13 @@ def load_and_clean_rows(source_csv: Path) -> tuple[list[str], list[dict[str, obj
         for raw in reader:
             remapped = {snake_case(k): v for k, v in raw.items() if k is not None}
             row = normalize_row(remapped, cleaned_headers)
+
+            # Exclude test labels and malformed identifiers such as the known
+            # "Email Testing" record. Keep the source file untouched.
+            if row["canonical_course_id"] is None:
+                continue
+
+            row["source_file"] = source_csv.name
 
             dedupe_key = tuple(row.get(field) for field in (
                 "year", "sem", "college", "dept", "num", "section", "instructor",
@@ -172,7 +192,14 @@ def load_and_clean_rows(source_csv: Path) -> tuple[list[str], list[dict[str, obj
             seen.add(dedupe_key)
             rows.append(row)
 
-    output_headers = cleaned_headers + ["response_rate_pct", "record_type", "course_key", "row_hash"]
+    output_headers = cleaned_headers + [
+        "canonical_course_id",
+        "response_rate_pct",
+        "record_type",
+        "course_key",
+        "source_file",
+        "row_hash",
+    ]
     return output_headers, rows, raw_csv, clean_csv
 
 
@@ -210,14 +237,19 @@ def ensure_table(conn: sqlite3.Connection, headers: list[str]) -> None:
         f"CREATE INDEX IF NOT EXISTS idx_fce_college ON {TABLE_NAME}(college)",
         f"CREATE INDEX IF NOT EXISTS idx_fce_record_type ON {TABLE_NAME}(record_type)",
         f"CREATE INDEX IF NOT EXISTS idx_fce_course_key ON {TABLE_NAME}(course_key)",
+        f"CREATE INDEX IF NOT EXISTS idx_fce_canonical_course_id ON {TABLE_NAME}(canonical_course_id)",
         f"CREATE UNIQUE INDEX IF NOT EXISTS idx_fce_row_hash ON {TABLE_NAME}(row_hash)",
     ]
     for stmt in index_statements:
         conn.execute(stmt)
 
 
-def upsert_rows(headers: list[str], rows: list[dict[str, object]]) -> int:
-    with sqlite3.connect(DB_PATH) as conn:
+def upsert_rows(
+    headers: list[str],
+    rows: list[dict[str, object]],
+    db_path: Path = DB_PATH,
+) -> int:
+    with sqlite3.connect(db_path) as conn:
         ensure_table(conn, headers)
         placeholders = ", ".join(["?" for _ in headers])
         insert_sql = f"INSERT OR IGNORE INTO {TABLE_NAME} ({', '.join(headers)}) VALUES ({placeholders})"
@@ -231,7 +263,11 @@ def main() -> None:
     import sys
 
     ensure_dirs()
-    source_csv = Path(sys.argv[1]) if len(sys.argv) > 1 else (ROOT / "CMU_FCE_2025Fall-2026Sum_FULL.csv")
+    source_csv = (
+        Path(sys.argv[1])
+        if len(sys.argv) > 1
+        else RAW_DIR / "CMU_FCE_2025Fall-2026Sum_FULL.csv"
+    )
     headers, rows, raw_csv, clean_csv = load_and_clean_rows(source_csv)
     write_clean_csv(headers, rows, clean_csv)
     inserted = upsert_rows(headers, rows)

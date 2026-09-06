@@ -1,6 +1,11 @@
 {
   "stats-ml-major": {
-    "planner_status": "not_configured",
+    "planner_status": "ready",
+    "required_courses": [
+      "21-120", "36-200", "15-112", "36-202", "21-127", "21-256",
+      "36-235", "15-122", "36-236", "21-241", "36-350", "10-301",
+      "36-401", "36-402", "15-351"
+    ],
   "requirement_groups": [
     {
       "id": "mathematical-foundations",

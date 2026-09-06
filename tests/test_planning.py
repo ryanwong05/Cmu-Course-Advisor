@@ -112,7 +112,7 @@ class PlanningIntegrationTests(unittest.TestCase):
                 semester["unit_limit"] - semester["total_units"],
             )
 
-    def test_semesters_use_academic_year_names_and_five_blocks_max(self):
+    def test_semesters_use_academic_year_names_and_six_blocks_max(self):
         request = self.shared_request({
             "type": "additional_major",
             "college": "scs",
@@ -127,7 +127,126 @@ class PlanningIntegrationTests(unittest.TestCase):
              (path[2]["academic_year_name"], path[2]["semester"])],
             [("Freshman", "fall"), ("Freshman", "spring"), ("Sophomore", "fall")],
         )
-        self.assertTrue(all(len(semester["course_blocks"]) <= 5 for semester in path))
+        self.assertTrue(all(len(semester["course_blocks"]) <= 6 for semester in path))
+
+    def test_fall_elective_catalog_contains_07_280(self):
+        result = app.list_electives(term="fall", category="free-elective")
+        course = next(item for item in result["courses"] if item["id"] == "07-280")
+        self.assertEqual(course["units"], 12)
+        self.assertGreater(course["sections"], 0)
+        self.assertIn("Offered Fall 2026", course["description"])
+
+    def test_elective_catalog_excludes_graduate_courses(self):
+        result = app.list_electives(term="fall", category="free-elective")
+        self.assertTrue(result["courses"])
+        self.assertTrue(all(course["level"] < 600 for course in result["courses"]))
+
+    def test_target_completion_year_controls_planning_horizon(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        request.constraints.start_semester = "spring"
+        request.constraints.planning_year = 1
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)
+        self.assertEqual(result["target_completion_year"], 4)
+        self.assertLessEqual(len(result["fastest"]["path"]), 7)
+
+    def test_junior_deadline_includes_junior_spring(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        request.student.college = "intercollege"
+        request.student.primary_major = "bxa"
+        request.constraints.start_semester = "spring"
+        request.constraints.planning_year = 1
+        request.constraints.target_completion_year = 3
+        path = app.create_plan(request)["fastest"]["path"]
+        self.assertEqual(len(path), 5)
+        self.assertEqual(
+            (path[-1]["academic_year_name"], path[-1]["semester"]),
+            ("Junior", "spring"),
+        )
+
+    def test_target_year_does_not_silently_cap_user_limit_at_42(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        request.constraints.max_units = 52
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)
+        self.assertTrue(all(
+            semester["unit_limit"] == 52
+            for semester in result["fastest"]["path"]
+        ))
+
+    def test_unverified_engineering_major_gets_nonempty_primary_baseline(self):
+        request = self.shared_request({
+            "type": "additional_major", "college": "scs", "program": "robotics"
+        })
+        request.student.college = "engineering"
+        request.student.primary_major = "mechanical-engineering"
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)
+        self.assertEqual(result["primary_baseline"]["units"], 30)
+        self.assertEqual(
+            result["degree_audits"]["primary_degree"]["status"],
+            "fallback_template",
+        )
+        for semester in result["fastest"]["path"]:
+            self.assertGreaterEqual(semester["primary_major_reserved_units"], 0)
+            self.assertGreaterEqual(semester["total_units"], 30)
+
+    def test_partial_stats_ml_curriculum_keeps_remaining_major_reserve(self):
+        request = self.shared_request({
+            "type": "additional_major", "college": "scs", "program": "robotics"
+        })
+        result = app.create_plan(request)
+        self.assertEqual(result["primary_baseline"]["status"], "partial_curriculum")
+        self.assertTrue(any(
+            semester["primary_major_reserved_units"] > 0
+            for semester in result["fastest"]["path"]
+        ))
+        self.assertTrue(any(
+            semester["current_major_courses"]
+            for semester in result["fastest"]["path"]
+        ))
+
+    def test_stats_ml_official_math_and_core_courses_are_hydrated(self):
+        course_ids = {course["id"] for course in app.courses}
+        self.assertTrue({
+            "21-256", "21-241", "36-235", "36-236", "36-350",
+            "36-402", "10-301", "15-351",
+        }.issubset(course_ids))
+        self.assertEqual(app.requirements["stats-ml-major"]["planner_status"], "ready")
+        regression = next(course for course in app.courses if course["id"] == "36-401")
+        self.assertEqual(set(regression["offered"]), {"fall", "spring"})
+
+    def test_stats_ml_math_picker_is_limited_to_official_groups(self):
+        result = app.list_electives(term="spring", category="stats-ml-math")
+        self.assertTrue(result["courses"])
+        self.assertTrue(all(
+            course["id"] in app.STATS_ML_MATH_GROUPS
+            and course["requirement_group"]
+            for course in result["courses"]
+        ))
+
+    def test_primary_and_selected_goal_have_separate_audits(self):
+        request = self.shared_request({
+            "type": "minor", "college": "scs", "program": "robotics"
+        })
+        result = app.create_plan(request)
+        self.assertEqual(
+            set(result["degree_audits"]),
+            {"primary_degree", "selected_goal"},
+        )
+        self.assertEqual(result["degree_audits"]["selected_goal"]["type"], "minor")
 
     def test_additional_major_plan_marks_minor_foundation_and_extension(self):
         request = self.shared_request({
@@ -143,6 +262,38 @@ class PlanningIntegrationTests(unittest.TestCase):
         tiers = {block.get("program_tier") for block in blocks}
         self.assertIn("minor_foundation", tiers)
         self.assertIn("additional_major", tiers)
+
+    def test_robotics_additional_major_uses_official_ten_course_structure(self):
+        profile = app.program_profiles["programs"]["robotics"]["additional_major"]
+        self.assertEqual(profile["minimum_courses"], 10)
+        self.assertEqual(
+            1 + sum(group.get("choose", 1) for group in profile["requirement_groups"]),
+            10,
+        )
+        goal = app.PlanningGoal(
+            type="additional_major", college="scs", program="robotics"
+        )
+        inputs = app.planning_inputs_for_profile(goal, [])
+        self.assertNotIn("15-112", inputs["required_courses"])
+        self.assertEqual(len(inputs["program_requirement_slots"]), 9)
+
+    def test_robotics_capstone_is_reserved_for_senior_spring(self):
+        request = self.shared_request({
+            "type": "additional_major", "college": "scs", "program": "robotics"
+        })
+        request.constraints.start_semester = "spring"
+        request.constraints.planning_year = 1
+        request.constraints.target_completion_year = 4
+        path = app.create_plan(request)["fastest"]["path"]
+        capstone_terms = [
+            (semester["academic_year"], semester["semester"])
+            for semester in path
+            if any(
+                block["id"].startswith("capstone-")
+                for block in semester["course_blocks"]
+            )
+        ]
+        self.assertEqual(capstone_terms, [(4, "spring")])
 
     def test_additional_major_secondary_path_is_the_actual_minor_foundation(self):
         request = self.shared_request({
@@ -188,7 +339,9 @@ class PlanningIntegrationTests(unittest.TestCase):
             first["goal_units"]
             + first["current_major_units"]
             + first["shared_units"]
-            + first["baseline_units"],
+            + first["baseline_units"]
+            + first["program_requirement_units"]
+            + first["primary_major_reserved_units"],
         )
         self.assertLessEqual(first["total_units"], 52)
 
@@ -249,6 +402,19 @@ class PlanningIntegrationTests(unittest.TestCase):
             len(inputs["required_courses"]),
             len(set(inputs["required_courses"])),
         )
+
+    def test_fixed_course_satisfies_overlapping_minor_choice_group(self):
+        goal = app.PlanningGoal(
+            type="additional_major",
+            college="scs",
+            program="computer-science",
+        )
+        inputs = app.planning_inputs_for_profile(goal, [])
+        system_theory_slots = [
+            slot for slot in inputs["program_requirement_slots"]
+            if slot["id"].startswith("upper-core-")
+        ]
+        self.assertEqual(system_theory_slots, [])
 
     def test_21_127_is_not_scheduled_with_21_120(self):
         request = self.shared_request({
