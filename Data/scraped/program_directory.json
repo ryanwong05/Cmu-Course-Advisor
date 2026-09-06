@@ -1,0 +1,3292 @@
+[
+  {
+    "id": "additive-manufacturing--minor",
+    "name": "Additive Manufacturing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/additive-manufacturing-minor/"
+  },
+  {
+    "id": "african-and-african-american-studies--minor",
+    "name": "African and African American Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/african-african-american-studies-minor/"
+  },
+  {
+    "id": "american-politics-and-law--minor",
+    "name": "American Politics and Law",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/american-politics-law-minor/"
+  },
+  {
+    "id": "animation-and-special-effects--minor",
+    "name": "Animation and Special Effects",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/animation-special-effects-minor/"
+  },
+  {
+    "id": "anthropology--minor",
+    "name": "Anthropology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-minor/"
+  },
+  {
+    "id": "anthropology--b-a",
+    "name": "Anthropology",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/"
+  },
+  {
+    "id": "arabic-studies--minor",
+    "name": "Arabic Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/arabic-studies-minor/"
+  },
+  {
+    "id": "architectural-design-fabrication--minor",
+    "name": "Architectural Design Fabrication",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-design-fabrication-minor/"
+  },
+  {
+    "id": "architectural-representation-and-visualization--minor",
+    "name": "Architectural Representation and Visualization",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-representation-visualization-minor/"
+  },
+  {
+    "id": "architectural-technology--minor",
+    "name": "Architectural Technology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-technology-minor/"
+  },
+  {
+    "id": "architecture--minor",
+    "name": "Architecture",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-minor/"
+  },
+  {
+    "id": "architecture--b-a",
+    "name": "Architecture",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/"
+  },
+  {
+    "id": "architecture--b-arch",
+    "name": "Architecture",
+    "credential": "B.Arch.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/"
+  },
+  {
+    "id": "architecture-history--minor",
+    "name": "Architecture History",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-history-minor/"
+  },
+  {
+    "id": "art--minor",
+    "name": "Art",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/art-minor/"
+  },
+  {
+    "id": "art--b-f-a",
+    "name": "Art",
+    "credential": "B.F.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/"
+  },
+  {
+    "id": "artificial-intelligence--additional-major",
+    "name": "Artificial Intelligence",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "artificial-intelligence",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-additional-major/"
+  },
+  {
+    "id": "artificial-intelligence--minor",
+    "name": "Artificial Intelligence",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "artificial-intelligence",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/artificial-intelligence-minor/"
+  },
+  {
+    "id": "artificial-intelligence--b-s",
+    "name": "Artificial Intelligence",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "artificial-intelligence",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-bs/"
+  },
+  {
+    "id": "audio-engineering--minor",
+    "name": "Audio Engineering",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/audio-engineering-minor/"
+  },
+  {
+    "id": "behavioral-economics--minor",
+    "name": "Behavioral Economics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-minor/"
+  },
+  {
+    "id": "behavioral-economics--b-s",
+    "name": "Behavioral Economics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/"
+  },
+  {
+    "id": "biological-sciences--additional-major",
+    "name": "Biological Sciences",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-additional-major/"
+  },
+  {
+    "id": "biological-sciences--minor",
+    "name": "Biological Sciences",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-minor/"
+  },
+  {
+    "id": "biological-sciences--b-a",
+    "name": "Biological Sciences",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/"
+  },
+  {
+    "id": "biological-sciences--b-s",
+    "name": "Biological Sciences",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-bs/"
+  },
+  {
+    "id": "biological-sciences-and-psychology--b-s",
+    "name": "Biological Sciences and Psychology",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/"
+  },
+  {
+    "id": "biomedical-engineering--additional-major",
+    "name": "Biomedical Engineering",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-engineering-additional-major/"
+  },
+  {
+    "id": "biomedical-engineering--minor",
+    "name": "Biomedical Engineering",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/biomedical-engineering-minor/"
+  },
+  {
+    "id": "biomedical-technology--additional-major",
+    "name": "Biomedical Technology",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-technology-additional-major/"
+  },
+  {
+    "id": "building-science--minor",
+    "name": "Building Science",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/building-science-minor/"
+  },
+  {
+    "id": "business-administration--additional-major",
+    "name": "Business Administration",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-additional-major/"
+  },
+  {
+    "id": "business-administration--minor",
+    "name": "Business Administration",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-administration-minor/"
+  },
+  {
+    "id": "business-administration--b-s",
+    "name": "Business Administration",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/"
+  },
+  {
+    "id": "business-analytics-and-optimization--minor",
+    "name": "Business Analytics and Optimization",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-analytics-optimization-minor/"
+  },
+  {
+    "id": "chemical-engineering--b-s",
+    "name": "Chemical Engineering",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/"
+  },
+  {
+    "id": "chemistry--minor",
+    "name": "Chemistry",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-minor/"
+  },
+  {
+    "id": "chemistry--b-a",
+    "name": "Chemistry",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/"
+  },
+  {
+    "id": "chemistry--b-s",
+    "name": "Chemistry",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/"
+  },
+  {
+    "id": "chemistry-biological-chemistry-track--b-s",
+    "name": "Chemistry/Biological Chemistry Track",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/"
+  },
+  {
+    "id": "chinese-studies--minor",
+    "name": "Chinese Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/chinese-studies-minor/"
+  },
+  {
+    "id": "civil-engineering--b-s",
+    "name": "Civil Engineering",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/"
+  },
+  {
+    "id": "cognitive-neuroscience--minor",
+    "name": "Cognitive Neuroscience",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-neuroscience-minor/"
+  },
+  {
+    "id": "cognitive-science--b-s",
+    "name": "Cognitive Science",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/"
+  },
+  {
+    "id": "collaborative-piano--minor",
+    "name": "Collaborative Piano",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/collaborative-piano-minor/"
+  },
+  {
+    "id": "colloids-polymers-and-surfaces--minor",
+    "name": "Colloids, Polymers and Surfaces",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/colloids-polymers-surfaces-minor/"
+  },
+  {
+    "id": "composition--b-f-a",
+    "name": "Composition",
+    "credential": "B.F.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/"
+  },
+  {
+    "id": "computational-biology--additional-major",
+    "name": "Computational Biology",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "computational-biology",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-additional-major/"
+  },
+  {
+    "id": "computational-biology--minor",
+    "name": "Computational Biology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "computational-biology",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computational-biology-minor/"
+  },
+  {
+    "id": "computational-biology--b-s",
+    "name": "Computational Biology",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "computational-biology",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-bs/"
+  },
+  {
+    "id": "computational-design--minor",
+    "name": "Computational Design",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/computational-design-minor/"
+  },
+  {
+    "id": "computational-finance--minor",
+    "name": "Computational Finance",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-minor/"
+  },
+  {
+    "id": "computational-finance--b-s",
+    "name": "Computational Finance",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/"
+  },
+  {
+    "id": "computer-science--additional-major",
+    "name": "Computer Science",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "computer-science",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-additional-major/"
+  },
+  {
+    "id": "computer-science--minor",
+    "name": "Computer Science",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "computer-science",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computer-science-minor/"
+  },
+  {
+    "id": "computer-science--b-s",
+    "name": "Computer Science",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "computer-science",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/"
+  },
+  {
+    "id": "computer-science-and-arts--b-c-s-a",
+    "name": "Computer Science and Arts",
+    "credential": "B.C.S.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "cfa",
+      "scs"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/computer-science-arts/"
+  },
+  {
+    "id": "conducting--minor",
+    "name": "Conducting",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/conducting-minor/"
+  },
+  {
+    "id": "creative-writing--minor",
+    "name": "Creative Writing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-minor/"
+  },
+  {
+    "id": "creative-writing--b-a",
+    "name": "Creative Writing",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-ba/"
+  },
+  {
+    "id": "cybersecurity-and-international-conflict--minor",
+    "name": "Cybersecurity and International Conflict",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/cybersecurity-international-conflict-minor/"
+  },
+  {
+    "id": "decision-making-and-intelligent-systems--minor",
+    "name": "Decision Making and Intelligent Systems",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-making-intelligent-systems-minor/"
+  },
+  {
+    "id": "decision-science--minor",
+    "name": "Decision Science",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-minor/"
+  },
+  {
+    "id": "decision-science--b-s",
+    "name": "Decision Science",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/"
+  },
+  {
+    "id": "design--minor",
+    "name": "Design",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/design-minor/"
+  },
+  {
+    "id": "design--b-des",
+    "name": "Design",
+    "credential": "B.Des.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/"
+  },
+  {
+    "id": "design-for-learning--minor",
+    "name": "Design for Learning",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/design-learning-minor/"
+  },
+  {
+    "id": "discrete-mathematics-and-logic--minor",
+    "name": "Discrete Mathematics and Logic",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/discrete-mathematics-logic-minor/"
+  },
+  {
+    "id": "drama--minor",
+    "name": "Drama",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/drama-minor/"
+  },
+  {
+    "id": "drama--b-f-a",
+    "name": "Drama",
+    "credential": "B.F.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/"
+  },
+  {
+    "id": "economics--additional-major",
+    "name": "Economics",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-additional-major/"
+  },
+  {
+    "id": "economics--minor",
+    "name": "Economics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/economics-minor/"
+  },
+  {
+    "id": "economics--b-a",
+    "name": "Economics",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/"
+  },
+  {
+    "id": "economics--b-s",
+    "name": "Economics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/"
+  },
+  {
+    "id": "economics-and-mathematical-sciences--b-s",
+    "name": "Economics and Mathematical Sciences",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-mathematical-sciences-bs/"
+  },
+  {
+    "id": "economics-and-politics--b-s",
+    "name": "Economics and Politics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/"
+  },
+  {
+    "id": "economics-and-statistics--b-s",
+    "name": "Economics and Statistics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/"
+  },
+  {
+    "id": "electrical-and-computer-engineering--b-s",
+    "name": "Electrical and Computer Engineering",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofelectricalandcomputerengineering/electrical-computer-engineering-bs/"
+  },
+  {
+    "id": "electronic-materials--minor",
+    "name": "Electronic Materials",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/electronic-materials-minor/"
+  },
+  {
+    "id": "electronic-music--b-f-a",
+    "name": "Electronic Music",
+    "credential": "B.F.A",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/"
+  },
+  {
+    "id": "engineering-design-innovation-and-entrepreneurship--additional-major",
+    "name": "Engineering Design, Innovation, and Entrepreneurship",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/integratedinnovationinstitute/engineering-design-innovation-entrepreneurship-additional-major/"
+  },
+  {
+    "id": "engineering-studies--minor",
+    "name": "Engineering Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/engineering-studies-minor/"
+  },
+  {
+    "id": "engineering-studies-and-arts--b-e-s-a",
+    "name": "Engineering Studies and Arts",
+    "credential": "B.E.S.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "cfa",
+      "engineering"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/"
+  },
+  {
+    "id": "engineering-and-arts--additional-major",
+    "name": "Engineering and Arts",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "cfa",
+      "engineering"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-arts-additional-major/"
+  },
+  {
+    "id": "engineering-and-public-policy--additional-major",
+    "name": "Engineering and Public Policy",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/engineering-public-policy-additional-major/"
+  },
+  {
+    "id": "environmental-engineering--b-s",
+    "name": "Environmental Engineering",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/"
+  },
+  {
+    "id": "environmental-and-sustainability-studies--additional-major",
+    "name": "Environmental and Sustainability Studies",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-additional-major/"
+  },
+  {
+    "id": "environmental-and-sustainability-studies--minor",
+    "name": "Environmental and Sustainability Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-minor/"
+  },
+  {
+    "id": "ethics--minor",
+    "name": "Ethics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/ethics-minor/"
+  },
+  {
+    "id": "ethics-history-and-public-policy--b-a-b-s",
+    "name": "Ethics, History and Public Policy",
+    "credential": "B.A/B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/"
+  },
+  {
+    "id": "film-and-visual-media--minor",
+    "name": "Film and Visual Media",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-minor/"
+  },
+  {
+    "id": "film-and-visual-media--b-a",
+    "name": "Film and Visual Media",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-ba/"
+  },
+  {
+    "id": "financial-management--minor",
+    "name": "Financial Management",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/financial-management-minor/"
+  },
+  {
+    "id": "game-design--minor",
+    "name": "Game Design",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/game-design-minor/"
+  },
+  {
+    "id": "gender-studies--minor",
+    "name": "Gender Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/gender-studies-minor/"
+  },
+  {
+    "id": "general-studies--b-a-b-s",
+    "name": "General Studies",
+    "credential": "B.A./B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/general-studies-major/"
+  },
+  {
+    "id": "german-studies--minor",
+    "name": "German Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/german-studies-minor/"
+  },
+  {
+    "id": "global-cultures-and-emerging-technologies--b-a",
+    "name": "Global Cultures and Emerging Technologies",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/"
+  },
+  {
+    "id": "global-engineering--minor",
+    "name": "Global Engineering",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/global-engineering-minor/"
+  },
+  {
+    "id": "global-french-studies--minor",
+    "name": "Global French Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-french-studies-minor/"
+  },
+  {
+    "id": "health-care-policy-and-management--minor",
+    "name": "Health Care Policy and Management",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/health-care-policy-management-minor/"
+  },
+  {
+    "id": "health-humanities--additional-major",
+    "name": "Health Humanities",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/health-humanities-additional-major/"
+  },
+  {
+    "id": "hispanic-studies--minor",
+    "name": "Hispanic Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/hispanic-studies-minor/"
+  },
+  {
+    "id": "history--minor",
+    "name": "History",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-minor/"
+  },
+  {
+    "id": "history--b-a",
+    "name": "History",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/"
+  },
+  {
+    "id": "human-computer-interaction--minor",
+    "name": "Human Computer Interaction",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "human-computer-interaction",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/human-computer-interaction-minor/"
+  },
+  {
+    "id": "human-computer-interaction--additional-major",
+    "name": "Human-Computer Interaction",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "human-computer-interaction",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-additional-major/"
+  },
+  {
+    "id": "human-computer-interaction--b-s",
+    "name": "Human-Computer Interaction",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "human-computer-interaction",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-bs/"
+  },
+  {
+    "id": "humanities-analytics--minor",
+    "name": "Humanities Analytics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/humanities-analytics-minor/"
+  },
+  {
+    "id": "humanities-and-arts--b-h-a",
+    "name": "Humanities and Arts",
+    "credential": "B.H.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "cfa",
+      "dietrich"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/"
+  },
+  {
+    "id": "immersive-technologies-in-arts-and-culture--minor",
+    "name": "Immersive Technologies in Arts and Culture",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/immersive-technologies-arts-culture-minor/"
+  },
+  {
+    "id": "information-security-privacy-and-policy--minor",
+    "name": "Information Security, Privacy and Policy",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/information-security-privacy-policy-minor/"
+  },
+  {
+    "id": "information-systems--minor",
+    "name": "Information Systems",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich",
+      "heinz"
+    ],
+    "affiliations": [
+      "dietrich",
+      "heinz"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-minor/"
+  },
+  {
+    "id": "information-systems--b-s",
+    "name": "Information Systems",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich",
+      "heinz"
+    ],
+    "affiliations": [
+      "dietrich",
+      "heinz"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-bs/"
+  },
+  {
+    "id": "innovation-and-entrepreneurship--minor",
+    "name": "Innovation and Entrepreneurship",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/innovation-entrepreneurship-minor/"
+  },
+  {
+    "id": "intelligent-environments--minor",
+    "name": "Intelligent Environments",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/intelligent-environments-minor/"
+  },
+  {
+    "id": "international-relations-and-political-science--minor",
+    "name": "International Relations and Political Science",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-minor/"
+  },
+  {
+    "id": "international-relations-and-political-science--b-s",
+    "name": "International Relations and Political Science",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/"
+  },
+  {
+    "id": "japanese-studies--minor",
+    "name": "Japanese Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/japanese-studies-minor/"
+  },
+  {
+    "id": "language-technologies--minor",
+    "name": "Language Technologies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/language-technologies-minor/"
+  },
+  {
+    "id": "languages-and-cultures--b-a",
+    "name": "Languages and Cultures",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/"
+  },
+  {
+    "id": "linguistics--minor",
+    "name": "Linguistics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-minor/"
+  },
+  {
+    "id": "linguistics--b-a",
+    "name": "Linguistics",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/"
+  },
+  {
+    "id": "literature-and-culture--minor",
+    "name": "Literature and Culture",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-minor/"
+  },
+  {
+    "id": "literature-and-culture--b-a",
+    "name": "Literature and Culture",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/"
+  },
+  {
+    "id": "logic-and-computation--minor",
+    "name": "Logic and Computation",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-minor/"
+  },
+  {
+    "id": "logic-and-computation--b-s",
+    "name": "Logic and Computation",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/"
+  },
+  {
+    "id": "machine-learning--minor",
+    "name": "Machine Learning",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/machine-learning-minor/"
+  },
+  {
+    "id": "materials-science-and-engineering--minor",
+    "name": "Materials Science and Engineering",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/materials-science-engineering-minor/"
+  },
+  {
+    "id": "materials-science-and-engineering--b-s",
+    "name": "Materials Science and Engineering",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/"
+  },
+  {
+    "id": "mathematical-sciences--minor",
+    "name": "Mathematical Sciences",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-minor/"
+  },
+  {
+    "id": "mathematical-sciences--b-a",
+    "name": "Mathematical Sciences",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/"
+  },
+  {
+    "id": "mathematical-sciences--b-s",
+    "name": "Mathematical Sciences",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/"
+  },
+  {
+    "id": "mathematical-sciences-and-economics--b-s",
+    "name": "Mathematical Sciences and Economics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/"
+  },
+  {
+    "id": "mechanical-behavior-of-materials--minor",
+    "name": "Mechanical Behavior of Materials",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/mechanical-behaviors-of-materials-minor/"
+  },
+  {
+    "id": "mechanical-engineering--b-s",
+    "name": "Mechanical Engineering",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/"
+  },
+  {
+    "id": "media-design--minor",
+    "name": "Media Design",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/media-design-minor/"
+  },
+  {
+    "id": "medical-decision-making--minor",
+    "name": "Medical Decision Making",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/medical-decision-making-minor/"
+  },
+  {
+    "id": "military-strategy-and-international-relations--minor",
+    "name": "Military Strategy and International Relations",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/military-strategy-international-relations-minor/"
+  },
+  {
+    "id": "music--minor",
+    "name": "Music",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-minor/"
+  },
+  {
+    "id": "music-education--minor",
+    "name": "Music Education",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-education-minor/"
+  },
+  {
+    "id": "music-performance--b-f-a",
+    "name": "Music Performance",
+    "credential": "B.F.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/"
+  },
+  {
+    "id": "music-technology--minor",
+    "name": "Music Technology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-technology-minor/"
+  },
+  {
+    "id": "music-and-technology--b-s",
+    "name": "Music and Technology",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-technology-bs/"
+  },
+  {
+    "id": "neural-computation--minor",
+    "name": "Neural Computation",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neural-computation-minor/"
+  },
+  {
+    "id": "neuroscience--minor",
+    "name": "Neuroscience",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/neuroscience-minor/"
+  },
+  {
+    "id": "neuroscience--b-s",
+    "name": "Neuroscience",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/"
+  },
+  {
+    "id": "philosophy--minor",
+    "name": "Philosophy",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-minor/"
+  },
+  {
+    "id": "philosophy--b-a",
+    "name": "Philosophy",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/"
+  },
+  {
+    "id": "photography--minor",
+    "name": "Photography",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/photography-minor/"
+  },
+  {
+    "id": "physical-computing--minor",
+    "name": "Physical Computing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/physical-computing-minor/"
+  },
+  {
+    "id": "physics--additional-major",
+    "name": "Physics",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-additional-major/"
+  },
+  {
+    "id": "physics--minor",
+    "name": "Physics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-minor/"
+  },
+  {
+    "id": "physics--b-a",
+    "name": "Physics",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/"
+  },
+  {
+    "id": "physics--b-s",
+    "name": "Physics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-bs/"
+  },
+  {
+    "id": "policy-and-management--minor",
+    "name": "Policy and Management",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-minor/"
+  },
+  {
+    "id": "policy-and-management--b-s",
+    "name": "Policy and Management",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/"
+  },
+  {
+    "id": "political-science-security-and-technology--minor",
+    "name": "Political Science, Security, and Technology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-minor/"
+  },
+  {
+    "id": "political-science-security-and-technology--b-s",
+    "name": "Political Science, Security, and Technology",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/"
+  },
+  {
+    "id": "politics-and-public-policy--minor",
+    "name": "Politics and Public Policy",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/politics-public-policy-minor/"
+  },
+  {
+    "id": "product-management--minor",
+    "name": "Product Management",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "tepper"
+    ],
+    "affiliations": [
+      "tepper"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/product-management-minor/"
+  },
+  {
+    "id": "professional-writing--minor",
+    "name": "Professional Writing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-minor/"
+  },
+  {
+    "id": "professional-writing--b-a",
+    "name": "Professional Writing",
+    "credential": "B.A.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-ba/"
+  },
+  {
+    "id": "psychology--minor",
+    "name": "Psychology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-minor/"
+  },
+  {
+    "id": "psychology--b-a-b-s",
+    "name": "Psychology",
+    "credential": "B.A./B.S",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/"
+  },
+  {
+    "id": "psychology-and-biological-sciences--b-s",
+    "name": "Psychology and Biological Sciences",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/"
+  },
+  {
+    "id": "rationality-uncertainty-and-choice-formal-methods--minor",
+    "name": "Rationality, Uncertainty, and Choice: Formal Methods",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/rationality-uncertainty-choice-formal-methods-minor/"
+  },
+  {
+    "id": "religious-studies--minor",
+    "name": "Religious Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/religious-studies-minor/"
+  },
+  {
+    "id": "robotics--additional-major",
+    "name": "Robotics",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "robotics",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-additional-major/"
+  },
+  {
+    "id": "robotics--minor",
+    "name": "Robotics",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "robotics",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/robotics-minor/"
+  },
+  {
+    "id": "robotics--b-s",
+    "name": "Robotics",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": "robotics",
+    "planning_status": "planning_ready",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-bs/"
+  },
+  {
+    "id": "russian-studies--minor",
+    "name": "Russian Studies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/russian-studies-minor/"
+  },
+  {
+    "id": "science-and-arts--b-s-a",
+    "name": "Science and Arts",
+    "credential": "B.S.A",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "cfa",
+      "mcs"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/science-arts/"
+  },
+  {
+    "id": "science-technology-and-society--minor",
+    "name": "Science, Technology and Society",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-minor/"
+  },
+  {
+    "id": "science-technology-and-society--b-s",
+    "name": "Science, Technology and Society",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/"
+  },
+  {
+    "id": "science-technology-and-public-policy--additional-major",
+    "name": "Science, Technology, and Public Policy",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/science-technology-public-policy-additional-major/"
+  },
+  {
+    "id": "scientific-computing--minor",
+    "name": "Scientific Computing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/minors/scientific-computing-minor/"
+  },
+  {
+    "id": "societal-computing--minor",
+    "name": "Societal Computing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/societal-computing-minor/"
+  },
+  {
+    "id": "societal-and-human-impacts-of-future-technologies--minor",
+    "name": "Societal and Human Impacts of Future Technologies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/societal-human-impacts-future-technologies-minor/"
+  },
+  {
+    "id": "sociology--minor",
+    "name": "Sociology",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/sociology-minor/"
+  },
+  {
+    "id": "soft-technologies--minor",
+    "name": "Soft Technologies",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/soft-technologies-minor/"
+  },
+  {
+    "id": "software-engineering--minor",
+    "name": "Software Engineering",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/software-engineering-minor/"
+  },
+  {
+    "id": "sonic-arts--minor",
+    "name": "Sonic Arts",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "intercollege"
+    ],
+    "affiliations": [
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/sonic-arts-minor/"
+  },
+  {
+    "id": "statistics-and-data-science--minor",
+    "name": "Statistics and Data Science",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-minor/"
+  },
+  {
+    "id": "statistics-and-data-science--b-s",
+    "name": "Statistics and Data Science",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/"
+  },
+  {
+    "id": "statistics-and-data-science-mathematical-sciences-track--b-s",
+    "name": "Statistics and Data Science (Mathematical Sciences Track)",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/"
+  },
+  {
+    "id": "statistics-and-data-science-neuroscience-track--b-s",
+    "name": "Statistics and Data Science (Neuroscience Track)",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/"
+  },
+  {
+    "id": "statistics-and-machine-learning--b-s",
+    "name": "Statistics and Machine Learning",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-machine-learning-bs/"
+  },
+  {
+    "id": "tech-entrepreneurship--minor-cmu-q",
+    "name": "Tech Entrepreneurship",
+    "credential": "Minor (CMU-Q)",
+    "program_type": "minor",
+    "home_colleges": [
+      "qatar"
+    ],
+    "affiliations": [
+      "qatar"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/qatar/tech-entrepreneurship-minor/"
+  },
+  {
+    "id": "technical-writing--minor",
+    "name": "Technical Writing",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-minor/"
+  },
+  {
+    "id": "technical-writing--b-s",
+    "name": "Technical Writing",
+    "credential": "B.S.",
+    "program_type": "primary_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-bs/"
+  },
+  {
+    "id": "technology-and-policy--minor",
+    "name": "Technology and Policy",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "engineering"
+    ],
+    "affiliations": [
+      "engineering"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/technology-policy-minor/"
+  },
+  {
+    "id": "the-history-of-the-arts--minor",
+    "name": "The History of the Arts",
+    "credential": "Minor",
+    "program_type": "minor",
+    "home_colleges": [
+      "cfa"
+    ],
+    "affiliations": [
+      "cfa"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/history-arts-minor/"
+  }
+]

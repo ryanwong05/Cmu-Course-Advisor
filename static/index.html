@@ -97,8 +97,6 @@
 
         </p>
 
-
-
         <label>
             Which semester are you planning for?
             <select id="planningStart">
@@ -143,6 +141,22 @@
 
                 <option value="scs">
                     School of Computer Science
+                </option>
+
+                <option value="cfa">
+                    College of Fine Arts
+                </option>
+
+                <option value="tepper">
+                    Tepper School of Business
+                </option>
+
+                <option value="heinz">
+                    Heinz College
+                </option>
+
+                <option value="intercollege">
+                    Intercollege Programs
                 </option>
 
             </select>
@@ -451,25 +465,32 @@
                         School of Computer Science
                     </option>
 
-                    <option
-                        value="engineering"
-                        disabled
-                    >
-                        College of Engineering — Coming soon
+                    <option value="engineering">
+                        College of Engineering
                     </option>
 
-                    <option
-                        value="dietrich"
-                        disabled
-                    >
-                        Dietrich College — Coming soon
+                    <option value="dietrich">
+                        Dietrich College
                     </option>
 
-                    <option
-                        value="mcs"
-                        disabled
-                    >
-                        Mellon College of Science — Coming soon
+                    <option value="mcs">
+                        Mellon College of Science
+                    </option>
+
+                    <option value="cfa">
+                        College of Fine Arts
+                    </option>
+
+                    <option value="tepper">
+                        Tepper School of Business
+                    </option>
+
+                    <option value="heinz">
+                        Heinz College
+                    </option>
+
+                    <option value="intercollege">
+                        Intercollege Programs
                     </option>
 
                 </select>
@@ -630,6 +651,15 @@
 
         <div class="settings-row">
 
+            <label>
+                When would you like to finish this goal?
+                <select id="targetCompletionYear">
+                    <option value="2">By the end of sophomore year</option>
+                    <option value="3">By the end of junior year</option>
+                    <option value="4" selected>By the end of senior year</option>
+                </select>
+            </label>
+
             <label class="hidden">
                 Plan for year
                 <select id="planningYear">
@@ -762,6 +792,19 @@
 
         </p>
 
+        <div class="saved-path-actions">
+            <button class="primary-button" id="savePathButton" type="button">Save to My Paths</button>
+            <button class="secondary-button" id="toggleSavedPaths" type="button">My Paths <span id="savedPathCount">0</span></button>
+            <span class="save-path-feedback" id="savePathFeedback" aria-live="polite"></span>
+        </div>
+        <section class="saved-paths-panel hidden" id="savedPathsPanel">
+            <div class="saved-paths-header">
+                <h2>My Paths</h2>
+                <span>Saved in this browser · ready for comparison</span>
+            </div>
+            <div id="savedPathsList"></div>
+        </section>
+
 
 
         <!-- ================================================
@@ -825,6 +868,7 @@
 
         <div class="overlap-summary hidden" id="overlapSummary"></div>
         <div class="program-path-note hidden" id="programPathNote"></div>
+        <div class="degree-audit-grid" id="degreeAuditGrid"></div>
 
         <!-- ================================================
              FASTEST PATH

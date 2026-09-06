@@ -109,6 +109,7 @@ Open `http://127.0.0.1:8000` in a browser.
 The current backend exposes:
 
 - `GET /api/programs`
+- `GET /api/program-directory`
 - `GET /api/programs/{program_id}/{goal_type}`
 - `POST /api/program-comparison`
 - `GET /api/baseline`

@@ -97,7 +97,8 @@ const appState = {
         max_units: 52,
         first_semester_max_units: 52,
         semester_unit_limits: [],
-        planning_year: 1
+        planning_year: 1,
+        target_completion_year: 4
     },
     selection: {
         goalType: null,
@@ -108,9 +109,88 @@ const appState = {
     plannerKey: null,
     latestProgramProfile: null,
     latestCourseCatalog: {},
-    latestSecondaryPathType: null
+    latestSecondaryPathType: null,
+    latestPlan: null
 };
 
+// #endregion
+
+// #region SAVED PATHS
+const SAVED_PATHS_KEY = "cmu-path.saved-paths.v1";
+
+function readSavedPaths() {
+    try {
+        return JSON.parse(localStorage.getItem(SAVED_PATHS_KEY) || "[]");
+    } catch {
+        return [];
+    }
+}
+
+function capturePath(container) {
+    return Array.from(container.querySelectorAll(".semester-card")).map(card => ({
+        semester: card.querySelector(".semester-name")?.textContent.trim(),
+        total: card.querySelector(".semester-total")?.textContent.trim(),
+        courses: Array.from(card.querySelectorAll(".planner-course-block"))
+            .filter(block => Number(block.dataset.units || 0) > 0)
+            .map(block => ({
+                id: block.dataset.courseId || block.querySelector("strong")?.textContent.trim(),
+                units: Number(block.dataset.units || 0)
+            }))
+    }));
+}
+
+function renderSavedPaths() {
+    const saved = readSavedPaths();
+    document.getElementById("savedPathCount").textContent = saved.length;
+    const list = document.getElementById("savedPathsList");
+    list.innerHTML = saved.length ? saved.map(path => `
+        <article class="saved-path-card" data-saved-path-id="${path.id}">
+            <div>
+                <strong>${path.name}</strong>
+                <p>${path.semesterCount} semesters · ${path.goalType.replaceAll("_", " ")}</p>
+                <small>Saved ${new Date(path.savedAt).toLocaleString()}</small>
+            </div>
+            <button class="secondary-button remove-saved-path" type="button">Remove</button>
+        </article>
+    `).join("") : "<p>No saved paths yet. Save a recommendation to compare it later.</p>";
+    list.querySelectorAll(".remove-saved-path").forEach(button => {
+        button.addEventListener("click", event => {
+            const id = event.target.closest("[data-saved-path-id]").dataset.savedPathId;
+            localStorage.setItem(SAVED_PATHS_KEY, JSON.stringify(
+                readSavedPaths().filter(path => path.id !== id)
+            ));
+            renderSavedPaths();
+        });
+    });
+}
+
+document.getElementById("savePathButton").addEventListener("click", () => {
+    if (!appState.latestPlan) return;
+    const goal = appState.goals[0];
+    const paths = readSavedPaths();
+    const snapshot = {
+        id: globalThis.crypto?.randomUUID?.() || String(Date.now()),
+        name: document.getElementById("goalName").textContent.trim(),
+        goalType: goal?.type || "academic_path",
+        program: goal?.program,
+        student: structuredClone(appState.student),
+        constraints: structuredClone(appState.constraints),
+        fastest: capturePath(fastestResults),
+        lowerWorkload: capturePath(lowerWorkloadResults),
+        semesterCount: fastestResults.querySelectorAll(".semester-card").length,
+        savedAt: new Date().toISOString()
+    };
+    paths.unshift(snapshot);
+    localStorage.setItem(SAVED_PATHS_KEY, JSON.stringify(paths));
+    document.getElementById("savePathFeedback").textContent = "Saved to My Paths";
+    renderSavedPaths();
+});
+
+document.getElementById("toggleSavedPaths").addEventListener("click", () => {
+    document.getElementById("savedPathsPanel").classList.toggle("hidden");
+});
+
+renderSavedPaths();
 // #endregion
 
 
@@ -188,16 +268,60 @@ let temporarySCSPrograms = [
 
 ];
 
+let programDirectory = [];
+
+const currentMajorAliases = {
+    "Statistics and Machine Learning": "stats-ml",
+    "Computer Science": "computer-science",
+    "Electrical and Computer Engineering": "ece"
+};
+
+function populateCurrentMajors() {
+    const college = document.getElementById("college").value;
+    const majorSelect = document.getElementById("major");
+    const matches = programDirectory
+        .filter(program =>
+            program.program_type === "primary_major"
+            && (
+                program.home_colleges.includes(college)
+                || program.affiliations.includes(college)
+            )
+        )
+        .sort((a, b) => a.name.localeCompare(b.name));
+
+    if (!matches.length) return;
+    const previousValue = majorSelect.value;
+    majorSelect.innerHTML = "";
+    for (const program of matches) {
+        const option = document.createElement("option");
+        option.value = currentMajorAliases[program.name] || program.id;
+        option.textContent = `${program.name} (${program.credential})`;
+        majorSelect.appendChild(option);
+    }
+    if ([...majorSelect.options].some(option => option.value === previousValue)) {
+        majorSelect.value = previousValue;
+    }
+}
+
 async function loadProgramRegistry() {
     try {
-        const response = await fetch("/api/programs");
-        if (response.ok) temporarySCSPrograms = await response.json();
+        const [programResponse, directoryResponse] = await Promise.all([
+            fetch("/api/programs"),
+            fetch("/api/program-directory")
+        ]);
+        if (programResponse.ok) temporarySCSPrograms = await programResponse.json();
+        if (directoryResponse.ok) {
+            const payload = await directoryResponse.json();
+            programDirectory = payload.programs;
+            populateCurrentMajors();
+        }
     } catch (error) {
         console.warn("Using bundled program fallback:", error);
     }
 }
 
 loadProgramRegistry();
+document.getElementById("college").addEventListener("change", populateCurrentMajors);
 
 // #endregion
 
@@ -377,14 +501,30 @@ const step3CourseData = {
             "Explore Statistics & Machine Learning",
 
         description:
-            "Tell us which parts of your current major you've already completed.",
+            "Start from the official Stats/ML sample curriculum, then replace approved alternatives where needed.",
 
 
-        courses: [],
+        courses: [
+            {id: "21-120", name: "Differential and Integral Calculus"},
+            {id: "36-200", name: "Reasoning with Data"},
+            {id: "15-112", name: "Fundamentals of Programming and Computer Science"},
+            {id: "36-202", name: "Methods for Statistics & Data Science"},
+            {id: "21-127", name: "Concepts of Mathematics"},
+            {id: "21-256", name: "Multivariate Analysis"},
+            {id: "36-235", name: "Probability and Statistical Inference I"},
+            {id: "15-122", name: "Principles of Imperative Computation"},
+            {id: "36-236", name: "Probability and Statistical Inference II"},
+            {id: "21-241", name: "Matrices and Linear Transformations"},
+            {id: "36-350", name: "Statistical Computing"},
+            {id: "10-301", name: "Introduction to Machine Learning"},
+            {id: "36-401", name: "Modern Regression"},
+            {id: "36-402", name: "Advanced Methods for Data Analysis"},
+            {id: "15-351", name: "Algorithms and Advanced Data Structures"}
+        ],
 
 
-        plannerReady:
-            false
+        plannerReady: true,
+        plannerNote: "Official 2026–27 sample path. Calculus, multivariable calculus, linear algebra, data analysis, probability, computing, and ML alternatives remain customizable."
 
     }
 
@@ -813,14 +953,7 @@ schoolSelect.addEventListener(
         }
 
 
-        // SCS currently implemented.
-        if (
-            appState.selection.school === "scs"
-        ) {
-
-            renderTemporarySCSPrograms();
-
-        }
+        renderProgramsForSchool(appState.selection.school);
 
 
         console.log(
@@ -1001,6 +1134,77 @@ function renderTemporarySCSPrograms() {
         "hidden"
     );
 
+}
+
+
+function renderProgramsForSchool(school) {
+    if (!programDirectory.length) {
+        if (school === "scs") renderTemporarySCSPrograms();
+        return;
+    }
+
+    const programSection = document.getElementById("programSection");
+    const programOptions = document.getElementById("programOptions");
+    const helper = programSection.querySelector(".program-helper");
+    const schoolLabel = programSection.querySelector(".eyebrow");
+    const allowedTypes = appState.selection.goalType === "transfer"
+        ? ["primary_major"]
+        : ["additional_major", "minor"];
+    const matches = programDirectory
+        .filter(program =>
+            allowedTypes.includes(program.program_type)
+            && (
+                program.home_colleges.includes(school)
+                || program.affiliations.includes(school)
+            )
+        )
+        .sort((a, b) => a.name.localeCompare(b.name));
+
+    programOptions.innerHTML = "";
+    schoolLabel.textContent = school.replaceAll("-", " ").toUpperCase();
+    helper.textContent = `${matches.length} programs in the 2026–27 directory`;
+
+    for (const program of matches) {
+        const button = document.createElement("button");
+        button.className = "program-card";
+        button.dataset.program = program.id;
+        button.innerHTML = `
+            <strong>${program.name}</strong>
+            <span class="program-upgrade-label">${program.credential}</span>
+            <small>${program.planning_status === "planning_ready"
+                ? "Verified planning available"
+                : "Directory only · requirements coming soon"}</small>
+        `;
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".program-card").forEach(card => {
+                card.classList.remove("selected");
+            });
+            button.classList.add("selected");
+            appState.selection.program = program.planning_id || program.id;
+            appState.selection.programType = program.program_type === "minor"
+                ? "minor"
+                : program.program_type === "additional_major"
+                    ? "additional_major"
+                    : null;
+            updatePlanningGoal();
+            const ready = program.planning_status === "planning_ready";
+            document.getElementById("step2bNext").disabled = !ready;
+            helper.textContent = ready
+                ? "Verified planning is available for this path."
+                : "This program is listed, but its planning requirements have not been verified yet.";
+            if (ready && appState.selection.goalType === "add-program") {
+                renderProgramComparison(appState.selection.program);
+            } else {
+                document.getElementById("programComparison").classList.add("hidden");
+            }
+        });
+        programOptions.appendChild(button);
+    }
+
+    if (!matches.length) {
+        programOptions.innerHTML = "<p>No matching programs are listed for this path.</p>";
+    }
+    programSection.classList.remove("hidden");
 }
 
 
@@ -1202,7 +1406,8 @@ function buildPlanningRequest() {
         max_units: Number(document.getElementById("units").value),
         first_semester_max_units: 52,
         semester_unit_limits: [],
-        planning_year: Number(document.getElementById("planningYear").value)
+        planning_year: Number(document.getElementById("planningYear").value),
+        target_completion_year: Number(document.getElementById("targetCompletionYear").value)
     };
 
     return {
@@ -1275,21 +1480,20 @@ document
                 }
                 const detail = await response.json();
                 const currentMajorHistory = appState.student.primary_major === "stats-ml"
-                    ? [
-                        {id: "21-120", name: "Differential and Integral Calculus"},
-                        {id: "21-127", name: "Concepts of Mathematics"},
-                        {id: "15-112", name: "Fundamentals of Programming and Computer Science"},
-                        {id: "15-122", name: "Principles of Imperative Computation"}
-                    ]
+                    ? step3CourseData["stats-ml-major"].courses.map(course => ({
+                        ...course,
+                        is_current_major: true
+                    }))
                     : [];
-                const historyCourses = [...currentMajorHistory, ...detail.fixed_courses]
-                    .filter((course, index, all) =>
-                        all.findIndex(other => other.id === course.id) === index
-                    );
+                const historyById = new Map();
+                [...currentMajorHistory, ...detail.fixed_courses].forEach(course => {
+                    historyById.set(course.id, {...historyById.get(course.id), ...course});
+                });
+                const historyCourses = [...historyById.values()];
                 step3CourseData[appState.plannerKey] = {
                     eyebrow: `SCS · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : "ADDITIONAL MAJOR"}`,
-                    title: "Which fixed requirements have you completed?",
-                    description: `Select completed fixed courses. Choice categories stay visible with their real catalog options until you choose a course.`,
+                    title: "Which current-major and goal courses have you completed?",
+                    description: `Select completed courses from your current major and this goal. Anything left unchecked may be placed in your future plan.`,
                     courses: historyCourses,
                     choiceGroups: detail.requirement_groups,
                     plannerNote: `Catalog ${detail.catalog_year}: ${detail.requirement_groups.map(group => `${group.name} (${group.options.join(" / ")})`).join("; ") || "all listed requirements are fixed courses"}.`,
@@ -1507,14 +1711,44 @@ function renderCourseSelection(
     }
 
 
-    // --------------------------------------------------------
-    // Render courses.
-    // --------------------------------------------------------
+    const foundationOrder = ["21-120", "21-122", "15-112", "36-200"];
+    const earlyCoreOrder = ["21-127", "15-122", "36-202", "36-235", "21-241"];
+    const rank = course => {
+        if (foundationOrder.includes(course.id)) return [0, foundationOrder.indexOf(course.id)];
+        if (earlyCoreOrder.includes(course.id)) return [1, earlyCoreOrder.indexOf(course.id)];
+        if (course.is_current_major) return [2, 0];
+        if (course.program_tier === "minor_foundation") return [3, 0];
+        if (course.program_tier === "additional_major") return [4, 0];
+        return [2, 0];
+    };
+    const groupNames = [
+        "First-year foundations",
+        "Early major core",
+        "Later current-major coursework",
+        "Minor foundation",
+        "Additional-major extension"
+    ];
+    const groupedCourses = data.courses
+        .slice()
+        .sort((a, b) => rank(a)[0] - rank(b)[0] || rank(a)[1] - rank(b)[1])
+        .reduce((groups, course) => {
+            const group = rank(course)[0];
+            (groups[group] ||= []).push(course);
+            return groups;
+        }, {});
 
-    for (
-        const course
-        of data.courses
-    ) {
+    Object.entries(groupedCourses).forEach(([groupIndex, groupCourses]) => {
+        const section = document.createElement("section");
+        section.className = "history-course-group";
+        const collapseLater = Number(groupIndex) >= 2 && appState.student.year === 1;
+        const list = document.createElement(collapseLater ? "details" : "div");
+        if (collapseLater) {
+            list.innerHTML = `<summary>${groupNames[groupIndex]} (${groupCourses.length})</summary>`;
+        } else {
+            section.innerHTML = `<h3>${groupNames[groupIndex]}</h3>`;
+        }
+
+        for (const course of groupCourses) {
 
         const label =
             document.createElement(
@@ -1541,20 +1775,18 @@ function renderCourseSelection(
 
                 ${course.name}
 
-                ${course.advanced_credit?.length
-                    ? `<small class="advanced-credit-note">High-school credit: ${course.advanced_credit.join("; ")}</small>`
-                    : ""}
+                ${course.program_tier ? `<small class="course-tier-badge ${course.program_tier === "minor_foundation" ? "minor-foundation" : ""}">${course.is_current_major ? "Also counts toward " : ""}${course.program_tier === "minor_foundation" ? "Minor foundation" : "Additional-major extension"}</small>` : ""}
 
             </span>
 
         `;
 
 
-        courseList.appendChild(
-            label
-        );
-
-    }
+            list.appendChild(label);
+        }
+        section.appendChild(list);
+        courseList.appendChild(section);
+    });
 
     // Choice groups belong in the semester builder on Results.  Keeping them
     // off this history screen prevents a long catalog dump before planning.
@@ -1677,10 +1909,10 @@ function renderPath(
     };
 
     const fixedBlock = (block, number) => `
-        <div class="planner-course-block fixed-block ${block.program_tier === "additional_major" ? "additional-major-block" : "minor-foundation-block"}" data-units="${block.units}" data-course-id="${block.id}" draggable="true">
+        <div class="planner-course-block fixed-block ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${block.estimated ? "primary-baseline-block" : ""}" data-units="${block.units}" data-course-id="${block.id}" draggable="true">
             <span class="block-number">${number}</span>
             <span class="block-main">
-                <small>${block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
+                <small>${block.estimated ? "Estimated primary-major workload" : block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
                 <strong>${block.id}</strong>
                 <span>${block.name}</span>
             </span>
@@ -1703,17 +1935,22 @@ function renderPath(
                             : "Choose a course"}</option>
                         ${options.map(option => `<option value="${option}" data-units="${appState.latestCourseCatalog[option]?.units || block.units}">${option}${appState.latestCourseCatalog[option]?.name ? ` · ${appState.latestCourseCatalog[option].name}` : ""}</option>`).join("")}
                     </select>
+                    <small class="course-description" aria-live="polite"></small>
                 </span>
                 <strong class="block-units">${block.units}u</strong>
             </div>`;
     };
 
     const emptyBlock = number => `
-        <div class="planner-course-block choice-block empty-block" data-units="0" draggable="true">
+        <div class="planner-course-block choice-block empty-block collapsed" data-units="0" draggable="true">
             <span class="block-number">${number}</span>
             <span class="block-main">
+                <button type="button" class="add-elective-button">+ Add elective</button>
+                <div class="elective-controls" hidden>
                 <select class="block-category" aria-label="Block ${number} category">
                     <option value="">Choose a category</option>
+                    ${appState.student.primary_major === "stats-ml" ? '<option value="stats-ml-math">Stats/ML math requirement</option>' : ""}
+                    <option value="math">Mathematics</option>
                     <option value="humanities">Humanities</option>
                     <option value="social-sciences">Social Sciences</option>
                     <option value="communication">Communication</option>
@@ -1725,6 +1962,8 @@ function renderPath(
                 <select class="block-course" aria-label="Block ${number} course" disabled>
                     <option value="" data-units="0">Select a category first</option>
                 </select>
+                <small class="course-description" aria-live="polite"></small>
+                </div>
             </span>
             <strong class="block-units">0u</strong>
         </div>`;
@@ -1732,11 +1971,15 @@ function renderPath(
     for (const semester of pathData.path) {
         const card = document.createElement("div");
         card.className = "semester-card semester-builder";
-        const blocks = (semester.course_blocks || []).slice(0, 5);
+        const blocks = (semester.course_blocks || []).slice(0, 6);
         const blocksHtml = blocks.map((block, index) =>
             block.locked ? fixedBlock(block, index + 1) : choiceBlock(block, index + 1)
         );
-        while (blocksHtml.length < 5) blocksHtml.push(emptyBlock(blocksHtml.length + 1));
+        // Keep five visible semester slots. Unused positions stay compact as
+        // "+ Add elective" cards instead of looking like missing requirements.
+        while (blocksHtml.length < 5) {
+            blocksHtml.push(emptyBlock(blocksHtml.length + 1));
+        }
 
         card.innerHTML = `
             <div class="semester-name">${semester.academic_year_name || "Year"} ${semester.semester}</div>
@@ -1791,8 +2034,12 @@ function renderPath(
                     const offered = appState.latestCourseCatalog[courseId]?.offered || [];
                     return offered.length && !offered.includes(term);
                 });
+            const primaryEstimate = blocks
+                .filter(block => block.classList.contains("primary-baseline-block"))
+                .reduce((sum, block) => sum + Number(block.dataset.units || 0), 0);
             card.querySelector(".semester-metrics").innerHTML = `
                 <div class="workload-level workload-${level}">${level[0].toUpperCase() + level.slice(1)} workload</div>
+                ${primaryEstimate ? `<div class="baseline-workload-note">Includes ${primaryEstimate} estimated primary-major units.</div>` : ""}
                 ${highCourses.length >= 2 ? `<div class="workload-warning">High-intensity combination: ${highCourses.join(", ")}</div>` : ""}
                 ${wrongTerm.length ? `<div class="term-warning">Not listed for ${term}: ${wrongTerm.join(", ")}</div>` : ""}
                 <div>~${hours} hrs/week</div>
@@ -1802,25 +2049,105 @@ function renderPath(
         };
         card.updatePlannerTotal = updateTotal;
 
+        card.querySelectorAll(".add-elective-button").forEach(button => {
+            button.addEventListener("click", event => {
+                const block = event.target.closest(".empty-block");
+                block.classList.remove("collapsed");
+                event.target.hidden = true;
+                block.querySelector(".elective-controls").hidden = false;
+                block.querySelector(".block-category").focus();
+            });
+        });
+        const semesterTerm = semester.semester.toLowerCase();
+        const fetchElectives = async (category, term = semesterTerm) => {
+            const response = await fetch(`/api/electives?term=${encodeURIComponent(term)}&category=${encodeURIComponent(category)}`);
+            if (!response.ok) throw new Error("Elective catalog unavailable");
+            return response.json();
+        };
+        const setCourseOptions = (courseSelect, electiveData) => {
+            const alreadyScheduled = new Set(
+                Array.from(container.querySelectorAll("[data-course-id]"))
+                    .map(block => block.dataset.courseId)
+                    .filter(Boolean)
+            );
+            const goalPrefixes = {
+                "artificial-intelligence": ["02", "05", "07", "10", "11", "15", "16", "36", "85"],
+                "computer-science": ["10", "11", "15", "17", "21"],
+                "robotics": ["10", "15", "16", "18", "24"]
+            }[appState.goals[0]?.program] || [];
+            const currentMajorPrefixes = appState.student.primary_major === "stats-ml"
+                ? ["10", "15", "21", "36"] : [];
+            const relatedPrefixes = new Set([...goalPrefixes, ...currentMajorPrefixes]);
+            const poorRecommendation = /independent study|practicum|reading and research/i;
+            const hasAdvancedMath = [...alreadyScheduled, ...appState.student.completed_courses]
+                .some(id => /^21-(1[2-9]\d|[2-5]\d\d)$/.test(id));
+            const available = electiveData.courses.filter(course => !alreadyScheduled.has(course.id));
+            const recommended = available.filter(course =>
+                relatedPrefixes.has(course.id.slice(0, 2))
+                && course.level >= 100
+                && !poorRecommendation.test(course.name)
+                && !(hasAdvancedMath && ["21-090", "21-102", "21-108"].includes(course.id))
+            );
+            const recommendedIds = new Set(recommended.map(course => course.id));
+            const other = available.filter(course => !recommendedIds.has(course.id));
+            const optionHtml = (course, recommendedCourse = false) =>
+                `<option value="${course.id}" data-units="${course.units}" data-term="${course.term}" data-description="${recommendedCourse ? "Recommended for your current and goal programs · " : ""}${course.description}">${recommendedCourse ? "★ " : ""}${course.requirement_group ? `[${course.requirement_group}] ` : ""}${course.id} · ${course.name}</option>`;
+            courseSelect.innerHTML = '<option value="" data-units="0">Choose a scheduled undergraduate course</option>' +
+                (recommended.length ? `<optgroup label="Recommended for your plan">${recommended.map(course => optionHtml(course, true)).join("")}</optgroup>` : "") +
+                `<optgroup label="Other undergraduate courses">${other.map(course => optionHtml(course)).join("")}</optgroup>`;
+            courseSelect.disabled = false;
+        };
+
+        // Requirement-group options arrive as verified course IDs. Enrich them
+        // from the actual semester schedule so students see titles, units, and
+        // offering details rather than a wall of unexplained numbers.
+        fetchElectives("free-elective").then(electiveData => {
+            const scheduledById = new Map(
+                electiveData.courses.map(course => [course.id, course])
+            );
+            card.querySelectorAll(".choice-block:not(.empty-block) .block-course option[value]").forEach(option => {
+                const course = scheduledById.get(option.value);
+                if (!course) return;
+                option.textContent = `${course.id} · ${course.name}`;
+                option.dataset.units = course.units;
+                option.dataset.description = course.description;
+            });
+        }).catch(() => {});
+
         card.querySelectorAll(".empty-block .block-category").forEach(select => {
-            select.addEventListener("change", event => {
+            select.addEventListener("change", async event => {
                 const block = event.target.closest(".planner-course-block");
                 const courseSelect = block.querySelector(".block-course");
-                const gened = ["humanities", "social-sciences", "communication", "data-analysis"].includes(event.target.value);
-                courseSelect.disabled = false;
                 const goalOptions = (appState.latestProgramProfile?.requirement_groups || [])
                     .flatMap(group => group.options || [])
                     .filter(option => /^\d{2}-\d{3}$/.test(option));
-                if (gened) {
-                    courseSelect.innerHTML = '<option value="approved-gened" data-units="9">Approved course (confirm in SIO)</option>';
-                } else if (event.target.value === "goal-program" && goalOptions.length) {
+                courseSelect.disabled = true;
+                courseSelect.innerHTML = '<option value="" data-units="0">Loading scheduled courses…</option>';
+                if (event.target.value === "goal-program" && goalOptions.length) {
                     courseSelect.innerHTML = '<option value="" data-units="0">Choose a course</option>' +
                         goalOptions.map(option => `<option value="${option}" data-units="${appState.latestCourseCatalog[option]?.units || 9}">${option}${appState.latestCourseCatalog[option]?.name ? ` · ${appState.latestCourseCatalog[option].name}` : ""}</option>`).join("");
+                    courseSelect.disabled = false;
                 } else if (event.target.value === "current-major") {
-                    courseSelect.innerHTML = '<option value="" data-units="0">Choose a course</option>' +
-                        ["21-120", "21-127", "15-112", "15-122"].map(option => `<option value="${option}" data-units="${["15-112", "15-122", "21-127"].includes(option) ? 12 : 10}">${option}</option>`).join("");
+                    const statsMlCourses = [
+                        "21-120", "36-200", "15-112", "36-202", "21-127",
+                        "21-256", "36-235", "15-122", "36-236", "21-241",
+                        "36-350", "10-301", "36-401", "36-402", "15-351"
+                    ];
+                    courseSelect.innerHTML = '<option value="" data-units="0">Choose an official Stats/ML course</option>' +
+                        statsMlCourses.map(option => {
+                            const course = appState.latestCourseCatalog[option];
+                            return `<option value="${option}" data-units="${course?.units || 9}" data-description="Official Stats/ML curriculum course">${option}${course?.name ? ` · ${course.name}` : ""}</option>`;
+                        }).join("");
+                    courseSelect.disabled = false;
                 } else {
-                    courseSelect.innerHTML = '<option value="" data-units="0">Choose course load</option><option value="9" data-units="9">9-unit course</option><option value="10" data-units="10">10-unit course</option><option value="12" data-units="12">12-unit course</option>';
+                    try {
+                        const cardTerm = block.closest(".semester-card")
+                            .querySelector(".semester-name").textContent.toLowerCase().endsWith("fall")
+                            ? "fall" : "spring";
+                        setCourseOptions(courseSelect, await fetchElectives(event.target.value || "free-elective", cardTerm));
+                    } catch (error) {
+                        courseSelect.innerHTML = '<option value="" data-units="0">Could not load courses</option>';
+                    }
                 }
                 courseSelect.dispatchEvent(new Event("change"));
             });
@@ -1831,7 +2158,10 @@ function renderPath(
                 const option = event.target.selectedOptions[0];
                 block.dataset.units = option?.dataset.units || block.dataset.units || 0;
                 block.dataset.courseId = option?.value || "";
+                block.dataset.offeredTerm = option?.dataset.term || "";
                 block.querySelector(".block-units").textContent = `${block.dataset.units}u`;
+                const description = block.querySelector(".course-description");
+                if (description) description.textContent = option?.dataset.description || "";
                 updateTotal();
             });
         });
@@ -1881,6 +2211,17 @@ function renderPath(
             block.title = prerequisites.length > 0 && !valid
                 ? `Check prerequisite order: ${prerequisites.join(" or ")}`
                 : "Drag to another semester";
+        });
+        container.querySelectorAll(".empty-block[data-course-id]").forEach(block => {
+            const cardTerm = block.closest(".semester-card")
+                .querySelector(".semester-name").textContent.toLowerCase().endsWith("fall")
+                ? "fall" : "spring";
+            const wrongTerm = block.dataset.offeredTerm && block.dataset.offeredTerm !== cardTerm;
+            block.classList.toggle("elective-term-warning", wrongTerm);
+            const description = block.querySelector(".course-description");
+            if (wrongTerm && description) {
+                description.textContent = `Not offered in ${cardTerm}. Re-select a course for this semester.`;
+            }
         });
     };
 
@@ -2082,15 +2423,23 @@ document
             const data =
                 await response.json();
 
+            appState.latestPlan = data;
+
+            renderDegreeAudits(data.degree_audits, data.primary_baseline);
+
             appState.latestProgramProfile = data.program_profile;
             appState.latestCourseCatalog = data.course_catalog || {};
             appState.latestSecondaryPathType = data.secondary_path_type;
             const programPathNote = document.getElementById("programPathNote");
             if (data.minor_status) {
+                const fixedCount = data.program_profile?.required_course_ids?.length || 0;
+                const choiceCount = (data.program_profile?.requirement_groups || [])
+                    .reduce((total, group) => total + (group.choose || 1), 0);
                 programPathNote.classList.remove("hidden");
                 programPathNote.classList.toggle("minor-unavailable", !data.minor_status.available);
                 programPathNote.innerHTML = `
                     <strong>Minor foundation → Additional Major</strong>
+                    <span><strong>${fixedCount + choiceCount} program requirements:</strong> ${fixedCount} fixed course${fixedCount === 1 ? "" : "s"} + ${choiceCount} course-choice slots.</span>
                     <span>Standard blocks form the minor foundation. Green blocks are additional courses required to continue to the major.</span>
                     <span>Drag a block onto another semester to swap their positions; totals and prerequisite warnings update immediately.</span>
                     ${data.minor_status.note ? `<span>${data.minor_status.note}</span>` : ""}
@@ -2317,6 +2666,39 @@ function renderOverlapSummary(summary) {
 }
 
 
+function renderDegreeAudits(audits, baseline) {
+    const container = document.getElementById("degreeAuditGrid");
+    if (!audits) {
+        container.innerHTML = "";
+        return;
+    }
+    const primary = audits.primary_degree;
+    const goal = audits.selected_goal;
+    const goalPercent = goal.total_requirements
+        ? Math.min(100, Math.round(goal.requirements_placed / goal.total_requirements * 100))
+        : 0;
+    container.innerHTML = `
+        <article class="degree-audit-card primary-audit-card">
+            <p class="eyebrow">PRIMARY DEGREE</p>
+            <h3>${primary.program}</h3>
+            <strong>${primary.future_semesters_planned} future semesters have a baseline</strong>
+            <div class="audit-progress"><span style="width:${Math.min(100, (primary.completed_semesters + primary.future_semesters_planned) / primary.total_semesters * 100)}%"></span></div>
+            <p>${primary.planned_primary_units} primary-major units represented in this planning horizon.</p>
+            <small>${primary.message}</small>
+        </article>
+        <article class="degree-audit-card goal-audit-card">
+            <p class="eyebrow">${goal.type.replaceAll("_", " ")}</p>
+            <h3>${goal.program}</h3>
+            <strong>${goal.requirements_placed ?? 0} / ${goal.total_requirements ?? "—"} requirements placed</strong>
+            <div class="audit-progress"><span style="width:${goalPercent}%"></span></div>
+            <p>${goal.requirements_remaining ?? "—"} requirements remaining.</p>
+            <small>${goal.message}</small>
+        </article>
+        ${baseline?.status === "estimated_template" ? `<p class="audit-disclaimer"><strong>Estimated baseline:</strong> ${baseline.note}</p>` : ""}
+    `;
+}
+
+
 // ------------------------------------------------------------
 // 11B. GOAL STATUS
 // ------------------------------------------------------------
@@ -2416,8 +2798,9 @@ function renderGoalName() {
     document.getElementById("lowerWorkloadGoalContext").textContent = secondaryIsMinor
         ? `${programName} · Minor foundation`
         : contextText;
+    const targetYear = appState.constraints.target_completion_year;
     document.getElementById("fastestPathTitle").textContent =
-        `⚡ Fastest ${pathType} Path`;
+        `🎯 Target-paced ${pathType} Path · by ${["", "Freshman", "Sophomore", "Junior", "Senior"][targetYear]}`;
     document.getElementById("lowerWorkloadTitle").textContent = secondaryIsMinor
         ? `◆ ${programName} Minor Foundation Path`
         : `⚖ Lower Workload ${pathType} Path`;

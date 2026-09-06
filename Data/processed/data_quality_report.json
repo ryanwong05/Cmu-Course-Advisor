@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-09-06T01:53:56.654353+00:00",
+  "status": "passed",
+  "schedule_year_assumption": {
+    "year": 2026,
+    "reason": "The source JSON labels seasons but does not include a year; the snapshot was supplied as the 2026 schedule baseline."
+  },
+  "sources": [
+    {
+      "file": "CMU_FCE_2021Fall-2022Sum_FULL.csv",
+      "raw_rows": 7457,
+      "accepted_rows": 7457,
+      "rejected_rows": 0,
+      "inserted_rows": 7457
+    },
+    {
+      "file": "CMU_FCE_2022Fall-2023Sum_FULL.csv",
+      "raw_rows": 7390,
+      "accepted_rows": 7390,
+      "rejected_rows": 0,
+      "inserted_rows": 7390
+    },
+    {
+      "file": "CMU_FCE_2023Fall-2024Sum_FULL.csv",
+      "raw_rows": 7549,
+      "accepted_rows": 7548,
+      "rejected_rows": 1,
+      "inserted_rows": 7548
+    },
+    {
+      "file": "CMU_FCE_2024Fall-2025Sum_FULL.csv",
+      "raw_rows": 7778,
+      "accepted_rows": 7778,
+      "rejected_rows": 0,
+      "inserted_rows": 7778
+    },
+    {
+      "file": "CMU_FCE_2025Fall-2026Sum_FULL.csv",
+      "raw_rows": 4174,
+      "accepted_rows": 4174,
+      "rejected_rows": 0,
+      "inserted_rows": 4174
+    },
+    {
+      "file": "cmu_schedule_classes.json",
+      "course_rows": 6480,
+      "section_rows": 15723
+    }
+  ],
+  "fce": {
+    "rows": 34347,
+    "distinct_course_ids": 6023,
+    "missing_workload_rows": 2014,
+    "missing_course_rating_rows": 2032,
+    "by_term": [
+      {
+        "year": 2021,
+        "term": "Fall",
+        "rows": 3581
+      },
+      {
+        "year": 2022,
+        "term": "Fall",
+        "rows": 3639
+      },
+      {
+        "year": 2022,
+        "term": "Spring",
+        "rows": 3499
+      },
+      {
+        "year": 2022,
+        "term": "Summer",
+        "rows": 377
+      },
+      {
+        "year": 2023,
+        "term": "Fall",
+        "rows": 3607
+      },
+      {
+        "year": 2023,
+        "term": "Spring",
+        "rows": 3421
+      },
+      {
+        "year": 2023,
+        "term": "Summer",
+        "rows": 330
+      },
+      {
+        "year": 2024,
+        "term": "Fall",
+        "rows": 3708
+      },
+      {
+        "year": 2024,
+        "term": "Spring",
+        "rows": 3609
+      },
+      {
+        "year": 2024,
+        "term": "Summer",
+        "rows": 332
+      },
+      {
+        "year": 2025,
+        "term": "Fall",
+        "rows": 3796
+      },
+      {
+        "year": 2025,
+        "term": "Spring",
+        "rows": 3701
+      },
+      {
+        "year": 2025,
+        "term": "Summer",
+        "rows": 369
+      },
+      {
+        "year": 2026,
+        "term": "Spring",
+        "rows": 378
+      }
+    ]
+  },
+  "schedule": {
+    "course_rows": 6480,
+    "section_rows": 15723,
+    "distinct_course_ids": 5012,
+    "sections_without_begin_time": 5481,
+    "by_term": [
+      {
+        "year": 2026,
+        "term": "Fall",
+        "courses": 3192,
+        "sections": 7848
+      },
+      {
+        "year": 2026,
+        "term": "Spring",
+        "courses": 3120,
+        "sections": 7602
+      },
+      {
+        "year": 2026,
+        "term": "Summer",
+        "courses": 168,
+        "sections": 273
+      }
+    ]
+  },
+  "cross_source": {
+    "schedule_courses_with_fce": 3930,
+    "schedule_to_fce_match_rate_pct": 78.41
+  },
+  "cleaning_actions": [
+    "standardized CMU course IDs to NN-NNN",
+    "normalized semester and department text",
+    "converted numeric and percentage fields",
+    "excluded malformed non-course identifiers",
+    "deduplicated records using stable row hashes",
+    "preserved source-file provenance",
+    "kept missing evaluation values as null"
+  ]
+}

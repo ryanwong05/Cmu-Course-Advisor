@@ -5,20 +5,19 @@ import hashlib
 import json
 import re
 import sqlite3
-import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+DATA_DIR = ROOT / "Data"
+RAW_DIR = DATA_DIR / "raw"
+PROCESSED_DIR = DATA_DIR / "processed"
+REFERENCE_DIR = DATA_DIR / "reference"
+DEFAULT_ACADEMIC_YEAR = 2026
 
-from config.setting import settings
-
-
-DEFAULT_JSON_PATH = settings.dataStoragePath / "cmu_schedule_classes.json"
-DEFAULT_DB_PATH = settings.database_path
-DEPT_MAP_PATH = settings.dataStoragePath / "reference" / "dept_map.json"
+DEFAULT_JSON_PATH = RAW_DIR / "cmu_schedule_classes.json"
+DEFAULT_DB_PATH = PROCESSED_DIR / "courses.sqlite"
+DEPT_MAP_PATH = REFERENCE_DIR / "dept_map.json"
 
 
 def clean_text(value: object) -> str:
@@ -39,6 +38,26 @@ def slugify(value: str) -> str:
     value = clean_text(value).lower()
     value = re.sub(r"[^a-z0-9]+", "_", value)
     return value.strip("_")
+
+
+def normalize_course_id(value: str) -> str | None:
+    """Convert CMU course numbers to NN-NNN, restoring a leading zero."""
+    raw_value = clean_text(value)
+    if not raw_value.isdigit() or len(raw_value) not in {4, 5}:
+        return None
+    digits = raw_value.zfill(5)
+    return f"{digits[:2]}-{digits[2:]}"
+
+
+def term_from_schedule_name(semester_name: str) -> str:
+    normalized = semester_name.lower()
+    if "fall" in normalized:
+        return "Fall"
+    if "spring" in normalized:
+        return "Spring"
+    if "summer" in normalized:
+        return "Summer"
+    return "Unknown"
 
 
 def build_course_key(semester_name: str, num: str, title: str) -> str:
@@ -164,10 +183,13 @@ def ensure_tables(conn: sqlite3.Connection) -> None:
         """
         CREATE TABLE IF NOT EXISTS courses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            academic_year INTEGER NOT NULL,
+            term TEXT NOT NULL,
             semester_name TEXT NOT NULL,
             semester_slug TEXT NOT NULL,
             dept TEXT,
             num TEXT NOT NULL,
+            canonical_course_id TEXT NOT NULL,
             title TEXT NOT NULL,
             units_raw TEXT,
             units REAL,
@@ -184,9 +206,12 @@ def ensure_tables(conn: sqlite3.Connection) -> None:
         CREATE TABLE IF NOT EXISTS course_sections (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             course_id INTEGER NOT NULL,
+            academic_year INTEGER NOT NULL,
+            term TEXT NOT NULL,
             semester_name TEXT NOT NULL,
             semester_slug TEXT NOT NULL,
             num TEXT NOT NULL,
+            canonical_course_id TEXT NOT NULL,
             title TEXT NOT NULL,
             units_raw TEXT,
             units REAL,
@@ -203,10 +228,13 @@ def ensure_tables(conn: sqlite3.Connection) -> None:
     )
     indexes = [
         "CREATE INDEX IF NOT EXISTS idx_courses_num ON courses(num)",
+        "CREATE INDEX IF NOT EXISTS idx_courses_canonical_id ON courses(canonical_course_id)",
+        "CREATE INDEX IF NOT EXISTS idx_courses_year_term ON courses(academic_year, term)",
         "CREATE INDEX IF NOT EXISTS idx_courses_semester_num ON courses(semester_slug, num)",
         "CREATE INDEX IF NOT EXISTS idx_courses_title ON courses(title)",
         "CREATE INDEX IF NOT EXISTS idx_sections_course_id ON course_sections(course_id)",
         "CREATE INDEX IF NOT EXISTS idx_sections_num ON course_sections(num)",
+        "CREATE INDEX IF NOT EXISTS idx_sections_canonical_id ON course_sections(canonical_course_id)",
         "CREATE INDEX IF NOT EXISTS idx_sections_semester_num ON course_sections(semester_slug, num)",
     ]
     for statement in indexes:
@@ -218,7 +246,11 @@ def reset_tables(conn: sqlite3.Connection) -> None:
     conn.execute("DELETE FROM courses")
 
 
-def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
+def import_schedule(
+    json_path: Path,
+    db_path: Path,
+    academic_year: int = DEFAULT_ACADEMIC_YEAR,
+) -> tuple[int, int]:
     data = load_schedule_data(json_path)
     db_path.parent.mkdir(parents=True, exist_ok=True)
     num_to_dept, prefix_to_dept = build_dept_resolver(db_path)
@@ -236,16 +268,26 @@ def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
                 continue
 
             semester_slug = slugify(semester_name)
+            term = term_from_schedule_name(semester_name)
 
             for num, raw_course in semester_courses.items():
                 if not isinstance(raw_course, dict):
+                    continue
+
+                canonical_course_id = normalize_course_id(str(num))
+                if canonical_course_id is None:
                     continue
 
                 dept = infer_dept(str(num), num_to_dept, prefix_to_dept)
                 title = clean_text(raw_course.get("title"))
                 units_raw = clean_text(raw_course.get("units"))
                 units = to_float(units_raw)
-                course_info = raw_course.get("course_info") or []
+                raw_course_info = raw_course.get("course_info")
+                course_info = (
+                    raw_course_info
+                    if isinstance(raw_course_info, list)
+                    else []
+                )
 
                 normalized_sections: list[dict[str, str]] = []
                 for item in course_info:
@@ -261,7 +303,9 @@ def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
                         }
                     )
 
-                course_key = build_course_key(semester_name, str(num), title)
+                course_key = build_course_key(
+                    f"{academic_year}-{term}", str(num), title
+                )
                 course_info_json = json.dumps(normalized_sections, ensure_ascii=False)
                 row_payload = "|".join(
                     [
@@ -277,10 +321,13 @@ def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
                 cursor = conn.execute(
                     """
                     INSERT INTO courses (
+                        academic_year,
+                        term,
                         semester_name,
                         semester_slug,
                         dept,
                         num,
+                        canonical_course_id,
                         title,
                         units_raw,
                         units,
@@ -289,13 +336,16 @@ def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
                         source_file,
                         course_key,
                         row_hash
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
+                        academic_year,
+                        term,
                         semester_name,
                         semester_slug,
                         dept,
                         clean_text(num),
+                        canonical_course_id,
                         title,
                         units_raw,
                         units,
@@ -326,9 +376,12 @@ def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
                         """
                         INSERT INTO course_sections (
                             course_id,
+                            academic_year,
+                            term,
                             semester_name,
                             semester_slug,
                             num,
+                            canonical_course_id,
                             title,
                             units_raw,
                             units,
@@ -339,13 +392,16 @@ def import_schedule(json_path: Path, db_path: Path) -> tuple[int, int]:
                             end_time,
                             location,
                             section_hash
-                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                         """,
                         (
                             course_id,
+                            academic_year,
+                            term,
                             semester_name,
                             semester_slug,
                             clean_text(num),
+                            canonical_course_id,
                             title,
                             units_raw,
                             units,
@@ -375,6 +431,16 @@ def main() -> None:
         help=f"Path to the schedule JSON file. Default: {DEFAULT_JSON_PATH}",
     )
     parser.add_argument(
+        "--year",
+        dest="academic_year",
+        type=int,
+        default=DEFAULT_ACADEMIC_YEAR,
+        help=(
+            "Calendar year represented by the schedule snapshot. "
+            f"Default: {DEFAULT_ACADEMIC_YEAR}"
+        ),
+    )
+    parser.add_argument(
         "--db",
         dest="db_path",
         type=Path,
@@ -383,7 +449,11 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    courses, sections = import_schedule(args.json_path, args.db_path)
+    courses, sections = import_schedule(
+        args.json_path,
+        args.db_path,
+        academic_year=args.academic_year,
+    )
     print(f"Imported {courses} course rows")
     print(f"Imported {sections} section rows")
     print(f"Source JSON: {args.json_path}")
