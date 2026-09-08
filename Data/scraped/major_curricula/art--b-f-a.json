@@ -1,0 +1,145 @@
+{
+  "program_id": "art--b-f-a",
+  "planning_id": "art",
+  "name": "Art",
+  "credential": "B.F.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/",
+  "source_hash": "cb231ad4ccea34cd65c561a710b745b812b9d3dccf9be49cf63fd4f863674e0d",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "57-173",
+        "57-306",
+        "57-480",
+        "76-337",
+        "70-342",
+        "76-221",
+        "76-239",
+        "76-241",
+        "76-386",
+        "79-145",
+        "79-201",
+        "79-202",
+        "79-205",
+        "79-208",
+        "79-211",
+        "79-223",
+        "79-234",
+        "79-240",
+        "79-242",
+        "79-245",
+        "79-261",
+        "79-262",
+        "79-265",
+        "79-266",
+        "79-267",
+        "79-275",
+        "79-280",
+        "79-283",
+        "79-343",
+        "79-345",
+        "79-350",
+        "79-377",
+        "80-100",
+        "80-250",
+        "80-251",
+        "80-253",
+        "80-254",
+        "80-276"
+      ],
+      "source_instruction": "Bachelor of Fine Arts (B.F.A) Overview Using five categories of courses, the curriculum presents art-making in a unique manner which respects tradition and encourages innovation. The course categories are: I . Foundation Courses II. Intermediate Studios III. Advanced Studios IV. Critical Studies Courses V. University Academic Courses I. Foundation Courses In their first year of study, students take a total of six foundation studio courses, exploring a range of mediums and conceptual processes. These studios ensure that all students have an exploratory experience with all of the media resources of the school. They also serve as preparation for intermediate and advanced studio work. In addition, the Art First-Year Seminar introduces you to facilities, faculty, staff, resources, and many opportunities you can access within Art and the broader university. All first-year students take the seminar together, allowing you build a strong community that will help you develop as an artist during your time at CMU and beyond. II. Intermediate Studios Students take a minimum of six Intermediate Studio courses of their choosing in preparation for Advanced Studios in their junior and senior years. Intermediate studios will build on foundational knowledge and allow students to direct their studies to those mediums and topics most strongly of interest. III. Advanced Studios Students take a minimum of six Advanced Studio elective courses in their junior and senior years. These courses address specialized studio work in one of the four artistic concentration areas in the school, which are: Drawing, Painting, Print Media, and Photography (DP3) Sculpture, Installation, and Site Work (SIS) Electronic and Time-Based Work (ETB) Social Practice (SP) In addition, students complete another six studio courses, which can be either Intermediate or Advanced Studios. This allows for significant exploration and integration across mediums within the program. A minimum of four courses must be taken in one of these concentration areas. One of the intermediate or advanced courses can be a studio-based course within the College of Fine Arts, IDeATe, or additional programs. IV. Critical Studies Courses Students are introduced to critical studies in the spring of their first year, taking Foundations: Critical Studies. After the first year, students take four elective critical studies courses to broaden their knowledge and inform their studio practice. Critical Studies courses are discussion-based seminars examining theoretical texts in relation to periods of artistic practice. Readings will introduce students to the historical and critical background of the themes discussed in class and familiarize them with the varied methodologies and argumentative styles proper to art criticism, critical theory and philosophy. V. University Academic Courses Ten academic courses outside of Art and Computing @ Carnegie Mellon are required. First Year In the first year of study the student is expected to complete the following three requirements: Core@CMU ( 99-101 ) One First-Year Writing option One Global/Cultural Studies elective For First-Year Writing, the student selects one of the two full-semester courses, ( Interpretation and Argument ( 76-101 ) or Advanced First Year Writing: Special Topics ( 76-102 ) ), or two of the three half-semester writing courses ( Writing about Literature, Art and Culture ( 76-106 ) , Writing about Data ( 76-107 ) , or Writing about Public Problems ( 76-108 ) ). The Global/Cultural Studies electives include but are not limited to the following courses:"
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "60-104",
+        "60-110",
+        "60-131",
+        "60-150",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "60-101",
+        "60-107",
+        "60-120",
+        "60-135",
+        "60-170"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year",
+      "name": "Second Year",
+      "choose": 1,
+      "units": 0,
+      "options": [
+        "60-200"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.F.A. in Art 384 Below is the recommended distribution of courses in the four-year B.F.A curriculum. After the first year, students have greater flexibility regarding the sequencing of their elective courses. Art sophomores are limited to intermediate studios. Advanced studio courses are reserved for Art juniors and seniors. First Year Fall Units 60-104 Foundations: Art First-Year Seminar 6 60-110 Foundations: Time-Based Media 10 60-131 Foundations: Sculpture 10 60-150 Foundations: Drawing 10 76-10X First-Year Writing 9 99-101 Core@CMU 3 48 Spring Units 60-101 Foundations: Risk, Agency, Failure 10 60-107 Foundations: Critical Studies 9 Select two of the three Foundation Media Courses: 20 60-120 Foundations: Digital Media 60-135 Foundations: Sculpture II 60-170 Foundations: Paint/Print xx-xxx Cultural/Global Studies elective 9 48 Second Year Fall Units 60-2xx Intermediate Studio Elective 10 60-2xx Intermediate Studio Elective 10 60-2xx Intermediate Studio Elective 10 60-3xx Critical Studies Elective 9 xx-xxx Academic Elective 9 48"
+    },
+    {
+      "id": "fourth-year",
+      "name": "Fourth Year",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "60-402"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.F.A. in Art 384 Below is the recommended distribution of courses in the four-year B.F.A curriculum. After the first year, students have greater flexibility regarding the sequencing of their elective courses. Art sophomores are limited to intermediate studios. Advanced studio courses are reserved for Art juniors and seniors. First Year Fall Units 60-104 Foundations: Art First-Year Seminar 6 60-110 Foundations: Time-Based Media 10 60-131 Foundations: Sculpture 10 60-150 Foundations: Drawing 10 76-10X First-Year Writing 9 99-101 Core@CMU 3 48 Spring Units 60-101 Foundations: Risk, Agency, Failure 10 60-107 Foundations: Critical Studies 9 Select two of the three Foundation Media Courses: 20 60-120 Foundations: Digital Media 60-135 Foundations: Sculpture II 60-170 Foundations: Paint/Print xx-xxx Cultural/Global Studies elective 9 48 Second Year Fall Units 60-2xx Intermediate Studio Elective 10 60-2xx Intermediate Studio Elective 10 60-2xx Intermediate Studio Elective 10 60-3xx Critical Studies Elective 9 xx-xxx Academic Elective 9 48 Spring Units 60-200 Sophomore Review 0 60-2xx Intermediate Studio Elective 10 60-2xx Intermediate Studio Elective 10 60-2xx Intermediate Studio Elective 10 60-3xx Critical Studies Elective 9 xx-xxx Academic Elective 9 48 Third Year Fall Units 60-xxx Intermediate or Advanced Studio Elective 10 60-xxx Intermediate or Advanced Studio Elective 10 60-xxx Intermediate or Advanced Studio Elective 10 60-3xx Critical Studies Elective 9 xx-xxx Academic Elective 9 48 Spring Units 60-xxx Intermediate or Advanced Studio Elective 10 60-xxx Intermediate or Advanced Studio Elective 10 60-xxx Intermediate or Advanced Studio Elective 10 60-3xx Critical Studies Elective 9 xx-xxx Academic Elective 9 48 Fourth Year Fall Units 60-4xx Advanced Studio Elective 10 60-4xx Advanced Studio Elective 10 60-4xx Advanced Studio Elective 10 xx-xxx Academic Elective 9 xx-xxx Academic Elective 9 48"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 50,
+    "confidence": 0.68,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.6
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "12 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 50,
+    "extracted_unit_estimate": 64,
+    "scheduled_course_count": 38,
+    "missing_schedule_course_ids": [
+      "76-337",
+      "76-386",
+      "79-205",
+      "79-211",
+      "79-223",
+      "79-242",
+      "79-261",
+      "79-265",
+      "79-267",
+      "80-250",
+      "80-254",
+      "80-276"
+    ]
+  }
+}

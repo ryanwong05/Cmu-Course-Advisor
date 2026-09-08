@@ -141,6 +141,20 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertTrue(result["courses"])
         self.assertTrue(all(course["level"] < 600 for course in result["courses"]))
 
+    def test_communication_and_humanities_have_real_scheduled_candidates(self):
+        for category in ("communication", "humanities"):
+            result = app.list_electives(term="fall", category=category)
+            self.assertTrue(result["courses"])
+            self.assertTrue(all(course["sections"] > 0 for course in result["courses"]))
+
+    def test_communication_uses_only_official_full_course_or_two_mini_paths(self):
+        result = app.list_electives(term="fall", category="communication")
+        ids = {course["id"] for course in result["courses"]}
+        self.assertIn("76-101", ids)
+        self.assertIn("76-106 + 76-107", ids)
+        self.assertNotIn("76-106", ids)
+        self.assertTrue(all(course["units"] == 9 for course in result["courses"]))
+
     def test_target_completion_year_controls_planning_horizon(self):
         request = self.shared_request({
             "type": "additional_major",
@@ -186,36 +200,67 @@ class PlanningIntegrationTests(unittest.TestCase):
             for semester in result["fastest"]["path"]
         ))
 
-    def test_unverified_engineering_major_gets_nonempty_primary_baseline(self):
+    def test_verified_meche_major_uses_real_curriculum_with_robotics(self):
         request = self.shared_request({
             "type": "additional_major", "college": "scs", "program": "robotics"
         })
         request.student.college = "engineering"
         request.student.primary_major = "mechanical-engineering"
+        request.constraints.start_semester = "fall"
+        request.constraints.planning_year = 1
         request.constraints.target_completion_year = 4
         result = app.create_plan(request)
-        self.assertEqual(result["primary_baseline"]["units"], 30)
+        self.assertEqual(result["primary_baseline"]["units"], 0)
         self.assertEqual(
             result["degree_audits"]["primary_degree"]["status"],
-            "fallback_template",
+            "verified_curriculum",
         )
-        for semester in result["fastest"]["path"]:
-            self.assertGreaterEqual(semester["primary_major_reserved_units"], 0)
-            self.assertGreaterEqual(semester["total_units"], 30)
+        blocks = [
+            block for semester in result["fastest"]["path"]
+            for block in semester["course_blocks"]
+        ]
+        self.assertFalse(any(block.get("estimated") for block in blocks))
+        self.assertTrue(any(block["id"] == "24-101" for block in blocks))
+        self.assertTrue(any(block["id"] == "16-450" for block in blocks))
+        self.assertTrue(result["fastest"]["goal_complete"])
+        self.assertEqual(result["fastest"]["remaining_program_requirements"], [])
+        self.assertGreaterEqual(sum(
+            block.get("kind") in {"current_major", "shared", "current_major_choice"}
+            for block in blocks
+        ), 20)
 
-    def test_partial_stats_ml_curriculum_keeps_remaining_major_reserve(self):
+    def test_meche_completion_profile_exposes_real_courses(self):
+        profile = app.get_primary_major_profile("mechanical-engineering")
+        ids = {course["id"] for course in profile["fixed_courses"]}
+        self.assertTrue({"24-101", "24-261", "24-370", "24-452"}.issubset(ids))
+        self.assertEqual(profile["minimum_degree_units"], 382)
+
+    def test_robotics_additional_major_has_all_ten_requirements(self):
+        profile = app.program_profiles["programs"]["robotics"]["additional_major"]
+        self.assertEqual(profile["minimum_courses"], 10)
+        self.assertEqual(
+            1 + sum(group["choose"] for group in profile["requirement_groups"]),
+            10,
+        )
+
+    def test_verified_stats_ml_curriculum_uses_real_requirements_without_reserve(self):
         request = self.shared_request({
             "type": "additional_major", "college": "scs", "program": "robotics"
         })
         result = app.create_plan(request)
-        self.assertEqual(result["primary_baseline"]["status"], "partial_curriculum")
-        self.assertTrue(any(
-            semester["primary_major_reserved_units"] > 0
+        self.assertEqual(result["primary_baseline"]["status"], "verified_curriculum")
+        self.assertTrue(all(
+            semester["primary_major_reserved_units"] == 0
             for semester in result["fastest"]["path"]
         ))
         self.assertTrue(any(
             semester["current_major_courses"]
             for semester in result["fastest"]["path"]
+        ))
+        self.assertTrue(any(
+            item.get("scope") == "primary_major"
+            for semester in result["fastest"]["path"]
+            for item in semester["program_requirements"]
         ))
 
     def test_stats_ml_official_math_and_core_courses_are_hydrated(self):
@@ -235,6 +280,104 @@ class PlanningIntegrationTests(unittest.TestCase):
             course["id"] in app.STATS_ML_MATH_GROUPS
             and course["requirement_group"]
             for course in result["courses"]
+        ))
+
+    def test_stats_ml_verified_template_has_all_official_curriculum_sections(self):
+        curriculum = app.requirements["stats-ml-major"]
+        self.assertEqual(curriculum["curriculum_status"], "verified")
+        self.assertEqual(curriculum["minimum_degree_units"], 360)
+        self.assertEqual(
+            {group["id"] for group in curriculum["requirement_groups"]},
+            {
+                "calculus", "multivariable", "linear-algebra",
+                "beginning-data", "intermediate-data", "advanced-data",
+                "programming", "algorithms", "intro-ml", "advanced-ml",
+            },
+        )
+
+    def test_stats_ml_defaults_are_distinct_and_offered_in_their_terms(self):
+        request = self.shared_request({
+            "type": "current_major", "program": "stats-ml"
+        })
+        request.constraints.start_semester = "fall"
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)["fastest"]
+        defaults = []
+        catalog = {course["id"]: course for course in app.courses}
+        for semester in result["path"]:
+            for item in semester["program_requirements"]:
+                if item.get("scope") != "primary_major":
+                    continue
+                default = item.get("default_option")
+                defaults.append(default)
+                for course_id in default.split(" + "):
+                    self.assertIn(semester["semester"], catalog[course_id]["offered"])
+        self.assertEqual(len(defaults), len(set(defaults)))
+        self.assertFalse(result["remaining_current_major"])
+        self.assertFalse(result["remaining_primary_requirements"])
+        self.assertTrue(result["primary_major_complete"])
+
+    def test_every_scheduled_course_gets_a_five_level_intensity(self):
+        result = app.list_electives(term="fall", category="humanities")
+        self.assertTrue(result["courses"])
+        self.assertTrue(all(
+            1 <= course["intensity"]["tier"] <= 5
+            and course["intensity"]["label"]
+            for course in result["courses"]
+        ))
+
+    def test_information_systems_minor_is_verified_and_plannable(self):
+        profile = app.get_program_profile("information-systems", "minor")
+        self.assertEqual(
+            {course["id"] for course in profile["fixed_courses"]},
+            {"67-240", "67-250", "67-262"},
+        )
+        self.assertEqual(sum(
+            group.get("choose", 1) for group in profile["requirement_groups"]
+        ), 4)
+        request = self.shared_request({
+            "type": "minor",
+            "college": "dietrich",
+            "program": "information-systems",
+        })
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)["fastest"]
+        self.assertTrue(result["goal_complete"])
+        self.assertFalse(result["remaining_program_requirements"])
+
+    def test_information_systems_bs_is_verified_and_plannable(self):
+        directory_entry = next(
+            item for item in app.program_directory
+            if item["id"] == "information-systems--b-s"
+        )
+        self.assertEqual(directory_entry["planning_status"], "planning_ready")
+        self.assertEqual(directory_entry["home_colleges"], ["dietrich"])
+        self.assertIn("heinz", directory_entry["affiliations"])
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "dietrich",
+            "program": "information-systems",
+        })
+        baseline = app.create_baseline(request)
+        self.assertEqual(baseline["planner_status"], "ready_with_requirement_slots")
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)["fastest"]
+        scheduled = {
+            course_id
+            for semester in result["path"]
+            for course_id in semester["goal_courses"]
+        }
+        fixed_slots = {
+            item["id"]
+            for semester in result["path"]
+            for item in semester["program_requirements"]
+        }
+        self.assertTrue({"67-250", "67-262"}.issubset(scheduled))
+        self.assertIn("fixed-67-272", fixed_slots)
+        self.assertTrue(any(
+            item["name"].startswith("IS breadth")
+            for semester in result["path"]
+            for item in semester["program_requirements"]
         ))
 
     def test_primary_and_selected_goal_have_separate_audits(self):
@@ -345,19 +488,20 @@ class PlanningIntegrationTests(unittest.TestCase):
         )
         self.assertLessEqual(first["total_units"], 52)
 
-    def test_stats_ml_student_without_calculus_credit_gets_21_120(self):
+    def test_stats_ml_student_without_calculus_credit_gets_calculus_choice(self):
         request = self.shared_request({
             "type": "internal_transfer",
             "college": "scs",
             "program": "computer-science",
         })
         path = app.create_plan(request)["fastest"]["path"]
-        current_major_courses = {
-            course
+        primary_choices = {
+            item.get("default_option")
             for semester in path
-            for course in semester["current_major_courses"]
+            for item in semester["program_requirements"]
+            if item.get("scope") == "primary_major"
         }
-        self.assertIn("21-120", current_major_courses)
+        self.assertIn("21-120", primary_choices)
 
     def test_completed_21_120_is_not_scheduled_again(self):
         request = self.shared_request({
@@ -426,7 +570,10 @@ class PlanningIntegrationTests(unittest.TestCase):
         calculus_semester = next(
             semester["semester_number"]
             for semester in path
-            if "21-120" in semester["courses"]
+            if any(
+                item.get("default_option") == "21-120"
+                for item in semester["program_requirements"]
+            )
         )
         concepts_semester = next(
             semester["semester_number"]
@@ -555,6 +702,18 @@ class PlanningIntegrationTests(unittest.TestCase):
         path = app.create_plan(request)["fastest"]["path"]
         self.assertTrue(all(
             semester["high_intensity_count"] <= 2
+            for semester in path
+        ))
+
+    def test_lower_workload_path_prefers_one_high_intensity_course_per_term(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        path = app.create_plan(request)["lower_workload"]["path"]
+        self.assertTrue(all(
+            semester["high_intensity_count"] <= 1
             for semester in path
         ))
 

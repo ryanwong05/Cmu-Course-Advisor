@@ -1,0 +1,1425 @@
+{
+  "program_id": "drama--b-f-a",
+  "planning_id": "drama",
+  "name": "Drama",
+  "credential": "B.F.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/",
+  "source_hash": "6e6b4fb8144f78d1dba89bcbc47f9cfac3e2f4db7fd8465a602d5433f2a508a2",
+  "fixed_courses": [
+    {
+      "id": "54-281",
+      "name": "Foundations of Drama II (if not in fall) 2",
+      "units": 6.0,
+      "source_text": "54-281 Foundations of Drama II (if not in fall) 2 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-011",
+        "54-101",
+        "54-103",
+        "54-105",
+        "54-107",
+        "54-110",
+        "76-101",
+        "76-106",
+        "76-108",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-102",
+        "54-104",
+        "54-106",
+        "54-108",
+        "54-177",
+        "54-159",
+        "54-285"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-201",
+        "54-203",
+        "54-207",
+        "54-209",
+        "54-211",
+        "54-281",
+        "62-314",
+        "54-285",
+        "54-213"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-202",
+        "54-204",
+        "54-208",
+        "54-209",
+        "54-212",
+        "54-242",
+        "54-381",
+        "54-336",
+        "54-159",
+        "54-285",
+        "54-214"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-301",
+        "54-305",
+        "54-311",
+        "54-307",
+        "54-309",
+        "54-325",
+        "54-317",
+        "54-327",
+        "54-285"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-302",
+        "54-306",
+        "54-308",
+        "54-312",
+        "54-326",
+        "54-318",
+        "54-335",
+        "54-285"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-285",
+        "54-407",
+        "54-411",
+        "54-493",
+        "54-519",
+        "54-403"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-285",
+        "54-412",
+        "54-414",
+        "54-520",
+        "54-438"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-151",
+        "54-157",
+        "54-169",
+        "54-171",
+        "54-177",
+        "99-101",
+        "76-101",
+        "54-173"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-152",
+        "54-158",
+        "54-159",
+        "54-170",
+        "54-172",
+        "54-177",
+        "54-228"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-231",
+        "54-232",
+        "54-249",
+        "54-229",
+        "54-271",
+        "54-281",
+        "54-284"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-166",
+        "54-666",
+        "54-117",
+        "54-548",
+        "54-344"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-162",
+        "54-230",
+        "54-346",
+        "54-447",
+        "54-117",
+        "54-320",
+        "54-344"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-386",
+        "54-392",
+        "54-350",
+        "54-117",
+        "54-227",
+        "54-344",
+        "54-304"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-252",
+        "54-368",
+        "54-337",
+        "54-117",
+        "54-384"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-297",
+        "60-120",
+        "54-344",
+        "54-482"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-381",
+        "54-382"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-267",
+        "57-152",
+        "54-548",
+        "54-505",
+        "54-508"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-341",
+        "54-245",
+        "54-441",
+        "54-473",
+        "54-511",
+        "54-539",
+        "54-373",
+        "54-486",
+        "54-320"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-237",
+        "54-473",
+        "54-350",
+        "54-227",
+        "54-304",
+        "54-239",
+        "54-250"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-525",
+        "54-469",
+        "54-524",
+        "54-351",
+        "54-396",
+        "54-384",
+        "54-380",
+        "54-357"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-399",
+        "54-476",
+        "60-110",
+        "54-482",
+        "54-461"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-381",
+        "54-228"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-328",
+        "54-509",
+        "54-505",
+        "54-548",
+        "54-389"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-336",
+        "54-246",
+        "54-450",
+        "54-344",
+        "54-320",
+        "54-444",
+        "54-516",
+        "54-347"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-238",
+        "54-332",
+        "54-450",
+        "54-350",
+        "54-227",
+        "54-331",
+        "54-240",
+        "54-386",
+        "54-392"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-352",
+        "54-348",
+        "54-383",
+        "54-565",
+        "54-384"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-400",
+        "54-490",
+        "54-482"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-381",
+        "54-382"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-398",
+        "54-548",
+        "54-505",
+        "54-390",
+        "54-340"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-498",
+        "54-447",
+        "54-239",
+        "54-470",
+        "54-511",
+        "54-539",
+        "54-320"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-498",
+        "54-473",
+        "54-432",
+        "54-451",
+        "54-350",
+        "54-227"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-524",
+        "54-491",
+        "54-525",
+        "54-384",
+        "62-661"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-498",
+        "54-476",
+        "54-482",
+        "54-521",
+        "54-461"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-381",
+        "54-361",
+        "54-228"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-372",
+        "54-397",
+        "54-505",
+        "54-548"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-431",
+        "54-342",
+        "54-450",
+        "54-344",
+        "54-320",
+        "54-240",
+        "54-347"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-431",
+        "54-450",
+        "54-350",
+        "54-227",
+        "54-386",
+        "54-392"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-565",
+        "54-452",
+        "54-427",
+        "54-384",
+        "54-492"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-521",
+        "54-400",
+        "54-482"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-121",
+        "54-167",
+        "54-107",
+        "54-109",
+        "54-110",
+        "99-101",
+        "54-517",
+        "54-159"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-122",
+        "54-168",
+        "54-159",
+        "54-184",
+        "54-177",
+        "76-101",
+        "76-106",
+        "76-108"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-233",
+        "54-221",
+        "54-281",
+        "54-271",
+        "62-314",
+        "76-270"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-234",
+        "54-222",
+        "54-117",
+        "54-381",
+        "54-616"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-322",
+        "54-381",
+        "54-336",
+        "85-100",
+        "54-247",
+        "54-410"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-422",
+        "54-247",
+        "54-498",
+        "54-381",
+        "54-410",
+        "54-735"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-422",
+        "54-458",
+        "54-381",
+        "54-431",
+        "54-330",
+        "54-410"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-109",
+        "54-284",
+        "54-177",
+        "54-200",
+        "76-101",
+        "76-102",
+        "76-106",
+        "76-108",
+        "54-159",
+        "99-101",
+        "62-314"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-184",
+        "54-281",
+        "54-200",
+        "54-159",
+        "54-117"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-241",
+        "54-299",
+        "54-245",
+        "54-246",
+        "54-200",
+        "54-239",
+        "54-219",
+        "76-275"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-256",
+        "54-246",
+        "54-245",
+        "54-240",
+        "54-200"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-247",
+        "54-200",
+        "54-381",
+        "54-245",
+        "54-246",
+        "54-239"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-256",
+        "54-200",
+        "54-381",
+        "54-246",
+        "54-245",
+        "54-240"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-254",
+        "54-200",
+        "54-585",
+        "54-381"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-364",
+        "54-200",
+        "54-381",
+        "54-587",
+        "54-585"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-101",
+        "54-011",
+        "54-103",
+        "54-105",
+        "54-107",
+        "54-110",
+        "54-123",
+        "54-125",
+        "54-500",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-102",
+        "54-104",
+        "54-106",
+        "54-108",
+        "54-124",
+        "54-126",
+        "54-159",
+        "54-500",
+        "54-177",
+        "76-101",
+        "76-106",
+        "76-108"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-201",
+        "54-203",
+        "54-205",
+        "54-207",
+        "54-209",
+        "54-217",
+        "54-219",
+        "54-223",
+        "54-500",
+        "54-285",
+        "62-314"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-202",
+        "54-204",
+        "54-206",
+        "54-208",
+        "54-209",
+        "54-218",
+        "54-224",
+        "54-220",
+        "54-281",
+        "54-159",
+        "54-500",
+        "54-285"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-301",
+        "54-305",
+        "54-309",
+        "54-311",
+        "54-313",
+        "54-315",
+        "54-319",
+        "54-323",
+        "54-500",
+        "54-285",
+        "54-327",
+        "54-387"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-302",
+        "54-306",
+        "54-312",
+        "54-314",
+        "54-316",
+        "54-324",
+        "54-500",
+        "54-374",
+        "54-335",
+        "54-285",
+        "54-388"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-403",
+        "54-411",
+        "54-415",
+        "54-418",
+        "54-493",
+        "54-500",
+        "54-519",
+        "54-285"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-412",
+        "54-414",
+        "54-416",
+        "54-418",
+        "54-438",
+        "54-500",
+        "54-520",
+        "54-285"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-151",
+        "54-157",
+        "54-169",
+        "54-171",
+        "99-101",
+        "76-101",
+        "76-106",
+        "76-108",
+        "54-177",
+        "54-173"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-170",
+        "54-158",
+        "54-172",
+        "54-177",
+        "54-159",
+        "54-152",
+        "54-228"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-231",
+        "54-232",
+        "54-271",
+        "54-249",
+        "54-281",
+        "54-284",
+        "54-229"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-281",
+        "54-228"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-264",
+        "54-265",
+        "54-330",
+        "54-272",
+        "54-286",
+        "54-334"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-666",
+        "54-330",
+        "54-286",
+        "54-334"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-272",
+        "54-286",
+        "54-355",
+        "54-117",
+        "54-252",
+        "54-166",
+        "54-297",
+        "54-368",
+        "54-337",
+        "54-666",
+        "54-330"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-273",
+        "54-381"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-353",
+        "54-366",
+        "54-295",
+        "54-455",
+        "54-333"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-266",
+        "54-339",
+        "54-380",
+        "54-455"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-279",
+        "54-333"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-381",
+        "54-355",
+        "54-468"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "54-354",
+        "54-365",
+        "54-378"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-339",
+        "54-453",
+        "54-368",
+        "54-454",
+        "54-270"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-334",
+        "54-468"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-381",
+        "54-333"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "54-477",
+        "54-353",
+        "54-366",
+        "54-279",
+        "54-455",
+        "54-333"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-339",
+        "54-453",
+        "54-454"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "54-381",
+        "54-355",
+        "54-468"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-354",
+        "54-365",
+        "54-480",
+        "54-376"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "54-339",
+        "54-453",
+        "54-475"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 85,
+    "course_references": 515,
+    "confidence": 0.7,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year",
+      "Assumed choose-one for ambiguous section: Senior Year"
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Implausibly large extracted curriculum; likely schedule/table contamination.",
+      "Extracted requirement total is implausible (484 units).",
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "27 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 241,
+    "extracted_unit_estimate": 484,
+    "scheduled_course_count": 214,
+    "missing_schedule_course_ids": [
+      "54-011",
+      "54-121",
+      "54-122",
+      "54-167",
+      "54-168",
+      "54-221",
+      "54-222",
+      "54-233",
+      "54-234",
+      "54-240",
+      "54-299",
+      "54-322",
+      "54-331",
+      "54-354",
+      "54-366",
+      "54-376",
+      "54-388",
+      "54-450",
+      "54-458",
+      "54-476",
+      "54-490",
+      "54-508",
+      "54-509",
+      "54-516",
+      "54-517",
+      "54-587",
+      "62-661"
+    ]
+  }
+}

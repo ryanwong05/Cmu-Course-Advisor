@@ -1913,16 +1913,15 @@
     "credential": "Minor",
     "program_type": "minor",
     "home_colleges": [
-      "dietrich",
-      "heinz"
+      "dietrich"
     ],
     "affiliations": [
       "dietrich",
       "heinz"
     ],
-    "interdisciplinary": true,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "interdisciplinary": false,
+    "planning_id": "information-systems",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-minor/"
   },
@@ -1932,16 +1931,15 @@
     "credential": "B.S.",
     "program_type": "primary_major",
     "home_colleges": [
-      "dietrich",
-      "heinz"
+      "dietrich"
     ],
     "affiliations": [
       "dietrich",
       "heinz"
     ],
-    "interdisciplinary": true,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "interdisciplinary": false,
+    "planning_id": "information-systems",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-bs/"
   },
@@ -2314,8 +2312,8 @@
       "engineering"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "mechanical-engineering",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/"
   },

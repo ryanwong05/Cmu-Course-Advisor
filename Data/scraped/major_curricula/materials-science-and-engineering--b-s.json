@@ -1,0 +1,177 @@
+{
+  "program_id": "materials-science-and-engineering--b-s",
+  "planning_id": "materials-science-and-engineering",
+  "name": "Materials Science and Engineering",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/",
+  "source_hash": "d9ec971543a9de14562b181a84d82d69af6645633405a5275862e99ce7691046",
+  "fixed_courses": [
+    {
+      "id": "27-401",
+      "name": "MSE Capstone Course I",
+      "units": 6.0,
+      "source_text": "27-401 MSE Capstone Course I 6"
+    },
+    {
+      "id": "27-402",
+      "name": "MSE Capstone Course II",
+      "units": 6.0,
+      "source_text": "27-402 MSE Capstone Course II 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "27-100",
+        "99-101",
+        "33-141"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-122",
+        "33-142",
+        "76-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "27-201",
+        "27-210",
+        "27-215",
+        "09-105",
+        "21-254",
+        "15-110",
+        "15-112",
+        "39-210"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "27-202",
+        "27-216",
+        "27-217",
+        "21-260",
+        "39-220"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "27-301",
+        "33-225",
+        "09-217",
+        "03-121",
+        "39-310"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "27-367",
+        "27-305",
+        "36-220"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "mse-approved-technical-elective",
+      "name": "MSE Approved Technical Elective",
+      "choose": 8,
+      "units": 79,
+      "options": [
+        "06-426",
+        "06-466",
+        "12-201",
+        "18-202",
+        "18-300",
+        "24-311",
+        "42-202",
+        "42-610"
+      ],
+      "source_instruction": "Students are required to take at least 9 units of approved technical electives. Students may take a course from another CIT department to fulfill this requirement or choose an additional 9 units of MSE Restricted Electives. Courses on the exclusion list cannot be counted as a technical elective. Students who are pursuing an additional major or minor within CIT should check with their academic advisor regarding double counting of this course."
+    },
+    {
+      "id": "mse-restricted-electives",
+      "name": "MSE Restricted Electives",
+      "choose": 8,
+      "units": 82,
+      "options": [
+        "06-609",
+        "09-509",
+        "12-411",
+        "12-631",
+        "18-310",
+        "24-262",
+        "24-341",
+        "42-667"
+      ],
+      "source_instruction": "Each student in the program must take at least 36 units of MSE restricted electives. Up to 18 units of MSE research can count toward the restricted electives. All 27-3xx, 27-4xx, 27-5xx, 27-6xx (with the exception of 27-672) and 27-7xx level and cross listed courses will fulfill the MSE Restricted Elective Requirement along with the following non-MSE courses:"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 10,
+    "course_references": 46,
+    "confidence": 0.76,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Sophomore Year",
+      "Assumed choose-one for ambiguous section: Junior Year",
+      "Assumed choose-one for ambiguous section: Junior Year"
+    ],
+    "explicit_group_ratio": 0.25
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "7 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 46,
+    "extracted_unit_estimate": 221,
+    "scheduled_course_count": 39,
+    "missing_schedule_course_ids": [
+      "06-426",
+      "06-466",
+      "06-609",
+      "09-509",
+      "24-341",
+      "42-610",
+      "42-667"
+    ]
+  }
+}

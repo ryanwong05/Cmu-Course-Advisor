@@ -1,0 +1,93 @@
+{
+  "program_id": "economics--b-s",
+  "planning_id": "economics",
+  "name": "Economics",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/",
+  "source_hash": "7802c7559fe04e1fef5bdd3c9516c649fae86bfa41473128ebdd086c1abb3b84",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "mathematics-requirements",
+      "name": "Mathematics Requirements",
+      "choose": 7,
+      "units": 66,
+      "options": [
+        "21-120",
+        "21-111",
+        "21-112",
+        "21-256",
+        "21-259",
+        "21-240",
+        "21-241"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Requirements"
+    },
+    {
+      "id": "quantitative-analysis-requirements",
+      "name": "Quantitative Analysis Requirements",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "73-265",
+        "73-274",
+        "73-374",
+        "73-423",
+        "70-467"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Requirements Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 21-240 Matrix Algebra with Applications 10 or 21-241 Matrices and Linear Transformations Quantitative Analysis Requirements"
+    },
+    {
+      "id": "economic-core-requirements",
+      "name": "Economic Core Requirements",
+      "choose": 7,
+      "units": 63,
+      "options": [
+        "73-102",
+        "73-104",
+        "73-103",
+        "73-230",
+        "73-240",
+        "70-340",
+        "70-345"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Requirements Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 21-240 Matrix Algebra with Applications 10 or 21-241 Matrices and Linear Transformations Quantitative Analysis Requirements Units 73-265 Economics and Data Science 9 73-274 Econometrics I 9 73-374 Econometrics II 9 or 73-423 Forecasting for Economics and Business or 70-467 Machine Learning for Business Analytics Economic Core Requirements"
+    },
+    {
+      "id": "senior-requirement",
+      "name": "Senior Requirement",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "73-497",
+        "73-500",
+        "73-501"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Requirements Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 21-240 Matrix Algebra with Applications 10 or 21-241 Matrices and Linear Transformations Quantitative Analysis Requirements Units 73-265 Economics and Data Science 9 73-274 Econometrics I 9 73-374 Econometrics II 9 or 73-423 Forecasting for Economics and Business or 70-467 Machine Learning for Business Analytics Economic Core Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 70-340 Business Communications 9 70-345 Business Presentations 9 Economics Electives (54 Units) Students must take six economics elective courses. Economics elective courses are those numbered 73-300 or higher. Senior Requirement"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 22,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 210,
+    "scheduled_course_count": 21,
+    "missing_schedule_course_ids": [
+      "73-423"
+    ]
+  }
+}

@@ -1,0 +1,605 @@
+{
+  "program_id": "music-performance--b-f-a",
+  "planning_id": "music-performance",
+  "name": "Music Performance",
+  "credential": "B.F.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/",
+  "source_hash": "12249b9457a69dee086e7671df55091bed448f6f6dcec84e6b0eeff2074a85d2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "first-year-fall-60-units",
+      "name": "FIRST-YEAR FALL (60 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-111",
+        "57-149",
+        "57-152",
+        "57-161",
+        "57-180",
+        "57-181",
+        "57-185",
+        "57-191",
+        "57-193",
+        "57-240",
+        "57-417",
+        "57-467",
+        "57-500",
+        "57-593",
+        "82-161",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-spring-60-units",
+      "name": "FIRST-YEAR SPRING (60 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-112",
+        "57-150",
+        "57-153",
+        "57-162",
+        "57-182",
+        "57-186",
+        "57-192",
+        "57-194",
+        "57-221",
+        "57-241",
+        "57-417",
+        "57-468",
+        "57-500",
+        "57-593",
+        "82-162"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-fall-66-units",
+      "name": "SECOND-YEAR FALL (66 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-151",
+        "57-163",
+        "57-183",
+        "57-487",
+        "57-193",
+        "57-211",
+        "57-223",
+        "57-339",
+        "57-417",
+        "57-500",
+        "57-593",
+        "82-121"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-spring-64-units",
+      "name": "SECOND-YEAR SPRING (64 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-164",
+        "57-184",
+        "57-488",
+        "57-194",
+        "57-212",
+        "57-283",
+        "57-340",
+        "57-408",
+        "57-417",
+        "57-500",
+        "57-587",
+        "57-593",
+        "82-122"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-fall-54-units",
+      "name": "THIRD-YEAR FALL (54 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-101",
+        "57-222",
+        "57-284",
+        "57-417",
+        "57-500",
+        "57-593",
+        "82-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-spring-46-units",
+      "name": "THIRD-YEAR SPRING (46 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-285",
+        "57-417",
+        "57-500",
+        "57-588",
+        "57-593",
+        "82-102"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-fall-39-units",
+      "name": "FOURTH-YEAR FALL (39 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-417",
+        "57-493",
+        "57-500",
+        "57-593"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-spring-40-units",
+      "name": "FOURTH-YEAR SPRING (40 units)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-010",
+        "57-100",
+        "57-417",
+        "57-494",
+        "57-500",
+        "57-589",
+        "57-593"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-fall-52-units",
+      "name": "FIRST-YEAR FALL (52 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-101",
+        "57-149",
+        "57-152",
+        "57-161",
+        "57-180",
+        "57-181",
+        "57-185",
+        "57-196",
+        "57-418",
+        "57-419",
+        "57-501",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-spring-52-units",
+      "name": "FIRST-YEAR SPRING (52 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-150",
+        "57-153",
+        "57-162",
+        "57-182",
+        "57-186",
+        "57-197",
+        "57-283",
+        "57-418",
+        "57-419",
+        "57-501"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-fall-52-units",
+      "name": "SECOND-YEAR FALL (52 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-151",
+        "57-163",
+        "57-183",
+        "57-487",
+        "57-193",
+        "57-284",
+        "57-418",
+        "57-419",
+        "57-501"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-spring-46-units",
+      "name": "SECOND-YEAR SPRING (46 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-164",
+        "57-184",
+        "57-488",
+        "57-285",
+        "57-408",
+        "57-418",
+        "57-419",
+        "57-501"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-fall-46-units",
+      "name": "THIRD-YEAR FALL (46 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-418",
+        "57-419",
+        "57-501"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-spring-47-units",
+      "name": "THIRD-YEAR SPRING (47 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-418",
+        "57-419",
+        "57-501",
+        "57-598"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-fall-43-units",
+      "name": "FOURTH-YEAR FALL (43 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-501"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-spring-44-units",
+      "name": "FOURTH-YEAR SPRING (44 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-501",
+        "57-599"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-fall-52-units",
+      "name": "First-Year Fall (52 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-101",
+        "57-149",
+        "57-152",
+        "57-161",
+        "57-180",
+        "57-181",
+        "57-185",
+        "57-191",
+        "57-193",
+        "57-418",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-spring-52-units",
+      "name": "First-Year Spring (52 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-150",
+        "57-153",
+        "57-162",
+        "57-182",
+        "57-186",
+        "57-192",
+        "57-194",
+        "57-283",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-fall-52-units",
+      "name": "Second-Year Fall (52 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-151",
+        "57-163",
+        "57-183",
+        "57-487",
+        "57-193",
+        "57-284",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-spring-44-units",
+      "name": "Second-Year Spring (44 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-164",
+        "57-184",
+        "57-488",
+        "57-194",
+        "57-285",
+        "57-408",
+        "57-418",
+        "57-596"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-fall-46-units",
+      "name": "Third-Year Fall (46 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-spring-47-units",
+      "name": "Third-Year Spring (47 units)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-100",
+        "57-418",
+        "57-598"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-fall-43-units",
+      "name": "Fourth-Year Fall (43 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-spring-44-units",
+      "name": "Fourth-Year Spring (44 units)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-100",
+        "57-418",
+        "57-599"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-fall-52-units",
+      "name": "FIRST-YEAR FALL (52 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-101",
+        "57-149",
+        "57-152",
+        "57-161",
+        "57-180",
+        "57-181",
+        "57-185",
+        "57-191",
+        "57-193",
+        "57-418",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-spring-52-units",
+      "name": "FIRST-YEAR SPRING (52 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-100",
+        "57-150",
+        "57-153",
+        "57-162",
+        "57-182",
+        "57-186",
+        "57-192",
+        "57-194",
+        "57-283",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-fall-49-units",
+      "name": "SECOND-YEAR FALL (49 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-151",
+        "57-163",
+        "57-183",
+        "57-487",
+        "57-193",
+        "57-284",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-spring-46-units",
+      "name": "SECOND-YEAR SPRING (46 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-164",
+        "57-184",
+        "57-488",
+        "57-194",
+        "57-285",
+        "57-408",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-fall-46-units",
+      "name": "THIRD-YEAR FALL (46 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-spring-47-units",
+      "name": "THIRD-YEAR SPRING (47 units)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-100",
+        "57-418",
+        "57-598"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-fall-43-units",
+      "name": "FOURTH-YEAR FALL (43 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-100",
+        "57-418"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-spring-44-units",
+      "name": "FOURTH-YEAR SPRING (44 units)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-100",
+        "57-418",
+        "57-599"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 32,
+    "course_references": 248,
+    "confidence": 0.5,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: FIRST-YEAR FALL (60 units)",
+      "Assumed choose-one for ambiguous section: FIRST-YEAR SPRING (60 units)",
+      "Assumed choose-one for ambiguous section: SECOND-YEAR FALL (66 units)",
+      "Assumed choose-one for ambiguous section: SECOND-YEAR SPRING (64 units)",
+      "Assumed choose-one for ambiguous section: THIRD-YEAR FALL (54 units)",
+      "Assumed choose-one for ambiguous section: THIRD-YEAR SPRING (46 units)",
+      "Assumed choose-one for ambiguous section: FOURTH-YEAR FALL (39 units)",
+      "Assumed choose-one for ambiguous section: FOURTH-YEAR SPRING (40 units)",
+      "Assumed choose-one for ambiguous section: FIRST-YEAR FALL (52 units)",
+      "Assumed choose-one for ambiguous section: FIRST-YEAR SPRING (52 units)",
+      "Assumed choose-one for ambiguous section: SECOND-YEAR FALL (52 units)",
+      "Assumed choose-one for ambiguous section: SECOND-YEAR SPRING (46 units)",
+      "Assumed choose-one for ambiguous section: THIRD-YEAR FALL (46 units)",
+      "Assumed choose-one for ambiguous section: THIRD-YEAR SPRING (47 units)",
+      "Assumed choose-one for ambiguous section: FOURTH-YEAR FALL (43 units)",
+      "Assumed choose-one for ambiguous section: FOURTH-YEAR SPRING (44 units)",
+      "Assumed choose-one for ambiguous section: First-Year Fall (52 units)",
+      "Assumed choose-one for ambiguous section: First-Year Spring (52 units)",
+      "Assumed choose-one for ambiguous section: Second-Year Fall (52 units)",
+      "Assumed choose-one for ambiguous section: Second-Year Spring (44 units)",
+      "Assumed choose-one for ambiguous section: Third-Year Fall (46 units)",
+      "Assumed choose-one for ambiguous section: Third-Year Spring (47 units)",
+      "Assumed choose-one for ambiguous section: Fourth-Year Fall (43 units)",
+      "Assumed choose-one for ambiguous section: Fourth-Year Spring (44 units)",
+      "Assumed choose-one for ambiguous section: FIRST-YEAR FALL (52 units)",
+      "Assumed choose-one for ambiguous section: FIRST-YEAR SPRING (52 units)",
+      "Assumed choose-one for ambiguous section: SECOND-YEAR FALL (49 units)",
+      "Assumed choose-one for ambiguous section: SECOND-YEAR SPRING (46 units)",
+      "Assumed choose-one for ambiguous section: THIRD-YEAR FALL (46 units)",
+      "Assumed choose-one for ambiguous section: THIRD-YEAR SPRING (47 units)",
+      "Assumed choose-one for ambiguous section: FOURTH-YEAR FALL (43 units)",
+      "Assumed choose-one for ambiguous section: FOURTH-YEAR SPRING (44 units)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 65,
+    "extracted_unit_estimate": 134,
+    "scheduled_course_count": 64,
+    "missing_schedule_course_ids": [
+      "57-010"
+    ]
+  }
+}

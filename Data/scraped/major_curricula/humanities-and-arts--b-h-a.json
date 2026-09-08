@@ -1,0 +1,41 @@
+{
+  "program_id": "humanities-and-arts--b-h-a",
+  "planning_id": "humanities-and-arts",
+  "name": "Humanities and Arts",
+  "credential": "B.H.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/",
+  "source_hash": "3ccef921295dd1b22864e64db42d179dec5d38dccc498086e2f166b4c6110071",
+  "fixed_courses": [
+    {
+      "id": "81-107",
+      "name": "Catalog course",
+      "units": null,
+      "source_text": "II. DC Concentration 81-107"
+    }
+  ],
+  "requirement_groups": [],
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 1,
+    "confidence": 0.3,
+    "status": "needs_review",
+    "warnings": [
+      "No course-choice groups were found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 1,
+    "extracted_unit_estimate": 0,
+    "scheduled_course_count": 0,
+    "missing_schedule_course_ids": [
+      "81-107"
+    ]
+  }
+}

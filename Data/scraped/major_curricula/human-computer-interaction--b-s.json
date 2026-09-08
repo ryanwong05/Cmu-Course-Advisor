@@ -1,0 +1,187 @@
+{
+  "program_id": "human-computer-interaction--b-s",
+  "planning_id": "human-computer-interaction",
+  "name": "Human-Computer Interaction",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-bs/",
+  "source_hash": "c5b9fd721698af2706323e9bd5bdd377a927014e523a216ade52feb293226fd0",
+  "fixed_courses": [
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "computer-science-core-5-courses-immigration-course",
+      "name": "Computer Science Core (5 courses + immigration course)",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "15-112",
+        "02-120",
+        "07-131"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course)"
+    },
+    {
+      "id": "computer-science-core-5-courses-immigration-course",
+      "name": "Computer Science Core (5 courses + immigration course)",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "07-128",
+        "15-122",
+        "15-150",
+        "15-151",
+        "21-127",
+        "21-128",
+        "15-210",
+        "15-213"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2"
+    },
+    {
+      "id": "mathematics-and-statistics-core-4-courses",
+      "name": "Mathematics and Statistics Core (4 courses)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-122",
+        "21-259",
+        "15-259",
+        "21-325",
+        "36-218",
+        "36-225",
+        "15-251",
+        "21-241",
+        "21-242",
+        "36-226",
+        "36-401"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2 Required Courses Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 15-151 Mathematical Foundations for Computer Science If not offered, substitute 21-127 or 21-128 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 Mathematics and Statistics Core (4 courses) Prerequisite Course Units 21-120 Differential and Integral Calculus 10"
+    },
+    {
+      "id": "hci-core-7-courses",
+      "name": "HCI Core (7 courses)",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "05-410",
+        "36-202",
+        "36-315",
+        "70-208",
+        "05-360",
+        "05-361",
+        "05-312",
+        "05-315",
+        "05-317",
+        "05-362",
+        "05-418",
+        "05-452",
+        "05-470",
+        "05-499",
+        "05-380",
+        "05-431"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2 Required Courses Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 15-151 Mathematical Foundations for Computer Science If not offered, substitute 21-127 or 21-128 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 Mathematics and Statistics Core (4 courses) Prerequisite Course Units 21-120 Differential and Integral Calculus 10 Required Courses 21-122 Integration and Approximation 10 21-259 Calculus in Three Dimensions 10 Select one of the following courses: 15-259 Probability and Computing 12 21-325 Probability 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Select one of the following courses: 15-251 Great Ideas in Theoretical Computer Science 12 21-241 Matrices and Linear Transformations 11 21-242 Matrix Theory 11 36-226 Introduction to Statistical Inference 9 36-401 Modern Regression 9 HCI Core (7 courses)"
+    },
+    {
+      "id": "psychology-1-course",
+      "name": "Psychology (1 course)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-110",
+        "85-150",
+        "85-251",
+        "85-213",
+        "85-421",
+        "85-413",
+        "88-120"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2 Required Courses Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 15-151 Mathematical Foundations for Computer Science If not offered, substitute 21-127 or 21-128 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 Mathematics and Statistics Core (4 courses) Prerequisite Course Units 21-120 Differential and Integral Calculus 10 Required Courses 21-122 Integration and Approximation 10 21-259 Calculus in Three Dimensions 10 Select one of the following courses: 15-259 Probability and Computing 12 21-325 Probability 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Select one of the following courses: 15-251 Great Ideas in Theoretical Computer Science 12 21-241 Matrices and Linear Transformations 11 21-242 Matrix Theory 11 36-226 Introduction to Statistical Inference 9 36-401 Modern Regression 9 HCI Core (7 courses) Research & Evaluation Courses (2) Units 05-410 User-Centered Research and Evaluation 12 Select one: 36-202 Methods for Statistics & Data Science 9 36-315 Statistical Graphics and Visualization 9 70-208 Regression Analysis 9 Ideation & Design Courses (3) 05-360 Interaction Design Fundamentals 12 Select two: 05-361 Advanced Interaction Design 12 05-312 The AI Augmented Designer 12 05-315 Persuasive Design 12 05-317 Design of Artificial Intelligence Products 12 05-362 Transformational Game Design Studio 12 05-418 Design Educational Games 12 05-452 Service Design 12 05-470 Digital Service Innovation 12 *Some (but not all) special topics classes ( 05-499 ) might also count towards the design requirements. Please consult with an HCI undergraduate advisor. Required Technical Core (2) 05-380 Prototyping Algorithmic Experiences 12 05-431 Software Structures for User Interfaces 12 Note: It is recommended that students take 05-380 in spring of their sophomore year and 05-431 in fall of their sophomore or junior year) Psychology (1 course)"
+    },
+    {
+      "id": "hci-electives-2-courses",
+      "name": "HCI Electives (2 courses)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-318",
+        "05-333",
+        "05-434",
+        "05-839",
+        "11-411",
+        "10-301",
+        "07-280",
+        "15-388",
+        "15-464",
+        "15-362",
+        "15-466",
+        "15-494",
+        "16-467",
+        "17-428",
+        "17-437",
+        "17-537"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2 Required Courses Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 15-151 Mathematical Foundations for Computer Science If not offered, substitute 21-127 or 21-128 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 Mathematics and Statistics Core (4 courses) Prerequisite Course Units 21-120 Differential and Integral Calculus 10 Required Courses 21-122 Integration and Approximation 10 21-259 Calculus in Three Dimensions 10 Select one of the following courses: 15-259 Probability and Computing 12 21-325 Probability 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Select one of the following courses: 15-251 Great Ideas in Theoretical Computer Science 12 21-241 Matrices and Linear Transformations 11 21-242 Matrix Theory 11 36-226 Introduction to Statistical Inference 9 36-401 Modern Regression 9 HCI Core (7 courses) Research & Evaluation Courses (2) Units 05-410 User-Centered Research and Evaluation 12 Select one: 36-202 Methods for Statistics & Data Science 9 36-315 Statistical Graphics and Visualization 9 70-208 Regression Analysis 9 Ideation & Design Courses (3) 05-360 Interaction Design Fundamentals 12 Select two: 05-361 Advanced Interaction Design 12 05-312 The AI Augmented Designer 12 05-315 Persuasive Design 12 05-317 Design of Artificial Intelligence Products 12 05-362 Transformational Game Design Studio 12 05-418 Design Educational Games 12 05-452 Service Design 12 05-470 Digital Service Innovation 12 *Some (but not all) special topics classes ( 05-499 ) might also count towards the design requirements. Please consult with an HCI undergraduate advisor. Required Technical Core (2) 05-380 Prototyping Algorithmic Experiences 12 05-431 Software Structures for User Interfaces 12 Note: It is recommended that students take 05-380 in spring of their sophomore year and 05-431 in fall of their sophomore or junior year) Psychology (1 course) Select one: Units 85-110 Cognitive Psychology 9 85-150 Social Psychology 9 85-251 Personality 9 85-213 Human Information Processing and Artificial Intelligence 9 85-421 Language and Thought 9 85-413 Perception 9 88-120 Reason, Passion and Cognition 9 Note: The Psychology course fulfills the Category 1: Cognition, Choice and Behavior requirement for HCI majors. HCI Electives (2 courses)"
+    },
+    {
+      "id": "hci-capstone-project-1-course",
+      "name": "HCI Capstone Project (1 course)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-571"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2 Required Courses Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 15-151 Mathematical Foundations for Computer Science If not offered, substitute 21-127 or 21-128 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 Mathematics and Statistics Core (4 courses) Prerequisite Course Units 21-120 Differential and Integral Calculus 10 Required Courses 21-122 Integration and Approximation 10 21-259 Calculus in Three Dimensions 10 Select one of the following courses: 15-259 Probability and Computing 12 21-325 Probability 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Select one of the following courses: 15-251 Great Ideas in Theoretical Computer Science 12 21-241 Matrices and Linear Transformations 11 21-242 Matrix Theory 11 36-226 Introduction to Statistical Inference 9 36-401 Modern Regression 9 HCI Core (7 courses) Research & Evaluation Courses (2) Units 05-410 User-Centered Research and Evaluation 12 Select one: 36-202 Methods for Statistics & Data Science 9 36-315 Statistical Graphics and Visualization 9 70-208 Regression Analysis 9 Ideation & Design Courses (3) 05-360 Interaction Design Fundamentals 12 Select two: 05-361 Advanced Interaction Design 12 05-312 The AI Augmented Designer 12 05-315 Persuasive Design 12 05-317 Design of Artificial Intelligence Products 12 05-362 Transformational Game Design Studio 12 05-418 Design Educational Games 12 05-452 Service Design 12 05-470 Digital Service Innovation 12 *Some (but not all) special topics classes ( 05-499 ) might also count towards the design requirements. Please consult with an HCI undergraduate advisor. Required Technical Core (2) 05-380 Prototyping Algorithmic Experiences 12 05-431 Software Structures for User Interfaces 12 Note: It is recommended that students take 05-380 in spring of their sophomore year and 05-431 in fall of their sophomore or junior year) Psychology (1 course) Select one: Units 85-110 Cognitive Psychology 9 85-150 Social Psychology 9 85-251 Personality 9 85-213 Human Information Processing and Artificial Intelligence 9 85-421 Language and Thought 9 85-413 Perception 9 88-120 Reason, Passion and Cognition 9 Note: The Psychology course fulfills the Category 1: Cognition, Choice and Behavior requirement for HCI majors. HCI Electives (2 courses) HCI Technical Elective (1) Units Select one: 05-318 Human AI Interaction 12 05-333 Gadgets, Sensors and Activity Recognition in HCI 12 05-434 Machine Learning in Practice 12 05-839 Interactive Data Science 12 11-411 Natural Language Processing 12 10-301 Introduction to Machine Learning 12 07-280 Artificial Intelligence and Machine Learning I 12 15-388 Practical Data Science 9 15-464 Technical Animation 12 15-362 Computer Graphics 12 15-466 Computer Game Programming 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-467 Introduction to Human Robot Interaction 12 17-428 Machine Learning and Sensing 12 17-437 Web Application Development 12 17-537 Artificial Intelligence Methods for Social Good 9 HCI General (05-xxx) Elective (1 course) The remaining (1) elective can be chosen from the above lists or from the pre-approved list of HCI electives. Other options will require approval from the program director. SCS Elective (1 Course) This elective can be from any SCS department; 200-level or above, at least 9 units (see exceptions below): Computer Science [15-], Computational Biology [02-], Human Computer Interaction [05-], Machine Learning [10-], Language Technologies [11-], Robotics [16-], and Software Engineering [17-]. (NOTE: The following undergraduate courses do NOT count as Computer Science electives: 02-201 , 02-223 , 02-261 . Some IDEATE courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Consult with HCI advisor before registration to determine eligibility for this requirement. *Additionally: 1) Students who take two intro minis from 02-180, 05-180, 07-180, and 16-180 during their first year may use these two courses together as one SCS elective. 2) 07-400 and 07-599 are countable as SCS electives. HCI Capstone Project (1 course)"
+    },
+    {
+      "id": "core-cmu-1-course",
+      "name": "Core@CMU (1 Course)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "99-101"
+      ],
+      "source_instruction": "Curriculum - B.S. in Human-Computer Interaction The following requirements are for students entering Fall 2026. The primary major in HCI supports students by preparing them with very strong technical knowledge, skills, and understanding. HCI majors must take a minimum of 360 units distributed as follows: CS Core: 5 courses + freshman immigration course Core @ CMU: 3 units Mathematics and Statistics: 4 courses HCI Core: 7 courses Psychology: 1 course HCI Electives: 2 courses SCS Elective: 1 course HCI Capstone Project: 1 course Free Electives: 4 courses Science and Engineering: 4 courses Humanities and Arts (Gen Ed): 7 courses Computer Science Core (5 courses + immigration course) Prerequisite Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 07-131 Great Practical Ideas for Computer Scientists 2 Required Courses Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 15-151 Mathematical Foundations for Computer Science If not offered, substitute 21-127 or 21-128 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 Mathematics and Statistics Core (4 courses) Prerequisite Course Units 21-120 Differential and Integral Calculus 10 Required Courses 21-122 Integration and Approximation 10 21-259 Calculus in Three Dimensions 10 Select one of the following courses: 15-259 Probability and Computing 12 21-325 Probability 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Select one of the following courses: 15-251 Great Ideas in Theoretical Computer Science 12 21-241 Matrices and Linear Transformations 11 21-242 Matrix Theory 11 36-226 Introduction to Statistical Inference 9 36-401 Modern Regression 9 HCI Core (7 courses) Research & Evaluation Courses (2) Units 05-410 User-Centered Research and Evaluation 12 Select one: 36-202 Methods for Statistics & Data Science 9 36-315 Statistical Graphics and Visualization 9 70-208 Regression Analysis 9 Ideation & Design Courses (3) 05-360 Interaction Design Fundamentals 12 Select two: 05-361 Advanced Interaction Design 12 05-312 The AI Augmented Designer 12 05-315 Persuasive Design 12 05-317 Design of Artificial Intelligence Products 12 05-362 Transformational Game Design Studio 12 05-418 Design Educational Games 12 05-452 Service Design 12 05-470 Digital Service Innovation 12 *Some (but not all) special topics classes ( 05-499 ) might also count towards the design requirements. Please consult with an HCI undergraduate advisor. Required Technical Core (2) 05-380 Prototyping Algorithmic Experiences 12 05-431 Software Structures for User Interfaces 12 Note: It is recommended that students take 05-380 in spring of their sophomore year and 05-431 in fall of their sophomore or junior year) Psychology (1 course) Select one: Units 85-110 Cognitive Psychology 9 85-150 Social Psychology 9 85-251 Personality 9 85-213 Human Information Processing and Artificial Intelligence 9 85-421 Language and Thought 9 85-413 Perception 9 88-120 Reason, Passion and Cognition 9 Note: The Psychology course fulfills the Category 1: Cognition, Choice and Behavior requirement for HCI majors. HCI Electives (2 courses) HCI Technical Elective (1) Units Select one: 05-318 Human AI Interaction 12 05-333 Gadgets, Sensors and Activity Recognition in HCI 12 05-434 Machine Learning in Practice 12 05-839 Interactive Data Science 12 11-411 Natural Language Processing 12 10-301 Introduction to Machine Learning 12 07-280 Artificial Intelligence and Machine Learning I 12 15-388 Practical Data Science 9 15-464 Technical Animation 12 15-362 Computer Graphics 12 15-466 Computer Game Programming 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-467 Introduction to Human Robot Interaction 12 17-428 Machine Learning and Sensing 12 17-437 Web Application Development 12 17-537 Artificial Intelligence Methods for Social Good 9 HCI General (05-xxx) Elective (1 course) The remaining (1) elective can be chosen from the above lists or from the pre-approved list of HCI electives. Other options will require approval from the program director. SCS Elective (1 Course) This elective can be from any SCS department; 200-level or above, at least 9 units (see exceptions below): Computer Science [15-], Computational Biology [02-], Human Computer Interaction [05-], Machine Learning [10-], Language Technologies [11-], Robotics [16-], and Software Engineering [17-]. (NOTE: The following undergraduate courses do NOT count as Computer Science electives: 02-201 , 02-223 , 02-261 . Some IDEATE courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Consult with HCI advisor before registration to determine eligibility for this requirement. *Additionally: 1) Students who take two intro minis from 02-180, 05-180, 07-180, and 16-180 during their first year may use these two courses together as one SCS elective. 2) 07-400 and 07-599 are countable as SCS electives. HCI Capstone Project (1 course) 05-571 Undergraduate Project in HCI 12 Science & Engineering (4 courses) Four courses in the domain of science and engineering are required, of which at least one must have a laboratory component and at least two must be from the same department. These courses typically come from the Mellon College of Science and the College of Engineering (CIT). Courses with a primary focus on programming, computation or mathematics are not acceptable for science or engineering courses. Requirements for this component of the degree are listed under the SCS General Education Requirements . Humanities & Arts (7 courses) These requirements follow the SCS General Education requirements for Humanities & Arts. Requirements for this component of the degree are listed under the SCS General Education Requirements . NOTE: The Psychology requirement of the HCI core will satisfy the General Education requirement for Category 1: Cognition, Choice & Behavior. Core@CMU (1 Course)"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 9,
+    "course_references": 64,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Computer Science Core (5 courses + immigration course)",
+      "Assumed choose-one for ambiguous section: Computer Science Core (5 courses + immigration course)",
+      "Assumed choose-one for ambiguous section: Mathematics and Statistics Core (4 courses)"
+    ],
+    "explicit_group_ratio": 0.62
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "7 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 64,
+    "extracted_unit_estimate": 85,
+    "scheduled_course_count": 57,
+    "missing_schedule_course_ids": [
+      "05-362",
+      "15-388",
+      "15-464",
+      "17-428",
+      "17-537",
+      "85-251",
+      "85-421"
+    ]
+  }
+}

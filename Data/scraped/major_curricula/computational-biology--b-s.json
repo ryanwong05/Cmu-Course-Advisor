@@ -1,0 +1,166 @@
+{
+  "program_id": "computational-biology--b-s",
+  "planning_id": "computational-biology",
+  "name": "Computational Biology",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-bs/",
+  "source_hash": "0f9de55a14b5b373ac78b154080e31a8a38f9528e56a2ec99e915e79777d3587",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "mathematics-statistics-core",
+      "name": "Mathematics/Statistics Core",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-122",
+        "15-151",
+        "21-127",
+        "21-128",
+        "36-218",
+        "15-259",
+        "36-326",
+        "15-260",
+        "36-226",
+        "36-235",
+        "21-241",
+        "21-242"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "general-science-core",
+      "name": "General Science Core",
+      "choose": 4,
+      "units": 44,
+      "options": [
+        "09-105",
+        "09-107",
+        "33-121",
+        "33-141"
+      ],
+      "source_instruction": "Degree Requirements (students entering Fall 2026) Students completing the Bachelor of Science in Computational Biology follow certain policies that apply to all SCS students; please consult the SCS policies page for a complete listing of these expectations. Students must complete a minimum of 360 units for the degree in computational biology. Mathematics/Statistics Core Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 15-151 Mathematical Foundations for Computer Science (or 21-127 / 21-128 if not offered) 12 36-218 Probability Theory for Computer Scientists (Students taking 15-259 should take 36-326 or 15-260 instead. 15-260 is only open to students who have taken 15-259 .) 9 or 36-226 Introduction to Statistical Inference or 36-326 Mathematical Statistics (Honors) or 36-235 Probability and Statistical Inference I or 15-259 Probability and Computing 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory Total Units 52 General Science Core"
+    },
+    {
+      "id": "biological-core",
+      "name": "Biological Core",
+      "choose": 6,
+      "units": 55,
+      "options": [
+        "03-151",
+        "03-121",
+        "03-221",
+        "03-232",
+        "03-231",
+        "03-320"
+      ],
+      "source_instruction": "Degree Requirements (students entering Fall 2026) Students completing the Bachelor of Science in Computational Biology follow certain policies that apply to all SCS students; please consult the SCS policies page for a complete listing of these expectations. Students must complete a minimum of 360 units for the degree in computational biology. Mathematics/Statistics Core Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 15-151 Mathematical Foundations for Computer Science (or 21-127 / 21-128 if not offered) 12 36-218 Probability Theory for Computer Scientists (Students taking 15-259 should take 36-326 or 15-260 instead. 15-260 is only open to students who have taken 15-259 .) 9 or 36-226 Introduction to Statistical Inference or 36-326 Mathematical Statistics (Honors) or 36-235 Probability and Statistical Inference I or 15-259 Probability and Computing 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory Total Units 52 General Science Core 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students Total Units 22 Biological Core"
+    },
+    {
+      "id": "computer-science-core",
+      "name": "Computer Science Core",
+      "choose": 11,
+      "units": 95,
+      "options": [
+        "07-128",
+        "03-201",
+        "03-202",
+        "15-122",
+        "15-251",
+        "15-451",
+        "15-351",
+        "07-280",
+        "10-301",
+        "02-120",
+        "15-112"
+      ],
+      "source_instruction": "Degree Requirements (students entering Fall 2026) Students completing the Bachelor of Science in Computational Biology follow certain policies that apply to all SCS students; please consult the SCS policies page for a complete listing of these expectations. Students must complete a minimum of 360 units for the degree in computational biology. Mathematics/Statistics Core Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 15-151 Mathematical Foundations for Computer Science (or 21-127 / 21-128 if not offered) 12 36-218 Probability Theory for Computer Scientists (Students taking 15-259 should take 36-326 or 15-260 instead. 15-260 is only open to students who have taken 15-259 .) 9 or 36-226 Introduction to Statistical Inference or 36-326 Mathematical Statistics (Honors) or 36-235 Probability and Statistical Inference I or 15-259 Probability and Computing 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory Total Units 52 General Science Core 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students Total Units 22 Biological Core 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 9 03-232 Biochemistry I (Students taking 03-231 , including pre-med students, will take organic chemistry as a prerequisite, which will satisfy a biology elective requirement.) 9 or 03-231 Honors Biochemistry 03-320 Cell Biology 9 Total Units 37 Computer Science Core"
+    },
+    {
+      "id": "computational-biology-core",
+      "name": "Computational Biology Core",
+      "choose": 9,
+      "units": 63,
+      "options": [
+        "02-135",
+        "02-180",
+        "02-181",
+        "02-251",
+        "02-261",
+        "02-262",
+        "02-402",
+        "02-510",
+        "02-512"
+      ],
+      "source_instruction": "Degree Requirements (students entering Fall 2026) Students completing the Bachelor of Science in Computational Biology follow certain policies that apply to all SCS students; please consult the SCS policies page for a complete listing of these expectations. Students must complete a minimum of 360 units for the degree in computational biology. Mathematics/Statistics Core Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 15-151 Mathematical Foundations for Computer Science (or 21-127 / 21-128 if not offered) 12 36-218 Probability Theory for Computer Scientists (Students taking 15-259 should take 36-326 or 15-260 instead. 15-260 is only open to students who have taken 15-259 .) 9 or 36-226 Introduction to Statistical Inference or 36-326 Mathematical Statistics (Honors) or 36-235 Probability and Statistical Inference I or 15-259 Probability and Computing 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory Total Units 52 General Science Core 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students Total Units 22 Biological Core 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 9 03-232 Biochemistry I (Students taking 03-231 , including pre-med students, will take organic chemistry as a prerequisite, which will satisfy a biology elective requirement.) 9 or 03-231 Honors Biochemistry 03-320 Cell Biology 9 Total Units 37 Computer Science Core 07-128 First Year Seminar (This course may be replaced by 03-201 or 03-202 if and only if 07-128 is not offered) 3 15-122 Principles of Imperative Computation 12 15-251 Great Ideas in Theoretical Computer Science 12 15-451 Algorithm Design and Analysis 12 or 15-351 Algorithms and Advanced Data Structures 07-280 Artificial Intelligence and Machine Learning I 12 or 10-301 Introduction to Machine Learning 02-120 Programming for Scientists 12 or 15-112 Fundamentals of Programming and Computer Science Total Units 63 Computational Biology Core"
+    },
+    {
+      "id": "major-electives",
+      "name": "Major Electives",
+      "choose": 14,
+      "units": 126,
+      "options": [
+        "09-217",
+        "42-202",
+        "15-150",
+        "02-201",
+        "02-223",
+        "02-250",
+        "02-261",
+        "02-262",
+        "11-423",
+        "15-351",
+        "16-223",
+        "17-200",
+        "17-333",
+        "17-562"
+      ],
+      "source_instruction": "Degree Requirements (students entering Fall 2026) Students completing the Bachelor of Science in Computational Biology follow certain policies that apply to all SCS students; please consult the SCS policies page for a complete listing of these expectations. Students must complete a minimum of 360 units for the degree in computational biology. Mathematics/Statistics Core Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 15-151 Mathematical Foundations for Computer Science (or 21-127 / 21-128 if not offered) 12 36-218 Probability Theory for Computer Scientists (Students taking 15-259 should take 36-326 or 15-260 instead. 15-260 is only open to students who have taken 15-259 .) 9 or 36-226 Introduction to Statistical Inference or 36-326 Mathematical Statistics (Honors) or 36-235 Probability and Statistical Inference I or 15-259 Probability and Computing 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory Total Units 52 General Science Core 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students Total Units 22 Biological Core 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 9 03-232 Biochemistry I (Students taking 03-231 , including pre-med students, will take organic chemistry as a prerequisite, which will satisfy a biology elective requirement.) 9 or 03-231 Honors Biochemistry 03-320 Cell Biology 9 Total Units 37 Computer Science Core 07-128 First Year Seminar (This course may be replaced by 03-201 or 03-202 if and only if 07-128 is not offered) 3 15-122 Principles of Imperative Computation 12 15-251 Great Ideas in Theoretical Computer Science 12 15-451 Algorithm Design and Analysis 12 or 15-351 Algorithms and Advanced Data Structures 07-280 Artificial Intelligence and Machine Learning I 12 or 10-301 Introduction to Machine Learning 02-120 Programming for Scientists 12 or 15-112 Fundamentals of Programming and Computer Science Total Units 63 Computational Biology Core 02-135 Computational Biology and Society 3 02-180 Great Ideas in Computational Biology I 5 02-181 Great Ideas in Computational Biology II 5 * 02-251 is allowed if 02-180 and 02-181 are not offered 02-261 Quantitative Cell and Molecular Biology Laboratory 12 or 02-262 Computation and Biology Integrated Research Lab 02-402 Computational Biology Seminar 3 02-510 Computational Genomics 12 02-512 Computational Methods for Biological Modeling and Simulation 9 Total Units 49 Major Electives"
+    },
+    {
+      "id": "computing-carnegie-mellon-1-course",
+      "name": "Computing @ Carnegie Mellon (1 course)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "99-101"
+      ],
+      "source_instruction": "Degree Requirements (students entering Fall 2026) Students completing the Bachelor of Science in Computational Biology follow certain policies that apply to all SCS students; please consult the SCS policies page for a complete listing of these expectations. Students must complete a minimum of 360 units for the degree in computational biology. Mathematics/Statistics Core Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 15-151 Mathematical Foundations for Computer Science (or 21-127 / 21-128 if not offered) 12 36-218 Probability Theory for Computer Scientists (Students taking 15-259 should take 36-326 or 15-260 instead. 15-260 is only open to students who have taken 15-259 .) 9 or 36-226 Introduction to Statistical Inference or 36-326 Mathematical Statistics (Honors) or 36-235 Probability and Statistical Inference I or 15-259 Probability and Computing 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory Total Units 52 General Science Core 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students Total Units 22 Biological Core 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 9 03-232 Biochemistry I (Students taking 03-231 , including pre-med students, will take organic chemistry as a prerequisite, which will satisfy a biology elective requirement.) 9 or 03-231 Honors Biochemistry 03-320 Cell Biology 9 Total Units 37 Computer Science Core 07-128 First Year Seminar (This course may be replaced by 03-201 or 03-202 if and only if 07-128 is not offered) 3 15-122 Principles of Imperative Computation 12 15-251 Great Ideas in Theoretical Computer Science 12 15-451 Algorithm Design and Analysis 12 or 15-351 Algorithms and Advanced Data Structures 07-280 Artificial Intelligence and Machine Learning I 12 or 10-301 Introduction to Machine Learning 02-120 Programming for Scientists 12 or 15-112 Fundamentals of Programming and Computer Science Total Units 63 Computational Biology Core 02-135 Computational Biology and Society 3 02-180 Great Ideas in Computational Biology I 5 02-181 Great Ideas in Computational Biology II 5 * 02-251 is allowed if 02-180 and 02-181 are not offered 02-261 Quantitative Cell and Molecular Biology Laboratory 12 or 02-262 Computation and Biology Integrated Research Lab 02-402 Computational Biology Seminar 3 02-510 Computational Genomics 12 02-512 Computational Methods for Biological Modeling and Simulation 9 Total Units 49 Major Electives 02-3xx Computational Biology Electives at 300 level or above 18-24 03-3xx Biology Electives at 300 level or above ( 09-217 or 42-202 also count as biology electives) 9-12 xx-2xx School of Computer Science Electives at 200 level or above, at least 9 units each. 15-150 is an acceptable 100-level course counting in this category, but the following exceptions are not allowed in this category: 02-201 , 02-223 , 02-250 , 02-261 , 02-262 , 11-423 , 15-351 , 16-223 , 17-200 , 17-333 , 17-562 . 18-24 Total Units 45-60 Humanities & Arts All candidates for the bachelor's degree in Computer Science must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed on the SCS General Education page . Computing @ Carnegie Mellon (1 course) The following course is required of all students to familiarize them with the campus computing environment:"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 58,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Mathematics/Statistics Core",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.86
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (396 units).",
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "7 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 55,
+    "extracted_unit_estimate": 396,
+    "scheduled_course_count": 48,
+    "missing_schedule_course_ids": [
+      "02-201",
+      "02-223",
+      "02-251",
+      "02-262",
+      "15-260",
+      "17-200",
+      "36-326"
+    ]
+  }
+}

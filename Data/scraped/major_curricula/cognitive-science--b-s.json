@@ -1,0 +1,138 @@
+{
+  "program_id": "cognitive-science--b-s",
+  "planning_id": "cognitive-science",
+  "name": "Cognitive Science",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
+  "source_hash": "e71d3abdeb38d500b556a36772a1b045d1866a585ae7118c38b0ca23af2ee758",
+  "fixed_courses": [
+    {
+      "id": "85-300",
+      "name": "Introduction to Research Methods",
+      "units": 9.0,
+      "source_text": "85-300 Introduction to Research Methods 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "cognitive-science-core",
+      "name": "Cognitive Science Core",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-110",
+        "85-170"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "cognitive-science-core",
+      "name": "Cognitive Science Core",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-309",
+        "85-309",
+        "36-225",
+        "36-218"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "cognitive-science-core",
+      "name": "Cognitive Science Core",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-111",
+        "21-112",
+        "21-120"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "cognitive-science-core",
+      "name": "Cognitive Science Core",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "15-112",
+        "02-120"
+      ],
+      "source_instruction": "* Please see mathematics placement policy. Additional mathematics may be required depending on pathway chosen below. Students who place out of 21-120 will have fulfilled the calculus requirement"
+    },
+    {
+      "id": "cognitive-science-core",
+      "name": "Cognitive Science Core",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-412",
+        "85-414",
+        "85-419",
+        "85-426"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "choose",
+      "name": "Choose :",
+      "choose": 5,
+      "units": 56,
+      "options": [
+        "85-210",
+        "85-213",
+        "21-127",
+        "15-122",
+        "15-150"
+      ],
+      "source_instruction": "The Major in Cognitive Science Overview The Psychology Department offers a B.S. degree in Cognitive Science. The field of cognitive science has grown out of increasingly active interaction among psychology, linguistics, artificial intelligence, machine learning, philosophy, and neuroscience. All of these fields share the goal of understanding intelligence. By combining these diverse perspectives, students of cognitive science are able to understand cognition at a deep level. Because this major is administered by the Psychology Department, it focuses on human cognition and the experimental study of the human mind as illuminated by the techniques of the above disciplines. Curriculum The Cognitive Science major is only offered as a B.S. degree and has been revised starting the Fall 2026/Spring 2027 semester. Students complete a Cognitive Science Core, one pathway, and a 3-course concentration. As a note, students who completed psychology courses under the old numbering system will still have those courses count towards the requirements previously specified. The Psychology Department website has more information regarding research for credit opportunities available to undergraduates. Please reach out to Emilie O'Leary, emilier@andrew.cmu.edu with additional questions. Cognitive Science Core Foundations of Cognition and Neuroscience Units 85-110 Cognitive Psychology 9 85-170 Foundations of Brain and Behavior 9 18 Research Methods Units 85-300 Introduction to Research Methods 9 Statistics 36-309 Experimental Design for Behavioral & Social Sciences 9 or 85-309 Statistical Concepts and Methods for Behavioral and Social Science or 36-225 Introduction to Probability Theory or 36-218 Probability Theory for Computer Scientists Mathematics* Units 21-111 Differential Calculus 10 21-112 Integral Calculus 10 or 21-120 Differential and Integral Calculus * Please see mathematics placement policy. Additional mathematics may be required depending on pathway chosen below. Students who place out of 21-120 will have fulfilled the calculus requirement Computing Requirement Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists Advanced Cognitive Modeling - Complete 18 units Units 85-412 Cognitive Modeling 9 85-414 Cognition in the Age of AI 9 85-419 Introduction to Parallel Distributed Processing 9 85-426 Reverse engineering brains and machines 9 Cognitive Science Pathways (Required to choose one) New starting Fall 2026, students who declare the cognitive science major have the opportunity to choose between two pathways within the cognitive science major. Choosing one is required to complete the major . You may choose between Computational Intelligence which focuses on models of cognition and intelligent systems or Neural Cognition allowing students to explore neural systems underlying perception, learning and cognition. There are absolutely no substitutions allowed within a pathway. You will have the opportunity to specialize in additional content through the 3 course concentration, explained further below. Choose :"
+    },
+    {
+      "id": "or-choose",
+      "name": "OR Choose:",
+      "choose": 7,
+      "units": 63,
+      "options": [
+        "85-270",
+        "03-362",
+        "03-363",
+        "85-370",
+        "85-403",
+        "85-471",
+        "85-472"
+      ],
+      "source_instruction": "The Major in Cognitive Science Overview The Psychology Department offers a B.S. degree in Cognitive Science. The field of cognitive science has grown out of increasingly active interaction among psychology, linguistics, artificial intelligence, machine learning, philosophy, and neuroscience. All of these fields share the goal of understanding intelligence. By combining these diverse perspectives, students of cognitive science are able to understand cognition at a deep level. Because this major is administered by the Psychology Department, it focuses on human cognition and the experimental study of the human mind as illuminated by the techniques of the above disciplines. Curriculum The Cognitive Science major is only offered as a B.S. degree and has been revised starting the Fall 2026/Spring 2027 semester. Students complete a Cognitive Science Core, one pathway, and a 3-course concentration. As a note, students who completed psychology courses under the old numbering system will still have those courses count towards the requirements previously specified. The Psychology Department website has more information regarding research for credit opportunities available to undergraduates. Please reach out to Emilie O'Leary, emilier@andrew.cmu.edu with additional questions. Cognitive Science Core Foundations of Cognition and Neuroscience Units 85-110 Cognitive Psychology 9 85-170 Foundations of Brain and Behavior 9 18 Research Methods Units 85-300 Introduction to Research Methods 9 Statistics 36-309 Experimental Design for Behavioral & Social Sciences 9 or 85-309 Statistical Concepts and Methods for Behavioral and Social Science or 36-225 Introduction to Probability Theory or 36-218 Probability Theory for Computer Scientists Mathematics* Units 21-111 Differential Calculus 10 21-112 Integral Calculus 10 or 21-120 Differential and Integral Calculus * Please see mathematics placement policy. Additional mathematics may be required depending on pathway chosen below. Students who place out of 21-120 will have fulfilled the calculus requirement Computing Requirement Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists Advanced Cognitive Modeling - Complete 18 units Units 85-412 Cognitive Modeling 9 85-414 Cognition in the Age of AI 9 85-419 Introduction to Parallel Distributed Processing 9 85-426 Reverse engineering brains and machines 9 Cognitive Science Pathways (Required to choose one) New starting Fall 2026, students who declare the cognitive science major have the opportunity to choose between two pathways within the cognitive science major. Choosing one is required to complete the major . You may choose between Computational Intelligence which focuses on models of cognition and intelligent systems or Neural Cognition allowing students to explore neural systems underlying perception, learning and cognition. There are absolutely no substitutions allowed within a pathway. You will have the opportunity to specialize in additional content through the 3 course concentration, explained further below. Choose : Computational Intelligence Units 85-210 Language, AI, and Thought 9 or 85-213 Human Information Processing and Artificial Intelligence 21-127 Concepts of Mathematics 12 15-122 Principles of Imperative Computation 12 15-150 Principles of Functional Programming 12 45 OR Choose:"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 28,
+    "confidence": 0.77,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Cognitive Science Core",
+      "Assumed choose-one for ambiguous section: Cognitive Science Core",
+      "Assumed choose-one for ambiguous section: Cognitive Science Core",
+      "Assumed choose-one for ambiguous section: Cognitive Science Core",
+      "Assumed choose-one for ambiguous section: Cognitive Science Core"
+    ],
+    "explicit_group_ratio": 0.29
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 28,
+    "extracted_unit_estimate": 177,
+    "scheduled_course_count": 27,
+    "missing_schedule_course_ids": [
+      "85-412"
+    ]
+  }
+}

@@ -1,0 +1,574 @@
+{
+  "catalog_year": "2026-2027",
+  "generated_at": "2026-09-06T19:18:08.569705+00:00",
+  "status": "review_required",
+  "candidate_count": 3,
+  "candidates": {
+    "linguistics--b-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "linguistics--b-a",
+      "planning_id": "linguistics",
+      "name": "Linguistics",
+      "credential": "B.A.",
+      "minimum_major_units_estimate": 243,
+      "required_courses": [
+        "80-180",
+        "80-282",
+        "80-280",
+        "80-285",
+        "80-381",
+        "80-383",
+        "76-318",
+        "76-325",
+        "76-380",
+        "76-386",
+        "76-388",
+        "76-389",
+        "82-239",
+        "82-283",
+        "82-334",
+        "82-373",
+        "82-387",
+        "82-383",
+        "85-210",
+        "11-411",
+        "11-423",
+        "11-492",
+        "36-468"
+      ],
+      "requirement_groups": [
+        {
+          "id": "extended-core-27-units",
+          "name": "Extended Core 27 units",
+          "choose": 3,
+          "units": 27,
+          "options": [
+            "36-468",
+            "76-389",
+            "80-283",
+            "80-286",
+            "80-287",
+            "80-288",
+            "80-382",
+            "80-384",
+            "80-385",
+            "80-388",
+            "80-484",
+            "80-488"
+          ]
+        },
+        {
+          "id": "electives-minimum-54-units",
+          "name": "Electives minimum 54 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "80-484",
+            "80-486"
+          ]
+        }
+      ],
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/",
+        "source_hash": "ae278e0147930ad75d9c8c2bbc1e3ea849aeb1d1ff061130bdbc53c130a1e440",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "15 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 34,
+          "extracted_unit_estimate": 243,
+          "scheduled_course_count": 19,
+          "missing_schedule_course_ids": [
+            "76-318",
+            "76-386",
+            "80-280",
+            "80-283",
+            "80-286",
+            "80-287",
+            "80-288",
+            "80-381",
+            "80-382",
+            "80-385",
+            "80-388",
+            "80-484",
+            "82-239",
+            "82-373",
+            "82-387"
+          ]
+        }
+      }
+    },
+    "mechanical-engineering--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "mechanical-engineering--b-s",
+      "planning_id": "mechanical-engineering",
+      "name": "Mechanical Engineering",
+      "credential": "B.S.",
+      "minimum_major_units_estimate": 291,
+      "required_courses": [
+        "21-122"
+      ],
+      "requirement_groups": [
+        {
+          "id": "first-year",
+          "name": "First Year",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-120",
+            "24-101",
+            "33-141",
+            "99-101",
+            "76-101"
+          ]
+        },
+        {
+          "id": "sophomore-year",
+          "name": "Sophomore Year",
+          "choose": 6,
+          "units": 46,
+          "options": [
+            "24-221",
+            "24-261",
+            "21-254",
+            "24-203",
+            "24-251",
+            "39-210"
+          ]
+        },
+        {
+          "id": "sophomore-year",
+          "name": "Sophomore Year",
+          "choose": 6,
+          "units": 44,
+          "options": [
+            "24-231",
+            "24-262",
+            "21-260",
+            "24-203",
+            "24-251",
+            "39-220"
+          ]
+        },
+        {
+          "id": "junior-year",
+          "name": "Junior Year",
+          "choose": 6,
+          "units": 43,
+          "options": [
+            "24-302",
+            "24-322",
+            "24-351",
+            "24-370",
+            "36-220",
+            "39-310"
+          ]
+        },
+        {
+          "id": "junior-year",
+          "name": "Junior Year",
+          "choose": 4,
+          "units": 36,
+          "options": [
+            "24-302",
+            "24-311",
+            "24-321",
+            "24-352"
+          ]
+        },
+        {
+          "id": "senior-year",
+          "name": "Senior Year",
+          "choose": 3,
+          "units": 32,
+          "options": [
+            "24-441",
+            "24-671",
+            "24-452"
+          ]
+        },
+        {
+          "id": "robotics-and-automation",
+          "name": "Robotics and Automation",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "24-451",
+            "24-677",
+            "24-760",
+            "24-773",
+            "24-776",
+            "24-614",
+            "24-671",
+            "24-673",
+            "24-753",
+            "24-774",
+            "24-775",
+            "24-778"
+          ]
+        },
+        {
+          "id": "energy-environment-and-thermal-fluid-systems",
+          "name": "Energy, Environment, and Thermal Fluid Systems",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "24-711",
+            "24-718",
+            "24-721",
+            "24-722",
+            "24-730",
+            "24-381",
+            "24-423",
+            "24-623",
+            "24-626",
+            "24-628",
+            "24-629",
+            "24-643"
+          ]
+        },
+        {
+          "id": "product-design-and-development",
+          "name": "Product Design and Development",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "24-651",
+            "24-688",
+            "24-632",
+            "24-633",
+            "24-672",
+            "24-680",
+            "24-691",
+            "24-692"
+          ]
+        },
+        {
+          "id": "autonomous-systems-and-machine-learning",
+          "name": "Autonomous Systems and Machine Learning",
+          "choose": 1,
+          "units": 11,
+          "options": [
+            "24-451",
+            "24-677",
+            "24-704",
+            "24-789",
+            "24-774",
+            "24-775",
+            "24-784"
+          ]
+        },
+        {
+          "id": "computational-engineering",
+          "name": "Computational Engineering",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "24-703",
+            "24-780",
+            "24-783",
+            "24-785",
+            "24-658",
+            "24-718",
+            "24-755",
+            "24-781"
+          ]
+        },
+        {
+          "id": "engineering-mechanisms-and-materials",
+          "name": "Engineering Mechanisms and Materials",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "24-634",
+            "24-635",
+            "24-652",
+            "24-653",
+            "24-751",
+            "24-358",
+            "24-643",
+            "24-650",
+            "24-684",
+            "24-755",
+            "24-753"
+          ]
+        }
+      ],
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/",
+        "source_hash": "ce6a2672cba3e433403ebbfa26841833bb580068bb0e908b45dc2bcd1cfc2cda",
+        "extraction_confidence": 0.97,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "9 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 77,
+          "extracted_unit_estimate": 291,
+          "scheduled_course_count": 68,
+          "missing_schedule_course_ids": [
+            "24-623",
+            "24-629",
+            "24-653",
+            "24-692",
+            "24-711",
+            "24-730",
+            "24-753",
+            "24-773",
+            "24-781"
+          ]
+        }
+      }
+    },
+    "psychology--b-a-b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "psychology--b-a-b-s",
+      "planning_id": "psychology",
+      "name": "Psychology",
+      "credential": "B.A./B.S",
+      "minimum_major_units_estimate": 229,
+      "required_courses": [
+        "85-100"
+      ],
+      "requirement_groups": [
+        {
+          "id": "mathematics-10-units",
+          "name": "Mathematics 10 units",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-090",
+            "21-111",
+            "21-112",
+            "21-120"
+          ]
+        },
+        {
+          "id": "statistics-sequence-9-units",
+          "name": "Statistics Sequence 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-309",
+            "85-309"
+          ]
+        },
+        {
+          "id": "psychology-surveys-27-units",
+          "name": "Psychology Surveys 27 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "85-110",
+            "85-130",
+            "85-150",
+            "85-170",
+            "85-190"
+          ]
+        },
+        {
+          "id": "introduction-to-research-methods-9-units",
+          "name": "Introduction to Research Methods 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "85-300"
+          ]
+        },
+        {
+          "id": "advanced-research-methods-12-units",
+          "name": "Advanced Research Methods 12 units",
+          "choose": 2,
+          "units": 19,
+          "options": [
+            "85-302",
+            "85-310",
+            "85-370",
+            "85-320",
+            "85-330",
+            "85-303",
+            "85-350"
+          ]
+        },
+        {
+          "id": "practical-application-9-units",
+          "name": "Practical Application 9 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-198",
+            "85-501",
+            "85-503",
+            "85-507",
+            "85-508",
+            "85-601",
+            "66-501",
+            "85-530",
+            "85-590",
+            "99-270"
+          ]
+        },
+        {
+          "id": "breadth-9-units",
+          "name": "Breadth 9 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-105",
+            "85-106",
+            "85-107",
+            "85-117",
+            "85-251",
+            "85-151",
+            "85-213"
+          ]
+        },
+        {
+          "id": "computer-science-requirement-10-units",
+          "name": "Computer Science Requirement 10 units",
+          "choose": 2,
+          "units": 20,
+          "options": [
+            "15-110",
+            "88-300",
+            "15-112",
+            "15-104"
+          ]
+        },
+        {
+          "id": "learning-and-development",
+          "name": "Learning and Development",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-130",
+            "85-320",
+            "85-530",
+            "85-501"
+          ]
+        },
+        {
+          "id": "health-psychology",
+          "name": "Health Psychology",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-170",
+            "85-150",
+            "85-350",
+            "85-314",
+            "85-454",
+            "85-507",
+            "85-508",
+            "85-601",
+            "85-501",
+            "85-503"
+          ]
+        },
+        {
+          "id": "cognitive-psychology",
+          "name": "Cognitive Psychology",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-110",
+            "85-310",
+            "85-507",
+            "85-508",
+            "85-601",
+            "85-501",
+            "85-503"
+          ]
+        },
+        {
+          "id": "social-psychology",
+          "name": "Social Psychology",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-150",
+            "85-350",
+            "85-507",
+            "85-508",
+            "85-601",
+            "85-501",
+            "85-503"
+          ]
+        },
+        {
+          "id": "clinical-counseling-psychology",
+          "name": "Clinical/Counseling Psychology",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-190",
+            "85-320",
+            "85-350",
+            "85-590"
+          ]
+        },
+        {
+          "id": "cognitive-neuroscience",
+          "name": "Cognitive Neuroscience",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "85-110",
+            "85-170",
+            "85-370",
+            "85-472",
+            "85-507",
+            "85-508",
+            "85-601",
+            "85-501",
+            "85-503"
+          ]
+        }
+      ],
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
+        "source_hash": "0499c7fa9c71fd8a93ba908019a7eeb331acd95e504d84c5b2b1e6dd25bc6b6a",
+        "extraction_confidence": 0.92,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "11 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 44,
+          "extracted_unit_estimate": 229,
+          "scheduled_course_count": 33,
+          "missing_schedule_course_ids": [
+            "15-104",
+            "85-107",
+            "85-117",
+            "85-151",
+            "85-251",
+            "85-302",
+            "85-303",
+            "85-314",
+            "85-320",
+            "85-454",
+            "99-270"
+          ]
+        }
+      }
+    }
+  },
+  "skipped": [
+    {
+      "program_id": "information-systems--b-s",
+      "reason": "curated_template_exists"
+    }
+  ]
+}

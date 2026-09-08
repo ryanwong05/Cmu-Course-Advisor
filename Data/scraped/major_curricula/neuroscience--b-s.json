@@ -1,0 +1,542 @@
+{
+  "program_id": "neuroscience--b-s",
+  "planning_id": "neuroscience",
+  "name": "Neuroscience",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/",
+  "source_hash": "a1eba1cc2ee1ae2db2a5c9f74dfcbd0b61fc57c7c59419f108f96014a9576561",
+  "fixed_courses": [
+    {
+      "id": "03-133",
+      "name": "Neurobiology of Disease",
+      "units": 9.0,
+      "source_text": "03-133 Neurobiology of Disease 9"
+    },
+    {
+      "id": "02-250",
+      "name": "Introduction to Computational Biology",
+      "units": 12.0,
+      "source_text": "02-250 Introduction to Computational Biology 12"
+    },
+    {
+      "id": "03-350",
+      "name": "Developmental Biology",
+      "units": 9.0,
+      "source_text": "03-350 Developmental Biology 9"
+    },
+    {
+      "id": "03-365",
+      "name": "Neural Correlates of Learning and Memory",
+      "units": 9.0,
+      "source_text": "03-365 Neural Correlates of Learning and Memory 9"
+    },
+    {
+      "id": "03-366",
+      "name": "Neuropharmacology: Drugs, Brain and Behavior",
+      "units": 9.0,
+      "source_text": "03-366 Neuropharmacology: Drugs, Brain and Behavior 9"
+    },
+    {
+      "id": "03-439",
+      "name": "Introduction to Biophysics",
+      "units": 10.0,
+      "source_text": "03-439 Introduction to Biophysics 10"
+    },
+    {
+      "id": "03-442",
+      "name": "Molecular Biology",
+      "units": 9.0,
+      "source_text": "03-442 Molecular Biology 9"
+    },
+    {
+      "id": "09-218",
+      "name": "Organic Chemistry II",
+      "units": 9.0,
+      "source_text": "09-218 Organic Chemistry II 9"
+    },
+    {
+      "id": "09-208",
+      "name": "Techniques for Organic Synthesis and Analysis",
+      "units": 9.0,
+      "source_text": "09-208 Techniques for Organic Synthesis and Analysis 9"
+    },
+    {
+      "id": "09-222",
+      "name": "Laboratory II: Organic Synthesis and Analysis",
+      "units": null,
+      "source_text": "or 09-222 Laboratory II: Organic Synthesis and Analysis"
+    },
+    {
+      "id": "42-202",
+      "name": "Physiology",
+      "units": 9.0,
+      "source_text": "42-202 Physiology 9"
+    },
+    {
+      "id": "42-203",
+      "name": "Biomedical Engineering Laboratory NOTE: VERY Limited Seating Available for 42-203",
+      "units": 9.0,
+      "source_text": "42-203 Biomedical Engineering Laboratory NOTE: VERY Limited Seating Available for 42-203 9"
+    },
+    {
+      "id": "85-100",
+      "name": "Introduction to Psychology",
+      "units": 9.0,
+      "source_text": "85-100 Introduction to Psychology 9"
+    },
+    {
+      "id": "36-309",
+      "name": "Experimental Design for Behavioral & Social Sciences",
+      "units": 9.0,
+      "source_text": "36-309 Experimental Design for Behavioral & Social Sciences 9"
+    },
+    {
+      "id": "85-309",
+      "name": "Statistical Concepts and Methods for Behavioral and Social Science",
+      "units": null,
+      "source_text": "or 85-309 Statistical Concepts and Methods for Behavioral and Social Science"
+    },
+    {
+      "id": "85-300",
+      "name": "Introduction to Research Methods",
+      "units": 9.0,
+      "source_text": "85-300 Introduction to Research Methods 9"
+    },
+    {
+      "id": "85-370",
+      "name": "Cognitive Neuropsychology Research Methods",
+      "units": 9.0,
+      "source_text": "85-370 Cognitive Neuropsychology Research Methods 9"
+    },
+    {
+      "id": "85-130",
+      "name": "Developmental Psychology",
+      "units": 9.0,
+      "source_text": "85-130 Developmental Psychology 9"
+    },
+    {
+      "id": "85-150",
+      "name": "Social Psychology",
+      "units": 9.0,
+      "source_text": "85-150 Social Psychology 9"
+    },
+    {
+      "id": "85-190",
+      "name": "Psychopathology",
+      "units": 9.0,
+      "source_text": "85-190 Psychopathology 9"
+    },
+    {
+      "id": "85-411",
+      "name": "Introduction to Music Cognition Research",
+      "units": 9.0,
+      "source_text": "85-411 Introduction to Music Cognition Research 9"
+    },
+    {
+      "id": "85-413",
+      "name": "Perception",
+      "units": 9.0,
+      "source_text": "85-413 Perception 9"
+    },
+    {
+      "id": "85-414",
+      "name": "Cognition in the Age of AI *",
+      "units": 9.0,
+      "source_text": "85-414 Cognition in the Age of AI * 9"
+    },
+    {
+      "id": "85-419",
+      "name": "Introduction to Parallel Distributed Processing *",
+      "units": 9.0,
+      "source_text": "85-419 Introduction to Parallel Distributed Processing * 9"
+    },
+    {
+      "id": "85-426",
+      "name": "Reverse engineering brains and machines",
+      "units": 9.0,
+      "source_text": "85-426 Reverse engineering brains and machines 9"
+    },
+    {
+      "id": "85-432",
+      "name": "Data Science for Psychology and Neuroscience",
+      "units": 9.0,
+      "source_text": "85-432 Data Science for Psychology and Neuroscience 9"
+    },
+    {
+      "id": "85-454",
+      "name": "Health Psychology",
+      "units": 9.0,
+      "source_text": "85-454 Health Psychology 9"
+    },
+    {
+      "id": "85-471",
+      "name": "How the Brain Makes Meaning",
+      "units": 9.0,
+      "source_text": "85-471 How the Brain Makes Meaning 9"
+    },
+    {
+      "id": "85-472",
+      "name": "Cognitive Neuropsychology",
+      "units": 9.0,
+      "source_text": "85-472 Cognitive Neuropsychology 9"
+    },
+    {
+      "id": "21-127",
+      "name": "Concepts of Mathematics",
+      "units": 12.0,
+      "source_text": "21-127 Concepts of Mathematics 12"
+    },
+    {
+      "id": "15-122",
+      "name": "Principles of Imperative Computation",
+      "units": 12.0,
+      "source_text": "15-122 Principles of Imperative Computation 12"
+    },
+    {
+      "id": "15-150",
+      "name": "Principles of Functional Programming",
+      "units": null,
+      "source_text": "or 15-150 Principles of Functional Programming"
+    },
+    {
+      "id": "21-241",
+      "name": "Matrices and Linear Transformations",
+      "units": 10.0,
+      "source_text": "21-241 Matrices and Linear Transformations 10"
+    },
+    {
+      "id": "21-240",
+      "name": "Matrix Algebra with Applications",
+      "units": null,
+      "source_text": "or 21-240 Matrix Algebra with Applications"
+    },
+    {
+      "id": "03-360",
+      "name": "/02-319 Genomics and Epigenetics of the Brain",
+      "units": 9.0,
+      "source_text": "03-360/02-319 Genomics and Epigenetics of the Brain 9"
+    },
+    {
+      "id": "02-319",
+      "name": "Genomics and Epigenetics of the Brain",
+      "units": 9.0,
+      "source_text": "03-360/02-319 Genomics and Epigenetics of the Brain 9"
+    },
+    {
+      "id": "02-512",
+      "name": "Computational Methods for Biological Modeling and Simulation",
+      "units": 9.0,
+      "source_text": "02-512 Computational Methods for Biological Modeling and Simulation 9"
+    },
+    {
+      "id": "10-301",
+      "name": "Introduction to Machine Learning",
+      "units": 12.0,
+      "source_text": "10-301 Introduction to Machine Learning 12"
+    },
+    {
+      "id": "10-315",
+      "name": "Introduction to Machine Learning (SCS Majors)",
+      "units": null,
+      "source_text": "or 10-315 Introduction to Machine Learning (SCS Majors)"
+    },
+    {
+      "id": "10-601",
+      "name": "Introduction to Machine Learning",
+      "units": null,
+      "source_text": "or 10-601 Introduction to Machine Learning"
+    },
+    {
+      "id": "15-387",
+      "name": "Computational Perception",
+      "units": 9.0,
+      "source_text": "15-387 Computational Perception 9"
+    },
+    {
+      "id": "15-451",
+      "name": "Algorithm Design and Analysis",
+      "units": 12.0,
+      "source_text": "15-451 Algorithm Design and Analysis 12"
+    },
+    {
+      "id": "15-453",
+      "name": "Formal Languages, Automata, and Computability",
+      "units": 9.0,
+      "source_text": "15-453 Formal Languages, Automata, and Computability 9"
+    },
+    {
+      "id": "15-494",
+      "name": "Cognitive Robotics: The Future of Robot Toys",
+      "units": 12.0,
+      "source_text": "15-494 Cognitive Robotics: The Future of Robot Toys 12"
+    },
+    {
+      "id": "15-883",
+      "name": "Computational Models of Neural Systems",
+      "units": 12.0,
+      "source_text": "15-883 Computational Models of Neural Systems 12"
+    },
+    {
+      "id": "16-299",
+      "name": "Introduction to Feedback Control Systems",
+      "units": 12.0,
+      "source_text": "16-299 Introduction to Feedback Control Systems 12"
+    },
+    {
+      "id": "16-311",
+      "name": "Introduction to Robotics",
+      "units": 12.0,
+      "source_text": "16-311 Introduction to Robotics 12"
+    },
+    {
+      "id": "21-228",
+      "name": "Discrete Mathematics",
+      "units": 9.0,
+      "source_text": "21-228 Discrete Mathematics 9"
+    },
+    {
+      "id": "15-251",
+      "name": "Great Ideas in Theoretical Computer Science",
+      "units": null,
+      "source_text": "or 15-251 Great Ideas in Theoretical Computer Science"
+    },
+    {
+      "id": "21-259",
+      "name": "Calculus in Three Dimensions",
+      "units": 10.0,
+      "source_text": "21-259 Calculus in Three Dimensions 10"
+    },
+    {
+      "id": "21-341",
+      "name": "Linear Algebra",
+      "units": 9.0,
+      "source_text": "21-341 Linear Algebra 9"
+    },
+    {
+      "id": "36-226",
+      "name": "Introduction to Statistical Inference",
+      "units": 9.0,
+      "source_text": "36-226 Introduction to Statistical Inference 9"
+    },
+    {
+      "id": "36-350",
+      "name": "Statistical Computing",
+      "units": 9.0,
+      "source_text": "36-350 Statistical Computing 9"
+    },
+    {
+      "id": "36-401",
+      "name": "Modern Regression",
+      "units": 9.0,
+      "source_text": "36-401 Modern Regression 9"
+    },
+    {
+      "id": "36-462",
+      "name": "Special Topics: Statistical Machine Learning",
+      "units": 9.0,
+      "source_text": "36-462 Special Topics: Statistical Machine Learning 9"
+    },
+    {
+      "id": "86-631",
+      "name": "Neural Data Analysis",
+      "units": 12.0,
+      "source_text": "42/86-631 Neural Data Analysis 12"
+    },
+    {
+      "id": "42-632",
+      "name": "Neural Signal Processing",
+      "units": 12.0,
+      "source_text": "42-632 Neural Signal Processing 12"
+    },
+    {
+      "id": "42-688",
+      "name": "Introduction to Neural Engineering",
+      "units": 12.0,
+      "source_text": "42-688 Introduction to Neural Engineering 12"
+    },
+    {
+      "id": "33-122",
+      "name": "Physics II for Biological Sciences and Chemistry Students unless used for Science Core (section A)",
+      "units": 9.0,
+      "source_text": "33-122 Physics II for Biological Sciences and Chemistry Students unless used for Science Core (section A) 9"
+    },
+    {
+      "id": "76-385",
+      "name": "Introduction to Discourse Analysis",
+      "units": 9.0,
+      "source_text": "76-385 Introduction to Discourse Analysis 9"
+    },
+    {
+      "id": "80-210",
+      "name": "Logic and Proofs",
+      "units": 9.0,
+      "source_text": "80-210 Logic and Proofs 9"
+    },
+    {
+      "id": "80-211",
+      "name": "Logic and Mathematical Inquiry",
+      "units": 9.0,
+      "source_text": "80-211 Logic and Mathematical Inquiry 9"
+    },
+    {
+      "id": "80-220",
+      "name": "Philosophy of Science",
+      "units": 9.0,
+      "source_text": "80-220 Philosophy of Science 9"
+    },
+    {
+      "id": "80-254",
+      "name": "The History of Analytic Philosophy and Its Influence",
+      "units": 9.0,
+      "source_text": "80-254 The History of Analytic Philosophy and Its Influence 9"
+    },
+    {
+      "id": "80-270",
+      "name": "Problems of Mind and Body: Meaning and Doing",
+      "units": 9.0,
+      "source_text": "80-270 Problems of Mind and Body: Meaning and Doing 9"
+    },
+    {
+      "id": "80-280",
+      "name": "Linguistic Analysis",
+      "units": 9.0,
+      "source_text": "80-280 Linguistic Analysis 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "a-general-science-requirements",
+      "name": "A. General Science Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "21-122",
+        "03-121",
+        "03-151",
+        "03-201",
+        "03-220",
+        "03-330",
+        "03-221",
+        "09-105",
+        "09-106",
+        "09-207",
+        "09-221",
+        "03-124",
+        "09-217",
+        "33-122",
+        "33-121",
+        "15-110",
+        "15-112",
+        "02-120",
+        "36-200",
+        "36-218",
+        "36-219",
+        "36-225"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "b-core-neuroscience-courses",
+      "name": "B. Core Neuroscience Courses",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "85-170",
+        "03-161",
+        "85-110",
+        "85-213",
+        "03-362",
+        "03-363",
+        "15-386",
+        "02-319",
+        "03-360",
+        "85-414",
+        "85-419",
+        "85-420",
+        "86-375"
+      ],
+      "source_instruction": "Bachelor of Science in Neuroscience Gordon Rule, Department Head, Biological Sciences Susanne Ferber, Department Head, Psychology www.cmu.edu/ni Neuroscience is an interdisciplinary field in which scientists from many backgrounds apply the tools of biology, cognitive science, psychology, chemistry, mathematics, statistics, computer science, and engineering to develop a comprehensive understanding of brain function at the level of molecules, neurons, brain circuits, cognitive brain modules, and behavior. Research in neuroscience across these disciplines has grown substantially in the past two decades, and a solid understanding of the physiological basis of many aspects of brain function both in health and disease has come along with this growth in research. Along with this comes an increasing need for students to begin careers in neuroscience and to be prepared to work on the problems in neuroscience and to bring new answers to the public and to patients. In order to be successful in developing new treatments and answering outstanding questions in the field, neuroscientists need to be conversant in many different levels of inquiry from neurobiology to cognitive neuroscience to computational neuroscience. The Dietrich College of Humanities & Social Sciences and the Mellon College of Science have joined forces to establish an exciting interdisciplinary program leading to a Bachelor of Science in Neuroscience. The goal of this degree program is to provide an intensive interdisciplinary education to enable outstanding students to become leaders in identifying and solving tomorrow's Neuroscience problems using a variety of methods. The program's interdisciplinary curriculum is designed for students to gain a fundamental understanding of brain function on many different levels and to begin to specialize within the broad field of Neuroscience. Students in Mellon College of Science or Dietrich College may have a primary major in Neuroscience in any of the three concentrations. Students from other colleges may have a second major in Neuroscience in any of the three concentrations, subject to double-counting restrictions. A degree in neuroscience provides excellent preparation for medical school or other graduate programs in the health professions. These students are aided by the Carnegie Mellon Health Professions Program (HPP), an advisory and resource service for all Carnegie Mellon students who are considering careers in the health care field. (See the HPP section in this catalog or www.cmu.edu/hpp for more information.) Students wishing to pursue the Neuroscience major through Dietrich College should contact Emilie O'Leary ( emilier@cmu.edu ). Students wishing to pursue the Neuroscience major through the Mellon College of Science should contact the Biological Sciences Undergraduate Programs Office . Students wishing to pursue an additional major in either the Neurobiology or Computational Neuroscience concentrations should contact the Biological Sciences Undergraduate Programs Office . Students wishing to pursue an additional major in the Cognitive Neuroscience concentration should contact Emilie O'Leary ( emilier@cmu.edu ). It is highly recommended that students pursing this major/additional major work closely with academic advisors when schedule planning each semester. As a note, students who completed psychology courses under the old numbering system will still have those courses count towards the requirements previously specified. New course numbers will take effect starting Fall 2025. Spring 2026 courses will be updated once course scheduling begins. The old course numbers remain in use until then, with catalog updates reflecting the changes beginning Fall 2026. Learning Outcomes Students who pursue this major will: Gain a broad understanding of Neuroscience at many different levels of analysis, including: cellular biology of the brain, brain systems, cognitive brain function, and computational brain modeling Gain an understanding of the sciences underlying Neuroscience, including: Biology, Chemistry, Computer Science, Cognition and Psychology, and other emerging areas Develop a comprehensive understanding of brain function in health and disease Be familiar with neuroanatomy & neurophysiology and their implications for nervous system function Be prepared for advanced study in neurobiology, cognitive neuroscience, and/or neural computation Be able to collaborate with Neuroscientists across a wide range of systems and levels of analysis Prepare for careers in Neuroscience related companies, Neuroscience research, and/or medicine Be prepared for specialization within subfields of Neuroscience given their concentration selection Degree Requirements All students must complete the following: General Science Requirements (see section A) Core Neuroscience Courses (see section B) Requirements for one concentration (see sections C, D, or E)* 18 additional relevant course units in their home concentration or other neuroscience areas (some examples listed in sections C, D, E, & F). At least 9 of these units must be at the 300-level or above. Their home college’s General Education requirements Free elective units to come to a total of 360 total course units * Double-counting restrictions and additional majors & minors Students may not major in two concentrations. Students using Neuroscience as an additional major or who have an additional major or minor to Neuroscience may only double-count at most 3 courses between this an their other major or minor (this restriction does not apply to prerequisites, General Education Requirements, or the General Science Requirements – section A). Other majors and minors may have more stringent double-counting restrictions, please consult with your neuroscience advisors and with the advising staff for the relevant host department for the other majors/minors. A. General Science Requirements Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 03-121 Modern Biology 9 or 03-151 Honors Modern Biology 03-201 Undergraduate Colloquium for Sophomores *Only required for MCS Students 1 03-220 Genetics *New course code ( 03-330 ) starting Fall 2027 9 or 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-207 Techniques in Quantitative Analysis 1 9-12 or 09-221 Laboratory I: Introduction to Chemical Analysis or 03-124 Modern Biology Laboratory 09-217 Organic Chemistry I 1 9 or 33-122 Physics II for Biological Sciences and Chemistry Students 33-121 Physics I for Science Students 12 15-110 Principles of Computing 2 10-12 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 36-200 Reasoning with Data 2 9 or 36-218 Probability Theory for Computer Scientists or 36-219 Probability Theory and Random Processes or 36-225 Introduction to Probability Theory 108-113 1 Neurobiology concentration students are required to complete 09-217 & 09-207 or 09-221 . 2 Computational Neuroscience concentration students are required to complete 21-122 , 15-112 or 02-120 , & 36-218 or 36-219 B. Core Neuroscience Courses"
+    },
+    {
+      "id": "c-neurobiology-concentration",
+      "name": "C. Neurobiology Concentration",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "03-231",
+        "03-320",
+        "03-240"
+      ],
+      "source_instruction": "Bachelor of Science in Neuroscience Gordon Rule, Department Head, Biological Sciences Susanne Ferber, Department Head, Psychology www.cmu.edu/ni Neuroscience is an interdisciplinary field in which scientists from many backgrounds apply the tools of biology, cognitive science, psychology, chemistry, mathematics, statistics, computer science, and engineering to develop a comprehensive understanding of brain function at the level of molecules, neurons, brain circuits, cognitive brain modules, and behavior. Research in neuroscience across these disciplines has grown substantially in the past two decades, and a solid understanding of the physiological basis of many aspects of brain function both in health and disease has come along with this growth in research. Along with this comes an increasing need for students to begin careers in neuroscience and to be prepared to work on the problems in neuroscience and to bring new answers to the public and to patients. In order to be successful in developing new treatments and answering outstanding questions in the field, neuroscientists need to be conversant in many different levels of inquiry from neurobiology to cognitive neuroscience to computational neuroscience. The Dietrich College of Humanities & Social Sciences and the Mellon College of Science have joined forces to establish an exciting interdisciplinary program leading to a Bachelor of Science in Neuroscience. The goal of this degree program is to provide an intensive interdisciplinary education to enable outstanding students to become leaders in identifying and solving tomorrow's Neuroscience problems using a variety of methods. The program's interdisciplinary curriculum is designed for students to gain a fundamental understanding of brain function on many different levels and to begin to specialize within the broad field of Neuroscience. Students in Mellon College of Science or Dietrich College may have a primary major in Neuroscience in any of the three concentrations. Students from other colleges may have a second major in Neuroscience in any of the three concentrations, subject to double-counting restrictions. A degree in neuroscience provides excellent preparation for medical school or other graduate programs in the health professions. These students are aided by the Carnegie Mellon Health Professions Program (HPP), an advisory and resource service for all Carnegie Mellon students who are considering careers in the health care field. (See the HPP section in this catalog or www.cmu.edu/hpp for more information.) Students wishing to pursue the Neuroscience major through Dietrich College should contact Emilie O'Leary ( emilier@cmu.edu ). Students wishing to pursue the Neuroscience major through the Mellon College of Science should contact the Biological Sciences Undergraduate Programs Office . Students wishing to pursue an additional major in either the Neurobiology or Computational Neuroscience concentrations should contact the Biological Sciences Undergraduate Programs Office . Students wishing to pursue an additional major in the Cognitive Neuroscience concentration should contact Emilie O'Leary ( emilier@cmu.edu ). It is highly recommended that students pursing this major/additional major work closely with academic advisors when schedule planning each semester. As a note, students who completed psychology courses under the old numbering system will still have those courses count towards the requirements previously specified. New course numbers will take effect starting Fall 2025. Spring 2026 courses will be updated once course scheduling begins. The old course numbers remain in use until then, with catalog updates reflecting the changes beginning Fall 2026. Learning Outcomes Students who pursue this major will: Gain a broad understanding of Neuroscience at many different levels of analysis, including: cellular biology of the brain, brain systems, cognitive brain function, and computational brain modeling Gain an understanding of the sciences underlying Neuroscience, including: Biology, Chemistry, Computer Science, Cognition and Psychology, and other emerging areas Develop a comprehensive understanding of brain function in health and disease Be familiar with neuroanatomy & neurophysiology and their implications for nervous system function Be prepared for advanced study in neurobiology, cognitive neuroscience, and/or neural computation Be able to collaborate with Neuroscientists across a wide range of systems and levels of analysis Prepare for careers in Neuroscience related companies, Neuroscience research, and/or medicine Be prepared for specialization within subfields of Neuroscience given their concentration selection Degree Requirements All students must complete the following: General Science Requirements (see section A) Core Neuroscience Courses (see section B) Requirements for one concentration (see sections C, D, or E)* 18 additional relevant course units in their home concentration or other neuroscience areas (some examples listed in sections C, D, E, & F). At least 9 of these units must be at the 300-level or above. Their home college’s General Education requirements Free elective units to come to a total of 360 total course units * Double-counting restrictions and additional majors & minors Students may not major in two concentrations. Students using Neuroscience as an additional major or who have an additional major or minor to Neuroscience may only double-count at most 3 courses between this an their other major or minor (this restriction does not apply to prerequisites, General Education Requirements, or the General Science Requirements – section A). Other majors and minors may have more stringent double-counting restrictions, please consult with your neuroscience advisors and with the advising staff for the relevant host department for the other majors/minors. A. General Science Requirements Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 03-121 Modern Biology 9 or 03-151 Honors Modern Biology 03-201 Undergraduate Colloquium for Sophomores *Only required for MCS Students 1 03-220 Genetics *New course code ( 03-330 ) starting Fall 2027 9 or 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-207 Techniques in Quantitative Analysis 1 9-12 or 09-221 Laboratory I: Introduction to Chemical Analysis or 03-124 Modern Biology Laboratory 09-217 Organic Chemistry I 1 9 or 33-122 Physics II for Biological Sciences and Chemistry Students 33-121 Physics I for Science Students 12 15-110 Principles of Computing 2 10-12 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 36-200 Reasoning with Data 2 9 or 36-218 Probability Theory for Computer Scientists or 36-219 Probability Theory and Random Processes or 36-225 Introduction to Probability Theory 108-113 1 Neurobiology concentration students are required to complete 09-217 & 09-207 or 09-221 . 2 Computational Neuroscience concentration students are required to complete 21-122 , 15-112 or 02-120 , & 36-218 or 36-219 B. Core Neuroscience Courses Units 85-170 Foundations of Brain and Behavior 3 9 or 03-161 Molecules to Mind 85-110 Cognitive Psychology 9 or 85-213 Human Information Processing and Artificial Intelligence 03-362 Cellular Neuroscience 9 03-363 Systems Neuroscience 9 15-386 Neural Computation 4 9 or 02-319/03-360 Genomics and Epigenetics of the Brain or 85-414 Cognition in the Age of AI or 85-419 Introduction to Parallel Distributed Processing or 85-420 Biologically Intelligent Exploration or 86-375 Computational Perception 45 3 Cognitive Neuroscience concentration students are required to complete 85-170 . 4 Computational Neuroscience concentration students are required to complete 15-386 . C. Neurobiology Concentration"
+    },
+    {
+      "id": "c-neurobiology-concentration",
+      "name": "C. Neurobiology Concentration",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "03-343",
+        "03-346",
+        "03-345"
+      ],
+      "source_instruction": "* Neurobiology concentration students must complete 09-217 & 09-207 or 09-221 in their General Science Requirements (section A, above)"
+    },
+    {
+      "id": "e-computational-neuroscience-concentration",
+      "name": "E. Computational Neuroscience Concentration",
+      "choose": 6,
+      "units": 66,
+      "options": [
+        "86-631",
+        "42-632",
+        "15-494",
+        "15-883",
+        "85-419",
+        "85-420"
+      ],
+      "source_instruction": "* Computational Neuroscience concentration students must complete 21-122 , 15-112 or 02-120 , and 36-218 or 36-219 in their General Science Requirements (section A, above) and 15-386 in their Core Neuroscience Courses (Section B, above). Students must complete a minimum of 60 units in this concentration. Students should select their required laboratory and elective courses to complete a minimum of 31 units (Four 9 unit courses or a lesser number of 9 and 12 unit courses could be combined to complete this requirement)."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 12,
+    "course_references": 114,
+    "confidence": 0.94,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: A. General Science Requirements"
+    ],
+    "explicit_group_ratio": 0.8
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Implausibly large extracted curriculum; likely schedule/table contamination.",
+      "Extracted requirement total is implausible (789 units)."
+    ],
+    "warnings": [
+      "15 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 103,
+    "extracted_unit_estimate": 789,
+    "scheduled_course_count": 88,
+    "missing_schedule_course_ids": [
+      "03-330",
+      "03-346",
+      "10-315",
+      "15-453",
+      "15-883",
+      "16-311",
+      "42-688",
+      "76-385",
+      "80-220",
+      "80-254",
+      "80-280",
+      "85-420",
+      "85-432",
+      "85-454",
+      "86-375"
+    ]
+  }
+}

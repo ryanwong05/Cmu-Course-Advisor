@@ -1,0 +1,41 @@
+{
+  "program_id": "engineering-studies-and-arts--b-e-s-a",
+  "planning_id": "engineering-studies-and-arts",
+  "name": "Engineering Studies and Arts",
+  "credential": "B.E.S.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/",
+  "source_hash": "5729570721ba1cb69d0ef229c621d7f2251d1161982b1558bbf49f1d5f65ede6",
+  "fixed_courses": [
+    {
+      "id": "93-120",
+      "name": "Catalog course",
+      "units": null,
+      "source_text": "II. ENG Concentration 93-120"
+    }
+  ],
+  "requirement_groups": [],
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 1,
+    "confidence": 0.3,
+    "status": "needs_review",
+    "warnings": [
+      "No course-choice groups were found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 1,
+    "extracted_unit_estimate": 0,
+    "scheduled_course_count": 0,
+    "missing_schedule_course_ids": [
+      "93-120"
+    ]
+  }
+}

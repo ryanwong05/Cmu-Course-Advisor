@@ -1,0 +1,149 @@
+{
+  "program_id": "mathematical-sciences-and-economics--b-s",
+  "planning_id": "mathematical-sciences-and-economics",
+  "name": "Mathematical Sciences and Economics",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/",
+  "source_hash": "7880ab3c0c60e5ab631e9ef1d159d2b7e869b72af31ef241ebc34cf1098f5c79",
+  "fixed_courses": [
+    {
+      "id": "70-340",
+      "name": "Business Communications",
+      "units": 9.0,
+      "source_text": "70-340 Business Communications 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "economic-theory-requirements",
+      "name": "Economic Theory Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104",
+        "73-103",
+        "73-230",
+        "73-240"
+      ],
+      "source_instruction": "The B.S. in Mathematical Sciences and Economics is an interdisciplinary major that provides students with courses that complement and develop depth of understanding of economic theory, applied economics, and applied mathematics. The major equips students with the mathematical tools that are essential for success in Ph.D. programs in economics, mathematics, and key functional areas of business including finance, accounting, marketing, and information systems. Students must be enrolled in a B.S. in Mathematical Sciences to apply for the Mathematical Sciences and Economics major. Acceptance into the major is based on meeting the following requirements: Cumulative QPA of at least 3. Earned a \"B\" or better in 21-127 Concepts of Mathematics or 21-128 Mathematical Concepts and Proofs Earned a \"B\" or better in 21-241 Matrices and Linear Transformations Completed Principles of Microeconomics waiver, 73-102 Principles of Microeconomics or 73-104 Principles of Microeconomics Accelerated Earned a \"B\" or better in 73-103 Principles of Macroeconomics Earned a \"B\" or better in either 73-230 Intermediate Microeconomics or 73-240 Intermediate Macroeconomics Personal statement Economic Theory Requirements"
+    },
+    {
+      "id": "quantitative-analysis-requirements",
+      "name": "Quantitative Analysis Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-207",
+        "36-200",
+        "36-225",
+        "36-235",
+        "21-325",
+        "21-425",
+        "73-265",
+        "73-274",
+        "73-374"
+      ],
+      "source_instruction": "The B.S. in Mathematical Sciences and Economics is an interdisciplinary major that provides students with courses that complement and develop depth of understanding of economic theory, applied economics, and applied mathematics. The major equips students with the mathematical tools that are essential for success in Ph.D. programs in economics, mathematics, and key functional areas of business including finance, accounting, marketing, and information systems. Students must be enrolled in a B.S. in Mathematical Sciences to apply for the Mathematical Sciences and Economics major. Acceptance into the major is based on meeting the following requirements: Cumulative QPA of at least 3. Earned a \"B\" or better in 21-127 Concepts of Mathematics or 21-128 Mathematical Concepts and Proofs Earned a \"B\" or better in 21-241 Matrices and Linear Transformations Completed Principles of Microeconomics waiver, 73-102 Principles of Microeconomics or 73-104 Principles of Microeconomics Accelerated Earned a \"B\" or better in 73-103 Principles of Macroeconomics Earned a \"B\" or better in either 73-230 Intermediate Microeconomics or 73-240 Intermediate Macroeconomics Personal statement Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 Quantitative Analysis Requirements"
+    },
+    {
+      "id": "mathematical-sciences-requirements",
+      "name": "Mathematical Sciences Requirements",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-111",
+        "21-112",
+        "21-122",
+        "21-127",
+        "21-128",
+        "21-228",
+        "15-251",
+        "21-241",
+        "21-259",
+        "21-256",
+        "21-266",
+        "21-268",
+        "21-269",
+        "21-260",
+        "21-355",
+        "21-356"
+      ],
+      "source_instruction": "The B.S. in Mathematical Sciences and Economics is an interdisciplinary major that provides students with courses that complement and develop depth of understanding of economic theory, applied economics, and applied mathematics. The major equips students with the mathematical tools that are essential for success in Ph.D. programs in economics, mathematics, and key functional areas of business including finance, accounting, marketing, and information systems. Students must be enrolled in a B.S. in Mathematical Sciences to apply for the Mathematical Sciences and Economics major. Acceptance into the major is based on meeting the following requirements: Cumulative QPA of at least 3. Earned a \"B\" or better in 21-127 Concepts of Mathematics or 21-128 Mathematical Concepts and Proofs Earned a \"B\" or better in 21-241 Matrices and Linear Transformations Completed Principles of Microeconomics waiver, 73-102 Principles of Microeconomics or 73-104 Principles of Microeconomics Accelerated Earned a \"B\" or better in 73-103 Principles of Macroeconomics Earned a \"B\" or better in either 73-230 Intermediate Microeconomics or 73-240 Intermediate Macroeconomics Personal statement Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 Quantitative Analysis Requirements Units 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 36-225 Introduction to Probability Theory 9 or 36-235 Probability and Statistical Inference I or 21-325 Probability or 21-425 Probability and Martingales 73-265 Economics and Data Science 9 73-274 Econometrics I 9 73-374 Econometrics II 9 Mathematical Sciences Requirements"
+    },
+    {
+      "id": "programming-requirement-10-units",
+      "name": "Programming Requirement (10 Units)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "15-110",
+        "15-104",
+        "15-112",
+        "02-120"
+      ],
+      "source_instruction": "The B.S. in Mathematical Sciences and Economics is an interdisciplinary major that provides students with courses that complement and develop depth of understanding of economic theory, applied economics, and applied mathematics. The major equips students with the mathematical tools that are essential for success in Ph.D. programs in economics, mathematics, and key functional areas of business including finance, accounting, marketing, and information systems. Students must be enrolled in a B.S. in Mathematical Sciences to apply for the Mathematical Sciences and Economics major. Acceptance into the major is based on meeting the following requirements: Cumulative QPA of at least 3. Earned a \"B\" or better in 21-127 Concepts of Mathematics or 21-128 Mathematical Concepts and Proofs Earned a \"B\" or better in 21-241 Matrices and Linear Transformations Completed Principles of Microeconomics waiver, 73-102 Principles of Microeconomics or 73-104 Principles of Microeconomics Accelerated Earned a \"B\" or better in 73-103 Principles of Macroeconomics Earned a \"B\" or better in either 73-230 Intermediate Microeconomics or 73-240 Intermediate Macroeconomics Personal statement Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 Quantitative Analysis Requirements Units 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 36-225 Introduction to Probability Theory 9 or 36-235 Probability and Statistical Inference I or 21-325 Probability or 21-425 Probability and Martingales 73-265 Economics and Data Science 9 73-274 Econometrics I 9 73-374 Econometrics II 9 Mathematical Sciences Requirements Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-122 Integration and Approximation 10 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions 9-12 or 21-256 Multivariate Analysis or 21-266 Vector Calculus using Matrix Algebra or 21-268 Multidimensional Calculus or 21-269 Vector Analysis 21-260 Differential Equations 9 21-355 Principles of Real Analysis I 9 21-356 Principles of Real Analysis II 9 Programming Requirement (10 Units)"
+    },
+    {
+      "id": "recommended-mathematical-sciences-depth-electives",
+      "name": "Recommended Mathematical Sciences Depth Electives:",
+      "choose": 3,
+      "units": 28,
+      "options": [
+        "21-270",
+        "21-292",
+        "21-301",
+        "21-341",
+        "21-369",
+        "21-370",
+        "21-371",
+        "21-393",
+        "21-420",
+        "21-484"
+      ],
+      "source_instruction": "The B.S. in Mathematical Sciences and Economics is an interdisciplinary major that provides students with courses that complement and develop depth of understanding of economic theory, applied economics, and applied mathematics. The major equips students with the mathematical tools that are essential for success in Ph.D. programs in economics, mathematics, and key functional areas of business including finance, accounting, marketing, and information systems. Students must be enrolled in a B.S. in Mathematical Sciences to apply for the Mathematical Sciences and Economics major. Acceptance into the major is based on meeting the following requirements: Cumulative QPA of at least 3. Earned a \"B\" or better in 21-127 Concepts of Mathematics or 21-128 Mathematical Concepts and Proofs Earned a \"B\" or better in 21-241 Matrices and Linear Transformations Completed Principles of Microeconomics waiver, 73-102 Principles of Microeconomics or 73-104 Principles of Microeconomics Accelerated Earned a \"B\" or better in 73-103 Principles of Macroeconomics Earned a \"B\" or better in either 73-230 Intermediate Microeconomics or 73-240 Intermediate Macroeconomics Personal statement Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 Quantitative Analysis Requirements Units 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 36-225 Introduction to Probability Theory 9 or 36-235 Probability and Statistical Inference I or 21-325 Probability or 21-425 Probability and Martingales 73-265 Economics and Data Science 9 73-274 Econometrics I 9 73-374 Econometrics II 9 Mathematical Sciences Requirements Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-122 Integration and Approximation 10 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions 9-12 or 21-256 Multivariate Analysis or 21-266 Vector Calculus using Matrix Algebra or 21-268 Multidimensional Calculus or 21-269 Vector Analysis 21-260 Differential Equations 9 21-355 Principles of Real Analysis I 9 21-356 Principles of Real Analysis II 9 Programming Requirement (10 Units) Units 15-110 Principles of Computing 10 or 15-104 Introduction to Computing for Creative Practice or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists Writing Requirement Units 70-340 Business Communications 9 Economics Electives (27 Units) Students must take three economics elective courses. Economics elective courses are those courses numbered 73-300 or higher, (excluding 73-374 Econometrics II ). Students are encouraged to work with their advisors to structure a set of courses which meet these requirements based on their particular interests, subject to course availability. Recommended Economics electives include: 73-315 Market Design , 73-347 Game Theory Applications for Economics and Business , 73-365 Firms, Market Structures, and Strategy , and 73-421 Emerging Markets . Mathematical Sciences Electives (27 Units) Students must take three advanced mathematics depth courses. Students are encouraged to work with their advisors to structure a set of courses which meet these requirements based on their particular interests, subject to course availability. Recommended Mathematical Sciences Depth Electives:"
+    },
+    {
+      "id": "senior-work",
+      "name": "Senior Work",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "73-497",
+        "73-500",
+        "73-501"
+      ],
+      "source_instruction": "The B.S. in Mathematical Sciences and Economics is an interdisciplinary major that provides students with courses that complement and develop depth of understanding of economic theory, applied economics, and applied mathematics. The major equips students with the mathematical tools that are essential for success in Ph.D. programs in economics, mathematics, and key functional areas of business including finance, accounting, marketing, and information systems. Students must be enrolled in a B.S. in Mathematical Sciences to apply for the Mathematical Sciences and Economics major. Acceptance into the major is based on meeting the following requirements: Cumulative QPA of at least 3. Earned a \"B\" or better in 21-127 Concepts of Mathematics or 21-128 Mathematical Concepts and Proofs Earned a \"B\" or better in 21-241 Matrices and Linear Transformations Completed Principles of Microeconomics waiver, 73-102 Principles of Microeconomics or 73-104 Principles of Microeconomics Accelerated Earned a \"B\" or better in 73-103 Principles of Macroeconomics Earned a \"B\" or better in either 73-230 Intermediate Microeconomics or 73-240 Intermediate Macroeconomics Personal statement Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 Quantitative Analysis Requirements Units 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 36-225 Introduction to Probability Theory 9 or 36-235 Probability and Statistical Inference I or 21-325 Probability or 21-425 Probability and Martingales 73-265 Economics and Data Science 9 73-274 Econometrics I 9 73-374 Econometrics II 9 Mathematical Sciences Requirements Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-122 Integration and Approximation 10 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions 9-12 or 21-256 Multivariate Analysis or 21-266 Vector Calculus using Matrix Algebra or 21-268 Multidimensional Calculus or 21-269 Vector Analysis 21-260 Differential Equations 9 21-355 Principles of Real Analysis I 9 21-356 Principles of Real Analysis II 9 Programming Requirement (10 Units) Units 15-110 Principles of Computing 10 or 15-104 Introduction to Computing for Creative Practice or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists Writing Requirement Units 70-340 Business Communications 9 Economics Electives (27 Units) Students must take three economics elective courses. Economics elective courses are those courses numbered 73-300 or higher, (excluding 73-374 Econometrics II ). Students are encouraged to work with their advisors to structure a set of courses which meet these requirements based on their particular interests, subject to course availability. Recommended Economics electives include: 73-315 Market Design , 73-347 Game Theory Applications for Economics and Business , 73-365 Firms, Market Structures, and Strategy , and 73-421 Emerging Markets . Mathematical Sciences Electives (27 Units) Students must take three advanced mathematics depth courses. Students are encouraged to work with their advisors to structure a set of courses which meet these requirements based on their particular interests, subject to course availability. Recommended Mathematical Sciences Depth Electives: 21-270 Introduction to Mathematical Finance 9 21-292 Operations Research I 9 21-301 Combinatorics 9 21-341 Linear Algebra 9 21-369 Numerical Methods 12 21-370 Discrete Time Finance 9 21-371 Functions of a Complex Variable 9 21-393 Operations Research II 9 21-420 Continuous-Time Finance 9 21-484 Graph Theory 9 Senior Work"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 49,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Economic Theory Requirements",
+      "Assumed choose-one for ambiguous section: Quantitative Analysis Requirements",
+      "Assumed choose-one for ambiguous section: Mathematical Sciences Requirements",
+      "Assumed choose-one for ambiguous section: Programming Requirement (10 Units)"
+    ],
+    "explicit_group_ratio": 0.33
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 49,
+    "extracted_unit_estimate": 111,
+    "scheduled_course_count": 48,
+    "missing_schedule_course_ids": [
+      "15-104"
+    ]
+  }
+}

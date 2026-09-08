@@ -1,0 +1,157 @@
+{
+  "program_id": "chemical-engineering--b-s",
+  "planning_id": "chemical-engineering",
+  "name": "Chemical Engineering",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/",
+  "source_hash": "6a3f783e532b9780572cd66243d69a1134ffa04f4b898ccec829a7e696a9b749",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "99-101",
+        "06-100",
+        "09-105"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "21-122",
+        "33-141"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year",
+      "name": "Second Year",
+      "choose": 5,
+      "units": 34,
+      "options": [
+        "21-254",
+        "06-222",
+        "06-223",
+        "09-106",
+        "39-210"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Chemical Engineering 388 The program in chemical engineering within the Department of Chemical Engineering is accredited by the Engineering Accreditation Commission of ABET, https://www.abet.org , under the commission’s General Criteria and Program Criteria for Chemical, Biochemical, Biomolecular, and Similarly Named Engineering Programs. First Year Fall Units 21-120 Differential and Integral Calculus 10 76-xxx Designated Writing/Expression Course 9 99-101 Core@CMU 3 06-100 Introduction to Chemical Engineering A 12 09-105 Introduction to Modern Chemistry I 10 44 Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 A For those students who have not taken 06-100 as one of the two Introductory Engineering Electives, 06-100 should be taken in the Fall Semester of the Sophomore year. The General Education Course normally taken during that semester may be postponed until the Junior year. These students should consult with their advisor as soon as possible. 21-120 Differential and Integral Calculus is a corequisite for 06-100 Intro to ChemE. If enrolled in 21-090 Pre-Calculus in the fall of the first year, students should enroll in a different intro to engineering course in the fall and take 06-100 Into to ChemE in the spring concurrently with 21-120. Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 Second Year"
+    },
+    {
+      "id": "second-year",
+      "name": "Second Year",
+      "choose": 4,
+      "units": 30,
+      "options": [
+        "06-261",
+        "06-262",
+        "09-221",
+        "39-220"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Chemical Engineering 388 The program in chemical engineering within the Department of Chemical Engineering is accredited by the Engineering Accreditation Commission of ABET, https://www.abet.org , under the commission’s General Criteria and Program Criteria for Chemical, Biochemical, Biomolecular, and Similarly Named Engineering Programs. First Year Fall Units 21-120 Differential and Integral Calculus 10 76-xxx Designated Writing/Expression Course 9 99-101 Core@CMU 3 06-100 Introduction to Chemical Engineering A 12 09-105 Introduction to Modern Chemistry I 10 44 Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 A For those students who have not taken 06-100 as one of the two Introductory Engineering Electives, 06-100 should be taken in the Fall Semester of the Sophomore year. The General Education Course normally taken during that semester may be postponed until the Junior year. These students should consult with their advisor as soon as possible. 21-120 Differential and Integral Calculus is a corequisite for 06-100 Intro to ChemE. If enrolled in 21-090 Pre-Calculus in the fall of the first year, students should enroll in a different intro to engineering course in the fall and take 06-100 Into to ChemE in the spring concurrently with 21-120. Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 Second Year Fall Units 21-254 Linear Algebra and Vector Calculus for Engineers 11 06-222 Sophomore Chemical Engineering Seminar 1 06-223 Chemical Engineering Thermodynamics 12 09-106 Modern Chemistry II 10 xx-xxx Computer Sci./Physics II B 10-12 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-55"
+    },
+    {
+      "id": "second-year",
+      "name": "Second Year",
+      "choose": 8,
+      "units": 79,
+      "options": [
+        "09-105",
+        "09-106",
+        "09-221",
+        "15-110",
+        "15-112",
+        "33-141",
+        "33-142",
+        "99-101"
+      ],
+      "source_instruction": "B Computer Science/Physics II: Students should complete 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science as well as 33-142 Physics II for Engineering and Physics Students by the end of the Sophomore year. The recommended sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. At the end of the Sophomore year, a student should have completed the following required basic science and computer science courses:"
+    },
+    {
+      "id": "third-year",
+      "name": "Third Year",
+      "choose": 6,
+      "units": 45,
+      "options": [
+        "06-310",
+        "06-323",
+        "06-324",
+        "09-217",
+        "09-219",
+        "39-310"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Chemical Engineering 388 The program in chemical engineering within the Department of Chemical Engineering is accredited by the Engineering Accreditation Commission of ABET, https://www.abet.org , under the commission’s General Criteria and Program Criteria for Chemical, Biochemical, Biomolecular, and Similarly Named Engineering Programs. First Year Fall Units 21-120 Differential and Integral Calculus 10 76-xxx Designated Writing/Expression Course 9 99-101 Core@CMU 3 06-100 Introduction to Chemical Engineering A 12 09-105 Introduction to Modern Chemistry I 10 44 Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 A For those students who have not taken 06-100 as one of the two Introductory Engineering Electives, 06-100 should be taken in the Fall Semester of the Sophomore year. The General Education Course normally taken during that semester may be postponed until the Junior year. These students should consult with their advisor as soon as possible. 21-120 Differential and Integral Calculus is a corequisite for 06-100 Intro to ChemE. If enrolled in 21-090 Pre-Calculus in the fall of the first year, students should enroll in a different intro to engineering course in the fall and take 06-100 Into to ChemE in the spring concurrently with 21-120. Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 Second Year Fall Units 21-254 Linear Algebra and Vector Calculus for Engineers 11 06-222 Sophomore Chemical Engineering Seminar 1 06-223 Chemical Engineering Thermodynamics 12 09-106 Modern Chemistry II 10 xx-xxx Computer Sci./Physics II B 10-12 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-55 Spring Units 06-261 Fluid Mechanics 9 06-262 Mathematical Methods of Chemical Engineering 9 09-221 Laboratory I: Introduction to Chemical Analysis 12 xx-xxx Physics II/Computer Sci. B 12-10 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-49 B Computer Science/Physics II: Students should complete 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science as well as 33-142 Physics II for Engineering and Physics Students by the end of the Sophomore year. The recommended sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. At the end of the Sophomore year, a student should have completed the following required basic science and computer science courses: 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 15-110 Principles of Computing 10-12 or 15-112 Fundamentals of Programming and Computer Science 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 99-101 Core@CMU 3 Third Year"
+    },
+    {
+      "id": "third-year",
+      "name": "Third Year",
+      "choose": 4,
+      "units": 29,
+      "options": [
+        "06-361",
+        "06-362",
+        "06-363",
+        "06-364"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Chemical Engineering 388 The program in chemical engineering within the Department of Chemical Engineering is accredited by the Engineering Accreditation Commission of ABET, https://www.abet.org , under the commission’s General Criteria and Program Criteria for Chemical, Biochemical, Biomolecular, and Similarly Named Engineering Programs. First Year Fall Units 21-120 Differential and Integral Calculus 10 76-xxx Designated Writing/Expression Course 9 99-101 Core@CMU 3 06-100 Introduction to Chemical Engineering A 12 09-105 Introduction to Modern Chemistry I 10 44 Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 A For those students who have not taken 06-100 as one of the two Introductory Engineering Electives, 06-100 should be taken in the Fall Semester of the Sophomore year. The General Education Course normally taken during that semester may be postponed until the Junior year. These students should consult with their advisor as soon as possible. 21-120 Differential and Integral Calculus is a corequisite for 06-100 Intro to ChemE. If enrolled in 21-090 Pre-Calculus in the fall of the first year, students should enroll in a different intro to engineering course in the fall and take 06-100 Into to ChemE in the spring concurrently with 21-120. Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 Second Year Fall Units 21-254 Linear Algebra and Vector Calculus for Engineers 11 06-222 Sophomore Chemical Engineering Seminar 1 06-223 Chemical Engineering Thermodynamics 12 09-106 Modern Chemistry II 10 xx-xxx Computer Sci./Physics II B 10-12 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-55 Spring Units 06-261 Fluid Mechanics 9 06-262 Mathematical Methods of Chemical Engineering 9 09-221 Laboratory I: Introduction to Chemical Analysis 12 xx-xxx Physics II/Computer Sci. B 12-10 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-49 B Computer Science/Physics II: Students should complete 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science as well as 33-142 Physics II for Engineering and Physics Students by the end of the Sophomore year. The recommended sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. At the end of the Sophomore year, a student should have completed the following required basic science and computer science courses: 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 15-110 Principles of Computing 10-12 or 15-112 Fundamentals of Programming and Computer Science 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 99-101 Core@CMU 3 Third Year Fall Units 06-310 Molecular Foundations of Chemical Engineering 9 06-323 Heat and Mass Transfer 9 06-324 Computational Optimization and Machine Learning for Chemical Engineering 12 09-217 Organic Chemistry I 9-10 or 09-219 Modern Organic Chemistry xx-xxx General Education Course 9 39-310 Experiential Learning III 0 48-49"
+    },
+    {
+      "id": "fourth-year",
+      "name": "Fourth Year",
+      "choose": 2,
+      "units": 21,
+      "options": [
+        "06-421",
+        "06-423"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Chemical Engineering 388 The program in chemical engineering within the Department of Chemical Engineering is accredited by the Engineering Accreditation Commission of ABET, https://www.abet.org , under the commission’s General Criteria and Program Criteria for Chemical, Biochemical, Biomolecular, and Similarly Named Engineering Programs. First Year Fall Units 21-120 Differential and Integral Calculus 10 76-xxx Designated Writing/Expression Course 9 99-101 Core@CMU 3 06-100 Introduction to Chemical Engineering A 12 09-105 Introduction to Modern Chemistry I 10 44 Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 A For those students who have not taken 06-100 as one of the two Introductory Engineering Electives, 06-100 should be taken in the Fall Semester of the Sophomore year. The General Education Course normally taken during that semester may be postponed until the Junior year. These students should consult with their advisor as soon as possible. 21-120 Differential and Integral Calculus is a corequisite for 06-100 Intro to ChemE. If enrolled in 21-090 Pre-Calculus in the fall of the first year, students should enroll in a different intro to engineering course in the fall and take 06-100 Into to ChemE in the spring concurrently with 21-120. Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 Second Year Fall Units 21-254 Linear Algebra and Vector Calculus for Engineers 11 06-222 Sophomore Chemical Engineering Seminar 1 06-223 Chemical Engineering Thermodynamics 12 09-106 Modern Chemistry II 10 xx-xxx Computer Sci./Physics II B 10-12 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-55 Spring Units 06-261 Fluid Mechanics 9 06-262 Mathematical Methods of Chemical Engineering 9 09-221 Laboratory I: Introduction to Chemical Analysis 12 xx-xxx Physics II/Computer Sci. B 12-10 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-49 B Computer Science/Physics II: Students should complete 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science as well as 33-142 Physics II for Engineering and Physics Students by the end of the Sophomore year. The recommended sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. At the end of the Sophomore year, a student should have completed the following required basic science and computer science courses: 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 15-110 Principles of Computing 10-12 or 15-112 Fundamentals of Programming and Computer Science 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 99-101 Core@CMU 3 Third Year Fall Units 06-310 Molecular Foundations of Chemical Engineering 9 06-323 Heat and Mass Transfer 9 06-324 Computational Optimization and Machine Learning for Chemical Engineering 12 09-217 Organic Chemistry I 9-10 or 09-219 Modern Organic Chemistry xx-xxx General Education Course 9 39-310 Experiential Learning III 0 48-49 Spring Units 06-361 Unit Operations of Chemical Engineering 9 06-362 Ethics and Safety for Chemical Engineering 2 06-363 Transport Process Laboratory 9 06-364 Chemical Reaction Engineering 9 xx-xxx Advanced Science or Mathematics Elective C/D 9 xx-xxx Unrestricted Elective 9 xx-xxx General Education Course 9 56 C Advanced Science or Mathematics Elective . Students must take any one technical course offered by the Departments of Biological Sciences, Chemistry, Physics, or Mathematical Sciences for at least 9 units at the 200-level or above, or one of the following: 06-607 Physical Chemistry of Colloids and Surfaces, 06-609 Physical Chemistry of Macromolecules, or 36-220 Engineering Statistics and Quality Control. Students may petition to count other courses. This elective can be completed in any semester that fits into the student's schedule. D Students pursuing Chemical Engineering with an Additional Major in Engineering and Public Policy will take 36-220 as their Advanced Science or Mathematics elective. Fourth Year"
+    },
+    {
+      "id": "fourth-year",
+      "name": "Fourth Year",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "06-463",
+        "06-464"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Chemical Engineering 388 The program in chemical engineering within the Department of Chemical Engineering is accredited by the Engineering Accreditation Commission of ABET, https://www.abet.org , under the commission’s General Criteria and Program Criteria for Chemical, Biochemical, Biomolecular, and Similarly Named Engineering Programs. First Year Fall Units 21-120 Differential and Integral Calculus 10 76-xxx Designated Writing/Expression Course 9 99-101 Core@CMU 3 06-100 Introduction to Chemical Engineering A 12 09-105 Introduction to Modern Chemistry I 10 44 Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 A For those students who have not taken 06-100 as one of the two Introductory Engineering Electives, 06-100 should be taken in the Fall Semester of the Sophomore year. The General Education Course normally taken during that semester may be postponed until the Junior year. These students should consult with their advisor as soon as possible. 21-120 Differential and Integral Calculus is a corequisite for 06-100 Intro to ChemE. If enrolled in 21-090 Pre-Calculus in the fall of the first year, students should enroll in a different intro to engineering course in the fall and take 06-100 Into to ChemE in the spring concurrently with 21-120. Spring Units 21-122 Integration and Approximation 10 xx-xxx Introductory Engineering Elective (other than ChE) 12 33-141 Physics I for Engineering Students 12 xx-xxx General Education Course 9 43 Second Year Fall Units 21-254 Linear Algebra and Vector Calculus for Engineers 11 06-222 Sophomore Chemical Engineering Seminar 1 06-223 Chemical Engineering Thermodynamics 12 09-106 Modern Chemistry II 10 xx-xxx Computer Sci./Physics II B 10-12 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-55 Spring Units 06-261 Fluid Mechanics 9 06-262 Mathematical Methods of Chemical Engineering 9 09-221 Laboratory I: Introduction to Chemical Analysis 12 xx-xxx Physics II/Computer Sci. B 12-10 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-49 B Computer Science/Physics II: Students should complete 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science as well as 33-142 Physics II for Engineering and Physics Students by the end of the Sophomore year. The recommended sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. At the end of the Sophomore year, a student should have completed the following required basic science and computer science courses: 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 15-110 Principles of Computing 10-12 or 15-112 Fundamentals of Programming and Computer Science 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 99-101 Core@CMU 3 Third Year Fall Units 06-310 Molecular Foundations of Chemical Engineering 9 06-323 Heat and Mass Transfer 9 06-324 Computational Optimization and Machine Learning for Chemical Engineering 12 09-217 Organic Chemistry I 9-10 or 09-219 Modern Organic Chemistry xx-xxx General Education Course 9 39-310 Experiential Learning III 0 48-49 Spring Units 06-361 Unit Operations of Chemical Engineering 9 06-362 Ethics and Safety for Chemical Engineering 2 06-363 Transport Process Laboratory 9 06-364 Chemical Reaction Engineering 9 xx-xxx Advanced Science or Mathematics Elective C/D 9 xx-xxx Unrestricted Elective 9 xx-xxx General Education Course 9 56 C Advanced Science or Mathematics Elective . Students must take any one technical course offered by the Departments of Biological Sciences, Chemistry, Physics, or Mathematical Sciences for at least 9 units at the 200-level or above, or one of the following: 06-607 Physical Chemistry of Colloids and Surfaces, 06-609 Physical Chemistry of Macromolecules, or 36-220 Engineering Statistics and Quality Control. Students may petition to count other courses. This elective can be completed in any semester that fits into the student's schedule. D Students pursuing Chemical Engineering with an Additional Major in Engineering and Public Policy will take 36-220 as their Advanced Science or Mathematics elective. Fourth Year Fall Units 06-421 Chemical Process Systems Design 12 06-423 Unit Operations Laboratory 9 xx-xxx Unrestricted Elective 9 xx-xxx Unrestricted Elective 9 xx-xxx General Education Course 9 48"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 10,
+    "course_references": 37,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: First Year",
+      "Assumed choose-one for ambiguous section: First Year",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.78
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 32,
+    "extracted_unit_estimate": 276,
+    "scheduled_course_count": 31,
+    "missing_schedule_course_ids": [
+      "06-362"
+    ]
+  }
+}

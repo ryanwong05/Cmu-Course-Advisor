@@ -1,0 +1,574 @@
+{
+  "program_id": "chemistry--b-s",
+  "planning_id": "chemistry",
+  "name": "Chemistry",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/",
+  "source_hash": "bc548dced033ad74b010722076dc2c183612bb715464ceb3f88eb8fd3d2702ac",
+  "fixed_courses": [
+    {
+      "id": "33-121",
+      "name": "Physics I for Science Students",
+      "units": 12.0,
+      "source_text": "33-121 Physics I for Science Students 12"
+    },
+    {
+      "id": "33-122",
+      "name": "Physics II for Biological Sciences and Chemistry Students",
+      "units": 9.0,
+      "source_text": "33-122 Physics II for Biological Sciences and Chemistry Students 9"
+    },
+    {
+      "id": "03-121",
+      "name": "Modern Biology",
+      "units": 9.0,
+      "source_text": "03-121 Modern Biology 9"
+    },
+    {
+      "id": "03-231",
+      "name": "Honors Biochemistry",
+      "units": null,
+      "source_text": "or 03-231 Honors Biochemistry"
+    },
+    {
+      "id": "03-232",
+      "name": "Biochemistry I",
+      "units": null,
+      "source_text": "or 03-232 Biochemistry I"
+    },
+    {
+      "id": "15-110",
+      "name": "Principles of Computing",
+      "units": 10.0,
+      "source_text": "15-110 Principles of Computing 10"
+    },
+    {
+      "id": "15-112",
+      "name": "Fundamentals of Programming and Computer Science",
+      "units": null,
+      "source_text": "or 15-112 Fundamentals of Programming and Computer Science"
+    },
+    {
+      "id": "02-120",
+      "name": "Programming for Scientists",
+      "units": null,
+      "source_text": "or 02-120 Programming for Scientists"
+    },
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    },
+    {
+      "id": "21-122",
+      "name": "Integration and Approximation",
+      "units": 10.0,
+      "source_text": "21-122 Integration and Approximation 10"
+    },
+    {
+      "id": "09-105",
+      "name": "Introduction to Modern Chemistry I",
+      "units": 10.0,
+      "source_text": "09-105 Introduction to Modern Chemistry I 10"
+    },
+    {
+      "id": "09-107",
+      "name": "Honors Chemistry: Fundamentals, Concepts and Applications",
+      "units": null,
+      "source_text": "or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications"
+    },
+    {
+      "id": "09-115",
+      "name": "Introduction to Undergraduate Research in Chemistry",
+      "units": 2.0,
+      "source_text": "09-115 Introduction to Undergraduate Research in Chemistry 2"
+    },
+    {
+      "id": "76-101",
+      "name": "Interpretation and Argument",
+      "units": 9.0,
+      "source_text": "76-101 Interpretation and Argument 9"
+    },
+    {
+      "id": "38-101",
+      "name": "EUREKA!: Discovery and Its Impact",
+      "units": 6.0,
+      "source_text": "38-101 EUREKA!: Discovery and Its Impact 6"
+    },
+    {
+      "id": "99-101",
+      "name": "Core@CMU",
+      "units": 3.0,
+      "source_text": "99-101 Core@CMU 3"
+    },
+    {
+      "id": "09-219",
+      "name": "Modern Organic Chemistry",
+      "units": 10.0,
+      "source_text": "09-219 Modern Organic Chemistry 10"
+    },
+    {
+      "id": "09-221",
+      "name": "Laboratory I: Introduction to Chemical Analysis",
+      "units": 12.0,
+      "source_text": "09-221 Laboratory I: Introduction to Chemical Analysis 12"
+    },
+    {
+      "id": "09-201",
+      "name": "Undergraduate Seminar I",
+      "units": 1.0,
+      "source_text": "09-201 Undergraduate Seminar I 1"
+    },
+    {
+      "id": "09-445",
+      "name": "Undergraduate Research",
+      "units": 9.0,
+      "source_text": "09-445 Undergraduate Research 9"
+    },
+    {
+      "id": "09-220",
+      "name": "Modern Organic Chemistry II",
+      "units": 10.0,
+      "source_text": "09-220 Modern Organic Chemistry II 10"
+    },
+    {
+      "id": "09-222",
+      "name": "Laboratory II: Organic Synthesis and Analysis",
+      "units": 12.0,
+      "source_text": "09-222 Laboratory II: Organic Synthesis and Analysis 12"
+    },
+    {
+      "id": "09-202",
+      "name": "Undergraduate Seminar II: Safety and Environmental Issues for Chemists",
+      "units": 1.0,
+      "source_text": "09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1"
+    },
+    {
+      "id": "09-348",
+      "name": "Inorganic Chemistry",
+      "units": 10.0,
+      "source_text": "09-348 Inorganic Chemistry 10"
+    },
+    {
+      "id": "38-230",
+      "name": "ENGAGE in Wellness: Looking Inward",
+      "units": 1.0,
+      "source_text": "38-230 ENGAGE in Wellness: Looking Inward 1"
+    },
+    {
+      "id": "09-301",
+      "name": "Undergraduate Seminar III",
+      "units": 1.0,
+      "source_text": "09-301 Undergraduate Seminar III 1"
+    },
+    {
+      "id": "09-231",
+      "name": "Mathematical Methods for Chemists",
+      "units": 9.0,
+      "source_text": "09-231 Mathematical Methods for Chemists 9"
+    },
+    {
+      "id": "09-321",
+      "name": "Laboratory III: Molecular Design and Synthesis",
+      "units": 12.0,
+      "source_text": "09-321 Laboratory III: Molecular Design and Synthesis 12"
+    },
+    {
+      "id": "09-323",
+      "name": "Bioorganic Chemistry Laboratory",
+      "units": null,
+      "source_text": "or 09-323 Bioorganic Chemistry Laboratory"
+    },
+    {
+      "id": "09-344",
+      "name": "Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry",
+      "units": 9.0,
+      "source_text": "09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry 9"
+    },
+    {
+      "id": "38-330",
+      "name": "ENGAGE in Wellness: Looking Outward",
+      "units": 1.0,
+      "source_text": "38-330 ENGAGE in Wellness: Looking Outward 1"
+    },
+    {
+      "id": "09-302",
+      "name": "Undergraduate Seminar IV",
+      "units": 1.0,
+      "source_text": "09-302 Undergraduate Seminar IV 1"
+    },
+    {
+      "id": "09-322",
+      "name": "Laboratory IV: Molecular Spectroscopy and Dynamics",
+      "units": 12.0,
+      "source_text": "09-322 Laboratory IV: Molecular Spectroscopy and Dynamics 12"
+    },
+    {
+      "id": "09-345",
+      "name": "Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry",
+      "units": 9.0,
+      "source_text": "09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 9"
+    },
+    {
+      "id": "09-331",
+      "name": "Modern Analytical Instrumentation",
+      "units": 9.0,
+      "source_text": "09-331 Modern Analytical Instrumentation 9"
+    },
+    {
+      "id": "09-401",
+      "name": "Undergraduate Seminar V",
+      "units": 1.0,
+      "source_text": "09-401 Undergraduate Seminar V 1"
+    },
+    {
+      "id": "38-430",
+      "name": "ENGAGE in Wellness: Looking Forward",
+      "units": 1.0,
+      "source_text": "38-430 ENGAGE in Wellness: Looking Forward 1"
+    },
+    {
+      "id": "38-110",
+      "name": "ENGAGE in Service",
+      "units": 1.0,
+      "source_text": "38-110 ENGAGE in Service 1"
+    },
+    {
+      "id": "09-402",
+      "name": "Undergraduate Seminar VI",
+      "units": 3.0,
+      "source_text": "09-402 Undergraduate Seminar VI 3"
+    },
+    {
+      "id": "09-455",
+      "name": "Honors Thesis",
+      "units": 15.0,
+      "source_text": "09-455 Honors Thesis 15"
+    },
+    {
+      "id": "38-220",
+      "name": "ENGAGE in the Arts",
+      "units": 2.0,
+      "source_text": "38-220 ENGAGE in the Arts 2"
+    },
+    {
+      "id": "09-106",
+      "name": "Modern Chemistry II",
+      "units": 10.0,
+      "source_text": "09-106 Modern Chemistry II 10"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "mcs-core-technical-requirements",
+      "name": "MCS Core Technical Requirements",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "33-121",
+        "33-122",
+        "03-121",
+        "03-231",
+        "03-232",
+        "15-110",
+        "15-112",
+        "02-120",
+        "21-120",
+        "21-122"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 5,
+      "units": 41,
+      "options": [
+        "09-201",
+        "09-219",
+        "09-221",
+        "33-122",
+        "09-331"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year"
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 5,
+      "units": 34,
+      "options": [
+        "09-202",
+        "09-220",
+        "09-222",
+        "09-348",
+        "38-230"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41"
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 6,
+      "units": 38,
+      "options": [
+        "09-301",
+        "09-231",
+        "09-321",
+        "09-323",
+        "09-344",
+        "38-330"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41 Spring Units 09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1 09-220 Modern Organic Chemistry II 10 09-222 Laboratory II: Organic Synthesis and Analysis 12 09-348 Inorganic Chemistry 10 38-230 ENGAGE in Wellness: Looking Inward 1 xx-xxx Arts, Humanities and Social Sciences Course 3 9 43 Planning Tip: Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 03-232 Biochemistry I in the Spring semester and delay 09-348 Inorganic Chemistry to the spring of their senior year. Junior Year"
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 4,
+      "units": 31,
+      "options": [
+        "09-302",
+        "09-322",
+        "09-345",
+        "09-331"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41 Spring Units 09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1 09-220 Modern Organic Chemistry II 10 09-222 Laboratory II: Organic Synthesis and Analysis 12 09-348 Inorganic Chemistry 10 38-230 ENGAGE in Wellness: Looking Inward 1 xx-xxx Arts, Humanities and Social Sciences Course 3 9 43 Planning Tip: Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 03-232 Biochemistry I in the Spring semester and delay 09-348 Inorganic Chemistry to the spring of their senior year. Junior Year Fall Units 09-301 Undergraduate Seminar III 1 09-231 Mathematical Methods for Chemists 9 09-321 Laboratory III: Molecular Design and Synthesis 12 or 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry 9 38-330 ENGAGE in Wellness: Looking Outward 1 xx-xxx Arts, Humanities and Social Sciences Course 4 9 41"
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 4,
+      "units": 5,
+      "options": [
+        "09-401",
+        "38-110",
+        "38-220",
+        "38-430"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41 Spring Units 09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1 09-220 Modern Organic Chemistry II 10 09-222 Laboratory II: Organic Synthesis and Analysis 12 09-348 Inorganic Chemistry 10 38-230 ENGAGE in Wellness: Looking Inward 1 xx-xxx Arts, Humanities and Social Sciences Course 3 9 43 Planning Tip: Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 03-232 Biochemistry I in the Spring semester and delay 09-348 Inorganic Chemistry to the spring of their senior year. Junior Year Fall Units 09-301 Undergraduate Seminar III 1 09-231 Mathematical Methods for Chemists 9 09-321 Laboratory III: Molecular Design and Synthesis 12 or 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry 9 38-330 ENGAGE in Wellness: Looking Outward 1 xx-xxx Arts, Humanities and Social Sciences Course 4 9 41 Spring Units 09-302 Undergraduate Seminar IV 1 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics 12 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 9 09-331 Modern Analytical Instrumentation 9 xx-xxx Cultural/Global Understanding Requirement 9 xx-xxx Approved Science and Society elective. This course can be scheduled at any point during your studies but prior to your final semester.. 6-9 46-49 Planning Tip: 09-231 Mathematical Methods for Chemists is a co-requisite for 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry and a prerequisite for 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry . 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry is a prerequisite for 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics . While 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry and 09-331 Modern Analytical Instrumentation are often taken alongside 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics , they are not required co-requisites. Students should consult with an advisor if they plan to shift any of these courses to senior year. Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 09-403 Hooked: The Chemical Basis of Drug Addiction in the Fall semester of their Junior year. It will fulfill both a Chemistry elective as well as a Science and Society elective Students may spread out junior-level courses across the junior and senior years to balance their academic load and research commitments. Work closely with your academic advisor to map out a schedule that fits your goals Senior Year"
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "09-402"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41 Spring Units 09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1 09-220 Modern Organic Chemistry II 10 09-222 Laboratory II: Organic Synthesis and Analysis 12 09-348 Inorganic Chemistry 10 38-230 ENGAGE in Wellness: Looking Inward 1 xx-xxx Arts, Humanities and Social Sciences Course 3 9 43 Planning Tip: Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 03-232 Biochemistry I in the Spring semester and delay 09-348 Inorganic Chemistry to the spring of their senior year. Junior Year Fall Units 09-301 Undergraduate Seminar III 1 09-231 Mathematical Methods for Chemists 9 09-321 Laboratory III: Molecular Design and Synthesis 12 or 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry 9 38-330 ENGAGE in Wellness: Looking Outward 1 xx-xxx Arts, Humanities and Social Sciences Course 4 9 41 Spring Units 09-302 Undergraduate Seminar IV 1 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics 12 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 9 09-331 Modern Analytical Instrumentation 9 xx-xxx Cultural/Global Understanding Requirement 9 xx-xxx Approved Science and Society elective. This course can be scheduled at any point during your studies but prior to your final semester.. 6-9 46-49 Planning Tip: 09-231 Mathematical Methods for Chemists is a co-requisite for 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry and a prerequisite for 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry . 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry is a prerequisite for 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics . While 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry and 09-331 Modern Analytical Instrumentation are often taken alongside 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics , they are not required co-requisites. Students should consult with an advisor if they plan to shift any of these courses to senior year. Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 09-403 Hooked: The Chemical Basis of Drug Addiction in the Fall semester of their Junior year. It will fulfill both a Chemistry elective as well as a Science and Society elective Students may spread out junior-level courses across the junior and senior years to balance their academic load and research commitments. Work closely with your academic advisor to map out a schedule that fits your goals Senior Year Fall Units 09-401 Undergraduate Seminar V 1 09-xxx Chemistry Elective (see notes on electives) 9 38-110 ENGAGE in Service 1 38-220 ENGAGE in the Arts 2 38-430 ENGAGE in Wellness: Looking Forward 1 xx-xxx Free Electives 30 44"
+    },
+    {
+      "id": "chemistry-requirements",
+      "name": "Chemistry Requirements",
+      "choose": 9,
+      "units": 93,
+      "options": [
+        "09-105",
+        "09-107",
+        "09-106",
+        "09-219",
+        "09-220",
+        "09-231",
+        "09-331",
+        "09-344",
+        "09-345",
+        "09-348",
+        "09-221",
+        "09-222",
+        "09-321",
+        "09-323",
+        "09-322"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41 Spring Units 09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1 09-220 Modern Organic Chemistry II 10 09-222 Laboratory II: Organic Synthesis and Analysis 12 09-348 Inorganic Chemistry 10 38-230 ENGAGE in Wellness: Looking Inward 1 xx-xxx Arts, Humanities and Social Sciences Course 3 9 43 Planning Tip: Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 03-232 Biochemistry I in the Spring semester and delay 09-348 Inorganic Chemistry to the spring of their senior year. Junior Year Fall Units 09-301 Undergraduate Seminar III 1 09-231 Mathematical Methods for Chemists 9 09-321 Laboratory III: Molecular Design and Synthesis 12 or 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry 9 38-330 ENGAGE in Wellness: Looking Outward 1 xx-xxx Arts, Humanities and Social Sciences Course 4 9 41 Spring Units 09-302 Undergraduate Seminar IV 1 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics 12 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 9 09-331 Modern Analytical Instrumentation 9 xx-xxx Cultural/Global Understanding Requirement 9 xx-xxx Approved Science and Society elective. This course can be scheduled at any point during your studies but prior to your final semester.. 6-9 46-49 Planning Tip: 09-231 Mathematical Methods for Chemists is a co-requisite for 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry and a prerequisite for 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry . 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry is a prerequisite for 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics . While 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry and 09-331 Modern Analytical Instrumentation are often taken alongside 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics , they are not required co-requisites. Students should consult with an advisor if they plan to shift any of these courses to senior year. Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 09-403 Hooked: The Chemical Basis of Drug Addiction in the Fall semester of their Junior year. It will fulfill both a Chemistry elective as well as a Science and Society elective Students may spread out junior-level courses across the junior and senior years to balance their academic load and research commitments. Work closely with your academic advisor to map out a schedule that fits your goals Senior Year Fall Units 09-401 Undergraduate Seminar V 1 09-xxx Chemistry Elective (see notes on electives) 9 38-110 ENGAGE in Service 1 38-220 ENGAGE in the Arts 2 38-430 ENGAGE in Wellness: Looking Forward 1 xx-xxx Free Electives 30 44 Spring Units 09-402 Undergraduate Seminar VI 3 09-xxx Chemistry Elective (see notes on electives) 9 xx-xxx Free Electives 27 39 Planning Tip: The senior year is designed to provide maximum flexibility. Use this time to deepen your training through electives, conduct independent research, or prepare for graduate school, professional programs, or job applications. Be mindful of not overloading your final semester and aim to complete general education requirements, including all ENGAGE courses, before your last term."
+    },
+    {
+      "id": "quick-guide-choosing-chemistry-electives-by-interest-area",
+      "name": "Quick Guide: Choosing Chemistry Electives by Interest Area",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "09-510",
+        "09-381",
+        "09-529",
+        "03-231",
+        "03-232",
+        "09-403",
+        "09-737",
+        "09-563",
+        "09-615",
+        "09-616",
+        "09-509",
+        "09-507",
+        "09-760"
+      ],
+      "source_instruction": "Gizelle Sherwood, Director of Undergraduate Studies Location: Doherty Hall 1316 Umi Davis, Undergraduate Academic Program Coordinator Location: Doherty Hall 1317 www.chem.cmu.edu B.S. in Chemistry (and requirements for additional major in chemistry) The Bachelor of Science (B.S.) in Chemistry is the most commonly awarded undergraduate degree in the department. It provides strong preparation for graduate study or for employment in research, development, or analytical roles in industry. The curriculum includes foundational coursework in organic, physical, inorganic, and analytical chemistry, and it emphasizes hands-on laboratory training using modern instrumentation. Curriculum Planning and Course Scheduling The curriculum and sample schedule presented here are intended for students who matriculate in Fall 2025. Students who entered in prior years should consult their degree audit and speak with the Director of Undergraduate Studies to confirm the requirements that apply to them. The B.S. in Chemistry curriculum offers flexibility, allowing students to tailor their schedules to include electives, minors, or an additional major. While it is recommended that core technical courses be completed early, students may choose to delay some requirements to accommodate other interests or programs. When planning your schedule, be aware that many required chemistry courses are offered only once per academic year. For example: Fall-only courses: 09-219 Modern Organic Chemistry 09-321 Laboratory III: Molecular Design and Synthesis 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry Spring-only courses: 09-220 Modern Organic Chemistry II 09-331 Modern Analytical Instrumentation 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 09-348 Inorganic Chemistry Course Scheduling Note : Occasionally, a course that is typically offered in the fall may be shifted to the spring (or vice versa) due to departmental curriculum changes or faculty availability. Students are encouraged to consult the department and their advisor each semester to confirm course timing and build a long-term plan that anticipates such changes and accommodates personal goals such as study abroad, research, or double majoring. Technical and Non-Technical Requirements MCS Core Technical Requirements Chemistry majors must complete a minimum of four technical courses outside of chemistry to satisfy the MCS core technical breadth requirement. These include courses in physics, biology, computer science, and mathematics: Technical Breadth Requirements Units 33-121 Physics I for Science Students 12 33-122 Physics II for Biological Sciences and Chemistry Students 9 03-121 Modern Biology 9 or 03-231 Honors Biochemistry or 03-232 Biochemistry I 15-110 Principles of Computing 10 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 60 Students are encouraged to complete these technical core requirements by the end of their fifth semester. AP credit may not be used to fulfill the core technical breadth requirements, though it can satisfy prerequisites for chemistry courses. If a student fulfills an entire category (e.g., physics or biology) solely through AP credit, they must take an approved upper-level course in that area to meet the core requirement. Sample Schedule by Year (First–Senior) First Year Fall Units 09-105 Introduction to Modern Chemistry I 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-115 Introduction to Undergraduate Research in Chemistry 2 21-120 Differential and Integral Calculus 10 33-121 Physics I for Science Students 12 76-101 Interpretation and Argument 9 38-101 EUREKA!: Discovery and Its Impact 6 99-101 Core@CMU 3 52 Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower. Spring Units 09-106 Modern Chemistry II 10 09-116 Undergraduate Research Shadowing in Chemistry 2 or 09-101 Introduction to Experimental Chemistry 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 03-121 Modern Biology or 15-110 Principles of Computing xx-xxx Arts, Humanities and Social Sciences Course 1 9 xx-xxx Free Elective 9 52 Planning Tip: Chemistry majors who place out of 09-106 Modern Chemistry II can take 09-348 Inorganic Chemistry , 09-510 Chemistry and Sustainability or 09-381 Environmental Systems on a Changing Planet as a chemistry elective. 09-381 Environmental Systems on a Changing Planet is especially recommended for students pursuing the Environmental and Sustainability Studies minor. 09-510 Chemistry and Sustainability will serve as both a Chemistry elective as well as a MCS Science and Society requirement. Please note that 09-291 Environmental Systems on a Changing Planet does not count toward chemistry electives. The sample schedule above also includes laboratory electives. Students wishing to actively engage in research should take 09-116 Undergraduate Research Shadowing in Chemistry , which pairs them with a research group in the department for half a semester. With a faculty mentor’s recommendation, students may continue in the same lab through 09-445 Undergraduate Research . Those who want focused hands-on experience in a chemistry lab environment may consider 09-101 Introduction to Experimental Chemistry . Students interested in biology-based lab work may also take 03-117 Frontiers, Analysis, and Discovery in Biological Sciences . Sophomore Year Fall Units 09-201 Undergraduate Seminar I 1 09-219 Modern Organic Chemistry 10 09-221 Laboratory I: Introduction to Chemical Analysis 12 33-122 Physics II for Biological Sciences and Chemistry Students Course is a prerequisite for 09-331 , normally taken in the spring of the junior year 9 xx-xxx Arts, Humanities and Social Sciences Course 2 9 41 Spring Units 09-202 Undergraduate Seminar II: Safety and Environmental Issues for Chemists 1 09-220 Modern Organic Chemistry II 10 09-222 Laboratory II: Organic Synthesis and Analysis 12 09-348 Inorganic Chemistry 10 38-230 ENGAGE in Wellness: Looking Inward 1 xx-xxx Arts, Humanities and Social Sciences Course 3 9 43 Planning Tip: Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 03-232 Biochemistry I in the Spring semester and delay 09-348 Inorganic Chemistry to the spring of their senior year. Junior Year Fall Units 09-301 Undergraduate Seminar III 1 09-231 Mathematical Methods for Chemists 9 09-321 Laboratory III: Molecular Design and Synthesis 12 or 09-323 Bioorganic Chemistry Laboratory 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry 9 38-330 ENGAGE in Wellness: Looking Outward 1 xx-xxx Arts, Humanities and Social Sciences Course 4 9 41 Spring Units 09-302 Undergraduate Seminar IV 1 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics 12 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry 9 09-331 Modern Analytical Instrumentation 9 xx-xxx Cultural/Global Understanding Requirement 9 xx-xxx Approved Science and Society elective. This course can be scheduled at any point during your studies but prior to your final semester.. 6-9 46-49 Planning Tip: 09-231 Mathematical Methods for Chemists is a co-requisite for 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry and a prerequisite for 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry . 09-344 Physical Chemistry (Quantum): Microscopic Principles of Physical Chemistry is a prerequisite for 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics . While 09-345 Physical Chemistry (Thermo): Macroscopic Principles of Physical Chemistry and 09-331 Modern Analytical Instrumentation are often taken alongside 09-322 Laboratory IV: Molecular Spectroscopy and Dynamics , they are not required co-requisites. Students should consult with an advisor if they plan to shift any of these courses to senior year. Students pursuing careers in the health professions or following the Biological Chemistry Track may wish to take 09-403 Hooked: The Chemical Basis of Drug Addiction in the Fall semester of their Junior year. It will fulfill both a Chemistry elective as well as a Science and Society elective Students may spread out junior-level courses across the junior and senior years to balance their academic load and research commitments. Work closely with your academic advisor to map out a schedule that fits your goals Senior Year Fall Units 09-401 Undergraduate Seminar V 1 09-xxx Chemistry Elective (see notes on electives) 9 38-110 ENGAGE in Service 1 38-220 ENGAGE in the Arts 2 38-430 ENGAGE in Wellness: Looking Forward 1 xx-xxx Free Electives 30 44 Spring Units 09-402 Undergraduate Seminar VI 3 09-xxx Chemistry Elective (see notes on electives) 9 xx-xxx Free Electives 27 39 Planning Tip: The senior year is designed to provide maximum flexibility. Use this time to deepen your training through electives, conduct independent research, or prepare for graduate school, professional programs, or job applications. Be mindful of not overloading your final semester and aim to complete general education requirements, including all ENGAGE courses, before your last term."
+    },
+    {
+      "id": "options-for-the-bachelor-s-degrees-in-chemistry",
+      "name": "Options for the Bachelor's Degrees in Chemistry",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "03-231",
+        "09-518",
+        "09-519",
+        "09-719",
+        "03-344",
+        "09-445",
+        "09-530",
+        "09-730",
+        "09-737",
+        "03-439",
+        "09-718",
+        "03-740"
+      ],
+      "source_instruction": "Options are noted on the student’s transcript (but not on the diploma) and are recognized with a certificate awarded by the Department of Chemistry at Commencement. For each option, students should refer to the Bachelor of Science or Bachelor of Arts degree requirements described earlier in the catalog. The core chemistry requirements remain unchanged . However, the option-specific courses should be taken as electives and are listed within each option’s description. Chemistry courses taken as part of an option may also count toward the chemistry elective requirement for the B.S. degree. In some cases, option courses may fulfill MCS technical core requirements or, for example, nontechnical core requirements in the Management Option. However, students should note that there is very limited ability to count a course toward both an option and a minor or additional major in a closely related field . Students are encouraged to consult with their academic advisor or the advisor for the relevant department to clarify any potential overlap or restrictions."
+    },
+    {
+      "id": "options-for-the-bachelor-s-degrees-in-chemistry",
+      "name": "Options for the Bachelor's Degrees in Chemistry",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "09-502",
+        "09-760",
+        "09-445",
+        "09-509",
+        "09-736",
+        "27-477"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "options-for-the-bachelor-s-degrees-in-chemistry",
+      "name": "Options for the Bachelor's Degrees in Chemistry",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "27-100",
+        "27-201",
+        "27-202",
+        "09-445",
+        "09-502",
+        "09-507",
+        "09-509"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "options-for-the-bachelor-s-degrees-in-chemistry",
+      "name": "Options for the Bachelor's Degrees in Chemistry",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-510",
+        "09-381",
+        "09-524",
+        "09-724",
+        "09-445",
+        "09-225",
+        "09-529",
+        "09-538",
+        "19-440",
+        "12-651",
+        "12-657"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "options-for-the-bachelor-s-degrees-in-chemistry",
+      "name": "Options for the Bachelor's Degrees in Chemistry",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-100",
+        "73-102",
+        "70-122",
+        "70-311",
+        "70-371",
+        "70-381",
+        "70-391"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "options-for-the-bachelor-s-degrees-in-chemistry",
+      "name": "Options for the Bachelor's Degrees in Chemistry",
+      "choose": 9,
+      "units": 93,
+      "options": [
+        "15-112",
+        "15-122",
+        "15-150",
+        "21-127",
+        "09-563",
+        "09-615",
+        "09-621",
+        "09-623",
+        "15-210",
+        "15-213",
+        "33-241",
+        "02-250"
+      ],
+      "source_instruction": "Options for the Bachelor's Degrees in Chemistry The Bachelor of Science in Chemistry allows students to take a range of elective courses, particularly in the junior and senior years, in chemistry and other disciplines. Students may choose to focus these electives in a particular area of interest by completing one of several recommended options . Each option provides a structured group of electives that complements the B.S. in Chemistry and offers additional depth in a specialized area not covered by the standard curriculum. Options are noted on the student’s transcript (but not on the diploma) and are recognized with a certificate awarded by the Department of Chemistry at Commencement. For each option, students should refer to the Bachelor of Science or Bachelor of Arts degree requirements described earlier in the catalog. The core chemistry requirements remain unchanged . However, the option-specific courses should be taken as electives and are listed within each option’s description. Chemistry courses taken as part of an option may also count toward the chemistry elective requirement for the B.S. degree. In some cases, option courses may fulfill MCS technical core requirements or, for example, nontechnical core requirements in the Management Option. However, students should note that there is very limited ability to count a course toward both an option and a minor or additional major in a closely related field . Students are encouraged to consult with their academic advisor or the advisor for the relevant department to clarify any potential overlap or restrictions. BIOCHEMISTRY OPTION Units 03-231/232 Honors Biochemistry (or Biochemistry) 9 09-518/718 Bioorganic Chemistry: Nucleic Acids and Carbohydrates 9 or 09-519 Bioorganic Chemistry: Peptides, Proteins and Combinatorial Chemistry or 09-719 Bioorganic Chemistry: Peptides, Proteins and Combinatorial Chemistry xx-xxx 2 Electives in Biochemistry Elective courses may be chosen from the following list. (Other courses listed as electives for the Biological Chemistry Track may be possible with permission.) 03-344 Experimental Biochemistry 12 09-445 Undergraduate Research 9 units of 09-445 can count towards this option if part of a longer term immersion in a relevant area and approved by the Director of Underraduate Studies Var. 09-530 Chemistry of Gene Expression 9 or 09-730 Chemistry of Gene Expression 09-737 Medicinal Chemistry and Drug Development 12 03-439 Introduction to Biophysics 10 09-519/719 Bioorganic Chemistry: Peptides, Proteins and Combinatorial Chemistry 9 or 09-518 Bioorganic Chemistry: Nucleic Acids and Carbohydrates or 09-718 Bioorganic Chemistry: Nucleic Acids and Carbohydrates 03-740 Advanced Biochemistry 12 POLYMER SCIENCE OPTION Units 09-502/741 Organic Chemistry of Polymers 9 09-760 The Molecular Basis of Polymer Mechanics 12 Two Electives in Polymer Science 9 Elective courses may be chosen from the following list 09-445 Undergraduate Research 9 units of 09-445 can count towards this option if part of a longer term immersion in a relevant area and approved by the Director of Undergraduate Studies 9 09-509/715 Physical Chemistry of Macromolecules 9 09-736 Metal Mediated Chemical Reactions 12 27-477 Introduction to Polymer Science and Engineering 9 Other upper level courses in chemistry, biomedical engineering, materials science engineering or the colloids, polymers and surfaces program may be used with permission of the Director of Undergraduate Studies MATERIALS CHEMISTRY OPTION Units 27-100 Engineering the Materials of the Future 12 27-201 Structure of Materials 9 Two Elective Courses of at least 9 units each from the list below 27-202 Defects in Materials 9 09-445 Undergraduate Research 9 units of 09-445 can count towards this option if part of a longer term immersion in a relevant area and approved by the Director of Undergraduate Studies 9 09-502/741 Organic Chemistry of Polymers 9 09-507/707 Nanoparticles 9 09-509/715 Physical Chemistry of Macromolecules 9 27-xxx MSE course approved by Director of Undergraduate Studies ENVIRONMENTAL CHEMISTRY OPTION Units 09-510/710 Chemistry and Sustainability 9 or 09-381 Environmental Systems on a Changing Planet 09-524 Environmental Chemistry 9 or 09-724 Environmental Chemistry Two elective courses of at least 9 units each from the list below 09-445 Undergraduate Research 9 units of 09-445 can count towards this option if part of a longer term immersion in a relevant area and approved by the Director of Undergraduate Studies Var. 09-225 Climate Change: Chemistry, Physics and Planetary Science 9 09-529/729 Introduction to Sustainable Energy Science 9 09-538/738 Exposure and Risk Assessment for Environmental Pollutants 9 19-440 Combustion and Air Pollution Control 9 12-651 Air Quality Engineering 9 12-657 Water Resource Systems Engineering 9 MANAGEMENT OPTION Units 70-100 Global Business Global Business is intended for first-year and sophomore students only. Juniors and seniors interested in pursuing the management option must replace the course with a constrained elective as defined for the Minor in Business Administration. 9 73-102 Principles of Microeconomics 9 70-122 Introduction to Accounting 9 Tepper Constrained Elective: As defined in the 2024-25 Undergraduate Catalog these must be one of the following courses: 70-311 , 70-371 , 70-381 , or 70-391 9"
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 7,
+      "units": 60,
+      "options": [
+        "09-106",
+        "09-116",
+        "09-101",
+        "21-122",
+        "33-121",
+        "03-121",
+        "15-110"
+      ],
+      "source_instruction": "Planning Tip: Students interested in majoring in chemistry who have a strong chemistry background should enroll in 09-107 Honors Chemistry: Fundamentals, Concepts and Applications rather than 09-105 Introduction to Modern Chemistry I . Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II via a prerequisite waiver. There are some elective laboratory courses offered for MCS students in the first year including 03-117 Frontiers, Analysis, and Discovery in Biological Sciences or 09-101 Introduction to Experimental Chemistry and 09-115 Introduction to Undergraduate Research in Chemistry . While not required for the major, we strongly encourage students who are interested in early research engagement to register for 09-115 Introduction to Undergraduate Research in Chemistry . This course introduces students to research within the department and includes laboratory safety and hazardous waste training, which are often necessary for working in scientific labs at CMU. It is included in the sample schedule above to highlight this opportunity. The maximum units allowed during the first semester is 54; therefore, students wishing to take a lab should take an alternate technical course to Physics I such as 15-110 Principles of Computing or 03-121 Modern Biology so that their unit total is lower."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 25,
+    "course_references": 167,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: MCS Core Technical Requirements",
+      "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+      "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+      "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+      "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+      "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry"
+    ],
+    "explicit_group_ratio": 0.62
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (788 units).",
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "10 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 93,
+    "extracted_unit_estimate": 788,
+    "scheduled_course_count": 83,
+    "missing_schedule_course_ids": [
+      "09-507",
+      "09-509",
+      "09-530",
+      "09-538",
+      "09-621",
+      "09-623",
+      "09-730",
+      "09-760",
+      "19-440",
+      "70-100"
+    ]
+  }
+}

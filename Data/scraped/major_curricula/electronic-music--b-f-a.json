@@ -1,0 +1,186 @@
+{
+  "program_id": "electronic-music--b-f-a",
+  "planning_id": "electronic-music",
+  "name": "Electronic Music",
+  "credential": "B.F.A",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/",
+  "source_hash": "37496fad428f63f2a649e3f6ff8c82c6b915b4eaf718f5d969828de89b38bc94",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "first-year-fall-58-units",
+      "name": "FIRST-YEAR FALL (58 units)",
+      "choose": 3,
+      "units": 15,
+      "options": [
+        "57-100",
+        "57-149",
+        "57-152",
+        "57-161",
+        "57-180",
+        "57-181",
+        "57-185",
+        "57-191",
+        "57-193",
+        "57-358",
+        "57-421",
+        "57-523",
+        "57-560",
+        "99-101"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units)"
+    },
+    {
+      "id": "first-year-spring-56-units",
+      "name": "FIRST-YEAR SPRING (56 units)",
+      "choose": 3,
+      "units": 16,
+      "options": [
+        "57-100",
+        "57-150",
+        "57-153",
+        "57-162",
+        "57-182",
+        "57-186",
+        "57-192",
+        "57-194",
+        "57-345",
+        "57-421",
+        "57-523",
+        "57-560"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units)"
+    },
+    {
+      "id": "second-year-fall-53-units",
+      "name": "SECOND-YEAR FALL (53 units)",
+      "choose": 3,
+      "units": 13,
+      "options": [
+        "57-100",
+        "57-163",
+        "57-173",
+        "57-183",
+        "57-487",
+        "57-188",
+        "57-193",
+        "57-257",
+        "57-421",
+        "57-523",
+        "57-560"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units)"
+    },
+    {
+      "id": "second-year-spring-52-units",
+      "name": "SECOND-YEAR SPRING (52 units)",
+      "choose": 3,
+      "units": 14,
+      "options": [
+        "57-100",
+        "57-164",
+        "57-184",
+        "57-488",
+        "57-194",
+        "57-408",
+        "57-421",
+        "57-285",
+        "57-523",
+        "57-560"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units) Units 57-100 Convocation 1 57-163 Eurhythmics III 3 57-173 Survey of Western Music History 9 57-183 Solfege III 3 or 57-487 Advanced Solfege III 57-188 Repertoire and Listening for Musicians 1 57-193 Keyboard Studies III 3 57-257 Orchestration I 6 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 53 SECOND-YEAR SPRING (52 units)"
+    },
+    {
+      "id": "third-year-fall-52-units",
+      "name": "THIRD-YEAR FALL (52 units)",
+      "choose": 3,
+      "units": 20,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "57-332",
+        "57-421",
+        "57-521",
+        "57-560"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units) Units 57-100 Convocation 1 57-163 Eurhythmics III 3 57-173 Survey of Western Music History 9 57-183 Solfege III 3 or 57-487 Advanced Solfege III 57-188 Repertoire and Listening for Musicians 1 57-193 Keyboard Studies III 3 57-257 Orchestration I 6 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 53 SECOND-YEAR SPRING (52 units) Units 57-100 Convocation 1 57-164 Eurhythmics IV 3 57-184 Solfege IV 3 or 57-488 Advanced Solfege IV 57-194 Keyboard Studies IV 3 57-408 Form and Analysis 6 57-421 Exploded Ensemble or 57-4XX other Ensemble 6 57-285 Music History III 9 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 61 THIRD-YEAR FALL (52 units)"
+    },
+    {
+      "id": "third-year-spring-47-units",
+      "name": "THIRD-YEAR SPRING (47 units)",
+      "choose": 3,
+      "units": 22,
+      "options": [
+        "57-344",
+        "57-359",
+        "57-421",
+        "57-521",
+        "57-560"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units) Units 57-100 Convocation 1 57-163 Eurhythmics III 3 57-173 Survey of Western Music History 9 57-183 Solfege III 3 or 57-487 Advanced Solfege III 57-188 Repertoire and Listening for Musicians 1 57-193 Keyboard Studies III 3 57-257 Orchestration I 6 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 53 SECOND-YEAR SPRING (52 units) Units 57-100 Convocation 1 57-164 Eurhythmics IV 3 57-184 Solfege IV 3 or 57-488 Advanced Solfege IV 57-194 Keyboard Studies IV 3 57-408 Form and Analysis 6 57-421 Exploded Ensemble or 57-4XX other Ensemble 6 57-285 Music History III 9 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 61 THIRD-YEAR FALL (52 units) Units 15-104 Introduction to Computing for Creative Practice 10 or 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science 57-332 Introduction to Conducting 6 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 XX-XXX General Studies Course(s) 12 55 THIRD-YEAR SPRING (47 units)"
+    },
+    {
+      "id": "fourth-year-fall-45-units",
+      "name": "FOURTH-YEAR FALL (45 units)",
+      "choose": 3,
+      "units": 18,
+      "options": [
+        "57-421",
+        "57-521",
+        "57-560"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units) Units 57-100 Convocation 1 57-163 Eurhythmics III 3 57-173 Survey of Western Music History 9 57-183 Solfege III 3 or 57-487 Advanced Solfege III 57-188 Repertoire and Listening for Musicians 1 57-193 Keyboard Studies III 3 57-257 Orchestration I 6 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 53 SECOND-YEAR SPRING (52 units) Units 57-100 Convocation 1 57-164 Eurhythmics IV 3 57-184 Solfege IV 3 or 57-488 Advanced Solfege IV 57-194 Keyboard Studies IV 3 57-408 Form and Analysis 6 57-421 Exploded Ensemble or 57-4XX other Ensemble 6 57-285 Music History III 9 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 61 THIRD-YEAR FALL (52 units) Units 15-104 Introduction to Computing for Creative Practice 10 or 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science 57-332 Introduction to Conducting 6 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 XX-XXX General Studies Course(s) 12 55 THIRD-YEAR SPRING (47 units) Units 57-344 Experimental Sound Synthesis 9 57-359 Audiovisual Composition 9 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX General Studies Course(s) 12 48 FOURTH-YEAR FALL (45 units)"
+    },
+    {
+      "id": "fourth-year-spring-43-units",
+      "name": "FOURTH-YEAR SPRING (43 units)",
+      "choose": 3,
+      "units": 14,
+      "options": [
+        "57-421",
+        "57-521",
+        "57-560",
+        "57-595"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units) Units 57-100 Convocation 1 57-163 Eurhythmics III 3 57-173 Survey of Western Music History 9 57-183 Solfege III 3 or 57-487 Advanced Solfege III 57-188 Repertoire and Listening for Musicians 1 57-193 Keyboard Studies III 3 57-257 Orchestration I 6 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 53 SECOND-YEAR SPRING (52 units) Units 57-100 Convocation 1 57-164 Eurhythmics IV 3 57-184 Solfege IV 3 or 57-488 Advanced Solfege IV 57-194 Keyboard Studies IV 3 57-408 Form and Analysis 6 57-421 Exploded Ensemble or 57-4XX other Ensemble 6 57-285 Music History III 9 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 61 THIRD-YEAR FALL (52 units) Units 15-104 Introduction to Computing for Creative Practice 10 or 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science 57-332 Introduction to Conducting 6 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 XX-XXX General Studies Course(s) 12 55 THIRD-YEAR SPRING (47 units) Units 57-344 Experimental Sound Synthesis 9 57-359 Audiovisual Composition 9 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX General Studies Course(s) 12 48 FOURTH-YEAR FALL (45 units) Units 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 XX-XXX General Studies Course(s) 9 45 FOURTH-YEAR SPRING (43 units)"
+    },
+    {
+      "id": "fourth-year-spring-43-units",
+      "name": "FOURTH-YEAR SPRING (43 units)",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112"
+      ],
+      "source_instruction": "Overview The Electronic Music major at CMU combines instruction in emerging practices for sound design, computer-based music generation, and electronic/electro-acoustic/intermedia performance, together with a rigorous education in traditional music subjects. Our students’ exploration of emerging modes of sound synthesis, creative coding, and electronic instrument design are grounded with courses in music theory, history, solfege, and conducting. The Electronic Music major combines studies in electronic music composition, performance, production, and sonic art to form an integrative approach to the future of music-making. Electronic Music majors write and perform music with CMU’s ground-breaking Exploded Ensemble, a group dedicated to multimedia performances of new experimental music. Working in state-of-the-art facilities for immersive sound, visuals, and immersive interaction, the Electronic Music major culminates in an ambitious capstone, which may take the form of an evening-length performance, an interactive experience, or a multimedia recording project. Bachelor of Science Programs in Music Minimum Units Required for Graduation Bachelor of Fine Arts in Electronic Music 404 Curriculum Bachelor of Fine Arts (BFA) in Electronic Music students must take at least 3 semesters of 57-421 Exploded Ensemble , after which they can enroll in other 6-unit ensembles only , if they choose. FIRST-YEAR FALL (58 units) Units 57-100 Convocation 1 57-149 Basic Harmony I 9 or 57-152 Harmony I 57-161 Eurhythmics I 3 57-180 Basic Solfege I 3 or 57-181 Solfege I or 57-185 Advanced Solfege I 57-191 Keyboard Studies I 3 or 57-193 Keyboard Studies III 57-358 Understanding Electronic Music 9 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 76-1XX First-Year Writing Course 9 99-101 Core@CMU 3 58 FIRST-YEAR SPRING (56 units) Units 57-100 Convocation 1 57-150 Basic Harmony II 9 or 57-153 Harmony II 57-162 Eurhythmics II 3 57-182 Solfege II 3 or 57-186 Advanced Solfege II 57-192 Keyboard Studies II 3 or 57-194 Keyboard Studies IV 57-345 Twisted Signals: Multimedia Processing for the Arts 10 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Global, Cultural, & Diverse Perspectives Course 9 56 SECOND-YEAR FALL (53 units) Units 57-100 Convocation 1 57-163 Eurhythmics III 3 57-173 Survey of Western Music History 9 57-183 Solfege III 3 or 57-487 Advanced Solfege III 57-188 Repertoire and Listening for Musicians 1 57-193 Keyboard Studies III 3 57-257 Orchestration I 6 57-421 Exploded Ensemble 6 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 53 SECOND-YEAR SPRING (52 units) Units 57-100 Convocation 1 57-164 Eurhythmics IV 3 57-184 Solfege IV 3 or 57-488 Advanced Solfege IV 57-194 Keyboard Studies IV 3 57-408 Form and Analysis 6 57-421 Exploded Ensemble or 57-4XX other Ensemble 6 57-285 Music History III 9 57-523 Major Studio (Electronic Music) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 61 THIRD-YEAR FALL (52 units) Units 15-104 Introduction to Computing for Creative Practice 10 or 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science 57-332 Introduction to Conducting 6 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX Electronic Music Support Course 9 XX-XXX General Studies Course(s) 12 55 THIRD-YEAR SPRING (47 units) Units 57-344 Experimental Sound Synthesis 9 57-359 Audiovisual Composition 9 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 XX-XXX General Studies Course(s) 12 48 FOURTH-YEAR FALL (45 units) Units 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 9 XX-XXX General Studies Course(s) 9 45 FOURTH-YEAR SPRING (43 units) Units 57-421 Exploded Ensemble or 57-4XX Exploded Ensemble or other Ensemble 6 57-521 Major Studio (Composition) 9 57-560 Electronic Music Seminar 3 57-595 Senior Electronic Music Project 1 57-XXX Music Elective 9 XX-XXX Electronic Music Support Course 6 XX-XXX General Studies Course(s) 9 43"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 9,
+    "course_references": 69,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 41,
+    "extracted_unit_estimate": 159,
+    "scheduled_course_count": 39,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "57-359"
+    ]
+  }
+}

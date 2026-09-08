@@ -1,0 +1,1034 @@
+{
+  "catalog_year": "2026-2027",
+  "generated_at": "2026-09-06T19:18:08.280860+00:00",
+  "requested": 71,
+  "parsed": 71,
+  "failed": 0,
+  "high_confidence_candidates": 9,
+  "needs_review": 62,
+  "promotion_ready": 4,
+  "blocked_candidates": 5,
+  "review_queue": [
+    {
+      "program_id": "anthropology--b-a",
+      "name": "Anthropology",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (814 units)."
+      ],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "42 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "architecture--b-a",
+      "name": "Architecture",
+      "confidence": 0.5,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Architectural Design Studios 66 units",
+        "Assumed choose-one for ambiguous section: History, Urbanism & Ethics Stream 33 units",
+        "Assumed choose-one for ambiguous section: Architectural Technologies Streams 20 units",
+        "Assumed choose-one for ambiguous section: Computation & Representation Stream 47 units",
+        "Assumed choose-one for ambiguous section: General Studies & Electives 194 units",
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "architecture--b-arch",
+      "name": "Architecture",
+      "confidence": 0.5,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Architecture Design Studio 174 units",
+        "Assumed choose-one for ambiguous section: History, Urbanism, Practice & Ethics Stream 60 units",
+        "Assumed choose-one for ambiguous section: Architectural Technologies Streams 47 units",
+        "Assumed choose-one for ambiguous section: Computation & Representation Stream 47 units",
+        "Assumed choose-one for ambiguous section: General Studies & Electives 122 units",
+        "Assumed choose-one for ambiguous section: Fifth-Year",
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "art--b-f-a",
+      "name": "Art",
+      "confidence": 0.68,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "No unambiguous fixed-course table was found.",
+        "12 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "artificial-intelligence--b-s",
+      "name": "Artificial Intelligence",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (821 units)."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Math and Statistics",
+        "Assumed choose-one for ambiguous section: Computer Science",
+        "No unambiguous fixed-course table was found.",
+        "15 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "behavioral-economics--b-s",
+      "name": "Behavioral Economics",
+      "confidence": 0.79,
+      "blockers": [
+        "Extracted requirement total is implausible (768 units).",
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Prerequisites",
+        "Assumed choose-one for ambiguous section: Core Courses",
+        "Assumed choose-one for ambiguous section: Core Courses",
+        "Assumed choose-one for ambiguous section: Core Courses",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biological-sciences--b-a",
+      "name": "Biological Sciences",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "No unambiguous fixed-course table was found.",
+        "14 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biological-sciences--b-s",
+      "name": "Biological Sciences",
+      "confidence": 0.66,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "Assumed choose-one for ambiguous section: Biochemistry TRACK*",
+        "Assumed choose-one for ambiguous section: BioMEDICAL SCIENCES TRACK",
+        "No unambiguous fixed-course table was found.",
+        "15 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biological-sciences-and-psychology--b-s",
+      "name": "Biological Sciences and Psychology",
+      "confidence": 0.62,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "business-administration--b-s",
+      "name": "Business Administration",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chemical-engineering--b-s",
+      "name": "Chemical Engineering",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chemistry--b-a",
+      "name": "Chemistry",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: MCS Core Technical Requirements",
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chemistry--b-s",
+      "name": "Chemistry",
+      "confidence": 0.79,
+      "blockers": [
+        "Extracted requirement total is implausible (788 units).",
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: MCS Core Technical Requirements",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chemistry-biological-chemistry-track--b-s",
+      "name": "Chemistry/Biological Chemistry Track",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: MCS Core Technical Requirements",
+        "No unambiguous fixed-course table was found.",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "civil-engineering--b-s",
+      "name": "Civil Engineering",
+      "confidence": 0.63,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Structural Engineering",
+        "Assumed choose-one for ambiguous section: Computing in Civil Engineering",
+        "Assumed choose-one for ambiguous section: Engineering and Society",
+        "Assumed choose-one for ambiguous section: Construction Management",
+        "Assumed choose-one for ambiguous section: Next-Generation Building and Construction",
+        "Assumed choose-one for ambiguous section: Smart Cities",
+        "Assumed choose-one for ambiguous section: Smart Buildings",
+        "Assumed choose-one for ambiguous section: Materials",
+        "No unambiguous fixed-course table was found.",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "cognitive-science--b-s",
+      "name": "Cognitive Science",
+      "confidence": 0.77,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Cognitive Science Core",
+        "Assumed choose-one for ambiguous section: Cognitive Science Core",
+        "Assumed choose-one for ambiguous section: Cognitive Science Core",
+        "Assumed choose-one for ambiguous section: Cognitive Science Core",
+        "Assumed choose-one for ambiguous section: Cognitive Science Core",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "composition--b-f-a",
+      "name": "Composition",
+      "confidence": 0.5,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First-Year Fall (53 units)",
+        "Assumed choose-one for ambiguous section: First-Year Spring (53 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Fall (53 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Spring (53 units)",
+        "Assumed choose-one for ambiguous section: Third-Year Fall (47 units)",
+        "Assumed choose-one for ambiguous section: Third-Year Spring (47 units)",
+        "Assumed choose-one for ambiguous section: Fourth-Year Fall (44 units)",
+        "Assumed choose-one for ambiguous section: Fourth-Year Spring (45 units)",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "computational-biology--b-s",
+      "name": "Computational Biology",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (396 units).",
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Mathematics/Statistics Core",
+        "No unambiguous fixed-course table was found.",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "computational-finance--b-s",
+      "name": "Computational Finance",
+      "confidence": 0.65,
+      "blockers": [
+        "Extracted requirement total is implausible (609 units).",
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Foundations",
+        "Assumed choose-one for ambiguous section: Mathematical Finance",
+        "Assumed choose-one for ambiguous section: Statistics",
+        "Assumed choose-one for ambiguous section: Programming",
+        "Assumed choose-one for ambiguous section: Economics",
+        "Assumed choose-one for ambiguous section: Professional Development",
+        "No unambiguous fixed-course table was found.",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "computer-science--b-s",
+      "name": "Computer Science",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (553 units)."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Computer Science",
+        "No unambiguous fixed-course table was found.",
+        "13 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "computer-science-and-arts--b-c-s-a",
+      "name": "Computer Science and Arts",
+      "confidence": 0.05,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "creative-writing--b-a",
+      "name": "Creative Writing",
+      "confidence": 0.66,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Introductory Genre Writing Courses (2 courses) 18 units",
+        "Assumed choose-one for ambiguous section: Reading in Forms Course (1 course) 9 units",
+        "No unambiguous fixed-course table was found.",
+        "35 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "decision-science--b-s",
+      "name": "Decision Science",
+      "confidence": 0.95,
+      "blockers": [
+        "Extracted requirement total is implausible (404 units)."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Prerequisites",
+        "6 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "design--b-des",
+      "name": "Design",
+      "confidence": 0.79,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Fall",
+        "Assumed choose-one for ambiguous section: Fall",
+        "Assumed choose-one for ambiguous section: Spring",
+        "Assumed choose-one for ambiguous section: Spring",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "drama--b-f-a",
+      "name": "Drama",
+      "confidence": 0.7,
+      "blockers": [
+        "Implausibly large extracted curriculum; likely schedule/table contamination.",
+        "Extracted requirement total is implausible (484 units).",
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "27 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "economics--b-a",
+      "name": "Economics",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "economics--b-s",
+      "name": "Economics",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "economics-and-mathematical-sciences--b-s",
+      "name": "Economics and Mathematical Sciences",
+      "confidence": 0.79,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Economic Theory Requirements",
+        "Assumed choose-one for ambiguous section: Quantitative Analysis Requirements",
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Requirements",
+        "Assumed choose-one for ambiguous section: Programming Requirement (10 Units)",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "economics-and-politics--b-s",
+      "name": "Economics and Politics",
+      "confidence": 1.0,
+      "blockers": [
+        "Implausibly large extracted curriculum; likely schedule/table contamination.",
+        "Extracted requirement total is implausible (877 units)."
+      ],
+      "warnings": [
+        "21 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "economics-and-statistics--b-s",
+      "name": "Economics and Statistics",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Complete the following:",
+        "No unambiguous fixed-course table was found.",
+        "11 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "electrical-and-computer-engineering--b-s",
+      "name": "Electrical and Computer Engineering",
+      "confidence": 0.78,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: CIT Requirements ( see CIT section of the catalog for specifics )",
+        "Assumed choose-one for ambiguous section: General Technical Requirements",
+        "Assumed choose-one for ambiguous section: Sample Curriculum"
+      ]
+    },
+    {
+      "program_id": "electronic-music--b-f-a",
+      "name": "Electronic Music",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "engineering-studies-and-arts--b-e-s-a",
+      "name": "Engineering Studies and Arts",
+      "confidence": 0.3,
+      "blockers": [],
+      "warnings": [
+        "No course-choice groups were found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "environmental-engineering--b-s",
+      "name": "Environmental Engineering",
+      "confidence": 0.68,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Environmental Engineering - Water Quality",
+        "Assumed choose-one for ambiguous section: Engineering and Society",
+        "Assumed choose-one for ambiguous section: Environmental Engineering - Energy",
+        "Assumed choose-one for ambiguous section: Environmental Engineering - Air Quality",
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "ethics-history-and-public-policy--b-a-b-s",
+      "name": "Ethics, History and Public Policy",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "16 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "film-and-visual-media--b-a",
+      "name": "Film and Visual Media",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (577 units)."
+      ],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "58 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "general-studies--b-a-b-s",
+      "name": "General Studies",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "global-cultures-and-emerging-technologies--b-a",
+      "name": "Global Cultures and Emerging Technologies",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units",
+        "No unambiguous fixed-course table was found.",
+        "13 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "history--b-a",
+      "name": "History",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (505 units)."
+      ],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "62 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "human-computer-interaction--b-s",
+      "name": "Human-Computer Interaction",
+      "confidence": 0.79,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Computer Science Core (5 courses + immigration course)",
+        "Assumed choose-one for ambiguous section: Computer Science Core (5 courses + immigration course)",
+        "Assumed choose-one for ambiguous section: Mathematics and Statistics Core (4 courses)",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "humanities-and-arts--b-h-a",
+      "name": "Humanities and Arts",
+      "confidence": 0.3,
+      "blockers": [],
+      "warnings": [
+        "No course-choice groups were found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "international-relations-and-political-science--b-s",
+      "name": "International Relations and Political Science",
+      "confidence": 1.0,
+      "blockers": [
+        "Extracted requirement total is implausible (880 units)."
+      ],
+      "warnings": [
+        "28 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "languages-and-cultures--b-a",
+      "name": "Languages and Cultures",
+      "confidence": 0.53,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: I. Core LCAL Courses (3 courses; 27 units)",
+        "Assumed choose-one for ambiguous section: III. Language and Culture Concentration Courses (8 courses; 72 units minimum)",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "literature-and-culture--b-a",
+      "name": "Literature and Culture",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Required Introductory Courses (3 courses) 27 units",
+        "Assumed choose-one for ambiguous section: 200-Level literature & culture courses (2 courses) 18 units",
+        "No unambiguous fixed-course table was found.",
+        "38 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "logic-and-computation--b-s",
+      "name": "Logic and Computation",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "materials-science-and-engineering--b-s",
+      "name": "Materials Science and Engineering",
+      "confidence": 0.76,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: First Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "mathematical-sciences--b-a",
+      "name": "Mathematical Sciences",
+      "confidence": 0.54,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "mathematical-sciences--b-s",
+      "name": "Mathematical Sciences",
+      "confidence": 0.55,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+        "Assumed choose-one for ambiguous section: Statistics Courses (required)",
+        "Assumed choose-one for ambiguous section: Economics, Business, and Computer Science Courses (required)",
+        "Assumed choose-one for ambiguous section: Depth Electives (required)",
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+        "Assumed choose-one for ambiguous section: Statistics Courses (required)",
+        "Assumed choose-one for ambiguous section: Economics and Computer Science Courses (required)",
+        "Assumed choose-one for ambiguous section: Depth Electives (required)",
+        "Assumed choose-one for ambiguous section: Mathematical Sciences and Computer Science Courses (required)",
+        "Assumed choose-one for ambiguous section: Computer Science Electives (required)",
+        "Assumed choose-one for ambiguous section: List 1 (Discrete Mathematics and Logic Electives)",
+        "Assumed choose-one for ambiguous section: List 2 (Mathematics Electives)",
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+        "Assumed choose-one for ambiguous section: Computer Science Courses (required)",
+        "No unambiguous fixed-course table was found.",
+        "9 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "mathematical-sciences-and-economics--b-s",
+      "name": "Mathematical Sciences and Economics",
+      "confidence": 0.79,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Economic Theory Requirements",
+        "Assumed choose-one for ambiguous section: Quantitative Analysis Requirements",
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Requirements",
+        "Assumed choose-one for ambiguous section: Programming Requirement (10 Units)",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "music-performance--b-f-a",
+      "name": "Music Performance",
+      "confidence": 0.5,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: FIRST-YEAR FALL (60 units)",
+        "Assumed choose-one for ambiguous section: FIRST-YEAR SPRING (60 units)",
+        "Assumed choose-one for ambiguous section: SECOND-YEAR FALL (66 units)",
+        "Assumed choose-one for ambiguous section: SECOND-YEAR SPRING (64 units)",
+        "Assumed choose-one for ambiguous section: THIRD-YEAR FALL (54 units)",
+        "Assumed choose-one for ambiguous section: THIRD-YEAR SPRING (46 units)",
+        "Assumed choose-one for ambiguous section: FOURTH-YEAR FALL (39 units)",
+        "Assumed choose-one for ambiguous section: FOURTH-YEAR SPRING (40 units)",
+        "Assumed choose-one for ambiguous section: FIRST-YEAR FALL (52 units)",
+        "Assumed choose-one for ambiguous section: FIRST-YEAR SPRING (52 units)",
+        "Assumed choose-one for ambiguous section: SECOND-YEAR FALL (52 units)",
+        "Assumed choose-one for ambiguous section: SECOND-YEAR SPRING (46 units)",
+        "Assumed choose-one for ambiguous section: THIRD-YEAR FALL (46 units)",
+        "Assumed choose-one for ambiguous section: THIRD-YEAR SPRING (47 units)",
+        "Assumed choose-one for ambiguous section: FOURTH-YEAR FALL (43 units)",
+        "Assumed choose-one for ambiguous section: FOURTH-YEAR SPRING (44 units)",
+        "Assumed choose-one for ambiguous section: First-Year Fall (52 units)",
+        "Assumed choose-one for ambiguous section: First-Year Spring (52 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Fall (52 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Spring (44 units)",
+        "Assumed choose-one for ambiguous section: Third-Year Fall (46 units)",
+        "Assumed choose-one for ambiguous section: Third-Year Spring (47 units)",
+        "Assumed choose-one for ambiguous section: Fourth-Year Fall (43 units)",
+        "Assumed choose-one for ambiguous section: Fourth-Year Spring (44 units)",
+        "Assumed choose-one for ambiguous section: FIRST-YEAR FALL (52 units)",
+        "Assumed choose-one for ambiguous section: FIRST-YEAR SPRING (52 units)",
+        "Assumed choose-one for ambiguous section: SECOND-YEAR FALL (49 units)",
+        "Assumed choose-one for ambiguous section: SECOND-YEAR SPRING (46 units)",
+        "Assumed choose-one for ambiguous section: THIRD-YEAR FALL (46 units)",
+        "Assumed choose-one for ambiguous section: THIRD-YEAR SPRING (47 units)",
+        "Assumed choose-one for ambiguous section: FOURTH-YEAR FALL (43 units)",
+        "Assumed choose-one for ambiguous section: FOURTH-YEAR SPRING (44 units)",
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "music-and-technology--b-s",
+      "name": "Music and Technology",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (399 units)."
+      ],
+      "warnings": [
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "neuroscience--b-s",
+      "name": "Neuroscience",
+      "confidence": 0.94,
+      "blockers": [
+        "Implausibly large extracted curriculum; likely schedule/table contamination.",
+        "Extracted requirement total is implausible (789 units)."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: A. General Science Requirements",
+        "15 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "philosophy--b-a",
+      "name": "Philosophy",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (936 units)."
+      ],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "27 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "physics--b-a",
+      "name": "Physics",
+      "confidence": 0.64,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Physics Core",
+        "Assumed choose-one for ambiguous section: Mathematics Core",
+        "Assumed choose-one for ambiguous section: Technical Core",
+        "Assumed choose-one for ambiguous section: Non-Technical Electives",
+        "No unambiguous fixed-course table was found.",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "physics--b-s",
+      "name": "Physics",
+      "confidence": 0.57,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Physics Core",
+        "Assumed choose-one for ambiguous section: Mathematics CORE",
+        "Assumed choose-one for ambiguous section: Technical CORE",
+        "Assumed choose-one for ambiguous section: Non-Technical Electives",
+        "Assumed choose-one for ambiguous section: Applied Physics Track",
+        "Assumed choose-one for ambiguous section: Astrophysics Track",
+        "Assumed choose-one for ambiguous section: Biological Physics Track",
+        "Assumed choose-one for ambiguous section: Chemical Physics Track",
+        "Assumed choose-one for ambiguous section: Computational Physics Track",
+        "Assumed choose-one for ambiguous section: Quantum Physics Track",
+        "No unambiguous fixed-course table was found.",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "policy-and-management--b-s",
+      "name": "Policy and Management",
+      "confidence": 0.79,
+      "blockers": [
+        "Extracted requirement total is implausible (736 units).",
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Prerequisites",
+        "Assumed choose-one for ambiguous section: Core Courses",
+        "Assumed choose-one for ambiguous section: Core Courses",
+        "Assumed choose-one for ambiguous section: Core Courses",
+        "Assumed choose-one for ambiguous section: Capstone",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "political-science-security-and-technology--b-s",
+      "name": "Political Science, Security, and Technology",
+      "confidence": 1.0,
+      "blockers": [
+        "Extracted requirement total is implausible (775 units)."
+      ],
+      "warnings": [
+        "15 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "professional-writing--b-a",
+      "name": "Professional Writing",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Departmental Core Requirement (1 course) 9 units",
+        "Assumed choose-one for ambiguous section: Professional Writing Core Requirements (4 courses) 30 units",
+        "No unambiguous fixed-course table was found.",
+        "42 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "psychology-and-biological-sciences--b-s",
+      "name": "Psychology and Biological Sciences",
+      "confidence": 0.62,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "Assumed choose-one for ambiguous section: Degree Requirements",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "robotics--b-s",
+      "name": "Robotics",
+      "confidence": 0.69,
+      "blockers": [
+        "More than 25% of requirement groups rely on inferred choose-one rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Computer Science Core",
+        "Assumed choose-one for ambiguous section: Robotics core",
+        "No unambiguous fixed-course table was found.",
+        "11 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "science-and-arts--b-s-a",
+      "name": "Science and Arts",
+      "confidence": 0.05,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "science-technology-and-society--b-s",
+      "name": "Science, Technology and Society",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "28 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "statistics-and-data-science--b-s",
+      "name": "Statistics and Data Science",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Complete the following:",
+        "No unambiguous fixed-course table was found.",
+        "13 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "statistics-and-data-science-mathematical-sciences-track--b-s",
+      "name": "Statistics and Data Science (Mathematical Sciences Track)",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Complete the following:",
+        "No unambiguous fixed-course table was found.",
+        "12 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "statistics-and-data-science-neuroscience-track--b-s",
+      "name": "Statistics and Data Science (Neuroscience Track)",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: 1. Mathematical Foundations (Prerequisites) 39–52 units",
+        "No unambiguous fixed-course table was found.",
+        "13 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "statistics-and-machine-learning--b-s",
+      "name": "Statistics and Machine Learning",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Complete the following:",
+        "No unambiguous fixed-course table was found.",
+        "16 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "technical-writing--b-s",
+      "name": "Technical Writing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Mathematics Prerequisite (1 course) 10 units",
+        "No unambiguous fixed-course table was found.",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    }
+  ],
+  "changed_since_previous_run": [],
+  "failures": []
+}

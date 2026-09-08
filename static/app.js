@@ -1470,7 +1470,7 @@ document
             appState.plannerKey = plannerKeyForGoal(appState.goals[0]);
 
             const goal = appState.goals[0];
-            if (goal && ["additional_major", "minor"].includes(goal.type)) {
+            if (goal && ["internal_transfer", "additional_major", "minor"].includes(goal.type)) {
                 const response = await fetch(
                     `/api/programs/${goal.program}/${goal.type}`
                 );
@@ -1479,23 +1479,27 @@ document
                     return;
                 }
                 const detail = await response.json();
-                const currentMajorHistory = appState.student.primary_major === "stats-ml"
-                    ? step3CourseData["stats-ml-major"].courses.map(course => ({
-                        ...course,
-                        is_current_major: true
-                    }))
-                    : [];
+                let currentMajorHistory = [];
+                let currentMajorChoiceGroups = [];
+                const primaryResponse = await fetch(
+                    `/api/primary-majors/${encodeURIComponent(appState.student.primary_major)}`
+                );
+                if (primaryResponse.ok) {
+                    const primaryDetail = await primaryResponse.json();
+                    currentMajorHistory = primaryDetail.fixed_courses;
+                    currentMajorChoiceGroups = primaryDetail.requirement_groups;
+                }
                 const historyById = new Map();
                 [...currentMajorHistory, ...detail.fixed_courses].forEach(course => {
                     historyById.set(course.id, {...historyById.get(course.id), ...course});
                 });
                 const historyCourses = [...historyById.values()];
                 step3CourseData[appState.plannerKey] = {
-                    eyebrow: `SCS · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : "ADDITIONAL MAJOR"}`,
+                    eyebrow: `${(goal.college || "CMU").toUpperCase()} · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : goal.type === "internal_transfer" ? "B.S. TRANSFER" : "ADDITIONAL MAJOR"}`,
                     title: "Which current-major and goal courses have you completed?",
                     description: `Select completed courses from your current major and this goal. Anything left unchecked may be placed in your future plan.`,
                     courses: historyCourses,
-                    choiceGroups: detail.requirement_groups,
+                    choiceGroups: [...currentMajorChoiceGroups, ...detail.requirement_groups],
                     plannerNote: `Catalog ${detail.catalog_year}: ${detail.requirement_groups.map(group => `${group.name} (${group.options.join(" / ")})`).join("; ") || "all listed requirements are fixed courses"}.`,
                     plannerReady: true
                 };
@@ -1717,14 +1721,16 @@ function renderCourseSelection(
         if (foundationOrder.includes(course.id)) return [0, foundationOrder.indexOf(course.id)];
         if (earlyCoreOrder.includes(course.id)) return [1, earlyCoreOrder.indexOf(course.id)];
         if (course.is_current_major) return [2, 0];
-        if (course.program_tier === "minor_foundation") return [3, 0];
-        if (course.program_tier === "additional_major") return [4, 0];
+        if (course.program_tier === "transfer_goal") return [3, 0];
+        if (course.program_tier === "minor_foundation") return [4, 0];
+        if (course.program_tier === "additional_major") return [5, 0];
         return [2, 0];
     };
     const groupNames = [
         "First-year foundations",
         "Early major core",
         "Later current-major coursework",
+        "Target B.S. requirements",
         "Minor foundation",
         "Additional-major extension"
     ];
@@ -1775,7 +1781,7 @@ function renderCourseSelection(
 
                 ${course.name}
 
-                ${course.program_tier ? `<small class="course-tier-badge ${course.program_tier === "minor_foundation" ? "minor-foundation" : ""}">${course.is_current_major ? "Also counts toward " : ""}${course.program_tier === "minor_foundation" ? "Minor foundation" : "Additional-major extension"}</small>` : ""}
+                ${course.program_tier ? `<small class="course-tier-badge ${course.program_tier === "minor_foundation" ? "minor-foundation" : ""}">${course.is_current_major ? "Also counts toward " : ""}${course.program_tier === "transfer_goal" ? "Target B.S. requirement" : course.program_tier === "minor_foundation" ? "Minor foundation" : "Additional-major extension"}</small>` : ""}
 
             </span>
 
@@ -1900,42 +1906,73 @@ function renderPath(
     container
 ) {
     container.innerHTML = "";
+    const validationMessage = document.createElement("div");
+    validationMessage.className = "planner-validation-message";
+    validationMessage.hidden = true;
+    validationMessage.setAttribute("role", "status");
+    container.appendChild(validationMessage);
     const kindLabels = {
         goal: "Goal program",
         current_major: "Current major",
         shared: "Current + goal",
         baseline: "GenEd requirement",
-        program_choice: "Program choice"
+        program_choice: "Program choice",
+        current_major_choice: "Current major requirement"
     };
 
-    const fixedBlock = (block, number) => `
-        <div class="planner-course-block fixed-block ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${block.estimated ? "primary-baseline-block" : ""}" data-units="${block.units}" data-course-id="${block.id}" draggable="true">
+    const intensityClass = intensity => intensity ? `intensity-tier-${intensity.tier}` : "";
+    const intensityBadge = intensity => intensity
+        ? `<span class="course-intensity-badge">Workload rating · ${intensity.label}</span>`
+        : "";
+    const intensityData = intensity => intensity
+        ? `data-intensity-tier="${intensity.tier}" data-hours="${intensity.hours_per_week}" data-workload="${intensity.workload}" data-difficulty="${intensity.difficulty}"`
+        : "";
+
+    const fixedBlock = (block, number) => {
+        const intensity = appState.latestCourseCatalog[block.id]?.intensity;
+        return `
+        <div class="planner-course-block fixed-block ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${block.estimated ? "primary-baseline-block" : ""} ${intensityClass(intensity)}" data-units="${block.units}" data-course-id="${block.id}" ${intensityData(intensity)} draggable="true">
             <span class="block-number">${number}</span>
             <span class="block-main">
-                <small>${block.estimated ? "Estimated primary-major workload" : block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
-                <strong>${block.id}</strong>
+                <small>${block.estimated ? "Reserved for remaining primary-major requirements" : block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
+                ${block.estimated ? "" : `<strong>${block.id}</strong>`}
                 <span>${block.name}</span>
+                ${intensityBadge(intensity)}
             </span>
             <strong class="block-units">${block.units}u</strong>
         </div>`;
+    };
 
     const choiceBlock = (block, number) => {
         const options = block.options || [];
         const isBaseline = block.kind === "baseline";
+        const baselineCategories = {
+            "Communication": "communication",
+            "Humanities": "humanities",
+            "Social Sciences": "social-sciences",
+            "Data Analysis": "data-analysis"
+        };
+        const baselineCategory = isBaseline ? baselineCategories[block.name] || "" : "";
+        const defaultIntensity = appState.latestCourseCatalog[block.default_option]?.intensity;
         return `
-            <div class="planner-course-block choice-block ${block.program_tier === "additional_major" ? "additional-major-block" : "minor-foundation-block"}" data-units="${block.units}" draggable="true">
+            <div class="planner-course-block choice-block ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${intensityClass(defaultIntensity)}" data-units="${block.units}" data-course-id="${block.default_option || ""}" ${intensityData(defaultIntensity)} data-baseline-category="${baselineCategory}" draggable="true">
                 <span class="block-number">${number}</span>
                 <span class="block-main">
                     <select class="block-category" aria-label="Block ${number} category">
                         <option selected>${block.name}</option>
                     </select>
                     <select class="block-course" aria-label="Block ${number} course">
-                        <option value="" data-units="${block.units}">${isBaseline
+                        <option value="" data-units="${block.units}" ${block.default_option ? "" : "selected"}>${isBaseline
                             ? "Choose an approved course in SIO"
                             : "Choose a course"}</option>
-                        ${options.map(option => `<option value="${option}" data-units="${appState.latestCourseCatalog[option]?.units || block.units}">${option}${appState.latestCourseCatalog[option]?.name ? ` · ${appState.latestCourseCatalog[option].name}` : ""}</option>`).join("")}
+                        ${options.map(option => {
+                            const course = appState.latestCourseCatalog[option];
+                            const intensity = course?.intensity;
+                            return `<option value="${option}" data-units="${course?.units || block.units}" data-intensity-tier="${intensity?.tier || ""}" data-hours="${intensity?.hours_per_week || ""}" data-workload="${intensity?.workload || ""}" data-difficulty="${intensity?.difficulty || ""}" data-intensity-label="${intensity?.label || ""}" ${option === block.default_option ? "selected" : ""}>${option}${course?.name ? ` · ${course.name}` : ""}${intensity ? ` · ${intensity.label}` : ""}</option>`;
+                        }).join("")}
                     </select>
                     <small class="course-description" aria-live="polite"></small>
+                    <span class="course-intensity-slot">${intensityBadge(defaultIntensity)}</span>
                 </span>
                 <strong class="block-units">${block.units}u</strong>
             </div>`;
@@ -2005,18 +2042,22 @@ function renderPath(
             const loads = blocks.map(block => {
                 const units = Number(block.dataset.units || 0);
                 const metrics = appState.latestCourseCatalog[block.dataset.courseId]?.metrics;
+                const intensity = appState.latestCourseCatalog[block.dataset.courseId]?.intensity;
                 return {
-                    hours: metrics?.hours_per_week ?? units / 3,
-                    workload: metrics?.workload,
-                    difficulty: metrics?.difficulty,
+                    hours: Number(block.dataset.hours) || intensity?.hours_per_week || metrics?.hours_per_week || units / 3,
+                    workload: Number(block.dataset.workload) || intensity?.workload || metrics?.workload,
+                    difficulty: Number(block.dataset.difficulty) || intensity?.difficulty || metrics?.difficulty,
                     stress: metrics?.stress,
-                    high: metrics?.intensity === "high_intensity",
+                    high: Number(block.dataset.intensityTier) >= 5 || metrics?.intensity === "high_intensity",
+                    tier: Number(block.dataset.intensityTier) || intensity?.tier || 0,
+                    label: block.querySelector(".course-intensity-badge")?.textContent.replace("Workload rating · ", "") || intensity?.label || "",
                     courseId: block.dataset.courseId
                 };
             }).filter(load => load.hours > 0);
             const rated = loads.filter(load => Number.isFinite(load.workload));
             const hours = Math.round(loads.reduce((sum, load) => sum + load.hours, 0));
             const highCourses = loads.filter(load => load.high).map(load => load.courseId);
+            const heaviest = loads.filter(load => load.courseId).sort((a, b) => b.tier - a.tier).slice(0, 3);
             const level = highCourses.length >= 2 || hours >= 35
                 ? "high"
                 : highCourses.length === 1 || hours >= 22
@@ -2042,6 +2083,7 @@ function renderPath(
                 ${primaryEstimate ? `<div class="baseline-workload-note">Includes ${primaryEstimate} estimated primary-major units.</div>` : ""}
                 ${highCourses.length >= 2 ? `<div class="workload-warning">High-intensity combination: ${highCourses.join(", ")}</div>` : ""}
                 ${wrongTerm.length ? `<div class="term-warning">Not listed for ${term}: ${wrongTerm.join(", ")}</div>` : ""}
+                ${heaviest.length ? `<div class="semester-course-weight"><strong>Course load:</strong> ${heaviest.map(load => `${load.courseId} ${load.label}`).join(" · ")}</div>` : ""}
                 <div>~${hours} hrs/week</div>
                 <div>Workload ${average("workload")} / 5</div>
                 <div>Difficulty ${average("difficulty")} / 5</div>
@@ -2091,12 +2133,34 @@ function renderPath(
             const recommendedIds = new Set(recommended.map(course => course.id));
             const other = available.filter(course => !recommendedIds.has(course.id));
             const optionHtml = (course, recommendedCourse = false) =>
-                `<option value="${course.id}" data-units="${course.units}" data-term="${course.term}" data-description="${recommendedCourse ? "Recommended for your current and goal programs · " : ""}${course.description}">${recommendedCourse ? "★ " : ""}${course.requirement_group ? `[${course.requirement_group}] ` : ""}${course.id} · ${course.name}</option>`;
+                `<option value="${course.id}" data-units="${course.units}" data-term="${course.term}" data-intensity-tier="${course.intensity?.tier || ""}" data-hours="${course.intensity?.hours_per_week || ""}" data-workload="${course.intensity?.workload || ""}" data-difficulty="${course.intensity?.difficulty || ""}" data-intensity-label="${course.intensity?.label || ""}" data-description="${recommendedCourse ? "Recommended for your current and goal programs · " : ""}${course.description}">${recommendedCourse ? "★ " : ""}${course.requirement_group ? `[${course.requirement_group}] ` : ""}${course.id} · ${course.name} ${course.intensity ? `· ${course.intensity.label}` : ""}</option>`;
             courseSelect.innerHTML = '<option value="" data-units="0">Choose a scheduled undergraduate course</option>' +
                 (recommended.length ? `<optgroup label="Recommended for your plan">${recommended.map(course => optionHtml(course, true)).join("")}</optgroup>` : "") +
                 `<optgroup label="Other undergraduate courses">${other.map(course => optionHtml(course)).join("")}</optgroup>`;
             courseSelect.disabled = false;
         };
+
+        // Turn supported GenEd placeholders into real, term-specific course
+        // pickers. These are scheduled candidates; exact Dietrich category
+        // approval remains an advisor/SIO check until the approved-course
+        // rules are imported as structured data.
+        card.querySelectorAll(".choice-block[data-baseline-category]").forEach(block => {
+            const category = block.dataset.baselineCategory;
+            if (!category) return;
+            const courseSelect = block.querySelector(".block-course");
+            courseSelect.disabled = true;
+            courseSelect.innerHTML = '<option value="" data-units="9">Loading scheduled candidates…</option>';
+            fetchElectives(category).then(electiveData => {
+                setCourseOptions(courseSelect, electiveData);
+                const placeholder = courseSelect.querySelector('option[value=""]');
+                if (placeholder) {
+                    placeholder.textContent = "Choose a scheduled candidate · confirm approval";
+                    placeholder.dataset.units = block.dataset.units;
+                }
+            }).catch(() => {
+                courseSelect.innerHTML = '<option value="" data-units="9">Course list unavailable</option>';
+            });
+        });
 
         // Requirement-group options arrive as verified course IDs. Enrich them
         // from the actual semester schedule so students see titles, units, and
@@ -2111,6 +2175,14 @@ function renderPath(
                 option.textContent = `${course.id} · ${course.name}`;
                 option.dataset.units = course.units;
                 option.dataset.description = course.description;
+                option.dataset.intensityTier = course.intensity?.tier || "";
+                option.dataset.hours = course.intensity?.hours_per_week || "";
+                option.dataset.workload = course.intensity?.workload || "";
+                option.dataset.difficulty = course.intensity?.difficulty || "";
+                option.dataset.intensityLabel = course.intensity?.label || "";
+                if (course.intensity) {
+                    option.textContent += ` · ${course.intensity.label}`;
+                }
             });
         }).catch(() => {});
 
@@ -2159,6 +2231,16 @@ function renderPath(
                 block.dataset.units = option?.dataset.units || block.dataset.units || 0;
                 block.dataset.courseId = option?.value || "";
                 block.dataset.offeredTerm = option?.dataset.term || "";
+                block.dataset.intensityTier = option?.dataset.intensityTier || "";
+                block.dataset.hours = option?.dataset.hours || "";
+                block.dataset.workload = option?.dataset.workload || "";
+                block.dataset.difficulty = option?.dataset.difficulty || "";
+                block.classList.remove(...[1, 2, 3, 4, 5].map(tier => `intensity-tier-${tier}`));
+                if (block.dataset.intensityTier) block.classList.add(`intensity-tier-${block.dataset.intensityTier}`);
+                const intensitySlot = block.querySelector(".course-intensity-slot");
+                if (intensitySlot) intensitySlot.innerHTML = block.dataset.intensityTier
+                    ? `<span class="course-intensity-badge">Workload rating · ${option?.dataset.intensityLabel}</span>`
+                    : "";
                 block.querySelector(".block-units").textContent = `${block.dataset.units}u`;
                 const description = block.querySelector(".course-description");
                 if (description) description.textContent = option?.dataset.description || "";
@@ -2170,16 +2252,30 @@ function renderPath(
     }
 
     let draggedBlock = null;
-    const swapBlocks = (source, target) => {
-        if (!source || !target || source === target) return;
-        if (source.closest(".semester-card") === target.closest(".semester-card")) return;
+    const swapDomBlocks = (source, target) => {
         const sourceParent = source.parentNode;
         const targetParent = target.parentNode;
         const marker = document.createComment("planner-swap");
         sourceParent.replaceChild(marker, source);
         targetParent.replaceChild(source, target);
         marker.parentNode.replaceChild(target, marker);
-        refreshCards();
+    };
+    const swapBlocks = (source, target) => {
+        if (!source || !target || source === target) return;
+        if (source.closest(".semester-card") === target.closest(".semester-card")) return;
+        const violationsBefore = new Set(refreshCards());
+        swapDomBlocks(source, target);
+        const violationsAfter = refreshCards();
+        const introduced = violationsAfter.filter(item => !violationsBefore.has(item.key));
+        if (introduced.length) {
+            swapDomBlocks(source, target);
+            refreshCards();
+            validationMessage.textContent = introduced[0].message;
+            validationMessage.hidden = false;
+            validationMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            return;
+        }
+        validationMessage.hidden = true;
     };
     const refreshCards = () => {
         container.querySelectorAll(".semester-card").forEach(card => {
@@ -2195,7 +2291,8 @@ function renderPath(
             const block = container.querySelector(`[data-course-id="${courseId}"]`);
             return block ? cards.indexOf(block.closest(".semester-card")) : -1;
         };
-        container.querySelectorAll(".fixed-block[data-course-id]").forEach(block => {
+        const violations = [];
+        container.querySelectorAll(".planner-course-block[data-course-id]").forEach(block => {
             const courseId = block.dataset.courseId;
             const detail = appState.latestCourseCatalog[courseId] || {};
             const semesterIndex = cards.indexOf(block.closest(".semester-card"));
@@ -2208,6 +2305,12 @@ function renderPath(
                 ? prerequisites.some(satisfied)
                 : prerequisites.every(satisfied);
             block.classList.toggle("prerequisite-order-warning", prerequisites.length > 0 && !valid);
+            if (prerequisites.length > 0 && !valid) {
+                violations.push({
+                    key: `${courseId}:${semesterIndex}`,
+                    message: `Cannot move ${courseId} here: complete ${prerequisites.join(expression?.type === "any_of" ? " or " : " and ")} in an earlier semester.`
+                });
+            }
             block.title = prerequisites.length > 0 && !valid
                 ? `Check prerequisite order: ${prerequisites.join(" or ")}`
                 : "Drag to another semester";
@@ -2223,6 +2326,7 @@ function renderPath(
                 description.textContent = `Not offered in ${cardTerm}. Re-select a course for this semester.`;
             }
         });
+        return violations;
     };
 
     container.querySelectorAll(".planner-course-block").forEach(block => {
@@ -2681,9 +2785,9 @@ function renderDegreeAudits(audits, baseline) {
         <article class="degree-audit-card primary-audit-card">
             <p class="eyebrow">PRIMARY DEGREE</p>
             <h3>${primary.program}</h3>
-            <strong>${primary.future_semesters_planned} future semesters have a baseline</strong>
+            <strong>${primary.major_requirements_planned ? "All mapped major requirements are in the plan" : `${primary.future_semesters_planned} future semesters contain mapped requirements`}</strong>
             <div class="audit-progress"><span style="width:${Math.min(100, (primary.completed_semesters + primary.future_semesters_planned) / primary.total_semesters * 100)}%"></span></div>
-            <p>${primary.planned_primary_units} primary-major units represented in this planning horizon.</p>
+            <p>${primary.planned_primary_units} primary-major units represented in this planning horizon. GenEd and the 360-unit graduation total are audited separately.</p>
             <small>${primary.message}</small>
         </article>
         <article class="degree-audit-card goal-audit-card">

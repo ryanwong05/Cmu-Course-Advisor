@@ -1,0 +1,255 @@
+{
+  "program_id": "behavioral-economics--b-s",
+  "planning_id": "behavioral-economics",
+  "name": "Behavioral Economics",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
+  "source_hash": "e0ad2cab4e1c69e08d92ae82290eb88eb4026bcdba2414e530f66f020b7674c7",
+  "fixed_courses": [
+    {
+      "id": "36-200",
+      "name": "Reasoning with Data",
+      "units": 9.0,
+      "source_text": "36-200 Reasoning with Data 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisites",
+      "name": "Prerequisites",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-111",
+        "21-112",
+        "21-120"
+      ],
+      "source_instruction": "All Behavioral Economics majors must complete mathematics and statistics prerequisites (see below), by the end of the sophomore year."
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-360",
+        "88-365",
+        "88-367"
+      ],
+      "source_instruction": "The core curriculum in Behavioral Economics consists of three Behavioral Economics courses, two Economic courses, two Psychology courses, three quantitative courses, and one project course. Some courses have additional prerequisites."
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104",
+        "88-221",
+        "88-338",
+        "73-103",
+        "73-155",
+        "73-230",
+        "73-328",
+        "73-347",
+        "73-359",
+        "73-408",
+        "73-421",
+        "73-427"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-120",
+        "88-130",
+        "88-302"
+      ],
+      "source_instruction": "* Second-Level Economics course CANNOT double count with the Economics Elective course."
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "36-202",
+        "88-251",
+        "88-252",
+        "73-274"
+      ],
+      "source_instruction": "* Students can elect to take 88-120 Reason, Passion and Cognition & 88-130 Behavioral Economics for Life OR 88-120 Reason, Passion and Cognition & 88-302 Behavioral Decision Making Behavioral Decision Making. PLEASE NOTE: Students who have completed 88-302 Behavioral Decision Making OR 88-360 Behavioral Economics cannot take 88-130 Behavioral Economics for Life ** 88-120 Should be taken in the first or sophomore year."
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-453"
+      ],
+      "source_instruction": "The Major in Behavioral Economics Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@andrew.cmu.edu Lizzy Stoyle, Senior Academic Advisor Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle https://www.cmu.edu/dietrich/sds/undergraduate/behavioral-economics/index.html Overview Behavioral economics has transformed how researchers, businesses, and governments understand human behavior. Rather than assuming that people always make rational decisions , behavioral economists discover how people actually think, choose, and respond to incentives, using scientific evidence to improve products, digital platforms, organizations, markets, and public policy. Today, behavioral economics is becoming central to how organizations understand and improve the decisions of customers, employees, investors, patients, and citizens. Carnegie Mellon offers the nation’s first bachelor’s degree in Behavioral Economics and one of the world’s most comprehensive undergraduate programs in the field. Students learn to think like behavioral economists. Guided by faculty whose research continues to advance behavioral economics, students develop the skills to conduct behavioral research themselves. They design laboratory and field experiments, analyze data, identify causal relationships, evaluate behavioral interventions, and communicate evidence-based recommendations for solving important real-world problems. The major combines rigorous scientific training with quantitative methods, experimental research, and extensive opportunities to apply behavioral economics through research and hands-on projects. Students learn to ask the questions behavioral economists ask, explain why people behave as they do, distinguish causation from correlation, rigorously evaluate competing explanations, and develop practical solutions to behavioral challenges facing organizations, markets, and public policy. The major culminates in a capstone project in which students work as behavioral economists to solve a real-world problem, integrating the scientific , analytical, and practical skills they have developed throughout the program. Organizations increasingly recognize that understanding human behavior is a competitive advantage, and demand for behavioral economists continues to grow. Graduates are well prepared for careers in behavioral science , consulting, product strategy, people analytics, finance, user research, public policy, and many other fields, as well as for graduate study in economics, business, psychology, and related disciplines. Prerequisites All Behavioral Economics majors must complete mathematics and statistics prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Curriculum Core Courses The core curriculum in Behavioral Economics consists of three Behavioral Economics courses, two Economic courses, two Psychology courses, three quantitative courses, and one project course. Some courses have additional prerequisites. Behavioral Economics Courses Units 88-360 Behavioral Economics 9 88-365 Behavioral Economics and Public Policy 9 88-367 Designing Economics Experiments in the Wild 9 27 Economics Courses Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course* 88-221 Markets, Democracy, and Public Policy 9 or 88-338 Market Design or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 * Second-Level Economics course CANNOT double count with the Economics Elective course. Psychology Courses* Units 88-120 Reason, Passion and Cognition ** 9 88-130 Behavioral Economics for Life 9 or 88-302 Behavioral Decision Making 18 * Students can elect to take 88-120 Reason, Passion and Cognition & 88-130 Behavioral Economics for Life OR 88-120 Reason, Passion and Cognition & 88-302 Behavioral Decision Making Behavioral Decision Making. PLEASE NOTE: Students who have completed 88-302 Behavioral Decision Making OR 88-360 Behavioral Economics cannot take 88-130 Behavioral Economics for Life ** 88-120 Should be taken in the first or sophomore year. Quantitative Methods Courses Units 36-202 Methods for Statistics & Data Science 9 88-251 Empirical Research Methods 9 88-252 Causal Inference: from Data to Decisions 9 or 73-274 Econometrics I 27"
+    },
+    {
+      "id": "electives-27-units",
+      "name": "Electives 27 units",
+      "choose": 13,
+      "units": 126,
+      "options": [
+        "88-323",
+        "88-324",
+        "88-338",
+        "88-344",
+        "73-103",
+        "73-155",
+        "73-230",
+        "73-328",
+        "73-347",
+        "73-359",
+        "73-408",
+        "73-421",
+        "73-427"
+      ],
+      "source_instruction": "Complete at least 27 units from the following categories. Students MUST take one elective from the Economics category, and another from the Behavioral Economics category. The third elective may be chosen from either the Behavioral Economics or Psychology categories. Note that not all elective courses are offered every year."
+    },
+    {
+      "id": "electives-27-units",
+      "name": "Electives 27 units",
+      "choose": 8,
+      "units": 72,
+      "options": [
+        "88-234",
+        "88-235",
+        "88-255",
+        "88-261",
+        "88-275",
+        "88-300",
+        "88-348",
+        "88-366"
+      ],
+      "source_instruction": "The Major in Behavioral Economics Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@andrew.cmu.edu Lizzy Stoyle, Senior Academic Advisor Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle https://www.cmu.edu/dietrich/sds/undergraduate/behavioral-economics/index.html Overview Behavioral economics has transformed how researchers, businesses, and governments understand human behavior. Rather than assuming that people always make rational decisions , behavioral economists discover how people actually think, choose, and respond to incentives, using scientific evidence to improve products, digital platforms, organizations, markets, and public policy. Today, behavioral economics is becoming central to how organizations understand and improve the decisions of customers, employees, investors, patients, and citizens. Carnegie Mellon offers the nation’s first bachelor’s degree in Behavioral Economics and one of the world’s most comprehensive undergraduate programs in the field. Students learn to think like behavioral economists. Guided by faculty whose research continues to advance behavioral economics, students develop the skills to conduct behavioral research themselves. They design laboratory and field experiments, analyze data, identify causal relationships, evaluate behavioral interventions, and communicate evidence-based recommendations for solving important real-world problems. The major combines rigorous scientific training with quantitative methods, experimental research, and extensive opportunities to apply behavioral economics through research and hands-on projects. Students learn to ask the questions behavioral economists ask, explain why people behave as they do, distinguish causation from correlation, rigorously evaluate competing explanations, and develop practical solutions to behavioral challenges facing organizations, markets, and public policy. The major culminates in a capstone project in which students work as behavioral economists to solve a real-world problem, integrating the scientific , analytical, and practical skills they have developed throughout the program. Organizations increasingly recognize that understanding human behavior is a competitive advantage, and demand for behavioral economists continues to grow. Graduates are well prepared for careers in behavioral science , consulting, product strategy, people analytics, finance, user research, public policy, and many other fields, as well as for graduate study in economics, business, psychology, and related disciplines. Prerequisites All Behavioral Economics majors must complete mathematics and statistics prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Curriculum Core Courses The core curriculum in Behavioral Economics consists of three Behavioral Economics courses, two Economic courses, two Psychology courses, three quantitative courses, and one project course. Some courses have additional prerequisites. Behavioral Economics Courses Units 88-360 Behavioral Economics 9 88-365 Behavioral Economics and Public Policy 9 88-367 Designing Economics Experiments in the Wild 9 27 Economics Courses Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course* 88-221 Markets, Democracy, and Public Policy 9 or 88-338 Market Design or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 * Second-Level Economics course CANNOT double count with the Economics Elective course. Psychology Courses* Units 88-120 Reason, Passion and Cognition ** 9 88-130 Behavioral Economics for Life 9 or 88-302 Behavioral Decision Making 18 * Students can elect to take 88-120 Reason, Passion and Cognition & 88-130 Behavioral Economics for Life OR 88-120 Reason, Passion and Cognition & 88-302 Behavioral Decision Making Behavioral Decision Making. PLEASE NOTE: Students who have completed 88-302 Behavioral Decision Making OR 88-360 Behavioral Economics cannot take 88-130 Behavioral Economics for Life ** 88-120 Should be taken in the first or sophomore year. Quantitative Methods Courses Units 36-202 Methods for Statistics & Data Science 9 88-251 Empirical Research Methods 9 88-252 Causal Inference: from Data to Decisions 9 or 73-274 Econometrics I 27 Senior Project Course Units 88-453 Behavioral Economics Capstone 9 9 Electives 27 units Complete at least 27 units from the following categories. Students MUST take one elective from the Economics category, and another from the Behavioral Economics category. The third elective may be chosen from either the Behavioral Economics or Psychology categories. Note that not all elective courses are offered every year. Economics* Units 88-323 & 88-324 Policy in a Global Economy 1: International Trade and Trade Policy and Policy in a Global Economy 2: International Trade and Trade Policy ** 12 88-338 Market Design 9 88-344 Systems Analysis: Environmental Policy 9 73-103 Principles of Macroeconomics 9 73-155 Models, Math, and Markets 9 73-230 Intermediate Microeconomics *** 9 73-328 Health Economics 12 73-347 Game Theory Applications for Economics and Business 9 73-359 Benefit-Cost Analysis 9 73-408 Law and Economics 9 73-421 Emerging Markets **** 9 73-427 Sustainability, Energy, and Environmental Economics 9 * ANY 73-3xx or 73-4xx courses be counted as an economic elective course. Consult the Academic Advisor for more information about this process. NOTE: The Economics Elective course CANNOT double count with the Second-Level Economics core requirement. ** 88-323 and 88-324 must BOTH be taken in order to fulfill the economics requirement. *** Requires additional Math beyond 21-112 or 21-120 . **** 73-421 has a required prerequisite of 73-103 Principles of Macroeconomics, which is NOT a course requirement for the BE major."
+    },
+    {
+      "id": "electives-27-units",
+      "name": "Electives 27 units",
+      "choose": 28,
+      "units": 255,
+      "options": [
+        "88-230",
+        "88-231",
+        "88-234",
+        "88-235",
+        "88-237",
+        "88-255",
+        "88-261",
+        "88-262",
+        "88-275",
+        "88-285",
+        "88-290",
+        "88-300",
+        "88-302",
+        "88-312",
+        "88-342",
+        "88-348",
+        "88-366",
+        "88-384",
+        "70-311",
+        "70-385",
+        "70-443",
+        "85-350",
+        "85-358",
+        "85-409",
+        "85-452",
+        "85-446",
+        "85-450",
+        "85-454"
+      ],
+      "source_instruction": "The Major in Behavioral Economics Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@andrew.cmu.edu Lizzy Stoyle, Senior Academic Advisor Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle https://www.cmu.edu/dietrich/sds/undergraduate/behavioral-economics/index.html Overview Behavioral economics has transformed how researchers, businesses, and governments understand human behavior. Rather than assuming that people always make rational decisions , behavioral economists discover how people actually think, choose, and respond to incentives, using scientific evidence to improve products, digital platforms, organizations, markets, and public policy. Today, behavioral economics is becoming central to how organizations understand and improve the decisions of customers, employees, investors, patients, and citizens. Carnegie Mellon offers the nation’s first bachelor’s degree in Behavioral Economics and one of the world’s most comprehensive undergraduate programs in the field. Students learn to think like behavioral economists. Guided by faculty whose research continues to advance behavioral economics, students develop the skills to conduct behavioral research themselves. They design laboratory and field experiments, analyze data, identify causal relationships, evaluate behavioral interventions, and communicate evidence-based recommendations for solving important real-world problems. The major combines rigorous scientific training with quantitative methods, experimental research, and extensive opportunities to apply behavioral economics through research and hands-on projects. Students learn to ask the questions behavioral economists ask, explain why people behave as they do, distinguish causation from correlation, rigorously evaluate competing explanations, and develop practical solutions to behavioral challenges facing organizations, markets, and public policy. The major culminates in a capstone project in which students work as behavioral economists to solve a real-world problem, integrating the scientific , analytical, and practical skills they have developed throughout the program. Organizations increasingly recognize that understanding human behavior is a competitive advantage, and demand for behavioral economists continues to grow. Graduates are well prepared for careers in behavioral science , consulting, product strategy, people analytics, finance, user research, public policy, and many other fields, as well as for graduate study in economics, business, psychology, and related disciplines. Prerequisites All Behavioral Economics majors must complete mathematics and statistics prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Curriculum Core Courses The core curriculum in Behavioral Economics consists of three Behavioral Economics courses, two Economic courses, two Psychology courses, three quantitative courses, and one project course. Some courses have additional prerequisites. Behavioral Economics Courses Units 88-360 Behavioral Economics 9 88-365 Behavioral Economics and Public Policy 9 88-367 Designing Economics Experiments in the Wild 9 27 Economics Courses Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course* 88-221 Markets, Democracy, and Public Policy 9 or 88-338 Market Design or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 * Second-Level Economics course CANNOT double count with the Economics Elective course. Psychology Courses* Units 88-120 Reason, Passion and Cognition ** 9 88-130 Behavioral Economics for Life 9 or 88-302 Behavioral Decision Making 18 * Students can elect to take 88-120 Reason, Passion and Cognition & 88-130 Behavioral Economics for Life OR 88-120 Reason, Passion and Cognition & 88-302 Behavioral Decision Making Behavioral Decision Making. PLEASE NOTE: Students who have completed 88-302 Behavioral Decision Making OR 88-360 Behavioral Economics cannot take 88-130 Behavioral Economics for Life ** 88-120 Should be taken in the first or sophomore year. Quantitative Methods Courses Units 36-202 Methods for Statistics & Data Science 9 88-251 Empirical Research Methods 9 88-252 Causal Inference: from Data to Decisions 9 or 73-274 Econometrics I 27 Senior Project Course Units 88-453 Behavioral Economics Capstone 9 9 Electives 27 units Complete at least 27 units from the following categories. Students MUST take one elective from the Economics category, and another from the Behavioral Economics category. The third elective may be chosen from either the Behavioral Economics or Psychology categories. Note that not all elective courses are offered every year. Economics* Units 88-323 & 88-324 Policy in a Global Economy 1: International Trade and Trade Policy and Policy in a Global Economy 2: International Trade and Trade Policy ** 12 88-338 Market Design 9 88-344 Systems Analysis: Environmental Policy 9 73-103 Principles of Macroeconomics 9 73-155 Models, Math, and Markets 9 73-230 Intermediate Microeconomics *** 9 73-328 Health Economics 12 73-347 Game Theory Applications for Economics and Business 9 73-359 Benefit-Cost Analysis 9 73-408 Law and Economics 9 73-421 Emerging Markets **** 9 73-427 Sustainability, Energy, and Environmental Economics 9 * ANY 73-3xx or 73-4xx courses be counted as an economic elective course. Consult the Academic Advisor for more information about this process. NOTE: The Economics Elective course CANNOT double count with the Second-Level Economics core requirement. ** 88-323 and 88-324 must BOTH be taken in order to fulfill the economics requirement. *** Requires additional Math beyond 21-112 or 21-120 . **** 73-421 has a required prerequisite of 73-103 Principles of Macroeconomics, which is NOT a course requirement for the BE major. Behavioral Economics Units 88-234 Negotiation: International Focus 9 88-235 Negotiation: Strategies and Behavioral Insights 9 88-255 Strategic Decision Making 9 88-261 Health Policy and Decision Making 9 88-275 Bubbles: Data Science for Human Minds 9 88-300 Programming and Data Analysis for Social Scientists 9 88-348 Behavioral Finance 9 88-366 Behavioral Economics of Poverty and Development 9"
+    },
+    {
+      "id": "behavioral-economics-b-s-sample-curriculum",
+      "name": "Behavioral Economics, B.S. Sample Curriculum",
+      "choose": 24,
+      "units": 216,
+      "options": [
+        "88-120",
+        "88-130",
+        "88-251",
+        "88-365",
+        "21-120",
+        "36-202",
+        "88-252",
+        "88-367",
+        "36-200",
+        "88-302",
+        "88-221",
+        "73-103",
+        "73-155",
+        "73-230",
+        "21-112",
+        "73-328",
+        "73-347",
+        "73-359",
+        "73-408",
+        "73-421",
+        "73-427",
+        "73-102",
+        "73-104",
+        "88-360"
+      ],
+      "source_instruction": "The Major in Behavioral Economics Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@andrew.cmu.edu Lizzy Stoyle, Senior Academic Advisor Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle https://www.cmu.edu/dietrich/sds/undergraduate/behavioral-economics/index.html Overview Behavioral economics has transformed how researchers, businesses, and governments understand human behavior. Rather than assuming that people always make rational decisions , behavioral economists discover how people actually think, choose, and respond to incentives, using scientific evidence to improve products, digital platforms, organizations, markets, and public policy. Today, behavioral economics is becoming central to how organizations understand and improve the decisions of customers, employees, investors, patients, and citizens. Carnegie Mellon offers the nation’s first bachelor’s degree in Behavioral Economics and one of the world’s most comprehensive undergraduate programs in the field. Students learn to think like behavioral economists. Guided by faculty whose research continues to advance behavioral economics, students develop the skills to conduct behavioral research themselves. They design laboratory and field experiments, analyze data, identify causal relationships, evaluate behavioral interventions, and communicate evidence-based recommendations for solving important real-world problems. The major combines rigorous scientific training with quantitative methods, experimental research, and extensive opportunities to apply behavioral economics through research and hands-on projects. Students learn to ask the questions behavioral economists ask, explain why people behave as they do, distinguish causation from correlation, rigorously evaluate competing explanations, and develop practical solutions to behavioral challenges facing organizations, markets, and public policy. The major culminates in a capstone project in which students work as behavioral economists to solve a real-world problem, integrating the scientific , analytical, and practical skills they have developed throughout the program. Organizations increasingly recognize that understanding human behavior is a competitive advantage, and demand for behavioral economists continues to grow. Graduates are well prepared for careers in behavioral science , consulting, product strategy, people analytics, finance, user research, public policy, and many other fields, as well as for graduate study in economics, business, psychology, and related disciplines. Prerequisites All Behavioral Economics majors must complete mathematics and statistics prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Curriculum Core Courses The core curriculum in Behavioral Economics consists of three Behavioral Economics courses, two Economic courses, two Psychology courses, three quantitative courses, and one project course. Some courses have additional prerequisites. Behavioral Economics Courses Units 88-360 Behavioral Economics 9 88-365 Behavioral Economics and Public Policy 9 88-367 Designing Economics Experiments in the Wild 9 27 Economics Courses Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course* 88-221 Markets, Democracy, and Public Policy 9 or 88-338 Market Design or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 * Second-Level Economics course CANNOT double count with the Economics Elective course. Psychology Courses* Units 88-120 Reason, Passion and Cognition ** 9 88-130 Behavioral Economics for Life 9 or 88-302 Behavioral Decision Making 18 * Students can elect to take 88-120 Reason, Passion and Cognition & 88-130 Behavioral Economics for Life OR 88-120 Reason, Passion and Cognition & 88-302 Behavioral Decision Making Behavioral Decision Making. PLEASE NOTE: Students who have completed 88-302 Behavioral Decision Making OR 88-360 Behavioral Economics cannot take 88-130 Behavioral Economics for Life ** 88-120 Should be taken in the first or sophomore year. Quantitative Methods Courses Units 36-202 Methods for Statistics & Data Science 9 88-251 Empirical Research Methods 9 88-252 Causal Inference: from Data to Decisions 9 or 73-274 Econometrics I 27 Senior Project Course Units 88-453 Behavioral Economics Capstone 9 9 Electives 27 units Complete at least 27 units from the following categories. Students MUST take one elective from the Economics category, and another from the Behavioral Economics category. The third elective may be chosen from either the Behavioral Economics or Psychology categories. Note that not all elective courses are offered every year. Economics* Units 88-323 & 88-324 Policy in a Global Economy 1: International Trade and Trade Policy and Policy in a Global Economy 2: International Trade and Trade Policy ** 12 88-338 Market Design 9 88-344 Systems Analysis: Environmental Policy 9 73-103 Principles of Macroeconomics 9 73-155 Models, Math, and Markets 9 73-230 Intermediate Microeconomics *** 9 73-328 Health Economics 12 73-347 Game Theory Applications for Economics and Business 9 73-359 Benefit-Cost Analysis 9 73-408 Law and Economics 9 73-421 Emerging Markets **** 9 73-427 Sustainability, Energy, and Environmental Economics 9 * ANY 73-3xx or 73-4xx courses be counted as an economic elective course. Consult the Academic Advisor for more information about this process. NOTE: The Economics Elective course CANNOT double count with the Second-Level Economics core requirement. ** 88-323 and 88-324 must BOTH be taken in order to fulfill the economics requirement. *** Requires additional Math beyond 21-112 or 21-120 . **** 73-421 has a required prerequisite of 73-103 Principles of Macroeconomics, which is NOT a course requirement for the BE major. Behavioral Economics Units 88-234 Negotiation: International Focus 9 88-235 Negotiation: Strategies and Behavioral Insights 9 88-255 Strategic Decision Making 9 88-261 Health Policy and Decision Making 9 88-275 Bubbles: Data Science for Human Minds 9 88-300 Programming and Data Analysis for Social Scientists 9 88-348 Behavioral Finance 9 88-366 Behavioral Economics of Poverty and Development 9 Psychology Units 88-230 Human Intelligence and Human Stupidity 9 88-231 Thinking in Person vs. Thinking Online 9 88-234 Negotiation: International Focus 9 88-235 Negotiation: Strategies and Behavioral Insights 9 88-237 The Happy Cyborg 9 88-255 Strategic Decision Making 9 88-261 Health Policy and Decision Making 9 88-262 Rationality and Irrationality in Medicine 9 88-275 Bubbles: Data Science for Human Minds 9 88-285 Deconstructing and Dismantling Discrimination 9 88-290 Confessions, Lies, and Gossip 9 88-300 Programming and Data Analysis for Social Scientists 9 88-302 Behavioral Decision Making 9 88-312 Decision Models and Games 9 88-342 The Neuroscience of Decision Making 9 88-348 Behavioral Finance 9 88-366 Behavioral Economics of Poverty and Development 9 88-384 Underappreciated Ideas in the Social Sciences 9 70-311 Organizational Behavior 9 70-385 Consumer Behavior * 9 70-443 Digital Marketing and Social Media Strategy 9 85-350 Social Research Methods 12 85-358 Pro-Social Behavior 9 85-409 Crosscultural 9 85-452 Attitudes and Persuasion 9 85-446 Psychology of Gender 9 85-450 Psychology of Prejudice 9 85-454 Health Psychology 9 * 70-385 has a required prerequisite of 70-381 Marketing 1, which is NOT a course requirement for the BE major. Behavioral Economics, B.S. Sample Curriculum"
+    },
+    {
+      "id": "behavioral-economics-b-s-sample-curriculum",
+      "name": "Behavioral Economics, B.S. Sample Curriculum",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-453"
+      ],
+      "source_instruction": "The Major in Behavioral Economics Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@andrew.cmu.edu Lizzy Stoyle, Senior Academic Advisor Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle https://www.cmu.edu/dietrich/sds/undergraduate/behavioral-economics/index.html Overview Behavioral economics has transformed how researchers, businesses, and governments understand human behavior. Rather than assuming that people always make rational decisions , behavioral economists discover how people actually think, choose, and respond to incentives, using scientific evidence to improve products, digital platforms, organizations, markets, and public policy. Today, behavioral economics is becoming central to how organizations understand and improve the decisions of customers, employees, investors, patients, and citizens. Carnegie Mellon offers the nation’s first bachelor’s degree in Behavioral Economics and one of the world’s most comprehensive undergraduate programs in the field. Students learn to think like behavioral economists. Guided by faculty whose research continues to advance behavioral economics, students develop the skills to conduct behavioral research themselves. They design laboratory and field experiments, analyze data, identify causal relationships, evaluate behavioral interventions, and communicate evidence-based recommendations for solving important real-world problems. The major combines rigorous scientific training with quantitative methods, experimental research, and extensive opportunities to apply behavioral economics through research and hands-on projects. Students learn to ask the questions behavioral economists ask, explain why people behave as they do, distinguish causation from correlation, rigorously evaluate competing explanations, and develop practical solutions to behavioral challenges facing organizations, markets, and public policy. The major culminates in a capstone project in which students work as behavioral economists to solve a real-world problem, integrating the scientific , analytical, and practical skills they have developed throughout the program. Organizations increasingly recognize that understanding human behavior is a competitive advantage, and demand for behavioral economists continues to grow. Graduates are well prepared for careers in behavioral science , consulting, product strategy, people analytics, finance, user research, public policy, and many other fields, as well as for graduate study in economics, business, psychology, and related disciplines. Prerequisites All Behavioral Economics majors must complete mathematics and statistics prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Curriculum Core Courses The core curriculum in Behavioral Economics consists of three Behavioral Economics courses, two Economic courses, two Psychology courses, three quantitative courses, and one project course. Some courses have additional prerequisites. Behavioral Economics Courses Units 88-360 Behavioral Economics 9 88-365 Behavioral Economics and Public Policy 9 88-367 Designing Economics Experiments in the Wild 9 27 Economics Courses Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course* 88-221 Markets, Democracy, and Public Policy 9 or 88-338 Market Design or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 * Second-Level Economics course CANNOT double count with the Economics Elective course. Psychology Courses* Units 88-120 Reason, Passion and Cognition ** 9 88-130 Behavioral Economics for Life 9 or 88-302 Behavioral Decision Making 18 * Students can elect to take 88-120 Reason, Passion and Cognition & 88-130 Behavioral Economics for Life OR 88-120 Reason, Passion and Cognition & 88-302 Behavioral Decision Making Behavioral Decision Making. PLEASE NOTE: Students who have completed 88-302 Behavioral Decision Making OR 88-360 Behavioral Economics cannot take 88-130 Behavioral Economics for Life ** 88-120 Should be taken in the first or sophomore year. Quantitative Methods Courses Units 36-202 Methods for Statistics & Data Science 9 88-251 Empirical Research Methods 9 88-252 Causal Inference: from Data to Decisions 9 or 73-274 Econometrics I 27 Senior Project Course Units 88-453 Behavioral Economics Capstone 9 9 Electives 27 units Complete at least 27 units from the following categories. Students MUST take one elective from the Economics category, and another from the Behavioral Economics category. The third elective may be chosen from either the Behavioral Economics or Psychology categories. Note that not all elective courses are offered every year. Economics* Units 88-323 & 88-324 Policy in a Global Economy 1: International Trade and Trade Policy and Policy in a Global Economy 2: International Trade and Trade Policy ** 12 88-338 Market Design 9 88-344 Systems Analysis: Environmental Policy 9 73-103 Principles of Macroeconomics 9 73-155 Models, Math, and Markets 9 73-230 Intermediate Microeconomics *** 9 73-328 Health Economics 12 73-347 Game Theory Applications for Economics and Business 9 73-359 Benefit-Cost Analysis 9 73-408 Law and Economics 9 73-421 Emerging Markets **** 9 73-427 Sustainability, Energy, and Environmental Economics 9 * ANY 73-3xx or 73-4xx courses be counted as an economic elective course. Consult the Academic Advisor for more information about this process. NOTE: The Economics Elective course CANNOT double count with the Second-Level Economics core requirement. ** 88-323 and 88-324 must BOTH be taken in order to fulfill the economics requirement. *** Requires additional Math beyond 21-112 or 21-120 . **** 73-421 has a required prerequisite of 73-103 Principles of Macroeconomics, which is NOT a course requirement for the BE major. Behavioral Economics Units 88-234 Negotiation: International Focus 9 88-235 Negotiation: Strategies and Behavioral Insights 9 88-255 Strategic Decision Making 9 88-261 Health Policy and Decision Making 9 88-275 Bubbles: Data Science for Human Minds 9 88-300 Programming and Data Analysis for Social Scientists 9 88-348 Behavioral Finance 9 88-366 Behavioral Economics of Poverty and Development 9 Psychology Units 88-230 Human Intelligence and Human Stupidity 9 88-231 Thinking in Person vs. Thinking Online 9 88-234 Negotiation: International Focus 9 88-235 Negotiation: Strategies and Behavioral Insights 9 88-237 The Happy Cyborg 9 88-255 Strategic Decision Making 9 88-261 Health Policy and Decision Making 9 88-262 Rationality and Irrationality in Medicine 9 88-275 Bubbles: Data Science for Human Minds 9 88-285 Deconstructing and Dismantling Discrimination 9 88-290 Confessions, Lies, and Gossip 9 88-300 Programming and Data Analysis for Social Scientists 9 88-302 Behavioral Decision Making 9 88-312 Decision Models and Games 9 88-342 The Neuroscience of Decision Making 9 88-348 Behavioral Finance 9 88-366 Behavioral Economics of Poverty and Development 9 88-384 Underappreciated Ideas in the Social Sciences 9 70-311 Organizational Behavior 9 70-385 Consumer Behavior * 9 70-443 Digital Marketing and Social Media Strategy 9 85-350 Social Research Methods 12 85-358 Pro-Social Behavior 9 85-409 Crosscultural 9 85-452 Attitudes and Persuasion 9 85-446 Psychology of Gender 9 85-450 Psychology of Prejudice 9 85-454 Health Psychology 9 * 70-385 has a required prerequisite of 70-381 Marketing 1, which is NOT a course requirement for the BE major. Behavioral Economics, B.S. Sample Curriculum First-Year Second-Year Fall Spring Fall Spring 88-120 Reason, Passion and Cognition* or 88-130 Behavioral Economics for Life 88-120 Reason, Passion and Cognition (if not taken in fall) 88-251 Empirical Research Methods 88-365 Behavioral Economics and Public Policy 21-120 Differential and Integral Calculus 36-202 Methods for Statistics & Data Science 88-252 Causal Inference: from Data to Decisions 88-367 Designing Economics Experiments in the Wild 36-200 Reasoning with Data Pick One (Grand Challenge Seminar, First Year Writing, Disciplinary Perspectives: Humanities) 88-302 Behavioral Decision Making or 88-130 Behavioral Economics for Life Second-Level Economics Course Pick One (88-221, 73-103, 73-155, 73-230 (requires Math beyond 21-112/21-120), 73-328, 73-347, 73-359, 73-408, 73-421, 73-427) 73-102 Principles of Microeconomics Or 73-104 Principles of Microeconomics Accelerated Pick One (Grand Challenge Seminar, First Year Writing, Disciplinary Perspectives: Humanities) 88-360 Behavioral Economics Behavioral Economics Elective Pick One (Grand Challenge Seminar, First Year Writing, Disciplinary Perspectives: Humanities) Gen Ed or Elective Gen Ed or Elective Gen Ed or Elective"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 12,
+    "course_references": 102,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Prerequisites",
+      "Assumed choose-one for ambiguous section: Core Courses",
+      "Assumed choose-one for ambiguous section: Core Courses",
+      "Assumed choose-one for ambiguous section: Core Courses"
+    ],
+    "explicit_group_ratio": 0.64
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (768 units).",
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 58,
+    "extracted_unit_estimate": 768,
+    "scheduled_course_count": 50,
+    "missing_schedule_course_ids": [
+      "73-427",
+      "85-358",
+      "85-446",
+      "85-454",
+      "88-275",
+      "88-290",
+      "88-338",
+      "88-366"
+    ]
+  }
+}

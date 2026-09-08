@@ -1,0 +1,625 @@
+{
+  "program_id": "economics-and-politics--b-s",
+  "planning_id": "economics-and-politics",
+  "name": "Economics and Politics",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/",
+  "source_hash": "facd9fd8f1e8735870d1f747f594dd072c20122480be949f5951ca15ece99ced",
+  "fixed_courses": [
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    },
+    {
+      "id": "21-112",
+      "name": "Integral Calculus",
+      "units": null,
+      "source_text": "or 21-112 Integral Calculus"
+    },
+    {
+      "id": "21-256",
+      "name": "Multivariate Analysis",
+      "units": 9.0,
+      "source_text": "21-256 Multivariate Analysis 9"
+    },
+    {
+      "id": "21-259",
+      "name": "Calculus in Three Dimensions",
+      "units": null,
+      "source_text": "or 21-259 Calculus in Three Dimensions"
+    },
+    {
+      "id": "73-102",
+      "name": "Principles of Microeconomics *",
+      "units": 9.0,
+      "source_text": "73-102 Principles of Microeconomics * 9"
+    },
+    {
+      "id": "73-104",
+      "name": "Principles of Microeconomics Accelerated",
+      "units": null,
+      "source_text": "or 73-104 Principles of Microeconomics Accelerated"
+    },
+    {
+      "id": "73-103",
+      "name": "Principles of Macroeconomics",
+      "units": 9.0,
+      "source_text": "73-103 Principles of Macroeconomics 9"
+    },
+    {
+      "id": "73-230",
+      "name": "Intermediate Microeconomics",
+      "units": 9.0,
+      "source_text": "73-230 Intermediate Microeconomics 9"
+    },
+    {
+      "id": "73-240",
+      "name": "Intermediate Macroeconomics",
+      "units": 9.0,
+      "source_text": "73-240 Intermediate Macroeconomics 9"
+    },
+    {
+      "id": "73-265",
+      "name": "Economics and Data Science",
+      "units": 9.0,
+      "source_text": "73-265 Economics and Data Science 9"
+    },
+    {
+      "id": "73-274",
+      "name": "Econometrics I",
+      "units": 9.0,
+      "source_text": "73-274 Econometrics I 9"
+    },
+    {
+      "id": "84-101",
+      "name": "Introduction to Political Science",
+      "units": 9.0,
+      "source_text": "84-101 Introduction to Political Science 9"
+    },
+    {
+      "id": "84-250",
+      "name": "Writing for Political Science and Policy",
+      "units": 9.0,
+      "source_text": "84-250 Writing for Political Science and Policy 9"
+    },
+    {
+      "id": "84-266",
+      "name": "Research Design for Political Science",
+      "units": 9.0,
+      "source_text": "84-266 Research Design for Political Science 9"
+    },
+    {
+      "id": "84-310",
+      "name": "Policy in a Global Economy 1: International Trade and Trade Policy",
+      "units": 6.0,
+      "source_text": "84-310 Policy in a Global Economy 1: International Trade and Trade Policy 6"
+    },
+    {
+      "id": "84-311",
+      "name": "Policy in a Global Economy 2: International Macroeconomics and Finance",
+      "units": 6.0,
+      "source_text": "84-311 Policy in a Global Economy 2: International Macroeconomics and Finance 6"
+    },
+    {
+      "id": "84-120",
+      "name": "Introduction to US Constitutional Law",
+      "units": 9.0,
+      "source_text": "84-120 Introduction to US Constitutional Law 9"
+    },
+    {
+      "id": "84-200",
+      "name": "Security War Game Simulation",
+      "units": 3.0,
+      "source_text": "84-200 Security War Game Simulation 3"
+    },
+    {
+      "id": "84-252",
+      "name": "Briefing in the Policy World",
+      "units": 6.0,
+      "source_text": "84-252 Briefing in the Policy World 6"
+    },
+    {
+      "id": "84-274",
+      "name": "An Introduction to Technology and War",
+      "units": 9.0,
+      "source_text": "84-274 An Introduction to Technology and War 9"
+    },
+    {
+      "id": "84-280",
+      "name": "Popcorn and Politics: American Foreign Policy at the Movies",
+      "units": 12.0,
+      "source_text": "84-280 Popcorn and Politics: American Foreign Policy at the Movies 12"
+    },
+    {
+      "id": "84-285",
+      "name": "Introduction to Legal Education and the Legal Profession",
+      "units": 9.0,
+      "source_text": "84-285 Introduction to Legal Education and the Legal Profession 9"
+    },
+    {
+      "id": "84-301",
+      "name": "Policy & Persuasion",
+      "units": 6.0,
+      "source_text": "84-301 Policy & Persuasion 6"
+    },
+    {
+      "id": "84-303",
+      "name": "International Human Rights",
+      "units": 6.0,
+      "source_text": "84-303 International Human Rights 6"
+    },
+    {
+      "id": "84-304",
+      "name": "Analysis of Current US National Security Priorities",
+      "units": 6.0,
+      "source_text": "84-304 Analysis of Current US National Security Priorities 6"
+    },
+    {
+      "id": "84-306",
+      "name": "Latin American Politics",
+      "units": 9.0,
+      "source_text": "84-306 Latin American Politics 9"
+    },
+    {
+      "id": "84-309",
+      "name": "American Political Divides and Great Debates",
+      "units": 9.0,
+      "source_text": "84-309 American Political Divides and Great Debates 9"
+    },
+    {
+      "id": "84-312",
+      "name": "Terrorism in Sub-Saharan Africa",
+      "units": 6.0,
+      "source_text": "84-312 Terrorism in Sub-Saharan Africa 6"
+    },
+    {
+      "id": "84-314",
+      "name": "Politics, Technological Change, and Economic Growth",
+      "units": 9.0,
+      "source_text": "84-314 Politics, Technological Change, and Economic Growth 9"
+    },
+    {
+      "id": "84-315",
+      "name": "Rise of the Asian Economies",
+      "units": 9.0,
+      "source_text": "84-315 Rise of the Asian Economies 9"
+    },
+    {
+      "id": "84-319",
+      "name": "Civil-Military Relations",
+      "units": 9.0,
+      "source_text": "84-319 Civil-Military Relations 9"
+    },
+    {
+      "id": "84-322",
+      "name": "Nonviolent Conflict and Revolution",
+      "units": 9.0,
+      "source_text": "84-322 Nonviolent Conflict and Revolution 9"
+    },
+    {
+      "id": "84-323",
+      "name": "War and Peace in the Contemporary Middle East",
+      "units": 9.0,
+      "source_text": "84-323 War and Peace in the Contemporary Middle East 9"
+    },
+    {
+      "id": "84-324",
+      "name": "The Future of Democracy",
+      "units": 9.0,
+      "source_text": "84-324 The Future of Democracy 9"
+    },
+    {
+      "id": "84-325",
+      "name": "Contemporary American Foreign Policy",
+      "units": 9.0,
+      "source_text": "84-325 Contemporary American Foreign Policy 9"
+    },
+    {
+      "id": "84-327",
+      "name": "Who Really Runs America?: Subnational Governance and Policymaking",
+      "units": 9.0,
+      "source_text": "84-327 Who Really Runs America?: Subnational Governance and Policymaking 9"
+    },
+    {
+      "id": "84-328",
+      "name": "Military Strategy and Doctrine",
+      "units": 9.0,
+      "source_text": "84-328 Military Strategy and Doctrine 9"
+    },
+    {
+      "id": "84-329",
+      "name": "Asian Strategies",
+      "units": 6.0,
+      "source_text": "84-329 Asian Strategies 6"
+    },
+    {
+      "id": "84-330",
+      "name": "Race for the Future: US-China Tech Competition",
+      "units": 6.0,
+      "source_text": "84-330 Race for the Future: US-China Tech Competition 6"
+    },
+    {
+      "id": "84-331",
+      "name": "Technology, Law, and Democracy",
+      "units": 6.0,
+      "source_text": "84-331 Technology, Law, and Democracy 6"
+    },
+    {
+      "id": "84-332",
+      "name": "Contemporary US Constitutional Law Issues Taught in Washington, DC, through CMU/WSP",
+      "units": 6.0,
+      "source_text": "84-332 Contemporary US Constitutional Law Issues Taught in Washington, DC, through CMU/WSP 6"
+    },
+    {
+      "id": "84-333",
+      "name": "Law of US Democracy",
+      "units": 9.0,
+      "source_text": "84-333 Law of US Democracy 9"
+    },
+    {
+      "id": "84-338",
+      "name": "Analysis of US Presidential Powers Taught in Washington, DC, through CMU/WSP",
+      "units": 6.0,
+      "source_text": "84-338 Analysis of US Presidential Powers Taught in Washington, DC, through CMU/WSP 6"
+    },
+    {
+      "id": "84-341",
+      "name": "Transnational Criminal Networks & International Security",
+      "units": 6.0,
+      "source_text": "84-341 Transnational Criminal Networks & International Security 6"
+    },
+    {
+      "id": "84-343",
+      "name": "Offensive Cyber: Law & Policy",
+      "units": 6.0,
+      "source_text": "84-343 Offensive Cyber: Law & Policy 6"
+    },
+    {
+      "id": "84-345",
+      "name": "Hackers, the Law, & Policy Responses",
+      "units": 6.0,
+      "source_text": "84-345 Hackers, the Law, & Policy Responses 6"
+    },
+    {
+      "id": "84-347",
+      "name": "Congress & National Security",
+      "units": 9.0,
+      "source_text": "84-347 Congress & National Security 9"
+    },
+    {
+      "id": "84-349",
+      "name": "Digital Diplomacy: Cybersecurity Challenges and Global Governance",
+      "units": 9.0,
+      "source_text": "84-349 Digital Diplomacy: Cybersecurity Challenges and Global Governance 9"
+    },
+    {
+      "id": "84-350",
+      "name": "A Strategist's Introduction to Artificial Intelligence",
+      "units": 9.0,
+      "source_text": "84-350 A Strategist's Introduction to Artificial Intelligence 9"
+    },
+    {
+      "id": "84-352",
+      "name": "Representation and Voting Rights",
+      "units": 9.0,
+      "source_text": "84-352 Representation and Voting Rights 9"
+    },
+    {
+      "id": "84-353",
+      "name": "US-China Strategic Stability",
+      "units": 6.0,
+      "source_text": "84-353 US-China Strategic Stability 6"
+    },
+    {
+      "id": "84-355",
+      "name": "Democracy's Data: Analytics and Insights into American Elections",
+      "units": 9.0,
+      "source_text": "84-355 Democracy's Data: Analytics and Insights into American Elections 9"
+    },
+    {
+      "id": "84-356",
+      "name": "Applied Political Data Analytics",
+      "units": 9.0,
+      "source_text": "84-356 Applied Political Data Analytics 9"
+    },
+    {
+      "id": "84-358",
+      "name": "Money, Connections, and Power: Interests and Influence in the US",
+      "units": 9.0,
+      "source_text": "84-358 Money, Connections, and Power: Interests and Influence in the US 9"
+    },
+    {
+      "id": "84-360",
+      "name": "CMU/WSP Internship Seminar Taught in Washington, DC, through CMU/WSP",
+      "units": 24.0,
+      "source_text": "84-360 CMU/WSP Internship Seminar Taught in Washington, DC, through CMU/WSP 24"
+    },
+    {
+      "id": "84-362",
+      "name": "Diplomacy and Statecraft",
+      "units": 9.0,
+      "source_text": "84-362 Diplomacy and Statecraft 9"
+    },
+    {
+      "id": "84-363",
+      "name": "Click. Hack. Rule: Understanding the Power & Peril of Cyber Conflict",
+      "units": 9.0,
+      "source_text": "84-363 Click. Hack. Rule: Understanding the Power & Peril of Cyber Conflict 9"
+    },
+    {
+      "id": "84-365",
+      "name": "The Politics of Fake News and Misinformation",
+      "units": 9.0,
+      "source_text": "84-365 The Politics of Fake News and Misinformation 9"
+    },
+    {
+      "id": "84-366",
+      "name": "The 21st-Century Presidency: Expanding Powers, New Challenges",
+      "units": 9.0,
+      "source_text": "84-366 The 21st-Century Presidency: Expanding Powers, New Challenges 9"
+    },
+    {
+      "id": "84-367",
+      "name": "The Politics of Antisemitism",
+      "units": 9.0,
+      "source_text": "84-367 The Politics of Antisemitism 9"
+    },
+    {
+      "id": "84-368",
+      "name": "Technology Ethics",
+      "units": 9.0,
+      "source_text": "84-368 Technology Ethics 9"
+    },
+    {
+      "id": "84-369",
+      "name": "Decision Science for International Relations",
+      "units": 9.0,
+      "source_text": "84-369 Decision Science for International Relations 9"
+    },
+    {
+      "id": "84-370",
+      "name": "Nuclear Security & Arms Control",
+      "units": 9.0,
+      "source_text": "84-370 Nuclear Security & Arms Control 9"
+    },
+    {
+      "id": "84-371",
+      "name": "International Governance of Artificial Intelligence",
+      "units": 9.0,
+      "source_text": "84-371 International Governance of Artificial Intelligence 9"
+    },
+    {
+      "id": "84-373",
+      "name": "International Law",
+      "units": 9.0,
+      "source_text": "84-373 International Law 9"
+    },
+    {
+      "id": "84-375",
+      "name": "Geopolitics of Innovation",
+      "units": 9.0,
+      "source_text": "84-375 Geopolitics of Innovation 9"
+    },
+    {
+      "id": "84-380",
+      "name": "US Grand Strategy",
+      "units": 9.0,
+      "source_text": "84-380 US Grand Strategy 9"
+    },
+    {
+      "id": "84-383",
+      "name": "National Cyber Policy & Strategy",
+      "units": 6.0,
+      "source_text": "84-383 National Cyber Policy & Strategy 6"
+    },
+    {
+      "id": "84-386",
+      "name": "The Privatization of Force",
+      "units": 9.0,
+      "source_text": "84-386 The Privatization of Force 9"
+    },
+    {
+      "id": "84-387",
+      "name": "Remote Systems and the Cyber Domain in Conflict",
+      "units": 9.0,
+      "source_text": "84-387 Remote Systems and the Cyber Domain in Conflict 9"
+    },
+    {
+      "id": "84-389",
+      "name": "Terrorism and Insurgency",
+      "units": 9.0,
+      "source_text": "84-389 Terrorism and Insurgency 9"
+    },
+    {
+      "id": "84-393",
+      "name": "The US Congress: Legislative Progress or Paralysis?",
+      "units": 9.0,
+      "source_text": "84-393 The US Congress: Legislative Progress or Paralysis? 9"
+    },
+    {
+      "id": "84-402",
+      "name": "Judicial Politics and Behavior",
+      "units": 9.0,
+      "source_text": "84-402 Judicial Politics and Behavior 9"
+    },
+    {
+      "id": "84-405",
+      "name": "The Future of Warfare",
+      "units": 9.0,
+      "source_text": "84-405 The Future of Warfare 9"
+    },
+    {
+      "id": "19-411",
+      "name": "Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech",
+      "units": 9.0,
+      "source_text": "19-411 Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech 9"
+    },
+    {
+      "id": "70-365",
+      "name": "International Trade and International Law",
+      "units": 9.0,
+      "source_text": "70-365 International Trade and International Law 9"
+    },
+    {
+      "id": "70-430",
+      "name": "International Management",
+      "units": 9.0,
+      "source_text": "70-430 International Management 9"
+    },
+    {
+      "id": "79-280",
+      "name": "Coffee and Capitalism",
+      "units": 9.0,
+      "source_text": "79-280 Coffee and Capitalism 9"
+    },
+    {
+      "id": "79-318",
+      "name": "Sustainable Social Change: History and Practice",
+      "units": 9.0,
+      "source_text": "79-318 Sustainable Social Change: History and Practice 9"
+    },
+    {
+      "id": "80-135",
+      "name": "Introduction to Political Philosophy",
+      "units": 9.0,
+      "source_text": "80-135 Introduction to Political Philosophy 9"
+    },
+    {
+      "id": "80-136",
+      "name": "Social Structure, Public Policy & Ethics",
+      "units": 9.0,
+      "source_text": "80-136 Social Structure, Public Policy & Ethics 9"
+    },
+    {
+      "id": "80-335",
+      "name": "Social and Political Philosophy",
+      "units": 9.0,
+      "source_text": "80-335 Social and Political Philosophy 9"
+    },
+    {
+      "id": "80-348",
+      "name": "Health, Human Rights, and International Development",
+      "units": 9.0,
+      "source_text": "80-348 Health, Human Rights, and International Development 9"
+    },
+    {
+      "id": "80-447",
+      "name": "Seminar in Global Justice",
+      "units": 9.0,
+      "source_text": "80-447 Seminar in Global Justice 9"
+    },
+    {
+      "id": "88-365",
+      "name": "Behavioral Economics and Public Policy",
+      "units": 9.0,
+      "source_text": "88-365 Behavioral Economics and Public Policy 9"
+    },
+    {
+      "id": "88-366",
+      "name": "Behavioral Economics of Poverty and Development",
+      "units": 9.0,
+      "source_text": "88-366 Behavioral Economics of Poverty and Development 9"
+    },
+    {
+      "id": "88-367",
+      "name": "Designing Economics Experiments in the Wild",
+      "units": 9.0,
+      "source_text": "88-367 Designing Economics Experiments in the Wild 9"
+    },
+    {
+      "id": "73-497",
+      "name": "Senior Project or Senior Honors Thesis in Dietrich or Tepper (18 units total)",
+      "units": 12.0,
+      "source_text": "73-497 Senior Project or Senior Honors Thesis in Dietrich or Tepper (18 units total) 12"
+    },
+    {
+      "id": "84-500",
+      "name": "Senior Seminar",
+      "units": 9.0,
+      "source_text": "84-500 Senior Seminar 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "political-science-core-57-units",
+      "name": "Political Science Core 57 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "84-104",
+        "84-226",
+        "84-275"
+      ],
+      "source_instruction": "Students must complete two of the following three courses. If all three are taken, the third can count as an elective."
+    },
+    {
+      "id": "electives-27-units",
+      "name": "Electives 27 units",
+      "choose": 13,
+      "units": 120,
+      "options": [
+        "73-328",
+        "73-332",
+        "73-338",
+        "73-347",
+        "73-348",
+        "73-352",
+        "73-353",
+        "73-365",
+        "73-366",
+        "73-367",
+        "73-408",
+        "73-421",
+        "73-427"
+      ],
+      "source_instruction": "Majors are required to take 27 units (usually three courses) from the elective lists below. At least 9 units (typically one course) must be taken from Economics (73-xxx) and at least 9 units (typically one course) must be taken from the Carnegie Mellon Institute for Strategy and Technology (84-xxx). Students may complete electives through coursework in the Carnegie Mellon University Washington Semester Program (CMU/WSP) ."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 105,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Implausibly large extracted curriculum; likely schedule/table contamination.",
+      "Extracted requirement total is implausible (877 units)."
+    ],
+    "warnings": [
+      "21 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 105,
+    "extracted_unit_estimate": 877,
+    "scheduled_course_count": 84,
+    "missing_schedule_course_ids": [
+      "19-411",
+      "70-365",
+      "70-430",
+      "73-338",
+      "73-353",
+      "73-365",
+      "73-427",
+      "79-318",
+      "80-136",
+      "84-200",
+      "84-280",
+      "84-303",
+      "84-324",
+      "84-331",
+      "84-333",
+      "84-349",
+      "84-367",
+      "84-386",
+      "84-402",
+      "84-500",
+      "88-366"
+    ]
+  }
+}

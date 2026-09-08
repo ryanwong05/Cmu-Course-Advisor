@@ -1,0 +1,200 @@
+{
+  "program_id": "information-systems--b-s",
+  "planning_id": "information-systems",
+  "name": "Information Systems",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-bs/",
+  "source_hash": "ea6a28f5fe986cbf0f7656f801c1cf1e33941a2c06493f9258343f06ae3a5a25",
+  "fixed_courses": [
+    {
+      "id": "67-100",
+      "name": "Information Systems First Year Colloquium",
+      "units": 1.0,
+      "source_text": "67-100 Information Systems First Year Colloquium 1"
+    },
+    {
+      "id": "67-200",
+      "name": "Information Systems Research Colloquium",
+      "units": 1.0,
+      "source_text": "67-200 Information Systems Research Colloquium 1"
+    },
+    {
+      "id": "67-250",
+      "name": "The Information Systems Milieux (Spring Semester Only)",
+      "units": 9.0,
+      "source_text": "67-250 The Information Systems Milieux (Spring Semester Only) 9"
+    },
+    {
+      "id": "67-262",
+      "name": "Database Design and Development (Fall Semester Only)",
+      "units": 9.0,
+      "source_text": "67-262 Database Design and Development (Fall Semester Only) 9"
+    },
+    {
+      "id": "67-272",
+      "name": "Application Design and Development (Spring Semester Only)",
+      "units": 12.0,
+      "source_text": "67-272 Application Design and Development (Spring Semester Only) 12"
+    },
+    {
+      "id": "67-373",
+      "name": "Information Systems Consulting Project (Spring Semester Only)",
+      "units": 12.0,
+      "source_text": "67-373 Information Systems Consulting Project (Spring Semester Only) 12"
+    },
+    {
+      "id": "17-313",
+      "name": "Foundations of Software Engineering",
+      "units": 12.0,
+      "source_text": "17-313 Foundations of Software Engineering 12"
+    },
+    {
+      "id": "95-422",
+      "name": "Managing Digital Transformation",
+      "units": 9.0,
+      "source_text": "95-422 Managing Digital Transformation 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-112",
+        "21-111",
+        "21-120",
+        "21-090",
+        "21-127",
+        "21-240",
+        "80-210"
+      ],
+      "source_instruction": "Complete one (1) of the following math courses:"
+    },
+    {
+      "id": "computer-science",
+      "name": "Computer Science",
+      "choose": 4,
+      "units": 43,
+      "options": [
+        "15-110",
+        "15-112",
+        "02-120",
+        "15-121"
+      ],
+      "source_instruction": "Three Computer Science courses are required. To maintain normal progress toward the Information Systems degree, students must complete 15-121 Introduction to Data Structures prior to the start of Spring Semester, second-year. Students entering the program as freshmen will have the option to complete a Computer Science Placement Test. Depending on appropriate Advanced Placement credit and/or results of the Computer Science Placement Test, entering students may place directly into 15-112 or 15-121 . 15-110 is taken as the first Computer Science prerequisite unless a student places directly into 15-112 or 15-121 . Students that do not gain a placement into 15-112 or 15-121 must begin the sequence with 15-110 and must complete it with a grade of D or above prior to entering 15-112 ."
+    },
+    {
+      "id": "information-systems-core",
+      "name": "Information Systems Core",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-391",
+        "05-410",
+        "05-452"
+      ],
+      "source_instruction": "Complete one (1) of the following three courses:"
+    },
+    {
+      "id": "professional-communications",
+      "name": "Professional Communications",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "05-317",
+        "05-360",
+        "36-315",
+        "51-261",
+        "51-262",
+        "67-265",
+        "67-336",
+        "67-338",
+        "70-301",
+        "70-321",
+        "70-340",
+        "70-342",
+        "70-350",
+        "76-270",
+        "84-250",
+        "88-230",
+        "88-231",
+        "88-341",
+        "70-341"
+      ],
+      "source_instruction": "Information systems professionals communicate with a wide range of people in most organizations and often facilitate communications between diverse groups of stakeholders. Consequently, the most successful professionals typically are those with strong communication skills. These courses help students see that the structure and presentation of information affects how well (and how easily) it can be understood and used. Complete one (1) of the following courses:"
+    },
+    {
+      "id": "quantitative-analysis-and-research-methods",
+      "name": "Quantitative Analysis and Research Methods",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-325",
+        "36-202",
+        "36-219",
+        "36-225",
+        "36-235",
+        "36-303",
+        "36-309",
+        "36-315",
+        "36-350",
+        "36-401",
+        "36-402",
+        "67-285",
+        "67-364",
+        "73-265",
+        "80-305",
+        "80-306",
+        "88-223",
+        "88-251",
+        "88-252",
+        "88-275",
+        "88-300",
+        "94-216"
+      ],
+      "source_instruction": "This area focuses on decision making and data analysis — essential to development of useful information systems. This area exposes students to analytic methods in the social sciences and quantitative methods for approaching complex methods. Complete one (1) of the following courses:"
+    },
+    {
+      "id": "innovation-and-entrepreneurship",
+      "name": "Innovation and Entrepreneurship",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "05-470",
+        "17-356",
+        "67-428",
+        "67-443",
+        "94-491"
+      ],
+      "source_instruction": "The focus of this area is to apply disciplined techniques to generate ideas that have value in a market, and bring them through design, feasibility testing, and frequent revision, towards a potential launch. Students must have completed 67-272 Application Design & Development in order to fulfill one of the courses below towards their Innovation and Entrepreneurship requirement. Complete one (1) of the following courses:"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 68,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 67,
+    "extracted_unit_estimate": 159,
+    "scheduled_course_count": 62,
+    "missing_schedule_course_ids": [
+      "36-303",
+      "67-285",
+      "67-338",
+      "88-275",
+      "94-216"
+    ]
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "program_id": "environmental-engineering--b-s",
+  "planning_id": "environmental-engineering",
+  "name": "Environmental Engineering",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/",
+  "source_hash": "942e4aa5b6b7c6a34ad21a770840d341f8abfd665a1073ec227e67fcc1d0c601",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "minimum-units-required-for-b-s-in-environmental-engineering-384",
+      "name": "Minimum units required for B.S. in Environmental Engineering 384",
+      "choose": 2,
+      "units": 19,
+      "options": [
+        "09-101",
+        "09-105",
+        "09-111",
+        "15-110",
+        "21-120",
+        "21-122",
+        "21-254",
+        "21-260",
+        "33-141",
+        "33-142"
+      ],
+      "source_instruction": "Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World ."
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "12-100",
+        "21-120",
+        "33-141",
+        "99-101"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year"
+    },
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "21-122",
+        "33-142",
+        "09-105",
+        "09-111",
+        "09-101"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46"
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 2,
+      "units": 16,
+      "options": [
+        "12-200",
+        "12-351",
+        "15-110",
+        "21-254",
+        "39-210"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46 Spring Units xx-xxx Introduction to Engineering (other than CEE) 12 21-122 Integration and Approximation 10 33-142 Physics II for Engineering and Physics Students 12 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 09-101 Introduction to Experimental Chemistry 3 47 Sophomore Year"
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 2,
+      "units": 11,
+      "options": [
+        "12-221",
+        "12-222",
+        "12-271",
+        "12-352",
+        "21-260",
+        "39-220"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46 Spring Units xx-xxx Introduction to Engineering (other than CEE) 12 21-122 Integration and Approximation 10 33-142 Physics II for Engineering and Physics Students 12 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 09-101 Introduction to Experimental Chemistry 3 47 Sophomore Year Fall Units 12-200 CEE Challenges: Design in a Changing World 9 12-351 Environmental Engineering 9 15-110 Principles of Computing 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 39-210 Experiential Learning I 0 xx-xxx General Education Course 9 48"
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 2,
+      "units": 13,
+      "options": [
+        "12-301",
+        "12-355",
+        "12-356",
+        "03-121",
+        "36-220",
+        "39-310"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46 Spring Units xx-xxx Introduction to Engineering (other than CEE) 12 21-122 Integration and Approximation 10 33-142 Physics II for Engineering and Physics Students 12 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 09-101 Introduction to Experimental Chemistry 3 47 Sophomore Year Fall Units 12-200 CEE Challenges: Design in a Changing World 9 12-351 Environmental Engineering 9 15-110 Principles of Computing 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 39-210 Experiential Learning I 0 xx-xxx General Education Course 9 48 Spring Units 12-221 Environmental Chemistry and Thermodynamics 9 12-222 Environmental Chemistry Laboratory 3 12-271 Computation and Data Science for Civil & Environmental Engineering 9 12-352 Environmental Engineering Lab 3 21-260 Differential Equations 9 39-220 Experiential Learning II 0 xx-xxx General Education Course 9 xx-xxx Elective 1 9 51 Junior Year"
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "12-353",
+        "12-371",
+        "12-201"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46 Spring Units xx-xxx Introduction to Engineering (other than CEE) 12 21-122 Integration and Approximation 10 33-142 Physics II for Engineering and Physics Students 12 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 09-101 Introduction to Experimental Chemistry 3 47 Sophomore Year Fall Units 12-200 CEE Challenges: Design in a Changing World 9 12-351 Environmental Engineering 9 15-110 Principles of Computing 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 39-210 Experiential Learning I 0 xx-xxx General Education Course 9 48 Spring Units 12-221 Environmental Chemistry and Thermodynamics 9 12-222 Environmental Chemistry Laboratory 3 12-271 Computation and Data Science for Civil & Environmental Engineering 9 12-352 Environmental Engineering Lab 3 21-260 Differential Equations 9 39-220 Experiential Learning II 0 xx-xxx General Education Course 9 xx-xxx Elective 1 9 51 Junior Year Fall Units 12-301 CEE Projects: Integrating the Built, Natural and Information Environments 9 12-355 Fluid Mechanics 9 12-356 Fluid Mechanics Lab 2 03-121 Modern Biology 9 36-220 Engineering Statistics and Quality Control 9 39-310 Experiential Learning III 0 xx-xxx General Education Course 9 47"
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 2,
+      "units": 21,
+      "options": [
+        "12-401",
+        "12-411"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46 Spring Units xx-xxx Introduction to Engineering (other than CEE) 12 21-122 Integration and Approximation 10 33-142 Physics II for Engineering and Physics Students 12 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 09-101 Introduction to Experimental Chemistry 3 47 Sophomore Year Fall Units 12-200 CEE Challenges: Design in a Changing World 9 12-351 Environmental Engineering 9 15-110 Principles of Computing 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 39-210 Experiential Learning I 0 xx-xxx General Education Course 9 48 Spring Units 12-221 Environmental Chemistry and Thermodynamics 9 12-222 Environmental Chemistry Laboratory 3 12-271 Computation and Data Science for Civil & Environmental Engineering 9 12-352 Environmental Engineering Lab 3 21-260 Differential Equations 9 39-220 Experiential Learning II 0 xx-xxx General Education Course 9 xx-xxx Elective 1 9 51 Junior Year Fall Units 12-301 CEE Projects: Integrating the Built, Natural and Information Environments 9 12-355 Fluid Mechanics 9 12-356 Fluid Mechanics Lab 2 03-121 Modern Biology 9 36-220 Engineering Statistics and Quality Control 9 39-310 Experiential Learning III 0 xx-xxx General Education Course 9 47 Spring Units 12-353 Environmental Biology and Ecology 9 12-371 Advanced Computing and Problem Solving in Civil and Environmental Engineering 9 12-201 Geology 9 xx-xxx Elective 2 6 xx-xxx Elective 3 9 xx-xxx General Education Course 9 51 Senior Year"
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "12-451",
+        "12-471"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Environmental Engineering 384 Students entering the College of Engineering declare a major near the end of the first year. First-year students take two introductory engineering courses as well as some restricted technical electives within the common foundation specified for first-year engineering students. By the end of the sophomore year, an Environmental Engineering major is expected to have completed the Restricted Technical Electives in the following list and 12-100 Exploring CEE: Infrastructure and Environment in a Changing World . Restricted Technical Electives Units 09-101 Introduction to Experimental Chemistry 3 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 15-110 Principles of Computing 10 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 21-260 Differential Equations 9 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 Notes on Math Requirements 1. All mathematics (21-xxx) courses required for the engineering degree taken at Carnegie Mellon must have a minimum grade of C in order to be counted toward the graduation requirement for the BS engineering degree. 2. A minimum grade of C must be achieved in any required mathematics (21-xxx) course that is a pre-requisite for the next higher level required mathematics (21-xxx) course. SAMPLE CURRICULUM This section shows the recommended four-year program of study for the BS in Environmental Engineering following a typical path. The curriculum for transfer students, students with advanced placement credit, and students planning to study abroad will not follow the same path. Students need to consult the department for appropriate advising and formulation of a plan to complete the degree within eight semesters. First Year Fall Units 12-100 Exploring CEE: Infrastructure and Environment in a Changing World 12 21-120 Differential and Integral Calculus 10 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 xx-xxx General Education Course 9 46 Spring Units xx-xxx Introduction to Engineering (other than CEE) 12 21-122 Integration and Approximation 10 33-142 Physics II for Engineering and Physics Students 12 09-105 Introduction to Modern Chemistry I 10 or 09-111 Chemical Building Blocks 09-101 Introduction to Experimental Chemistry 3 47 Sophomore Year Fall Units 12-200 CEE Challenges: Design in a Changing World 9 12-351 Environmental Engineering 9 15-110 Principles of Computing 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 39-210 Experiential Learning I 0 xx-xxx General Education Course 9 48 Spring Units 12-221 Environmental Chemistry and Thermodynamics 9 12-222 Environmental Chemistry Laboratory 3 12-271 Computation and Data Science for Civil & Environmental Engineering 9 12-352 Environmental Engineering Lab 3 21-260 Differential Equations 9 39-220 Experiential Learning II 0 xx-xxx General Education Course 9 xx-xxx Elective 1 9 51 Junior Year Fall Units 12-301 CEE Projects: Integrating the Built, Natural and Information Environments 9 12-355 Fluid Mechanics 9 12-356 Fluid Mechanics Lab 2 03-121 Modern Biology 9 36-220 Engineering Statistics and Quality Control 9 39-310 Experiential Learning III 0 xx-xxx General Education Course 9 47 Spring Units 12-353 Environmental Biology and Ecology 9 12-371 Advanced Computing and Problem Solving in Civil and Environmental Engineering 9 12-201 Geology 9 xx-xxx Elective 2 6 xx-xxx Elective 3 9 xx-xxx General Education Course 9 51 Senior Year Fall Units 12-401 CEE Design 12 12-411 Project Management for Engineering and Construction 9 xx-xxx General Education Course 9 xx-xxx General Education Course 9 xx-xxx General Education Course 9 48"
+    },
+    {
+      "id": "environmental-engineering-water-quality",
+      "name": "Environmental Engineering - Water Quality",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "12-612",
+        "12-657",
+        "12-722",
+        "12-724"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "engineering-and-society",
+      "name": "Engineering and Society",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "12-645",
+        "12-657",
+        "24-291",
+        "48-371",
+        "79-303",
+        "79-315",
+        "19-429"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "environmental-engineering-energy",
+      "name": "Environmental Engineering - Energy",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "12-612",
+        "24-424",
+        "24-292",
+        "24-628"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "environmental-engineering-air-quality",
+      "name": "Environmental Engineering - Air Quality",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "12-612",
+        "12-651",
+        "24-425",
+        "19-429"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 13,
+    "course_references": 62,
+    "confidence": 0.68,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Environmental Engineering - Water Quality",
+      "Assumed choose-one for ambiguous section: Engineering and Society",
+      "Assumed choose-one for ambiguous section: Environmental Engineering - Energy",
+      "Assumed choose-one for ambiguous section: Environmental Engineering - Air Quality",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.69
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 48,
+    "extracted_unit_estimate": 190,
+    "scheduled_course_count": 45,
+    "missing_schedule_course_ids": [
+      "24-292",
+      "24-424",
+      "24-425"
+    ]
+  }
+}

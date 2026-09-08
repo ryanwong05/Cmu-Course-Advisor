@@ -1,0 +1,433 @@
+{
+  "program_id": "international-relations-and-political-science--b-s",
+  "planning_id": "international-relations-and-political-science",
+  "name": "International Relations and Political Science",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/",
+  "source_hash": "19ff1ac3e7cf2376f532f821d4bc581e0b0552dc31fd6f4402756f0508563dc3",
+  "fixed_courses": [
+    {
+      "id": "84-101",
+      "name": "Introduction to Political Science",
+      "units": 9.0,
+      "source_text": "84-101 Introduction to Political Science 9"
+    },
+    {
+      "id": "84-110",
+      "name": "The Economics of Politics and Technology",
+      "units": 9.0,
+      "source_text": "84-110 The Economics of Politics and Technology 9"
+    },
+    {
+      "id": "73-102",
+      "name": "Principles of Microeconomics",
+      "units": null,
+      "source_text": "or 73-102 Principles of Microeconomics"
+    },
+    {
+      "id": "73-103",
+      "name": "Principles of Macroeconomics",
+      "units": null,
+      "source_text": "or 73-103 Principles of Macroeconomics"
+    },
+    {
+      "id": "73-104",
+      "name": "Principles of Microeconomics Accelerated",
+      "units": null,
+      "source_text": "or 73-104 Principles of Microeconomics Accelerated"
+    },
+    {
+      "id": "84-250",
+      "name": "Writing for Political Science and Policy",
+      "units": 9.0,
+      "source_text": "84-250 Writing for Political Science and Policy 9"
+    },
+    {
+      "id": "84-266",
+      "name": "Research Design for Political Science",
+      "units": 9.0,
+      "source_text": "84-266 Research Design for Political Science 9"
+    },
+    {
+      "id": "84-369",
+      "name": "Decision Science for International Relations",
+      "units": 9.0,
+      "source_text": "84-369 Decision Science for International Relations 9"
+    },
+    {
+      "id": "36-202",
+      "name": "Methods for Statistics & Data Science",
+      "units": 9.0,
+      "source_text": "36-202 Methods for Statistics & Data Science 9"
+    },
+    {
+      "id": "19-452",
+      "name": "EPP Projects II",
+      "units": 12.0,
+      "source_text": "19-452 EPP Projects II 12"
+    },
+    {
+      "id": "70-342",
+      "name": "Managing Across Cultures",
+      "units": 9.0,
+      "source_text": "70-342 Managing Across Cultures 9"
+    },
+    {
+      "id": "70-365",
+      "name": "International Trade and International Law",
+      "units": 9.0,
+      "source_text": "70-365 International Trade and International Law 9"
+    },
+    {
+      "id": "70-430",
+      "name": "International Management",
+      "units": 9.0,
+      "source_text": "70-430 International Management 9"
+    },
+    {
+      "id": "73-332",
+      "name": "Political Economy",
+      "units": 9.0,
+      "source_text": "73-332 Political Economy 9"
+    },
+    {
+      "id": "76-318",
+      "name": "Communicating in the Global Marketplace",
+      "units": 9.0,
+      "source_text": "76-318 Communicating in the Global Marketplace 9"
+    },
+    {
+      "id": "79-203",
+      "name": "The Other Europe: The Habsburgs, Communism, & Central/Eastern Europe, 1740-1990",
+      "units": 9.0,
+      "source_text": "79-203 The Other Europe: The Habsburgs, Communism, & Central/Eastern Europe, 1740-1990 9"
+    },
+    {
+      "id": "79-205",
+      "name": "20th Century Europe",
+      "units": 9.0,
+      "source_text": "79-205 20th Century Europe 9"
+    },
+    {
+      "id": "79-223",
+      "name": "Mexico: From the Aztec Empire to the Drug War",
+      "units": 9.0,
+      "source_text": "79-223 Mexico: From the Aztec Empire to the Drug War 9"
+    },
+    {
+      "id": "79-227",
+      "name": "Modern Africa: The Slave Trade to the End of Apartheid",
+      "units": 9.0,
+      "source_text": "79-227 Modern Africa: The Slave Trade to the End of Apartheid 9"
+    },
+    {
+      "id": "79-229",
+      "name": "The Origins of the Palestinian-Israeli Conflict, 1880-1948",
+      "units": 9.0,
+      "source_text": "79-229 The Origins of the Palestinian-Israeli Conflict, 1880-1948 9"
+    },
+    {
+      "id": "79-230",
+      "name": "The Arab-Israeli Conflict and Peace Process Through 1948 to Present",
+      "units": 9.0,
+      "source_text": "79-230 The Arab-Israeli Conflict and Peace Process Through 1948 to Present 9"
+    },
+    {
+      "id": "79-257",
+      "name": "Germany and the Second World War",
+      "units": 9.0,
+      "source_text": "79-257 Germany and the Second World War 9"
+    },
+    {
+      "id": "79-262",
+      "name": "Modern China: From the Birth of Mao ... to Now",
+      "units": 9.0,
+      "source_text": "79-262 Modern China: From the Birth of Mao ... to Now 9"
+    },
+    {
+      "id": "79-264",
+      "name": "Tibet and China: History and Propaganda",
+      "units": 9.0,
+      "source_text": "79-264 Tibet and China: History and Propaganda 9"
+    },
+    {
+      "id": "79-265",
+      "name": "Russian History: Game of Thrones",
+      "units": 9.0,
+      "source_text": "79-265 Russian History: Game of Thrones 9"
+    },
+    {
+      "id": "79-266",
+      "name": "Russian History and Revolutionary Socialism",
+      "units": 9.0,
+      "source_text": "79-266 Russian History and Revolutionary Socialism 9"
+    },
+    {
+      "id": "79-267",
+      "name": "The Soviet Union in World War II: Military, Political, and Social History",
+      "units": 9.0,
+      "source_text": "79-267 The Soviet Union in World War II: Military, Political, and Social History 9"
+    },
+    {
+      "id": "79-275",
+      "name": "Introduction to Global Studies",
+      "units": 9.0,
+      "source_text": "79-275 Introduction to Global Studies 9"
+    },
+    {
+      "id": "79-288",
+      "name": "Bananas, Baseball, and Borders: Latin America and the United States",
+      "units": 9.0,
+      "source_text": "79-288 Bananas, Baseball, and Borders: Latin America and the United States 9"
+    },
+    {
+      "id": "79-302",
+      "name": "Killer Robots? The Ethics, Law, and Politics of Drones and A.I. in War",
+      "units": 9.0,
+      "source_text": "79-302 Killer Robots? The Ethics, Law, and Politics of Drones and A.I. in War 9"
+    },
+    {
+      "id": "79-313",
+      "name": "\"Unwanted\": Refugees, Asylum Seekers, and Patterns of Global Migration",
+      "units": 6.0,
+      "source_text": "79-313 \"Unwanted\": Refugees, Asylum Seekers, and Patterns of Global Migration 6"
+    },
+    {
+      "id": "79-314",
+      "name": "How Do We Remember? The Politics and Cultures of Memory",
+      "units": 9.0,
+      "source_text": "79-314 How Do We Remember? The Politics and Cultures of Memory 9"
+    },
+    {
+      "id": "79-318",
+      "name": "Sustainable Social Change: History and Practice",
+      "units": 9.0,
+      "source_text": "79-318 Sustainable Social Change: History and Practice 9"
+    },
+    {
+      "id": "79-320",
+      "name": "Women, Politics, and Protest",
+      "units": 9.0,
+      "source_text": "79-320 Women, Politics, and Protest 9"
+    },
+    {
+      "id": "79-343",
+      "name": "Education, Democracy, and the Arts",
+      "units": 9.0,
+      "source_text": "79-343 Education, Democracy, and the Arts 9"
+    },
+    {
+      "id": "79-377",
+      "name": "Food, Culture, and Power: A History of Eating",
+      "units": 9.0,
+      "source_text": "79-377 Food, Culture, and Power: A History of Eating 9"
+    },
+    {
+      "id": "79-385",
+      "name": "Out of Africa: The Making of the African Diaspora",
+      "units": 9.0,
+      "source_text": "79-385 Out of Africa: The Making of the African Diaspora 9"
+    },
+    {
+      "id": "80-135",
+      "name": "Introduction to Political Philosophy",
+      "units": 9.0,
+      "source_text": "80-135 Introduction to Political Philosophy 9"
+    },
+    {
+      "id": "80-136",
+      "name": "Social Structure, Public Policy & Ethics",
+      "units": 9.0,
+      "source_text": "80-136 Social Structure, Public Policy & Ethics 9"
+    },
+    {
+      "id": "80-249",
+      "name": "AI, Society, and Humanity",
+      "units": 9.0,
+      "source_text": "80-249 AI, Society, and Humanity 9"
+    },
+    {
+      "id": "80-335",
+      "name": "Social and Political Philosophy",
+      "units": 9.0,
+      "source_text": "80-335 Social and Political Philosophy 9"
+    },
+    {
+      "id": "80-348",
+      "name": "Health, Human Rights, and International Development",
+      "units": 9.0,
+      "source_text": "80-348 Health, Human Rights, and International Development 9"
+    },
+    {
+      "id": "80-447",
+      "name": "Seminar in Global Justice",
+      "units": 9.0,
+      "source_text": "80-447 Seminar in Global Justice 9"
+    },
+    {
+      "id": "88-234",
+      "name": "Negotiation: International Focus",
+      "units": 9.0,
+      "source_text": "88-234 Negotiation: International Focus 9"
+    },
+    {
+      "id": "88-261",
+      "name": "Health Policy and Decision Making",
+      "units": 9.0,
+      "source_text": "88-261 Health Policy and Decision Making 9"
+    },
+    {
+      "id": "88-281",
+      "name": "Topics in Law: 1st Amendment",
+      "units": 9.0,
+      "source_text": "88-281 Topics in Law: 1st Amendment 9"
+    },
+    {
+      "id": "88-284",
+      "name": "Topics of Law: The Bill of Rights",
+      "units": 9.0,
+      "source_text": "88-284 Topics of Law: The Bill of Rights 9"
+    },
+    {
+      "id": "84-500",
+      "name": "Senior Seminar",
+      "units": 9.0,
+      "source_text": "84-500 Senior Seminar 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "political-science-core-courses-45-units",
+      "name": "Political Science Core Courses 45 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "84-104",
+        "84-226",
+        "84-275"
+      ],
+      "source_instruction": "Students must complete two of the three courses listed below. If all three are taken, the third can count as an elective for the major."
+    },
+    {
+      "id": "electives-54-units",
+      "name": "Electives 54 units",
+      "choose": 54,
+      "units": 457,
+      "options": [
+        "84-120",
+        "84-200",
+        "84-252",
+        "84-274",
+        "84-280",
+        "84-285",
+        "84-301",
+        "84-303",
+        "84-304",
+        "84-306",
+        "84-309",
+        "84-310",
+        "84-311",
+        "84-312",
+        "84-314",
+        "84-315",
+        "84-319",
+        "84-322",
+        "84-323",
+        "84-324",
+        "84-325",
+        "84-327",
+        "84-328",
+        "84-329",
+        "84-330",
+        "84-331",
+        "84-332",
+        "84-333",
+        "84-336",
+        "84-338",
+        "84-339",
+        "84-341",
+        "84-343",
+        "84-345",
+        "84-347",
+        "84-349",
+        "84-350",
+        "84-352",
+        "84-353",
+        "84-355",
+        "84-356",
+        "84-358",
+        "84-360",
+        "84-362",
+        "84-363",
+        "84-365",
+        "84-366",
+        "84-367",
+        "84-368",
+        "84-370",
+        "84-371",
+        "84-373",
+        "84-375",
+        "84-380",
+        "84-383",
+        "84-386",
+        "84-387",
+        "84-389",
+        "84-393",
+        "84-402",
+        "84-405"
+      ],
+      "source_instruction": "Students must complete 54 units (usually six courses) from the elective lists below. At least four courses (36 units) must be taken from the Carnegie Mellon Institute for Strategy and Technology (84-xxx). Most courses listed below are 9-unit courses, but some are fewer. When students choose courses offered for fewer than 9 units, they must remember that a minimum of 54 units is still required and thus plan to take one or more additional courses to fill out that minimum number. In other words, the key requirement is the number of units (54), not the number of courses ."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 112,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (880 units)."
+    ],
+    "warnings": [
+      "28 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 112,
+    "extracted_unit_estimate": 880,
+    "scheduled_course_count": 84,
+    "missing_schedule_course_ids": [
+      "70-365",
+      "70-430",
+      "76-318",
+      "79-203",
+      "79-205",
+      "79-223",
+      "79-227",
+      "79-229",
+      "79-257",
+      "79-264",
+      "79-265",
+      "79-267",
+      "79-313",
+      "79-314",
+      "79-318",
+      "79-385",
+      "80-136",
+      "84-200",
+      "84-280",
+      "84-303",
+      "84-324",
+      "84-331",
+      "84-333",
+      "84-349",
+      "84-367",
+      "84-386",
+      "84-402",
+      "84-500"
+    ]
+  }
+}
