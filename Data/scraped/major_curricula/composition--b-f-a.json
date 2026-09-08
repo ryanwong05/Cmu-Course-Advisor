@@ -1,0 +1,193 @@
+{
+  "program_id": "composition--b-f-a",
+  "planning_id": "composition",
+  "name": "Composition",
+  "credential": "B.F.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/",
+  "source_hash": "54695189ce419052d664c4cff8c86e7090147fcf2e48e1e8b88f7d50ecd110aa",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "first-year-fall-53-units",
+      "name": "First-Year Fall (53 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-101",
+        "57-149",
+        "57-152",
+        "57-161",
+        "57-180",
+        "57-181",
+        "57-185",
+        "57-191",
+        "57-193",
+        "57-418",
+        "57-419",
+        "57-521",
+        "99-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "first-year-spring-53-units",
+      "name": "First-Year Spring (53 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-150",
+        "57-153",
+        "57-162",
+        "57-182",
+        "57-186",
+        "57-192",
+        "57-194",
+        "57-283",
+        "57-418",
+        "57-419",
+        "57-521"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-fall-53-units",
+      "name": "Second-Year Fall (53 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-151",
+        "57-163",
+        "57-183",
+        "57-487",
+        "57-193",
+        "57-257",
+        "57-284",
+        "57-418",
+        "57-419",
+        "57-521"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "second-year-spring-53-units",
+      "name": "Second-Year Spring (53 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-164",
+        "57-184",
+        "57-488",
+        "57-194",
+        "57-258",
+        "57-271",
+        "57-285",
+        "57-408",
+        "57-418",
+        "57-419",
+        "57-521"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-fall-47-units",
+      "name": "Third-Year Fall (47 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-234",
+        "57-418",
+        "57-419",
+        "57-332",
+        "57-347",
+        "57-521"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "third-year-spring-47-units",
+      "name": "Third-Year Spring (47 units)",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-234",
+        "57-418",
+        "57-419",
+        "57-336",
+        "57-459",
+        "57-521"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-fall-44-units",
+      "name": "Fourth-Year Fall (44 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-418",
+        "57-419",
+        "57-521"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fourth-year-spring-45-units",
+      "name": "Fourth-Year Spring (45 units)",
+      "choose": 1,
+      "units": 4,
+      "options": [
+        "57-031",
+        "57-100",
+        "57-418",
+        "57-419",
+        "57-521",
+        "57-597"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 80,
+    "confidence": 0.5,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: First-Year Fall (53 units)",
+      "Assumed choose-one for ambiguous section: First-Year Spring (53 units)",
+      "Assumed choose-one for ambiguous section: Second-Year Fall (53 units)",
+      "Assumed choose-one for ambiguous section: Second-Year Spring (53 units)",
+      "Assumed choose-one for ambiguous section: Third-Year Fall (47 units)",
+      "Assumed choose-one for ambiguous section: Third-Year Spring (47 units)",
+      "Assumed choose-one for ambiguous section: Fourth-Year Fall (44 units)",
+      "Assumed choose-one for ambiguous section: Fourth-Year Spring (45 units)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [],
+    "catalog_course_count": 42,
+    "extracted_unit_estimate": 37,
+    "scheduled_course_count": 42,
+    "missing_schedule_course_ids": []
+  }
+}

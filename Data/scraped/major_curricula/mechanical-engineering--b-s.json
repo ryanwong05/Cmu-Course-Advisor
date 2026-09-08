@@ -1,0 +1,246 @@
+{
+  "program_id": "mechanical-engineering--b-s",
+  "planning_id": "mechanical-engineering",
+  "name": "Mechanical Engineering",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/",
+  "source_hash": "ce6a2672cba3e433403ebbfa26841833bb580068bb0e908b45dc2bcd1cfc2cda",
+  "fixed_courses": [
+    {
+      "id": "21-122",
+      "name": "Integration and Approximation",
+      "units": 10.0,
+      "source_text": "21-122 Integration and Approximation 10"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "first-year",
+      "name": "First Year",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "24-101",
+        "33-141",
+        "99-101",
+        "76-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 6,
+      "units": 46,
+      "options": [
+        "24-221",
+        "24-261",
+        "21-254",
+        "24-203",
+        "24-251",
+        "39-210"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Mechanical Engineering: 382 The following template outlines the four-year B.S. program through the standard and recommended course sequence. To ensure that prerequisites are completed and to prevent scheduling conflicts, students should discuss any changes to this sequence with their department academic advisor. Students need a minimum of 382 units to complete the B.S. degree. Since there are variable units for some core requirements, additional units can be made up with free electives. First Year Fall Units 21-120 Differential and Integral Calculus 10 24-101 Fundamentals of Mechanical Engineering 12 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 76-101 Interpretation and Argument 9 46 Spring Units 21-122 Integration and Approximation 10 xx-xxx Second Introductory Engineering Course 12 xx-xxx Physics II/Computer Science/Chemistry* 10-12 xx-xxx General Education Course 9 41-43 First Year Curriculum Notes: During the first year, Mechanical Engineering students complete 24-101 Fundamentals of Mechanical Engineering and one other introductory engineering course. 24-101 Fundamentals of Mechanical Engineering is a prerequisite for sophomore courses 24-261 Mechanics I: 2D Design , 24-221 Thermodynamics and 24-251 Electronics for Sensing and Actuation , as well as junior course 24-351 Dynamics . Students who are not able to take 24-101 in their first year will push the 24-261 Mechanics I: 2D Design , and 24-262 Mechanics II: 3D Design sequence into their junior year as well as 24-221 Thermodynamics . If 24-101 is taken in fall of sophomore year, students can take 24-251 Electronics for Sensing and Actuation 24-231 Fluid Mechanics and 24-351 Dynamics in sophomore spring to continue progress towards the Mechanical Engineering degree. All Mathematics courses (21-xxx) required for the engineering degree must have a minimum grade of C in order to fulfill the graduation requirement for the BS engineering degree and to count as a prerequisite for engineering core classes. Students must pass the following three courses before they begin the core Mechanical Engineering courses in the fall of their sophomore year: 21-120 Differential and Integral Calculus 21-122 Integration and Approximation 33-141 Physics I for Engineering Students Sophomore Year"
+    },
+    {
+      "id": "sophomore-year",
+      "name": "Sophomore Year",
+      "choose": 6,
+      "units": 44,
+      "options": [
+        "24-231",
+        "24-262",
+        "21-260",
+        "24-203",
+        "24-251",
+        "39-220"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Mechanical Engineering: 382 The following template outlines the four-year B.S. program through the standard and recommended course sequence. To ensure that prerequisites are completed and to prevent scheduling conflicts, students should discuss any changes to this sequence with their department academic advisor. Students need a minimum of 382 units to complete the B.S. degree. Since there are variable units for some core requirements, additional units can be made up with free electives. First Year Fall Units 21-120 Differential and Integral Calculus 10 24-101 Fundamentals of Mechanical Engineering 12 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 76-101 Interpretation and Argument 9 46 Spring Units 21-122 Integration and Approximation 10 xx-xxx Second Introductory Engineering Course 12 xx-xxx Physics II/Computer Science/Chemistry* 10-12 xx-xxx General Education Course 9 41-43 First Year Curriculum Notes: During the first year, Mechanical Engineering students complete 24-101 Fundamentals of Mechanical Engineering and one other introductory engineering course. 24-101 Fundamentals of Mechanical Engineering is a prerequisite for sophomore courses 24-261 Mechanics I: 2D Design , 24-221 Thermodynamics and 24-251 Electronics for Sensing and Actuation , as well as junior course 24-351 Dynamics . Students who are not able to take 24-101 in their first year will push the 24-261 Mechanics I: 2D Design , and 24-262 Mechanics II: 3D Design sequence into their junior year as well as 24-221 Thermodynamics . If 24-101 is taken in fall of sophomore year, students can take 24-251 Electronics for Sensing and Actuation 24-231 Fluid Mechanics and 24-351 Dynamics in sophomore spring to continue progress towards the Mechanical Engineering degree. All Mathematics courses (21-xxx) required for the engineering degree must have a minimum grade of C in order to fulfill the graduation requirement for the BS engineering degree and to count as a prerequisite for engineering core classes. Students must pass the following three courses before they begin the core Mechanical Engineering courses in the fall of their sophomore year: 21-120 Differential and Integral Calculus 21-122 Integration and Approximation 33-141 Physics I for Engineering Students Sophomore Year Fall Units 24-221 Thermodynamics 10 24-261 Mechanics I: 2D Design 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark:Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-56"
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 6,
+      "units": 43,
+      "options": [
+        "24-302",
+        "24-322",
+        "24-351",
+        "24-370",
+        "36-220",
+        "39-310"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Mechanical Engineering: 382 The following template outlines the four-year B.S. program through the standard and recommended course sequence. To ensure that prerequisites are completed and to prevent scheduling conflicts, students should discuss any changes to this sequence with their department academic advisor. Students need a minimum of 382 units to complete the B.S. degree. Since there are variable units for some core requirements, additional units can be made up with free electives. First Year Fall Units 21-120 Differential and Integral Calculus 10 24-101 Fundamentals of Mechanical Engineering 12 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 76-101 Interpretation and Argument 9 46 Spring Units 21-122 Integration and Approximation 10 xx-xxx Second Introductory Engineering Course 12 xx-xxx Physics II/Computer Science/Chemistry* 10-12 xx-xxx General Education Course 9 41-43 First Year Curriculum Notes: During the first year, Mechanical Engineering students complete 24-101 Fundamentals of Mechanical Engineering and one other introductory engineering course. 24-101 Fundamentals of Mechanical Engineering is a prerequisite for sophomore courses 24-261 Mechanics I: 2D Design , 24-221 Thermodynamics and 24-251 Electronics for Sensing and Actuation , as well as junior course 24-351 Dynamics . Students who are not able to take 24-101 in their first year will push the 24-261 Mechanics I: 2D Design , and 24-262 Mechanics II: 3D Design sequence into their junior year as well as 24-221 Thermodynamics . If 24-101 is taken in fall of sophomore year, students can take 24-251 Electronics for Sensing and Actuation 24-231 Fluid Mechanics and 24-351 Dynamics in sophomore spring to continue progress towards the Mechanical Engineering degree. All Mathematics courses (21-xxx) required for the engineering degree must have a minimum grade of C in order to fulfill the graduation requirement for the BS engineering degree and to count as a prerequisite for engineering core classes. Students must pass the following three courses before they begin the core Mechanical Engineering courses in the fall of their sophomore year: 21-120 Differential and Integral Calculus 21-122 Integration and Approximation 33-141 Physics I for Engineering Students Sophomore Year Fall Units 24-221 Thermodynamics 10 24-261 Mechanics I: 2D Design 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark:Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-56 Spring Units 24-231 Fluid Mechanics 10 24-262 Mechanics II: 3D Design 10 21-260 Differential Equations 9 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark: Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-54 * Physics II/Chemistry/Computer Science: First year students are encouraged to prioritize completing Physics II and Programming requirement over Chemistry in the first year. The recommended Physics sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. The programming requirement can be filled with 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science . The Chemistry requirement can be filled with 09-105 Introduction to Modern Chemistry I or 09-111 Chemical Building Blocks . ** 24-203 and 24-251 Completed Sophomore Year: 24-203 TechSpark: Machine Shop Principles and 24-251 Electronics for Sensing and Actuation should be completed within the sophomore year, fall or spring. Both are required courses. *** Waiving Electronics for Sensing and Actuation: Mechanical Engineering (MechE) students who took the 18-100 Introduction to Electrical and Computer Engineering in their first year, have the option of waiving 24-251 Electronics for Sensing and Actuation . These units must be replaced with 3 units of graded Mechanical Engineering credit which could be done by taking a 12 unit MechE Technical Elective instead of a 9 unit course. Eligible students will be invited to complete a form to confirm their intention to waive 24-251. Junior Year"
+    },
+    {
+      "id": "junior-year",
+      "name": "Junior Year",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "24-302",
+        "24-311",
+        "24-321",
+        "24-352"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Mechanical Engineering: 382 The following template outlines the four-year B.S. program through the standard and recommended course sequence. To ensure that prerequisites are completed and to prevent scheduling conflicts, students should discuss any changes to this sequence with their department academic advisor. Students need a minimum of 382 units to complete the B.S. degree. Since there are variable units for some core requirements, additional units can be made up with free electives. First Year Fall Units 21-120 Differential and Integral Calculus 10 24-101 Fundamentals of Mechanical Engineering 12 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 76-101 Interpretation and Argument 9 46 Spring Units 21-122 Integration and Approximation 10 xx-xxx Second Introductory Engineering Course 12 xx-xxx Physics II/Computer Science/Chemistry* 10-12 xx-xxx General Education Course 9 41-43 First Year Curriculum Notes: During the first year, Mechanical Engineering students complete 24-101 Fundamentals of Mechanical Engineering and one other introductory engineering course. 24-101 Fundamentals of Mechanical Engineering is a prerequisite for sophomore courses 24-261 Mechanics I: 2D Design , 24-221 Thermodynamics and 24-251 Electronics for Sensing and Actuation , as well as junior course 24-351 Dynamics . Students who are not able to take 24-101 in their first year will push the 24-261 Mechanics I: 2D Design , and 24-262 Mechanics II: 3D Design sequence into their junior year as well as 24-221 Thermodynamics . If 24-101 is taken in fall of sophomore year, students can take 24-251 Electronics for Sensing and Actuation 24-231 Fluid Mechanics and 24-351 Dynamics in sophomore spring to continue progress towards the Mechanical Engineering degree. All Mathematics courses (21-xxx) required for the engineering degree must have a minimum grade of C in order to fulfill the graduation requirement for the BS engineering degree and to count as a prerequisite for engineering core classes. Students must pass the following three courses before they begin the core Mechanical Engineering courses in the fall of their sophomore year: 21-120 Differential and Integral Calculus 21-122 Integration and Approximation 33-141 Physics I for Engineering Students Sophomore Year Fall Units 24-221 Thermodynamics 10 24-261 Mechanics I: 2D Design 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark:Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-56 Spring Units 24-231 Fluid Mechanics 10 24-262 Mechanics II: 3D Design 10 21-260 Differential Equations 9 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark: Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-54 * Physics II/Chemistry/Computer Science: First year students are encouraged to prioritize completing Physics II and Programming requirement over Chemistry in the first year. The recommended Physics sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. The programming requirement can be filled with 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science . The Chemistry requirement can be filled with 09-105 Introduction to Modern Chemistry I or 09-111 Chemical Building Blocks . ** 24-203 and 24-251 Completed Sophomore Year: 24-203 TechSpark: Machine Shop Principles and 24-251 Electronics for Sensing and Actuation should be completed within the sophomore year, fall or spring. Both are required courses. *** Waiving Electronics for Sensing and Actuation: Mechanical Engineering (MechE) students who took the 18-100 Introduction to Electrical and Computer Engineering in their first year, have the option of waiving 24-251 Electronics for Sensing and Actuation . These units must be replaced with 3 units of graded Mechanical Engineering credit which could be done by taking a 12 unit MechE Technical Elective instead of a 9 unit course. Eligible students will be invited to complete a form to confirm their intention to waive 24-251. Junior Year Fall Units 24-302 Professional Development for Mechanical Engineers (Offered Fall and Spring) 2 24-322 Heat Transfer 10 24-351 Dynamics (Offered Fall and Spring) 10 24-370 Mechanical Design: Methods and Applications 12 36-220 Engineering Statistics and Quality Control 9 xx-xxx General Education Course 9 39-310 Experiential Learning III 0 52"
+    },
+    {
+      "id": "senior-year",
+      "name": "Senior Year",
+      "choose": 3,
+      "units": 32,
+      "options": [
+        "24-441",
+        "24-671",
+        "24-452"
+      ],
+      "source_instruction": "Curriculum Minimum units required for B.S. in Mechanical Engineering: 382 The following template outlines the four-year B.S. program through the standard and recommended course sequence. To ensure that prerequisites are completed and to prevent scheduling conflicts, students should discuss any changes to this sequence with their department academic advisor. Students need a minimum of 382 units to complete the B.S. degree. Since there are variable units for some core requirements, additional units can be made up with free electives. First Year Fall Units 21-120 Differential and Integral Calculus 10 24-101 Fundamentals of Mechanical Engineering 12 33-141 Physics I for Engineering Students 12 99-101 Core@CMU 3 76-101 Interpretation and Argument 9 46 Spring Units 21-122 Integration and Approximation 10 xx-xxx Second Introductory Engineering Course 12 xx-xxx Physics II/Computer Science/Chemistry* 10-12 xx-xxx General Education Course 9 41-43 First Year Curriculum Notes: During the first year, Mechanical Engineering students complete 24-101 Fundamentals of Mechanical Engineering and one other introductory engineering course. 24-101 Fundamentals of Mechanical Engineering is a prerequisite for sophomore courses 24-261 Mechanics I: 2D Design , 24-221 Thermodynamics and 24-251 Electronics for Sensing and Actuation , as well as junior course 24-351 Dynamics . Students who are not able to take 24-101 in their first year will push the 24-261 Mechanics I: 2D Design , and 24-262 Mechanics II: 3D Design sequence into their junior year as well as 24-221 Thermodynamics . If 24-101 is taken in fall of sophomore year, students can take 24-251 Electronics for Sensing and Actuation 24-231 Fluid Mechanics and 24-351 Dynamics in sophomore spring to continue progress towards the Mechanical Engineering degree. All Mathematics courses (21-xxx) required for the engineering degree must have a minimum grade of C in order to fulfill the graduation requirement for the BS engineering degree and to count as a prerequisite for engineering core classes. Students must pass the following three courses before they begin the core Mechanical Engineering courses in the fall of their sophomore year: 21-120 Differential and Integral Calculus 21-122 Integration and Approximation 33-141 Physics I for Engineering Students Sophomore Year Fall Units 24-221 Thermodynamics 10 24-261 Mechanics I: 2D Design 10 21-254 Linear Algebra and Vector Calculus for Engineers 11 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark:Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-210 Experiential Learning I 0 53-56 Spring Units 24-231 Fluid Mechanics 10 24-262 Mechanics II: 3D Design 10 21-260 Differential Equations 9 xx-xxx Physics II/Computer Science/Chemistry* 10-12 24-xxx 24-203 TechSpark: Manual Machining OR 24-251 Electronics for Sensing and Actuation **and*** 3-4 xx-xxx General Education Course 9 39-220 Experiential Learning II 0 51-54 * Physics II/Chemistry/Computer Science: First year students are encouraged to prioritize completing Physics II and Programming requirement over Chemistry in the first year. The recommended Physics sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. The programming requirement can be filled with 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science . The Chemistry requirement can be filled with 09-105 Introduction to Modern Chemistry I or 09-111 Chemical Building Blocks . ** 24-203 and 24-251 Completed Sophomore Year: 24-203 TechSpark: Machine Shop Principles and 24-251 Electronics for Sensing and Actuation should be completed within the sophomore year, fall or spring. Both are required courses. *** Waiving Electronics for Sensing and Actuation: Mechanical Engineering (MechE) students who took the 18-100 Introduction to Electrical and Computer Engineering in their first year, have the option of waiving 24-251 Electronics for Sensing and Actuation . These units must be replaced with 3 units of graded Mechanical Engineering credit which could be done by taking a 12 unit MechE Technical Elective instead of a 9 unit course. Eligible students will be invited to complete a form to confirm their intention to waive 24-251. Junior Year Fall Units 24-302 Professional Development for Mechanical Engineers (Offered Fall and Spring) 2 24-322 Heat Transfer 10 24-351 Dynamics (Offered Fall and Spring) 10 24-370 Mechanical Design: Methods and Applications 12 36-220 Engineering Statistics and Quality Control 9 xx-xxx General Education Course 9 39-310 Experiential Learning III 0 52 Spring Units 24-302 Professional Development for Mechanical Engineers (Offered Fall and Spring) 2 24-311 Numerical Methods (Offered Fall and Spring) 10 24-321 Thermal-Fluids Experimentation 12 24-352 Dynamic Systems and Controls (Offered Fall and Spring) 12 xx-xxx General Education Course 9 45 Senior Year"
+    },
+    {
+      "id": "robotics-and-automation",
+      "name": "Robotics and Automation",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "24-451",
+        "24-677",
+        "24-760",
+        "24-773",
+        "24-776",
+        "24-614",
+        "24-671",
+        "24-673",
+        "24-753",
+        "24-774",
+        "24-775",
+        "24-778"
+      ],
+      "source_instruction": "Electives Mechanical Engineering Technical Electives Students must take at least one approved non-core Mechanical Engineering course labeled as “Mechanical Engineering Technical Elective” in the example course sequence. The course must be an approved 24-xxx course (9-unit minimum) at the 300 level or above to fulfill the technical elective requirement. Students can also take mechanical engineering graduate courses to fulfill the technical elective requirement. Students must have the appropriate prerequisites for the course. The prerequisites for graduate level courses are usually listed under \"prerequisite knowledge\" in SIO. Undergraduates do not have priority for graduate level courses. Students are encouraged to follow the guidance in the Waitlist Navigation Guide to improve chances of securing a seat. Students can find a current list of courses on the Carnegie Mellon Schedule of Classes . Students cannot use research or project courses to fulfill the technical elective requirement. However, these courses, with limitations, will count as free elective units. Up to 27 units of project/research may be counted in the free electives. Project/research courses that do not fulfill the technical elective requirements are: 24-391 / 24-392 Mechanical Engineering Project 24-491 / 24-492 Department Research Honors 39-xxx CIT series courses Free Electives A Free Elective is defined as any graded course offered by any academic unit of the university. Free electives offer students the opportunity to add additional majors and minors, pursue additional interests or deepen their experience in Mechanical Engineering. Typically, once the core requirements are completed, there remain about 45 units of free electives to reach the minimum of 382 to complete the degree. Up to 9 units of Student Taught Courses (StuCO) and Physical Education courses, or other courses taken as Pass/Fail, may also be used toward Free Electives. Guidance on Engineering Electives The Mechanical Engineering department offers several elective courses for undergraduates seeking further knowledge and experience in specialty areas of mechanical engineering. These courses (with approval) can fulfill for your Mechanical Engineering Technical Elective, Free Electives, and/or additional major or minor requirements. Robotics and Automation"
+    },
+    {
+      "id": "energy-environment-and-thermal-fluid-systems",
+      "name": "Energy, Environment, and Thermal Fluid Systems",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "24-711",
+        "24-718",
+        "24-721",
+        "24-722",
+        "24-730",
+        "24-381",
+        "24-423",
+        "24-623",
+        "24-626",
+        "24-628",
+        "24-629",
+        "24-643"
+      ],
+      "source_instruction": "Electives Mechanical Engineering Technical Electives Students must take at least one approved non-core Mechanical Engineering course labeled as “Mechanical Engineering Technical Elective” in the example course sequence. The course must be an approved 24-xxx course (9-unit minimum) at the 300 level or above to fulfill the technical elective requirement. Students can also take mechanical engineering graduate courses to fulfill the technical elective requirement. Students must have the appropriate prerequisites for the course. The prerequisites for graduate level courses are usually listed under \"prerequisite knowledge\" in SIO. Undergraduates do not have priority for graduate level courses. Students are encouraged to follow the guidance in the Waitlist Navigation Guide to improve chances of securing a seat. Students can find a current list of courses on the Carnegie Mellon Schedule of Classes . Students cannot use research or project courses to fulfill the technical elective requirement. However, these courses, with limitations, will count as free elective units. Up to 27 units of project/research may be counted in the free electives. Project/research courses that do not fulfill the technical elective requirements are: 24-391 / 24-392 Mechanical Engineering Project 24-491 / 24-492 Department Research Honors 39-xxx CIT series courses Free Electives A Free Elective is defined as any graded course offered by any academic unit of the university. Free electives offer students the opportunity to add additional majors and minors, pursue additional interests or deepen their experience in Mechanical Engineering. Typically, once the core requirements are completed, there remain about 45 units of free electives to reach the minimum of 382 to complete the degree. Up to 9 units of Student Taught Courses (StuCO) and Physical Education courses, or other courses taken as Pass/Fail, may also be used toward Free Electives. Guidance on Engineering Electives The Mechanical Engineering department offers several elective courses for undergraduates seeking further knowledge and experience in specialty areas of mechanical engineering. These courses (with approval) can fulfill for your Mechanical Engineering Technical Elective, Free Electives, and/or additional major or minor requirements. Robotics and Automation Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-760 Robot Dynamics and Analysis 12 24-773 Multivariable Linear Control 12 24-776 Non Linear Control 12 Application Courses 24-614 Microelectromechanical Systems 12 24-671 Electromechanical Systems Design 12 24-673 Soft Robots: Mechanics, Design and Modeling 12 24-753 Special Topics: Robotic Materials: Designs, Principles & Mechanics 12 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-778 Mechatronic Design 12 Energy, Environment, and Thermal Fluid Systems"
+    },
+    {
+      "id": "product-design-and-development",
+      "name": "Product Design and Development",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "24-651",
+        "24-688",
+        "24-632",
+        "24-633",
+        "24-672",
+        "24-680",
+        "24-691",
+        "24-692"
+      ],
+      "source_instruction": "Electives Mechanical Engineering Technical Electives Students must take at least one approved non-core Mechanical Engineering course labeled as “Mechanical Engineering Technical Elective” in the example course sequence. The course must be an approved 24-xxx course (9-unit minimum) at the 300 level or above to fulfill the technical elective requirement. Students can also take mechanical engineering graduate courses to fulfill the technical elective requirement. Students must have the appropriate prerequisites for the course. The prerequisites for graduate level courses are usually listed under \"prerequisite knowledge\" in SIO. Undergraduates do not have priority for graduate level courses. Students are encouraged to follow the guidance in the Waitlist Navigation Guide to improve chances of securing a seat. Students can find a current list of courses on the Carnegie Mellon Schedule of Classes . Students cannot use research or project courses to fulfill the technical elective requirement. However, these courses, with limitations, will count as free elective units. Up to 27 units of project/research may be counted in the free electives. Project/research courses that do not fulfill the technical elective requirements are: 24-391 / 24-392 Mechanical Engineering Project 24-491 / 24-492 Department Research Honors 39-xxx CIT series courses Free Electives A Free Elective is defined as any graded course offered by any academic unit of the university. Free electives offer students the opportunity to add additional majors and minors, pursue additional interests or deepen their experience in Mechanical Engineering. Typically, once the core requirements are completed, there remain about 45 units of free electives to reach the minimum of 382 to complete the degree. Up to 9 units of Student Taught Courses (StuCO) and Physical Education courses, or other courses taken as Pass/Fail, may also be used toward Free Electives. Guidance on Engineering Electives The Mechanical Engineering department offers several elective courses for undergraduates seeking further knowledge and experience in specialty areas of mechanical engineering. These courses (with approval) can fulfill for your Mechanical Engineering Technical Elective, Free Electives, and/or additional major or minor requirements. Robotics and Automation Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-760 Robot Dynamics and Analysis 12 24-773 Multivariable Linear Control 12 24-776 Non Linear Control 12 Application Courses 24-614 Microelectromechanical Systems 12 24-671 Electromechanical Systems Design 12 24-673 Soft Robots: Mechanics, Design and Modeling 12 24-753 Special Topics: Robotic Materials: Designs, Principles & Mechanics 12 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-778 Mechatronic Design 12 Energy, Environment, and Thermal Fluid Systems Fundamental Courses 24-711 Fluid Dynamics 12 24-718 Computational Fluid Dynamics 12 24-721 Advanced Thermodynamics 12 24-722 Energy System Modeling 12 24-730 Advanced Heat Transfer 12 Application Courses 24-381 Environmental Systems on a Changing Planet (Students must take 24-381 for Environmental Systems on a Changing Planet to fulfill the MechE Technical Elective requirement) 12 24-423 Renewable Energy Engineering 9 24-623 Molecular Simulation of Materials 12 24-626 Air Quality Engineering 12 24-628 Energy Transport and Conversion at the Nanoscale 12 24-629 Direct Solar and Thermal Energy Conversion 12 24-643 Energy Storage Materials and Systems 12 Product Design and Development"
+    },
+    {
+      "id": "autonomous-systems-and-machine-learning",
+      "name": "Autonomous Systems and Machine Learning",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "24-451",
+        "24-677",
+        "24-704",
+        "24-789",
+        "24-774",
+        "24-775",
+        "24-784"
+      ],
+      "source_instruction": "Electives Mechanical Engineering Technical Electives Students must take at least one approved non-core Mechanical Engineering course labeled as “Mechanical Engineering Technical Elective” in the example course sequence. The course must be an approved 24-xxx course (9-unit minimum) at the 300 level or above to fulfill the technical elective requirement. Students can also take mechanical engineering graduate courses to fulfill the technical elective requirement. Students must have the appropriate prerequisites for the course. The prerequisites for graduate level courses are usually listed under \"prerequisite knowledge\" in SIO. Undergraduates do not have priority for graduate level courses. Students are encouraged to follow the guidance in the Waitlist Navigation Guide to improve chances of securing a seat. Students can find a current list of courses on the Carnegie Mellon Schedule of Classes . Students cannot use research or project courses to fulfill the technical elective requirement. However, these courses, with limitations, will count as free elective units. Up to 27 units of project/research may be counted in the free electives. Project/research courses that do not fulfill the technical elective requirements are: 24-391 / 24-392 Mechanical Engineering Project 24-491 / 24-492 Department Research Honors 39-xxx CIT series courses Free Electives A Free Elective is defined as any graded course offered by any academic unit of the university. Free electives offer students the opportunity to add additional majors and minors, pursue additional interests or deepen their experience in Mechanical Engineering. Typically, once the core requirements are completed, there remain about 45 units of free electives to reach the minimum of 382 to complete the degree. Up to 9 units of Student Taught Courses (StuCO) and Physical Education courses, or other courses taken as Pass/Fail, may also be used toward Free Electives. Guidance on Engineering Electives The Mechanical Engineering department offers several elective courses for undergraduates seeking further knowledge and experience in specialty areas of mechanical engineering. These courses (with approval) can fulfill for your Mechanical Engineering Technical Elective, Free Electives, and/or additional major or minor requirements. Robotics and Automation Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-760 Robot Dynamics and Analysis 12 24-773 Multivariable Linear Control 12 24-776 Non Linear Control 12 Application Courses 24-614 Microelectromechanical Systems 12 24-671 Electromechanical Systems Design 12 24-673 Soft Robots: Mechanics, Design and Modeling 12 24-753 Special Topics: Robotic Materials: Designs, Principles & Mechanics 12 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-778 Mechatronic Design 12 Energy, Environment, and Thermal Fluid Systems Fundamental Courses 24-711 Fluid Dynamics 12 24-718 Computational Fluid Dynamics 12 24-721 Advanced Thermodynamics 12 24-722 Energy System Modeling 12 24-730 Advanced Heat Transfer 12 Application Courses 24-381 Environmental Systems on a Changing Planet (Students must take 24-381 for Environmental Systems on a Changing Planet to fulfill the MechE Technical Elective requirement) 12 24-423 Renewable Energy Engineering 9 24-623 Molecular Simulation of Materials 12 24-626 Air Quality Engineering 12 24-628 Energy Transport and Conversion at the Nanoscale 12 24-629 Direct Solar and Thermal Energy Conversion 12 24-643 Energy Storage Materials and Systems 12 Product Design and Development Fundamental Courses 24-651 Material Selection for Mechanical Engineers 12 24-688 Introduction to CAD and CAE Tools 12 Application Courses 24-632 Special Topics: Additive Manufacturing Processing and Product Development 12 24-633 Additive Manufacturing Laboratory 12 24-672 Special Topics in DIY Design and Fabrication 12 24-680 Quantitative Entrepreneurship: Analysis for New Technology Commercialization 12 24-691 Mechanical Engineering Project Management 12 24-692 Special Topics: Engineering a Startup: How to Start and Grow a Hardware Company 12 Autonomous Systems and Machine Learning"
+    },
+    {
+      "id": "computational-engineering",
+      "name": "Computational Engineering",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "24-703",
+        "24-780",
+        "24-783",
+        "24-785",
+        "24-658",
+        "24-718",
+        "24-755",
+        "24-781"
+      ],
+      "source_instruction": "Electives Mechanical Engineering Technical Electives Students must take at least one approved non-core Mechanical Engineering course labeled as “Mechanical Engineering Technical Elective” in the example course sequence. The course must be an approved 24-xxx course (9-unit minimum) at the 300 level or above to fulfill the technical elective requirement. Students can also take mechanical engineering graduate courses to fulfill the technical elective requirement. Students must have the appropriate prerequisites for the course. The prerequisites for graduate level courses are usually listed under \"prerequisite knowledge\" in SIO. Undergraduates do not have priority for graduate level courses. Students are encouraged to follow the guidance in the Waitlist Navigation Guide to improve chances of securing a seat. Students can find a current list of courses on the Carnegie Mellon Schedule of Classes . Students cannot use research or project courses to fulfill the technical elective requirement. However, these courses, with limitations, will count as free elective units. Up to 27 units of project/research may be counted in the free electives. Project/research courses that do not fulfill the technical elective requirements are: 24-391 / 24-392 Mechanical Engineering Project 24-491 / 24-492 Department Research Honors 39-xxx CIT series courses Free Electives A Free Elective is defined as any graded course offered by any academic unit of the university. Free electives offer students the opportunity to add additional majors and minors, pursue additional interests or deepen their experience in Mechanical Engineering. Typically, once the core requirements are completed, there remain about 45 units of free electives to reach the minimum of 382 to complete the degree. Up to 9 units of Student Taught Courses (StuCO) and Physical Education courses, or other courses taken as Pass/Fail, may also be used toward Free Electives. Guidance on Engineering Electives The Mechanical Engineering department offers several elective courses for undergraduates seeking further knowledge and experience in specialty areas of mechanical engineering. These courses (with approval) can fulfill for your Mechanical Engineering Technical Elective, Free Electives, and/or additional major or minor requirements. Robotics and Automation Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-760 Robot Dynamics and Analysis 12 24-773 Multivariable Linear Control 12 24-776 Non Linear Control 12 Application Courses 24-614 Microelectromechanical Systems 12 24-671 Electromechanical Systems Design 12 24-673 Soft Robots: Mechanics, Design and Modeling 12 24-753 Special Topics: Robotic Materials: Designs, Principles & Mechanics 12 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-778 Mechatronic Design 12 Energy, Environment, and Thermal Fluid Systems Fundamental Courses 24-711 Fluid Dynamics 12 24-718 Computational Fluid Dynamics 12 24-721 Advanced Thermodynamics 12 24-722 Energy System Modeling 12 24-730 Advanced Heat Transfer 12 Application Courses 24-381 Environmental Systems on a Changing Planet (Students must take 24-381 for Environmental Systems on a Changing Planet to fulfill the MechE Technical Elective requirement) 12 24-423 Renewable Energy Engineering 9 24-623 Molecular Simulation of Materials 12 24-626 Air Quality Engineering 12 24-628 Energy Transport and Conversion at the Nanoscale 12 24-629 Direct Solar and Thermal Energy Conversion 12 24-643 Energy Storage Materials and Systems 12 Product Design and Development Fundamental Courses 24-651 Material Selection for Mechanical Engineers 12 24-688 Introduction to CAD and CAE Tools 12 Application Courses 24-632 Special Topics: Additive Manufacturing Processing and Product Development 12 24-633 Additive Manufacturing Laboratory 12 24-672 Special Topics in DIY Design and Fabrication 12 24-680 Quantitative Entrepreneurship: Analysis for New Technology Commercialization 12 24-691 Mechanical Engineering Project Management 12 24-692 Special Topics: Engineering a Startup: How to Start and Grow a Hardware Company 12 Autonomous Systems and Machine Learning Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-704 Probability and Estimation Methods for Engineering Systems 12 24-789 Intermediate Deep Learning for Engineers 6 Application Courses 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-784 Special Topics: Trustworthy AI 12 Computational Engineering"
+    },
+    {
+      "id": "engineering-mechanisms-and-materials",
+      "name": "Engineering Mechanisms and Materials",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "24-634",
+        "24-635",
+        "24-652",
+        "24-653",
+        "24-751",
+        "24-358",
+        "24-643",
+        "24-650",
+        "24-684",
+        "24-755",
+        "24-753"
+      ],
+      "source_instruction": "Electives Mechanical Engineering Technical Electives Students must take at least one approved non-core Mechanical Engineering course labeled as “Mechanical Engineering Technical Elective” in the example course sequence. The course must be an approved 24-xxx course (9-unit minimum) at the 300 level or above to fulfill the technical elective requirement. Students can also take mechanical engineering graduate courses to fulfill the technical elective requirement. Students must have the appropriate prerequisites for the course. The prerequisites for graduate level courses are usually listed under \"prerequisite knowledge\" in SIO. Undergraduates do not have priority for graduate level courses. Students are encouraged to follow the guidance in the Waitlist Navigation Guide to improve chances of securing a seat. Students can find a current list of courses on the Carnegie Mellon Schedule of Classes . Students cannot use research or project courses to fulfill the technical elective requirement. However, these courses, with limitations, will count as free elective units. Up to 27 units of project/research may be counted in the free electives. Project/research courses that do not fulfill the technical elective requirements are: 24-391 / 24-392 Mechanical Engineering Project 24-491 / 24-492 Department Research Honors 39-xxx CIT series courses Free Electives A Free Elective is defined as any graded course offered by any academic unit of the university. Free electives offer students the opportunity to add additional majors and minors, pursue additional interests or deepen their experience in Mechanical Engineering. Typically, once the core requirements are completed, there remain about 45 units of free electives to reach the minimum of 382 to complete the degree. Up to 9 units of Student Taught Courses (StuCO) and Physical Education courses, or other courses taken as Pass/Fail, may also be used toward Free Electives. Guidance on Engineering Electives The Mechanical Engineering department offers several elective courses for undergraduates seeking further knowledge and experience in specialty areas of mechanical engineering. These courses (with approval) can fulfill for your Mechanical Engineering Technical Elective, Free Electives, and/or additional major or minor requirements. Robotics and Automation Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-760 Robot Dynamics and Analysis 12 24-773 Multivariable Linear Control 12 24-776 Non Linear Control 12 Application Courses 24-614 Microelectromechanical Systems 12 24-671 Electromechanical Systems Design 12 24-673 Soft Robots: Mechanics, Design and Modeling 12 24-753 Special Topics: Robotic Materials: Designs, Principles & Mechanics 12 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-778 Mechatronic Design 12 Energy, Environment, and Thermal Fluid Systems Fundamental Courses 24-711 Fluid Dynamics 12 24-718 Computational Fluid Dynamics 12 24-721 Advanced Thermodynamics 12 24-722 Energy System Modeling 12 24-730 Advanced Heat Transfer 12 Application Courses 24-381 Environmental Systems on a Changing Planet (Students must take 24-381 for Environmental Systems on a Changing Planet to fulfill the MechE Technical Elective requirement) 12 24-423 Renewable Energy Engineering 9 24-623 Molecular Simulation of Materials 12 24-626 Air Quality Engineering 12 24-628 Energy Transport and Conversion at the Nanoscale 12 24-629 Direct Solar and Thermal Energy Conversion 12 24-643 Energy Storage Materials and Systems 12 Product Design and Development Fundamental Courses 24-651 Material Selection for Mechanical Engineers 12 24-688 Introduction to CAD and CAE Tools 12 Application Courses 24-632 Special Topics: Additive Manufacturing Processing and Product Development 12 24-633 Additive Manufacturing Laboratory 12 24-672 Special Topics in DIY Design and Fabrication 12 24-680 Quantitative Entrepreneurship: Analysis for New Technology Commercialization 12 24-691 Mechanical Engineering Project Management 12 24-692 Special Topics: Engineering a Startup: How to Start and Grow a Hardware Company 12 Autonomous Systems and Machine Learning Fundamental Courses 24-451 Feedback Control Systems 12 24-677 Modern Control Theory 12 24-704 Probability and Estimation Methods for Engineering Systems 12 24-789 Intermediate Deep Learning for Engineers 6 Application Courses 24-774 Advanced Control Systems Integration 12 24-775 Bioinspired Robot Design and Experimentation 12 24-784 Special Topics: Trustworthy AI 12 Computational Engineering Fundamental Courses 24-703 Numerical Methods in Engineering 12 24-780 Engineering Computation 12 24-783 Advanced Engineering Computation 12 24-785 Engineering Optimization 12 Application Courses 24-658 Image-Based Computational Modeling and Analysis 12 24-718 Computational Fluid Dynamics 12 24-755 Finite Elements in Mechanics I 12 24-781 Engineering Computation Project Var. Engineering Mechanisms and Materials"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 13,
+    "course_references": 89,
+    "confidence": 0.97,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: First Year"
+    ],
+    "explicit_group_ratio": 0.92
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "9 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 77,
+    "extracted_unit_estimate": 291,
+    "scheduled_course_count": 68,
+    "missing_schedule_course_ids": [
+      "24-623",
+      "24-629",
+      "24-653",
+      "24-692",
+      "24-711",
+      "24-730",
+      "24-753",
+      "24-773",
+      "24-781"
+    ]
+  }
+}

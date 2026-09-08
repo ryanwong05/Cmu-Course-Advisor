@@ -1,0 +1,129 @@
+{
+  "program_id": "global-cultures-and-emerging-technologies--b-a",
+  "planning_id": "global-cultures-and-emerging-technologies",
+  "name": "Global Cultures and Emerging Technologies",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/",
+  "source_hash": "0f5d52f256fd14b0b872e0c0a789650be98e8ad611779f012694259b1265d06f",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "gateway-methodology-courses-in-cultural-studies-and-sociolinguistics-18-units",
+      "name": "Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-282",
+        "82-283"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "gateway-methodology-courses-for-technical-inquiry-choose-one-course-9-units",
+      "name": "Gateway/Methodology Courses for Technical Inquiry (choose one course) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-183",
+        "82-250"
+      ],
+      "source_instruction": "B.A. in Global Cultures & Emerging Technologies Gang Liu, Teaching Professor of Chinese Studies; Director of Undergraduate Studies https://www.cmu.edu/dietrich/lcal/ Global Cultures & Emerging Technologies (GCET) is an interdisciplinary undergraduate major that examines how culture and technology shape one another across global contexts. At a time when artificial intelligence, immersive media and digital platforms are rapidly transforming how people communicate, create and live, GCET asks essential questions: How do cultural values influence technological innovation? How do emerging technologies reshape languages, identities and societies? And how can technology be developed and used responsibly across cultural boundaries? Rooted in the humanities and deeply engaged with technological inquiry, GCET prepares students to understand — and help shape — the cultural dimensions of technological change. Students explore global cultures and languages while gaining literacy in emerging technologies, learning to evaluate their social impact, ethical implications and global reach. Major Requirements Curriculum: 108 units (minimum) I. Gateway/Methodology Courses (3 courses; 27 units) Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units 82-282 Interpreting Global Texts & Cultures 9 82-283 Language Diversity & Cultural Identity 9 Gateway/Methodology Courses for Technical Inquiry (choose one course) 9 units"
+    },
+    {
+      "id": "list-a-culture-focused",
+      "name": "List A: Culture-focused",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-185",
+        "82-138",
+        "82-188",
+        "82-215",
+        "82-239",
+        "82-248",
+        "82-260",
+        "82-270",
+        "82-278",
+        "82-279",
+        "82-299",
+        "82-390",
+        "82-416",
+        "82-432",
+        "82-455",
+        "82-539"
+      ],
+      "source_instruction": "B.A. in Global Cultures & Emerging Technologies Gang Liu, Teaching Professor of Chinese Studies; Director of Undergraduate Studies https://www.cmu.edu/dietrich/lcal/ Global Cultures & Emerging Technologies (GCET) is an interdisciplinary undergraduate major that examines how culture and technology shape one another across global contexts. At a time when artificial intelligence, immersive media and digital platforms are rapidly transforming how people communicate, create and live, GCET asks essential questions: How do cultural values influence technological innovation? How do emerging technologies reshape languages, identities and societies? And how can technology be developed and used responsibly across cultural boundaries? Rooted in the humanities and deeply engaged with technological inquiry, GCET prepares students to understand — and help shape — the cultural dimensions of technological change. Students explore global cultures and languages while gaining literacy in emerging technologies, learning to evaluate their social impact, ethical implications and global reach. Major Requirements Curriculum: 108 units (minimum) I. Gateway/Methodology Courses (3 courses; 27 units) Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units 82-282 Interpreting Global Texts & Cultures 9 82-283 Language Diversity & Cultural Identity 9 Gateway/Methodology Courses for Technical Inquiry (choose one course) 9 units 82-18X AI, XR and Digital Literacies for Global Cultures 9 82-183 AI for the Humanities: Learning, Reflection, and Creative Practices 9 82-250 Digital Realities: An Introduction to Immersive Storytelling 9 II. LCAL Global Cultures and Interdisciplinary Tech Courses (5 courses; 45 units) In consultation with their GCET advisor, students should ensure that the courses they select strike a good balance between culture-focused courses (List A) and technology-focused courses (List B). For example, this could involve selecting three courses from List A and two from List B, or vice versa. At least one course must be in a language other than English and at the 300-level or above. (See curricular clarifications below.) An extra Gateway/Methodology Technological Inquiry course may be counted toward satisfying this requirement. List A: Culture-focused LCAL offers a diverse array of courses that utilize critical cultural studies frameworks to analyze local and global cultures and technologies within various contexts. Our 100- and 200-level English courses emphasize local and global cultural analysis, while most 300-, 400- and 500-level non-English courses focus on cultural content and are taught in one of LCAL’s nine languages. There are simply too many to list here; the following are just a few examples:"
+    },
+    {
+      "id": "list-b-technology-focused",
+      "name": "List B: Technology-focused",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "82-187",
+        "82-130",
+        "82-284",
+        "82-287",
+        "82-237",
+        "60-216",
+        "60-415",
+        "82-255",
+        "82-265",
+        "82-285",
+        "82-304",
+        "82-380",
+        "82-269"
+      ],
+      "source_instruction": "B.A. in Global Cultures & Emerging Technologies Gang Liu, Teaching Professor of Chinese Studies; Director of Undergraduate Studies https://www.cmu.edu/dietrich/lcal/ Global Cultures & Emerging Technologies (GCET) is an interdisciplinary undergraduate major that examines how culture and technology shape one another across global contexts. At a time when artificial intelligence, immersive media and digital platforms are rapidly transforming how people communicate, create and live, GCET asks essential questions: How do cultural values influence technological innovation? How do emerging technologies reshape languages, identities and societies? And how can technology be developed and used responsibly across cultural boundaries? Rooted in the humanities and deeply engaged with technological inquiry, GCET prepares students to understand — and help shape — the cultural dimensions of technological change. Students explore global cultures and languages while gaining literacy in emerging technologies, learning to evaluate their social impact, ethical implications and global reach. Major Requirements Curriculum: 108 units (minimum) I. Gateway/Methodology Courses (3 courses; 27 units) Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units 82-282 Interpreting Global Texts & Cultures 9 82-283 Language Diversity & Cultural Identity 9 Gateway/Methodology Courses for Technical Inquiry (choose one course) 9 units 82-18X AI, XR and Digital Literacies for Global Cultures 9 82-183 AI for the Humanities: Learning, Reflection, and Creative Practices 9 82-250 Digital Realities: An Introduction to Immersive Storytelling 9 II. LCAL Global Cultures and Interdisciplinary Tech Courses (5 courses; 45 units) In consultation with their GCET advisor, students should ensure that the courses they select strike a good balance between culture-focused courses (List A) and technology-focused courses (List B). For example, this could involve selecting three courses from List A and two from List B, or vice versa. At least one course must be in a language other than English and at the 300-level or above. (See curricular clarifications below.) An extra Gateway/Methodology Technological Inquiry course may be counted toward satisfying this requirement. List A: Culture-focused LCAL offers a diverse array of courses that utilize critical cultural studies frameworks to analyze local and global cultures and technologies within various contexts. Our 100- and 200-level English courses emphasize local and global cultural analysis, while most 300-, 400- and 500-level non-English courses focus on cultural content and are taught in one of LCAL’s nine languages. There are simply too many to list here; the following are just a few examples: 82-185 Global Food Cultures 9 82-138 Comparative China: Perceptions Through Youtube & TikTok 9 82-188 Global Science Fiction 9 82-215 Minorities in the Middle East and North Africa 9 82-239 Crazy Linguistically Rich Asian Languages 9 82-248 Introduction to Latin American Film and Visual Arts 9 82-260 Black Italy 9 82-270 Technology in Japanese Culture and Society 9 82-278 Japanese Film and Literature: The Art of Storytelling 9 82-279 Anime - Visual Interplay between Japan and the World 9 82-299 Global Minorities: Stories of Diversity, Resistance and Survivance 9 82-390 Soviet Futures: Revolutionary Design 9 82-416 Topics in French and Francophone Studies 9 82-432 Chinese Popular Culture: A Game of Learning 9 82-455 Topics in Hispanic Studies 9 82-539 Chinese Digital Arts and Literature: Nezha and Wukong 9 List B: Technology-focused LCAL has many courses that utilize existing and emerging technologies to enhance innovation and creativity with cultural insights. LCAL faculty are continually iterating in this space and more classes will be developed in the future."
+    },
+    {
+      "id": "iv-capstone-course-1-course-9-units",
+      "name": "IV. Capstone Course (1 course; 9 units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-580"
+      ],
+      "source_instruction": "B.A. in Global Cultures & Emerging Technologies Gang Liu, Teaching Professor of Chinese Studies; Director of Undergraduate Studies https://www.cmu.edu/dietrich/lcal/ Global Cultures & Emerging Technologies (GCET) is an interdisciplinary undergraduate major that examines how culture and technology shape one another across global contexts. At a time when artificial intelligence, immersive media and digital platforms are rapidly transforming how people communicate, create and live, GCET asks essential questions: How do cultural values influence technological innovation? How do emerging technologies reshape languages, identities and societies? And how can technology be developed and used responsibly across cultural boundaries? Rooted in the humanities and deeply engaged with technological inquiry, GCET prepares students to understand — and help shape — the cultural dimensions of technological change. Students explore global cultures and languages while gaining literacy in emerging technologies, learning to evaluate their social impact, ethical implications and global reach. Major Requirements Curriculum: 108 units (minimum) I. Gateway/Methodology Courses (3 courses; 27 units) Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units 82-282 Interpreting Global Texts & Cultures 9 82-283 Language Diversity & Cultural Identity 9 Gateway/Methodology Courses for Technical Inquiry (choose one course) 9 units 82-18X AI, XR and Digital Literacies for Global Cultures 9 82-183 AI for the Humanities: Learning, Reflection, and Creative Practices 9 82-250 Digital Realities: An Introduction to Immersive Storytelling 9 II. LCAL Global Cultures and Interdisciplinary Tech Courses (5 courses; 45 units) In consultation with their GCET advisor, students should ensure that the courses they select strike a good balance between culture-focused courses (List A) and technology-focused courses (List B). For example, this could involve selecting three courses from List A and two from List B, or vice versa. At least one course must be in a language other than English and at the 300-level or above. (See curricular clarifications below.) An extra Gateway/Methodology Technological Inquiry course may be counted toward satisfying this requirement. List A: Culture-focused LCAL offers a diverse array of courses that utilize critical cultural studies frameworks to analyze local and global cultures and technologies within various contexts. Our 100- and 200-level English courses emphasize local and global cultural analysis, while most 300-, 400- and 500-level non-English courses focus on cultural content and are taught in one of LCAL’s nine languages. There are simply too many to list here; the following are just a few examples: 82-185 Global Food Cultures 9 82-138 Comparative China: Perceptions Through Youtube & TikTok 9 82-188 Global Science Fiction 9 82-215 Minorities in the Middle East and North Africa 9 82-239 Crazy Linguistically Rich Asian Languages 9 82-248 Introduction to Latin American Film and Visual Arts 9 82-260 Black Italy 9 82-270 Technology in Japanese Culture and Society 9 82-278 Japanese Film and Literature: The Art of Storytelling 9 82-279 Anime - Visual Interplay between Japan and the World 9 82-299 Global Minorities: Stories of Diversity, Resistance and Survivance 9 82-390 Soviet Futures: Revolutionary Design 9 82-416 Topics in French and Francophone Studies 9 82-432 Chinese Popular Culture: A Game of Learning 9 82-455 Topics in Hispanic Studies 9 82-539 Chinese Digital Arts and Literature: Nezha and Wukong 9 List B: Technology-focused LCAL has many courses that utilize existing and emerging technologies to enhance innovation and creativity with cultural insights. LCAL faculty are continually iterating in this space and more classes will be developed in the future. 82-187 Documentary, Found Sound, and Hidden Frequencies in Language and Culture 3 82-130 Story + Game Lab: Oracle Bones & China's Earliest Writing 9 82-284 Multicultural Pittsburgh: Storytelling with 360 Video 6 82-287 Multicultural Immersion - Relating Your World in Virtual Reality 6 82-237/60-216 Animated Storytelling: Chinese Ghost Stories and Shadow Play 9 82-237/60-415 Animated Storytelling: Chinese Ghost Stories and Shadow Play 9 82-255 Beyond the Korean Wave: A Critical Exploration of K-pop 9 82-265 Third Cinema: People, Language, and Culture in Documentary Storytelling 9 82-285 Podcasting: Language and Culture Through Storytelling 9 82-304 French & Francophone Sociolinguistics 9 82-380 Podcasting in Spanish: Unlocking Cultural Storytelling 9 82-287 Multicultural Immersion - Relating Your World in Virtual Reality 6 82-269 Immersive Digital Storytelling:Using VR/AR to Explore, Language Culture Identity 9 III. Interdisciplinary Electives (3 courses; 27 units) In consultation with their GCET advisor, students should take three interdisciplinary electives from LCAL and/or other departments. These electives should align with the student's interests and career goals and can include offerings from Dietrich, Computer Science, CFA, Engineering or iDeATe. At least two courses must have a tech focus. IV. Capstone Course (1 course; 9 units) The capstone course allows students to integrate their learning from both cultural and technological concentrations."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 34,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.8
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "13 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 34,
+    "extracted_unit_estimate": 44,
+    "scheduled_course_count": 21,
+    "missing_schedule_course_ids": [
+      "60-216",
+      "60-415",
+      "82-130",
+      "82-138",
+      "82-183",
+      "82-215",
+      "82-237",
+      "82-239",
+      "82-269",
+      "82-284",
+      "82-287",
+      "82-299",
+      "82-390"
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "program_id": "philosophy--b-a",
+  "planning_id": "philosophy",
+  "name": "Philosophy",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/",
+  "source_hash": "f598a6b177cbe294ee9b2f55c3dc4567131e88aa2259d3203a79b02228e416d7",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "introduction-to-philosophy-9-units",
+      "name": "Introduction to Philosophy 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-100"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units"
+    },
+    {
+      "id": "area-1-values-and-normative-theory-9-units",
+      "name": "Area 1: Values and Normative Theory 9 units",
+      "choose": 13,
+      "units": 117,
+      "options": [
+        "80-130",
+        "80-135",
+        "80-136",
+        "80-234",
+        "80-244",
+        "80-245",
+        "80-246",
+        "80-249",
+        "80-330",
+        "80-335",
+        "80-336",
+        "80-348",
+        "80-447"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units"
+    },
+    {
+      "id": "area-2-philosophy-of-mind-language-metaphysics-9-units",
+      "name": "Area 2: Philosophy of Mind/Language/Metaphysics 9 units",
+      "choose": 11,
+      "units": 99,
+      "options": [
+        "80-180",
+        "80-270",
+        "80-271",
+        "80-276",
+        "80-260",
+        "80-280",
+        "80-283",
+        "80-285",
+        "80-381",
+        "80-383",
+        "80-484"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units"
+    },
+    {
+      "id": "area-3-logic-philosophy-of-mathematics-9-units",
+      "name": "Area 3: Logic/Philosophy of Mathematics 9 units",
+      "choose": 11,
+      "units": 99,
+      "options": [
+        "80-210",
+        "80-211",
+        "80-212",
+        "80-310",
+        "80-311",
+        "80-312",
+        "80-315",
+        "80-411",
+        "80-413",
+        "80-419",
+        "80-514"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units"
+    },
+    {
+      "id": "area-4-epistemology-methodology-9-units",
+      "name": "Area 4: Epistemology/Methodology 9 units",
+      "choose": 18,
+      "units": 162,
+      "options": [
+        "80-150",
+        "80-201",
+        "80-208",
+        "80-220",
+        "80-221",
+        "80-222",
+        "80-226",
+        "80-261",
+        "80-305",
+        "80-306",
+        "80-324",
+        "80-329",
+        "80-325",
+        "80-405",
+        "80-490",
+        "80-516",
+        "80-521",
+        "80-524"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units One of the following: 80-210 Logic and Proofs 9 80-211 Logic and Mathematical Inquiry 9 80-212 Arguments and Logical Analysis 9 80-310 Formal Logic 9 80-311 Undecidability and Incompleteness 9 80-312 Mathematical Revolutions 9 80-315 Logics for Knowledge and Belief 9 80-411 Proof Theory 9 80-413 Category Theory 9 80-419 Interactive Theorem Proving 9 80-514 Categorical Logic 9 Area 4: Epistemology/Methodology 9 units"
+    },
+    {
+      "id": "area-5-history-of-philosophy-18-units",
+      "name": "Area 5: History of Philosophy 18 units",
+      "choose": 14,
+      "units": 126,
+      "options": [
+        "80-150",
+        "80-226",
+        "80-250",
+        "80-251",
+        "80-252",
+        "80-253",
+        "80-254",
+        "80-255",
+        "80-551",
+        "80-260",
+        "80-261",
+        "80-350",
+        "80-365",
+        "80-490"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units One of the following: 80-210 Logic and Proofs 9 80-211 Logic and Mathematical Inquiry 9 80-212 Arguments and Logical Analysis 9 80-310 Formal Logic 9 80-311 Undecidability and Incompleteness 9 80-312 Mathematical Revolutions 9 80-315 Logics for Knowledge and Belief 9 80-411 Proof Theory 9 80-413 Category Theory 9 80-419 Interactive Theorem Proving 9 80-514 Categorical Logic 9 Area 4: Epistemology/Methodology 9 units One of the following: 80-150 Nature of Reason 9 80-201 Knowledge and Justified Belief 9 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 80-220 Philosophy of Science 9 80-221 Philosophy of Social Science 9 80-222 Measurement and Methodology 9 80-226 The Nature of Scientific Revolutions 9 80-261 Experience, Reason, and Truth 9 80-305 Game Theory After Spring 2023 9 80-306 Decision Theory 9 80-324 Philosophy of Economics 9 80-329 Philosophy and Causation 9 80-325 Foundations of Causation and Machine Learning 9 80-405 Game Theory Prior to Fall 2023 9 80-490 Philosophical and Practical Aspects of AI 9 80-516 Causality and Machine Learning 9 80-521 Seminar on Formal Epistemology: Uncertain Interpretations 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 Area 5: History of Philosophy 18 units"
+    },
+    {
+      "id": "1-for-an-emphasis-on-law-social-policy-a-student-might-take",
+      "name": "1. For an emphasis on Law & Social Policy, a student might take:",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "80-335",
+        "80-180",
+        "80-211",
+        "80-208",
+        "80-150",
+        "80-250",
+        "80-336",
+        "80-348",
+        "80-447"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units One of the following: 80-210 Logic and Proofs 9 80-211 Logic and Mathematical Inquiry 9 80-212 Arguments and Logical Analysis 9 80-310 Formal Logic 9 80-311 Undecidability and Incompleteness 9 80-312 Mathematical Revolutions 9 80-315 Logics for Knowledge and Belief 9 80-411 Proof Theory 9 80-413 Category Theory 9 80-419 Interactive Theorem Proving 9 80-514 Categorical Logic 9 Area 4: Epistemology/Methodology 9 units One of the following: 80-150 Nature of Reason 9 80-201 Knowledge and Justified Belief 9 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 80-220 Philosophy of Science 9 80-221 Philosophy of Social Science 9 80-222 Measurement and Methodology 9 80-226 The Nature of Scientific Revolutions 9 80-261 Experience, Reason, and Truth 9 80-305 Game Theory After Spring 2023 9 80-306 Decision Theory 9 80-324 Philosophy of Economics 9 80-329 Philosophy and Causation 9 80-325 Foundations of Causation and Machine Learning 9 80-405 Game Theory Prior to Fall 2023 9 80-490 Philosophical and Practical Aspects of AI 9 80-516 Causality and Machine Learning 9 80-521 Seminar on Formal Epistemology: Uncertain Interpretations 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 Area 5: History of Philosophy 18 units Two of the following: 80-150 Nature of Reason 9 80-226 The Nature of Scientific Revolutions 9 80-250 Ancient Philosophy 9 80-251 Modern Philosophy 9 80-252 Kant 9 80-253 Continental Philosophy 9 80-254 The History of Analytic Philosophy and Its Influence 9 80-255 Pragmatism: Scientific Approach to Philosophy 9 80-551 Seminar on History of Philosophy: Smith and Hume 9 80-260 Dangerous Ideas in Psychiatry 9 80-261 Experience, Reason, and Truth 9 80-350 Adam Smith 9 80-365 Ramsey 9 80-490 Philosophical and Practical Aspects of AI 9 Area 6: Elective 27 units Three other philosophy courses, or appropriate courses from other departments, with the permission of the Senior Academic Program Manager. Sample Curricula Here are four sample curricula, reflecting different emphases. 1. For an emphasis on Law & Social Policy, a student might take:"
+    },
+    {
+      "id": "2-for-an-emphasis-on-philosophy-of-science-a-student-might-take",
+      "name": "2. For an emphasis on Philosophy of Science, a student might take:",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "80-136",
+        "80-270",
+        "80-211",
+        "80-220",
+        "80-221",
+        "80-250",
+        "80-226",
+        "80-150",
+        "80-524"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units One of the following: 80-210 Logic and Proofs 9 80-211 Logic and Mathematical Inquiry 9 80-212 Arguments and Logical Analysis 9 80-310 Formal Logic 9 80-311 Undecidability and Incompleteness 9 80-312 Mathematical Revolutions 9 80-315 Logics for Knowledge and Belief 9 80-411 Proof Theory 9 80-413 Category Theory 9 80-419 Interactive Theorem Proving 9 80-514 Categorical Logic 9 Area 4: Epistemology/Methodology 9 units One of the following: 80-150 Nature of Reason 9 80-201 Knowledge and Justified Belief 9 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 80-220 Philosophy of Science 9 80-221 Philosophy of Social Science 9 80-222 Measurement and Methodology 9 80-226 The Nature of Scientific Revolutions 9 80-261 Experience, Reason, and Truth 9 80-305 Game Theory After Spring 2023 9 80-306 Decision Theory 9 80-324 Philosophy of Economics 9 80-329 Philosophy and Causation 9 80-325 Foundations of Causation and Machine Learning 9 80-405 Game Theory Prior to Fall 2023 9 80-490 Philosophical and Practical Aspects of AI 9 80-516 Causality and Machine Learning 9 80-521 Seminar on Formal Epistemology: Uncertain Interpretations 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 Area 5: History of Philosophy 18 units Two of the following: 80-150 Nature of Reason 9 80-226 The Nature of Scientific Revolutions 9 80-250 Ancient Philosophy 9 80-251 Modern Philosophy 9 80-252 Kant 9 80-253 Continental Philosophy 9 80-254 The History of Analytic Philosophy and Its Influence 9 80-255 Pragmatism: Scientific Approach to Philosophy 9 80-551 Seminar on History of Philosophy: Smith and Hume 9 80-260 Dangerous Ideas in Psychiatry 9 80-261 Experience, Reason, and Truth 9 80-350 Adam Smith 9 80-365 Ramsey 9 80-490 Philosophical and Practical Aspects of AI 9 Area 6: Elective 27 units Three other philosophy courses, or appropriate courses from other departments, with the permission of the Senior Academic Program Manager. Sample Curricula Here are four sample curricula, reflecting different emphases. 1. For an emphasis on Law & Social Policy, a student might take: Area 1 80-335 Social and Political Philosophy 9 Area 2 80-180 Introduction to Linguistics 9 Area 3 80-211 Logic and Mathematical Inquiry 9 Area 4 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 Area 5 80-150 Nature of Reason 9 80-250 Ancient Philosophy 9 Area 6 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 2. For an emphasis on Philosophy of Science, a student might take:"
+    },
+    {
+      "id": "3-for-an-emphasis-on-ethics-and-social-philosophy-a-student-might-take",
+      "name": "3. For an emphasis on Ethics and Social Philosophy, a student might take:",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "80-130",
+        "80-276",
+        "80-211",
+        "80-221",
+        "80-250",
+        "80-251",
+        "80-330",
+        "80-335",
+        "80-348"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units One of the following: 80-210 Logic and Proofs 9 80-211 Logic and Mathematical Inquiry 9 80-212 Arguments and Logical Analysis 9 80-310 Formal Logic 9 80-311 Undecidability and Incompleteness 9 80-312 Mathematical Revolutions 9 80-315 Logics for Knowledge and Belief 9 80-411 Proof Theory 9 80-413 Category Theory 9 80-419 Interactive Theorem Proving 9 80-514 Categorical Logic 9 Area 4: Epistemology/Methodology 9 units One of the following: 80-150 Nature of Reason 9 80-201 Knowledge and Justified Belief 9 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 80-220 Philosophy of Science 9 80-221 Philosophy of Social Science 9 80-222 Measurement and Methodology 9 80-226 The Nature of Scientific Revolutions 9 80-261 Experience, Reason, and Truth 9 80-305 Game Theory After Spring 2023 9 80-306 Decision Theory 9 80-324 Philosophy of Economics 9 80-329 Philosophy and Causation 9 80-325 Foundations of Causation and Machine Learning 9 80-405 Game Theory Prior to Fall 2023 9 80-490 Philosophical and Practical Aspects of AI 9 80-516 Causality and Machine Learning 9 80-521 Seminar on Formal Epistemology: Uncertain Interpretations 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 Area 5: History of Philosophy 18 units Two of the following: 80-150 Nature of Reason 9 80-226 The Nature of Scientific Revolutions 9 80-250 Ancient Philosophy 9 80-251 Modern Philosophy 9 80-252 Kant 9 80-253 Continental Philosophy 9 80-254 The History of Analytic Philosophy and Its Influence 9 80-255 Pragmatism: Scientific Approach to Philosophy 9 80-551 Seminar on History of Philosophy: Smith and Hume 9 80-260 Dangerous Ideas in Psychiatry 9 80-261 Experience, Reason, and Truth 9 80-350 Adam Smith 9 80-365 Ramsey 9 80-490 Philosophical and Practical Aspects of AI 9 Area 6: Elective 27 units Three other philosophy courses, or appropriate courses from other departments, with the permission of the Senior Academic Program Manager. Sample Curricula Here are four sample curricula, reflecting different emphases. 1. For an emphasis on Law & Social Policy, a student might take: Area 1 80-335 Social and Political Philosophy 9 Area 2 80-180 Introduction to Linguistics 9 Area 3 80-211 Logic and Mathematical Inquiry 9 Area 4 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 Area 5 80-150 Nature of Reason 9 80-250 Ancient Philosophy 9 Area 6 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 2. For an emphasis on Philosophy of Science, a student might take: Area 1 80-136 Social Structure, Public Policy & Ethics 9 Area 2 80-270 Problems of Mind and Body: Meaning and Doing 9 Area 3 80-211 Logic and Mathematical Inquiry 9 Area 4 80-220 Philosophy of Science 9 or 80-221 Philosophy of Social Science Area 5 80-250 Ancient Philosophy 9 80-226 The Nature of Scientific Revolutions 9 Area 6 80-150 Nature of Reason 9 80-221 Philosophy of Social Science 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 3. For an emphasis on Ethics and Social Philosophy, a student might take:"
+    },
+    {
+      "id": "4-for-an-emphasis-on-philosophy-of-mind-a-student-might-take",
+      "name": "4. For an emphasis on Philosophy of Mind, a student might take:",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "80-130",
+        "80-270",
+        "80-211",
+        "80-201",
+        "80-251",
+        "80-252",
+        "80-521",
+        "80-261",
+        "80-271"
+      ],
+      "source_instruction": "The Major in Philosophy Patrick Doyle, Senior Academic Program Manager Location: Baker Hall 161G pdoyle2@andrew.cmu.edu https://go.oncehub.com/PatDoyle Overview The Major in Philosophy is intended to be flexible and to facilitate additional majors in other fields (including majors with a strong professional focus). It provides students with a broad humanities education and sharpens their analytical skills. We encourage, but do not require, students to choose a thematic concentration through their electives. Sample curricula emphasizing Law and Social Policy, Philosophy of Science, Ethics and Social Philosophy, and Philosophy of Mind are suggested below. However, alternative emphases can be proposed and approved by the Senior Academic Program Manager. The Major in Philosophy is a B.A. degree. Curriculum In addition to the general education requirements for the student's college, Philosophy primary majors and additional majors must complete 80-100 Introduction to Philosophy and nine Philosophy courses in the Areas listed below. The 80-100 Introduction to Philosophy requirement must be fulfilled before the first semester of the junior year. Only two of the remaining nine courses may be at the 100-level, and two of the nine courses must be at the 300-level or higher. All ten courses, if taken at CMU, must be taken for a letter grade and passed with a grade of \"C\" or above. No more than two courses of the ten courses may be taken at another institution. Students are to choose one course out of each of the areas 1-4, two courses out of area 5, and may freely select three courses in area 6. Students may double count any course for the major with another major or minor. As per the requirement of Dietrich College, a student's Grand Challenge First-Year Seminar course may not count toward the fulfillment of the major requirements. Introduction to Philosophy 9 units Units 80-100 Introduction to Philosophy 9 Area 1: Values and Normative Theory 9 units One of the following: 80-130 Introduction to Ethics 9 80-135 Introduction to Political Philosophy 9 80-136 Social Structure, Public Policy & Ethics 9 80-234 Philosophy of Race and Gender 9 80-244 Environmental Ethics 9 80-245 Medical Ethics 9 80-246 Moral Psychology 9 80-249 AI, Society, and Humanity 9 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 Area 2: Philosophy of Mind/Language/Metaphysics 9 units One of the following: 80-180 Introduction to Linguistics 9 80-270 Problems of Mind and Body: Meaning and Doing 9 80-271 Mind and Body: The Objective and the Subjective 9 80-276 Philosophy of Religion 9 80-260 Dangerous Ideas in Psychiatry 9 80-280 Linguistic Analysis 9 80-283 It Matters How You Say It 9 80-285 Natural Language Syntax 9 80-381 Meaning in Language 9 80-383 Language in Use 9 80-484 Language and Thought 9 Area 3: Logic/Philosophy of Mathematics 9 units One of the following: 80-210 Logic and Proofs 9 80-211 Logic and Mathematical Inquiry 9 80-212 Arguments and Logical Analysis 9 80-310 Formal Logic 9 80-311 Undecidability and Incompleteness 9 80-312 Mathematical Revolutions 9 80-315 Logics for Knowledge and Belief 9 80-411 Proof Theory 9 80-413 Category Theory 9 80-419 Interactive Theorem Proving 9 80-514 Categorical Logic 9 Area 4: Epistemology/Methodology 9 units One of the following: 80-150 Nature of Reason 9 80-201 Knowledge and Justified Belief 9 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 80-220 Philosophy of Science 9 80-221 Philosophy of Social Science 9 80-222 Measurement and Methodology 9 80-226 The Nature of Scientific Revolutions 9 80-261 Experience, Reason, and Truth 9 80-305 Game Theory After Spring 2023 9 80-306 Decision Theory 9 80-324 Philosophy of Economics 9 80-329 Philosophy and Causation 9 80-325 Foundations of Causation and Machine Learning 9 80-405 Game Theory Prior to Fall 2023 9 80-490 Philosophical and Practical Aspects of AI 9 80-516 Causality and Machine Learning 9 80-521 Seminar on Formal Epistemology: Uncertain Interpretations 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 Area 5: History of Philosophy 18 units Two of the following: 80-150 Nature of Reason 9 80-226 The Nature of Scientific Revolutions 9 80-250 Ancient Philosophy 9 80-251 Modern Philosophy 9 80-252 Kant 9 80-253 Continental Philosophy 9 80-254 The History of Analytic Philosophy and Its Influence 9 80-255 Pragmatism: Scientific Approach to Philosophy 9 80-551 Seminar on History of Philosophy: Smith and Hume 9 80-260 Dangerous Ideas in Psychiatry 9 80-261 Experience, Reason, and Truth 9 80-350 Adam Smith 9 80-365 Ramsey 9 80-490 Philosophical and Practical Aspects of AI 9 Area 6: Elective 27 units Three other philosophy courses, or appropriate courses from other departments, with the permission of the Senior Academic Program Manager. Sample Curricula Here are four sample curricula, reflecting different emphases. 1. For an emphasis on Law & Social Policy, a student might take: Area 1 80-335 Social and Political Philosophy 9 Area 2 80-180 Introduction to Linguistics 9 Area 3 80-211 Logic and Mathematical Inquiry 9 Area 4 80-208 Against the Algorithm: Critical Thinking as a Way of Life 9 Area 5 80-150 Nature of Reason 9 80-250 Ancient Philosophy 9 Area 6 80-336 Philosophy of Law 9 80-348 Health, Human Rights, and International Development 9 80-447 Seminar in Global Justice 9 2. For an emphasis on Philosophy of Science, a student might take: Area 1 80-136 Social Structure, Public Policy & Ethics 9 Area 2 80-270 Problems of Mind and Body: Meaning and Doing 9 Area 3 80-211 Logic and Mathematical Inquiry 9 Area 4 80-220 Philosophy of Science 9 or 80-221 Philosophy of Social Science Area 5 80-250 Ancient Philosophy 9 80-226 The Nature of Scientific Revolutions 9 Area 6 80-150 Nature of Reason 9 80-221 Philosophy of Social Science 9 80-524 Topics in Formal Epistemology: Topological Philosophy of Science 9 3. For an emphasis on Ethics and Social Philosophy, a student might take: Area 1 80-130 Introduction to Ethics 9 Area 2 80-276 Philosophy of Religion 9 Area 3 80-211 Logic and Mathematical Inquiry 9 Area 4 80-221 Philosophy of Social Science 9 Area 5 80-250 Ancient Philosophy 9 80-251 Modern Philosophy 9 Area 6 80-330 Ethical Theory 9 80-335 Social and Political Philosophy 9 80-348 Health, Human Rights, and International Development 9 4. For an emphasis on Philosophy of Mind, a student might take:"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 10,
+    "course_references": 104,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (936 units)."
+    ],
+    "warnings": [
+      "27 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 63,
+    "extracted_unit_estimate": 936,
+    "scheduled_course_count": 36,
+    "missing_schedule_course_ids": [
+      "80-136",
+      "80-201",
+      "80-212",
+      "80-220",
+      "80-222",
+      "80-246",
+      "80-250",
+      "80-254",
+      "80-255",
+      "80-261",
+      "80-271",
+      "80-276",
+      "80-280",
+      "80-283",
+      "80-324",
+      "80-329",
+      "80-336",
+      "80-350",
+      "80-365",
+      "80-381",
+      "80-405",
+      "80-411",
+      "80-419",
+      "80-484",
+      "80-521",
+      "80-524",
+      "80-551"
+    ]
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "program_id": "political-science-security-and-technology--b-s",
+  "planning_id": "political-science-security-and-technology",
+  "name": "Political Science, Security, and Technology",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/",
+  "source_hash": "a6c42cef6913bfd182070de9743051596e212e2bab5100c276f7f3e7a081b570",
+  "fixed_courses": [
+    {
+      "id": "84-101",
+      "name": "Introduction to Political Science",
+      "units": 9.0,
+      "source_text": "84-101 Introduction to Political Science 9"
+    },
+    {
+      "id": "84-104",
+      "name": "Decision Processes in American Political Institutions",
+      "units": 9.0,
+      "source_text": "84-104 Decision Processes in American Political Institutions 9"
+    },
+    {
+      "id": "84-226",
+      "name": "International Relations",
+      "units": 9.0,
+      "source_text": "84-226 International Relations 9"
+    },
+    {
+      "id": "84-250",
+      "name": "Writing for Political Science and Policy",
+      "units": 9.0,
+      "source_text": "84-250 Writing for Political Science and Policy 9"
+    },
+    {
+      "id": "84-274",
+      "name": "An Introduction to Technology and War",
+      "units": 9.0,
+      "source_text": "84-274 An Introduction to Technology and War 9"
+    },
+    {
+      "id": "84-266",
+      "name": "Research Design for Political Science",
+      "units": 9.0,
+      "source_text": "84-266 Research Design for Political Science 9"
+    },
+    {
+      "id": "36-202",
+      "name": "Methods for Statistics & Data Science",
+      "units": 9.0,
+      "source_text": "36-202 Methods for Statistics & Data Science 9"
+    },
+    {
+      "id": "15-110",
+      "name": "Principles of Computing",
+      "units": 10.0,
+      "source_text": "15-110 Principles of Computing 10"
+    },
+    {
+      "id": "15-112",
+      "name": "Fundamentals of Programming and Computer Science",
+      "units": null,
+      "source_text": "or 15-112 Fundamentals of Programming and Computer Science"
+    },
+    {
+      "id": "84-120",
+      "name": "Introduction to US Constitutional Law",
+      "units": 9.0,
+      "source_text": "84-120 Introduction to US Constitutional Law 9"
+    },
+    {
+      "id": "84-252",
+      "name": "Briefing in the Policy World",
+      "units": 6.0,
+      "source_text": "84-252 Briefing in the Policy World 6"
+    },
+    {
+      "id": "84-280",
+      "name": "Popcorn and Politics: American Foreign Policy at the Movies",
+      "units": 12.0,
+      "source_text": "84-280 Popcorn and Politics: American Foreign Policy at the Movies 12"
+    },
+    {
+      "id": "84-285",
+      "name": "Introduction to Legal Education and the Legal Profession",
+      "units": 9.0,
+      "source_text": "84-285 Introduction to Legal Education and the Legal Profession 9"
+    },
+    {
+      "id": "84-301",
+      "name": "Policy & Persuasion",
+      "units": 6.0,
+      "source_text": "84-301 Policy & Persuasion 6"
+    },
+    {
+      "id": "84-309",
+      "name": "American Political Divides and Great Debates",
+      "units": 9.0,
+      "source_text": "84-309 American Political Divides and Great Debates 9"
+    },
+    {
+      "id": "84-319",
+      "name": "Civil-Military Relations",
+      "units": 9.0,
+      "source_text": "84-319 Civil-Military Relations 9"
+    },
+    {
+      "id": "84-324",
+      "name": "The Future of Democracy",
+      "units": 9.0,
+      "source_text": "84-324 The Future of Democracy 9"
+    },
+    {
+      "id": "84-325",
+      "name": "Contemporary American Foreign Policy",
+      "units": 9.0,
+      "source_text": "84-325 Contemporary American Foreign Policy 9"
+    },
+    {
+      "id": "84-327",
+      "name": "Who Really Runs America?: Subnational Governance and Policymaking",
+      "units": 9.0,
+      "source_text": "84-327 Who Really Runs America?: Subnational Governance and Policymaking 9"
+    },
+    {
+      "id": "84-328",
+      "name": "Military Strategy and Doctrine",
+      "units": 9.0,
+      "source_text": "84-328 Military Strategy and Doctrine 9"
+    },
+    {
+      "id": "84-331",
+      "name": "Technology, Law, and Democracy",
+      "units": 6.0,
+      "source_text": "84-331 Technology, Law, and Democracy 6"
+    },
+    {
+      "id": "84-332",
+      "name": "Contemporary US Constitutional Law Issues *",
+      "units": 6.0,
+      "source_text": "84-332 Contemporary US Constitutional Law Issues * 6"
+    },
+    {
+      "id": "84-333",
+      "name": "Law of US Democracy",
+      "units": 9.0,
+      "source_text": "84-333 Law of US Democracy 9"
+    },
+    {
+      "id": "84-336",
+      "name": "Implementing Public Policy: From Good Idea To Reality *",
+      "units": 12.0,
+      "source_text": "84-336 Implementing Public Policy: From Good Idea To Reality * 12"
+    },
+    {
+      "id": "84-338",
+      "name": "Analysis of US Presidential Powers *",
+      "units": 6.0,
+      "source_text": "84-338 Analysis of US Presidential Powers * 6"
+    },
+    {
+      "id": "84-339",
+      "name": "Seminar in Public Policy Research *",
+      "units": 12.0,
+      "source_text": "84-339 Seminar in Public Policy Research * 12"
+    },
+    {
+      "id": "84-352",
+      "name": "Representation and Voting Rights",
+      "units": 9.0,
+      "source_text": "84-352 Representation and Voting Rights 9"
+    },
+    {
+      "id": "84-355",
+      "name": "Democracy's Data: Analytics and Insights into American Elections",
+      "units": 9.0,
+      "source_text": "84-355 Democracy's Data: Analytics and Insights into American Elections 9"
+    },
+    {
+      "id": "84-358",
+      "name": "Money, Connections, and Power: Interests and Influence in the US",
+      "units": 9.0,
+      "source_text": "84-358 Money, Connections, and Power: Interests and Influence in the US 9"
+    },
+    {
+      "id": "84-360",
+      "name": "CMU/WSP Internship Seminar *",
+      "units": 24.0,
+      "source_text": "84-360 CMU/WSP Internship Seminar * 24"
+    },
+    {
+      "id": "84-365",
+      "name": "The Politics of Fake News and Misinformation",
+      "units": 9.0,
+      "source_text": "84-365 The Politics of Fake News and Misinformation 9"
+    },
+    {
+      "id": "84-366",
+      "name": "The 21st-Century Presidency: Expanding Powers, New Challenges",
+      "units": 9.0,
+      "source_text": "84-366 The 21st-Century Presidency: Expanding Powers, New Challenges 9"
+    },
+    {
+      "id": "84-367",
+      "name": "The Politics of Antisemitism",
+      "units": 9.0,
+      "source_text": "84-367 The Politics of Antisemitism 9"
+    },
+    {
+      "id": "84-380",
+      "name": "US Grand Strategy",
+      "units": 9.0,
+      "source_text": "84-380 US Grand Strategy 9"
+    },
+    {
+      "id": "84-393",
+      "name": "The US Congress: Legislative Progress or Paralysis?",
+      "units": 9.0,
+      "source_text": "84-393 The US Congress: Legislative Progress or Paralysis? 9"
+    },
+    {
+      "id": "84-402",
+      "name": "Judicial Politics and Behavior",
+      "units": 9.0,
+      "source_text": "84-402 Judicial Politics and Behavior 9"
+    },
+    {
+      "id": "17-200",
+      "name": "Ethics and Policy Issues in Computing",
+      "units": 9.0,
+      "source_text": "17-200 Ethics and Policy Issues in Computing 9"
+    },
+    {
+      "id": "17-303",
+      "name": "Cryptocurrencies, Blockchains and Applications",
+      "units": 9.0,
+      "source_text": "17-303 Cryptocurrencies, Blockchains and Applications 9"
+    },
+    {
+      "id": "17-331",
+      "name": "Information Security, Privacy and Policy in the Age of AI",
+      "units": 12.0,
+      "source_text": "17-331 Information Security, Privacy and Policy in the Age of AI 12"
+    },
+    {
+      "id": "17-333",
+      "name": "Privacy Policy, Law, and Technology",
+      "units": 9.0,
+      "source_text": "17-333 Privacy Policy, Law, and Technology 9"
+    },
+    {
+      "id": "17-334",
+      "name": "Usable Privacy and Security",
+      "units": 9.0,
+      "source_text": "17-334 Usable Privacy and Security 9"
+    },
+    {
+      "id": "19-403",
+      "name": "Policies of Wireless Systems",
+      "units": 12.0,
+      "source_text": "19-403 Policies of Wireless Systems 12"
+    },
+    {
+      "id": "19-411",
+      "name": "Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech",
+      "units": 9.0,
+      "source_text": "19-411 Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech 9"
+    },
+    {
+      "id": "70-334",
+      "name": "Ethics of Emerging Technologies",
+      "units": 9.0,
+      "source_text": "70-334 Ethics of Emerging Technologies 9"
+    },
+    {
+      "id": "79-234",
+      "name": "Technology and Society",
+      "units": 9.0,
+      "source_text": "79-234 Technology and Society 9"
+    },
+    {
+      "id": "79-302",
+      "name": "Killer Robots? The Ethics, Law, and Politics of Drones and A.I. in War",
+      "units": 9.0,
+      "source_text": "79-302 Killer Robots? The Ethics, Law, and Politics of Drones and A.I. in War 9"
+    },
+    {
+      "id": "79-370",
+      "name": "Technology in the United States",
+      "units": 9.0,
+      "source_text": "79-370 Technology in the United States 9"
+    },
+    {
+      "id": "80-249",
+      "name": "AI, Society, and Humanity",
+      "units": 9.0,
+      "source_text": "80-249 AI, Society, and Humanity 9"
+    },
+    {
+      "id": "88-270",
+      "name": "AI and Social Upheaval",
+      "units": 9.0,
+      "source_text": "88-270 AI and Social Upheaval 9"
+    },
+    {
+      "id": "95-444",
+      "name": "Cybersecurity Policy and Governance II",
+      "units": 6.0,
+      "source_text": "95-444 Cybersecurity Policy and Governance II 6"
+    },
+    {
+      "id": "84-500",
+      "name": "Senior Seminar",
+      "units": 9.0,
+      "source_text": "84-500 Senior Seminar 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "security-and-technology-core-45-units",
+      "name": "Security and Technology Core 45 units",
+      "choose": 17,
+      "units": 138,
+      "options": [
+        "84-314",
+        "84-330",
+        "84-343",
+        "84-345",
+        "84-347",
+        "84-349",
+        "84-350",
+        "84-353",
+        "84-356",
+        "84-363",
+        "84-368",
+        "84-370",
+        "84-371",
+        "84-375",
+        "84-383",
+        "84-387",
+        "84-405"
+      ],
+      "source_instruction": "Students must complete 36 units from the following list of courses:"
+    },
+    {
+      "id": "electives-45-units",
+      "name": "Electives 45 units",
+      "choose": 19,
+      "units": 174,
+      "options": [
+        "84-110",
+        "84-200",
+        "84-275",
+        "84-304",
+        "84-312",
+        "84-322",
+        "84-323",
+        "84-325",
+        "84-329",
+        "84-336",
+        "84-339",
+        "84-341",
+        "84-360",
+        "84-362",
+        "84-365",
+        "84-369",
+        "84-373",
+        "84-386",
+        "84-389"
+      ],
+      "source_instruction": "Students must complete 45 units (usually five courses) in total. At least three courses (27 units) must be taken from the Carnegie Mellon Institute for Strategy and Technology (84-xxx). Most courses listed below are 9-unit courses, but some are fewer. When students choose courses offered for fewer than 9 units, they must remember that a minimum of 45 units is still required and thus plan to take one or more additional courses to fill out that minimum number. In other words, the key requirement is the number of units (45), not the number of courses. Courses taken in the Security and Technology core beyond the required number of units for the core may count as electives for the major. Students are strongly encouraged to participate in the Carnegie Mellon University Washington Semester Program (CMU/WSP) and courses taken through the program may count toward electives for the major."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 87,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (775 units)."
+    ],
+    "warnings": [
+      "15 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 82,
+    "extracted_unit_estimate": 775,
+    "scheduled_course_count": 67,
+    "missing_schedule_course_ids": [
+      "17-200",
+      "19-411",
+      "79-370",
+      "84-200",
+      "84-280",
+      "84-324",
+      "84-331",
+      "84-333",
+      "84-349",
+      "84-367",
+      "84-386",
+      "84-402",
+      "84-500",
+      "88-270",
+      "95-444"
+    ]
+  }
+}

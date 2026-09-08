@@ -1,0 +1,183 @@
+{
+  "program_id": "decision-science--b-s",
+  "planning_id": "decision-science",
+  "name": "Decision Science",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
+  "source_hash": "4c0b51b0ad8770eeececbba7c24f205328c17c95223c929398f092511fd2c6e5",
+  "fixed_courses": [
+    {
+      "id": "36-200",
+      "name": "Reasoning with Data",
+      "units": 9.0,
+      "source_text": "36-200 Reasoning with Data 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisites",
+      "name": "Prerequisites",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-111",
+        "21-112",
+        "21-120"
+      ],
+      "source_instruction": "All Decision Science majors must complete mathematics, statistics, and analytic methods prerequisites (see below), by the end of the sophomore year."
+    },
+    {
+      "id": "prerequisites",
+      "name": "Prerequisites",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-122",
+        "21-256",
+        "36-401",
+        "36-410",
+        "80-210",
+        "80-211",
+        "80-315",
+        "88-252",
+        "88-300"
+      ],
+      "source_instruction": "Students must take one course from the following set (or an approved alternative). Students may not count a course used to fulfill the Mathematics Prerequisite as also filling the Analytic Methods Prerequisite. Students may not count a course used to fulfill the Analytic Methods Prerequisite as also filling a Decision Science elective."
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "73-102",
+        "73-104",
+        "85-100",
+        "88-120",
+        "88-223",
+        "88-302"
+      ],
+      "source_instruction": "The Major in Decision Science Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@cmu.edu Lizzy Stoyle, Senior Academic Advisor Advises Primary Majors in Decision Science Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle Connie Angermeier, Senior Academic Program Manager and Advisor Advises BHA, All Transfer Students, Additional Majors, and Minors in Decision Science Location: Porter Hall 208H cla2@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/ConnieAngermeier https://www.cmu.edu/dietrich/sds/undergraduate/decision-science/index.html Overview Decision scientists are experts in improving decisions . They study what good decisions look like, why people make predictable errors, and how better decisions can be achieved through improved judgment, better decision environments, and scientific evidence. Their work spans personal health, financial security, technological innovation, business strategy, education, risk analysis, and public policy, but every application shares a common goal: improving the quality of human decision making. Carnegie Mellon is one of the world’s leading centers for Decision Science and offers the only undergraduate major in the field. Students learn to think like decision scientists . Guided by faculty whose research continues to advance the field, they learn how to recognize high-quality decisions , evaluate evidence, and translate scientific discoveries into better decisions for individuals, organizations, and society. The major combines rigorous scientific training with quantitative methods, behavioral research, and decision analysis. Students design experiments, evaluate evidence, build decision models, and develop practical solutions to complex human and organizational problems. Research opportunities allow students to contribute to ongoing discoveries, and an optional capstone project provides the opportunity to tackle a real-world decision problem, integrating the scientific , analytical, and practical skills they have developed throughout the major. As organizations increasingly rely on data, analytics, and artificial intelligence to guide important decisions , the ability to understand human judgment becomes even more valuable. Better decisions require more than better data. They require people who know how to ask the right questions, interpret evidence, design effective decision environments, and transform information into better decisions . Graduates are well prepared for careers in consulting, behavioral science , product strategy, user research, healthcare, public policy, organizational leadership, and many other fields, as well as graduate and professional study in decision science , business, law, medicine, psychology, and related disciplines. Prerequisites All Decision Science majors must complete mathematics, statistics, and analytic methods prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Students must take one course from the following set (or an approved alternative). Students may not count a course used to fulfill the Mathematics Prerequisite as also filling the Analytic Methods Prerequisite. Students may not count a course used to fulfill the Analytic Methods Prerequisite as also filling a Decision Science elective. Analytic Methods Prerequisite Units 21-122 Integration and Approximation 10 or 21-256 Multivariate Analysis or 36-401 Modern Regression or 36-410 Introduction to Probability Modeling or 80-210 Logic and Proofs or 80-211 Logic and Mathematical Inquiry or 80-315 Logics for Knowledge and Belief or 88-252 Causal Inference: from Data to Decisions or 88-300 Programming and Data Analysis for Social Scientists Curriculum The core curriculum in Decision Science consists of five courses providing the theoretical perspectives of Decision Science, two courses in research methods, and one capstone. Core Courses"
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-202",
+        "36-309",
+        "85-309"
+      ],
+      "source_instruction": "The Major in Decision Science Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@cmu.edu Lizzy Stoyle, Senior Academic Advisor Advises Primary Majors in Decision Science Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle Connie Angermeier, Senior Academic Program Manager and Advisor Advises BHA, All Transfer Students, Additional Majors, and Minors in Decision Science Location: Porter Hall 208H cla2@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/ConnieAngermeier https://www.cmu.edu/dietrich/sds/undergraduate/decision-science/index.html Overview Decision scientists are experts in improving decisions . They study what good decisions look like, why people make predictable errors, and how better decisions can be achieved through improved judgment, better decision environments, and scientific evidence. Their work spans personal health, financial security, technological innovation, business strategy, education, risk analysis, and public policy, but every application shares a common goal: improving the quality of human decision making. Carnegie Mellon is one of the world’s leading centers for Decision Science and offers the only undergraduate major in the field. Students learn to think like decision scientists . Guided by faculty whose research continues to advance the field, they learn how to recognize high-quality decisions , evaluate evidence, and translate scientific discoveries into better decisions for individuals, organizations, and society. The major combines rigorous scientific training with quantitative methods, behavioral research, and decision analysis. Students design experiments, evaluate evidence, build decision models, and develop practical solutions to complex human and organizational problems. Research opportunities allow students to contribute to ongoing discoveries, and an optional capstone project provides the opportunity to tackle a real-world decision problem, integrating the scientific , analytical, and practical skills they have developed throughout the major. As organizations increasingly rely on data, analytics, and artificial intelligence to guide important decisions , the ability to understand human judgment becomes even more valuable. Better decisions require more than better data. They require people who know how to ask the right questions, interpret evidence, design effective decision environments, and transform information into better decisions . Graduates are well prepared for careers in consulting, behavioral science , product strategy, user research, healthcare, public policy, organizational leadership, and many other fields, as well as graduate and professional study in decision science , business, law, medicine, psychology, and related disciplines. Prerequisites All Decision Science majors must complete mathematics, statistics, and analytic methods prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Students must take one course from the following set (or an approved alternative). Students may not count a course used to fulfill the Mathematics Prerequisite as also filling the Analytic Methods Prerequisite. Students may not count a course used to fulfill the Analytic Methods Prerequisite as also filling a Decision Science elective. Analytic Methods Prerequisite Units 21-122 Integration and Approximation 10 or 21-256 Multivariate Analysis or 36-401 Modern Regression or 36-410 Introduction to Probability Modeling or 80-210 Logic and Proofs or 80-211 Logic and Mathematical Inquiry or 80-315 Logics for Knowledge and Belief or 88-252 Causal Inference: from Data to Decisions or 88-300 Programming and Data Analysis for Social Scientists Curriculum The core curriculum in Decision Science consists of five courses providing the theoretical perspectives of Decision Science, two courses in research methods, and one capstone. Core Courses Theoretical Perspectives Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 85-100 Introduction to Psychology 9 88-120 Reason, Passion and Cognition * 9 88-223 Decision Analysis 12 88-302 Behavioral Decision Making 9 48 * 88-120 should be taken in the freshman or sophomore year."
+    },
+    {
+      "id": "core-courses",
+      "name": "Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-251"
+      ],
+      "source_instruction": "The Major in Decision Science Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@cmu.edu Lizzy Stoyle, Senior Academic Advisor Advises Primary Majors in Decision Science Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle Connie Angermeier, Senior Academic Program Manager and Advisor Advises BHA, All Transfer Students, Additional Majors, and Minors in Decision Science Location: Porter Hall 208H cla2@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/ConnieAngermeier https://www.cmu.edu/dietrich/sds/undergraduate/decision-science/index.html Overview Decision scientists are experts in improving decisions . They study what good decisions look like, why people make predictable errors, and how better decisions can be achieved through improved judgment, better decision environments, and scientific evidence. Their work spans personal health, financial security, technological innovation, business strategy, education, risk analysis, and public policy, but every application shares a common goal: improving the quality of human decision making. Carnegie Mellon is one of the world’s leading centers for Decision Science and offers the only undergraduate major in the field. Students learn to think like decision scientists . Guided by faculty whose research continues to advance the field, they learn how to recognize high-quality decisions , evaluate evidence, and translate scientific discoveries into better decisions for individuals, organizations, and society. The major combines rigorous scientific training with quantitative methods, behavioral research, and decision analysis. Students design experiments, evaluate evidence, build decision models, and develop practical solutions to complex human and organizational problems. Research opportunities allow students to contribute to ongoing discoveries, and an optional capstone project provides the opportunity to tackle a real-world decision problem, integrating the scientific , analytical, and practical skills they have developed throughout the major. As organizations increasingly rely on data, analytics, and artificial intelligence to guide important decisions , the ability to understand human judgment becomes even more valuable. Better decisions require more than better data. They require people who know how to ask the right questions, interpret evidence, design effective decision environments, and transform information into better decisions . Graduates are well prepared for careers in consulting, behavioral science , product strategy, user research, healthcare, public policy, organizational leadership, and many other fields, as well as graduate and professional study in decision science , business, law, medicine, psychology, and related disciplines. Prerequisites All Decision Science majors must complete mathematics, statistics, and analytic methods prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Students must take one course from the following set (or an approved alternative). Students may not count a course used to fulfill the Mathematics Prerequisite as also filling the Analytic Methods Prerequisite. Students may not count a course used to fulfill the Analytic Methods Prerequisite as also filling a Decision Science elective. Analytic Methods Prerequisite Units 21-122 Integration and Approximation 10 or 21-256 Multivariate Analysis or 36-401 Modern Regression or 36-410 Introduction to Probability Modeling or 80-210 Logic and Proofs or 80-211 Logic and Mathematical Inquiry or 80-315 Logics for Knowledge and Belief or 88-252 Causal Inference: from Data to Decisions or 88-300 Programming and Data Analysis for Social Scientists Curriculum The core curriculum in Decision Science consists of five courses providing the theoretical perspectives of Decision Science, two courses in research methods, and one capstone. Core Courses Theoretical Perspectives Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 85-100 Introduction to Psychology 9 88-120 Reason, Passion and Cognition * 9 88-223 Decision Analysis 12 88-302 Behavioral Decision Making 9 48 * 88-120 should be taken in the freshman or sophomore year. Statistical Research Methods (select one course)* Units 36-202 Methods for Statistics & Data Science 9 or 36-309 Experimental Design for Behavioral & Social Sciences or 85-309 Statistical Concepts and Methods for Behavioral and Social Science * Be sure to consult with your Decision Science advisor to discuss which course will best fit your plans and goals. 9"
+    },
+    {
+      "id": "electives-45-units",
+      "name": "Electives 45 units",
+      "choose": 37,
+      "units": 339,
+      "options": [
+        "88-150",
+        "88-221",
+        "88-230",
+        "88-231",
+        "88-234",
+        "88-235",
+        "88-237",
+        "88-252",
+        "88-261",
+        "88-262",
+        "88-275",
+        "88-285",
+        "88-290",
+        "88-300",
+        "88-312",
+        "88-342",
+        "88-344",
+        "88-360",
+        "88-365",
+        "88-366",
+        "88-367",
+        "88-372",
+        "88-379",
+        "88-451",
+        "88-452",
+        "88-454",
+        "70-311",
+        "70-332",
+        "70-381",
+        "70-443",
+        "70-460",
+        "73-265",
+        "80-221",
+        "80-324",
+        "84-369",
+        "85-409",
+        "85-454"
+      ],
+      "source_instruction": "Complete at least 45 units of courses from the following list. Note that additional courses (most typically 88xxx courses) are occasionally added. For the most up to date list of approved electives (and additional information about the courses), see the SDS website . Some courses have additional prerequisites. Although the Decision Science major doesn't explicitly require students to take a capstone course, students who want to have real-world, professional experience should register for 88-454 Decision Science Capstone (this will count as one of the electives). At least three of these courses (27 units) must be Department of Social and Decision Sciences courses (88-xxx) from the approved list."
+    },
+    {
+      "id": "decision-science-b-s-sample-curriculum",
+      "name": "Decision Science, B.S. Sample Curriculum",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-120",
+        "36-202",
+        "85-100",
+        "88-223",
+        "36-200",
+        "88-251",
+        "88-302",
+        "21-120",
+        "21-111",
+        "88-252",
+        "88-300",
+        "73-102"
+      ],
+      "source_instruction": "The Major in Decision Science Peter Schwardmann, Faculty Director Location: Porter Hall 319F schwardmann@cmu.edu Lizzy Stoyle, Senior Academic Advisor Advises Primary Majors in Decision Science Location: Porter Hall 208G estoyle@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/LizzyStoyle Connie Angermeier, Senior Academic Program Manager and Advisor Advises BHA, All Transfer Students, Additional Majors, and Minors in Decision Science Location: Porter Hall 208H cla2@andrew.cmu.edu Schedule an appointment: https://go.oncehub.com/ConnieAngermeier https://www.cmu.edu/dietrich/sds/undergraduate/decision-science/index.html Overview Decision scientists are experts in improving decisions . They study what good decisions look like, why people make predictable errors, and how better decisions can be achieved through improved judgment, better decision environments, and scientific evidence. Their work spans personal health, financial security, technological innovation, business strategy, education, risk analysis, and public policy, but every application shares a common goal: improving the quality of human decision making. Carnegie Mellon is one of the world’s leading centers for Decision Science and offers the only undergraduate major in the field. Students learn to think like decision scientists . Guided by faculty whose research continues to advance the field, they learn how to recognize high-quality decisions , evaluate evidence, and translate scientific discoveries into better decisions for individuals, organizations, and society. The major combines rigorous scientific training with quantitative methods, behavioral research, and decision analysis. Students design experiments, evaluate evidence, build decision models, and develop practical solutions to complex human and organizational problems. Research opportunities allow students to contribute to ongoing discoveries, and an optional capstone project provides the opportunity to tackle a real-world decision problem, integrating the scientific , analytical, and practical skills they have developed throughout the major. As organizations increasingly rely on data, analytics, and artificial intelligence to guide important decisions , the ability to understand human judgment becomes even more valuable. Better decisions require more than better data. They require people who know how to ask the right questions, interpret evidence, design effective decision environments, and transform information into better decisions . Graduates are well prepared for careers in consulting, behavioral science , product strategy, user research, healthcare, public policy, organizational leadership, and many other fields, as well as graduate and professional study in decision science , business, law, medicine, psychology, and related disciplines. Prerequisites All Decision Science majors must complete mathematics, statistics, and analytic methods prerequisites (see below), by the end of the sophomore year. Mathematics Prerequisite Units 21-111 & 21-112 Differential Calculus and Integral Calculus 10-20 or 21-120 Differential and Integral Calculus Statistics Prerequisite Units 36-200 Reasoning with Data 9 Students must take one course from the following set (or an approved alternative). Students may not count a course used to fulfill the Mathematics Prerequisite as also filling the Analytic Methods Prerequisite. Students may not count a course used to fulfill the Analytic Methods Prerequisite as also filling a Decision Science elective. Analytic Methods Prerequisite Units 21-122 Integration and Approximation 10 or 21-256 Multivariate Analysis or 36-401 Modern Regression or 36-410 Introduction to Probability Modeling or 80-210 Logic and Proofs or 80-211 Logic and Mathematical Inquiry or 80-315 Logics for Knowledge and Belief or 88-252 Causal Inference: from Data to Decisions or 88-300 Programming and Data Analysis for Social Scientists Curriculum The core curriculum in Decision Science consists of five courses providing the theoretical perspectives of Decision Science, two courses in research methods, and one capstone. Core Courses Theoretical Perspectives Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 85-100 Introduction to Psychology 9 88-120 Reason, Passion and Cognition * 9 88-223 Decision Analysis 12 88-302 Behavioral Decision Making 9 48 * 88-120 should be taken in the freshman or sophomore year. Statistical Research Methods (select one course)* Units 36-202 Methods for Statistics & Data Science 9 or 36-309 Experimental Design for Behavioral & Social Sciences or 85-309 Statistical Concepts and Methods for Behavioral and Social Science * Be sure to consult with your Decision Science advisor to discuss which course will best fit your plans and goals. 9 SDS Research Methods Units 88-251 Empirical Research Methods 9 9 Electives 45 units Complete at least 45 units of courses from the following list. Note that additional courses (most typically 88xxx courses) are occasionally added. For the most up to date list of approved electives (and additional information about the courses), see the SDS website . Some courses have additional prerequisites. Although the Decision Science major doesn't explicitly require students to take a capstone course, students who want to have real-world, professional experience should register for 88-454 Decision Science Capstone (this will count as one of the electives). At least three of these courses (27 units) must be Department of Social and Decision Sciences courses (88-xxx) from the approved list. Decision Science, B.S. Sample Curriculum"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 72,
+    "confidence": 0.95,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Prerequisites"
+    ],
+    "explicit_group_ratio": 0.86
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (404 units)."
+    ],
+    "warnings": [
+      "6 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 58,
+    "extracted_unit_estimate": 404,
+    "scheduled_course_count": 52,
+    "missing_schedule_course_ids": [
+      "80-324",
+      "85-454",
+      "88-275",
+      "88-290",
+      "88-366",
+      "88-372"
+    ]
+  }
+}

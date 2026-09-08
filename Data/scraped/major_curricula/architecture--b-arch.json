@@ -1,0 +1,138 @@
+{
+  "program_id": "architecture--b-arch",
+  "planning_id": "architecture",
+  "name": "Architecture",
+  "credential": "B.Arch.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/",
+  "source_hash": "c36834ebff717bfc368619aab56811fdbdd659674f80936bc286f7184432dc3d",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "architecture-design-studio-174-units",
+      "name": "Architecture Design Studio 174 units",
+      "choose": 1,
+      "units": 17,
+      "options": [
+        "48-100",
+        "48-105",
+        "48-200",
+        "48-205",
+        "48-300",
+        "48-305",
+        "48-400",
+        "48-410",
+        "48-500",
+        "48-510"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "history-urbanism-practice-ethics-stream-60-units",
+      "name": "History, Urbanism, Practice & Ethics Stream 60 units",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "48-119",
+        "48-111",
+        "48-240",
+        "48-241",
+        "48-250",
+        "48-380",
+        "48-381",
+        "48-383"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "architectural-technologies-streams-47-units",
+      "name": "Architectural Technologies Streams 47 units",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "48-104",
+        "48-116",
+        "48-215",
+        "48-234",
+        "48-324",
+        "48-315",
+        "48-432"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "computation-representation-stream-47-units",
+      "name": "Computation & Representation Stream 47 units",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "99-101",
+        "48-120",
+        "48-121",
+        "48-112",
+        "48-125",
+        "48-126",
+        "48-214",
+        "48-247"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "general-studies-electives-122-units",
+      "name": "General Studies & Electives 122 units",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "48-025",
+        "48-026",
+        "76-101"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "fifth-year",
+      "name": "Fifth-Year",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "48-500",
+        "48-510",
+        "48-519"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 39,
+    "confidence": 0.5,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Architecture Design Studio 174 units",
+      "Assumed choose-one for ambiguous section: History, Urbanism, Practice & Ethics Stream 60 units",
+      "Assumed choose-one for ambiguous section: Architectural Technologies Streams 47 units",
+      "Assumed choose-one for ambiguous section: Computation & Representation Stream 47 units",
+      "Assumed choose-one for ambiguous section: General Studies & Electives 122 units",
+      "Assumed choose-one for ambiguous section: Fifth-Year",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 37,
+    "extracted_unit_estimate": 49,
+    "scheduled_course_count": 34,
+    "missing_schedule_course_ids": [
+      "48-025",
+      "48-026",
+      "48-234"
+    ]
+  }
+}

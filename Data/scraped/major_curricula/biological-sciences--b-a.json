@@ -1,0 +1,191 @@
+{
+  "program_id": "biological-sciences--b-a",
+  "planning_id": "biological-sciences",
+  "name": "Biological Sciences",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/",
+  "source_hash": "1d1073bca75cce533cda509f8d48dac0753cea3f3b605da953af4c97cc0ef7dc",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "03-151",
+        "03-121",
+        "03-201",
+        "03-231",
+        "03-320",
+        "03-240",
+        "03-220",
+        "03-330",
+        "03-221",
+        "03-343",
+        "03-124",
+        "03-411",
+        "03-412"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-105",
+        "09-107",
+        "09-106",
+        "09-217",
+        "09-218",
+        "09-207"
+      ],
+      "source_instruction": "1 Details on electives can be found in the \"Biological Sciences Electives\" section (see below)."
+    },
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 9,
+      "units": 94,
+      "options": [
+        "02-120",
+        "15-110",
+        "15-112",
+        "21-120",
+        "21-090",
+        "21-122",
+        "33-121",
+        "33-141",
+        "33-122",
+        "33-142"
+      ],
+      "source_instruction": "2 Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II ."
+    },
+    {
+      "id": "departmental-electives-group",
+      "name": "Departmental Electives Group",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "03-113",
+        "03-117",
+        "03-118",
+        "03-119",
+        "03-120",
+        "03-124",
+        "03-125",
+        "03-128",
+        "03-129",
+        "03-132",
+        "03-133",
+        "03-135",
+        "03-140",
+        "03-161",
+        "03-230",
+        "03-350",
+        "03-351",
+        "03-360",
+        "02-319",
+        "03-362",
+        "03-363",
+        "03-365",
+        "03-366",
+        "03-380",
+        "03-390",
+        "03-391",
+        "03-410",
+        "03-435",
+        "03-439",
+        "03-442",
+        "03-444",
+        "03-445",
+        "03-451",
+        "03-511",
+        "03-545",
+        "03-711",
+        "03-713",
+        "03-728",
+        "03-729",
+        "03-730",
+        "03-737",
+        "03-738",
+        "03-740",
+        "03-741",
+        "03-742",
+        "03-751",
+        "03-762",
+        "03-763",
+        "03-766",
+        "03-791"
+      ],
+      "source_instruction": "Overview The Department of Biological Sciences offers a Bachelor of Arts (B.A.) degree that is intended for students who wish to combine their interest in science with their interest(s) in other discipline(s) across campus. For schedule planning feedback, advising support, and/or sample four year schedules please contact the Biological Sciences Undergraduate Programs Office . Program Learning Outcomes Upon graduation recipients of the B.A. degree in Biological Sciences will: Recall and understand foundational knowledge in genetics, biochemistry, cell biology, and experimental methodology (i.e. core courses required of all majors). Apply foundational knowledge to develop an understanding of specialized fields in Biological Sciences (i.e. topics covered in advanced electives 300-level+). Apply the scientific method to generate knowledge and solve problems. Apply acquired knowledge to analyze and interpret data. Identify and critically evaluate scientific information relevant to Biological Sciences from multiple sources. Clearly, logically, and accurately communicate Biological Sciences content in written and oral formats. Practice working collaboratively in teams and demonstrate effective teamwork. Recall and understand the principles of the responsible conduct of research and apply selected aspects of the responsible conduct of research (i.e. data management and citation of sources. The curriculum requirements for the B.A. degree are distributed as follows: Degree Requirements Biological Sciences Units 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-201 Undergraduate Colloquium for Sophomores 2 03-231 Honors Biochemistry 9 03-320 Cell Biology *New course number ( 03-240 ) starting Fall 2027 9 03-220 Genetics *New course number ( 03-330 ) starting Fall 2027 9 or 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 03-343 Experimental Techniques in Molecular Biology 9-12 or 03-124 Modern Biology Laboratory 03-411 Topics in Research 1 03-412 Topics in Research 1 03-xxx General Biology Electives 1 18 03-3xx Advanced Biology Electives 1 18 Total Biology units 86-89 1 Details on electives can be found in the \"Biological Sciences Electives\" section (see below). Chemistry Units 09-105 Introduction to Modern Chemistry I 2 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-106 Modern Chemistry II 10 09-217 Organic Chemistry I 9 09-218 Organic Chemistry II 9 09-207 Techniques in Quantitative Analysis 9 Total Chemistry units 47 2 Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II . Mathematics, Physics, and Computer Science Units 02-120 Programming for Scientists 12 or 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science 21-120 Differential and Integral Calculus (prerequisite: 21-090 ) 10 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students 33-122 Physics II for Biological Sciences and Chemistry Students 9 or 33-142 Physics II for Engineering and Physics Students Total Mathematics, Physics, and Computer Science units 53 Elective courses Units MCS Nontechnical Breadth Requirements 75 Free Electives 96-99 Total Elective units 171-174 360 Minimum number of units required for degree: MCS Technical Breadth Requirements Majors entering CMU and majoring in Biological Sciences (or affiliated majors) in the Fall of 2015 or beyond will fulfill the MCS Technical Breadth requirements as follows: Life Sciences: any courses in this category except for the 03-xxx courses. Physical Sciences: 09-105 , 09-106 , 33-121 and 33-122 Math/CS/Stats: 21-120 and 21-122 STEM Elective: will be filled by courses above or any STEM course from the approved list. Biological Sciences Electives The following specifications apply to Biological Sciences electives: At least 18 units must be at the 03-3xx level or above, exclusive of 03-445 and 03-545 and interdisciplinary electives. One interdisciplinary elective may count as a general biology elective. Up to 18 units of 03-445 Undergraduate Research and/or 03-545 Honors Research may count as general biology electives; a maximum of 36 units of research can count for the minimum units required for graduation. Courses in biology taken through cross-registration or study abroad at another university may count as electives if prior permission is obtained from the Director of Undergraduate Studies, Dr. Amanda Willard . Departmental Electives Group"
+    },
+    {
+      "id": "interdisciplinary-electives-group",
+      "name": "Interdisciplinary Electives Group",
+      "choose": 9,
+      "units": 90,
+      "options": [
+        "02-331",
+        "02-425",
+        "02-450",
+        "02-510",
+        "02-512",
+        "02-518",
+        "02-740",
+        "09-518",
+        "09-519",
+        "09-530",
+        "21-127",
+        "21-259",
+        "21-260",
+        "36-200",
+        "42-202",
+        "85-170"
+      ],
+      "source_instruction": "Overview The Department of Biological Sciences offers a Bachelor of Arts (B.A.) degree that is intended for students who wish to combine their interest in science with their interest(s) in other discipline(s) across campus. For schedule planning feedback, advising support, and/or sample four year schedules please contact the Biological Sciences Undergraduate Programs Office . Program Learning Outcomes Upon graduation recipients of the B.A. degree in Biological Sciences will: Recall and understand foundational knowledge in genetics, biochemistry, cell biology, and experimental methodology (i.e. core courses required of all majors). Apply foundational knowledge to develop an understanding of specialized fields in Biological Sciences (i.e. topics covered in advanced electives 300-level+). Apply the scientific method to generate knowledge and solve problems. Apply acquired knowledge to analyze and interpret data. Identify and critically evaluate scientific information relevant to Biological Sciences from multiple sources. Clearly, logically, and accurately communicate Biological Sciences content in written and oral formats. Practice working collaboratively in teams and demonstrate effective teamwork. Recall and understand the principles of the responsible conduct of research and apply selected aspects of the responsible conduct of research (i.e. data management and citation of sources. The curriculum requirements for the B.A. degree are distributed as follows: Degree Requirements Biological Sciences Units 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-201 Undergraduate Colloquium for Sophomores 2 03-231 Honors Biochemistry 9 03-320 Cell Biology *New course number ( 03-240 ) starting Fall 2027 9 03-220 Genetics *New course number ( 03-330 ) starting Fall 2027 9 or 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 03-343 Experimental Techniques in Molecular Biology 9-12 or 03-124 Modern Biology Laboratory 03-411 Topics in Research 1 03-412 Topics in Research 1 03-xxx General Biology Electives 1 18 03-3xx Advanced Biology Electives 1 18 Total Biology units 86-89 1 Details on electives can be found in the \"Biological Sciences Electives\" section (see below). Chemistry Units 09-105 Introduction to Modern Chemistry I 2 10 or 09-107 Honors Chemistry: Fundamentals, Concepts and Applications 09-106 Modern Chemistry II 10 09-217 Organic Chemistry I 9 09-218 Organic Chemistry II 9 09-207 Techniques in Quantitative Analysis 9 Total Chemistry units 47 2 Students who complete 09-107 with an A grade will be exempted from the requirement to take 09-106 Modern Chemistry II . Mathematics, Physics, and Computer Science Units 02-120 Programming for Scientists 12 or 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science 21-120 Differential and Integral Calculus (prerequisite: 21-090 ) 10 21-122 Integration and Approximation 10 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students 33-122 Physics II for Biological Sciences and Chemistry Students 9 or 33-142 Physics II for Engineering and Physics Students Total Mathematics, Physics, and Computer Science units 53 Elective courses Units MCS Nontechnical Breadth Requirements 75 Free Electives 96-99 Total Elective units 171-174 360 Minimum number of units required for degree: MCS Technical Breadth Requirements Majors entering CMU and majoring in Biological Sciences (or affiliated majors) in the Fall of 2015 or beyond will fulfill the MCS Technical Breadth requirements as follows: Life Sciences: any courses in this category except for the 03-xxx courses. Physical Sciences: 09-105 , 09-106 , 33-121 and 33-122 Math/CS/Stats: 21-120 and 21-122 STEM Elective: will be filled by courses above or any STEM course from the approved list. Biological Sciences Electives The following specifications apply to Biological Sciences electives: At least 18 units must be at the 03-3xx level or above, exclusive of 03-445 and 03-545 and interdisciplinary electives. One interdisciplinary elective may count as a general biology elective. Up to 18 units of 03-445 Undergraduate Research and/or 03-545 Honors Research may count as general biology electives; a maximum of 36 units of research can count for the minimum units required for graduation. Courses in biology taken through cross-registration or study abroad at another university may count as electives if prior permission is obtained from the Director of Undergraduate Studies, Dr. Amanda Willard . Departmental Electives Group Interdisciplinary Electives Group"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 95,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Degree Requirements",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.8
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "14 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 94,
+    "extracted_unit_estimate": 281,
+    "scheduled_course_count": 80,
+    "missing_schedule_course_ids": [
+      "02-425",
+      "02-740",
+      "03-119",
+      "03-128",
+      "03-132",
+      "03-230",
+      "03-330",
+      "03-351",
+      "03-380",
+      "03-391",
+      "03-410",
+      "03-738",
+      "03-791",
+      "09-530"
+    ]
+  }
+}

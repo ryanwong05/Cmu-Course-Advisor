@@ -1,0 +1,214 @@
+{
+  "program_id": "physics--b-a",
+  "planning_id": "physics",
+  "name": "Physics",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/",
+  "source_hash": "9740c292e217a79f1c1385d5487d4aa1f5b80ca9ad2e4a876f7ef70020c5beba",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "physics-core",
+      "name": "Physics Core",
+      "choose": 1,
+      "units": 8,
+      "options": [
+        "33-121",
+        "33-151",
+        "33-142",
+        "33-152",
+        "33-104",
+        "33-201",
+        "33-211",
+        "33-231",
+        "33-202",
+        "33-228",
+        "33-232",
+        "33-234",
+        "33-301",
+        "33-331",
+        "33-338",
+        "33-341",
+        "33-302",
+        "33-340"
+      ],
+      "source_instruction": "All physics majors take these courses in physics, which are designed to teach the fundamentals required for any specialty. Most students take the 100-level courses in their first year of study, the 200-level courses in their second year, and the 300-level courses in their third or fourth year."
+    },
+    {
+      "id": "mathematics-core",
+      "name": "Mathematics Core",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-122",
+        "21-259"
+      ],
+      "source_instruction": "All Physics Majors take these courses from the Department of Mathematics to support their studies in Physics."
+    },
+    {
+      "id": "technical-core",
+      "name": "Technical Core",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "03-121",
+        "09-105",
+        "15-112",
+        "15-110",
+        "02-120"
+      ],
+      "source_instruction": "All students in the Mellon College of Science take courses in the Life Sciences, Physical Sciences, and Mathematics, Statistics, or Computer Science to gain the technical breadth necessary for interdisciplinary work. The following three courses are required for physics majors to give them the technical breadth they need while also satisfying the college-level requirements."
+    },
+    {
+      "id": "non-technical-electives",
+      "name": "Non-Technical Electives",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "99-101",
+        "76-101",
+        "38-101",
+        "38-110",
+        "38-220",
+        "38-230",
+        "38-330",
+        "38-304",
+        "38-430"
+      ],
+      "source_instruction": "The Mellon College of Science requires that all students take a variety of non-technical courses to strengthen their understanding of both themselves and the world at large."
+    },
+    {
+      "id": "physics-breadth-electives",
+      "name": "Physics Breadth Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "33-224",
+        "33-226",
+        "33-353",
+        "33-355",
+        "33-431",
+        "33-432",
+        "33-433",
+        "33-441",
+        "33-444",
+        "33-448",
+        "33-650"
+      ],
+      "source_instruction": "Students pursuing a B.S. in Physics must take at least one course from the Physics Breadth Elective list to gain experience in a subfield of physics. Some tracks have this course prescribed, while others allow free choice from this list. All of these courses may also be taken as Qualifying Physics Electives, but they may not fulfill both requirements simultaneously."
+    },
+    {
+      "id": "qualifying-physics-electives",
+      "name": "Qualifying Physics Electives",
+      "choose": 3,
+      "units": 28,
+      "options": [
+        "33-114",
+        "33-115",
+        "33-120",
+        "33-224",
+        "33-226",
+        "33-241",
+        "33-332",
+        "33-339",
+        "33-342",
+        "33-350",
+        "33-353",
+        "33-355",
+        "33-431",
+        "33-432",
+        "33-433",
+        "33-441",
+        "33-444",
+        "33-445",
+        "33-446",
+        "33-448",
+        "33-451",
+        "33-456",
+        "33-499",
+        "33-650",
+        "33-658",
+        "33-659"
+      ],
+      "source_instruction": "Students pursuing a B.S. in Physics must take at least three courses totaling at least 27 units from the Qualifying Physics Elective list, not including the 100-level courses. Some tracks have these courses prescribed, while others allow free choice from this list, enabling students to choose between broad and in-depth study. Students pursuing a B.A. in Physics must take at least two courses totaling at least 18 units from this list and may take only one of the 100-level courses. Students pursuing a Minor in Physics must take at least three courses totaling at least 27 units from this list or non-prescribed courses from the Physics Core list. While all courses on the Physics Breadth Elective list are also on the Qualifying Physics Elective list, a course may not fulfill both requirements simultaneously. Certain courses are offered only in alternate years, as indicated."
+    },
+    {
+      "id": "qualifying-physics-electives-recommended-for-physics-graduate-school",
+      "name": "Qualifying Physics Electives Recommended for Physics Graduate School",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "33-332",
+        "33-339",
+        "33-445",
+        "33-446"
+      ],
+      "source_instruction": "Physics Electives Physics Breadth Electives Students pursuing a B.S. in Physics must take at least one course from the Physics Breadth Elective list to gain experience in a subfield of physics. Some tracks have this course prescribed, while others allow free choice from this list. All of these courses may also be taken as Qualifying Physics Electives, but they may not fulfill both requirements simultaneously. Units 33-224 Stars, Galaxies and the Universe 9 33-226 Physics of Energy 9 33-353 Intermediate Optics 12 33-355 Nanoscience and Nanotechnology 9 33-431 Stars and Black Holes 9 33-432 Galaxies 9 33-433 Cosmology 9 33-441 Introduction to Biophysics 10 33-444 Introduction to Nuclear and Particle Physics 9 33-448 Introduction to Solid State Physics 9 33-650 General Relativity 9 Total Physics Breadth Elective Units 9-12 Qualifying Physics Electives Students pursuing a B.S. in Physics must take at least three courses totaling at least 27 units from the Qualifying Physics Elective list, not including the 100-level courses. Some tracks have these courses prescribed, while others allow free choice from this list, enabling students to choose between broad and in-depth study. Students pursuing a B.A. in Physics must take at least two courses totaling at least 18 units from this list and may take only one of the 100-level courses. Students pursuing a Minor in Physics must take at least three courses totaling at least 27 units from this list or non-prescribed courses from the Physics Core list. While all courses on the Physics Breadth Elective list are also on the Qualifying Physics Elective list, a course may not fulfill both requirements simultaneously. Certain courses are offered only in alternate years, as indicated. 33-114 Physics of Musical Sound (B.A. and Minor only) a 9 33-115 Physics for Future Presidents (B.A. and Minor only) a 9 33-120 Science and Science Fiction (B.A. and Minor only) a 9 33-224 Stars, Galaxies and the Universe 9 33-226 Physics of Energy 9 33-241 Introduction to Computational Physics 9 33-332 Physical Mechanics II 10 33-339 Intermediate Electricity and Magnetism II 10 33-342 Advanced Thermal & Statistical Physics 10 33-350 Undergraduate Research b Var. 33-353 Intermediate Optics 12 33-355 Nanoscience and Nanotechnology 9 33-431 Stars and Black Holes 9 33-432 Galaxies 9 33-433 Cosmology 9 33-441 Introduction to Biophysics 10 33-444 Introduction to Nuclear and Particle Physics 9 33-445 Advanced Quantum Physics I 9 33-446 Advanced Quantum Physics II 9 33-448 Introduction to Solid State Physics 9 33-451 Senior Research b Var. 33-456 Advanced Computational Physics 9 33-499 Supervised Reading b Var. 33-650 General Relativity 9 33-658 Quantum Computation and Quantum Information Theory 10 33-659 Modern Topics in Condensed Matter Physics 12 33-7xx Physics Graduate Level Courses (see list below) Total Qualifying Physics Electives Units 27-37 a Only one of these three courses ( 33-114 , 33-115 , and 33-120 ) may be used for the B.A. These classes may not be used as Qualifying Physics Electives for the B.S. b Only one of these three courses ( 33-350 , 33-451 , and 33-499 ) of 9 units may be used as a Qualifying Physics Elective. To be counted as a Qualifying Physics Elective, all 9 units must be taken in a single semester. Any exceptions must be approved by the Director of Undergraduate Affairs. Qualifying Physics Electives Recommended for Physics Graduate School Students planning to undertake graduate studies in physics are strongly advised to take the following courses, which may count as Qualifying Physics Electives and STEM Electives."
+    },
+    {
+      "id": "physics-graduate-courses",
+      "name": "Physics Graduate Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "33-731",
+        "33-732",
+        "33-733",
+        "33-755",
+        "33-756",
+        "33-757",
+        "33-761",
+        "33-762",
+        "33-765",
+        "33-767",
+        "33-769",
+        "33-770",
+        "33-771",
+        "33-779",
+        "33-780",
+        "33-783"
+      ],
+      "source_instruction": "Physics Electives Physics Breadth Electives Students pursuing a B.S. in Physics must take at least one course from the Physics Breadth Elective list to gain experience in a subfield of physics. Some tracks have this course prescribed, while others allow free choice from this list. All of these courses may also be taken as Qualifying Physics Electives, but they may not fulfill both requirements simultaneously. Units 33-224 Stars, Galaxies and the Universe 9 33-226 Physics of Energy 9 33-353 Intermediate Optics 12 33-355 Nanoscience and Nanotechnology 9 33-431 Stars and Black Holes 9 33-432 Galaxies 9 33-433 Cosmology 9 33-441 Introduction to Biophysics 10 33-444 Introduction to Nuclear and Particle Physics 9 33-448 Introduction to Solid State Physics 9 33-650 General Relativity 9 Total Physics Breadth Elective Units 9-12 Qualifying Physics Electives Students pursuing a B.S. in Physics must take at least three courses totaling at least 27 units from the Qualifying Physics Elective list, not including the 100-level courses. Some tracks have these courses prescribed, while others allow free choice from this list, enabling students to choose between broad and in-depth study. Students pursuing a B.A. in Physics must take at least two courses totaling at least 18 units from this list and may take only one of the 100-level courses. Students pursuing a Minor in Physics must take at least three courses totaling at least 27 units from this list or non-prescribed courses from the Physics Core list. While all courses on the Physics Breadth Elective list are also on the Qualifying Physics Elective list, a course may not fulfill both requirements simultaneously. Certain courses are offered only in alternate years, as indicated. 33-114 Physics of Musical Sound (B.A. and Minor only) a 9 33-115 Physics for Future Presidents (B.A. and Minor only) a 9 33-120 Science and Science Fiction (B.A. and Minor only) a 9 33-224 Stars, Galaxies and the Universe 9 33-226 Physics of Energy 9 33-241 Introduction to Computational Physics 9 33-332 Physical Mechanics II 10 33-339 Intermediate Electricity and Magnetism II 10 33-342 Advanced Thermal & Statistical Physics 10 33-350 Undergraduate Research b Var. 33-353 Intermediate Optics 12 33-355 Nanoscience and Nanotechnology 9 33-431 Stars and Black Holes 9 33-432 Galaxies 9 33-433 Cosmology 9 33-441 Introduction to Biophysics 10 33-444 Introduction to Nuclear and Particle Physics 9 33-445 Advanced Quantum Physics I 9 33-446 Advanced Quantum Physics II 9 33-448 Introduction to Solid State Physics 9 33-451 Senior Research b Var. 33-456 Advanced Computational Physics 9 33-499 Supervised Reading b Var. 33-650 General Relativity 9 33-658 Quantum Computation and Quantum Information Theory 10 33-659 Modern Topics in Condensed Matter Physics 12 33-7xx Physics Graduate Level Courses (see list below) Total Qualifying Physics Electives Units 27-37 a Only one of these three courses ( 33-114 , 33-115 , and 33-120 ) may be used for the B.A. These classes may not be used as Qualifying Physics Electives for the B.S. b Only one of these three courses ( 33-350 , 33-451 , and 33-499 ) of 9 units may be used as a Qualifying Physics Elective. To be counted as a Qualifying Physics Elective, all 9 units must be taken in a single semester. Any exceptions must be approved by the Director of Undergraduate Affairs. Qualifying Physics Electives Recommended for Physics Graduate School Students planning to undertake graduate studies in physics are strongly advised to take the following courses, which may count as Qualifying Physics Electives and STEM Electives. Units 33-332 Physical Mechanics II 10 33-339 Intermediate Electricity and Magnetism II 10 33-445 Advanced Quantum Physics I 9 33-446 Advanced Quantum Physics II 9 Physics Graduate Courses These courses are intended for graduate students in physics, but may be taken by advanced undergraduates as Qualifying Physics or STEM Electives. Undergraduate students require special permission of both the course instructor and the Director of Undergraduate Affairs to register for these classes."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 92,
+    "confidence": 0.64,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Physics Core",
+      "Assumed choose-one for ambiguous section: Mathematics Core",
+      "Assumed choose-one for ambiguous section: Technical Core",
+      "Assumed choose-one for ambiguous section: Non-Technical Electives",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.5
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "10 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 77,
+    "extracted_unit_estimate": 90,
+    "scheduled_course_count": 67,
+    "missing_schedule_course_ids": [
+      "33-226",
+      "33-332",
+      "33-355",
+      "33-433",
+      "33-733",
+      "33-762",
+      "33-769",
+      "33-771",
+      "33-779",
+      "33-780"
+    ]
+  }
+}

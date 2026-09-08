@@ -1,0 +1,65 @@
+{
+  "program_id": "languages-and-cultures--b-a",
+  "planning_id": "languages-and-cultures",
+  "name": "Languages and Cultures",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/",
+  "source_hash": "9faa435430f8ea19c42de714b92b99a4078300ad2db393f83424e4bf44309256",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "i-core-lcal-courses-3-courses-27-units",
+      "name": "I. Core LCAL Courses (3 courses; 27 units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-282",
+        "82-283",
+        "82-580"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "iii-language-and-culture-concentration-courses-8-courses-72-units-minimum",
+      "name": "III. Language and Culture Concentration Courses (8 courses; 72 units minimum)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-303",
+        "82-304",
+        "82-342",
+        "82-343",
+        "82-344",
+        "82-345",
+        "82-294",
+        "82-295",
+        "79-269"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 12,
+    "confidence": 0.53,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: I. Core LCAL Courses (3 courses; 27 units)",
+      "Assumed choose-one for ambiguous section: III. Language and Culture Concentration Courses (8 courses; 72 units minimum)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [],
+    "catalog_course_count": 12,
+    "extracted_unit_estimate": 18,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": []
+  }
+}

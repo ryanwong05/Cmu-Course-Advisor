@@ -1,0 +1,218 @@
+{
+  "program_id": "linguistics--b-a",
+  "planning_id": "linguistics",
+  "name": "Linguistics",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/",
+  "source_hash": "ae278e0147930ad75d9c8c2bbc1e3ea849aeb1d1ff061130bdbc53c130a1e440",
+  "fixed_courses": [
+    {
+      "id": "80-180",
+      "name": "Introduction to Linguistics",
+      "units": 9.0,
+      "source_text": "80-180 Introduction to Linguistics 9"
+    },
+    {
+      "id": "80-282",
+      "name": "Phonetics and Phonology",
+      "units": 9.0,
+      "source_text": "80-282 Phonetics and Phonology 9"
+    },
+    {
+      "id": "80-280",
+      "name": "Linguistic Analysis",
+      "units": 9.0,
+      "source_text": "80-280 Linguistic Analysis 9"
+    },
+    {
+      "id": "80-285",
+      "name": "Natural Language Syntax",
+      "units": null,
+      "source_text": "or 80-285 Natural Language Syntax"
+    },
+    {
+      "id": "80-381",
+      "name": "Meaning in Language",
+      "units": 9.0,
+      "source_text": "80-381 Meaning in Language 9"
+    },
+    {
+      "id": "80-383",
+      "name": "Language in Use",
+      "units": null,
+      "source_text": "or 80-383 Language in Use"
+    },
+    {
+      "id": "76-318",
+      "name": "Communicating in the Global Marketplace",
+      "units": 9.0,
+      "source_text": "76-318 Communicating in the Global Marketplace 9"
+    },
+    {
+      "id": "76-325",
+      "name": "Intertextuality",
+      "units": 9.0,
+      "source_text": "76-325 Intertextuality 9"
+    },
+    {
+      "id": "76-380",
+      "name": "Methods in Humanities Analytics",
+      "units": 9.0,
+      "source_text": "76-380 Methods in Humanities Analytics 9"
+    },
+    {
+      "id": "76-386",
+      "name": "Language & Culture",
+      "units": 9.0,
+      "source_text": "76-386 Language & Culture 9"
+    },
+    {
+      "id": "76-388",
+      "name": "Coding for Humanists",
+      "units": 9.0,
+      "source_text": "76-388 Coding for Humanists 9"
+    },
+    {
+      "id": "76-389",
+      "name": "Rhetorical Grammar",
+      "units": 9.0,
+      "source_text": "76-389 Rhetorical Grammar 9"
+    },
+    {
+      "id": "82-239",
+      "name": "Crazy Linguistically Rich Asian Languages",
+      "units": 9.0,
+      "source_text": "82-239 Crazy Linguistically Rich Asian Languages 9"
+    },
+    {
+      "id": "82-283",
+      "name": "Language Diversity & Cultural Identity",
+      "units": 9.0,
+      "source_text": "82-283 Language Diversity & Cultural Identity 9"
+    },
+    {
+      "id": "82-334",
+      "name": "Structure of Chinese",
+      "units": 9.0,
+      "source_text": "82-334 Structure of Chinese 9"
+    },
+    {
+      "id": "82-373",
+      "name": "Structure of the Japanese Language",
+      "units": 9.0,
+      "source_text": "82-373 Structure of the Japanese Language 9"
+    },
+    {
+      "id": "82-387",
+      "name": "Introduction to Linguistic Data Analysis Using R",
+      "units": 9.0,
+      "source_text": "82-387 Introduction to Linguistic Data Analysis Using R 9"
+    },
+    {
+      "id": "82-383",
+      "name": "Second Language Acquisition: Theories and Research",
+      "units": 9.0,
+      "source_text": "82-383 Second Language Acquisition: Theories and Research 9"
+    },
+    {
+      "id": "85-210",
+      "name": "Language, AI, and Thought",
+      "units": 9.0,
+      "source_text": "85-210 Language, AI, and Thought 9"
+    },
+    {
+      "id": "11-411",
+      "name": "Natural Language Processing",
+      "units": 12.0,
+      "source_text": "11-411 Natural Language Processing 12"
+    },
+    {
+      "id": "11-423",
+      "name": "ConLanging: Lrng Ling & Lang Tech via Constru Artif. Lang",
+      "units": 12.0,
+      "source_text": "11-423 ConLanging: Lrng Ling & Lang Tech via Constru Artif. Lang 12"
+    },
+    {
+      "id": "11-492",
+      "name": "Speech Technology for Conversational AI",
+      "units": 12.0,
+      "source_text": "11-492 Speech Technology for Conversational AI 12"
+    },
+    {
+      "id": "36-468",
+      "name": "Special Topics: Text Analysis",
+      "units": 9.0,
+      "source_text": "36-468 Special Topics: Text Analysis 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "extended-core-27-units",
+      "name": "Extended Core 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "36-468",
+        "76-389",
+        "80-283",
+        "80-286",
+        "80-287",
+        "80-288",
+        "80-382",
+        "80-384",
+        "80-385",
+        "80-388",
+        "80-484",
+        "80-488"
+      ],
+      "source_instruction": "Choose three courses (27 units) from Extended Core and/or additional courses from Linguistics Core."
+    },
+    {
+      "id": "electives-minimum-54-units",
+      "name": "Electives minimum 54 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "80-484",
+        "80-486"
+      ],
+      "source_instruction": "Primary and additional majors choose six additional electives (54 or more units). These Electives can be additional courses from the Core or Extended Core courses listed above, the electives list below, or any other course which is approved by the Senior Academic Program Manager as a linguistics elective. Up to two electives may be taken as a sequence of a foreign language, e.g. Elementary French I and Elementary French II. Up to one elective may be taken in the form of a senior thesis. Listed below are the additional electives taught on a regular basis. Additional appropriate courses are offered irregularly or on a one-off basis. The Senior Academic Program Manager will provide students with a list of possible electives each semester, and will assist students in selecting electives which are consistent with their goals and interests."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 37,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "15 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 34,
+    "extracted_unit_estimate": 243,
+    "scheduled_course_count": 19,
+    "missing_schedule_course_ids": [
+      "76-318",
+      "76-386",
+      "80-280",
+      "80-283",
+      "80-286",
+      "80-287",
+      "80-288",
+      "80-381",
+      "80-382",
+      "80-385",
+      "80-388",
+      "80-484",
+      "82-239",
+      "82-373",
+      "82-387"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "program_id": "electrical-and-computer-engineering--b-s",
+  "planning_id": "electrical-and-computer-engineering",
+  "name": "Electrical and Computer Engineering",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofelectricalandcomputerengineering/electrical-computer-engineering-bs/",
+  "source_hash": "644afe88fa9b3c72ae63dec2686c205f90b102ddb29708407b399715c6055f3d",
+  "fixed_courses": [
+    {
+      "id": "99-101",
+      "name": "Core@CMU",
+      "units": 3.0,
+      "source_text": "99-101 Core@CMU 3"
+    },
+    {
+      "id": "39-310",
+      "name": "Experiential Learning III",
+      "units": null,
+      "source_text": "39-310 Experiential Learning III"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "cit-requirements-see-cit-section-of-the-catalog-for-specifics",
+      "name": "CIT Requirements ( see CIT section of the catalog for specifics )",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "21-120",
+        "21-122",
+        "33-141",
+        "33-142",
+        "15-112"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "general-technical-requirements",
+      "name": "General Technical Requirements",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "21-325",
+        "36-219",
+        "36-225",
+        "18-202",
+        "21-127",
+        "21-128",
+        "15-122"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "ece-course-requirements",
+      "name": "ECE Course Requirements",
+      "choose": 2,
+      "units": 20,
+      "options": [
+        "18-100",
+        "18-200",
+        "18-213",
+        "18-220",
+        "18-240",
+        "18-290"
+      ],
+      "source_instruction": "B.S. in Electrical and Computer Engineering Curriculum The B.S. in Electrical and Computer Engineering is a broad and highly flexible ABET-accredited degree program offered on the Pittsburgh campus. It is structured to provide students with the smallest set of constraints consistent with a rich and comprehensive view of the profession. Students are encouraged and stimulated to explore multiple areas of theory and application from across the 5 principal undergraduate areas of Electrical and Computer Engineering. The sample curriculum highlights the flexibility of our curriculum while meeting the requirements listed below. Minimum Total Units Required for the B.S. in Electrical and Computer Engineering 379 For detailed information and regulations of the curriculum along with the degree requirements and the most recent version of the ECE curriculum and course descriptions, please refer to the ECE Academic Guide . University Requirement Units 99-101 Core@CMU 3 3 CIT Requirements ( see CIT section of the catalog for specifics ) CIT General Education 72 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 One other introductory engineering course (generally taken during the first year) 12 33-141 Physics I for Engineering Students 12 33-142 Physics II for Engineering and Physics Students 12 15-112 Fundamentals of Programming and Computer Science 12 140 General Technical Requirements Two Math/Science elective courses 1 18 Probability Requirement 21-325 Probability 9 or 36-219 Probability Theory and Random Processes or 36-225 Introduction to Probability Theory 18-202 Mathematical Foundations of Electrical Engineering 2 12 21-127 Concepts of Mathematics 3 12 or 21-128 Mathematical Concepts and Proofs 15-122 Principles of Imperative Computation 4 12 63 1 The Math/Science Electives may be satisfied by any course in The Mellon College of Science or the Department of Statistics except for: 100-level courses in Mathematics or Statistics, and courses designed for non-science or engineering majors, such as (but not limited to) 03-132, 09-103, 09-104, 21-240, 21-257, 21-261, 21-350, 33-115, 33-141, 33-124, 33-106, 33-107, 36-200, 36-201, 36-202, 36-203, 36-207, 36-208, 36-209, 36-210, 36-247, 36-309, and 36-310. Mathematics courses of particular interest to students in ECE are: 21-228 Discrete Mathematics , 21-241 Matrices and Linear Transformations , 21-259 Calculus in Three Dimensions , and 21-260 Differential Equations . 2 This course can also be substituted by a combination of two of the following courses: 21-241 , 21-242 , 21-254 , 21-259 , 21-260 , 21-268 . Note that the combined total will therefore be 18 units. 3 Effective Fall 2022. Prior to Fall 2022, 21-127 was 10 units. 4 Effective Summer 2023. Prior to Summer 2023, 15-122 was 10 units. ECE Course Requirements For detailed information and regulations along with the degree requirements and the most recent version of the ECE curriculum and course descriptions, please refer to the ECE Academic Guide ."
+    },
+    {
+      "id": "sample-curriculum",
+      "name": "Sample Curriculum",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "18-100",
+        "18-200",
+        "15-112",
+        "33-141",
+        "15-122",
+        "21-120",
+        "21-122",
+        "21-127",
+        "18-202",
+        "76-101",
+        "33-142",
+        "36-219",
+        "99-101",
+        "39-210",
+        "39-220"
+      ],
+      "source_instruction": "The table below shows a possible roadmap through our broad and flexible curriculum. The ECE Academic Guide provides further alternatives. For First-Year requirements, please see the CIT section of the catalog for specifics ."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 35,
+    "confidence": 0.78,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: CIT Requirements ( see CIT section of the catalog for specifics )",
+      "Assumed choose-one for ambiguous section: General Technical Requirements",
+      "Assumed choose-one for ambiguous section: Sample Curriculum"
+    ],
+    "explicit_group_ratio": 0.25
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [],
+    "catalog_course_count": 23,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 23,
+    "missing_schedule_course_ids": []
+  }
+}

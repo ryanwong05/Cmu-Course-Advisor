@@ -1,0 +1,128 @@
+{
+  "program_id": "economics--b-a",
+  "planning_id": "economics",
+  "name": "Economics",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/",
+  "source_hash": "d921ba3aeac805867b511a28bb0435b59f77a327e25b9df1720c4ca126860fd2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "mathematics-prerequisites",
+      "name": "Mathematics Prerequisites",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "21-120",
+        "21-111",
+        "21-112",
+        "21-256",
+        "21-259"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.A. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Prerequisites"
+    },
+    {
+      "id": "economic-theory-requirements",
+      "name": "Economic Theory Requirements",
+      "choose": 7,
+      "units": 63,
+      "options": [
+        "73-102",
+        "73-104",
+        "73-103",
+        "73-230",
+        "73-240",
+        "70-340",
+        "70-345"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.A. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Prerequisites Courses Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9-10 or 21-259 Calculus in Three Dimensions Economic Theory Requirements"
+    },
+    {
+      "id": "quantitative-analysis-requirements",
+      "name": "Quantitative Analysis Requirements",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "70-207",
+        "36-200",
+        "73-265",
+        "73-274"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.A. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Prerequisites Courses Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9-10 or 21-259 Calculus in Three Dimensions Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 70-340 Business Communications 9 70-345 Business Presentations 9 Quantitative Analysis Requirements"
+    },
+    {
+      "id": "special-electives-18-units",
+      "name": "Special Electives (18 Units)",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "19-403",
+        "19-411",
+        "66-221",
+        "79-245",
+        "79-262",
+        "79-266",
+        "79-280",
+        "79-283",
+        "79-288",
+        "79-300",
+        "79-315",
+        "79-320",
+        "79-343",
+        "79-383",
+        "80-136",
+        "80-249",
+        "80-305",
+        "80-324",
+        "80-335",
+        "80-348",
+        "84-310",
+        "84-318",
+        "84-362",
+        "84-387",
+        "88-411"
+      ],
+      "source_instruction": "Students must take two special elective courses. Students should consult the degree audit system for courses that satisfy the special electives requirement and have the ability to petition a course not included on the sample list for consideration as a special elective."
+    },
+    {
+      "id": "senior-work",
+      "name": "Senior Work",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "73-497",
+        "73-500",
+        "73-501"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.A. degree in Economics, students must complete at least 360 units, consisting of the requirements for Mathematics, Quantitative Analysis, Economic Core, Economic Electives, Senior Requirement, University Core, and a Minor. Mathematics Prerequisites Courses Units 21-120 Differential and Integral Calculus 10-20 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9-10 or 21-259 Calculus in Three Dimensions Economic Theory Requirements Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 73-240 Intermediate Macroeconomics 9 70-340 Business Communications 9 70-345 Business Presentations 9 Quantitative Analysis Requirements Units 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 73-265 Economics and Data Science 9 73-274 Econometrics I 9 Economics Electives (36 Units) Students must take four economics elective courses. Economics elective courses are those numbered 73-300 or higher. Special Electives (18 Units) Students must take two special elective courses. Students should consult the degree audit system for courses that satisfy the special electives requirement and have the ability to petition a course not included on the sample list for consideration as a special elective. Sample List of Special Elective Courses Units 19-403 Policies of Wireless Systems 12 19-411 Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech 9 66-221 Topics of Law: Introduction to Intellectual Property Law 9 79-245 Capitalism and Individualism in American Culture 9 79-262 Modern China: From the Birth of Mao ... to Now 9 79-266 Russian History and Revolutionary Socialism 9 79-280 Coffee and Capitalism 9 79-283 Anthropology of Energy 9 79-288 Bananas, Baseball, and Borders: Latin America and the United States 9 79-300 History of U.S. Immigration Policy 9 79-315 The Politics of Water in Global Perspective 9 79-320 Women, Politics, and Protest 9 79-343 Education, Democracy, and the Arts 9 79-383 The History of Capitalism 9 80-136 Social Structure, Public Policy & Ethics 9 80-249 AI, Society, and Humanity 9 80-305 Game Theory 9 80-324 Philosophy of Economics 9 80-335 Social and Political Philosophy 9 80-348 Health, Human Rights, and International Development 9 84-310 Policy in a Global Economy 1: International Trade and Trade Policy 6 84-318 Politics of Developing Nations 9 84-362 Diplomacy and Statecraft 9 84-387 Remote Systems and the Cyber Domain in Conflict 9 88-411 Rise of the Asian Economies 9 Senior Work"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 44,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 44,
+    "extracted_unit_estimate": 198,
+    "scheduled_course_count": 39,
+    "missing_schedule_course_ids": [
+      "19-411",
+      "79-383",
+      "80-136",
+      "80-324",
+      "84-318"
+    ]
+  }
+}

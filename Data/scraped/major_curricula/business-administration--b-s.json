@@ -1,0 +1,120 @@
+{
+  "program_id": "business-administration--b-s",
+  "planning_id": "business-administration",
+  "name": "Business Administration",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/",
+  "source_hash": "c3a1e97339639fddc8246a0b5d65e36e88e7f3d482dfb950442387f6117d6dc3",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "business-foundations",
+      "name": "Business Foundations",
+      "choose": 7,
+      "units": 65,
+      "options": [
+        "21-120",
+        "21-111",
+        "21-112",
+        "21-256",
+        "21-259",
+        "70-257",
+        "21-292"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Business Administration, students must complete at least 364 units, consisting of the requirements for the Business Foundations, Business Core, Concentration, Business Electives, University Core, and a Minor Business Foundations"
+    },
+    {
+      "id": "business-foundations",
+      "name": "Business Foundations",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "73-102",
+        "73-104",
+        "73-103",
+        "73-230",
+        "73-240"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Business Administration, students must complete at least 364 units, consisting of the requirements for the Business Foundations, Business Core, Concentration, Business Electives, University Core, and a Minor Business Foundations Mathematics Units 21-120 Differential and Integral Calculus 10 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 70-257 Optimization for Business 9 or 21-292 Operations Research I"
+    },
+    {
+      "id": "business-foundations",
+      "name": "Business Foundations",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "70-207",
+        "36-200",
+        "70-208",
+        "36-202"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Business Administration, students must complete at least 364 units, consisting of the requirements for the Business Foundations, Business Core, Concentration, Business Electives, University Core, and a Minor Business Foundations Mathematics Units 21-120 Differential and Integral Calculus 10 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 70-257 Optimization for Business 9 or 21-292 Operations Research I Economics 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 or 73-240 Intermediate Macroeconomics"
+    },
+    {
+      "id": "business-core",
+      "name": "Business Core",
+      "choose": 10,
+      "units": 90,
+      "options": [
+        "70-106",
+        "70-110",
+        "70-122",
+        "70-311",
+        "70-332",
+        "70-340",
+        "70-345",
+        "70-371",
+        "70-381",
+        "70-391"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Business Administration, students must complete at least 364 units, consisting of the requirements for the Business Foundations, Business Core, Concentration, Business Electives, University Core, and a Minor Business Foundations Mathematics Units 21-120 Differential and Integral Calculus 10 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 70-257 Optimization for Business 9 or 21-292 Operations Research I Economics 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 or 73-240 Intermediate Macroeconomics Statistics 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 70-208 Regression Analysis 9 or 36-202 Methods for Statistics & Data Science Business Core"
+    },
+    {
+      "id": "business-core",
+      "name": "Business Core",
+      "choose": 3,
+      "units": 9,
+      "options": [
+        "70-104",
+        "70-204",
+        "70-304"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Business Administration, students must complete at least 364 units, consisting of the requirements for the Business Foundations, Business Core, Concentration, Business Electives, University Core, and a Minor Business Foundations Mathematics Units 21-120 Differential and Integral Calculus 10 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 70-257 Optimization for Business 9 or 21-292 Operations Research I Economics 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 or 73-240 Intermediate Macroeconomics Statistics 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 70-208 Regression Analysis 9 or 36-202 Methods for Statistics & Data Science Business Core Units 70-106 Business Science 9 70-110 Business Computing 9 70-122 Introduction to Accounting 9 70-311 Organizational Behavior 9 70-332 Business, Society and Ethics 9 70-340 Business Communications 9 70-345 Business Presentations 9 70-371 Operations Management 9 70-381 Marketing I 9 70-391 Finance 9"
+    },
+    {
+      "id": "business-core",
+      "name": "Business Core",
+      "choose": 2,
+      "units": 24,
+      "options": [
+        "70-401",
+        "70-447"
+      ],
+      "source_instruction": "Degree Requirements To receive the B.S. degree in Business Administration, students must complete at least 364 units, consisting of the requirements for the Business Foundations, Business Core, Concentration, Business Electives, University Core, and a Minor Business Foundations Mathematics Units 21-120 Differential and Integral Calculus 10 or 21-111 & 21-112 Differential Calculus and Integral Calculus 21-256 Multivariate Analysis 9 or 21-259 Calculus in Three Dimensions 70-257 Optimization for Business 9 or 21-292 Operations Research I Economics 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated 73-103 Principles of Macroeconomics 9 73-230 Intermediate Microeconomics 9 or 73-240 Intermediate Macroeconomics Statistics 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data 70-208 Regression Analysis 9 or 36-202 Methods for Statistics & Data Science Business Core Units 70-106 Business Science 9 70-110 Business Computing 9 70-122 Introduction to Accounting 9 70-311 Organizational Behavior 9 70-332 Business, Society and Ethics 9 70-340 Business Communications 9 70-345 Business Presentations 9 70-371 Operations Management 9 70-381 Marketing I 9 70-391 Finance 9 70-104 Business Leadership Endeavor I 3 70-204 Business Leadership Endeavor II 3 70-304 Business Leadership Endeavor III 3"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 31,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 31,
+    "extracted_unit_estimate": 269,
+    "scheduled_course_count": 30,
+    "missing_schedule_course_ids": [
+      "70-447"
+    ]
+  }
+}

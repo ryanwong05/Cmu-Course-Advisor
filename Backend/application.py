@@ -1,4 +1,5 @@
 import json
+import re
 import sqlite3
 from pathlib import Path
 from typing import Literal, Union
@@ -41,13 +42,65 @@ program_profiles = load_json(DATA_DIR / "program_profiles.json")
 advanced_credit = load_json(DATA_DIR / "advanced_credit.json")
 program_directory = load_json(DATA_DIR / "program_directory.json")
 
+INTENSITY_LABELS = {
+    1: "Very light", 2: "Light", 3: "Moderate", 4: "Heavy", 5: "Very heavy"
+}
+
+
+def load_fce_course_averages():
+    """Aggregate historical FCE workload once for fast course rendering."""
+    with sqlite3.connect(DATA_DIR / "courses.sqlite") as connection:
+        return {
+            course_id: {"hours_per_week": hours, "responses": responses}
+            for course_id, hours, responses in connection.execute(
+                """
+                select canonical_course_id, avg(hrs_per_week), count(hrs_per_week)
+                from fce_courses
+                where hrs_per_week is not null and hrs_per_week > 0
+                group by canonical_course_id
+                """
+            )
+        }
+
+
+fce_course_averages = load_fce_course_averages()
+
+
+def five_level_course_metric(course_id: str, units: float = 9):
+    """Return an explainable five-level workload+difficulty estimate."""
+    curated = course_metrics.get(course_id)
+    fce = fce_course_averages.get(course_id)
+    level = int(course_id.split("-")[1][0]) if "-" in course_id else 1
+    if curated:
+        hours = float(curated.get("hours_per_week", units / 3))
+        workload = float(curated.get("workload", 3))
+        difficulty = float(curated.get("difficulty", workload))
+        source = curated.get("source_status", "curated_estimate")
+    else:
+        hours = float(fce["hours_per_week"] if fce else units / 3)
+        workload = max(1, min(5, 1 + (hours - 3) / 3))
+        difficulty = max(1, min(5, 1.7 + level * .45 + max(0, hours - 8) * .08))
+        source = "historical_fce" if fce else "units_and_course_level_estimate"
+    composite = (workload + difficulty) / 2
+    tier = 1 if composite < 1.8 else 2 if composite < 2.6 else 3 if composite < 3.4 else 4 if composite < 4.2 else 5
+    return {
+        "tier": tier,
+        "label": INTENSITY_LABELS[tier],
+        "score": round(composite, 1),
+        "workload": round(workload, 1),
+        "difficulty": round(difficulty, 1),
+        "hours_per_week": round(hours, 1),
+        "source": source,
+        "sample_size": (fce or {}).get("responses", 0),
+    }
+
 ELECTIVE_CATEGORY_PREFIXES = {
     "math": ("21",),
     "humanities": ("76", "79", "80", "82"),
     "social-sciences": ("73", "79", "84", "85", "88"),
-    "communication": ("70", "76"),
     "data-analysis": ("05", "10", "36"),
 }
+COMMUNICATION_COURSES = ["76-101", "76-102", "76-106", "76-107", "76-108"]
 STATS_ML_MATH_GROUPS = {
     "21-111": "Calculus sequence", "21-112": "Calculus sequence",
     "21-120": "Calculus sequence",
@@ -59,10 +112,35 @@ STATS_ML_MATH_GROUPS = {
 
 # Official 2026-27 Statistics & Machine Learning sample path. Choice groups use
 # one representative default here; the UI exposes every published alternative.
-STATS_ML_STANDARD_PATH = [
-    "21-120", "36-200", "15-112", "36-202", "21-127", "21-256",
-    "36-235", "15-122", "36-236", "21-241", "36-350", "10-301",
-    "36-401", "36-402", "15-351",
+STATS_ML_STANDARD_PATH = requirements["stats-ml-major"]["required_courses"]
+STATS_ML_CHOICE_COURSES = list(dict.fromkeys(
+    option
+    for group in requirements["stats-ml-major"]["requirement_groups"]
+    for raw_option in group.get("options", [])
+    for option in raw_option.split(" + ")
+))
+MECHE_STANDARD_PATH = requirements["mechanical-engineering-major"]["required_courses"]
+MECHE_CHOICE_COURSES = list(dict.fromkeys(
+    option
+    for group in requirements["mechanical-engineering-major"]["requirement_groups"]
+    for raw_option in group.get("options", [])
+    for option in raw_option.split(" + ")
+    if re.fullmatch(r"\d{2}-\d{3}", option)
+))
+ROBOTICS_ADDITIONAL_COURSES = [
+    "16-450",
+    *[
+        option
+        for group in program_profiles["programs"]["robotics"]["additional_major"]["requirement_groups"]
+        for raw_option in group.get("options", [])
+        for option in raw_option.split(" + ")
+        if re.fullmatch(r"\d{2}-\d{3}", option)
+    ],
+]
+IS_MINOR_COURSES = [
+    "67-240", "67-250", "67-262", "15-112", "02-120",
+    "67-206", "67-220", "67-265", "67-306", "67-336",
+    "67-342", "67-347", "67-348", "67-364", "67-368",
 ]
 STATS_ML_PREREQUISITES = {
     "36-202": ["36-200"],
@@ -75,10 +153,29 @@ STATS_ML_PREREQUISITES = {
     "36-401": ["21-241", "36-202", "36-236"],
     "36-402": ["36-401"],
     "15-351": ["15-122", "21-127"],
+    "21-122": ["21-120"],
+    "24-221": ["24-101", "21-122", "33-141"],
+    "24-231": ["21-122", "33-141"],
+    "24-261": ["24-101", "21-122", "33-141"],
+    "24-262": ["24-261"],
+    "21-254": ["21-122"],
+    "21-260": ["21-122"],
+    "24-321": ["24-231"],
+    "24-322": ["24-221"],
+    "24-351": ["24-101"],
+    "24-352": ["24-351", "21-260"],
+    "24-370": ["24-203", "24-262"],
+    "24-452": ["24-321", "24-352"],
+    "16-450": ["16-280"],
 }
 STATS_ML_MINIMUM_YEAR = {
     "36-235": 2, "36-236": 2, "36-350": 2,
     "10-301": 3, "36-401": 3, "36-402": 3, "15-351": 3,
+    "24-221": 2, "24-231": 2, "24-261": 2, "24-262": 2,
+    "21-254": 2, "21-260": 2, "24-203": 2, "24-251": 2,
+    "24-302": 3, "24-311": 3, "24-321": 3, "24-322": 3,
+    "24-351": 3, "24-352": 3, "24-370": 3, "36-220": 3,
+    "24-441": 4, "24-452": 4, "24-671": 4, "16-450": 4,
 }
 
 
@@ -98,6 +195,7 @@ def hydrate_scheduled_courses(course_list: list[dict], course_ids: list[str]):
         ).fetchall()
     for course_id, title, units, offered in rows:
         schedule_terms = sorted(set((offered or "").split(",")) - {""})
+        units = units if units is not None else 9
         if course_id in existing:
             # The SQLite schedule is the current source of truth for offering
             # terms; merge it even when the planning graph already has a node.
@@ -114,7 +212,20 @@ def hydrate_scheduled_courses(course_list: list[dict], course_ids: list[str]):
         })
 
 
-hydrate_scheduled_courses(courses, STATS_ML_STANDARD_PATH)
+hydrate_scheduled_courses(courses, STATS_ML_STANDARD_PATH + STATS_ML_CHOICE_COURSES)
+hydrate_scheduled_courses(courses, IS_MINOR_COURSES)
+hydrate_scheduled_courses(courses, MECHE_STANDARD_PATH + MECHE_CHOICE_COURSES)
+hydrate_scheduled_courses(courses, ROBOTICS_ADDITIONAL_COURSES)
+with sqlite3.connect(DATA_DIR / "courses.sqlite") as _connection:
+    _robotics_elective_ids = [
+        row[0] for row in _connection.execute(
+            """
+            select distinct canonical_course_id from courses
+            where canonical_course_id glob '16-[34][0-9][0-9]'
+            """
+        ).fetchall()
+    ]
+hydrate_scheduled_courses(courses, _robotics_elective_ids)
 for _course in courses:
     course_metrics.setdefault(_course["id"], {
         "hours_per_week": round(_course["units"] / 3, 1),
@@ -153,9 +264,43 @@ def expand_completed_courses(course_ids: list[str]) -> list[str]:
 
 
 def current_major_courses_for(student: "StudentState"):
-    if student.primary_major == "stats-ml":
-        return STATS_ML_STANDARD_PATH
-    return []
+    curriculum = requirements.get(f"{student.primary_major}-major", {})
+    return curriculum.get("required_courses", [])
+
+
+def current_major_course_universe(student: "StudentState"):
+    fixed = set(current_major_courses_for(student))
+    curriculum = requirements.get(f"{student.primary_major}-major", {})
+    for group in curriculum.get("requirement_groups", []):
+        for option in group.get("options", []):
+            fixed.update(option.split(" + "))
+    return fixed
+
+
+def primary_major_requirement_slots(primary_major: str, completed_courses: list[str]):
+    """Build real choice slots for any verified primary-major curriculum."""
+    completed = set(completed_courses)
+    slots = []
+    curriculum = requirements.get(f"{primary_major}-major", {})
+    for group in curriculum.get("requirement_groups", []):
+        satisfied = sum(
+            1 for option in group.get("options", [])
+            if set(option.split(" + ")).issubset(completed)
+        )
+        remaining = max(0, group.get("choose", 1) - satisfied)
+        per_choice_units = group.get("units", 9) / max(1, group.get("choose", 1))
+        for index in range(remaining):
+            slots.append({
+                "id": f"{primary_major}-{group['id']}-{index + 1}",
+                "name": group["name"],
+                "units": int(per_choice_units) if per_choice_units.is_integer() else per_choice_units,
+                "options": group.get("options", []),
+                "minimum_year": group.get("minimum_year", 1),
+                "offered": group.get("offered", []),
+                "program_tier": "current_major",
+                "scope": "primary_major",
+            })
+    return slots
 
 
 @app.middleware("http")
@@ -236,12 +381,21 @@ def planner_key_for_goal(goal: PlanningGoal):
 
 
 def profile_for_goal(goal: PlanningGoal):
-    if goal.type not in {"additional_major", "minor"}:
+    if goal.type not in {"internal_transfer", "additional_major", "minor"}:
+        return None
+    # Existing SCS transfer planners use their dedicated admissions-course
+    # templates. IS is the first full B.S. curriculum represented by the
+    # generic profile model.
+    if goal.type == "internal_transfer" and goal.program != "information-systems":
         return None
     return program_profiles["programs"].get(goal.program, {}).get(goal.type)
 
 
-def planning_inputs_for_profile(goal: PlanningGoal, completed_courses: list[str]):
+def planning_inputs_for_profile(
+    goal: PlanningGoal,
+    completed_courses: list[str],
+    primary_major: str | None = None,
+):
     profile = profile_for_goal(goal)
     if profile is None:
         return None
@@ -268,11 +422,15 @@ def planning_inputs_for_profile(goal: PlanningGoal, completed_courses: list[str]
     fixed_ids = list(dict.fromkeys(profile.get("required_course_ids", [])))
     course_tiers = {
         course_id: (
-            "minor_foundation"
-            if course_id in minor_fixed_ids or course_id in minor_option_ids
+            None
+            if goal.type == "internal_transfer"
             else (
                 "minor_foundation"
-                if goal.type == "minor" else "additional_major"
+                if course_id in minor_fixed_ids or course_id in minor_option_ids
+                else (
+                    "minor_foundation"
+                    if goal.type == "minor" else "additional_major"
+                )
             )
         )
         for course_id in fixed_ids
@@ -294,10 +452,11 @@ def planning_inputs_for_profile(goal: PlanningGoal, completed_courses: list[str]
 
     fixed_units = sum(course_units.get(course_id, 9) for course_id in fixed_ids)
     completed_set = set(completed_courses)
-    # A fixed program course can also satisfy an overlapping choice group.
-    # Without this union, CS additional-major plans schedule fixed 15-251 and
-    # then offer 15-251 again for the inherited "Systems or Theory" group.
-    courses_satisfying_groups = completed_set.union(fixed_ids)
+    # A course already completed by the student may satisfy a choice group.
+    # Do not let a fixed requirement automatically satisfy another requirement
+    # in the same program (for example, required 16-450 cannot also become one
+    # of the two Robotics electives merely because it is numbered 16-4xx).
+    courses_satisfying_groups = completed_set
     combined_groups = []
     seen_group_ids = set()
     for group in profile.get("requirement_groups", []):
@@ -312,7 +471,34 @@ def planning_inputs_for_profile(goal: PlanningGoal, completed_courses: list[str]
         combined_groups.append((source_tier, group))
 
     for source_tier, group in combined_groups:
-        options = group.get("options", [])
+        # The Robotics Institute explicitly permits MechE students to use
+        # 24-441 for the Robotics capstone. The verified MechE curriculum
+        # already schedules that capstone choice, so do not create a second,
+        # duplicate capstone slot in the additional-major extension.
+        if (
+            primary_major == "mechanical-engineering"
+            and goal.type == "additional_major"
+            and goal.program == "robotics"
+            and group.get("id") == "capstone"
+        ):
+            continue
+        options = []
+        for option in group.get("options", []):
+            if option == "16-3xx":
+                options.extend(course["id"] for course in courses if re.fullmatch(r"16-3\d{2}", course["id"]))
+            elif option == "16-4xx":
+                options.extend(course["id"] for course in courses if re.fullmatch(r"16-4\d{2}", course["id"]))
+            else:
+                options.append(option)
+        options = list(dict.fromkeys(options))
+        if goal.program == "robotics" and primary_major == "mechanical-engineering":
+            preferred = {
+                "controls": ["24-451"],
+                "building": ["24-671", "24-778"],
+                "capstone": ["24-441"],
+            }.get(group["id"], [])
+            preferred_rank = {option: index for index, option in enumerate(preferred)}
+            options.sort(key=lambda option: (option not in preferred_rank, preferred_rank.get(option, 0)))
         completed_in_group = len(courses_satisfying_groups.intersection(options))
         remaining_choices = max(0, group.get("choose", 1) - completed_in_group)
         total_group_units = group.get("units", group.get("choose", 1) * 9)
@@ -412,7 +598,12 @@ def list_electives(
         "cast(substr(canonical_course_id, 4, 3) as integer) < 600",
     ]
     parameters: list[object] = [term]
-    if category == "stats-ml-math":
+    if category == "communication":
+        where.append(
+            f"canonical_course_id in ({','.join('?' for _ in COMMUNICATION_COURSES)})"
+        )
+        parameters.extend(COMMUNICATION_COURSES)
+    elif category == "stats-ml-math":
         allowed = list(STATS_ML_MATH_GROUPS)
         where.append(
             f"canonical_course_id in ({','.join('?' for _ in allowed)})"
@@ -448,15 +639,75 @@ def list_electives(
                 + f"{units:g} units · Offered {term.title()} 2026 · "
                 f"{section_count} scheduled section{'s' if section_count != 1 else ''}."
             ),
+            "intensity": five_level_course_metric(course_id, units),
         }
         for course_id, title, units, section_count in rows
     ]
+    if category == "communication":
+        scheduled = {course["id"]: course for course in results}
+        full_courses = [
+            scheduled[course_id]
+            for course_id in ("76-101", "76-102")
+            if course_id in scheduled
+        ]
+        mini_pairs = []
+        mini_ids = [
+            course_id for course_id in ("76-106", "76-107", "76-108")
+            if course_id in scheduled
+        ]
+        for index, first_id in enumerate(mini_ids):
+            for second_id in mini_ids[index + 1:]:
+                first = scheduled[first_id]
+                second = scheduled[second_id]
+                mini_pairs.append({
+                    "id": f"{first_id} + {second_id}",
+                    "name": f"{first['name']} + {second['name']}",
+                    "units": first["units"] + second["units"],
+                    "term": term,
+                    "sections": min(first["sections"], second["sections"]),
+                    "level": 100,
+                    "requirement_group": "Communication · two-mini pathway",
+                    "description": (
+                        f"9 units total · two consecutive minis · Offered {term.title()} 2026. "
+                        "Choose different mini-session section numbers."
+                    ),
+                    "intensity": {
+                        "tier": max(first["intensity"]["tier"], second["intensity"]["tier"]),
+                        "label": INTENSITY_LABELS[max(
+                            first["intensity"]["tier"], second["intensity"]["tier"]
+                        )],
+                        "score": round((
+                            first["intensity"]["score"] + second["intensity"]["score"]
+                        ) / 2, 2),
+                        "workload": round((
+                            first["intensity"]["workload"] + second["intensity"]["workload"]
+                        ) / 2, 2),
+                        "difficulty": round((
+                            first["intensity"]["difficulty"] + second["intensity"]["difficulty"]
+                        ) / 2, 2),
+                        "hours_per_week": round(
+                            first["intensity"]["hours_per_week"]
+                            + second["intensity"]["hours_per_week"],
+                            1,
+                        ),
+                        "source": "combined-mini-courses",
+                        "sample_size": (
+                            first["intensity"].get("sample_size", 0)
+                            + second["intensity"].get("sample_size", 0)
+                        ),
+                    },
+                })
+        results = full_courses + mini_pairs
     return {
         "term": term,
         "category": category,
         "count": len(results),
         "courses": results,
-        "approval_note": "Confirm that a course satisfies your specific GenEd or program requirement in SIO or with your advisor.",
+        "approval_note": (
+            "Communication options follow the official First-Year Writing pathways."
+            if category == "communication"
+            else "These are scheduled candidates; confirm that a course satisfies your specific GenEd category in SIO or with your advisor."
+        ),
     }
 
 
@@ -498,9 +749,13 @@ def get_program_profile(program_id: str, goal_type: str):
                     else "no_direct_ap_ib_equivalency_listed"
                 ),
                 "program_tier": (
-                    "minor_foundation"
-                    if goal_type == "minor" or course_id in minor_course_ids
-                    else "additional_major"
+                    "transfer_goal"
+                    if goal_type == "internal_transfer"
+                    else (
+                        "minor_foundation"
+                        if goal_type == "minor" or course_id in minor_course_ids
+                        else "additional_major"
+                    )
                 ),
             }
             for course_id in profile.get("required_course_ids", [])
@@ -510,11 +765,35 @@ def get_program_profile(program_id: str, goal_type: str):
     }
 
 
+@app.get("/api/primary-majors/{program_id}")
+def get_primary_major_profile(program_id: str):
+    curriculum = requirements.get(f"{program_id}-major")
+    if curriculum is None or curriculum.get("planner_status") != "ready":
+        raise HTTPException(status_code=404, detail="Primary-major curriculum is not configured")
+    course_by_id = {course["id"]: course for course in courses}
+    return {
+        "program_id": program_id,
+        "catalog_year": curriculum.get("catalog_year"),
+        "curriculum_status": curriculum.get("curriculum_status"),
+        "minimum_degree_units": curriculum.get("minimum_degree_units"),
+        "fixed_courses": [
+            {
+                "id": course_id,
+                "name": course_by_id.get(course_id, {}).get("name", "Catalog requirement"),
+                "is_current_major": True,
+            }
+            for course_id in curriculum.get("required_courses", [])
+        ],
+        "requirement_groups": curriculum.get("requirement_groups", []),
+        "notes": curriculum.get("notes", []),
+    }
+
+
 @app.post("/api/program-comparison")
 def compare_programs(request: ComparisonRequest):
     selected = request.programs or [program["id"] for program in programs]
     names = {program["id"]: program["name"] for program in programs}
-    current_major_courses = set(current_major_courses_for(request.student))
+    current_major_courses = current_major_course_universe(request.student)
     completed_courses = set(expand_completed_courses(request.student.completed_courses))
     course_units = {course["id"]: course["units"] for course in courses}
     comparisons = []
@@ -614,7 +893,11 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
 
     goal = request.goals[0] if isinstance(request, PlanningRequest) else None
     profile_inputs = (
-        planning_inputs_for_profile(goal, completed_courses)
+        planning_inputs_for_profile(
+            goal,
+            completed_courses,
+            request.student.primary_major if isinstance(request, PlanningRequest) else None,
+        )
         if goal is not None else None
     )
     effective_requirements = requirements
@@ -662,6 +945,17 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
     primary_reserved_units = (
         primary_baseline["units"] if primary_baseline is not None else 0
     )
+    primary_requirement_slots = (
+        primary_major_requirement_slots(
+            request.student.primary_major,
+            completed_courses + goal_requirements.get("required_courses", [])
+        )
+        if isinstance(request, PlanningRequest)
+        and requirements.get(f"{request.student.primary_major}-major", {}).get(
+            "curriculum_status"
+        ) == "verified"
+        else []
+    )
     result = generate_multiple_paths(
         completed_courses=completed_courses,
         courses=courses,
@@ -708,8 +1002,10 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         current_major_courses=current_major_courses,
         course_metrics=course_metrics,
         program_requirement_slots=(
-            profile_inputs["program_requirement_slots"]
-            if profile_inputs is not None else []
+            primary_requirement_slots + (
+                profile_inputs["program_requirement_slots"]
+                if profile_inputs is not None else []
+            )
         ),
         required_course_tiers=(
             profile_inputs["required_course_tiers"]
@@ -728,7 +1024,9 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             college=goal.college,
         )
         minor_key = planner_key_for_goal(minor_goal)
-        minor_inputs = planning_inputs_for_profile(minor_goal, completed_courses)
+        minor_inputs = planning_inputs_for_profile(
+            minor_goal, completed_courses, request.student.primary_major
+        )
         minor_requirements = dict(requirements)
         minor_requirements[minor_key] = {
             "planner_status": "ready",
@@ -757,7 +1055,9 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             primary_major_baseline_name=primary_baseline["name"],
             current_major_courses=current_major_courses,
             course_metrics=course_metrics,
-            program_requirement_slots=minor_inputs["program_requirement_slots"],
+            program_requirement_slots=(
+                primary_requirement_slots + minor_inputs["program_requirement_slots"]
+            ),
             required_course_tiers=minor_inputs["required_course_tiers"],
         )
         result["lower_workload"] = minor_result["fastest"]
@@ -777,10 +1077,15 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         requirements=effective_requirements
     )
 
+    overlap_course_ids = (
+        current_major_course_universe(request.student)
+        if isinstance(request, PlanningRequest)
+        else set(current_major_courses)
+    )
     shared_course_ids = [
         course_id
         for course_id in goal_requirements["required_courses"]
-        if course_id in current_major_courses
+        if course_id in overlap_course_ids
     ]
     degree_audits = (
         build_degree_audits(
@@ -821,6 +1126,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 "prerequisites": course.get("prerequisites", []),
                 "prerequisite_expression": course.get("prerequisite_expression"),
                 "metrics": course_metrics.get(course["id"]),
+                "intensity": five_level_course_metric(course["id"], course["units"]),
             }
             for course in courses
         },

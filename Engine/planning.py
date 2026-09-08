@@ -567,10 +567,25 @@ def generate_semester_path(
 
         program_slots = []
         program_slot_units = 0
-        max_slots_now = 1 if goal_max_units is not None else 2
+        has_primary_slots = any(
+            requirement.get("scope") == "primary_major"
+            for requirement in remaining_program_slots
+        )
+        has_goal_slots = any(
+            requirement.get("scope") != "primary_major"
+            for requirement in remaining_program_slots
+        )
+        # Preserve both sides of a combined plan. A selected minor/additional
+        # major should make progress without hiding the student's degree, and
+        # the primary degree should not consume every available requirement
+        # slot either.
+        max_slots_now = 3 if has_primary_slots and has_goal_slots else (
+            1 if goal_max_units is not None else 2
+        )
         ordered_program_slots = sorted(
             remaining_program_slots,
             key=lambda requirement: (
+                1 if requirement.get("scope") == "primary_major" else 0,
                 0 if (
                     requirement.get("minimum_year") == academic_year
                     and requirement.get("offered") == [current_semester]
@@ -585,8 +600,50 @@ def generate_semester_path(
                 continue
             if len(program_slots) >= max_slots_now:
                 break
+            requirement_is_primary = requirement.get("scope") == "primary_major"
+            same_scope_count = sum(
+                (item.get("scope") == "primary_major") == requirement_is_primary
+                for item in program_slots
+            )
+            if (
+                has_primary_slots
+                and has_goal_slots
+                and (
+                    (requirement_is_primary and same_scope_count >= 1)
+                    or (not requirement_is_primary and same_scope_count >= 2)
+                )
+            ):
+                continue
             if len(baseline_slots) + len(semester_courses) + len(program_slots) >= 6:
                 break
+            course_by_id_for_options = {course["id"]: course for course in courses}
+            used_default_options = {
+                item.get("default_option") for item in program_slots
+                if item.get("default_option")
+            }
+            default_option = None
+            for option in requirement.get("options", []):
+                option_ids = option.split(" + ")
+                if option in used_default_options:
+                    continue
+                if all(course_id in completed for course_id in option_ids):
+                    continue
+                option_courses = [
+                    course_by_id_for_options.get(course_id)
+                    for course_id in option_ids
+                ]
+                if all(
+                    course is not None and current_semester in course.get("offered", [])
+                    for course in option_courses
+                ):
+                    default_option = option
+                    break
+            if (
+                requirement.get("scope") == "primary_major"
+                and requirement.get("options")
+                and default_option is None
+            ):
+                continue
             units = requirement.get("units", 0)
             total_with_slot = (
                 baseline_units + semester_units + program_slot_units + units
@@ -601,12 +658,21 @@ def generate_semester_path(
                 ],
                 courses,
             )
+            scheduled_goal_slot_units = sum(
+                item.get("units", 0)
+                for item in program_slots
+                if item.get("scope") != "primary_major"
+            )
             within_goal_limit = (
+                requirement.get("scope") == "primary_major"
+                or
                 goal_max_units is None
-                or scheduled_goal_units + program_slot_units + units <= goal_max_units
+                or scheduled_goal_units + scheduled_goal_slot_units + units <= goal_max_units
             )
             if within_total_limit and within_goal_limit:
-                program_slots.append(requirement)
+                scheduled_requirement = dict(requirement)
+                scheduled_requirement["default_option"] = default_option
+                program_slots.append(scheduled_requirement)
                 program_slot_units += units
 
         semester_shared_courses = [
@@ -675,10 +741,16 @@ def generate_semester_path(
             "id": requirement["id"],
             "name": requirement["name"],
             "units": requirement.get("units", 0),
-            "kind": "program_choice",
+            "kind": (
+                "current_major_choice"
+                if requirement.get("scope") == "primary_major"
+                else "program_choice"
+            ),
             "locked": False,
             "options": requirement.get("options", []),
             "program_tier": requirement.get("program_tier"),
+            "scope": requirement.get("scope", "goal"),
+            "default_option": requirement.get("default_option"),
         } for requirement in program_slots)
 
         path.append({
@@ -725,6 +797,10 @@ def generate_semester_path(
         })
 
         completed.extend(semester_courses)
+        for requirement in program_slots:
+            default_option = requirement.get("default_option")
+            if default_option:
+                completed.extend(default_option.split(" + "))
         scheduled_ids = {item["id"] for item in baseline_slots}
         remaining_baseline = [
             item for item in remaining_baseline
@@ -750,18 +826,31 @@ def generate_semester_path(
         for course_id in current_major_courses
         if course_id not in completed
     ]
+    remaining_primary_slots = [
+        item for item in remaining_program_slots
+        if item.get("scope") == "primary_major"
+    ]
+    remaining_goal_slots = [
+        item for item in remaining_program_slots
+        if item.get("scope") != "primary_major"
+    ]
 
     return {
         "path": path,
         "remaining": remaining_after_plan,
         "remaining_current_major": remaining_current_major,
         "remaining_baseline": remaining_baseline,
-        "remaining_program_requirements": remaining_program_slots,
+        "remaining_program_requirements": remaining_goal_slots,
+        "remaining_primary_requirements": remaining_primary_slots,
         "goal_complete": (
             len(remaining_after_plan) == 0
-            and len(remaining_program_slots) == 0
+            and len(remaining_goal_slots) == 0
         ),
         "baseline_complete": len(remaining_baseline) == 0,
+        "primary_major_complete": (
+            len(remaining_current_major) == 0
+            and len(remaining_primary_slots) == 0
+        ),
     }
 
 def generate_multiple_paths(
@@ -791,7 +880,7 @@ def generate_multiple_paths(
     else:
         target_semesters = max(1, 2 * (target_completion_year - start_year) + (1 if start_semester == "spring" else 2))
 
-    def target_path(goal_unit_limit):
+    def target_path(goal_unit_limit, intensity_limit=1):
         # Target-year pacing controls how quickly goal requirements are placed;
         # it must not silently replace the semester limit chosen by the user.
         paced_total_limit = max_units
@@ -812,7 +901,7 @@ def generate_multiple_paths(
             planning_year=planning_year,
             current_major_courses=current_major_courses,
             course_metrics=course_metrics,
-            max_high_intensity_courses=max_high_intensity_courses,
+            max_high_intensity_courses=intensity_limit,
             program_requirement_slots=program_requirement_slots,
             required_course_tiers=required_course_tiers,
             primary_major_reserved_units=primary_major_reserved_units,
@@ -825,12 +914,21 @@ def generate_multiple_paths(
     # plus one 9-unit choice requirement. It avoids the old three-course rush
     # while still allowing elective requirement slots to make progress.
     limits = (24, 30, None) if target_completion_year else (None,)
-    fastest = target_path(limits[0])
+    # Prefer balanced plans with no more than one high-intensity course in a
+    # semester. Only relax this when the selected completion deadline cannot
+    # otherwise be met.
+    fastest = target_path(limits[0], 1)
     for goal_unit_limit in limits[1:]:
-        candidate = target_path(goal_unit_limit)
+        candidate = target_path(goal_unit_limit, 1)
         if candidate["goal_complete"] and candidate["baseline_complete"]:
             fastest = candidate
             break
+    if not fastest["goal_complete"] or not fastest["baseline_complete"]:
+        for goal_unit_limit in limits:
+            candidate = target_path(goal_unit_limit, max_high_intensity_courses)
+            if candidate["goal_complete"] and candidate["baseline_complete"]:
+                fastest = candidate
+                break
 
     lower_workload = generate_semester_path(
         completed_courses=completed_courses,
@@ -848,7 +946,7 @@ def generate_multiple_paths(
         planning_year=planning_year,
         current_major_courses=current_major_courses,
         course_metrics=course_metrics,
-        max_high_intensity_courses=max_high_intensity_courses,
+        max_high_intensity_courses=1,
         program_requirement_slots=program_requirement_slots,
         required_course_tiers=required_course_tiers,
         primary_major_reserved_units=primary_major_reserved_units,

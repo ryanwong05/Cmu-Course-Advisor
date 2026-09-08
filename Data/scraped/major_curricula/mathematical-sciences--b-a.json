@@ -1,0 +1,63 @@
+{
+  "program_id": "mathematical-sciences--b-a",
+  "planning_id": "mathematical-sciences",
+  "name": "Mathematical Sciences",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/",
+  "source_hash": "ac091ed30a5e299176991b0bf36fa473d38d7e347ae61dcb8e7f8bb47bdf860c",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "mathematical-sciences-courses-required",
+      "name": "Mathematical Sciences Courses (required)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "21-122",
+        "21-127",
+        "21-128",
+        "21-201",
+        "21-228",
+        "15-251",
+        "21-241",
+        "21-242",
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269",
+        "21-260",
+        "21-261",
+        "33-231",
+        "21-325",
+        "21-425",
+        "15-259",
+        "36-218"
+      ],
+      "source_instruction": null
+    }
+  ],
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 20,
+    "confidence": 0.54,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [],
+    "catalog_course_count": 20,
+    "extracted_unit_estimate": 9,
+    "scheduled_course_count": 20,
+    "missing_schedule_course_ids": []
+  }
+}

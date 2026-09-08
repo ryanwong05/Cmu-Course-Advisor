@@ -1,0 +1,128 @@
+{
+  "program_id": "biological-sciences-and-psychology--b-s",
+  "planning_id": "biological-sciences-and-psychology",
+  "name": "Biological Sciences and Psychology",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/",
+  "source_hash": "4f68c5cce0a173b65a6b47f14de65966ff46a9ca28545d4122008e7a5819799c",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 1,
+      "units": 7,
+      "options": [
+        "03-151",
+        "03-121",
+        "03-201",
+        "03-231",
+        "03-232",
+        "03-320",
+        "03-240",
+        "03-220",
+        "03-330",
+        "03-221",
+        "03-343",
+        "03-411",
+        "03-412"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-090",
+        "21-122",
+        "36-200",
+        "36-309",
+        "85-309",
+        "33-121",
+        "33-141",
+        "33-122",
+        "33-142",
+        "15-110",
+        "15-112",
+        "02-120"
+      ],
+      "source_instruction": "1 Please see description and requirements for electives under the B.S. in Biological Sciences section of this Catalog."
+    },
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-105",
+        "09-106",
+        "09-217",
+        "09-218",
+        "09-207",
+        "09-208"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "degree-requirements",
+      "name": "Degree Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-100",
+        "85-170",
+        "85-300"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "additional-laboratory-or-research-methods-9-12-units",
+      "name": "Additional Laboratory or Research Methods 9-12 units",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "03-344",
+        "03-345",
+        "03-346",
+        "85-310",
+        "85-330",
+        "85-350",
+        "85-370"
+      ],
+      "source_instruction": "Psychology and Biological Sciences Unified Major Gordon Rule, Department Head, Biological Sciences Susanne Ferber, Department Head, Psychology Overview This major is intended to reflect the interdisciplinary nature of current research in the fields of biology and psychology, as well as the national trend in some professions to seek individuals broadly trained in both the social and natural sciences. Note: Students entering from the Dietrich College of Humanities and Social Sciences will earn a Bachelor of Science in Psychology and Biological Sciences . Students in the Mellon College of Science will earn a Bachelor of Science in Biological Sciences and Psychology . Depending on a student's home college (DC or MCS), General Education (GenEd) requirements will be different. GenEd requirements for DC and MCS are found on their respective Catalog pages. As a note, students who completed psychology courses under the old numbering system will still have those courses count towards the requirements previously specified. New course numbers will take effect starting Fall 2025. Spring 2026 courses will be updated once course scheduling begins. The old course numbers remain in use until then, with catalog updates reflecting the changes beginning Fall 2026. Program Learning Outcomes Upon graduation recipients of this degree will: Foundational Breadth Across Psychology & Biological Sciences: Demonstrate core knowledge in genetics, biochemistry, cell biology, behavioral science, and research methods. Acquire a Deep Understanding in at least One Area in Psychology & Biological Sciences: Apply foundational knowledge to advanced concepts (e.g., cognitive science/neuroscience; cellular/molecular; systems/behavior), typically through 300-level+ coursework. Scientific Inquiry & Problem Solving: Apply the scientific method to formulate questions and hypotheses; design studies/experiments on behavior and biological systems; collect, manage, analyze, and interpret data using appropriate tools and statistics; and draw conclusions. Information Literacy & Scholarly Communication: Locate, critically evaluate, and synthesize primary and secondary literature; communicate clearly, logically, and accurately in written, oral, and visual formates for scientific and lay audiences. Professionalism, Ethics, & Collaboration: Demonstrate curiousity, critical thinking, teamwork, and the responsible conduct of research (ethics, rigor, reproducibility, and integrity). Degree Requirements Biological Sciences Units 03-151 Honors Modern Biology 10 or 03-121 Modern Biology 03-201 Undergraduate Colloquium for Sophomores *Only required for MCS Students 2 03-231 Honors Biochemistry 9 or 03-232 Biochemistry I 03-320 Cell Biology *New course number ( 03-240 ) starting Fall 2027 9 03-220 Genetics *New course number ( 03-330 ) starting Fall 2027 9 or 03-221 Genomes, Evolution, and Disease: Introduction to Quantitative Genetic Analysis 03-343 Experimental Techniques in Molecular Biology 12 03-411 Topics in Research *Only required for MCS Students 1 03-412 Topics in Research *Only required for MCS Students 1 03-xxx General Biology Elective 1 9 03-3xx Advanced Biology Elective 1 18 Total Biology units 80 1 Please see description and requirements for electives under the B.S. in Biological Sciences section of this Catalog. Mathematics, Statistics, Physics and Computer Science Units 21-120 Differential and Integral Calculus (prerequisite: 21-090 ) 10 21-122 Integration and Approximation 10 36-200 Reasoning with Data 9 36-309 Experimental Design for Behavioral & Social Sciences 9 or 85-309 Statistical Concepts and Methods for Behavioral and Social Science 33-121 Physics I for Science Students 12 or 33-141 Physics I for Engineering Students 33-122 Physics II for Biological Sciences and Chemistry Students *Only required for MCS Students 9 or 33-142 Physics II for Engineering and Physics Students 15-110 Principles of Computing 10-12 or 15-112 Fundamentals of Programming and Computer Science or 02-120 Programming for Scientists Total Science units 69-71 Chemistry Units 09-105 Introduction to Modern Chemistry I 10 09-106 Modern Chemistry II 10 09-217 Organic Chemistry I 9 09-218 Organic Chemistry II 9 09-207 Techniques in Quantitative Analysis 9 09-208 Techniques for Organic Synthesis and Analysis 9 Total Chemistry units 56 Psychology Courses Units 85-100 Introduction to Psychology 9 85-170 Foundations of Brain and Behavior 9 85-1xx Survey Psychology Course 9 85-300 Introduction to Research Methods 9 85-4xx Advanced Psychology Electives 18 Total Psychology units 54 Additional Advanced Elective 9 units (Choose one of the following courses) 85-4xx Advanced Psychology Elective 9 03-3xx Advanced Biology Elective 9 Additional Laboratory or Research Methods 9-12 units"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 42,
+    "confidence": 0.62,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Degree Requirements",
+      "Assumed choose-one for ambiguous section: Degree Requirements",
+      "Assumed choose-one for ambiguous section: Degree Requirements",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.4
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 42,
+    "extracted_unit_estimate": 46,
+    "scheduled_course_count": 40,
+    "missing_schedule_course_ids": [
+      "03-330",
+      "03-346"
+    ]
+  }
+}

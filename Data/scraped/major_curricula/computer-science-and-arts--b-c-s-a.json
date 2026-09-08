@@ -1,0 +1,31 @@
+{
+  "program_id": "computer-science-and-arts--b-c-s-a",
+  "planning_id": "computer-science-and-arts",
+  "name": "Computer Science and Arts",
+  "credential": "B.C.S.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/computer-science-arts/",
+  "source_hash": "5bd53677f32c73c4996a51c7e5a535fd87b8287ebd72e00626d3ec624072198a",
+  "fixed_courses": [],
+  "requirement_groups": [],
+  "extraction": {
+    "tables_seen": 0,
+    "course_references": 0,
+    "confidence": 0.05,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found.",
+      "No course-choice groups were found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 0,
+    "extracted_unit_estimate": 0,
+    "scheduled_course_count": 0,
+    "missing_schedule_course_ids": []
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "program_id": "robotics--b-s",
+  "planning_id": "robotics",
+  "name": "Robotics",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-bs/",
+  "source_hash": "c5992dfe678719a57ae1fc54244a44bde5c5e456fa4a047d7b805d8270d8c898",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "computer-science-core",
+      "name": "Computer Science Core",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "07-128",
+        "15-122",
+        "15-213",
+        "15-251"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "robotics-core",
+      "name": "Robotics core",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "16-280",
+        "16-281",
+        "16-311",
+        "16-220",
+        "16-299",
+        "16-384",
+        "16-385",
+        "16-450",
+        "16-474",
+        "16-180"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "ethics-course",
+      "name": "Ethics Course",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-161",
+        "16-735"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course"
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "15-151",
+        "21-127",
+        "16-211",
+        "21-120",
+        "21-122",
+        "21-241",
+        "15-259",
+        "21-325",
+        "21-425",
+        "36-218",
+        "36-225"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics"
+    },
+    {
+      "id": "robotics-electives",
+      "name": "Robotics Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "16-597",
+        "99-270"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics All of the following Mathematics courses: 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 16-211 Foundational Mathematics of Robotics 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 Plus one of the following Probability courses: 15-259 Probability and Computing 12 21-325 Probability 9 21-425 Probability and Martingales 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Robotics Electives"
+    },
+    {
+      "id": "school-of-computer-science-electives",
+      "name": "School of Computer Science Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "02-180",
+        "05-180",
+        "07-180",
+        "16-180",
+        "15-195",
+        "15-295",
+        "07-400",
+        "07-599",
+        "02-201",
+        "02-223",
+        "02-250",
+        "02-261",
+        "05-200",
+        "11-423",
+        "15-351",
+        "16-211",
+        "16-223",
+        "16-224",
+        "16-397",
+        "16-480",
+        "17-200",
+        "17-333",
+        "17-416",
+        "17-562"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics All of the following Mathematics courses: 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 16-211 Foundational Mathematics of Robotics 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 Plus one of the following Probability courses: 15-259 Probability and Computing 12 21-325 Probability 9 21-425 Probability and Martingales 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Robotics Electives Three general robotics electives units 16-3xx and 16-4xx are pre-approved. Students may count up to 12 units of either 16-597 Undergraduate Reading and Research or 99-270 Summer Undergraduate Research Apprenticeship towards the major requirements. Graduate-level Robotics courses and electives outside the Robotics Institute may be used to fulfill elective requirements with prior approval from the RI Undergraduate Program Director. 27-36 School of Computer Science Electives"
+    },
+    {
+      "id": "computing-carnegie-mellon-1-course",
+      "name": "Computing @ Carnegie Mellon (1 course)",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "99-101"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics All of the following Mathematics courses: 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 16-211 Foundational Mathematics of Robotics 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 Plus one of the following Probability courses: 15-259 Probability and Computing 12 21-325 Probability 9 21-425 Probability and Martingales 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Robotics Electives Three general robotics electives units 16-3xx and 16-4xx are pre-approved. Students may count up to 12 units of either 16-597 Undergraduate Reading and Research or 99-270 Summer Undergraduate Research Apprenticeship towards the major requirements. Graduate-level Robotics courses and electives outside the Robotics Institute may be used to fulfill elective requirements with prior approval from the RI Undergraduate Program Director. 27-36 School of Computer Science Electives One general computer science elective units These electives can be from any SCS department (Computer Science 15- , Computational Biology 02- , Human-Computer Interaction 05- , Machine Learning 10- , Language Technologies 11- , Robotics 16- , or Software & Societal Systems 17- ). They must be 200-level or above and at least 9 units each, with the following exceptions: 9-12 ADDITIONS: 1) students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; 2) 15-195 and 15-295 can be combined to count as one SCS elective; 3) 07-400 and 07-599 are countable as SCS electives. DELETIONS: 1) the following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-416 , 17-562 ; 2) some IDeATe courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with a CS undergraduate advisor before registration to determine eligibility for this requirement. Science and Engineering All candidates for a B.S. degree in the School of Computer Science must complete a minimum of 36 units offered by the Mellon College of Science and/or the College of Engineering (CIT). This includes at least four courses in science and engineering, 9 units or more for each course, where at least one course must have a laboratory component and at least two courses must be from the same department. One of these science classes may be 33-121 or 33-141 as a prerequisite. Consult with your SCS undergraduate advisor for possible use of any mini course for this requirement which needs to be reviewed by your advisor and the SCS Associate Dean for Undergraduate Programs. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Robotics must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. Some courses from the Tepper School of Business also qualify for this requirement. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Computing @ Carnegie Mellon (1 course) The following course is required of all students to familiarize them with the campus computing environment:"
+    },
+    {
+      "id": "sample-course-sequence",
+      "name": "Sample Course Sequence",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "07-128",
+        "15-213",
+        "15-122",
+        "16-180",
+        "15-151",
+        "16-211",
+        "21-122",
+        "21-241",
+        "99-101"
+      ],
+      "source_instruction": "The sample given below is for a student who already has credit for introductory programming and one semester of calculus. Students with credit for two semesters of calculus may start with a more advanced math class (e.g. 21-241) in their first year. Students with no credit for introductory programming and/or one semester of calculus will take 15-112 and/or 21-120 in their first semester and shift a few courses to later semesters after consulting with their academic advisor; these students should still be able to complete their degree in four years. It is recommended that students keep their academic load lighter for their Senior Fall semester to account for offsite job interviews or for their Senior Spring semester to account for visits to graduate schools."
+    },
+    {
+      "id": "sample-course-sequence",
+      "name": "Sample Course Sequence",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "16-280",
+        "15-251",
+        "21-120",
+        "16-299",
+        "16-385"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics All of the following Mathematics courses: 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 16-211 Foundational Mathematics of Robotics 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 Plus one of the following Probability courses: 15-259 Probability and Computing 12 21-325 Probability 9 21-425 Probability and Martingales 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Robotics Electives Three general robotics electives units 16-3xx and 16-4xx are pre-approved. Students may count up to 12 units of either 16-597 Undergraduate Reading and Research or 99-270 Summer Undergraduate Research Apprenticeship towards the major requirements. Graduate-level Robotics courses and electives outside the Robotics Institute may be used to fulfill elective requirements with prior approval from the RI Undergraduate Program Director. 27-36 School of Computer Science Electives One general computer science elective units These electives can be from any SCS department (Computer Science 15- , Computational Biology 02- , Human-Computer Interaction 05- , Machine Learning 10- , Language Technologies 11- , Robotics 16- , or Software & Societal Systems 17- ). They must be 200-level or above and at least 9 units each, with the following exceptions: 9-12 ADDITIONS: 1) students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; 2) 15-195 and 15-295 can be combined to count as one SCS elective; 3) 07-400 and 07-599 are countable as SCS electives. DELETIONS: 1) the following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-416 , 17-562 ; 2) some IDeATe courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with a CS undergraduate advisor before registration to determine eligibility for this requirement. Science and Engineering All candidates for a B.S. degree in the School of Computer Science must complete a minimum of 36 units offered by the Mellon College of Science and/or the College of Engineering (CIT). This includes at least four courses in science and engineering, 9 units or more for each course, where at least one course must have a laboratory component and at least two courses must be from the same department. One of these science classes may be 33-121 or 33-141 as a prerequisite. Consult with your SCS undergraduate advisor for possible use of any mini course for this requirement which needs to be reviewed by your advisor and the SCS Associate Dean for Undergraduate Programs. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Robotics must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. Some courses from the Tepper School of Business also qualify for this requirement. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Computing @ Carnegie Mellon (1 course) The following course is required of all students to familiarize them with the campus computing environment: 99-101 Core@CMU 3 Free Electives A free elective is any Carnegie Mellon course. However, a maximum of nine (9) units of Physical Education and/or Military Science (ROTC) and/or Student-Led (StuCo) courses may be used toward fulfilling graduation requirements. Double Counting In general, courses taken in satisfaction of the minor or additional major may also count toward any general education category in the Robotics major (i.e. courses outside of those listed in the Mathematics, Computer Science Core and Robotics Core requirements). Double counting toward Mathematics, Computer Science Core or Robotics Core courses in the Robotics major is strictly limited and depends on the chosen minor (or additional major). In general, students may double count at most five of the above listed requirements toward all other declared additional majors and minors. Additional majors and minors have their own double counting rules as well. Consult with an undergraduate advisor and an advisor from the department of the minor (or additional major) for specific restrictions on double counting. Undergraduate Research Thesis Robotics majors may use the SCS Honors Research Thesis as part of their degree. The SCS Honors Undergraduate Research Thesis ( 07-599 ) typically starts in the fall semester of the senior year, and spans the entire senior year. Students receive a total of 36 units of academic credit for the thesis work, 18 units per semester. Up to 18 units can be counted toward SCS elective requirements (9 per semester for 2 semesters maximum). Students interested in research may also consider using 07-300 Research and Innovation in Computer Science in their junior year since this course will introduce students to various research projects going on in the School of Computer Science that may lead to a senior thesis. This course leads to a subsequent practicum that allows students to complete a small-scale research study or experiment and present a research poster. Students who use the practicum to start their senior thesis can use these units toward the required 36 units. For more information about the SCS Honors Research Thesis, refer to the SCS Honors Research Thesis section for learning objectives, application requirements and expected outcomes. Summary of Degree Requirements Area Courses Units Robotics (core and electives) 11 125 Computer Science (core and SCS elective) 6 51 Mathematics 6 67 Ethics 1 12 Science / Engineering 4 36 Humanities / Arts 7 63 Computing @ CMU 1 3 First Year Seminar 1 3 Total Units: 26 360 Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and one semester of calculus. Students with credit for two semesters of calculus may start with a more advanced math class (e.g. 21-241) in their first year. Students with no credit for introductory programming and/or one semester of calculus will take 15-112 and/or 21-120 in their first semester and shift a few courses to later semesters after consulting with their academic advisor; these students should still be able to complete their degree in four years. It is recommended that students keep their academic load lighter for their Senior Fall semester to account for offsite job interviews or for their Senior Spring semester to account for visits to graduate schools. First-Year Fall Spring 07-128 First Year Seminar 15-213 Introduction to Computer Systems 15-122 Principles of Imperative Computation 16-180 Concepts of Robotics 15-151 Mathematical Foundations for Computer Science 16-211 Foundational Mathematics of Robotics 21-122 Integration and Approximation 21-241 Matrices and Linear Transformations 99-101 Core@CMU XX-XXX Humanities / Arts Course XX-XXX First Year Writing Requirement"
+    },
+    {
+      "id": "sample-course-sequence",
+      "name": "Sample Course Sequence",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "16-220",
+        "16-384"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics All of the following Mathematics courses: 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 16-211 Foundational Mathematics of Robotics 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 Plus one of the following Probability courses: 15-259 Probability and Computing 12 21-325 Probability 9 21-425 Probability and Martingales 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Robotics Electives Three general robotics electives units 16-3xx and 16-4xx are pre-approved. Students may count up to 12 units of either 16-597 Undergraduate Reading and Research or 99-270 Summer Undergraduate Research Apprenticeship towards the major requirements. Graduate-level Robotics courses and electives outside the Robotics Institute may be used to fulfill elective requirements with prior approval from the RI Undergraduate Program Director. 27-36 School of Computer Science Electives One general computer science elective units These electives can be from any SCS department (Computer Science 15- , Computational Biology 02- , Human-Computer Interaction 05- , Machine Learning 10- , Language Technologies 11- , Robotics 16- , or Software & Societal Systems 17- ). They must be 200-level or above and at least 9 units each, with the following exceptions: 9-12 ADDITIONS: 1) students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; 2) 15-195 and 15-295 can be combined to count as one SCS elective; 3) 07-400 and 07-599 are countable as SCS electives. DELETIONS: 1) the following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-416 , 17-562 ; 2) some IDeATe courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with a CS undergraduate advisor before registration to determine eligibility for this requirement. Science and Engineering All candidates for a B.S. degree in the School of Computer Science must complete a minimum of 36 units offered by the Mellon College of Science and/or the College of Engineering (CIT). This includes at least four courses in science and engineering, 9 units or more for each course, where at least one course must have a laboratory component and at least two courses must be from the same department. One of these science classes may be 33-121 or 33-141 as a prerequisite. Consult with your SCS undergraduate advisor for possible use of any mini course for this requirement which needs to be reviewed by your advisor and the SCS Associate Dean for Undergraduate Programs. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Robotics must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. Some courses from the Tepper School of Business also qualify for this requirement. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Computing @ Carnegie Mellon (1 course) The following course is required of all students to familiarize them with the campus computing environment: 99-101 Core@CMU 3 Free Electives A free elective is any Carnegie Mellon course. However, a maximum of nine (9) units of Physical Education and/or Military Science (ROTC) and/or Student-Led (StuCo) courses may be used toward fulfilling graduation requirements. Double Counting In general, courses taken in satisfaction of the minor or additional major may also count toward any general education category in the Robotics major (i.e. courses outside of those listed in the Mathematics, Computer Science Core and Robotics Core requirements). Double counting toward Mathematics, Computer Science Core or Robotics Core courses in the Robotics major is strictly limited and depends on the chosen minor (or additional major). In general, students may double count at most five of the above listed requirements toward all other declared additional majors and minors. Additional majors and minors have their own double counting rules as well. Consult with an undergraduate advisor and an advisor from the department of the minor (or additional major) for specific restrictions on double counting. Undergraduate Research Thesis Robotics majors may use the SCS Honors Research Thesis as part of their degree. The SCS Honors Undergraduate Research Thesis ( 07-599 ) typically starts in the fall semester of the senior year, and spans the entire senior year. Students receive a total of 36 units of academic credit for the thesis work, 18 units per semester. Up to 18 units can be counted toward SCS elective requirements (9 per semester for 2 semesters maximum). Students interested in research may also consider using 07-300 Research and Innovation in Computer Science in their junior year since this course will introduce students to various research projects going on in the School of Computer Science that may lead to a senior thesis. This course leads to a subsequent practicum that allows students to complete a small-scale research study or experiment and present a research poster. Students who use the practicum to start their senior thesis can use these units toward the required 36 units. For more information about the SCS Honors Research Thesis, refer to the SCS Honors Research Thesis section for learning objectives, application requirements and expected outcomes. Summary of Degree Requirements Area Courses Units Robotics (core and electives) 11 125 Computer Science (core and SCS elective) 6 51 Mathematics 6 67 Ethics 1 12 Science / Engineering 4 36 Humanities / Arts 7 63 Computing @ CMU 1 3 First Year Seminar 1 3 Total Units: 26 360 Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and one semester of calculus. Students with credit for two semesters of calculus may start with a more advanced math class (e.g. 21-241) in their first year. Students with no credit for introductory programming and/or one semester of calculus will take 15-112 and/or 21-120 in their first semester and shift a few courses to later semesters after consulting with their academic advisor; these students should still be able to complete their degree in four years. It is recommended that students keep their academic load lighter for their Senior Fall semester to account for offsite job interviews or for their Senior Spring semester to account for visits to graduate schools. First-Year Fall Spring 07-128 First Year Seminar 15-213 Introduction to Computer Systems 15-122 Principles of Imperative Computation 16-180 Concepts of Robotics 15-151 Mathematical Foundations for Computer Science 16-211 Foundational Mathematics of Robotics 21-122 Integration and Approximation 21-241 Matrices and Linear Transformations 99-101 Core@CMU XX-XXX Humanities / Arts Course XX-XXX First Year Writing Requirement Second-Year Fall Spring 16-280 Intelligent Robot Systems 15-251 Great Ideas in Theoretical Computer Science 21-120 Differential and Integral Calculus 16-299 Introduction to Feedback Control Systems XX-XXX Probability Course 16-385 Computer Vision Science/ Engineering Course (or Physics Prerequisite) XX-XXX Humanities / Arts Course"
+    },
+    {
+      "id": "sample-course-sequence",
+      "name": "Sample Course Sequence",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "16-450",
+        "16-474"
+      ],
+      "source_instruction": "B.S. in Robotics Curriculum Computer Science Core Computer Science Core (all of the following): Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Robotics core Choose one of the following: Units 16-280 Intelligent Robot Systems 12 16-281 General Robotics (formerly 16-311 ) 12 All of the Following 16-220 Robot Building Practices 12 16-299 Introduction to Feedback Control Systems 12 16-384 Robot Kinematics and Dynamics 12 16-385 Computer Vision 12 16-450 Robotics Systems Engineering To be taken during senior fall 12 16-474 Robotics Capstone To be taken during senior spring 12 Recommended but not required: 16-180 Concepts of Robotics 5 Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 Mathematics All of the following Mathematics courses: 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 16-211 Foundational Mathematics of Robotics 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 Plus one of the following Probability courses: 15-259 Probability and Computing 12 21-325 Probability 9 21-425 Probability and Martingales 9 36-218 Probability Theory for Computer Scientists 9 36-225 Introduction to Probability Theory 9 Robotics Electives Three general robotics electives units 16-3xx and 16-4xx are pre-approved. Students may count up to 12 units of either 16-597 Undergraduate Reading and Research or 99-270 Summer Undergraduate Research Apprenticeship towards the major requirements. Graduate-level Robotics courses and electives outside the Robotics Institute may be used to fulfill elective requirements with prior approval from the RI Undergraduate Program Director. 27-36 School of Computer Science Electives One general computer science elective units These electives can be from any SCS department (Computer Science 15- , Computational Biology 02- , Human-Computer Interaction 05- , Machine Learning 10- , Language Technologies 11- , Robotics 16- , or Software & Societal Systems 17- ). They must be 200-level or above and at least 9 units each, with the following exceptions: 9-12 ADDITIONS: 1) students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; 2) 15-195 and 15-295 can be combined to count as one SCS elective; 3) 07-400 and 07-599 are countable as SCS electives. DELETIONS: 1) the following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-416 , 17-562 ; 2) some IDeATe courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with a CS undergraduate advisor before registration to determine eligibility for this requirement. Science and Engineering All candidates for a B.S. degree in the School of Computer Science must complete a minimum of 36 units offered by the Mellon College of Science and/or the College of Engineering (CIT). This includes at least four courses in science and engineering, 9 units or more for each course, where at least one course must have a laboratory component and at least two courses must be from the same department. One of these science classes may be 33-121 or 33-141 as a prerequisite. Consult with your SCS undergraduate advisor for possible use of any mini course for this requirement which needs to be reviewed by your advisor and the SCS Associate Dean for Undergraduate Programs. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Robotics must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. Some courses from the Tepper School of Business also qualify for this requirement. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Computing @ Carnegie Mellon (1 course) The following course is required of all students to familiarize them with the campus computing environment: 99-101 Core@CMU 3 Free Electives A free elective is any Carnegie Mellon course. However, a maximum of nine (9) units of Physical Education and/or Military Science (ROTC) and/or Student-Led (StuCo) courses may be used toward fulfilling graduation requirements. Double Counting In general, courses taken in satisfaction of the minor or additional major may also count toward any general education category in the Robotics major (i.e. courses outside of those listed in the Mathematics, Computer Science Core and Robotics Core requirements). Double counting toward Mathematics, Computer Science Core or Robotics Core courses in the Robotics major is strictly limited and depends on the chosen minor (or additional major). In general, students may double count at most five of the above listed requirements toward all other declared additional majors and minors. Additional majors and minors have their own double counting rules as well. Consult with an undergraduate advisor and an advisor from the department of the minor (or additional major) for specific restrictions on double counting. Undergraduate Research Thesis Robotics majors may use the SCS Honors Research Thesis as part of their degree. The SCS Honors Undergraduate Research Thesis ( 07-599 ) typically starts in the fall semester of the senior year, and spans the entire senior year. Students receive a total of 36 units of academic credit for the thesis work, 18 units per semester. Up to 18 units can be counted toward SCS elective requirements (9 per semester for 2 semesters maximum). Students interested in research may also consider using 07-300 Research and Innovation in Computer Science in their junior year since this course will introduce students to various research projects going on in the School of Computer Science that may lead to a senior thesis. This course leads to a subsequent practicum that allows students to complete a small-scale research study or experiment and present a research poster. Students who use the practicum to start their senior thesis can use these units toward the required 36 units. For more information about the SCS Honors Research Thesis, refer to the SCS Honors Research Thesis section for learning objectives, application requirements and expected outcomes. Summary of Degree Requirements Area Courses Units Robotics (core and electives) 11 125 Computer Science (core and SCS elective) 6 51 Mathematics 6 67 Ethics 1 12 Science / Engineering 4 36 Humanities / Arts 7 63 Computing @ CMU 1 3 First Year Seminar 1 3 Total Units: 26 360 Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and one semester of calculus. Students with credit for two semesters of calculus may start with a more advanced math class (e.g. 21-241) in their first year. Students with no credit for introductory programming and/or one semester of calculus will take 15-112 and/or 21-120 in their first semester and shift a few courses to later semesters after consulting with their academic advisor; these students should still be able to complete their degree in four years. It is recommended that students keep their academic load lighter for their Senior Fall semester to account for offsite job interviews or for their Senior Spring semester to account for visits to graduate schools. First-Year Fall Spring 07-128 First Year Seminar 15-213 Introduction to Computer Systems 15-122 Principles of Imperative Computation 16-180 Concepts of Robotics 15-151 Mathematical Foundations for Computer Science 16-211 Foundational Mathematics of Robotics 21-122 Integration and Approximation 21-241 Matrices and Linear Transformations 99-101 Core@CMU XX-XXX Humanities / Arts Course XX-XXX First Year Writing Requirement Second-Year Fall Spring 16-280 Intelligent Robot Systems 15-251 Great Ideas in Theoretical Computer Science 21-120 Differential and Integral Calculus 16-299 Introduction to Feedback Control Systems XX-XXX Probability Course 16-385 Computer Vision Science/ Engineering Course (or Physics Prerequisite) XX-XXX Humanities / Arts Course Third-Year Fall Spring 16-220 Robot Building Practices XX-XXX Robotics Elective 16-384 Robot Kinematics and Dynamics XX-XXX Robotics Elective XX-XXX Humanities / Arts Course XX-XXX Humanities / Arts Elective XX-XXX Science/ Engineering Course XX-XXX Humanities / Arts Elective XX-XXX Free Elective XX-XXX Free Elective"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 11,
+    "course_references": 72,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Computer Science Core",
+      "Assumed choose-one for ambiguous section: Robotics core",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.82
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "11 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 52,
+    "extracted_unit_estimate": 172,
+    "scheduled_course_count": 41,
+    "missing_schedule_course_ids": [
+      "02-201",
+      "02-223",
+      "05-180",
+      "05-200",
+      "16-161",
+      "16-180",
+      "16-311",
+      "16-397",
+      "16-735",
+      "17-200",
+      "99-270"
+    ]
+  }
+}

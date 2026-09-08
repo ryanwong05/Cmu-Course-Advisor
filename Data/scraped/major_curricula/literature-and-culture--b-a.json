@@ -1,0 +1,231 @@
+{
+  "program_id": "literature-and-culture--b-a",
+  "planning_id": "literature-and-culture",
+  "name": "Literature and Culture",
+  "credential": "B.A.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/",
+  "source_hash": "907e6832c16761f24ad410885e53a2e6053f36525b4949642b7777e89692dda2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-introductory-courses-3-courses-27-units",
+      "name": "Required Introductory Courses (3 courses) 27 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-212",
+        "76-260",
+        "76-261",
+        "76-265",
+        "76-269",
+        "76-245",
+        "76-247",
+        "76-275"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "200-level-literature-culture-courses-2-courses-18-units",
+      "name": "200-Level literature & culture courses (2 courses) 18 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-203",
+        "76-207",
+        "76-210",
+        "76-217",
+        "76-220",
+        "76-221",
+        "76-230",
+        "76-236",
+        "76-239",
+        "76-241",
+        "76-242",
+        "76-244",
+        "76-245",
+        "76-247",
+        "76-259",
+        "76-268",
+        "76-278",
+        "76-295",
+        "76-296",
+        "76-299"
+      ],
+      "source_instruction": "Course options include but are not limited to the following:"
+    },
+    {
+      "id": "300-level-literature-culture-courses-2-courses-18-units",
+      "name": "300-Level Literature & Culture Courses (2 courses) 18 units",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "76-312",
+        "76-314",
+        "76-317",
+        "76-326",
+        "76-329",
+        "76-337",
+        "76-339",
+        "76-341",
+        "76-342",
+        "76-343",
+        "76-347",
+        "76-348",
+        "76-350",
+        "76-353",
+        "76-367",
+        "76-370",
+        "76-376",
+        "76-382",
+        "76-392"
+      ],
+      "source_instruction": "The B.A. in Literature and Culture The Literature & Culture Major teaches students how to read, interpret and write persuasively about novels, poems, plays and other imaginative works across a variety of genres and media forms. Along with teaching students the analytical skills and methodological tools to interpret these works, this major teaches the importance of understanding imaginative works within their cultural and historical contexts. In addition, the major is designed to train students in strong professional and academic skills like critical thinking, inductive reasoning and persuasive argumentation that are applicable to other fields of study and a variety of career paths. Program Learning Outcomes Use disciplinary vocabulary from literary theory and Cultural Studies scholarship appropriately in analyses. Deploy literary and/or Cultural Studies theories/frameworks appropriately to describe, explain, or critique artifacts of communication. Apply methods appropriately to answer research questions commonly asked in Literary and Cultural Studies. Explain how contexts and identities ( historical, social, economic, political, technological, etc.) influence cultural forms, language, and practice, and how cultural forms, language, and practice shape the contexts of use. Exhibit competence in reading, writing, and speaking in academic and professional contexts by identifying scholarly niches/research questions and synthesizing evidence to support a claim. Curriculum The Literature & Culture curriculum consists of 13 courses for a minimum of 117 units . At least one course other than 76-245 Shakespeare: Tragedies & Histories or 76-247 Shakespeare: Comedies and Romances must focus on a period pre-1900 . Applicable courses have an asterisk (*). Required Introductory Courses (3 courses) 27 units Required Introductory Courses Units 76-212 Introduction to TV Writing 9 or 76-260 Introduction to Writing Fiction or 76-261 Intro to Writing Creative Nonfiction or 76-265 Introduction to Writing Poetry or 76-269 Introduction to Screenwriting 76-245 Shakespeare: Tragedies & Histories 9 or 76-247 Shakespeare: Comedies and Romances 76-275 Introduction to Critical Writing 9 200-Level literature & culture courses (2 courses) 18 units Course options include but are not limited to the following: 200-Level Literature & Culture Courses 76-203 Literature & Culture in the 18th Century * 9 76-207 Special Topics in Literature & Culture 9 76-210 Banned Books 9 76-217 Literature & Culture of the 20th and 21st Century 9 76-220 Mystery! From Detective Fiction to True Crime 9 76-221 Books You Should Have Read By Now 9 76-230 Literature & Culture in the 19th Century * 9 76-236 CMU Prison Education Project: 12 76-239 Introduction to Film Studies 9 76-241 Introduction to Gender Studies 9 76-242 American Woman Writers 9 76-244 Immigrant Fictions 9 76-245 Shakespeare: Tragedies & Histories If not taken already for the Core Required course. 9 76-247 Shakespeare: Comedies and Romances If not taken already for the Core Required course. 9 76-259 Film History 9 76-268 Comic Books & Pop Culture 9 76-278 Japanese Film and Literature: The Art of Storytelling 9 76-295 Russian Cinema: From the Bolshevik Revolution to Putin's Russia 9 76-296 20th Century Russian Masterpieces 9 76-299 19th Century Russian Masterpieces * 9 300-Level Literature & Culture Courses (2 courses) 18 units Course options include but are not limited to the following:"
+    },
+    {
+      "id": "400-level-literature-culture-course-1-course-9-units",
+      "name": "400-Level Literature & Culture Course (1 course) 9 units",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "76-407",
+        "76-410",
+        "76-414",
+        "76-423",
+        "76-424",
+        "76-429",
+        "76-431",
+        "76-434",
+        "76-439",
+        "76-442",
+        "76-445",
+        "76-446",
+        "76-450",
+        "76-452",
+        "76-453",
+        "76-454",
+        "76-455",
+        "76-461",
+        "76-467",
+        "76-468",
+        "76-482",
+        "76-495"
+      ],
+      "source_instruction": "The B.A. in Literature and Culture The Literature & Culture Major teaches students how to read, interpret and write persuasively about novels, poems, plays and other imaginative works across a variety of genres and media forms. Along with teaching students the analytical skills and methodological tools to interpret these works, this major teaches the importance of understanding imaginative works within their cultural and historical contexts. In addition, the major is designed to train students in strong professional and academic skills like critical thinking, inductive reasoning and persuasive argumentation that are applicable to other fields of study and a variety of career paths. Program Learning Outcomes Use disciplinary vocabulary from literary theory and Cultural Studies scholarship appropriately in analyses. Deploy literary and/or Cultural Studies theories/frameworks appropriately to describe, explain, or critique artifacts of communication. Apply methods appropriately to answer research questions commonly asked in Literary and Cultural Studies. Explain how contexts and identities ( historical, social, economic, political, technological, etc.) influence cultural forms, language, and practice, and how cultural forms, language, and practice shape the contexts of use. Exhibit competence in reading, writing, and speaking in academic and professional contexts by identifying scholarly niches/research questions and synthesizing evidence to support a claim. Curriculum The Literature & Culture curriculum consists of 13 courses for a minimum of 117 units . At least one course other than 76-245 Shakespeare: Tragedies & Histories or 76-247 Shakespeare: Comedies and Romances must focus on a period pre-1900 . Applicable courses have an asterisk (*). Required Introductory Courses (3 courses) 27 units Required Introductory Courses Units 76-212 Introduction to TV Writing 9 or 76-260 Introduction to Writing Fiction or 76-261 Intro to Writing Creative Nonfiction or 76-265 Introduction to Writing Poetry or 76-269 Introduction to Screenwriting 76-245 Shakespeare: Tragedies & Histories 9 or 76-247 Shakespeare: Comedies and Romances 76-275 Introduction to Critical Writing 9 200-Level literature & culture courses (2 courses) 18 units Course options include but are not limited to the following: 200-Level Literature & Culture Courses 76-203 Literature & Culture in the 18th Century * 9 76-207 Special Topics in Literature & Culture 9 76-210 Banned Books 9 76-217 Literature & Culture of the 20th and 21st Century 9 76-220 Mystery! From Detective Fiction to True Crime 9 76-221 Books You Should Have Read By Now 9 76-230 Literature & Culture in the 19th Century * 9 76-236 CMU Prison Education Project: 12 76-239 Introduction to Film Studies 9 76-241 Introduction to Gender Studies 9 76-242 American Woman Writers 9 76-244 Immigrant Fictions 9 76-245 Shakespeare: Tragedies & Histories If not taken already for the Core Required course. 9 76-247 Shakespeare: Comedies and Romances If not taken already for the Core Required course. 9 76-259 Film History 9 76-268 Comic Books & Pop Culture 9 76-278 Japanese Film and Literature: The Art of Storytelling 9 76-295 Russian Cinema: From the Bolshevik Revolution to Putin's Russia 9 76-296 20th Century Russian Masterpieces 9 76-299 19th Century Russian Masterpieces * 9 300-Level Literature & Culture Courses (2 courses) 18 units Course options include but are not limited to the following: 300-Level Literature & Culture Courses 76-312 Crime and Justice in American Film 9 76-314 Data Stories 9 76-317 Contemporary American Fiction 9 76-326 Contemporary Global Fiction 9 76-329 Performing Race in Early Modern Drama * 9 76-337 Intersectional Feminism 9 76-339 Topics in Film and Media 9 76-341 The Age of Jane Austen * 9 76-342 Love: A Cultural History 9 76-343 Rise of the American Novel 9 76-347 Major Fiction 9 76-348 Adaptation: Fiction to Film 9 76-350 Critical Theories about Literature If not taken for the Theory Course requirement 9 76-353 Transnational Feminisms: Fiction and Film 9 76-367 Fact Into Film: Translating History into Cinema 9 76-370 Independent Study in Literary and Cultural Studies (instructor permission required) Var. 76-376 Crafting Race in 19th-Century Britain * 9 76-382 Media: Past, Present, and Future 9 76-392 Special Topics in Literature & Culture 9 400-Level Literature & Culture Course (1 course) 9 units"
+    },
+    {
+      "id": "theory-course-1-course-9-units",
+      "name": "theory course (1 course) 9 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-350",
+        "76-424"
+      ],
+      "source_instruction": "The B.A. in Literature and Culture The Literature & Culture Major teaches students how to read, interpret and write persuasively about novels, poems, plays and other imaginative works across a variety of genres and media forms. Along with teaching students the analytical skills and methodological tools to interpret these works, this major teaches the importance of understanding imaginative works within their cultural and historical contexts. In addition, the major is designed to train students in strong professional and academic skills like critical thinking, inductive reasoning and persuasive argumentation that are applicable to other fields of study and a variety of career paths. Program Learning Outcomes Use disciplinary vocabulary from literary theory and Cultural Studies scholarship appropriately in analyses. Deploy literary and/or Cultural Studies theories/frameworks appropriately to describe, explain, or critique artifacts of communication. Apply methods appropriately to answer research questions commonly asked in Literary and Cultural Studies. Explain how contexts and identities ( historical, social, economic, political, technological, etc.) influence cultural forms, language, and practice, and how cultural forms, language, and practice shape the contexts of use. Exhibit competence in reading, writing, and speaking in academic and professional contexts by identifying scholarly niches/research questions and synthesizing evidence to support a claim. Curriculum The Literature & Culture curriculum consists of 13 courses for a minimum of 117 units . At least one course other than 76-245 Shakespeare: Tragedies & Histories or 76-247 Shakespeare: Comedies and Romances must focus on a period pre-1900 . Applicable courses have an asterisk (*). Required Introductory Courses (3 courses) 27 units Required Introductory Courses Units 76-212 Introduction to TV Writing 9 or 76-260 Introduction to Writing Fiction or 76-261 Intro to Writing Creative Nonfiction or 76-265 Introduction to Writing Poetry or 76-269 Introduction to Screenwriting 76-245 Shakespeare: Tragedies & Histories 9 or 76-247 Shakespeare: Comedies and Romances 76-275 Introduction to Critical Writing 9 200-Level literature & culture courses (2 courses) 18 units Course options include but are not limited to the following: 200-Level Literature & Culture Courses 76-203 Literature & Culture in the 18th Century * 9 76-207 Special Topics in Literature & Culture 9 76-210 Banned Books 9 76-217 Literature & Culture of the 20th and 21st Century 9 76-220 Mystery! From Detective Fiction to True Crime 9 76-221 Books You Should Have Read By Now 9 76-230 Literature & Culture in the 19th Century * 9 76-236 CMU Prison Education Project: 12 76-239 Introduction to Film Studies 9 76-241 Introduction to Gender Studies 9 76-242 American Woman Writers 9 76-244 Immigrant Fictions 9 76-245 Shakespeare: Tragedies & Histories If not taken already for the Core Required course. 9 76-247 Shakespeare: Comedies and Romances If not taken already for the Core Required course. 9 76-259 Film History 9 76-268 Comic Books & Pop Culture 9 76-278 Japanese Film and Literature: The Art of Storytelling 9 76-295 Russian Cinema: From the Bolshevik Revolution to Putin's Russia 9 76-296 20th Century Russian Masterpieces 9 76-299 19th Century Russian Masterpieces * 9 300-Level Literature & Culture Courses (2 courses) 18 units Course options include but are not limited to the following: 300-Level Literature & Culture Courses 76-312 Crime and Justice in American Film 9 76-314 Data Stories 9 76-317 Contemporary American Fiction 9 76-326 Contemporary Global Fiction 9 76-329 Performing Race in Early Modern Drama * 9 76-337 Intersectional Feminism 9 76-339 Topics in Film and Media 9 76-341 The Age of Jane Austen * 9 76-342 Love: A Cultural History 9 76-343 Rise of the American Novel 9 76-347 Major Fiction 9 76-348 Adaptation: Fiction to Film 9 76-350 Critical Theories about Literature If not taken for the Theory Course requirement 9 76-353 Transnational Feminisms: Fiction and Film 9 76-367 Fact Into Film: Translating History into Cinema 9 76-370 Independent Study in Literary and Cultural Studies (instructor permission required) Var. 76-376 Crafting Race in 19th-Century Britain * 9 76-382 Media: Past, Present, and Future 9 76-392 Special Topics in Literature & Culture 9 400-Level Literature & Culture Course (1 course) 9 units 400-Level Literature & Culture Course 76-407 Topics in Literary & Cultural Studies 9 76-410 The Long Eighteenth Century * 9 76-414 Decolonial Imaginaries 9 76-423 Transnational Feminisms 9 76-424 Theories of Social Class 9 76-429 Introduction to Computational Humanities 9 76-431 Gender Play in Early Modern Drama * 9 76-434 Literature & Social Change in the 19th Century * 9 76-439 Seminar in Film and Media Studies 9 76-442 Black Lives in Pre-1900 Britain * 9 76-445 Milton * 9 76-446 Revenge Tragedy * 9 76-450 Law, Culture, and the Humanities 9 76-452 Generations and Culture 9 76-453 Literature of Empire * 9 76-454 Rise of the Blockbuster 9 76-455 The Pittsburgh Review of Books (PRoB) 9 76-461 Refugee Stories: Literature, Art and Film 9 76-467 Crime Fiction and Film 9 76-468 Space and Mobilities 9 76-482 Rise of the Art Film 9 76-495 Other People's Words: The History, Theory, and Practice of Interviews 9 theory course (1 course) 9 units"
+    },
+    {
+      "id": "rhetoric-course-1-course-9-units",
+      "name": "Rhetoric Course (1 course) 9 units",
+      "choose": 9,
+      "units": 81,
+      "options": [
+        "76-204",
+        "76-219",
+        "76-318",
+        "76-325",
+        "76-327",
+        "76-373",
+        "76-384",
+        "76-389",
+        "76-390",
+        "76-393",
+        "76-415",
+        "76-416",
+        "76-425",
+        "76-427",
+        "76-473",
+        "76-475",
+        "76-476",
+        "76-479",
+        "76-490",
+        "76-492"
+      ],
+      "source_instruction": "The B.A. in Literature and Culture The Literature & Culture Major teaches students how to read, interpret and write persuasively about novels, poems, plays and other imaginative works across a variety of genres and media forms. Along with teaching students the analytical skills and methodological tools to interpret these works, this major teaches the importance of understanding imaginative works within their cultural and historical contexts. In addition, the major is designed to train students in strong professional and academic skills like critical thinking, inductive reasoning and persuasive argumentation that are applicable to other fields of study and a variety of career paths. Program Learning Outcomes Use disciplinary vocabulary from literary theory and Cultural Studies scholarship appropriately in analyses. Deploy literary and/or Cultural Studies theories/frameworks appropriately to describe, explain, or critique artifacts of communication. Apply methods appropriately to answer research questions commonly asked in Literary and Cultural Studies. Explain how contexts and identities ( historical, social, economic, political, technological, etc.) influence cultural forms, language, and practice, and how cultural forms, language, and practice shape the contexts of use. Exhibit competence in reading, writing, and speaking in academic and professional contexts by identifying scholarly niches/research questions and synthesizing evidence to support a claim. Curriculum The Literature & Culture curriculum consists of 13 courses for a minimum of 117 units . At least one course other than 76-245 Shakespeare: Tragedies & Histories or 76-247 Shakespeare: Comedies and Romances must focus on a period pre-1900 . Applicable courses have an asterisk (*). Required Introductory Courses (3 courses) 27 units Required Introductory Courses Units 76-212 Introduction to TV Writing 9 or 76-260 Introduction to Writing Fiction or 76-261 Intro to Writing Creative Nonfiction or 76-265 Introduction to Writing Poetry or 76-269 Introduction to Screenwriting 76-245 Shakespeare: Tragedies & Histories 9 or 76-247 Shakespeare: Comedies and Romances 76-275 Introduction to Critical Writing 9 200-Level literature & culture courses (2 courses) 18 units Course options include but are not limited to the following: 200-Level Literature & Culture Courses 76-203 Literature & Culture in the 18th Century * 9 76-207 Special Topics in Literature & Culture 9 76-210 Banned Books 9 76-217 Literature & Culture of the 20th and 21st Century 9 76-220 Mystery! From Detective Fiction to True Crime 9 76-221 Books You Should Have Read By Now 9 76-230 Literature & Culture in the 19th Century * 9 76-236 CMU Prison Education Project: 12 76-239 Introduction to Film Studies 9 76-241 Introduction to Gender Studies 9 76-242 American Woman Writers 9 76-244 Immigrant Fictions 9 76-245 Shakespeare: Tragedies & Histories If not taken already for the Core Required course. 9 76-247 Shakespeare: Comedies and Romances If not taken already for the Core Required course. 9 76-259 Film History 9 76-268 Comic Books & Pop Culture 9 76-278 Japanese Film and Literature: The Art of Storytelling 9 76-295 Russian Cinema: From the Bolshevik Revolution to Putin's Russia 9 76-296 20th Century Russian Masterpieces 9 76-299 19th Century Russian Masterpieces * 9 300-Level Literature & Culture Courses (2 courses) 18 units Course options include but are not limited to the following: 300-Level Literature & Culture Courses 76-312 Crime and Justice in American Film 9 76-314 Data Stories 9 76-317 Contemporary American Fiction 9 76-326 Contemporary Global Fiction 9 76-329 Performing Race in Early Modern Drama * 9 76-337 Intersectional Feminism 9 76-339 Topics in Film and Media 9 76-341 The Age of Jane Austen * 9 76-342 Love: A Cultural History 9 76-343 Rise of the American Novel 9 76-347 Major Fiction 9 76-348 Adaptation: Fiction to Film 9 76-350 Critical Theories about Literature If not taken for the Theory Course requirement 9 76-353 Transnational Feminisms: Fiction and Film 9 76-367 Fact Into Film: Translating History into Cinema 9 76-370 Independent Study in Literary and Cultural Studies (instructor permission required) Var. 76-376 Crafting Race in 19th-Century Britain * 9 76-382 Media: Past, Present, and Future 9 76-392 Special Topics in Literature & Culture 9 400-Level Literature & Culture Course (1 course) 9 units 400-Level Literature & Culture Course 76-407 Topics in Literary & Cultural Studies 9 76-410 The Long Eighteenth Century * 9 76-414 Decolonial Imaginaries 9 76-423 Transnational Feminisms 9 76-424 Theories of Social Class 9 76-429 Introduction to Computational Humanities 9 76-431 Gender Play in Early Modern Drama * 9 76-434 Literature & Social Change in the 19th Century * 9 76-439 Seminar in Film and Media Studies 9 76-442 Black Lives in Pre-1900 Britain * 9 76-445 Milton * 9 76-446 Revenge Tragedy * 9 76-450 Law, Culture, and the Humanities 9 76-452 Generations and Culture 9 76-453 Literature of Empire * 9 76-454 Rise of the Blockbuster 9 76-455 The Pittsburgh Review of Books (PRoB) 9 76-461 Refugee Stories: Literature, Art and Film 9 76-467 Crime Fiction and Film 9 76-468 Space and Mobilities 9 76-482 Rise of the Art Film 9 76-495 Other People's Words: The History, Theory, and Practice of Interviews 9 theory course (1 course) 9 units Theory Courses Units 76-350 Critical Theories about Literature 9 76-424 Theories of Social Class 9 Rhetoric Course (1 course) 9 units Courses include but are not limited to:"
+    },
+    {
+      "id": "recommended-curriculum-pathway-b-a-in-literature-culture",
+      "name": "Recommended Curriculum Pathway: B.A. in Literature & Culture",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-275"
+      ],
+      "source_instruction": "The B.A. in Literature and Culture The Literature & Culture Major teaches students how to read, interpret and write persuasively about novels, poems, plays and other imaginative works across a variety of genres and media forms. Along with teaching students the analytical skills and methodological tools to interpret these works, this major teaches the importance of understanding imaginative works within their cultural and historical contexts. In addition, the major is designed to train students in strong professional and academic skills like critical thinking, inductive reasoning and persuasive argumentation that are applicable to other fields of study and a variety of career paths. Program Learning Outcomes Use disciplinary vocabulary from literary theory and Cultural Studies scholarship appropriately in analyses. Deploy literary and/or Cultural Studies theories/frameworks appropriately to describe, explain, or critique artifacts of communication. Apply methods appropriately to answer research questions commonly asked in Literary and Cultural Studies. Explain how contexts and identities ( historical, social, economic, political, technological, etc.) influence cultural forms, language, and practice, and how cultural forms, language, and practice shape the contexts of use. Exhibit competence in reading, writing, and speaking in academic and professional contexts by identifying scholarly niches/research questions and synthesizing evidence to support a claim. Curriculum The Literature & Culture curriculum consists of 13 courses for a minimum of 117 units . At least one course other than 76-245 Shakespeare: Tragedies & Histories or 76-247 Shakespeare: Comedies and Romances must focus on a period pre-1900 . Applicable courses have an asterisk (*). Required Introductory Courses (3 courses) 27 units Required Introductory Courses Units 76-212 Introduction to TV Writing 9 or 76-260 Introduction to Writing Fiction or 76-261 Intro to Writing Creative Nonfiction or 76-265 Introduction to Writing Poetry or 76-269 Introduction to Screenwriting 76-245 Shakespeare: Tragedies & Histories 9 or 76-247 Shakespeare: Comedies and Romances 76-275 Introduction to Critical Writing 9 200-Level literature & culture courses (2 courses) 18 units Course options include but are not limited to the following: 200-Level Literature & Culture Courses 76-203 Literature & Culture in the 18th Century * 9 76-207 Special Topics in Literature & Culture 9 76-210 Banned Books 9 76-217 Literature & Culture of the 20th and 21st Century 9 76-220 Mystery! From Detective Fiction to True Crime 9 76-221 Books You Should Have Read By Now 9 76-230 Literature & Culture in the 19th Century * 9 76-236 CMU Prison Education Project: 12 76-239 Introduction to Film Studies 9 76-241 Introduction to Gender Studies 9 76-242 American Woman Writers 9 76-244 Immigrant Fictions 9 76-245 Shakespeare: Tragedies & Histories If not taken already for the Core Required course. 9 76-247 Shakespeare: Comedies and Romances If not taken already for the Core Required course. 9 76-259 Film History 9 76-268 Comic Books & Pop Culture 9 76-278 Japanese Film and Literature: The Art of Storytelling 9 76-295 Russian Cinema: From the Bolshevik Revolution to Putin's Russia 9 76-296 20th Century Russian Masterpieces 9 76-299 19th Century Russian Masterpieces * 9 300-Level Literature & Culture Courses (2 courses) 18 units Course options include but are not limited to the following: 300-Level Literature & Culture Courses 76-312 Crime and Justice in American Film 9 76-314 Data Stories 9 76-317 Contemporary American Fiction 9 76-326 Contemporary Global Fiction 9 76-329 Performing Race in Early Modern Drama * 9 76-337 Intersectional Feminism 9 76-339 Topics in Film and Media 9 76-341 The Age of Jane Austen * 9 76-342 Love: A Cultural History 9 76-343 Rise of the American Novel 9 76-347 Major Fiction 9 76-348 Adaptation: Fiction to Film 9 76-350 Critical Theories about Literature If not taken for the Theory Course requirement 9 76-353 Transnational Feminisms: Fiction and Film 9 76-367 Fact Into Film: Translating History into Cinema 9 76-370 Independent Study in Literary and Cultural Studies (instructor permission required) Var. 76-376 Crafting Race in 19th-Century Britain * 9 76-382 Media: Past, Present, and Future 9 76-392 Special Topics in Literature & Culture 9 400-Level Literature & Culture Course (1 course) 9 units 400-Level Literature & Culture Course 76-407 Topics in Literary & Cultural Studies 9 76-410 The Long Eighteenth Century * 9 76-414 Decolonial Imaginaries 9 76-423 Transnational Feminisms 9 76-424 Theories of Social Class 9 76-429 Introduction to Computational Humanities 9 76-431 Gender Play in Early Modern Drama * 9 76-434 Literature & Social Change in the 19th Century * 9 76-439 Seminar in Film and Media Studies 9 76-442 Black Lives in Pre-1900 Britain * 9 76-445 Milton * 9 76-446 Revenge Tragedy * 9 76-450 Law, Culture, and the Humanities 9 76-452 Generations and Culture 9 76-453 Literature of Empire * 9 76-454 Rise of the Blockbuster 9 76-455 The Pittsburgh Review of Books (PRoB) 9 76-461 Refugee Stories: Literature, Art and Film 9 76-467 Crime Fiction and Film 9 76-468 Space and Mobilities 9 76-482 Rise of the Art Film 9 76-495 Other People's Words: The History, Theory, and Practice of Interviews 9 theory course (1 course) 9 units Theory Courses Units 76-350 Critical Theories about Literature 9 76-424 Theories of Social Class 9 Rhetoric Course (1 course) 9 units Courses include but are not limited to: Rhetoric Courses 76-204 Race, Ethnicity, Controversy 9 76-219 Law & Blame 9 76-318 Communicating in the Global Marketplace 9 76-325 Intertextuality 9 76-327 Equity & Communication: Strategies for Institutional Change 9 76-373 Argument 9 76-384 Race, Nation, and the Enemy 9 76-389 Rhetorical Grammar 9 76-390 Style 9 76-393 Narrative & Argument 9 76-415 Mediated Power and Propaganda 9 76-416 Rhetorics of Race & Empire 9 76-425 Rhetoric, Science, and the Public Sphere 9 76-427 Topics in Rhetoric: Audience 9 76-473 Rhetoric & the Construction of Race 9 76-475 Law, Performance, and Identity 9 76-476 Rhetoric of Science 9 76-479 Model Minorities? Race, Rhetoric, & Identity in Asian America 9 76-490 Digital Rhetorics 9 76-492 Rhetoric of Public Policy 9 English electives (3 courses) 27 units minimum Students may choose any three 76-2xx through 764xx nine-unit courses from our course descriptions to fulfill this requirement, provided the course has not already been used to fulfill a requirement above. * Pre-1900 course Double Counting Students may double count up to two courses with other programs outside of the Department of English. NOTE: courses being used for the Dietrich College General Education requirements do not have a double-counting limit. Transfer Courses Students may transfer up to two courses from other non-CMU programs/institutions toward the primary or additional major in Literature & Culture or the BHA concentration in Literature & Culture, with the exception of the Required Introductory Courses listed above, which must be taken at CMU. If the two-course maximum is met, other related transfer courses will be considered for general education requirements and/or free electives for graduation. Please see the Dietrich College Advanced Standing and Transfer Credit Policy for more information. Recommended Curriculum Pathway: B.A. in Literature & Culture Below is the recommended plan, or pathway, for completing the B.A. in Literature & Culture in four years. This pathway includes the Literature & Culture course requirements as well as requirements for the Dietrich College General Education curriculum. While it is not required for students to follow this pathway precisely, it is highly recommended for students to do so, and we recommend students begin the major’s courses as early as possible. (Students in Dietrich College may declare their primary major as early as the beginning of their second semester.) Students who have not yet declared their major in the Department of English may still take courses with us. Students may also view the pathway for the B.A. in Literature & Culture via the Stellic Degree Audit Application ."
+    }
+  ],
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 92,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Required Introductory Courses (3 courses) 27 units",
+      "Assumed choose-one for ambiguous section: 200-Level literature & culture courses (2 courses) 18 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.71
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "38 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 87,
+    "extracted_unit_estimate": 288,
+    "scheduled_course_count": 49,
+    "missing_schedule_course_ids": [
+      "76-203",
+      "76-204",
+      "76-230",
+      "76-242",
+      "76-244",
+      "76-268",
+      "76-312",
+      "76-318",
+      "76-326",
+      "76-329",
+      "76-337",
+      "76-343",
+      "76-347",
+      "76-348",
+      "76-353",
+      "76-367",
+      "76-376",
+      "76-384",
+      "76-407",
+      "76-410",
+      "76-414",
+      "76-423",
+      "76-425",
+      "76-427",
+      "76-431",
+      "76-442",
+      "76-445",
+      "76-446",
+      "76-450",
+      "76-452",
+      "76-454",
+      "76-467",
+      "76-468",
+      "76-476",
+      "76-479",
+      "76-482",
+      "76-492",
+      "76-495"
+    ]
+  }
+}

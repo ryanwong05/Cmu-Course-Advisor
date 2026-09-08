@@ -1,0 +1,382 @@
+{
+  "program_id": "mathematical-sciences--b-s",
+  "planning_id": "mathematical-sciences",
+  "name": "Mathematical Sciences",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
+  "source_hash": "2e6f8f5a748c1c3f4638096515d312825d87cc7d4cb7a5d6ae5305dc97a36231",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "mathematical-sciences-courses-required",
+      "name": "Mathematical Sciences Courses (required)",
+      "choose": 8,
+      "units": 71,
+      "options": [
+        "21-120",
+        "21-122",
+        "21-127",
+        "21-128",
+        "21-201",
+        "21-228",
+        "15-251",
+        "21-241",
+        "21-242",
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269",
+        "21-260",
+        "21-261",
+        "33-231",
+        "21-325",
+        "21-425",
+        "15-259",
+        "36-218",
+        "21-341",
+        "21-374",
+        "21-355",
+        "21-455",
+        "21-356",
+        "21-456",
+        "21-373"
+      ],
+      "source_instruction": "B.S. in Mathematical Sciences Overview This program is the most flexible available to our majors. Students choose eight electives within the major and at least seven free electives, giving them the opportunity to design a program to suit their individual interests and goals. Curriculum The requirements for the B.S. in Mathematical Sciences are: Mathematical Sciences Courses (required) The alternative courses 21-242 , 21-261 , and 21-268 (or 21-269 ) are particularly recommended for a student planning to pursue graduate work."
+    },
+    {
+      "id": "computer-science-courses-required",
+      "name": "Computer Science Courses (required)",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "15-110",
+        "15-112",
+        "02-120",
+        "15-104"
+      ],
+      "source_instruction": "B.S. in Mathematical Sciences Overview This program is the most flexible available to our majors. Students choose eight electives within the major and at least seven free electives, giving them the opportunity to design a program to suit their individual interests and goals. Curriculum The requirements for the B.S. in Mathematical Sciences are: Mathematical Sciences Courses (required) The alternative courses 21-242 , 21-261 , and 21-268 (or 21-269 ) are particularly recommended for a student planning to pursue graduate work. Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs 21-201 Undergraduate Colloquium 1 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory 21-259 Calculus in Three Dimensions 10-12 or 21-266 Vector Calculus using Matrix Algebra or 21-268 Multidimensional Calculus or 21-269 Vector Analysis 21-260 Differential Equations 9-10 or 21-261 Introduction to Ordinary Differential Equations or 33-231 Physical Analysis 21-325 Probability 9-12 or 21-425 Probability and Martingales or 15-259 Probability and Computing or 36-218 Probability Theory for Computer Scientists 21-341 Linear Algebra 9 or 21-374 Field Theory 21-355 Principles of Real Analysis I 9-12 or 21-455 Intermediate Real Analysis I 21-356 Principles of Real Analysis II 9-10 or 21-456 Intermediate Real Analysis II 21-373 Algebraic Structures 9 117-130 Computer Science Courses (required)"
+    },
+    {
+      "id": "mathematical-sciences-courses-required",
+      "name": "Mathematical Sciences Courses (required)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "21-122",
+        "21-127",
+        "21-128",
+        "21-201",
+        "21-228",
+        "15-251",
+        "21-241",
+        "21-242",
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269",
+        "21-260",
+        "21-261",
+        "33-231",
+        "21-292",
+        "21-369",
+        "21-393"
+      ],
+      "source_instruction": "The alternative courses 21-242 , 21-261 , and 21-268 (or 21-269 ) are particularly recommended for a student planning to pursue graduate work."
+    },
+    {
+      "id": "statistics-courses-required",
+      "name": "Statistics Courses (required)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-325",
+        "21-425",
+        "15-259",
+        "36-218",
+        "36-226",
+        "36-401",
+        "36-402",
+        "36-410"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "economics-business-and-computer-science-courses-required",
+      "name": "Economics, Business, and Computer Science Courses (required)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-110",
+        "15-104",
+        "15-112",
+        "02-120",
+        "70-122",
+        "73-102",
+        "73-103",
+        "73-230",
+        "73-240"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "depth-electives-required",
+      "name": "Depth Electives (required)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "10-301",
+        "07-280",
+        "15-122",
+        "15-150",
+        "15-210",
+        "70-371",
+        "70-460",
+        "70-469",
+        "70-471"
+      ],
+      "source_instruction": "Forty-five units of depth electives. These electives may be any Mathematical Sciences Elective (at the 21-300 level or above or 21-270 ) or courses chosen from the list below. At least nine of these units must be Mathematical Sciences Electives (21-XXX)."
+    },
+    {
+      "id": "statistics-courses-required",
+      "name": "Statistics Courses (required)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-325",
+        "21-425",
+        "15-259",
+        "36-218",
+        "36-226",
+        "36-315",
+        "36-350",
+        "36-401",
+        "36-402",
+        "36-410"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "economics-and-computer-science-courses-required",
+      "name": "Economics and Computer Science Courses (required)",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "15-112",
+        "02-120",
+        "15-122",
+        "73-102"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "depth-electives-required",
+      "name": "Depth Electives (required)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "10-301",
+        "07-280",
+        "15-150",
+        "15-210"
+      ],
+      "source_instruction": "F orty-five units of depth electives. These electives may be any Mathematical Sciences Elective (at the 21-300 level or above or 21-270 ) or courses chosen from the list below. At least nine of these units must be Mathematical Sciences Electives (21-XXX). At least nine of these units must be Statistics Electives (36-XXX)"
+    },
+    {
+      "id": "mathematical-sciences-and-computer-science-courses-required",
+      "name": "Mathematical Sciences and Computer Science Courses (required)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "15-122",
+        "15-150",
+        "15-210",
+        "21-120",
+        "21-122",
+        "21-127",
+        "21-128",
+        "21-201",
+        "21-228",
+        "21-301",
+        "21-241",
+        "21-242",
+        "21-300",
+        "21-341",
+        "21-374",
+        "21-355",
+        "21-455",
+        "21-373"
+      ],
+      "source_instruction": "The alternative course 21-242 is particularly recommended for a student planning to pursue graduate work."
+    },
+    {
+      "id": "computer-science-electives-required",
+      "name": "Computer Science Electives (required)",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "15-312",
+        "15-317",
+        "15-451"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "list-1-discrete-mathematics-and-logic-electives",
+      "name": "List 1 (Discrete Mathematics and Logic Electives)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "15-251",
+        "21-301",
+        "21-321",
+        "21-322",
+        "21-325",
+        "21-425",
+        "15-259",
+        "21-329",
+        "21-374",
+        "21-400",
+        "21-441",
+        "21-484",
+        "21-602",
+        "21-603",
+        "21-610",
+        "21-701",
+        "80-305",
+        "80-405",
+        "80-311",
+        "80-411",
+        "80-413"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "list-2-mathematics-electives",
+      "name": "List 2 (Mathematics Electives)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269",
+        "21-260",
+        "21-261",
+        "33-231",
+        "21-270",
+        "21-292"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "mathematical-sciences-courses-required",
+      "name": "Mathematical Sciences Courses (required)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-122",
+        "21-127",
+        "21-128",
+        "21-201",
+        "21-228",
+        "15-251",
+        "21-241",
+        "21-242",
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269",
+        "21-260",
+        "21-261",
+        "33-231",
+        "21-325",
+        "21-425",
+        "15-259",
+        "36-218",
+        "21-355",
+        "21-455",
+        "21-369",
+        "21-469"
+      ],
+      "source_instruction": "The alternative courses 21-242 , 21-261 , and 21-268 (or 21-269 ) are particularly recommended for a student planning to pursue graduate work."
+    },
+    {
+      "id": "computer-science-courses-required",
+      "name": "Computer Science Courses (required)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "15-112",
+        "02-120",
+        "15-122"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "computational-and-applied-mathematics-electives",
+      "name": "Computational and Applied Mathematics Electives",
+      "choose": 7,
+      "units": 66,
+      "options": [
+        "10-301",
+        "07-280",
+        "21-270",
+        "21-292",
+        "21-326",
+        "21-344",
+        "21-380"
+      ],
+      "source_instruction": "B.S. in Mathematical Sciences (Computational and Applied Mathematics) Overview This concentration is designed to prepare students for careers in business or industry which require significant analytical, computational and problem solving skills. It also prepares students with interest in computational and applied mathematics for graduate school. The students in this concentration develop skills to choose the right framework to quantify or model a problem, analyze it, simulate and in general use appropriate techniques for carrying the effort through to an effective solution. The free electives allow the student to develop an interest in a related area by completing a minor in another department, such as Engineering Studies, Economics, Information Systems or Business Administration. Curriculum The requirements for the Computational and Applied Mathematics concentration are: Mathematical Sciences Courses (required) The alternative courses 21-242 , 21-261 , and 21-268 (or 21-269 ) are particularly recommended for a student planning to pursue graduate work. Courses Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs 21-201 Undergraduate Colloquium 1 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory 21-259 Calculus in Three Dimensions 10-12 or 21-266 Vector Calculus using Matrix Algebra or 21-268 Multidimensional Calculus or 21-269 Vector Analysis 21-260 Differential Equations 9-10 or 21-261 Introduction to Ordinary Differential Equations or 33-231 Physical Analysis 21-325 Probability 9-12 or 21-425 Probability and Martingales or 15-259 Probability and Computing or 36-218 Probability Theory for Computer Scientists 21-355 Principles of Real Analysis I 9-12 or 21-455 Intermediate Real Analysis I 21-369 Numerical Methods 12 21-469 Computational Introduction to Partial Differential Equations 12 114-126 Computer Science Courses (required) Courses Units 15-112 Fundamentals of Programming and Computer Science 12 or 02-120 Programming for Scientists 15-122 Principles of Imperative Computation 12 Depth Electives (required) Sixty-three total units Twenty-seven of these units must be Computational and Applied Mathematics electives listed below. Twenty-seven of these units must be Mathematical Sciences Electives (at the 21-300 level or above or 21-270 or 21-292 ). These may include further Computational and Applied Mathematics electives. Nine units of Technical Electives. These may be Mathematical Sciences (at the 21-300 level or above or 21-270 or 21-292 ), or Computer Science (at the 15-200 level or above), or Physics (at the 33-300 level or above), or Statistics (must be at the 36-300 level or above and have at least 36-225 as a prerequisite) electives. These may also be technical courses with course codes 10-xxx (Machine Learning), 11-xxx (Learning Technologies Institute), or 07-xxx (SCS interdisciplinary), subject to department approval. Computational and Applied Mathematics Electives"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 17,
+    "course_references": 179,
+    "confidence": 0.55,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+      "Assumed choose-one for ambiguous section: Statistics Courses (required)",
+      "Assumed choose-one for ambiguous section: Economics, Business, and Computer Science Courses (required)",
+      "Assumed choose-one for ambiguous section: Depth Electives (required)",
+      "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+      "Assumed choose-one for ambiguous section: Statistics Courses (required)",
+      "Assumed choose-one for ambiguous section: Economics and Computer Science Courses (required)",
+      "Assumed choose-one for ambiguous section: Depth Electives (required)",
+      "Assumed choose-one for ambiguous section: Mathematical Sciences and Computer Science Courses (required)",
+      "Assumed choose-one for ambiguous section: Computer Science Electives (required)",
+      "Assumed choose-one for ambiguous section: List 1 (Discrete Mathematics and Logic Electives)",
+      "Assumed choose-one for ambiguous section: List 2 (Mathematics Electives)",
+      "Assumed choose-one for ambiguous section: Mathematical Sciences Courses (required)",
+      "Assumed choose-one for ambiguous section: Computer Science Courses (required)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.19
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "More than 25% of requirement groups rely on inferred choose-one rules."
+    ],
+    "warnings": [
+      "9 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 79,
+    "extracted_unit_estimate": 304,
+    "scheduled_course_count": 70,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "21-322",
+      "21-326",
+      "21-374",
+      "21-400",
+      "21-455",
+      "21-456",
+      "80-405",
+      "80-411"
+    ]
+  }
+}

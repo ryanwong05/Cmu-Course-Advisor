@@ -1,38 +1,61 @@
 {
   "stats-ml-major": {
     "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_major_units": 180,
+    "maximum_major_units": 205,
+    "minimum_degree_units": 360,
     "required_courses": [
-      "21-120", "36-200", "15-112", "36-202", "21-127", "21-256",
-      "36-235", "15-122", "36-236", "21-241", "36-350", "10-301",
-      "36-401", "36-402", "15-351"
+      "21-127", "36-235", "36-236", "36-350", "36-401", "36-402", "15-122"
     ],
-  "requirement_groups": [
-    {
-      "id": "mathematical-foundations",
-      "name": "Mathematical Foundations",
-      "type": "group",
-      "requirements": []
+    "requirement_groups": [
+      {"id":"calculus","name":"Calculus foundation","choose":1,"units":10,"options":["21-120","21-111 + 21-112"],"minimum_year":1},
+      {"id":"multivariable","name":"Multivariable calculus","choose":1,"units":9,"options":["21-256","21-259","21-266","21-268"],"minimum_year":2},
+      {"id":"linear-algebra","name":"Linear algebra","choose":1,"units":10,"options":["21-240","21-241","21-242"],"minimum_year":2},
+      {"id":"beginning-data","name":"Beginning Data Analysis","choose":1,"units":9,"options":["36-200","36-220"],"minimum_year":1},
+      {"id":"intermediate-data","name":"Intermediate Data Analysis · Sequence 1","choose":1,"units":9,"options":["36-202","36-290","36-303","36-309","36-315"],"minimum_year":1},
+      {"id":"advanced-data","name":"Advanced Data Analysis elective","choose":2,"units":18,"options":["36-311","36-313","36-318","36-396","36-460","36-461","36-462","36-463","36-464","36-465","36-466","36-467","36-468","36-469","36-470","36-471","36-472","36-473","36-490","36-493","36-497"],"minimum_year":3},
+      {"id":"programming","name":"Programming foundation","choose":1,"units":12,"options":["15-112","02-120"],"minimum_year":1},
+      {"id":"algorithms","name":"Algorithms","choose":1,"units":12,"options":["15-351","15-451"],"minimum_year":3},
+      {"id":"intro-ml","name":"Introduction to Machine Learning","choose":1,"units":12,"options":["10-301","07-280"],"minimum_year":3},
+      {"id":"advanced-ml","name":"Advanced Machine Learning elective","choose":1,"units":9,"options":["05-434","07-380","10-403","10-405","10-417","10-418","11-344","11-411","11-441","11-485","15-386","15-387","16-311","16-385"],"minimum_year":3}
+    ],
+    "notes": [
+      "21-090 is required only when placement does not waive precalculus.",
+      "Sequence 2 replaces Intermediate Data Analysis plus two advanced electives with three advanced electives.",
+      "36-401 and 36-402 must be completed at Carnegie Mellon.",
+      "Probability substitutions must follow the compatible 36-235/36-236 or 36-225/36-226 sequence and advisor rules."
+    ]
     },
-    {
-      "id": "statistics-core",
-      "name": "Statistics Core",
-      "type": "group",
-      "requirements": []
-    },
-    {
-      "id": "advanced-data-analysis",
-      "name": "Advanced Data Analysis",
-      "type": "group",
-      "requirements": []
-    },
-    {
-      "id": "machine-learning-cs",
-      "name": "Machine Learning / Computer Science",
-      "type": "group",
-      "requirements": []
-            }
-        ]
-    },
+
+  "mechanical-engineering-major": {
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_degree_units": 382,
+    "required_courses": [
+      "21-120", "21-122", "24-101", "33-141", "76-101",
+      "24-203", "24-251", "24-221", "24-231", "24-261", "24-262",
+      "21-254", "21-260", "24-302", "24-311", "24-321", "24-322",
+      "24-351", "24-352", "24-370", "24-452", "36-220"
+    ],
+    "requirement_groups": [
+      {"id":"second-intro-engineering","name":"Second introductory engineering course","choose":1,"units":12,"options":["06-100","12-100","18-100","19-101","27-100"],"minimum_year":1},
+      {"id":"programming","name":"Programming requirement","choose":1,"units":10,"options":["15-110","15-112"],"minimum_year":1},
+      {"id":"physics-two","name":"Physics II","choose":1,"units":12,"options":["33-142","33-152"],"minimum_year":1},
+      {"id":"chemistry","name":"Chemistry","choose":1,"units":10,"options":["09-105","09-111"],"minimum_year":1},
+      {"id":"capstone","name":"Mechanical Engineering capstone","choose":1,"units":12,"options":["24-441","24-671"],"minimum_year":4},
+      {"id":"meche-technical-elective","name":"Mechanical Engineering technical elective","choose":1,"units":9,"options":["24-3xx","24-4xx"],"minimum_year":4},
+      {"id":"general-education","name":"Engineering General Education course","choose":5,"units":45,"options":["Approved Engineering GenEd"],"minimum_year":1},
+      {"id":"free-electives","name":"Free elective","choose":4,"units":36,"options":["Approved undergraduate elective"],"minimum_year":3}
+    ],
+    "notes": [
+      "The official recommended sequence totals at least 382 units.",
+      "24-203 and 24-251 must both be completed during sophomore year unless the published 18-100 waiver applies.",
+      "24-441 may also satisfy the Robotics Additional Major capstone for MechE students, subject to the six-course double-count limit."
+    ]
+  },
 
   "cs-transfer": {
     "planner_status": "ready",
@@ -119,7 +142,15 @@
     ]
   },
   "robotics-additional-major": {
-    "planner_status": "choice_required",
-    "required_courses": []
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_courses": 10,
+    "required_courses": ["16-450"],
+    "notes": [
+      "Students entering Fall 2024 or later complete ten Robotics curriculum courses.",
+      "Most students may double count at most six primary-major courses; CS majors may double count at most five.",
+      "MechE students may use 24-441 for the capstone requirement."
+    ]
   }
 }

@@ -1,0 +1,313 @@
+{
+  "program_id": "artificial-intelligence--b-s",
+  "planning_id": "artificial-intelligence",
+  "name": "Artificial Intelligence",
+  "credential": "B.S.",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-bs/",
+  "source_hash": "c59388d7aee6a2c44ac50729447b5ad37548897c0b24ccd363d0b9bf6e3e0a30",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "math-and-statistics",
+      "name": "Math and Statistics",
+      "choose": 1,
+      "units": 13,
+      "options": [
+        "15-151",
+        "21-127",
+        "21-120",
+        "21-122",
+        "21-241",
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269",
+        "36-218",
+        "15-259",
+        "21-325",
+        "36-226",
+        "21-425",
+        "36-225",
+        "36-235",
+        "36-236",
+        "36-401"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "computer-science",
+      "name": "Computer Science",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "15-122",
+        "15-112",
+        "15-150",
+        "15-210",
+        "15-213",
+        "15-251"
+      ],
+      "source_instruction": null
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "choose": 4,
+      "units": 48,
+      "options": [
+        "07-280",
+        "07-380",
+        "11-411",
+        "16-385"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence"
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "choose": 6,
+      "units": 69,
+      "options": [
+        "15-386",
+        "15-482",
+        "15-494",
+        "16-350",
+        "16-362",
+        "16-384"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12"
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "choose": 12,
+      "units": 138,
+      "options": [
+        "10-403",
+        "10-405",
+        "10-414",
+        "10-417",
+        "10-418",
+        "10-422",
+        "10-423",
+        "10-424",
+        "10-425",
+        "11-441",
+        "11-485",
+        "36-402"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program"
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "choose": 4,
+      "units": 42,
+      "options": [
+        "11-442",
+        "11-492",
+        "15-387",
+        "15-463"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program"
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "choose": 4,
+      "units": 48,
+      "options": [
+        "05-317",
+        "05-318",
+        "05-391",
+        "16-467"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program One Perception and Language course from the following (min. 9 units): 11-442 Search Engines 9 11-492 Speech Technology for Conversational AI 12 15-387 Computational Perception 9 15-463 Computational Photography 12 others as designated by the AI Undergraduate Program"
+    },
+    {
+      "id": "school-of-computer-science-electives",
+      "name": "School of Computer Science Electives",
+      "choose": 15,
+      "units": 135,
+      "options": [
+        "02-180",
+        "05-180",
+        "07-180",
+        "16-180",
+        "02-201",
+        "02-223",
+        "02-250",
+        "02-261",
+        "05-200",
+        "07-402",
+        "11-423",
+        "15-351",
+        "16-211",
+        "16-223",
+        "16-224",
+        "16-397",
+        "16-480",
+        "17-200",
+        "17-333",
+        "17-562"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program One Perception and Language course from the following (min. 9 units): 11-442 Search Engines 9 11-492 Speech Technology for Conversational AI 12 15-387 Computational Perception 9 15-463 Computational Photography 12 others as designated by the AI Undergraduate Program One Human-AI Interaction course from the following (min. 12 units): 05-317 Design of Artificial Intelligence Products 12 05-318 Human AI Interaction 12 05-391 Designing Human Centered Software 12 16-467 Introduction to Human Robot Interaction 12 others as designated by the AI Undergraduate Program School of Computer Science Electives"
+    },
+    {
+      "id": "ethics-course",
+      "name": "Ethics Course",
+      "choose": 4,
+      "units": 42,
+      "options": [
+        "16-161",
+        "16-735",
+        "17-200",
+        "80-249"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program One Perception and Language course from the following (min. 9 units): 11-442 Search Engines 9 11-492 Speech Technology for Conversational AI 12 15-387 Computational Perception 9 15-463 Computational Photography 12 others as designated by the AI Undergraduate Program One Human-AI Interaction course from the following (min. 12 units): 05-317 Design of Artificial Intelligence Products 12 05-318 Human AI Interaction 12 05-391 Designing Human Centered Software 12 16-467 Introduction to Human Robot Interaction 12 others as designated by the AI Undergraduate Program School of Computer Science Electives Two general computer science electives: Units These electives can be from any SCS department (Computational Biology [02-], Human-Computer Interaction [05-], Interdisciplinary [07-], Machine Learning [10-], Language Technologies [11-], Computer Science [15-], Robotics [16-], or Software & Societal Systems [17-]). They must be 200-level or above and at least 9 units each, with the following exceptions: 18 Students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; The following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 07-402 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-562 ; Some IDEATE courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with an AI undergraduate advisor before registration to determine eligibility for this requirement. Ethics Course"
+    },
+    {
+      "id": "humanities-and-arts",
+      "name": "Humanities and Arts",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "85-110",
+        "85-213",
+        "85-408",
+        "85-421",
+        "85-413"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program One Perception and Language course from the following (min. 9 units): 11-442 Search Engines 9 11-492 Speech Technology for Conversational AI 12 15-387 Computational Perception 9 15-463 Computational Photography 12 others as designated by the AI Undergraduate Program One Human-AI Interaction course from the following (min. 12 units): 05-317 Design of Artificial Intelligence Products 12 05-318 Human AI Interaction 12 05-391 Designing Human Centered Software 12 16-467 Introduction to Human Robot Interaction 12 others as designated by the AI Undergraduate Program School of Computer Science Electives Two general computer science electives: Units These electives can be from any SCS department (Computational Biology [02-], Human-Computer Interaction [05-], Interdisciplinary [07-], Machine Learning [10-], Language Technologies [11-], Computer Science [15-], Robotics [16-], or Software & Societal Systems [17-]). They must be 200-level or above and at least 9 units each, with the following exceptions: 18 Students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; The following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 07-402 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-562 ; Some IDEATE courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with an AI undergraduate advisor before registration to determine eligibility for this requirement. Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 17-200 Ethics and Policy Issues in Computing 9 80-249 AI, Society, and Humanity 9 SCIENCE AND ENGINEERING All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 36 units offered by the Mellon College of Science (MCS) and/or the College of Engineering (CIT). These courses offer students an opportunity to explore scientific and engineering domains that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . SPECIAL NOTE FOR AI STUDENTS: AI majors must satisfy Category 1 of the General Education requirements by taking one of the following Cognitive Studies (Category 1A) courses:"
+    },
+    {
+      "id": "scs-first-year-seminar",
+      "name": "SCS First year seminar",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "07-128"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program One Perception and Language course from the following (min. 9 units): 11-442 Search Engines 9 11-492 Speech Technology for Conversational AI 12 15-387 Computational Perception 9 15-463 Computational Photography 12 others as designated by the AI Undergraduate Program One Human-AI Interaction course from the following (min. 12 units): 05-317 Design of Artificial Intelligence Products 12 05-318 Human AI Interaction 12 05-391 Designing Human Centered Software 12 16-467 Introduction to Human Robot Interaction 12 others as designated by the AI Undergraduate Program School of Computer Science Electives Two general computer science electives: Units These electives can be from any SCS department (Computational Biology [02-], Human-Computer Interaction [05-], Interdisciplinary [07-], Machine Learning [10-], Language Technologies [11-], Computer Science [15-], Robotics [16-], or Software & Societal Systems [17-]). They must be 200-level or above and at least 9 units each, with the following exceptions: 18 Students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; The following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 07-402 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-562 ; Some IDEATE courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with an AI undergraduate advisor before registration to determine eligibility for this requirement. Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 17-200 Ethics and Policy Issues in Computing 9 80-249 AI, Society, and Humanity 9 SCIENCE AND ENGINEERING All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 36 units offered by the Mellon College of Science (MCS) and/or the College of Engineering (CIT). These courses offer students an opportunity to explore scientific and engineering domains that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . SPECIAL NOTE FOR AI STUDENTS: AI majors must satisfy Category 1 of the General Education requirements by taking one of the following Cognitive Studies (Category 1A) courses: 85-110 Cognitive Psychology 9 85-213 Human Information Processing and Artificial Intelligence 9 85-408 Visual Cognition 9 85-421 Language and Thought 9 85-413 Perception 9 SCS First year seminar The following course is designed to acquaint incoming students with computer science at CMU:"
+    },
+    {
+      "id": "core-cmu",
+      "name": "CoRE@CMU",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "99-101"
+      ],
+      "source_instruction": "Curriculum BSAI majors will take core courses in math and statistics, computer science, artificial intelligence and ethics, along with general education courses in science and engineering, and humanities and arts. Math and Statistics All of the following: Units 15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10 Probability and Statistics (one of the following options): 36-218 Probability Theory for Computer Scientists 9 15-259 Probability and Computing 12 21-325 & 36-226 Probability and Introduction to Statistical Inference 18 21-425 & 36-226 Probability and Martingales and Introduction to Statistical Inference 18 36-225 & 36-226 Introduction to Probability Theory and Introduction to Statistical Inference 18 36-235 & 36-236 Probability and Statistical Inference I and Probability and Statistical Inference II 18 plus Modern Regression: 36-401 Modern Regression 9 Computer Science All of the following: Units 15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-251 Great Ideas in Theoretical Computer Science 12 Artificial Intelligence All of the following AI core courses: Units 07-280 Artificial Intelligence and Machine Learning I 12 07-380 Artificial Intelligence and Machine Learning II 12 plus one of the following AI core courses: 11-411 Natural Language Processing 12 16-385 Computer Vision 12 One Decision Making and Robotics course (min. 9 units): Units 15-386 Neural Computation 9 15-482 Autonomous Agents 12 15-494 Cognitive Robotics: The Future of Robot Toys 12 16-350 Planning Techniques for Robotics 12 16-362 Mobile Robot Algorithms Laboratory 12 16-384 Robot Kinematics and Dynamics 12 others as designated by the AI Undergraduate Program One Machine Learning course from the following (min. 9 units): 10-403 Deep Reinforcement Learning & Control 12 10-405 Machine Learning with Large Datasets (Undergraduate) 12 10-414 Deep Learning Systems: Algorithms and Implementation 12 10-417 Intermediate Deep Learning 12 10-418 Machine Learning for Structured Data 12 10-422 Foundations of Learning, Game Theory, and Their Connections 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 11-441 Machine Learning with Graphs 9 11-485 Introduction to Deep Learning 12 36-402 Advanced Methods for Data Analysis 9 others as designated by the AI Undergraduate Program One Perception and Language course from the following (min. 9 units): 11-442 Search Engines 9 11-492 Speech Technology for Conversational AI 12 15-387 Computational Perception 9 15-463 Computational Photography 12 others as designated by the AI Undergraduate Program One Human-AI Interaction course from the following (min. 12 units): 05-317 Design of Artificial Intelligence Products 12 05-318 Human AI Interaction 12 05-391 Designing Human Centered Software 12 16-467 Introduction to Human Robot Interaction 12 others as designated by the AI Undergraduate Program School of Computer Science Electives Two general computer science electives: Units These electives can be from any SCS department (Computational Biology [02-], Human-Computer Interaction [05-], Interdisciplinary [07-], Machine Learning [10-], Language Technologies [11-], Computer Science [15-], Robotics [16-], or Software & Societal Systems [17-]). They must be 200-level or above and at least 9 units each, with the following exceptions: 18 Students who take two of the major-intro mini-courses ( 02-180 , 05-180 , 07-180 , or 16-180 ) during their first year may combine these two mini-courses together to count as one SCS elective; The following courses do NOT count as SCS electives: 02-201 , 02-223 , 02-250 , 02-261 , 05-200 , 07-402 , 11-423 , 15-351 , 16-211 , 16-223 , 16-224 , 16-397 , 16-480 , 17-200 , 17-333 , 17-562 ; Some IDEATE courses and some SCS undergraduate and graduate courses might not be allowed based on course content. Always consult with an AI undergraduate advisor before registration to determine eligibility for this requirement. Ethics Course One of the following courses: Units 16-161 Artificial Intelligence and Humanity 12 16-735 Ethics and Robotics 12 17-200 Ethics and Policy Issues in Computing 9 80-249 AI, Society, and Humanity 9 SCIENCE AND ENGINEERING All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 36 units offered by the Mellon College of Science (MCS) and/or the College of Engineering (CIT). These courses offer students an opportunity to explore scientific and engineering domains that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . Humanities and Arts All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . SPECIAL NOTE FOR AI STUDENTS: AI majors must satisfy Category 1 of the General Education requirements by taking one of the following Cognitive Studies (Category 1A) courses: 85-110 Cognitive Psychology 9 85-213 Human Information Processing and Artificial Intelligence 9 85-408 Visual Cognition 9 85-421 Language and Thought 9 85-413 Perception 9 SCS First year seminar The following course is designed to acquaint incoming students with computer science at CMU: 07-128 First Year Seminar 3 CoRE@CMU The following course is required of all CMU students:"
+    },
+    {
+      "id": "bsai-roadmap-sample-course-sequence",
+      "name": "BSAI Roadmap: Sample Course Sequence",
+      "choose": 6,
+      "units": 49,
+      "options": [
+        "07-128",
+        "15-122",
+        "15-151",
+        "21-122",
+        "76-101",
+        "99-101"
+      ],
+      "source_instruction": "The sample given below is for a student who already has credit for introductory programming and introductory calculus. Students with no credit for introductory programming will take 15-112 in their first semester and shift some CS courses to later semesters after consulting with their academic advisor; students with no credit for calculus will take 21-120 in their first semester and shift 21-122 and 21-259 to subsequent semesters. These students should still be able to complete their degree in four years given the light load of their senior year. Students with credit for 21-120 and 21-122 may start with a more advanced math class (e.g. 21-241 ) in their first year. It is recommended that students keep their academic load lighter for their senior fall semester to account for offsite job interviews or for their senior spring semester to account for visits to graduate schools. FRESHMAN YEAR:"
+    },
+    {
+      "id": "bsai-roadmap-sample-course-sequence",
+      "name": "BSAI Roadmap: Sample Course Sequence",
+      "choose": 7,
+      "units": 75,
+      "options": [
+        "02-180",
+        "05-180",
+        "07-180",
+        "16-180",
+        "15-150",
+        "15-213",
+        "21-241"
+      ],
+      "source_instruction": "BSAI Roadmap: Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and introductory calculus. Students with no credit for introductory programming will take 15-112 in their first semester and shift some CS courses to later semesters after consulting with their academic advisor; students with no credit for calculus will take 21-120 in their first semester and shift 21-122 and 21-259 to subsequent semesters. These students should still be able to complete their degree in four years given the light load of their senior year. Students with credit for 21-120 and 21-122 may start with a more advanced math class (e.g. 21-241 ) in their first year. It is recommended that students keep their academic load lighter for their senior fall semester to account for offsite job interviews or for their senior spring semester to account for visits to graduate schools. FRESHMAN YEAR: Fall Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-151 Mathematical Foundations for Computer Science 12 21-122 Integration and Approximation 10 76-101 Interpretation and Argument 9 99-101 Core@CMU 3 49"
+    },
+    {
+      "id": "bsai-roadmap-sample-course-sequence",
+      "name": "BSAI Roadmap: Sample Course Sequence",
+      "choose": 3,
+      "units": 33,
+      "options": [
+        "07-280",
+        "15-210",
+        "36-218"
+      ],
+      "source_instruction": "BSAI Roadmap: Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and introductory calculus. Students with no credit for introductory programming will take 15-112 in their first semester and shift some CS courses to later semesters after consulting with their academic advisor; students with no credit for calculus will take 21-120 in their first semester and shift 21-122 and 21-259 to subsequent semesters. These students should still be able to complete their degree in four years given the light load of their senior year. Students with credit for 21-120 and 21-122 may start with a more advanced math class (e.g. 21-241 ) in their first year. It is recommended that students keep their academic load lighter for their senior fall semester to account for offsite job interviews or for their senior spring semester to account for visits to graduate schools. FRESHMAN YEAR: Fall Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-151 Mathematical Foundations for Computer Science 12 21-122 Integration and Approximation 10 76-101 Interpretation and Argument 9 99-101 Core@CMU 3 49 Spring Units xx-180 Two Major Introduction Minis ( 02-180 , 05-180 , 07-180 , 16-180 ) 10 15-150 Principles of Functional Programming 12 15-213 Introduction to Computer Systems 12 21-241 Matrices and Linear Transformations 11 45 SOPHOMORE YEAR:"
+    },
+    {
+      "id": "bsai-roadmap-sample-course-sequence",
+      "name": "BSAI Roadmap: Sample Course Sequence",
+      "choose": 3,
+      "units": 34,
+      "options": [
+        "07-380",
+        "15-251",
+        "21-259"
+      ],
+      "source_instruction": "BSAI Roadmap: Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and introductory calculus. Students with no credit for introductory programming will take 15-112 in their first semester and shift some CS courses to later semesters after consulting with their academic advisor; students with no credit for calculus will take 21-120 in their first semester and shift 21-122 and 21-259 to subsequent semesters. These students should still be able to complete their degree in four years given the light load of their senior year. Students with credit for 21-120 and 21-122 may start with a more advanced math class (e.g. 21-241 ) in their first year. It is recommended that students keep their academic load lighter for their senior fall semester to account for offsite job interviews or for their senior spring semester to account for visits to graduate schools. FRESHMAN YEAR: Fall Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-151 Mathematical Foundations for Computer Science 12 21-122 Integration and Approximation 10 76-101 Interpretation and Argument 9 99-101 Core@CMU 3 49 Spring Units xx-180 Two Major Introduction Minis ( 02-180 , 05-180 , 07-180 , 16-180 ) 10 15-150 Principles of Functional Programming 12 15-213 Introduction to Computer Systems 12 21-241 Matrices and Linear Transformations 11 45 SOPHOMORE YEAR: Fall Units 07-280 Artificial Intelligence and Machine Learning I 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 36-218 Probability Theory for Computer Scientists 9 xx-xxx Science and Engineering Elective 9 xx-xxx Ethics Elective 9 51"
+    },
+    {
+      "id": "bsai-roadmap-sample-course-sequence",
+      "name": "BSAI Roadmap: Sample Course Sequence",
+      "choose": 3,
+      "units": 32,
+      "options": [
+        "11-411",
+        "16-385",
+        "36-401"
+      ],
+      "source_instruction": "BSAI Roadmap: Sample Course Sequence The sample given below is for a student who already has credit for introductory programming and introductory calculus. Students with no credit for introductory programming will take 15-112 in their first semester and shift some CS courses to later semesters after consulting with their academic advisor; students with no credit for calculus will take 21-120 in their first semester and shift 21-122 and 21-259 to subsequent semesters. These students should still be able to complete their degree in four years given the light load of their senior year. Students with credit for 21-120 and 21-122 may start with a more advanced math class (e.g. 21-241 ) in their first year. It is recommended that students keep their academic load lighter for their senior fall semester to account for offsite job interviews or for their senior spring semester to account for visits to graduate schools. FRESHMAN YEAR: Fall Units 07-128 First Year Seminar 3 15-122 Principles of Imperative Computation 12 15-151 Mathematical Foundations for Computer Science 12 21-122 Integration and Approximation 10 76-101 Interpretation and Argument 9 99-101 Core@CMU 3 49 Spring Units xx-180 Two Major Introduction Minis ( 02-180 , 05-180 , 07-180 , 16-180 ) 10 15-150 Principles of Functional Programming 12 15-213 Introduction to Computer Systems 12 21-241 Matrices and Linear Transformations 11 45 SOPHOMORE YEAR: Fall Units 07-280 Artificial Intelligence and Machine Learning I 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 36-218 Probability Theory for Computer Scientists 9 xx-xxx Science and Engineering Elective 9 xx-xxx Ethics Elective 9 51 Spring Units 07-380 Artificial Intelligence and Machine Learning II 12 15-251 Great Ideas in Theoretical Computer Science 12 21-259 Calculus in Three Dimensions 10 85-xxx Cognitive Studies Elective 9 xx-xxx Humanities and Arts Elective 9 52 JUNIOR YEAR:"
+    }
+  ],
+  "extraction": {
+    "tables_seen": 17,
+    "course_references": 107,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Math and Statistics",
+      "Assumed choose-one for ambiguous section: Computer Science",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.88
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (821 units)."
+    ],
+    "warnings": [
+      "15 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 85,
+    "extracted_unit_estimate": 821,
+    "scheduled_course_count": 70,
+    "missing_schedule_course_ids": [
+      "02-201",
+      "02-223",
+      "05-180",
+      "05-200",
+      "10-418",
+      "10-424",
+      "10-425",
+      "11-441",
+      "16-161",
+      "16-180",
+      "16-397",
+      "16-735",
+      "17-200",
+      "85-408",
+      "85-421"
+    ]
+  }
+}
