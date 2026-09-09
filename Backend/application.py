@@ -147,7 +147,7 @@ STATS_ML_PREREQUISITES = {
     "21-256": ["21-120"],
     "36-235": ["21-120"],
     "36-236": ["36-235"],
-    "21-241": ["21-120"],
+    "21-241": [],
     "36-350": ["36-202"],
     "10-301": ["15-122", "36-235"],
     "36-401": ["21-241", "36-202", "36-236"],
@@ -206,6 +206,11 @@ def hydrate_scheduled_courses(course_list: list[dict], course_ids: list[str]):
             "name": title,
             "units": int(units) if float(units).is_integer() else units,
             "prerequisites": STATS_ML_PREREQUISITES.get(course_id, []),
+            "prerequisite_data_status": (
+                "curated_mapping"
+                if course_id in STATS_ML_PREREQUISITES
+                else "catalog_not_imported"
+            ),
             "offered": schedule_terms,
             "minimum_year": STATS_ML_MINIMUM_YEAR.get(course_id, 1),
             "source": "processed_schedule_sqlite",
@@ -216,6 +221,31 @@ hydrate_scheduled_courses(courses, STATS_ML_STANDARD_PATH + STATS_ML_CHOICE_COUR
 hydrate_scheduled_courses(courses, IS_MINOR_COURSES)
 hydrate_scheduled_courses(courses, MECHE_STANDARD_PATH + MECHE_CHOICE_COURSES)
 hydrate_scheduled_courses(courses, ROBOTICS_ADDITIONAL_COURSES)
+
+# Keep the planning catalog synchronized with every concrete course referenced
+# by a verified requirement profile. Previously only a few hand-maintained
+# majors were hydrated, leaving valid dropdown choices without units, offering
+# terms, or workload data.
+_referenced_requirement_courses = set()
+for _requirement in requirements.values():
+    _referenced_requirement_courses.update(_requirement.get("required_courses", []))
+    for _group in _requirement.get("requirement_groups", []):
+        for _raw_option in _group.get("options", []):
+            _referenced_requirement_courses.update(
+                _course_id for _course_id in _raw_option.split(" + ")
+                if re.fullmatch(r"\d{2}-\d{3}", _course_id)
+            )
+for _program_profiles in program_profiles["programs"].values():
+    for _profile in _program_profiles.values():
+        _referenced_requirement_courses.update(_profile.get("required_course_ids", []))
+        for _group in _profile.get("requirement_groups", []):
+            for _raw_option in _group.get("options", []):
+                _referenced_requirement_courses.update(
+                    _course_id for _course_id in _raw_option.split(" + ")
+                    if re.fullmatch(r"\d{2}-\d{3}", _course_id)
+                )
+hydrate_scheduled_courses(courses, sorted(_referenced_requirement_courses))
+
 with sqlite3.connect(DATA_DIR / "courses.sqlite") as _connection:
     _robotics_elective_ids = [
         row[0] for row in _connection.execute(
@@ -283,8 +313,14 @@ def primary_major_requirement_slots(primary_major: str, completed_courses: list[
     slots = []
     curriculum = requirements.get(f"{primary_major}-major", {})
     for group in curriculum.get("requirement_groups", []):
+        group_options = list(group.get("options", []))
+        if primary_major == "stats-ml" and group.get("id") == "linear-algebra":
+            # 21-241 is the recommended Stats/ML linear-algebra route for the
+            # product's early-path guidance. This changes the default ordering,
+            # not the official set of valid alternatives.
+            group_options.sort(key=lambda option: option != "21-241")
         satisfied = sum(
-            1 for option in group.get("options", [])
+            1 for option in group_options
             if set(option.split(" + ")).issubset(completed)
         )
         remaining = max(0, group.get("choose", 1) - satisfied)
@@ -294,7 +330,7 @@ def primary_major_requirement_slots(primary_major: str, completed_courses: list[
                 "id": f"{primary_major}-{group['id']}-{index + 1}",
                 "name": group["name"],
                 "units": int(per_choice_units) if per_choice_units.is_integer() else per_choice_units,
-                "options": group.get("options", []),
+                "options": group_options,
                 "minimum_year": group.get("minimum_year", 1),
                 "offered": group.get("offered", []),
                 "program_tier": "current_major",
@@ -625,6 +661,7 @@ def list_electives(
             parameters,
         ).fetchall()
 
+    planning_course_by_id = {course["id"]: course for course in courses}
     results = [
         {
             "id": course_id,
@@ -634,6 +671,15 @@ def list_electives(
             "sections": section_count,
             "level": int(course_id.split("-")[1][0]) * 100,
             "requirement_group": STATS_ML_MATH_GROUPS.get(course_id),
+            "minimum_year": planning_course_by_id.get(course_id, {}).get(
+                "minimum_year", 1
+            ),
+            "prerequisites": planning_course_by_id.get(course_id, {}).get(
+                "prerequisites", []
+            ),
+            "prerequisite_data_status": planning_course_by_id.get(
+                course_id, {}
+            ).get("prerequisite_data_status", "catalog_not_imported"),
             "description": (
                 (f"{STATS_ML_MATH_GROUPS[course_id]} · " if course_id in STATS_ML_MATH_GROUPS else "")
                 + f"{units:g} units · Offered {term.title()} 2026 · "
@@ -1123,8 +1169,15 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 "name": course["name"],
                 "units": course["units"],
                 "offered": course.get("offered", []),
+                "minimum_year": course.get("minimum_year", 1),
                 "prerequisites": course.get("prerequisites", []),
                 "prerequisite_expression": course.get("prerequisite_expression"),
+                "prerequisite_data_status": course.get(
+                    "prerequisite_data_status", "catalog_not_imported"
+                ),
+                "recommended_preparation": course.get(
+                    "recommended_preparation", []
+                ),
                 "metrics": course_metrics.get(course["id"]),
                 "intensity": five_level_course_metric(course["id"], course["units"]),
             }

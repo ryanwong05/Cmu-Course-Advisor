@@ -1,3 +1,5 @@
+import re
+
 from Engine.availability import (
     get_available_courses,
     prerequisite_course_ids,
@@ -502,7 +504,25 @@ def generate_semester_path(
 
             scored_courses.append({
                 "course": course_id,
-                "score": downstream_count
+                # Unlocking later requirements remains the strongest signal.
+                # Within the same dependency tier, pull foundational current-
+                # major courses forward. 21-241 receives a small explicit
+                # boost because CMU lists 21-127 as preparation rather than a
+                # hard prerequisite.
+                "score": (
+                    downstream_count * 100
+                    + (25 if course_id == "21-241" else 0)
+                    + max(0, 3 - course.get("minimum_year", 1)) * 5
+                    + (
+                        8
+                        if course.get("recommended_preparation")
+                        and all(
+                            item in completed
+                            for item in course["recommended_preparation"]
+                        )
+                        else 0
+                    )
+                )
             })
 
         # downstream 越多，越优先
@@ -592,6 +612,7 @@ def generate_semester_path(
                 ) else 1,
             ),
         )
+        satisfied_program_slot_ids = set()
         for requirement in ordered_program_slots:
             if academic_year < requirement.get("minimum_year", 1):
                 continue
@@ -617,6 +638,16 @@ def generate_semester_path(
             if len(baseline_slots) + len(semester_courses) + len(program_slots) >= 6:
                 break
             course_by_id_for_options = {course["id"]: course for course in courses}
+            fixed_courses_this_semester = set(semester_courses)
+            if any(
+                set(option.split(" + ")).issubset(fixed_courses_this_semester)
+                for option in requirement.get("options", [])
+            ):
+                # A fixed course scheduled for either the current or target
+                # curriculum can satisfy this choice without creating a
+                # second copy of the same course block.
+                satisfied_program_slot_ids.add(requirement["id"])
+                continue
             used_default_options = {
                 item.get("default_option") for item in program_slots
                 if item.get("default_option")
@@ -626,21 +657,33 @@ def generate_semester_path(
                 option_ids = option.split(" + ")
                 if option in used_default_options:
                     continue
-                if all(course_id in completed for course_id in option_ids):
+                if any(
+                    course_id in completed or course_id in semester_courses
+                    for course_id in option_ids
+                ):
+                    # Do not represent a partially completed bundle as though
+                    # every course in it still needs to be taken. Prefer a
+                    # clean alternative; a future sequence model can split
+                    # mixed-completion bundles explicitly.
                     continue
                 option_courses = [
                     course_by_id_for_options.get(course_id)
                     for course_id in option_ids
                 ]
                 if all(
-                    course is not None and current_semester in course.get("offered", [])
+                    course is not None
+                    and current_semester in course.get("offered", [])
+                    and prerequisites_satisfied(course, completed)
                     for course in option_courses
                 ):
                     default_option = option
                     break
+            has_only_concrete_options = bool(requirement.get("options")) and all(
+                all(re.fullmatch(r"\d{2}-\d{3}", course_id) for course_id in option.split(" + "))
+                for option in requirement.get("options", [])
+            )
             if (
-                requirement.get("scope") == "primary_major"
-                and requirement.get("options")
+                has_only_concrete_options
                 and default_option is None
             ):
                 continue
@@ -736,6 +779,7 @@ def generate_semester_path(
             "kind": "baseline",
             "locked": False,
             "options": requirement.get("courses", []),
+            "minimum_year": 1,
         } for requirement in baseline_slots)
         course_blocks.extend({
             "id": requirement["id"],
@@ -751,6 +795,8 @@ def generate_semester_path(
             "program_tier": requirement.get("program_tier"),
             "scope": requirement.get("scope", "goal"),
             "default_option": requirement.get("default_option"),
+            "minimum_year": requirement.get("minimum_year", 1),
+            "offered": requirement.get("offered", []),
         } for requirement in program_slots)
 
         path.append({
@@ -810,6 +856,7 @@ def generate_semester_path(
         remaining_program_slots = [
             item for item in remaining_program_slots
             if item["id"] not in scheduled_program_ids
+            and item["id"] not in satisfied_program_slot_ids
         ]
 
         current_semester = get_next_semester_name(

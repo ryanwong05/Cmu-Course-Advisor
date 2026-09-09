@@ -807,6 +807,18 @@
             <div id="savedPathsList"></div>
         </section>
 
+        <section class="path-intelligence" id="pathIntelligence">
+            <div class="path-intelligence-heading">
+                <div>
+                    <p class="eyebrow">COMPARE YOUR OPTIONS</p>
+                    <h2>Path comparison</h2>
+                </div>
+                <span class="rules-badge">Rules-based preview · AI-ready</span>
+            </div>
+            <div class="path-comparison-grid" id="pathComparisonGrid"></div>
+            <div class="rate-my-path" id="rateMyPath"></div>
+        </section>
+
 
 
         <!-- ================================================
@@ -982,6 +994,15 @@
 
 </main>
 
+<div class="planner-dialog-backdrop hidden" id="plannerDialog" role="dialog" aria-modal="true" aria-labelledby="plannerDialogTitle">
+    <div class="planner-dialog-card">
+        <p class="eyebrow">PATH RULE</p>
+        <h2 id="plannerDialogTitle">That course cannot move there</h2>
+        <p id="plannerDialogMessage"></p>
+        <button class="primary-button" id="plannerDialogOk" type="button">OK</button>
+    </div>
+</div>
+
 
 
 <!-- #region 6. JAVASCRIPT -->
@@ -1004,7 +1025,7 @@
      so the prototype remains stable.
      ========================================================== -->
 
-<script src="app.js?v=20260907-meche-robotics"></script>
+<script src="app.js?v=20260909-path-rules"></script>
 
 <!-- #endregion -->
 
