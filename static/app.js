@@ -139,11 +139,96 @@ function capturePath(container) {
     }));
 }
 
+const CAREER_DIRECTIONS = {
+    "stats-ml": "Data science, statistics, ML engineering, quantitative analysis, research",
+    "mechanical-engineering": "Mechanical design, manufacturing, energy, robotics and systems engineering",
+    "computer-science": "Software engineering, systems, product engineering, research",
+    "artificial-intelligence": "ML engineering, applied AI, data science, AI research",
+    "robotics": "Robotics software, autonomy, controls, perception, hardware systems",
+    "human-computer-interaction": "UX engineering, product design, user research, product management",
+    "computational-biology": "Bioinformatics, computational research, health technology",
+    "information-systems": "Product, consulting, data and business technology"
+};
+
+function scorePath(pathData) {
+    const semesters = pathData?.path || [];
+    const highTerms = semesters.filter(term =>
+        term.workload?.warning_level === "high"
+        || term.high_intensity_count >= 2
+    ).length;
+    const avgUnits = semesters.length
+        ? semesters.reduce((sum, term) => sum + Number(term.total_units || 0), 0) / semesters.length
+        : 0;
+    const avgFreeUnits = semesters.length
+        ? semesters.reduce((sum, term) => sum + Number(term.free_choice_units || 0), 0) / semesters.length
+        : 0;
+    const pressure = highTerms > 1 || avgUnits > 48 ? "High" : highTerms || avgUnits > 42 ? "Moderate" : "Manageable";
+    const freedom = avgFreeUnits >= 9 ? "High" : avgFreeUnits >= 4 ? "Moderate" : "Limited";
+    const rating = Math.max(1, Math.min(5,
+        5 - Math.min(2, highTerms) - (avgUnits > 50 ? 1 : 0) + (avgFreeUnits >= 9 ? 0.5 : 0)
+    ));
+    return { semesters: semesters.length, highTerms, avgUnits, avgFreeUnits, pressure, freedom, rating };
+}
+
+function renderPathIntelligence(fastest, secondary) {
+    const goal = appState.goals[0] || {};
+    const career = CAREER_DIRECTIONS[goal.program] || "Career direction depends on the courses and experiences chosen within this path.";
+    const candidates = [
+        { key: "fastest", label: "Fastest path", data: fastest },
+        {
+            key: "secondary",
+            label: appState.latestSecondaryPathType === "minor_foundation" ? "Minor foundation" : "Lower-workload path",
+            data: secondary
+        }
+    ].map(item => ({...item, score: scorePath(item.data)}));
+    const best = [...candidates].sort((a, b) => b.score.rating - a.score.rating)[0]?.key;
+    document.getElementById("pathComparisonGrid").innerHTML = candidates.map(item => `
+        <article class="path-score-card ${item.key === best ? "recommended" : ""}">
+            <h3>${item.label}</h3>
+            <div class="path-rating">${item.score.rating.toFixed(1)} / 5</div>
+            <p><strong>Career direction:</strong> ${career}</p>
+            <p><strong>Academic pressure:</strong> ${item.score.pressure} · ${item.score.highTerms} high-pressure term${item.score.highTerms === 1 ? "" : "s"}</p>
+            <p><strong>Extracurricular freedom:</strong> ${item.score.freedom} · ~${item.score.avgFreeUnits.toFixed(0)} open units per term</p>
+            <p><strong>Recommendation:</strong> ${item.key === best ? "Best current balance under your inputs" : "Useful alternative when its tradeoff matches your priority"}</p>
+        </article>
+    `).join("");
+    document.getElementById("rateMyPath").innerHTML = `
+        <h3>Rate My Path</h3>
+        <p>This first version uses course load, high-intensity combinations, open units, timing, and your selected goal. It stores structured context so an AI adviser can replace or enrich the explanation later.</p>
+        <button class="secondary-button" id="rateCurrentPathButton" type="button">Rate my edited fastest path</button>
+        <strong id="editedPathRating"></strong>
+    `;
+    document.getElementById("rateCurrentPathButton").addEventListener("click", () => {
+        const cards = Array.from(fastestResults.querySelectorAll(".semester-card"));
+        const totals = cards.map(card => Number.parseFloat(card.querySelector(".semester-total")?.textContent) || 0);
+        const warnings = cards.filter(card => card.querySelector(".workload-high, .prerequisite-order-warning, .term-warning")).length;
+        const average = totals.length ? totals.reduce((sum, value) => sum + value, 0) / totals.length : 0;
+        const rating = Math.max(1, Math.min(5, 5 - Math.min(2, warnings) - (average > 50 ? 1 : 0)));
+        document.getElementById("editedPathRating").textContent = ` Current edited path: ${rating.toFixed(1)} / 5`;
+    });
+}
+
+function showPlannerError(message) {
+    const dialog = document.getElementById("plannerDialog");
+    document.getElementById("plannerDialogMessage").textContent = message;
+    dialog.classList.remove("hidden");
+    document.getElementById("plannerDialogOk").focus();
+}
+
+document.getElementById("plannerDialogOk").addEventListener("click", () => {
+    document.getElementById("plannerDialog").classList.add("hidden");
+});
+
 function renderSavedPaths() {
     const saved = readSavedPaths();
     document.getElementById("savedPathCount").textContent = saved.length;
     const list = document.getElementById("savedPathsList");
-    list.innerHTML = saved.length ? saved.map(path => `
+    const comparison = saved.length >= 2 ? `
+        <div class="saved-comparison-summary">
+            <strong>Saved path comparison</strong>
+            ${saved.slice(0, 3).map(path => `<span>${path.name}: ${path.evaluation?.rating?.toFixed?.(1) || "—"}/5 · ${path.evaluation?.pressure || "Not rated"} pressure</span>`).join("")}
+        </div>` : "";
+    list.innerHTML = saved.length ? comparison + saved.map(path => `
         <article class="saved-path-card" data-saved-path-id="${path.id}">
             <div>
                 <strong>${path.name}</strong>
@@ -178,6 +263,12 @@ document.getElementById("savePathButton").addEventListener("click", () => {
         fastest: capturePath(fastestResults),
         lowerWorkload: capturePath(lowerWorkloadResults),
         semesterCount: fastestResults.querySelectorAll(".semester-card").length,
+        evaluation: scorePath(appState.latestPlan.fastest),
+        ai_context: {
+            version: "rules_v1",
+            goal,
+            comparison_dimensions: ["career", "academic_pressure", "extracurricular_freedom", "recommendation"]
+        },
         savedAt: new Date().toISOString()
     };
     paths.unshift(snapshot);
@@ -1168,12 +1259,19 @@ function renderProgramsForSchool(school) {
         const button = document.createElement("button");
         button.className = "program-card";
         button.dataset.program = program.id;
+        const planningId = program.planning_id || program.id;
+        const readyForSelectedGoal = program.planning_status === "planning_ready" && (
+            appState.selection.goalType !== "transfer"
+            || ["computer-science", "information-systems"].includes(planningId)
+        );
         button.innerHTML = `
             <strong>${program.name}</strong>
             <span class="program-upgrade-label">${program.credential}</span>
-            <small>${program.planning_status === "planning_ready"
+            <small>${readyForSelectedGoal
                 ? "Verified planning available"
-                : "Directory only · requirements coming soon"}</small>
+                : appState.selection.goalType === "transfer"
+                    ? "Transfer planning coming soon"
+                    : "Directory only · requirements coming soon"}</small>
         `;
         button.addEventListener("click", () => {
             document.querySelectorAll(".program-card").forEach(card => {
@@ -1187,11 +1285,13 @@ function renderProgramsForSchool(school) {
                     ? "additional_major"
                     : null;
             updatePlanningGoal();
-            const ready = program.planning_status === "planning_ready";
+            const ready = readyForSelectedGoal;
             document.getElementById("step2bNext").disabled = !ready;
             helper.textContent = ready
                 ? "Verified planning is available for this path."
-                : "This program is listed, but its planning requirements have not been verified yet.";
+                : appState.selection.goalType === "transfer"
+                    ? "This major is listed, but its transfer planner is not verified yet."
+                    : "This program is listed, but its planning requirements have not been verified yet.";
             if (ready && appState.selection.goalType === "add-program") {
                 renderProgramComparison(appState.selection.program);
             } else {
@@ -1499,7 +1599,10 @@ document
                     title: "Which current-major and goal courses have you completed?",
                     description: `Select completed courses from your current major and this goal. Anything left unchecked may be placed in your future plan.`,
                     courses: historyCourses,
-                    choiceGroups: [...currentMajorChoiceGroups, ...detail.requirement_groups],
+                    choiceGroups: [
+                        ...currentMajorChoiceGroups.map(group => ({...group, history_scope: "current_major"})),
+                        ...detail.requirement_groups.map(group => ({...group, history_scope: "goal"}))
+                    ],
                     plannerNote: `Catalog ${detail.catalog_year}: ${detail.requirement_groups.map(group => `${group.name} (${group.options.join(" / ")})`).join("; ") || "all listed requirements are fixed courses"}.`,
                     plannerReady: true
                 };
@@ -1714,6 +1817,41 @@ function renderCourseSelection(
         });
     }
 
+    const choiceGroups = data.choiceGroups || [];
+    if (choiceGroups.length) {
+        const choiceSection = document.createElement("section");
+        choiceSection.className = "history-course-group completed-choice-groups";
+        choiceSection.innerHTML = `
+            <h3>Completed requirement choices</h3>
+            <p class="history-helper">Tell us about alternatives you already completed. Leave a row unchanged only when it still needs to be planned.</p>
+        `;
+        const earlyChoices = choiceGroups.filter(group => (group.minimum_year || 1) <= appState.student.year);
+        const laterChoices = choiceGroups.filter(group => (group.minimum_year || 1) > appState.student.year);
+        const renderChoiceRows = (groups, parent) => groups.forEach((group, index) => {
+            const label = document.createElement("label");
+            label.className = "completed-choice-row";
+            label.innerHTML = `
+                <span>
+                    <strong>${group.name}</strong>
+                    <small>${group.history_scope === "current_major" ? "Current major" : "Goal program"}${group.minimum_year ? ` · normally Year ${group.minimum_year}+` : ""}</small>
+                </span>
+                <select class="completed-choice" aria-label="Completed ${group.name}" data-history-scope="${group.history_scope || "goal"}">
+                    <option value="">Not completed — include in plan</option>
+                    ${group.options.map(option => `<option value="${option}">${option}</option>`).join("")}
+                </select>
+            `;
+            parent.appendChild(label);
+        });
+        renderChoiceRows(earlyChoices, choiceSection);
+        if (laterChoices.length) {
+            const later = document.createElement("details");
+            later.innerHTML = `<summary>Later requirement choices (${laterChoices.length})</summary>`;
+            renderChoiceRows(laterChoices, later);
+            choiceSection.appendChild(later);
+        }
+        courseList.appendChild(choiceSection);
+    }
+
 
     const foundationOrder = ["21-120", "21-122", "15-112", "36-200"];
     const earlyCoreOrder = ["21-127", "15-122", "36-202", "36-235", "21-241"];
@@ -1794,8 +1932,8 @@ function renderCourseSelection(
         courseList.appendChild(section);
     });
 
-    // Choice groups belong in the semester builder on Results.  Keeping them
-    // off this history screen prevents a long catalog dump before planning.
+    // Unfinished choice groups still become editable blocks on Results. The
+    // compact selectors above exist only to record choices already completed.
 
 
     // --------------------------------------------------------
@@ -1930,8 +2068,9 @@ function renderPath(
 
     const fixedBlock = (block, number) => {
         const intensity = appState.latestCourseCatalog[block.id]?.intensity;
+        const minimumYear = appState.latestCourseCatalog[block.id]?.minimum_year || block.minimum_year || 1;
         return `
-        <div class="planner-course-block fixed-block ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${block.estimated ? "primary-baseline-block" : ""} ${intensityClass(intensity)}" data-units="${block.units}" data-course-id="${block.id}" ${intensityData(intensity)} draggable="true">
+        <div class="planner-course-block fixed-block has-selected-course ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${block.estimated ? "primary-baseline-block" : ""} ${intensityClass(intensity)}" data-units="${block.units}" data-course-id="${block.id}" data-minimum-year="${minimumYear}" ${intensityData(intensity)} draggable="true">
             <span class="block-number">${number}</span>
             <span class="block-main">
                 <small>${block.estimated ? "Reserved for remaining primary-major requirements" : block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
@@ -1954,8 +2093,9 @@ function renderPath(
         };
         const baselineCategory = isBaseline ? baselineCategories[block.name] || "" : "";
         const defaultIntensity = appState.latestCourseCatalog[block.default_option]?.intensity;
+        const minimumYear = appState.latestCourseCatalog[block.default_option]?.minimum_year || block.minimum_year || 1;
         return `
-            <div class="planner-course-block choice-block ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${intensityClass(defaultIntensity)}" data-units="${block.units}" data-course-id="${block.default_option || ""}" ${intensityData(defaultIntensity)} data-baseline-category="${baselineCategory}" draggable="true">
+            <div class="planner-course-block choice-block ${block.default_option ? "has-selected-course" : ""} ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${intensityClass(defaultIntensity)}" data-units="${block.units}" data-course-id="${block.default_option || ""}" data-minimum-year="${minimumYear}" ${intensityData(defaultIntensity)} data-baseline-category="${baselineCategory}" draggable="true">
                 <span class="block-number">${number}</span>
                 <span class="block-main">
                     <select class="block-category" aria-label="Block ${number} category">
@@ -1968,7 +2108,7 @@ function renderPath(
                         ${options.map(option => {
                             const course = appState.latestCourseCatalog[option];
                             const intensity = course?.intensity;
-                            return `<option value="${option}" data-units="${course?.units || block.units}" data-intensity-tier="${intensity?.tier || ""}" data-hours="${intensity?.hours_per_week || ""}" data-workload="${intensity?.workload || ""}" data-difficulty="${intensity?.difficulty || ""}" data-intensity-label="${intensity?.label || ""}" ${option === block.default_option ? "selected" : ""}>${option}${course?.name ? ` · ${course.name}` : ""}${intensity ? ` · ${intensity.label}` : ""}</option>`;
+                            return `<option value="${option}" data-units="${course?.units || block.units}" data-minimum-year="${course?.minimum_year || block.minimum_year || 1}" data-intensity-tier="${intensity?.tier || ""}" data-hours="${intensity?.hours_per_week || ""}" data-workload="${intensity?.workload || ""}" data-difficulty="${intensity?.difficulty || ""}" data-intensity-label="${intensity?.label || ""}" ${option === block.default_option ? "selected" : ""}>${option}${course?.name ? ` · ${course.name}` : ""}${intensity ? ` · ${intensity.label}` : ""}</option>`;
                         }).join("")}
                     </select>
                     <small class="course-description" aria-live="polite"></small>
@@ -2008,6 +2148,8 @@ function renderPath(
     for (const semester of pathData.path) {
         const card = document.createElement("div");
         card.className = "semester-card semester-builder";
+        card.dataset.academicYear = semester.academic_year;
+        card.dataset.semesterTerm = semester.semester.toLowerCase();
         const blocks = (semester.course_blocks || []).slice(0, 6);
         const blocksHtml = blocks.map((block, index) =>
             block.locked ? fixedBlock(block, index + 1) : choiceBlock(block, index + 1)
@@ -2133,7 +2275,7 @@ function renderPath(
             const recommendedIds = new Set(recommended.map(course => course.id));
             const other = available.filter(course => !recommendedIds.has(course.id));
             const optionHtml = (course, recommendedCourse = false) =>
-                `<option value="${course.id}" data-units="${course.units}" data-term="${course.term}" data-intensity-tier="${course.intensity?.tier || ""}" data-hours="${course.intensity?.hours_per_week || ""}" data-workload="${course.intensity?.workload || ""}" data-difficulty="${course.intensity?.difficulty || ""}" data-intensity-label="${course.intensity?.label || ""}" data-description="${recommendedCourse ? "Recommended for your current and goal programs · " : ""}${course.description}">${recommendedCourse ? "★ " : ""}${course.requirement_group ? `[${course.requirement_group}] ` : ""}${course.id} · ${course.name} ${course.intensity ? `· ${course.intensity.label}` : ""}</option>`;
+                `<option value="${course.id}" data-units="${course.units}" data-term="${course.term}" data-minimum-year="${course.minimum_year || 1}" data-intensity-tier="${course.intensity?.tier || ""}" data-hours="${course.intensity?.hours_per_week || ""}" data-workload="${course.intensity?.workload || ""}" data-difficulty="${course.intensity?.difficulty || ""}" data-intensity-label="${course.intensity?.label || ""}" data-description="${recommendedCourse ? "Recommended for your current and goal programs · " : ""}${course.description}">${recommendedCourse ? "★ " : ""}${course.requirement_group ? `[${course.requirement_group}] ` : ""}${course.id} · ${course.name} ${course.intensity ? `· ${course.intensity.label}` : ""}</option>`;
             courseSelect.innerHTML = '<option value="" data-units="0">Choose a scheduled undergraduate course</option>' +
                 (recommended.length ? `<optgroup label="Recommended for your plan">${recommended.map(course => optionHtml(course, true)).join("")}</optgroup>` : "") +
                 `<optgroup label="Other undergraduate courses">${other.map(course => optionHtml(course)).join("")}</optgroup>`;
@@ -2174,6 +2316,7 @@ function renderPath(
                 if (!course) return;
                 option.textContent = `${course.id} · ${course.name}`;
                 option.dataset.units = course.units;
+                option.dataset.minimumYear = course.minimum_year || 1;
                 option.dataset.description = course.description;
                 option.dataset.intensityTier = course.intensity?.tier || "";
                 option.dataset.hours = course.intensity?.hours_per_week || "";
@@ -2231,11 +2374,13 @@ function renderPath(
                 block.dataset.units = option?.dataset.units || block.dataset.units || 0;
                 block.dataset.courseId = option?.value || "";
                 block.dataset.offeredTerm = option?.dataset.term || "";
+                block.dataset.minimumYear = option?.dataset.minimumYear || 1;
                 block.dataset.intensityTier = option?.dataset.intensityTier || "";
                 block.dataset.hours = option?.dataset.hours || "";
                 block.dataset.workload = option?.dataset.workload || "";
                 block.dataset.difficulty = option?.dataset.difficulty || "";
                 block.classList.remove(...[1, 2, 3, 4, 5].map(tier => `intensity-tier-${tier}`));
+                block.classList.toggle("has-selected-course", Boolean(option?.value));
                 if (block.dataset.intensityTier) block.classList.add(`intensity-tier-${block.dataset.intensityTier}`);
                 const intensitySlot = block.querySelector(".course-intensity-slot");
                 if (intensitySlot) intensitySlot.innerHTML = block.dataset.intensityTier
@@ -2263,7 +2408,7 @@ function renderPath(
     const swapBlocks = (source, target) => {
         if (!source || !target || source === target) return;
         if (source.closest(".semester-card") === target.closest(".semester-card")) return;
-        const violationsBefore = new Set(refreshCards());
+        const violationsBefore = new Set(refreshCards().map(item => item.key));
         swapDomBlocks(source, target);
         const violationsAfter = refreshCards();
         const introduced = violationsAfter.filter(item => !violationsBefore.has(item.key));
@@ -2272,7 +2417,7 @@ function renderPath(
             refreshCards();
             validationMessage.textContent = introduced[0].message;
             validationMessage.hidden = false;
-            validationMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            showPlannerError(introduced[0].message);
             return;
         }
         validationMessage.hidden = true;
@@ -2296,6 +2441,9 @@ function renderPath(
             const courseId = block.dataset.courseId;
             const detail = appState.latestCourseCatalog[courseId] || {};
             const semesterIndex = cards.indexOf(block.closest(".semester-card"));
+            const academicYear = Number(block.closest(".semester-card").dataset.academicYear || 1);
+            const semesterTerm = block.closest(".semester-card").dataset.semesterTerm;
+            const minimumYear = Number(block.dataset.minimumYear || detail.minimum_year || 1);
             const expression = detail.prerequisite_expression;
             const prerequisites = expression?.options?.map(option => option.course_id)
                 || detail.prerequisites || [];
@@ -2311,20 +2459,35 @@ function renderPath(
                     message: `Cannot move ${courseId} here: complete ${prerequisites.join(expression?.type === "any_of" ? " or " : " and ")} in an earlier semester.`
                 });
             }
-            block.title = prerequisites.length > 0 && !valid
-                ? `Check prerequisite order: ${prerequisites.join(" or ")}`
-                : "Drag to another semester";
-        });
-        container.querySelectorAll(".empty-block[data-course-id]").forEach(block => {
-            const cardTerm = block.closest(".semester-card")
-                .querySelector(".semester-name").textContent.toLowerCase().endsWith("fall")
-                ? "fall" : "spring";
-            const wrongTerm = block.dataset.offeredTerm && block.dataset.offeredTerm !== cardTerm;
+            const tooEarly = academicYear < minimumYear;
+            block.classList.toggle("course-year-warning", tooEarly);
+            if (tooEarly) {
+                violations.push({
+                    key: `${courseId}:${semesterIndex}:year`,
+                    message: `Cannot move ${courseId} to Year ${academicYear}. This path's verified timing rule starts it in Year ${minimumYear}.`
+                });
+            }
+            const offered = detail.offered || (block.dataset.offeredTerm ? [block.dataset.offeredTerm] : []);
+            const wrongTerm = offered.length > 0 && !offered.includes(semesterTerm);
             block.classList.toggle("elective-term-warning", wrongTerm);
+            if (wrongTerm) {
+                violations.push({
+                    key: `${courseId}:${semesterIndex}:term`,
+                    message: `Cannot move ${courseId} to ${semesterTerm}. The current schedule data lists it for ${offered.join(" or ")}.`
+                });
+            }
             const description = block.querySelector(".course-description");
             if (wrongTerm && description) {
-                description.textContent = `Not offered in ${cardTerm}. Re-select a course for this semester.`;
+                description.textContent = `Not offered in ${semesterTerm}. Re-select a course for this semester.`;
             }
+            const prerequisiteStatus = detail.prerequisite_data_status;
+            block.title = tooEarly
+                ? `Year ${minimumYear}+ course`
+                : prerequisites.length > 0 && !valid
+                    ? `Check prerequisite order: ${prerequisites.join(" or ")}`
+                    : prerequisiteStatus?.startsWith("pending") || prerequisiteStatus === "catalog_not_imported"
+                        ? "Prerequisite rule is not fully verified; confirm in the CMU catalog"
+                        : "Drag to another semester";
         });
         return violations;
     };
@@ -2429,15 +2592,13 @@ document
                 );
 
 
-            const completedCourses =
-                Array
-                    .from(
-                        checkedCourses
-                    )
-                    .map(
-                        input =>
-                            input.value
-                    );
+            const completedChoiceCourses = Array.from(
+                document.querySelectorAll('#courseList .completed-choice')
+            ).flatMap(select => select.value ? select.value.split(" + ") : []);
+            const completedCourses = [...new Set([
+                ...Array.from(checkedCourses).map(input => input.value),
+                ...completedChoiceCourses
+            ])];
 
             appState.student.completed_courses =
                 completedCourses;
@@ -2574,6 +2735,11 @@ document
             renderPath(
                 data.lower_workload,
                 lowerWorkloadResults
+            );
+
+            renderPathIntelligence(
+                data.fastest,
+                data.lower_workload
             );
 
             // #endregion

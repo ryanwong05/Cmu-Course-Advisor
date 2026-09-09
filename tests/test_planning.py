@@ -373,12 +373,78 @@ class PlanningIntegrationTests(unittest.TestCase):
             for item in semester["program_requirements"]
         }
         self.assertTrue({"67-250", "67-262"}.issubset(scheduled))
-        self.assertIn("fixed-67-272", fixed_slots)
+        # Once a catalog/schedule row is available, the course should be a
+        # real scheduled block instead of a placeholder requirement slot.
+        self.assertIn("67-272", scheduled)
         self.assertTrue(any(
             item["name"].startswith("IS breadth")
             for semester in result["path"]
             for item in semester["program_requirements"]
         ))
+
+    def test_all_supported_cross_program_paths_preserve_planning_invariants(self):
+        supported_goals = [
+            ("internal_transfer", "computer-science"),
+            ("internal_transfer", "information-systems"),
+            *[
+                (goal_type, program["id"])
+                for program in app.programs
+                for goal_type in ("additional_major", "minor")
+            ],
+        ]
+        course_by_id = {course["id"]: course for course in app.courses}
+
+        for primary_major in ("stats-ml", "mechanical-engineering"):
+            for start_semester in ("fall", "spring"):
+                for goal_type, program_id in supported_goals:
+                    with self.subTest(
+                        primary_major=primary_major,
+                        start_semester=start_semester,
+                        goal_type=goal_type,
+                        program_id=program_id,
+                    ):
+                        request = self.shared_request({
+                            "type": goal_type,
+                            "college": "scs",
+                            "program": program_id,
+                        })
+                        request.student.primary_major = primary_major
+                        request.constraints.start_semester = start_semester
+                        request.constraints.target_completion_year = 4
+                        result = app.create_plan(request)
+
+                        for path_name in ("fastest", "lower_workload"):
+                            completed = set(app.expand_completed_courses([]))
+                            for semester in result[path_name]["path"]:
+                                scheduled = list(semester["courses"])
+                                for requirement in semester["program_requirements"]:
+                                    default = requirement.get("default_option")
+                                    if default:
+                                        scheduled.extend(default.split(" + "))
+
+                                self.assertEqual(len(scheduled), len(set(scheduled)))
+                                self.assertFalse(completed.intersection(scheduled))
+                                for course_id in scheduled:
+                                    course = course_by_id.get(course_id)
+                                    if course is None:
+                                        continue
+                                    if course.get("offered"):
+                                        self.assertIn(
+                                            semester["semester"], course["offered"]
+                                        )
+                                    self.assertTrue(
+                                        prerequisites_satisfied(course, completed),
+                                        f"{course_id} has unmet prerequisites in "
+                                        f"{primary_major} + {program_id}",
+                                    )
+                                if semester["unit_limit"] is not None:
+                                    self.assertLessEqual(
+                                        semester["total_units"], semester["unit_limit"]
+                                    )
+                                self.assertLessEqual(
+                                    semester["high_intensity_count"], 2
+                                )
+                                completed.update(scheduled)
 
     def test_primary_and_selected_goal_have_separate_audits(self):
         request = self.shared_request({
@@ -597,6 +663,12 @@ class PlanningIntegrationTests(unittest.TestCase):
         }
         self.assertNotIn("21-122", options)
 
+    def test_21_241_has_recommended_preparation_not_hard_prerequisite(self):
+        course = next(item for item in app.courses if item["id"] == "21-241")
+        self.assertEqual(course["prerequisites"], [])
+        self.assertEqual(course["recommended_preparation"], ["21-127"])
+        self.assertTrue(prerequisites_satisfied(course, []))
+
     def test_experiential_learning_is_a_slot_not_course_36_200(self):
         request = self.shared_request({
             "type": "internal_transfer",
@@ -764,6 +836,59 @@ class PlanningIntegrationTests(unittest.TestCase):
         )
         self.assertTrue(all(item["units"] <= 12 for item in low["fastest"]["path"]))
         self.assertNotEqual(low["fastest"]["path"], high["fastest"]["path"])
+
+    def test_course_catalog_exposes_timing_and_prerequisite_confidence(self):
+        request = self.shared_request({
+            "type": "current_major", "program": "stats-ml"
+        })
+        result = app.create_plan(request)
+        linear_algebra = result["course_catalog"]["21-241"]
+        self.assertEqual(linear_algebra["minimum_year"], 1)
+        self.assertEqual(linear_algebra["recommended_preparation"], ["21-127"])
+        self.assertEqual(
+            linear_algebra["prerequisite_data_status"],
+            "verified_no_hard_prerequisite",
+        )
+        unknown = next(
+            course for course in app.courses
+            if course.get("source") == "processed_schedule_sqlite"
+            and course["id"] not in app.STATS_ML_PREREQUISITES
+        )
+        self.assertEqual(
+            result["course_catalog"][unknown["id"]]["prerequisite_data_status"],
+            "catalog_not_imported",
+        )
+
+    def test_stats_ml_prefers_21_241_for_linear_algebra(self):
+        request = self.shared_request({
+            "type": "current_major", "program": "stats-ml"
+        })
+        request.student.completed_courses = ["21-120", "15-112", "36-200"]
+        request.constraints.start_semester = "fall"
+        request.constraints.target_completion_year = 4
+        path = app.create_plan(request)["fastest"]["path"]
+        linear_algebra = next(
+            item
+            for semester in path
+            for item in semester["program_requirements"]
+            if item["name"] == "Linear algebra"
+        )
+        self.assertEqual(linear_algebra["default_option"], "21-241")
+
+    def test_planner_never_places_a_course_before_minimum_year(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        path = app.create_plan(request)["fastest"]["path"]
+        catalog = {course["id"]: course for course in app.courses}
+        for semester in path:
+            for course_id in semester["courses"]:
+                self.assertGreaterEqual(
+                    semester["academic_year"],
+                    catalog[course_id].get("minimum_year", 1),
+                )
 
     def test_unconfigured_robotics_goal_is_not_complete(self):
         with self.assertRaises(HTTPException) as context:

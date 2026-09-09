@@ -82,7 +82,9 @@
   },
   {
     "id": "21-241", "name": "Matrices and Linear Transformations", "units": 11,
-    "prerequisites": ["21-122"], "offered": ["fall", "spring"], "minimum_year": 1
+    "prerequisites": [], "recommended_preparation": ["21-127"],
+    "prerequisite_data_status": "verified_no_hard_prerequisite",
+    "offered": ["fall", "spring"], "minimum_year": 1
   },
   {
     "id": "21-259", "name": "Calculus in Three Dimensions", "units": 10,
