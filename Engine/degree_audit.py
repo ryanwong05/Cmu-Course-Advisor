@@ -12,6 +12,37 @@ COLLEGE_BASELINES = {
 }
 
 MAJOR_BASELINES = {
+    "computer-science": {
+        "name": "Computer Science verified curriculum",
+        "units": 0,
+        "status": "verified_curriculum",
+        "note": (
+            "The 2026–27 Computer Science core, mathematics, constrained "
+            "electives, SCS electives, and technical communication choices "
+            "are represented directly; general education and the required "
+            "minor or concentration are audited separately."
+        ),
+    },
+    "electrical-and-computer-engineering": {
+        "name": "Electrical and Computer Engineering verified curriculum",
+        "units": 0,
+        "status": "verified_curriculum",
+        "note": (
+            "The 2026–27 ECE fixed technical requirements and explicit "
+            "math/science, foundation, breadth, advanced, and capstone choice "
+            "groups are represented directly."
+        ),
+    },
+    "information-systems": {
+        "name": "Information Systems verified curriculum",
+        "units": 0,
+        "status": "verified_curriculum",
+        "note": (
+            "The 2026–27 Information Systems core, prerequisites, breadth "
+            "areas, and concentration choices are represented directly; "
+            "Dietrich general education is audited separately."
+        ),
+    },
     "stats-ml": {
         "name": "Statistics & Machine Learning verified curriculum",
         "units": 0,
@@ -51,7 +82,34 @@ def primary_baseline_for(student):
     }
 
 
-def build_degree_audits(student, goal, profile, path_result, primary_baseline):
+def _remaining_requirement_count(curriculum, completed_courses):
+    """Count concrete fixed courses plus still-open choice slots."""
+    if not curriculum:
+        return None
+    completed = set(completed_courses)
+    fixed_remaining = sum(
+        course_id not in completed
+        for course_id in curriculum.get("required_courses", curriculum.get("required_course_ids", []))
+    )
+    choice_remaining = 0
+    for group in curriculum.get("requirement_groups", []):
+        satisfied = sum(
+            set(option.split(" + ")).issubset(completed)
+            for option in group.get("options", [])
+        )
+        choice_remaining += max(0, group.get("choose", 1) - satisfied)
+    return fixed_remaining + choice_remaining
+
+
+def build_degree_audits(
+    student,
+    goal,
+    profile,
+    path_result,
+    primary_baseline,
+    primary_curriculum=None,
+    goal_curriculum=None,
+):
     completed_semesters = max(
         0,
         (student.year - 1) * 2 + (1 if student.current_term == "spring" else 0),
@@ -81,14 +139,43 @@ def build_degree_audits(student, goal, profile, path_result, primary_baseline):
         # Dietrich GenEd and the 360-unit degree total remain separate checks.
         "graduation_ready": False,
         "message": primary_baseline.get("note"),
+        "requirements_remaining_to_graduate": _remaining_requirement_count(
+            primary_curriculum, student.completed_courses
+        ),
+        "minimum_degree_units": (primary_curriculum or {}).get("minimum_degree_units"),
     }
 
+    if goal.type == "internal_transfer":
+        primary.update({
+            "status": "replaced_by_transfer",
+            "planned_primary_units": 0,
+            "major_requirements_planned": False,
+            "requirements_remaining_to_graduate": 0,
+            "message": (
+                "The former major is not an additional degree requirement after "
+                "internal transfer. Completed courses may still satisfy the target degree."
+            ),
+        })
+
     if profile is None:
+        legacy_remaining = _remaining_requirement_count(
+            goal_curriculum, student.completed_courses
+        )
+        all_scheduled = bool(path_result.get("goal_complete"))
         goal_audit = {
             "type": goal.type,
             "program": goal.program,
-            "status": "not_verified",
-            "message": "No verified requirement profile is available for this goal.",
+            "status": "scheduled" if all_scheduled else "partially_scheduled",
+            "all_requirements_scheduled": all_scheduled,
+            "requirements_scheduled": None,
+            "requirements_unscheduled": len(path_result.get("remaining", [])),
+            "requirements_remaining_to_complete": legacy_remaining,
+            "requirements_verified": legacy_remaining is not None,
+            "message": (
+                "Published planning requirements are mapped for this path."
+                if legacy_remaining is not None
+                else "No verified requirement profile is available for this goal."
+            ),
         }
     else:
         total = profile.get("minimum_courses", 0)
@@ -96,17 +183,26 @@ def build_degree_audits(student, goal, profile, path_result, primary_baseline):
             path_result.get("remaining_program_requirements", [])
         )
         placed = max(0, total - remaining)
+        all_scheduled = bool(path_result.get("goal_complete"))
         goal_audit = {
             "type": goal.type,
             "program": goal.program,
-            "status": "mapped" if path_result.get("goal_complete") else "in_progress",
+            "status": "scheduled" if all_scheduled else "partially_scheduled",
+            "all_requirements_scheduled": all_scheduled,
             "total_requirements": total,
+            "requirements_scheduled": placed,
+            "requirements_unscheduled": remaining,
+            # Compatibility aliases for older clients. These describe plan
+            # placement, never academic completion.
             "requirements_placed": placed,
             "requirements_remaining": remaining,
+            "requirements_remaining_to_complete": _remaining_requirement_count(
+                profile, student.completed_courses
+            ),
             "minimum_units": profile.get("minimum_units"),
             "requirements_verified": True,
             "message": (
-                "All published curriculum requirements are placed in the plan."
+                "All published curriculum requirements are scheduled; they are not marked academically completed until the student reports completion."
                 if remaining == 0
                 else f"{remaining} curriculum requirements remain outside this planning horizon."
             ),

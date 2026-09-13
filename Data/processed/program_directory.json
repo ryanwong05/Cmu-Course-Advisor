@@ -555,8 +555,8 @@
       "tepper"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "business-administration",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-administration-minor/"
   },
@@ -964,8 +964,8 @@
       "scs"
     ],
     "interdisciplinary": true,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "computer-science-and-arts",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/computer-science-arts/"
   },
@@ -1202,8 +1202,8 @@
       "tepper"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "economics",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-additional-major/"
   },
@@ -1321,8 +1321,8 @@
       "engineering"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "electrical-and-computer-engineering",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofelectricalandcomputerengineering/electrical-computer-engineering-bs/"
   },
@@ -2176,8 +2176,8 @@
       "scs"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "machine-learning",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/machine-learning-minor/"
   },
@@ -3197,8 +3197,8 @@
       "dietrich"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "stats-ml",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-machine-learning-bs/"
   },

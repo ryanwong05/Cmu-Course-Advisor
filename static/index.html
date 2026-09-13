@@ -19,7 +19,7 @@
 
     <link
         rel="stylesheet"
-        href="style.css?v=20260907-meche-robotics"
+        href="style.css?v=20260912-ai-transfer-advisor"
     >
 
 </head>
@@ -802,12 +802,12 @@
         <section class="saved-paths-panel hidden" id="savedPathsPanel">
             <div class="saved-paths-header">
                 <h2>My Paths</h2>
-                <span>Saved in this browser · ready for comparison</span>
+                <span>Saved in this browser</span>
             </div>
             <div id="savedPathsList"></div>
         </section>
 
-        <section class="path-intelligence" id="pathIntelligence">
+        <section class="path-intelligence hidden" id="pathIntelligence">
             <div class="path-intelligence-heading">
                 <div>
                     <p class="eyebrow">COMPARE YOUR OPTIONS</p>
@@ -884,6 +884,40 @@
         <div class="program-path-note hidden" id="programPathNote"></div>
         <div class="degree-audit-grid" id="degreeAuditGrid"></div>
 
+        <section class="transfer-readiness-panel hidden" id="transferReadinessPanel" aria-live="polite"></section>
+
+        <section class="ai-transfer-advisor hidden" id="aiTransferAdvisor" aria-labelledby="aiTransferAdvisorTitle">
+            <div class="ai-advisor-heading">
+                <div>
+                    <p class="eyebrow">PLAN EXPLANATION</p>
+                    <h2 id="aiTransferAdvisorTitle">AI Transfer Advisor</h2>
+                    <p>Explains your verified transfer plan. It does not change or calculate requirements.</p>
+                </div>
+                <button class="primary-button" id="analyzeTransferButton" type="button">Analyze with AI</button>
+            </div>
+            <p class="ai-advisor-status" id="aiTransferAdvisorStatus" role="status" aria-live="polite"></p>
+            <div class="ai-advisor-output hidden" id="aiTransferAdvisorOutput"></div>
+        </section>
+
+        <section class="degree-requirement-tree" id="degreeRequirementTree"></section>
+
+        <section class="results-requirements" id="resultsRequirementPanel"></section>
+
+        <section class="gened-progress-panel" id="genedProgressPanel"></section>
+
+        <section class="planner-guide" aria-labelledby="plannerGuideTitle">
+            <div>
+                <p class="eyebrow">HOW TO USE THIS PLAN</p>
+                <h2 id="plannerGuideTitle">Adjust the path without losing the rules.</h2>
+            </div>
+            <div class="planner-guide-items">
+                <div><span class="guide-icon">↕</span><span><strong>Drag the card or ↕ handle</strong><small>Move a course between semesters. Invalid moves are automatically undone.</small></span></div>
+                <div><span class="guide-program-swatch"></span><span><strong>Program label</strong><small>Green outline and label identify Additional Major requirements.</small></span></div>
+                <div><span class="guide-workload-scale"><i></i><i></i><i></i></span><span><strong>Workload marker</strong><small>The small colored bar shows course intensity, separately from program status.</small></span></div>
+                <div><span class="guide-icon">Change</span><span><strong>Change a choice</strong><small>Use Change on a selected requirement to pick another approved course.</small></span></div>
+            </div>
+        </section>
+
         <!-- ================================================
              FASTEST PATH
              ================================================ -->
@@ -893,7 +927,7 @@
 
             <h2 id="fastestPathTitle">
 
-                ⚡ Fastest Path
+                Balanced workload
 
             </h2>
 
@@ -913,13 +947,11 @@
 
         </div>
 
-
-
         <!-- ================================================
              LOWER WORKLOAD PATH
              ================================================ -->
 
-        <div class="path-option">
+        <div class="path-option hidden" id="secondaryPathSection">
 
 
             <h2 id="lowerWorkloadTitle">
@@ -942,6 +974,11 @@
             </div>
 
 
+        </div>
+
+        <div class="deferred-comparison-actions hidden">
+            <button class="secondary-button hidden" id="compareMinorPathButton" type="button">Compare minor path</button>
+            <button class="secondary-button" id="comparePathsButton" type="button">Compare paths</button>
         </div>
 
 
@@ -1025,7 +1062,7 @@
      so the prototype remains stable.
      ========================================================== -->
 
-<script src="app.js?v=20260909-path-rules"></script>
+<script src="app.js?v=20260912-ai-transfer-advisor"></script>
 
 <!-- #endregion -->
 

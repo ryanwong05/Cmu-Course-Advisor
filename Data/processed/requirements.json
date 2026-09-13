@@ -57,6 +57,90 @@
     ]
   },
 
+  "computer-science-major": {
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_major_units": 215,
+    "minimum_degree_units": 360,
+    "required_courses": [
+      "07-128", "15-122", "15-150", "15-210", "15-213", "15-251",
+      "15-451", "21-120", "21-122", "99-101"
+    ],
+    "requirement_groups": [
+      {"id":"math-foundations","name":"Mathematical foundations","choose":1,"units":12,"options":["15-151","21-127","21-128"],"minimum_year":1},
+      {"id":"linear-algebra","name":"Linear algebra","choose":1,"units":11,"options":["21-241","21-242"],"minimum_year":2},
+      {"id":"multivariable-calculus","name":"Multivariable calculus","choose":1,"units":10,"options":["21-259","21-266","21-268","21-269"],"minimum_year":2},
+      {"id":"probability","name":"Probability","choose":1,"units":12,"options":["15-259","21-325","21-425","36-218","36-225 + 36-226"],"minimum_year":2},
+      {"id":"artificial-intelligence","name":"Artificial Intelligence elective","choose":1,"units":9,"options":["07-280","10-301","11-411","11-485","15-382","15-386","16-280","16-384","16-385"],"minimum_year":2},
+      {"id":"domains","name":"Domains elective","choose":1,"units":9,"options":["02-251","05-391","11-324","15-322","15-330","15-362","15-455","17-313"],"minimum_year":2},
+      {"id":"logic-languages","name":"Logic and Languages elective","choose":1,"units":9,"options":["15-311","15-312","15-316","15-317","15-414","17-355","17-363","80-413"],"minimum_year":3},
+      {"id":"software-systems","name":"Software Systems elective","choose":1,"units":12,"options":["15-410","15-411","15-418","15-440","15-441","15-445"],"minimum_year":3},
+      {"id":"scs-electives","name":"School of Computer Science electives","choose":2,"units":18,"options":["02-3xx","05-3xx","07-3xx","10-3xx","11-3xx","15-3xx","16-3xx","17-3xx"],"minimum_year":3},
+      {"id":"technical-communication","name":"Technical Communication","choose":1,"units":9,"options":["07-300","17-200","76-270"],"minimum_year":2}
+    ],
+    "notes": [
+      "Students without credit or a waiver for 15-112 must complete it before 15-122.",
+      "The probability sequence option requires both 36-225 and 36-226.",
+      "Two SCS electives must be 200-level or above and at least 9 units; the planner recommends eligible 300-level courses and final eligibility remains subject to advisor review.",
+      "The B.S. also requires the SCS science/engineering and humanities/arts general education components and an approved non-SCS minor, SCS concentration, additional major, or dual degree."
+    ]
+  },
+
+  "electrical-and-computer-engineering-major": {
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_major_units": 203,
+    "minimum_degree_units": 379,
+    "required_courses": [
+      "99-101", "21-120", "21-122", "33-141", "33-142", "15-112",
+      "18-202", "15-122", "39-310"
+    ],
+    "requirement_groups": [
+      {"id":"intro-engineering","name":"Second introductory engineering course","choose":1,"units":12,"options":["06-100","12-100","18-100","19-101","24-101","27-100"],"minimum_year":1},
+      {"id":"probability","name":"ECE probability requirement","choose":1,"units":9,"options":["21-325","36-219","36-225"],"minimum_year":2},
+      {"id":"proofs","name":"Mathematical concepts and proofs","choose":1,"units":12,"options":["21-127","21-128"],"minimum_year":2},
+      {"id":"math-science","name":"Math or science electives","choose":2,"units":18,"options":["21-228","21-241","21-259","21-260","33-142","36-226"],"minimum_year":2},
+      {"id":"ece-foundations","name":"ECE foundation courses","choose":2,"units":24,"options":["18-100","18-200","18-213","18-220","18-240","18-290"],"minimum_year":2},
+      {"id":"ece-coverage","name":"ECE breadth and coverage electives","choose":3,"units":36,"options":["18-310","18-320","18-330","18-340","18-349","18-370","18-396"],"minimum_year":3},
+      {"id":"ece-advanced","name":"Advanced ECE electives","choose":3,"units":36,"options":["18-441","18-447","18-461","18-491","18-500","18-578"],"minimum_year":3},
+      {"id":"ece-capstone","name":"ECE capstone design","choose":1,"units":12,"options":["18-500","18-578"],"minimum_year":4}
+    ],
+    "notes": [
+      "The official B.S. requires at least 379 total units.",
+      "Math/science elective exclusions and ECE breadth, coverage, depth, and capstone classifications are subject to the current ECE Academic Guide.",
+      "18-202 may be replaced only by an approved two-course mathematics combination; that substitution is not automatically applied."
+    ]
+  },
+
+  "information-systems-major": {
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_major_units": 172,
+    "minimum_degree_units": 360,
+    "required_courses": [
+      "67-100", "67-200", "67-250", "67-262", "67-272", "67-373",
+      "17-313", "95-422"
+    ],
+    "requirement_groups": [
+      {"id":"mathematics","name":"Mathematics","choose":1,"units":10,"options":["21-112","21-120","21-127","21-240","80-210"],"minimum_year":1},
+      {"id":"programming","name":"Programming foundation","choose":1,"units":12,"options":["15-112","02-120"],"minimum_year":1},
+      {"id":"data-structures","name":"Data structures","choose":1,"units":10,"options":["15-121","15-122"],"minimum_year":1},
+      {"id":"hci-core","name":"Human-Computer Interaction core","choose":1,"units":12,"options":["05-391","05-410","05-452"],"minimum_year":2},
+      {"id":"professional-communication","name":"Professional Communications","choose":1,"units":9,"options":["05-317","05-360","36-315","51-261","51-262","67-265","67-336","67-338","70-301","70-321","70-340","70-342","70-350","76-270","84-250","88-230","88-231","88-341"],"minimum_year":2},
+      {"id":"quantitative-analysis","name":"Quantitative Analysis and Research Methods","choose":1,"units":9,"options":["21-325","36-202","36-219","36-225","36-235","36-303","36-309","36-315","36-350","36-401","36-402","67-285","67-364","73-265","80-305","80-306","88-223","88-251","88-252","88-275","88-300","94-216"],"minimum_year":2},
+      {"id":"innovation","name":"Innovation and Entrepreneurship","choose":1,"units":9,"options":["05-470","17-356","67-428","67-443","94-491"],"minimum_year":3},
+      {"id":"concentration","name":"Information Systems concentration","choose":4,"units":36,"options":["67-306","67-336","67-342","67-347","67-348","67-364","67-368","67-428","67-443"],"minimum_year":3}
+    ],
+    "notes": [
+      "Students must complete 15-121 or its approved alternative before sophomore spring to maintain normal progress.",
+      "Innovation and Entrepreneurship courses require 67-272 before they count toward that area.",
+      "The four-course concentration list is a planner recommendation set; concentration approval and substitutions remain subject to Information Systems Program review."
+    ]
+  },
+
   "cs-transfer": {
     "planner_status": "ready",
     "required_courses": [

@@ -1,9 +1,14 @@
+import json
+import os
 import unittest
+from unittest.mock import Mock, patch
 
 from fastapi import HTTPException
 
 import app
+import Backend.application as application
 from Engine.availability import prerequisites_satisfied
+from Engine.planning import generate_semester_path
 
 
 class PlanningIntegrationTests(unittest.TestCase):
@@ -48,12 +53,45 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertEqual(result["planner_status"], "ready_with_requirement_slots")
 
     def test_all_five_scs_programs_expose_three_paths(self):
-        self.assertEqual(len(app.programs), 5)
-        for program in app.programs:
+        scs_programs = [program for program in app.programs if program["college"] == "scs"]
+        self.assertEqual(len(scs_programs), 5)
+        for program in scs_programs:
             self.assertEqual(
                 set(program["available_goal_types"]),
                 {"internal_transfer", "additional_major", "minor"},
             )
+
+    def test_bcsa_transfer_is_verified_and_plannable(self):
+        directory_entry = next(
+            item for item in app.program_directory
+            if item["id"] == "computer-science-and-arts--b-c-s-a"
+        )
+        self.assertEqual(directory_entry["planning_id"], "computer-science-and-arts")
+        self.assertEqual(directory_entry["planning_status"], "planning_ready")
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "intercollege",
+            "program": "computer-science-and-arts",
+        })
+        baseline = app.create_baseline(request)
+        self.assertEqual(baseline["planner_status"], "ready_with_requirement_slots")
+        result = app.create_plan(request)
+        self.assertEqual(result["program_profile"]["minimum_units"], 380)
+        self.assertTrue(result["fastest"]["path"])
+        self.assertEqual(result["primary_baseline"]["status"], "replaced_by_transfer")
+        self.assertTrue(all(
+            semester["primary_major_reserved_units"] == 0
+            for semester in result["fastest"]["path"]
+        ))
+        slot_names = {
+            slot["name"]
+            for semester in result["fastest"]["path"]
+            for slot in semester.get("program_requirements", [])
+        } | {
+            slot["name"]
+            for slot in result["fastest"]["remaining_program_requirements"]
+        }
+        self.assertIn("Selected CFA concentration", slot_names)
 
     def test_comparison_keeps_overlap_separate_from_double_counting(self):
         request = app.ComparisonRequest(
@@ -339,6 +377,7 @@ class PlanningIntegrationTests(unittest.TestCase):
             "type": "minor",
             "college": "dietrich",
             "program": "information-systems",
+            "include_post_transfer_plan": True,
         })
         request.constraints.target_completion_year = 4
         result = app.create_plan(request)["fastest"]
@@ -357,6 +396,7 @@ class PlanningIntegrationTests(unittest.TestCase):
             "type": "internal_transfer",
             "college": "dietrich",
             "program": "information-systems",
+            "include_post_transfer_plan": True,
         })
         baseline = app.create_baseline(request)
         self.assertEqual(baseline["planner_status"], "ready_with_requirement_slots")
@@ -472,6 +512,47 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertIn("minor_foundation", tiers)
         self.assertIn("additional_major", tiers)
 
+    def test_stats_ml_ai_additional_major_contains_full_required_path(self):
+        request = self.shared_request({
+            "type": "additional_major",
+            "college": "scs",
+            "program": "artificial-intelligence",
+        })
+        request.student.completed_courses = [
+            "21-120", "21-127", "21-259", "36-200", "36-202", "15-112",
+        ]
+        request.constraints.start_semester = "spring"
+        request.constraints.planning_year = 1
+        request.constraints.target_completion_year = 4
+        request.constraints.max_units = 52
+        result = app.create_plan(request)
+
+        self.assertEqual(result["secondary_path_type"], "minor_foundation")
+        full_blocks = [
+            block
+            for semester in result["fastest"]["path"]
+            for block in semester["course_blocks"]
+        ]
+        fixed_ids = {block["id"] for block in full_blocks if block["locked"]}
+        self.assertTrue({"15-150", "21-241"}.issubset(fixed_ids))
+
+        cluster_names = {
+            block["name"]
+            for block in full_blocks
+            if block["name"].startswith("AI cluster:")
+        }
+        self.assertEqual(cluster_names, {
+            "AI cluster: Cognition and Action",
+            "AI cluster: Machine Learning",
+            "AI cluster: Perception and Language",
+            "AI cluster: Human-AI Interaction",
+        })
+        self.assertTrue(all(
+            block["options"]
+            for block in full_blocks
+            if block["name"].startswith("AI cluster:")
+        ))
+
     def test_robotics_additional_major_uses_official_ten_course_structure(self):
         profile = app.program_profiles["programs"]["robotics"]["additional_major"]
         self.assertEqual(profile["minimum_courses"], 10)
@@ -554,20 +635,20 @@ class PlanningIntegrationTests(unittest.TestCase):
         )
         self.assertLessEqual(first["total_units"], 52)
 
-    def test_stats_ml_student_without_calculus_credit_gets_calculus_choice(self):
+    def test_internal_transfer_does_not_schedule_former_major_requirements(self):
         request = self.shared_request({
             "type": "internal_transfer",
             "college": "scs",
             "program": "computer-science",
         })
         path = app.create_plan(request)["fastest"]["path"]
-        primary_choices = {
-            item.get("default_option")
+        primary_slots = {
+            item.get("id")
             for semester in path
             for item in semester["program_requirements"]
             if item.get("scope") == "primary_major"
         }
-        self.assertIn("21-120", primary_choices)
+        self.assertEqual(primary_slots, set())
 
     def test_completed_21_120_is_not_scheduled_again(self):
         request = self.shared_request({
@@ -626,27 +707,30 @@ class PlanningIntegrationTests(unittest.TestCase):
         ]
         self.assertEqual(system_theory_slots, [])
 
-    def test_21_127_is_not_scheduled_with_21_120(self):
+    def test_21_127_uses_programming_prerequisite_without_forcing_calculus(self):
         request = self.shared_request({
             "type": "internal_transfer",
             "college": "scs",
             "program": "computer-science",
+            "include_post_transfer_plan": True,
         })
         path = app.create_plan(request)["fastest"]["path"]
-        calculus_semester = next(
-            semester["semester_number"]
-            for semester in path
-            if any(
-                item.get("default_option") == "21-120"
-                for item in semester["program_requirements"]
-            )
-        )
         concepts_semester = next(
             semester["semester_number"]
             for semester in path
             if "21-127" in semester["courses"]
         )
-        self.assertGreater(concepts_semester, calculus_semester)
+        programming_semester = next(
+            semester["semester_number"]
+            for semester in path
+            if "15-112" in semester["courses"]
+        )
+        self.assertGreater(concepts_semester, programming_semester)
+        self.assertFalse(any(
+            item.get("default_option") == "21-120"
+            for semester in path
+            for item in semester["program_requirements"]
+        ))
 
     def test_21_127_accepts_any_verified_prerequisite(self):
         course = next(item for item in app.courses if item["id"] == "21-127")
@@ -726,6 +810,7 @@ class PlanningIntegrationTests(unittest.TestCase):
             "type": "internal_transfer",
             "college": "scs",
             "program": "computer-science",
+            "include_post_transfer_plan": True,
         })
         request.student.enrollment_status = "precollege"
         request.constraints.start_semester = "fall"
@@ -757,6 +842,7 @@ class PlanningIntegrationTests(unittest.TestCase):
             "type": "internal_transfer",
             "college": "scs",
             "program": "computer-science",
+            "include_post_transfer_plan": True,
         })
         result = app.create_plan(request)
         self.assertEqual(
@@ -794,6 +880,7 @@ class PlanningIntegrationTests(unittest.TestCase):
             "type": "internal_transfer",
             "college": "scs",
             "program": "computer-science",
+            "include_post_transfer_plan": True,
         })
         path = app.create_plan(request)["fastest"]["path"]
         warned = [
@@ -890,6 +977,43 @@ class PlanningIntegrationTests(unittest.TestCase):
                     catalog[course_id].get("minimum_year", 1),
                 )
 
+    def test_priority_uses_metadata_for_each_available_course(self):
+        courses = [
+            {
+                "id": "99-002",
+                "name": "Ordinary option",
+                "units": 9,
+                "offered": ["fall"],
+                "prerequisites": [],
+                "minimum_year": 1,
+            },
+            {
+                "id": "99-001",
+                "name": "Prepared option",
+                "units": 9,
+                "offered": ["fall"],
+                "prerequisites": [],
+                "minimum_year": 1,
+                "recommended_preparation": ["99-000"],
+            },
+        ]
+        path = generate_semester_path(
+            completed_courses=["99-000"],
+            courses=courses,
+            program_id="metadata-priority",
+            requirements={
+                "metadata-priority": {
+                    "required_courses": ["99-002", "99-001"]
+                }
+            },
+            start_semester="fall",
+            num_semesters=1,
+            max_units=9,
+            first_semester_max_units=9,
+        )
+
+        self.assertEqual(path["path"][0]["courses"], ["99-001"])
+
     def test_unconfigured_robotics_goal_is_not_complete(self):
         with self.assertRaises(HTTPException) as context:
             app.create_plan(
@@ -901,6 +1025,371 @@ class PlanningIntegrationTests(unittest.TestCase):
         with self.assertRaises(HTTPException) as context:
             app.create_plan(app.PlanRequest(completed_courses=[], goal="missing"))
         self.assertEqual(context.exception.status_code, 404)
+
+    def test_transfer_audit_separates_scheduled_from_academic_completion(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        request.student.completed_courses = ["15-112", "21-127", "36-200"]
+        result = app.create_plan(request)
+        audit = result["degree_audits"]["selected_goal"]
+        self.assertNotEqual(audit["status"], "not_verified")
+        self.assertIn("all_requirements_scheduled", audit)
+        self.assertIn("requirements_remaining_to_complete", audit)
+        self.assertTrue(result["program_profile"]["eligibility"])
+
+    def test_infeasible_deadline_returns_structured_warning(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "engineering",
+            "program": "electrical-and-computer-engineering",
+            "include_post_transfer_plan": True,
+        })
+        request.constraints.target_completion_year = 2
+        result = app.create_plan(request)
+        codes = {warning["code"] for warning in result["planning_warnings"]}
+        self.assertIn("TARGET_DEADLINE_NOT_MET", codes)
+        self.assertIn("ELIGIBILITY_CHECKPOINT", codes)
+
+    def test_transfer_replaces_unverified_former_major_instead_of_reserving_it(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        request.student.primary_major = "economics--b-a"
+        result = app.create_plan(request)
+        codes = {warning["code"] for warning in result["planning_warnings"]}
+        self.assertNotIn("PRIMARY_CURRICULUM_ESTIMATED", codes)
+        self.assertEqual(result["primary_baseline"]["status"], "replaced_by_transfer")
+        self.assertTrue(all(
+            semester["primary_major_reserved_units"] == 0
+            for semester in result["fastest"]["path"]
+        ))
+
+    def test_ece_transfer_defaults_to_official_eligibility_courses(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "engineering",
+            "program": "electrical-and-computer-engineering",
+        })
+        result = app.create_plan(request)
+        scheduled = {
+            course_id
+            for semester in result["fastest"]["path"]
+            for course_id in semester["courses"]
+        } | {
+            item["default_option"]
+            for semester in result["fastest"]["path"]
+            for item in semester["program_requirements"]
+            if item.get("default_option")
+        }
+        self.assertEqual(result["transfer_planning"]["mode"], "eligibility")
+        self.assertIn("18-100", scheduled)
+        self.assertIn("21-120", scheduled)
+        self.assertTrue({"15-110", "15-112"}.intersection(scheduled))
+        self.assertTrue({"33-121", "33-141", "33-151"}.intersection(scheduled))
+
+    def test_completed_transfer_checkpoint_returns_success_instead_of_409(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "dietrich",
+            "program": "information-systems",
+        })
+        request.student.completed_courses = ["15-112"]
+        result = app.create_plan(request)
+        self.assertTrue(result["fastest"]["goal_complete"])
+        self.assertEqual(result["fastest"]["remaining_program_requirements"], [])
+
+    def test_cs_transfer_checkpoint_lists_the_six_official_admission_courses(self):
+        detail = app.get_program_profile("computer-science", "internal_transfer")
+        course_ids = [course["id"] for course in detail["fixed_courses"]]
+
+        self.assertEqual(
+            course_ids,
+            ["21-127", "15-122", "15-150", "15-210", "15-213", "15-251"],
+        )
+        self.assertNotIn("15-112", course_ids)
+        self.assertEqual(detail["transfer_eligibility"]["preparation_courses"], ["15-112"])
+
+    def test_is_transfer_checkpoint_preserves_programming_requirement_after_completion(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "dietrich",
+            "program": "information-systems",
+        })
+        request.student.completed_courses = ["15-112"]
+        result = app.create_plan(request)
+        groups = result["transfer_planning"]["policy"]["requirement_groups"]
+
+        self.assertEqual(groups[0]["options"], ["15-112", "02-120"])
+        self.assertTrue(result["fastest"]["goal_complete"])
+        action_names = {
+            item["name"]
+            for item in result["transfer_planning"]["policy"]["application_requirements"]
+        }
+        self.assertIn("Personal statement", action_names)
+        self.assertIn("IS academic advisor interview", action_names)
+
+    def test_is_ready_student_keeps_one_current_major_term_then_applies(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "dietrich",
+            "program": "information-systems",
+        })
+        request.student.completed_courses = ["15-112"]
+        request.student.year = 1
+        request.constraints.planning_year = 1
+        request.constraints.start_semester = "spring"
+        request.constraints.target_completion_year = 2
+        result = app.create_plan(request)
+        path = result["fastest"]["path"]
+
+        self.assertEqual(len(path), 1)
+        self.assertTrue(path[0]["courses"])
+        self.assertTrue(any(
+            block.get("kind") in {"current_major", "shared"}
+            for block in path[0]["course_blocks"]
+        ))
+        self.assertEqual(
+            path[0]["milestones"][0]["name"],
+            "Apply for internal transfer",
+        )
+        self.assertIn(
+            "last day of classes",
+            path[0]["milestones"][0]["description"],
+        )
+        self.assertEqual(
+            result["transfer_planning"]["application_term"],
+            {"semester": "spring", "academic_year": 1, "academic_year_name": "Freshman"},
+        )
+
+    def test_is_post_transfer_plan_is_opt_in(self):
+        eligibility_request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "dietrich",
+            "program": "information-systems",
+        })
+        degree_request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "dietrich",
+            "program": "information-systems",
+            "include_post_transfer_plan": True,
+        })
+        eligibility = app.create_plan(eligibility_request)
+        degree = app.create_plan(degree_request)
+        self.assertEqual(eligibility["transfer_planning"]["mode"], "eligibility")
+        self.assertEqual(degree["transfer_planning"]["mode"], "post_transfer_degree")
+        self.assertLess(
+            eligibility["program_profile"]["minimum_courses"],
+            degree["program_profile"]["minimum_courses"],
+        )
+
+    def test_new_regression_goal_profiles_are_plannable(self):
+        scenarios = [
+            ("internal_transfer", "stats-ml"),
+            ("internal_transfer", "mechanical-engineering"),
+            ("additional_major", "economics"),
+            ("minor", "business-administration"),
+        ]
+        for goal_type, program in scenarios:
+            request = self.shared_request({
+                "type": goal_type,
+                "program": program,
+            })
+            result = app.create_plan(request)
+            self.assertTrue(result["fastest"]["path"], program)
+            self.assertIsNotNone(result["program_profile"], program)
+
+    def test_scs_student_gets_explicit_machine_learning_minor_ineligibility(self):
+        request = self.shared_request({
+            "type": "minor",
+            "program": "machine-learning",
+        })
+        request.student.college = "scs"
+        request.student.primary_major = "computer-science"
+        with self.assertRaises(HTTPException) as context:
+            app.create_plan(request)
+        self.assertEqual(context.exception.status_code, 409)
+        self.assertIn("only to students outside SCS", context.exception.detail)
+
+    def test_directory_automatically_exposes_every_configured_profile(self):
+        directory = app.list_program_directory()["programs"]
+        expected = {
+            ("economics", "additional_major"),
+            ("business-administration", "minor"),
+            ("machine-learning", "minor"),
+        }
+        available = {
+            (item.get("planning_id"), item["program_type"])
+            for item in directory
+            if item.get("planning_status") == "planning_ready"
+        }
+        self.assertTrue(expected.issubset(available))
+
+    def test_all_six_scs_transfer_programs_are_planning_ready(self):
+        expected = {
+            "artificial-intelligence",
+            "computational-biology",
+            "computer-science",
+            "computer-science-and-arts",
+            "human-computer-interaction",
+            "robotics",
+        }
+        directory = app.list_program_directory(
+            college="scs", program_type="primary_major"
+        )["programs"]
+        ready = {
+            item.get("planning_id")
+            for item in directory
+            if item.get("planning_status") == "planning_ready"
+        }
+        self.assertEqual(ready, expected)
+
+    def test_new_scs_transfer_profiles_generate_real_choice_slots(self):
+        expected_groups = {
+            "artificial-intelligence": {"SCS core course", "Probability"},
+            "computational-biology": {
+                "Algorithms course", "Introduction to Computational Biology"
+            },
+            "human-computer-interaction": {
+                "SCS core course", "HCI implementation course"
+            },
+            "robotics": {"Probability", "Robotics course"},
+        }
+        for program, group_names in expected_groups.items():
+            with self.subTest(program=program):
+                request = self.shared_request({
+                    "type": "internal_transfer",
+                    "college": "scs",
+                    "program": program,
+                })
+                baseline = app.create_baseline(request)
+                self.assertEqual(
+                    baseline["planner_status"], "ready_with_requirement_slots"
+                )
+                result = app.create_plan(request)
+                self.assertTrue(result["fastest"]["path"])
+                profile = result["program_profile"]
+                self.assertEqual(profile["minimum_courses"], 6)
+                self.assertEqual(
+                    {group["name"] for group in profile["requirement_groups"]},
+                    group_names,
+                )
+
+    def test_every_ready_primary_major_has_a_current_major_audit(self):
+        directory = app.list_program_directory(program_type="primary_major")["programs"]
+        for item in directory:
+            if item.get("current_major_planning_status") != "planning_ready":
+                continue
+            profile = app.get_primary_major_profile(item["planning_id"])
+            self.assertTrue(profile["fixed_courses"] or profile["requirement_groups"])
+
+    def test_popular_current_major_audits_are_verified_and_structured(self):
+        expected_groups = {
+            "computer-science": {
+                "probability", "artificial-intelligence", "domains",
+                "logic-languages", "software-systems", "scs-electives",
+            },
+            "electrical-and-computer-engineering": {
+                "probability", "math-science", "ece-foundations",
+                "ece-coverage", "ece-advanced", "ece-capstone",
+            },
+            "information-systems": {
+                "mathematics", "programming", "data-structures", "hci-core",
+                "professional-communication", "quantitative-analysis",
+                "innovation", "concentration",
+            },
+        }
+        for planning_id, required_group_ids in expected_groups.items():
+            profile = app.get_primary_major_profile(planning_id)
+            self.assertEqual(profile["curriculum_status"], "verified")
+            self.assertGreater(profile["minimum_degree_units"], 0)
+            groups = {group["id"]: group for group in profile["requirement_groups"]}
+            self.assertTrue(required_group_ids.issubset(groups))
+            self.assertTrue(all(group["options"] for group in groups.values()))
+
+    def test_popular_current_majors_generate_without_placeholder_slots(self):
+        colleges = {
+            "computer-science": "scs",
+            "electrical-and-computer-engineering": "engineering",
+            "information-systems": "dietrich",
+        }
+        for planning_id, college in colleges.items():
+            request = app.PlanningRequest(
+                student=app.StudentState(
+                    college=college,
+                    primary_major=planning_id,
+                    year=1,
+                    completed_courses=[],
+                ),
+                goals=[app.PlanningGoal(type="current_major", program=planning_id)],
+            )
+            result = app.create_plan(request)
+            slots = [
+                slot
+                for semester in result["fastest"]["path"]
+                for slot in semester.get("program_requirements", [])
+            ] + result["fastest"]["remaining_program_requirements"]
+            self.assertTrue(slots)
+            self.assertTrue(all(
+                not option.startswith("Approved ")
+                for slot in slots
+                for option in slot.get("options", [])
+            ))
+
+    def test_transfer_advice_sends_only_verified_server_context(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        expected = {
+            "recommendation": "Continue with advisor confirmation.",
+            "feasibility": "The generated plan places the supplied requirements.",
+            "opportunity_cost": "The plan uses units that could otherwise be electives.",
+            "backup_strength": "The current major remains represented in the plan.",
+            "key_risks": ["Admission is capacity limited."],
+            "next_steps": ["Confirm the current application timing."],
+            "summary": "A plausible course plan, not an admission guarantee.",
+        }
+        response = Mock()
+        response.json.return_value = {
+            "output": [{
+                "type": "message",
+                "content": [{"type": "output_text", "text": json.dumps(expected)}],
+            }]
+        }
+        response.raise_for_status.return_value = None
+
+        with patch.dict(os.environ, {"OPENAI_API_KEY": "test-key"}, clear=False):
+            with patch.object(application.requests, "post", return_value=response) as post:
+                self.assertEqual(app.transfer_advice(request), expected)
+
+        url = post.call_args.args[0]
+        options = post.call_args.kwargs
+        sent_context = json.loads(options["json"]["input"])
+        self.assertEqual(url, "https://api.openai.com/v1/responses")
+        self.assertEqual(options["headers"]["Authorization"], "Bearer test-key")
+        self.assertFalse(options["json"]["store"])
+        self.assertEqual(options["json"]["text"]["format"]["type"], "json_schema")
+        self.assertIn("verified_policy", sent_context)
+        self.assertIn("generated_plan", sent_context)
+        self.assertNotIn("test-key", options["json"]["input"])
+        self.assertNotIn("tools", options["json"])
+
+    def test_transfer_advice_requires_server_api_key(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        with patch.dict(os.environ, {}, clear=True):
+            with self.assertRaises(HTTPException) as raised:
+                app.transfer_advice(request)
+        self.assertEqual(raised.exception.status_code, 503)
 
 
 if __name__ == "__main__":

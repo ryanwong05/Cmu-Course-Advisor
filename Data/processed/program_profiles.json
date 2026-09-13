@@ -3,7 +3,7 @@
   "source": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/",
   "programs": {
     "artificial-intelligence": {
-      "internal_transfer": {"minimum_courses":6,"minimum_units":66,"double_count_limit":null,"eligibility":"Non-SCS applicants need 3.6 expected QPA across the six specified courses and 3.0 overall.","required_course_ids":["15-122","15-150","07-280","07-380"],"requirement_groups":[]},
+      "internal_transfer": {"minimum_courses":6,"minimum_units":66,"double_count_limit":null,"eligibility":"This plan maps the six published transfer-course requirements. Non-SCS applicants need 3.6 expected QPA across those courses and 3.0 overall.","required_course_ids":["15-122","15-150","07-280","07-380"],"requirement_groups":[{"id":"cs-core-choice","name":"SCS core course","choose":1,"units":12,"options":["15-210","15-213","15-251"],"minimum_year":2},{"id":"probability-choice","name":"Probability","choose":1,"units":9,"options":["15-259","21-325","21-425","36-218","36-225"],"minimum_year":2}]},
       "additional_major": {"minimum_courses":19,"minimum_units":183,"double_count_limit":5,"eligibility":"Admission requires the published prerequisites with a B average.","required_course_ids":["15-112","21-122","21-241","36-401","15-122","15-150","15-210","15-213","15-251","07-280","07-380"],"requirement_groups":[
         {"id":"calculus","name":"Calculus foundation","choose":1,"options":["21-112","21-120"]},
         {"id":"discrete","name":"Discrete mathematics foundation","choose":1,"options":["21-127","21-128","15-151"]},
@@ -20,7 +20,7 @@
       ]}
     },
     "computational-biology": {
-      "internal_transfer": {"minimum_courses":6,"minimum_units":66,"double_count_limit":null,"eligibility":"Non-SCS applicants need 3.6 expected QPA across the six specified courses and 3.0 overall.","required_course_ids":["21-127","15-122","15-251","03-121"],"requirement_groups":[]},
+      "internal_transfer": {"minimum_courses":6,"minimum_units":66,"double_count_limit":null,"eligibility":"This plan maps the six published transfer-course requirements. If 15-210 is selected, 15-150 is also required. Non-SCS applicants need 3.6 expected QPA across the specified courses and 3.0 overall.","required_course_ids":["21-127","15-122","15-251","03-121"],"requirement_groups":[{"id":"algorithms-choice","name":"Algorithms course","choose":1,"units":12,"options":["15-351","15-210"],"minimum_year":2},{"id":"comp-bio-intro-choice","name":"Introduction to Computational Biology","choose":1,"units":12,"options":["02-251","02-250"],"minimum_year":2}]},
       "additional_major": {"minimum_courses":24,"minimum_units":265,"double_count_limit":null,"minimum_unique_courses":7,"eligibility":"Applicants outside SCS need a 3.0 overall QPA; at least seven 9-unit courses must be unique to this major.","required_course_ids":["15-122","21-120","21-122","21-241","09-105","33-121","03-221","03-232","03-320","15-251","02-135","02-402","02-510","02-512"],"requirement_groups":[
         {"id":"intro-cb","name":"Introduction to Computational Biology","choose":1,"options":["02-180 + 02-181","02-250"]},{"id":"biology","name":"Modern Biology","choose":1,"options":["03-121","03-151"]},{"id":"discrete","name":"Discrete mathematics","choose":1,"options":["15-151","21-127","21-128"]},{"id":"programming","name":"Introductory programming","choose":1,"options":["02-120","15-112"]},{"id":"probability","name":"Probability / statistics core","choose":1,"options":["36-218","36-226","36-326","36-235","15-259"]},{"id":"lab","name":"Computational biology laboratory","choose":1,"options":["02-261","02-262","03-343"]},{"id":"algorithms","name":"Algorithms","choose":1,"options":["15-451","15-351"]},{"id":"ml","name":"Machine learning","choose":1,"options":["07-280","10-301"]},{"id":"cb-electives","name":"300-level Computational Biology electives","choose":2,"units":18,"options":["02-3xx"]},{"id":"bio-elective","name":"300-level Biology elective","choose":1,"options":["03-3xx","09-217","42-202"]},{"id":"scs-electives","name":"SCS electives at 200 level or above","choose":2,"units":18,"options":["SCS 2xx+"]}
       ]},
@@ -35,12 +35,52 @@
       ]},
       "minor": {"minimum_courses":8,"minimum_units":90,"double_count_limit":2,"eligibility":"Prerequisites are excluded from the two-course double-count limit.","required_course_ids":["15-112","21-127","15-122","15-150","15-210"],"requirement_groups":[{"id":"upper-core","name":"Systems or Theory core","choose":1,"options":["15-213","15-251"]},{"id":"cs-electives","name":"CS electives (15-213 or higher)","choose":2,"units":18,"options":["15-xxx"]}]}
     },
+    "computer-science-and-arts": {
+      "internal_transfer": {
+        "minimum_courses": 38,
+        "minimum_units": 380,
+        "double_count_limit": null,
+        "eligibility": "BXA internal transfer requires a 3.0 cumulative QPA, completion of at least one CMU semester, admission to both the selected CFA concentration and the BCSA program, and application no later than fall of junior year.",
+        "required_course_ids": [
+          "15-112", "15-122", "15-150", "15-210", "15-213", "15-251", "21-127",
+          "21-122", "76-101", "99-101", "52-190", "52-291", "52-392", "52-401", "52-402"
+        ],
+        "requirement_groups": [
+          {"id":"bcsa-math","name":"BCSA Mathematics","choose":1,"units":10,"options":["21-241","21-259","21-266"],"minimum_year":1},
+          {"id":"bcsa-probability","name":"BCSA Probability","choose":1,"units":9,"options":["15-259","21-325","36-218","36-225 + 36-226","36-235 + 36-236"],"minimum_year":2},
+          {"id":"bcsa-science-engineering","name":"BCSA Science & Engineering breadth","choose":2,"units":18,"options":["03-121","09-105","33-121","33-141","15-110"],"minimum_year":2},
+          {"id":"bcsa-behavior-institutions","name":"Institutions or Cognition breadth","choose":1,"units":9,"options":["85-110","85-213","88-120","88-220"],"minimum_year":2},
+          {"id":"bcsa-additional-breadth","name":"Additional Dietrich or CFA breadth","choose":2,"units":18,"options":["76-270","79-201","80-100","82-101","85-110","88-104"],"minimum_year":2},
+          {"id":"bcsa-scs-electives","name":"BCSA Applications or CS electives","choose":5,"units":45,"options":["02-251","05-318","05-391","07-280","10-301","10-335","11-324","11-411","15-322","15-362","15-388","15-415","15-451","15-463","15-464","15-466","16-220","16-280","16-362","16-385","16-467","17-214","17-313","17-316","17-356","17-437"],"minimum_year":2},
+          {"id":"bcsa-cfa-concentration","name":"Selected CFA concentration","choose":12,"units":108,"options":["Approved Architecture concentration course","Approved Art concentration course","Approved Design concentration course","Approved Drama concentration course","Approved Music concentration course"],"minimum_year":1}
+        ]
+      }
+    },
     "human-computer-interaction": {
-      "internal_transfer": {"minimum_courses":6,"minimum_units":69,"double_count_limit":null,"eligibility":"Non-SCS applicants need 3.6 expected QPA across the six specified courses and 3.0 overall.","required_course_ids":["21-127","15-122","15-150","05-410"],"requirement_groups":[]},
+      "internal_transfer": {"minimum_courses":6,"minimum_units":69,"double_count_limit":null,"eligibility":"This plan maps the six published transfer-course requirements. Non-SCS applicants need 3.6 expected QPA across those courses and 3.0 overall.","required_course_ids":["21-127","15-122","15-150","05-410"],"requirement_groups":[{"id":"cs-core-choice","name":"SCS core course","choose":1,"units":12,"options":["15-210","15-213"],"minimum_year":2},{"id":"hci-implementation-choice","name":"HCI implementation course","choose":1,"units":12,"options":["05-380","05-431"],"minimum_year":2}]},
       "additional_major": {"minimum_courses":12,"minimum_units":108,"double_count_limit":2,"eligibility":"Limited enrollment; applications are processed in spring.","required_course_ids":["05-360","05-410","05-571"],"requirement_groups":[
         {"id":"psychology","name":"Psychology prerequisite","choose":1,"options":["85-110","85-150","85-213"]},{"id":"statistics","name":"Statistics prerequisite","choose":1,"options":["36-200","36-220","36-225 + 36-226","36-226","70-207"]},{"id":"programming","name":"Programming prerequisite","choose":1,"options":["15-104","15-110","15-112","15-121","02-120"]},{"id":"advanced-design","name":"Advanced Design","choose":1,"options":["05-361","05-312","05-315","05-317","05-362","05-418","05-452","05-470"]},{"id":"technical-core","name":"Technical Core","choose":1,"options":["05-380","05-391","05-431"]},{"id":"hci-electives","name":"HCI electives","choose":4,"units":36,"options":["Approved HCI electives"]}
       ]},
       "minor": {"minimum_courses":7,"minimum_units":70,"double_count_limit":2,"eligibility":"Limited enrollment; applications are processed in spring.","required_course_ids":["05-391","05-360"],"requirement_groups":[{"id":"programming","name":"Programming prerequisite","choose":1,"options":["15-110","15-112","15-121","15-104","02-120"]},{"id":"hci-electives","name":"HCI electives (at least two with 05 prefix)","choose":4,"units":36,"options":["Approved HCI electives"]}]}
+    },
+    "electrical-and-computer-engineering": {
+      "internal_transfer": {
+        "minimum_courses": 20,
+        "minimum_units": 203,
+        "double_count_limit": null,
+        "eligibility": "Internal transfer into Engineering and ECE is reviewed by the College of Engineering and ECE; this planner maps the published 2026–27 B.S. curriculum, not an admission guarantee.",
+        "required_course_ids": ["99-101", "21-120", "21-122", "33-141", "33-142", "15-112", "18-202", "15-122", "39-310"],
+        "requirement_groups": [
+          {"id":"intro-engineering","name":"Additional introductory engineering course","choose":1,"units":12,"options":["06-100","12-100","18-100","19-101","24-101","27-100"],"minimum_year":1},
+          {"id":"probability","name":"ECE probability requirement","choose":1,"units":9,"options":["21-325","36-219","36-225"],"minimum_year":2},
+          {"id":"proofs","name":"Mathematical concepts and proofs","choose":1,"units":12,"options":["21-127","21-128"],"minimum_year":2},
+          {"id":"math-science","name":"ECE math or science elective","choose":2,"units":18,"options":["21-228","21-241","21-259","21-260","33-142","36-226"],"minimum_year":2},
+          {"id":"ece-foundations","name":"ECE foundation course","choose":2,"units":24,"options":["18-100","18-200","18-213","18-220","18-240","18-290"],"minimum_year":2},
+          {"id":"ece-coverage","name":"ECE breadth and coverage elective","choose":3,"units":36,"options":["18-310","18-320","18-330","18-340","18-349","18-370","18-396"],"minimum_year":3},
+          {"id":"ece-advanced","name":"Advanced ECE elective","choose":3,"units":36,"options":["18-441","18-447","18-461","18-491","18-500","18-578"],"minimum_year":3},
+          {"id":"ece-capstone","name":"ECE capstone design","choose":1,"units":12,"options":["18-500","18-578"],"minimum_year":4}
+        ]
+      }
     },
     "information-systems": {
       "internal_transfer": {
@@ -72,8 +112,56 @@
         ]
       }
     },
+    "economics": {
+      "additional_major": {
+        "minimum_courses": 18,
+        "minimum_units": 166,
+        "double_count_limit": 2,
+        "eligibility": "Students may apply after completing the Economics minor. At most two economics electives may double-count with another major or minor; home-college GenEd overlap is unrestricted.",
+        "required_course_ids": ["73-265", "73-274", "73-103", "73-230", "73-240", "70-340", "70-345"],
+        "requirement_groups": [
+          {"id":"economics-calculus","name":"Economics calculus","choose":1,"units":10,"options":["21-120","21-111 + 21-112"],"minimum_year":1},
+          {"id":"economics-multivariable","name":"Multivariable mathematics","choose":1,"units":9,"options":["21-256","21-254","21-259","21-266"],"minimum_year":2},
+          {"id":"economics-linear-algebra","name":"Linear algebra","choose":1,"units":10,"options":["21-240","21-241"],"minimum_year":2},
+          {"id":"economics-micro","name":"Principles of Microeconomics","choose":1,"units":9,"options":["73-102","73-104"],"minimum_year":1},
+          {"id":"economics-advanced-quant","name":"Advanced quantitative analysis","choose":1,"units":9,"options":["73-374","73-423","70-467"],"minimum_year":3},
+          {"id":"economics-electives","name":"300-level Economics elective","choose":6,"units":54,"options":["73-300","73-310","73-320","73-328","73-341","73-359","73-365","73-372","73-421","73-424"],"minimum_year":3},
+          {"id":"economics-capstone","name":"Economics capstone","choose":1,"units":12,"options":["73-497","73-500 + 73-501"],"minimum_year":4}
+        ]
+      }
+    },
+    "business-administration": {
+      "minor": {
+        "minimum_courses": 6,
+        "minimum_units": 54,
+        "double_count_limit": 1,
+        "eligibility": "Declaration requires two completed minor-applicable courses, including 70-101, 70-122, or 73-102/73-104. Only one minor course may double-count with another major or minor.",
+        "required_course_ids": ["70-122"],
+        "requirement_groups": [
+          {"id":"business-foundation","name":"Business strategy foundation","choose":1,"units":9,"options":["70-100","70-101"]},
+          {"id":"business-economics","name":"Microeconomics foundation","choose":1,"units":9,"options":["73-102","73-104"]},
+          {"id":"business-constrained","name":"Constrained business elective","choose":1,"units":9,"options":["70-311","70-371","70-381","70-391"],"minimum_year":2},
+          {"id":"business-electives","name":"Upper-level business elective","choose":2,"units":18,"options":["70-321","70-340","70-342","70-345","70-350","70-365","70-401","70-415","70-443"],"minimum_year":3}
+        ]
+      }
+    },
+    "machine-learning": {
+      "minor": {
+        "minimum_courses": 5,
+        "minimum_units": 51,
+        "minimum_unique_courses": 3,
+        "double_count_limit": 2,
+        "eligibility": "Available only to students outside SCS. All courses and prerequisites require a C or better, and at least three core/elective courses must be unique to this minor.",
+        "required_course_ids": [],
+        "requirement_groups": [
+          {"id":"ml-intro-core","name":"Introductory Machine Learning core","choose":1,"units":12,"options":["10-301","10-315","07-280"],"minimum_year":2},
+          {"id":"ml-advanced-core","name":"Advanced Machine Learning core","choose":1,"units":12,"options":["10-403","10-405","10-414","10-417","10-418","10-422"],"minimum_year":3},
+          {"id":"ml-electives","name":"Machine Learning elective","choose":3,"units":27,"options":["10-403","10-405","10-414","10-417","10-418","10-422","10-423","10-425","10-335","11-411","11-441","15-281","15-386","15-388","15-482","16-311","16-385","36-401","36-402","36-462","36-463"],"minimum_year":3}
+        ]
+      }
+    },
     "robotics": {
-      "internal_transfer": {"minimum_courses":6,"minimum_units":66,"double_count_limit":null,"eligibility":"Non-SCS applicants need 3.6 expected QPA across the six specified courses and 3.0 overall.","required_course_ids":["21-127","15-122","15-213","15-251"],"requirement_groups":[]},
+      "internal_transfer": {"minimum_courses":6,"minimum_units":66,"double_count_limit":null,"eligibility":"This plan maps the six published transfer-course requirements. Non-SCS applicants need 3.6 expected QPA across those courses and 3.0 overall.","required_course_ids":["21-127","15-122","15-213","15-251"],"requirement_groups":[{"id":"probability","name":"Probability","choose":1,"units":9,"options":["36-225","21-325","36-218","15-259"],"minimum_year":2},{"id":"robotics-course","name":"Robotics course","choose":1,"units":12,"options":["16-211","16-299","16-311"],"minimum_year":2}]},
       "additional_major": {"minimum_courses":10,"minimum_units":105,"double_count_limit":6,"eligibility":"Requires a 3.0 QPA in the additional-major curriculum; most students may double count at most six courses, while CS majors may double count at most five.","required_course_ids":["16-450"],"requirement_groups":[
         {"id":"overview","name":"Overview / Introductory Robotics","choose":1,"units":12,"options":["16-280","16-281"]},
         {"id":"controls","name":"Controls","choose":1,"units":12,"options":["06-464","16-299","18-370","24-451","24-773"]},

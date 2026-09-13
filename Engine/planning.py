@@ -496,6 +496,14 @@ def generate_semester_path(
         scored_courses = []
 
         for course_id in available:
+            course = get_course_by_id(
+                course_id,
+                courses
+            )
+
+            if course is None:
+                continue
+
             downstream_count = count_downstream_courses(
                 course_id,
                 courses,
