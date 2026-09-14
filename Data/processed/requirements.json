@@ -186,6 +186,46 @@
     "application_requirements": {"course_qpa":3.6,"overall_qpa":3.0,"catalog_year":"2026-2027"}
   },
 
+  "logic-and-computation-major": {
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_major_units": 141,
+    "minimum_degree_units": 360,
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/",
+    "required_courses": [
+      "80-150", "36-200", "15-112", "21-127",
+      "80-310", "80-311", "15-122", "15-150", "80-595"
+    ],
+    "requirement_groups": [
+      {
+        "id": "intro-logic-choice",
+        "name": "Logic and Mathematical Inquiry",
+        "choose": 1,
+        "units": 9,
+        "options": ["80-210", "80-211"],
+        "minimum_year": 1
+      },
+      {
+        "id": "advanced-electives",
+        "name": "Logic and Computation advanced electives",
+        "choose": 4,
+        "units": 36,
+        "options": [
+          "80-220", "80-221", "80-249", "80-254", "80-305",
+          "80-312", "80-315", "80-325", "80-411", "80-413",
+          "15-312", "15-317", "36-309", "85-412"
+        ],
+        "minimum_year": 3
+      }
+    ],
+    "notes": [
+      "80-310 should be completed before junior year.",
+      "The 12-unit 80-595 senior thesis is completed across the senior year.",
+      "Four advanced electives must be selected with the Senior Academic Program Manager."
+    ]
+  },
+
   "robotics-transfer": {
     "planner_status": "choice_required",
     "required_courses": ["21-127", "15-122", "15-213", "15-251"],

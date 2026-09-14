@@ -2159,8 +2159,8 @@
       "dietrich"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "logic-and-computation",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
     "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/"
   },

@@ -693,7 +693,12 @@ function renderTransferReadiness(data) {
     ].filter(Boolean);
     const completedIds = new Set(appState.student.completed_courses || []);
     const scheduledIds = new Set(
-        (data.fastest?.path || []).flatMap(semester => semester.courses || [])
+        (data.fastest?.path || []).flatMap(semester => [
+            ...(semester.courses || []),
+            ...(semester.program_requirements || []).flatMap(requirement =>
+                (requirement.default_option || "").split(" + ").filter(Boolean)
+            )
+        ])
     );
     const courseCatalog = data.course_catalog || {};
     const courseStatus = ids => {
@@ -712,6 +717,13 @@ function renderTransferReadiness(data) {
         ruleLabel: group.name
     }));
     const transferRequirements = [...fixedRequirements, ...choiceRequirements];
+    const completedCount = transferRequirements.filter(requirement =>
+        requirement.ids.some(id => completedIds.has(id))
+    ).length;
+    const scheduledCount = transferRequirements.filter(requirement =>
+        !requirement.ids.some(id => completedIds.has(id))
+        && requirement.ids.some(id => scheduledIds.has(id))
+    ).length;
     const requirementRows = transferRequirements.map(requirement => {
         const status = courseStatus(requirement.ids);
         return `<li><span><strong>${requirement.courseLabel}</strong><small>${requirement.ruleLabel}</small></span><span class="transfer-course-status ${status.className}">${status.label}</span></li>`;
@@ -729,7 +741,7 @@ function renderTransferReadiness(data) {
     panel.innerHTML = `
         <div class="transfer-readiness-heading">
             <div><p class="eyebrow">YOUR #1 PRIORITY · TRANSFER CHECKPOINT</p><h2>${transfer.mode === "eligibility" ? "Path to become eligible to apply" : "Post-transfer degree plan"}</h2><p class="transfer-heading-note">Complete this checkpoint before treating the destination major as confirmed.</p></div>
-            <span class="rules-badge">${policy.policy_status === "official_verified" ? "Official criteria" : "Verify with advisor"}</span>
+            <span class="rules-badge">${completedCount} completed · ${scheduledCount} scheduled · ${Math.max(0, transferRequirements.length - completedCount - scheduledCount)} needed</span>
         </div>
         <div class="transfer-policy-grid">
             <div><strong>Academic threshold</strong><span>${gpaRules.join(" · ") || "Good academic standing"}</span></div>
@@ -738,7 +750,7 @@ function renderTransferReadiness(data) {
             <div><strong>Admission outlook</strong><span>Not estimated yet—course completion alone is insufficient without your grades, statement/interview factors, and current capacity.</span></div>
         </div>
         <div class="transfer-course-checklist">
-            <div class="transfer-course-checklist-heading"><strong>Courses required before you apply</strong><span>${transferRequirements.length} requirement${transferRequirements.length === 1 ? "" : "s"}</span></div>
+            <div class="transfer-course-checklist-heading"><strong>Courses required before you apply</strong><span>${transferRequirements.length} official requirements · ${policy.policy_status === "official_verified" ? "verified" : "advisor check"}</span></div>
             ${requirementRows ? `<ul>${requirementRows}</ul>` : "<p>No course-only automatic admission requirement is published for this program. Confirm the individual review with an advisor.</p>"}
             ${preparationRows ? `<div class="transfer-preparation-label">Preparation</div><ul>${preparationRows}</ul>` : ""}
         </div>
@@ -2212,10 +2224,8 @@ function renderCourseSelection(
         // A requirement with no real alternative (or where every option must
         // be completed) is an audit item, not a user decision.
         const groups = allGroups.filter(group => group.choose > 0 && group.options.size > group.choose);
+        const panelsByGroup = new Map();
 
-        const optionSatisfied = (option, selectedIds) => option.ids.every(id => selectedIds.has(id));
-        const selectedOptionCount = (group, selectedIds) => Array.from(group.options.values())
-            .filter(option => optionSatisfied(option, selectedIds)).length;
         const ruleText = group => {
             if (group.choose >= group.options.size) return "Complete all";
             if (group.choose === 1) return "Choose any one";
@@ -2224,11 +2234,6 @@ function renderCourseSelection(
         const deadlineText = group => group.minimumYear > 1
             ? `Needed starting ${yearNames[group.minimumYear] || `Year ${group.minimumYear}`}`
             : "Needed for your early plan";
-        const currentSelectedIds = () => new Set(
-            Array.from(decisionSection.querySelectorAll('input[type="checkbox"]:checked'))
-                .flatMap(input => input.value.split(" + "))
-        );
-
         groups.forEach(group => {
             const groupPanel = document.createElement("details");
             groupPanel.className = "completed-choice-checklist decision-requirement";
@@ -2262,6 +2267,7 @@ function renderCourseSelection(
             });
             const isNow = group.minimumYear <= Math.min(appState.student.year, appState.constraints.target_completion_year || 4);
             (isNow ? nowList : laterList).appendChild(groupPanel);
+            panelsByGroup.set(group, groupPanel);
 
             const auditRow = document.createElement("div");
             auditRow.className = "requirement-audit-row";
@@ -2293,16 +2299,19 @@ function renderCourseSelection(
         });
 
         const updateDecisionProgress = () => {
-            const selectedIds = currentSelectedIds();
             let complete = 0;
             let total = 0;
             groups.forEach(group => {
-                const selected = selectedOptionCount(group, selectedIds);
+                const panel = panelsByGroup.get(group);
+                // Read this requirement group's own controls. The earlier global
+                // course-id set could drift out of sync when GenEd asynchronously
+                // linked 36-200 to Beginning Data Analysis.
+                const selected = panel
+                    ? panel.querySelectorAll('.requirement-choice-option input[type="checkbox"]:checked').length
+                    : 0;
                 const done = selected >= group.choose;
                 total += group.choose;
                 complete += Math.min(selected, group.choose);
-                const panel = Array.from(decisionSection.querySelectorAll(".decision-requirement"))
-                    .find(item => item.querySelector("summary strong")?.textContent === group.name);
                 panel?.classList.toggle("decision-complete", done);
                 if (panel) panel.querySelector(".decision-status-text").textContent = done ? "✓ Selected" : `${group.options.size} options`;
                 const auditRow = Array.from(auditList.querySelectorAll(".requirement-audit-row"))
@@ -2599,7 +2608,13 @@ function renderPath(
         <div class="planner-course-block fixed-block has-selected-course ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${block.estimated ? "primary-baseline-block" : ""} ${intensityClass(intensity)}" data-units="${block.units}" data-course-id="${block.id}" data-minimum-year="${minimumYear}" ${intensityData(intensity)} draggable="true">
             <span class="block-number">${number}</span>
             <span class="block-main">
-                <small>${block.estimated ? "Reserved for remaining primary-major requirements" : block.program_tier === "additional_major" ? "Additional Major extension" : (kindLabels[block.kind] || "Minor foundation")}</small>
+                <small>${block.estimated
+                    ? "Reserved for remaining primary-major requirements"
+                    : block.program_tier === "transfer_preparation"
+                        ? "Preparation · unlocks transfer requirements"
+                        : block.program_tier === "additional_major"
+                            ? "Additional Major extension"
+                            : (kindLabels[block.kind] || "Minor foundation")}</small>
                 ${block.estimated ? "" : `<strong>${block.id}</strong>`}
                 <span>${block.name}</span>
                 ${intensityBadge(intensity)}
@@ -3379,7 +3394,9 @@ document
             // Rendering the foundation here previously made an AI additional
             // major look like the AI minor and hid 15-150, 21-241, and two of
             // the four required AI-cluster areas.
-            const balancedPath = data.secondary_path_type === "minor_foundation"
+            const balancedPath = appState.goals[0]?.type === "internal_transfer"
+                ? data.fastest
+                : data.secondary_path_type === "minor_foundation"
                 ? data.fastest
                 : (data.lower_workload || data.fastest);
             renderPath(balancedPath, fastestResults);
@@ -3604,6 +3621,9 @@ function renderDegreeAudits(audits, baseline, warnings = []) {
     )?.name || id.replaceAll("-", " ").replace(/\b\w/g, letter => letter.toUpperCase());
     const primaryRemaining = primary.requirements_remaining_to_graduate;
     const goalRemaining = goal.requirements_remaining_to_complete ?? goal.requirements_remaining;
+    const placementSummary = Number.isFinite(goal.total_requirements) && Number.isFinite(goal.requirements_scheduled)
+        ? `${goal.requirements_scheduled} of ${goal.total_requirements} published requirements are placed in this plan.`
+        : "";
     container.innerHTML = `
         ${primary.status === "replaced_by_transfer" ? "" : `<article class="degree-audit-card degree-audit-row primary-audit-card">
             <div><p class="eyebrow">CURRENT BACHELOR'S DEGREE</p><h3>${programName(primary.program)}</h3></div>
@@ -3611,7 +3631,7 @@ function renderDegreeAudits(audits, baseline, warnings = []) {
         </article>`}
         <article class="degree-audit-card degree-audit-row goal-audit-card">
             <div><p class="eyebrow">${goal.type.replaceAll("_", " ")}</p><h3>${programName(goal.program)}</h3></div>
-            <div class="audit-remaining"><strong>${goalRemaining == null ? "Curriculum audit in progress" : `${goalRemaining} requirements remaining`}</strong><div class="audit-progress" role="progressbar" aria-label="Goal requirements completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${goalPercent}"><span style="width:${goalPercent}%"></span></div><small>${goal.message}</small></div>
+            <div class="audit-remaining"><strong>${goalRemaining == null ? "Curriculum audit in progress" : `${goalRemaining} requirements not yet completed`}</strong><div class="audit-progress" role="progressbar" aria-label="Goal requirements placed in plan" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${goalPercent}"><span style="width:${goalPercent}%"></span></div><small>${[placementSummary, goal.message].filter(Boolean).join(" ")}</small></div>
         </article>
         ${warnings.length ? `<section class="planning-warning-list" aria-label="Planning checks">
             ${warnings.map(warning => `<article class="planning-warning ${warning.severity || "warning"}">
@@ -3634,6 +3654,7 @@ function renderDegreeRequirementTree() {
     const audits = plan.degree_audits || {};
     const primary = audits.primary_degree || {};
     const goal = audits.selected_goal || {};
+    const isEligibilityPlan = plan.transfer_planning?.mode === "eligibility";
     const completedCourses = new Set(appState.student.completed_courses || []);
     const completedRequirements = new Set(appState.student.completed_requirement_ids || []);
     const planned = Array.from(fastestResults.querySelectorAll(".planner-course-block[data-course-id]"))
@@ -3669,7 +3690,7 @@ function renderDegreeRequirementTree() {
             <span class="tree-course-link">${complete && course ? `Satisfied by ${course}` : course ? `Planned: ${course}` : complete ? "Completed" : "Still needed"}</span>
         </article>`;
     const groupBranch = (label, groups, remaining) => `
-        <details class="degree-tree-branch" open>
+        <details class="degree-tree-branch">
             <summary><span><strong>${label}</strong><small>${remaining == null ? "Verified requirements" : `${remaining} remaining`}</small></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
                 ${groups.length ? groups.map(group => {
@@ -3688,7 +3709,7 @@ function renderDegreeRequirementTree() {
     }, {});
     const genEdBranches = Object.entries(genEdByGroup).map(([groupId, requirements]) => {
         const label = groupId.replaceAll("_", " ").replace(/\b\w/g, letter => letter.toUpperCase());
-        return `<details class="degree-tree-branch gened-tree-branch" open>
+        return `<details class="degree-tree-branch gened-tree-branch">
             <summary><span><strong>${label}</strong><small>${requirements.length} categor${requirements.length === 1 ? "y" : "ies"}</small></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">${requirements.map(requirement => {
                 const linked = appState.genedSelections[requirement.id]
@@ -3704,18 +3725,17 @@ function renderDegreeRequirementTree() {
             <div><p class="eyebrow">DEGREE REQUIREMENTS</p><h2>How this plan fulfills your degree</h2><p>Open a branch to see every fulfill-all and fulfill-one rule. Course links update when you edit the plan.</p></div>
             <span class="rules-badge">Live plan audit</span>
         </div>
-        ${goal.type === "internal_transfer" ? "" : `<details class="degree-tree-root" open>
+        ${isEligibilityPlan || goal.type !== "internal_transfer" ? `<details class="degree-tree-root">
             <summary><span><strong>${programName(primary.program)}</strong><small>Current bachelor's degree</small></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
                 ${groupBranch("Major requirements", currentGroups, primary.requirements_remaining_to_graduate)}
-                <details class="degree-tree-branch" open><summary><span><strong>General Education</strong><small>${(appState.baselineRequirements || []).length} categories</small></span><span class="tree-rule-badge">fulfill all</span></summary><div class="degree-tree-children">${genEdBranches}</div></details>
+                <details class="degree-tree-branch"><summary><span><strong>General Education</strong><small>${(appState.baselineRequirements || []).length} categories</small></span><span class="tree-rule-badge">fulfill all</span></summary><div class="degree-tree-children">${genEdBranches}</div></details>
             </div>
-        </details>`}
-        <details class="degree-tree-root target-tree-root" ${goal.type === "internal_transfer" ? "open" : ""}>
+        </details>` : ""}
+        <details class="degree-tree-root target-tree-root">
             <summary><span><strong>${programName(goal.program)}</strong><small>${(goal.type || "Selected goal").replaceAll("_", " ")}</small></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
                 ${groupBranch("Target program requirements", goalGroups, goal.requirements_remaining_to_complete ?? goal.requirements_remaining)}
-                ${goal.type === "internal_transfer" ? `<details class="degree-tree-branch" open><summary><span><strong>General Education</strong><small>${(appState.baselineRequirements || []).length} categories</small></span><span class="tree-rule-badge">fulfill all</span></summary><div class="degree-tree-children">${genEdBranches}</div></details>` : ""}
             </div>
         </details>`;
 }
@@ -3723,7 +3743,7 @@ refreshDegreeRequirementTree = renderDegreeRequirementTree;
 
 function renderGenEdProgress() {
     const panel = document.getElementById("genedProgressPanel");
-    const wasOpen = panel.querySelector(".gened-progress-details")?.open ?? true;
+    const wasOpen = panel.querySelector(".gened-progress-details")?.open ?? false;
     const requirements = appState.baselineRequirements || [];
     if (!requirements.length || results.classList.contains("hidden")) {
         panel.innerHTML = "";
@@ -3749,25 +3769,39 @@ function renderGenEdProgress() {
         : requirement.name === "Experiential Learning Activity"
             ? "Complete one approved experiential activity"
             : `Choose one approved ${requirement.name.toLowerCase()} course`;
+    const groupLabels = {
+        foundations: "Foundations",
+        disciplinary_perspectives: "Disciplinary Perspectives",
+        special_seminars: "Special Seminars",
+        experiential_learning: "Experiential Learning"
+    };
+    const grouped = requirements.reduce((result, requirement) => {
+        (result[requirement.group || "other"] ||= []).push(requirement);
+        return result;
+    }, {});
     panel.classList.remove("hidden");
     panel.innerHTML = `
         <details class="gened-progress-details" ${wasOpen ? "open" : ""}>
             <summary><div class="gened-progress-heading">
-                <div><p class="eyebrow">GENERAL EDUCATION</p><h2>GenEd progress</h2><p>Complete every category below. Open this section to see how AND and OR requirements are satisfied.</p></div>
+                <div><p class="eyebrow">DIETRICH GENERAL EDUCATION</p><h2>GenEd progress</h2><p>115 units across Foundations, Disciplinary Perspectives, Special Seminars, and Experiential Learning.</p></div>
                 <strong>${satisfied.length} / ${requirements.length}</strong>
             </div></summary>
             <div class="gened-progress-body">
             <div class="gened-progress-track" role="progressbar" aria-label="GenEd completion" aria-valuemin="0" aria-valuemax="${requirements.length}" aria-valuenow="${satisfied.length}"><span style="width:${percent}%"></span></div>
             <div class="gened-rule-key"><span><b>AND</b> Complete every category</span><span><b>OR</b> Choose one approved option inside a category</span></div>
             <div class="gened-category-list">
-                ${requirements.map((requirement, index) => {
-                const courseId = plannedCourseFor(requirement);
-                const done = completed.has(requirement.id) || Boolean(courseId);
-                return `${index ? '<div class="gened-and-connector">AND</div>' : ""}<article class="gened-category ${done ? "complete" : ""}">
-                    <span><strong>${requirement.name}</strong><small>${ruleFor(requirement)}</small></span>
-                    <span class="gened-category-status">${done ? `✓ ${courseId || "Completed"}` : "Choose in your path"}</span>
-                </article>`;
-                }).join("")}
+                ${Object.entries(grouped).map(([groupId, groupRequirements]) => `
+                    <section class="gened-category-group">
+                        <div class="gened-category-group-heading"><strong>${groupLabels[groupId] || groupId.replaceAll("_", " ")}</strong><span>${groupRequirements.filter(requirement => completed.has(requirement.id) || Boolean(plannedCourseFor(requirement))).length} / ${groupRequirements.length}</span></div>
+                        ${groupRequirements.map((requirement, index) => {
+                            const courseId = plannedCourseFor(requirement);
+                            const done = completed.has(requirement.id) || Boolean(courseId);
+                            return `${index ? '<div class="gened-and-connector">AND</div>' : ""}<article class="gened-category ${done ? "complete" : ""}">
+                                <span><strong>${requirement.name}</strong><small>${ruleFor(requirement)} · ${requirement.timeline?.source_text || "Complete before graduation"}</small></span>
+                                <span class="gened-category-status">${done ? `✓ ${courseId || "Completed"}` : "Choose in your path"}</span>
+                            </article>`;
+                        }).join("")}
+                    </section>`).join("")}
             </div></div>
         </details>`;
 }

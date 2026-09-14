@@ -1111,11 +1111,21 @@ input[type="number"]:focus {
 }
 
 .degree-requirement-tree {
-    margin: 22px 0;
+    margin: 0;
     padding: 22px;
     border: 1px solid #dfe7e0;
     border-radius: 18px;
     background: #fbfcfa;
+}
+.requirement-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 18px;
+    margin: 22px 0;
+}
+.requirement-overview-grid > .gened-progress-panel {
+    margin: 0;
 }
 .transfer-readiness-panel {
     margin: 0 0 22px;
@@ -1155,6 +1165,9 @@ input[type="number"]:focus {
 .transfer-application-actions li > span:last-child { display: grid; gap: 4px; }
 .transfer-application-actions small { color: #5f6861; font-size: 11px; line-height: 1.45; }
 .transfer-action-number { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; background: #2f7d45; color: #fff; font-size: 11px; font-weight: 900; }
+.gened-category-group { display: grid; gap: 8px; margin-top: 14px; padding: 12px; border: 1px solid #e2e8e3; border-radius: 12px; background: #fbfcfb; }
+.gened-category-group-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 7px; border-bottom: 1px solid #e6ebe7; color: #315f3d; }
+.gened-category-group-heading span { font-size: 11px; font-weight: 800; }
 .degree-tree-heading {
     display: flex;
     align-items: flex-start;
@@ -1966,6 +1979,7 @@ input[type="number"]:focus {
 }
 
 @media (max-width: 1100px) {
+    .requirement-overview-grid { grid-template-columns: 1fr; }
     .semester-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 

@@ -104,6 +104,22 @@ uvicorn app:app --reload
 
 Open `http://127.0.0.1:8000` in a browser.
 
+### Free local AI Transfer Advisor
+
+The advisor uses a local Ollama model by default, so an OpenAI API key is not
+required. Install Ollama, start it, and download the default model once:
+
+```bash
+ollama serve
+ollama pull qwen3:1.7b
+```
+
+The app calls only `http://127.0.0.1:11434` in this mode. To force the optional
+OpenAI fallback instead, set `TRANSFER_ADVISOR_PROVIDER=openai` and provide
+`OPENAI_API_KEY` in the server environment. Supported provider values are
+`auto` (default), `ollama`, and `openai`. The local model can be changed with
+`OLLAMA_TRANSFER_ADVISOR_MODEL`.
+
 ## API endpoints
 
 The current backend exposes:
@@ -115,6 +131,7 @@ The current backend exposes:
 - `GET /api/baseline`
 - `POST /api/baseline`
 - `POST /api/plan`
+- `POST /api/transfer-advice`
 
 FastAPI's interactive API documentation is available at `http://127.0.0.1:8000/docs` while the server is running.
 

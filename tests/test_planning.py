@@ -31,6 +31,22 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertEqual(result["baseline"]["college"], "dietrich")
         self.assertEqual(result["planner_key"], "stats-ml-major")
 
+    def test_dietrich_baseline_exposes_complete_gened_curriculum(self):
+        result = app.create_baseline(self.shared_request({
+            "type": "current_major",
+            "program": "stats-ml",
+        }))
+        requirements = result["baseline"]["requirements"]
+        self.assertEqual(len(requirements), 14)
+        self.assertEqual(sum(item["units"] for item in requirements), 115)
+        self.assertEqual(
+            {item["group"] for item in requirements},
+            {
+                "foundations", "disciplinary_perspectives",
+                "special_seminars", "experiential_learning",
+            },
+        )
+
     def test_transfer_target_does_not_replace_home_college(self):
         result = app.create_baseline(self.shared_request({
             "type": "internal_transfer",
@@ -78,11 +94,7 @@ class PlanningIntegrationTests(unittest.TestCase):
         result = app.create_plan(request)
         self.assertEqual(result["program_profile"]["minimum_units"], 380)
         self.assertTrue(result["fastest"]["path"])
-        self.assertEqual(result["primary_baseline"]["status"], "replaced_by_transfer")
-        self.assertTrue(all(
-            semester["primary_major_reserved_units"] == 0
-            for semester in result["fastest"]["path"]
-        ))
+        self.assertEqual(result["primary_baseline"]["status"], "verified_curriculum")
         slot_names = {
             slot["name"]
             for semester in result["fastest"]["path"]
@@ -118,6 +130,28 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertEqual(result["goal_type"], "minor")
         self.assertGreater(len(result["fixed_courses"]), 0)
         self.assertGreater(result["profile"]["choice_slots"], 0)
+
+    def test_scs_generic_elective_rules_expand_to_real_course_choices(self):
+        scenarios = [
+            ("artificial-intelligence", "minor", "technical"),
+            ("human-computer-interaction", "minor", "hci-electives"),
+            ("robotics", "minor", "robotics-electives"),
+            ("computer-science", "minor", "cs-electives"),
+            ("computational-biology", "minor", "cb-electives"),
+        ]
+        for program, goal_type, group_id in scenarios:
+            with self.subTest(program=program, goal_type=goal_type):
+                result = app.get_program_profile(program, goal_type)
+                group = next(
+                    item for item in result["requirement_groups"]
+                    if item["id"] == group_id
+                )
+                self.assertGreater(len(group["options"]), 1)
+                self.assertTrue(all(
+                    option == " + ".join(part for part in option.split(" + "))
+                    and all(len(part) == 6 and part[2] == "-" for part in option.split(" + "))
+                    for option in group["options"]
+                ))
 
     def test_all_five_additional_majors_and_minors_generate_plans(self):
         for program in app.programs:
@@ -272,6 +306,26 @@ class PlanningIntegrationTests(unittest.TestCase):
         ids = {course["id"] for course in profile["fixed_courses"]}
         self.assertTrue({"24-101", "24-261", "24-370", "24-452"}.issubset(ids))
         self.assertEqual(profile["minimum_degree_units"], 382)
+
+    def test_logic_and_computation_exposes_verified_major_requirements(self):
+        profile = app.get_primary_major_profile("logic-and-computation")
+        fixed = {course["id"] for course in profile["fixed_courses"]}
+        self.assertTrue({
+            "80-150", "36-200", "15-112", "21-127", "80-310",
+            "80-311", "15-122", "15-150", "80-595",
+        }.issubset(fixed))
+        groups = {group["id"]: group for group in profile["requirement_groups"]}
+        self.assertEqual(groups["intro-logic-choice"]["choose"], 1)
+        self.assertEqual(set(groups["intro-logic-choice"]["options"]), {"80-210", "80-211"})
+        self.assertEqual(groups["advanced-electives"]["choose"], 4)
+        self.assertEqual(profile["minimum_degree_units"], 360)
+
+        directory = app.list_program_directory(
+            college="dietrich", program_type="primary_major"
+        )["programs"]
+        entry = next(item for item in directory if item["name"] == "Logic and Computation")
+        self.assertEqual(entry["current_major_planning_status"], "planning_ready")
+        self.assertEqual(entry["transfer_planning_status"], "directory_only")
 
     def test_robotics_additional_major_has_all_ten_requirements(self):
         profile = app.program_profiles["programs"]["robotics"]["additional_major"]
@@ -540,6 +594,14 @@ class PlanningIntegrationTests(unittest.TestCase):
             block["name"]
             for block in full_blocks
             if block["name"].startswith("AI cluster:")
+        } | {
+            block["name"]
+            for block in result["fastest"]["remaining_program_requirements"]
+            if block["name"].startswith("AI cluster:")
+        } | {
+            group["name"]
+            for group in result["program_profile"]["requirement_groups"]
+            if group["name"].startswith("AI cluster:")
         }
         self.assertEqual(cluster_names, {
             "AI cluster: Cognition and Action",
@@ -635,7 +697,7 @@ class PlanningIntegrationTests(unittest.TestCase):
         )
         self.assertLessEqual(first["total_units"], 52)
 
-    def test_internal_transfer_does_not_schedule_former_major_requirements(self):
+    def test_transfer_eligibility_keeps_current_major_as_backup(self):
         request = self.shared_request({
             "type": "internal_transfer",
             "college": "scs",
@@ -648,7 +710,7 @@ class PlanningIntegrationTests(unittest.TestCase):
             for item in semester["program_requirements"]
             if item.get("scope") == "primary_major"
         }
-        self.assertEqual(primary_slots, set())
+        self.assertTrue(primary_slots)
 
     def test_completed_21_120_is_not_scheduled_again(self):
         request = self.shared_request({
@@ -1053,7 +1115,7 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertIn("TARGET_DEADLINE_NOT_MET", codes)
         self.assertIn("ELIGIBILITY_CHECKPOINT", codes)
 
-    def test_transfer_replaces_unverified_former_major_instead_of_reserving_it(self):
+    def test_transfer_eligibility_reserves_unverified_former_major_as_backup(self):
         request = self.shared_request({
             "type": "internal_transfer",
             "college": "scs",
@@ -1062,10 +1124,10 @@ class PlanningIntegrationTests(unittest.TestCase):
         request.student.primary_major = "economics--b-a"
         result = app.create_plan(request)
         codes = {warning["code"] for warning in result["planning_warnings"]}
-        self.assertNotIn("PRIMARY_CURRICULUM_ESTIMATED", codes)
-        self.assertEqual(result["primary_baseline"]["status"], "replaced_by_transfer")
-        self.assertTrue(all(
-            semester["primary_major_reserved_units"] == 0
+        self.assertIn("PRIMARY_CURRICULUM_ESTIMATED", codes)
+        self.assertEqual(result["primary_baseline"]["status"], "fallback_template")
+        self.assertTrue(any(
+            semester["primary_major_reserved_units"] > 0
             for semester in result["fastest"]["path"]
         ))
 
@@ -1278,6 +1340,26 @@ class PlanningIntegrationTests(unittest.TestCase):
                     {group["name"] for group in profile["requirement_groups"]},
                     group_names,
                 )
+                self.assertEqual(result["transfer_planning"]["policy"]["policy_status"], "official_verified")
+                self.assertTrue(result["transfer_planning"]["policy"]["source_url"])
+
+    def test_scs_transfer_scheduler_adds_prerequisites_as_preparation(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "robotics",
+        })
+        request.constraints.target_completion_year = 4
+        result = app.create_plan(request)
+        scheduled = {
+            course_id
+            for semester in result["fastest"]["path"]
+            for course_id in semester["courses"]
+        }
+        self.assertIn("15-112", scheduled)
+        self.assertIn("15-150", scheduled)
+        self.assertNotIn("15-112", result["program_profile"]["required_course_ids"])
+        self.assertEqual(result["degree_audits"]["selected_goal"]["total_requirements"], 6)
 
     def test_every_ready_primary_major_has_a_current_major_audit(self):
         directory = app.list_program_directory(program_type="primary_major")["programs"]
@@ -1364,7 +1446,10 @@ class PlanningIntegrationTests(unittest.TestCase):
         }
         response.raise_for_status.return_value = None
 
-        with patch.dict(os.environ, {"OPENAI_API_KEY": "test-key"}, clear=False):
+        with patch.dict(os.environ, {
+            "OPENAI_API_KEY": "test-key",
+            "TRANSFER_ADVISOR_PROVIDER": "openai",
+        }, clear=False):
             with patch.object(application.requests, "post", return_value=response) as post:
                 self.assertEqual(app.transfer_advice(request), expected)
 
@@ -1386,10 +1471,67 @@ class PlanningIntegrationTests(unittest.TestCase):
             "college": "scs",
             "program": "computer-science",
         })
-        with patch.dict(os.environ, {}, clear=True):
+        with patch.dict(os.environ, {"TRANSFER_ADVISOR_PROVIDER": "openai"}, clear=True):
             with self.assertRaises(HTTPException) as raised:
                 app.transfer_advice(request)
         self.assertEqual(raised.exception.status_code, 503)
+
+    def test_transfer_advice_reports_quota_error_without_leaking_key(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        response = Mock()
+        response.status_code = 429
+        response.json.return_value = {
+            "error": {"message": "Quota exceeded for sk-private-test"}
+        }
+        response.raise_for_status.side_effect = application.requests.HTTPError(
+            response=response
+        )
+        with patch.dict(os.environ, {
+            "OPENAI_API_KEY": "sk-private-test",
+            "TRANSFER_ADVISOR_PROVIDER": "openai",
+        }, clear=False):
+            with patch.object(application.requests, "post", return_value=response):
+                with self.assertRaises(HTTPException) as raised:
+                    app.transfer_advice(request)
+        self.assertEqual(raised.exception.status_code, 502)
+        self.assertIn("quota", raised.exception.detail.lower())
+        self.assertNotIn("sk-private-test", raised.exception.detail)
+
+    def test_transfer_advice_uses_free_local_model_without_openai_key(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        expected = {
+            "recommendation": "Continue with advisor confirmation.",
+            "feasibility": "The verified plan is feasible.",
+            "opportunity_cost": "Some elective space is used.",
+            "backup_strength": "The primary major remains represented.",
+            "key_risks": ["Transfer admission is not guaranteed."],
+            "next_steps": ["Confirm the current policy."],
+            "summary": "Local analysis of verified app data.",
+        }
+        response = Mock()
+        response.json.return_value = {
+            "message": {"content": json.dumps(expected)}
+        }
+        response.raise_for_status.return_value = None
+        with patch.dict(os.environ, {}, clear=True):
+            with patch.object(application.requests, "post", return_value=response) as post:
+                self.assertEqual(app.transfer_advice(request), expected)
+
+        self.assertEqual(
+            post.call_args.args[0], "http://127.0.0.1:11434/api/chat"
+        )
+        options = post.call_args.kwargs
+        self.assertEqual(options["json"]["model"], "qwen3:1.7b")
+        self.assertEqual(options["json"]["format"], app.TRANSFER_ADVICE_SCHEMA)
+        self.assertNotIn("headers", options)
 
 
 if __name__ == "__main__":

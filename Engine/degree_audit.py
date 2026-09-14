@@ -61,6 +61,16 @@ MAJOR_BASELINES = {
             "with named core courses and explicit choice groups."
         ),
     },
+    "logic-and-computation": {
+        "name": "Logic and Computation verified curriculum",
+        "units": 0,
+        "status": "verified_curriculum",
+        "note": (
+            "The 2026–27 Logic and Computation formal-systems, logic, "
+            "computer-science, advanced-elective, and senior-thesis "
+            "requirements are represented directly."
+        ),
+    },
 }
 
 
@@ -145,7 +155,7 @@ def build_degree_audits(
         "minimum_degree_units": (primary_curriculum or {}).get("minimum_degree_units"),
     }
 
-    if goal.type == "internal_transfer":
+    if goal.type == "internal_transfer" and goal.include_post_transfer_plan:
         primary.update({
             "status": "replaced_by_transfer",
             "planned_primary_units": 0,
@@ -179,7 +189,16 @@ def build_degree_audits(
         }
     else:
         total = profile.get("minimum_courses", 0)
-        remaining = len(path_result.get("remaining", [])) + len(
+        official_fixed = set(profile.get("required_course_ids", []))
+        remaining_fixed = path_result.get("remaining", [])
+        if official_fixed:
+            # Preparation such as 15-112 belongs on the schedule but is not
+            # one of an SCS program's six admission-course requirements.
+            remaining_fixed = [
+                course_id for course_id in remaining_fixed
+                if course_id in official_fixed
+            ]
+        remaining = len(remaining_fixed) + len(
             path_result.get("remaining_program_requirements", [])
         )
         placed = max(0, total - remaining)

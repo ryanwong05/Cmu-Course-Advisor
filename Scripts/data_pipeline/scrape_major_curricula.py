@@ -40,7 +40,8 @@ NUMBER_WORDS = {
 }
 IGNORE_HEADINGS = (
     "sample schedule", "suggested schedule", "example schedule",
-    "four-year plan", "course descriptions", "summary of degree",
+    "four-year plan", "sample curricula", "sample curriculum",
+    "course descriptions", "summary of degree",
 )
 
 

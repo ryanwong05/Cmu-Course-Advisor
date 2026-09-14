@@ -48,6 +48,7 @@ PLANNING_IDS = {
     "computer-science": "computer-science",
     "human-computer-interaction": "human-computer-interaction",
     "robotics": "robotics",
+    "logic-and-computation": "logic-and-computation",
 }
 
 
