@@ -1,0 +1,64 @@
+{
+  "elective_category_prefixes": {
+    "math": ["21"],
+    "humanities": ["76", "79", "80", "82"],
+    "social-sciences": ["73", "79", "84", "85", "88"],
+    "data-analysis": ["05", "10", "36"]
+  },
+
+  "program_elective_prefixes": {
+    "stats-ml": ["10", "15", "21", "36"],
+    "mechanical-engineering": ["24"],
+    "electrical-and-computer-engineering": ["18"],
+    "computer-science": ["15"],
+    "information-systems": ["67"],
+    "computer-science-and-arts": ["15", "52"]
+  },
+
+  "general_education_prefixes": [
+    "76",
+    "79",
+    "80",
+    "82",
+    "84",
+    "85",
+    "88"
+  ],
+
+  "communication_courses": [
+    "76-101",
+    "76-102",
+    "76-106",
+    "76-107",
+    "76-108"
+  ],
+
+  "math_equivalency_groups": {
+    "21-111": "calculus_sequence",
+    "21-112": "calculus_sequence",
+    "21-120": "calculus_sequence",
+
+    "21-256": "multivariable_calculus",
+    "21-259": "multivariable_calculus",
+    "21-266": "multivariable_calculus",
+    "21-268": "multivariable_calculus",
+
+    "21-240": "linear_algebra",
+    "21-241": "linear_algebra",
+    "21-242": "linear_algebra"
+  },
+
+  
+  "named_course_sets": {
+    "scs_undergraduate": {
+      "department_prefixes": ["02", "05", "07", "10", "11", "15", "16", "17"],
+      "maximum_course_number": 599
+    },
+
+    "meche_undergraduate": {
+      "department_prefixes": ["24"],
+      "maximum_course_number": 599
+    }
+  }
+
+}

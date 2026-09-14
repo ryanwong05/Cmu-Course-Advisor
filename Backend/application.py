@@ -6,6 +6,14 @@ from contextlib import closing
 from pathlib import Path
 from typing import Literal, Union
 
+# json       → 读 JSON
+# os         → 环境变量，例如 OpenAI API key
+# re         → 正则表达式，识别 15-122 / 15-3xx
+# sqlite3    → 查课程数据库
+# closing    → 自动关闭 DB connection
+# Path       → 文件路径
+# Literal    → Pydantic 类型限制
+
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
@@ -21,11 +29,18 @@ from Engine.baseline import (
 )
 from Engine.degree_audit import build_degree_audits, primary_baseline_for
 
+# Backend/application.py
+#         ↓
+# Engine/planning.py
 
+# Main FastAPI application.
+# This object registers all backend API routes and hosts the frontend.
 app = FastAPI(
     title="CMU Path API",
     description="Course-planning API and frontend host for CMU Path.",
 )
+
+# Repo Root
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "Data" / "processed"
 STATIC_DIR = PROJECT_ROOT / "static"
@@ -50,42 +65,149 @@ INTENSITY_LABELS = {
 }
 
 
+# 从 SQLite 的历史 FCE 数据里计算每门课平均每周 workload。
 def load_fce_course_averages():
-    """Aggregate historical FCE workload once for fast course rendering."""
+    """
+    预先计算每门课程的历史 FCE 工作量统计。
+
+    返回：
+        一个字典，格式类似：
+        {
+            "15-112": {
+                "hours_per_week": 平均每周投入小时数,
+                "responses": FCE 样本数量
+            }
+        }
+
+    这个函数只在程序启动时运行一次，
+    这样之后每次 API 请求就不需要重复查询 SQLite 数据库。
+    """
     with closing(sqlite3.connect(DATA_DIR / "courses.sqlite")) as connection:
         return {
-            course_id: {"hours_per_week": hours, "responses": responses}
+            course_id: {
+                "hours_per_week": hours,
+                "responses": responses
+            }
             for course_id, hours, responses in connection.execute(
                 """
-                select canonical_course_id, avg(hrs_per_week), count(hrs_per_week)
+                select canonical_course_id,
+                       avg(hrs_per_week),
+                       count(hrs_per_week)
                 from fce_courses
-                where hrs_per_week is not null and hrs_per_week > 0
+                where hrs_per_week is not null
+                  and hrs_per_week > 0
                 group by canonical_course_id
                 """
             )
         }
 
-
 fce_course_averages = load_fce_course_averages()
 
-
+# 计算课程难度 - 目前问题 标准不统一
 def five_level_course_metric(course_id: str, units: float = 9):
-    """Return an explainable five-level workload+difficulty estimate."""
+    """
+    为一门课程生成 1 到 5 级的课程强度评分。
+
+    这个评分综合考虑：
+    1. 每周预计投入时间 workload
+    2. 课程本身的 difficulty
+    3. 数据来源是否来自人工整理、FCE 历史数据，或估算
+
+    参数：
+        course_id:
+            CMU 课程编号，例如 "15-112"。
+
+        units:
+            课程学分数。如果没有更好的数据，会用 units / 3
+            作为每周工作时间的基础估算。
+
+    返回：
+        一个包含课程强度信息的字典，例如：
+        {
+            "tier": 4,
+            "label": "Heavy",
+            "score": 3.8,
+            "workload": 4.0,
+            "difficulty": 3.6,
+            "hours_per_week": 12.0,
+            "source": "historical_fce",
+            "sample_size": 200
+        }
+    """
+
+    # 先尝试读取人工整理或预处理后的课程指标。
     curated = course_metrics.get(course_id)
+
+    # 同时读取该课程的历史 FCE 平均工作量。
     fce = fce_course_averages.get(course_id)
+
+    # 从课程编号中估计课程层级。
+    # 例如：
+    # "15-112" -> 1
+    # "15-351" -> 3
+    # "16-450" -> 4
     level = int(course_id.split("-")[1][0]) if "-" in course_id else 1
+
     if curated:
+        # 如果存在人工整理的数据，优先使用这些数据。
         hours = float(curated.get("hours_per_week", units / 3))
         workload = float(curated.get("workload", 3))
         difficulty = float(curated.get("difficulty", workload))
-        source = curated.get("source_status", "curated_estimate")
+
+        # 记录该评分的数据来源。
+        source = curated.get("source", "curated_estimate")
+
     else:
-        hours = float(fce["hours_per_week"] if fce else units / 3)
-        workload = max(1, min(5, 1 + (hours - 3) / 3))
-        difficulty = max(1, min(5, 1.7 + level * .45 + max(0, hours - 8) * .08))
-        source = "historical_fce" if fce else "units_and_course_level_estimate"
+        # 如果没有人工整理的数据，
+        # 优先使用 FCE 历史 workload；
+        # 如果连 FCE 都没有，就使用 units / 3 做估算。
+        hours = float(
+            fce["hours_per_week"]
+            if fce
+            else units / 3
+        )
+
+        # 根据每周投入时间估算 workload，限制在 1~5 之间。
+        workload = max(
+            1,
+            min(
+                5,
+                1 + (hours - 3) / 3
+            )
+        )
+
+        # 根据课程 level 和 workload 估算 difficulty。
+        # 高年级课程默认更难；
+        # 如果每周工作时间超过 8 小时，也会额外增加 difficulty。
+        difficulty = max(
+            1,
+            min(
+                5,
+                1.7
+                + level * 0.45
+                + max(0, hours - 8) * 0.08
+            )
+        )
+
+        # 标记这次估算的数据来源。
+        source = (
+            "historical_fce"
+            if fce
+            else "units_and_course_level_estimate"
+        )
+
+    # 综合 workload 和 difficulty 得到最终强度分数。
     composite = (workload + difficulty) / 2
-    tier = 1 if composite < 1.8 else 2 if composite < 2.6 else 3 if composite < 3.4 else 4 if composite < 4.2 else 5
+
+    # 把连续分数转换成 1~5 五个强度等级。
+    tier = (
+        1 if composite < 1.8
+        else 2 if composite < 2.6
+        else 3 if composite < 3.4
+        else 4 if composite < 4.2
+        else 5
+    )
+
     return {
         "tier": tier,
         "label": INTENSITY_LABELS[tier],
@@ -97,100 +219,87 @@ def five_level_course_metric(course_id: str, units: float = 9):
         "sample_size": (fce or {}).get("responses", 0),
     }
 
-ELECTIVE_CATEGORY_PREFIXES = {
-    "math": ("21",),
-    "humanities": ("76", "79", "80", "82"),
-    "social-sciences": ("73", "79", "84", "85", "88"),
-    "data-analysis": ("05", "10", "36"),
-}
-PROGRAM_ELECTIVE_PREFIXES = {
-    "stats-ml": ("10", "15", "21", "36"),
-    "mechanical-engineering": ("24",),
-    "electrical-and-computer-engineering": ("18",),
-    "computer-science": ("15",),
-    "information-systems": ("67",),
-    "computer-science-and-arts": ("15", "52"),
-}
-GENERAL_EDUCATION_PREFIXES = ("76", "79", "80", "82", "84", "85", "88")
-COMMUNICATION_COURSES = ["76-101", "76-102", "76-106", "76-107", "76-108"]
-STATS_ML_MATH_GROUPS = {
-    "21-111": "Calculus sequence", "21-112": "Calculus sequence",
-    "21-120": "Calculus sequence",
-    "21-256": "Multivariable calculus", "21-259": "Multivariable calculus",
-    "21-266": "Multivariable calculus", "21-268": "Multivariable calculus",
-    "21-240": "Linear algebra", "21-241": "Linear algebra",
-    "21-242": "Linear algebra",
-}
+# 从 Data/policies 加载 elective 候选筛选规则。
+# Backend 不保存具体学术政策，只读取结构化 policy data。
+# 这些 prefix / course groups 仅用于生成候选课程，
+# 不代表课程一定满足官方 requirement。
+POLICY_DIR = PROJECT_ROOT / "Data" / "policies"
 
-# Official 2026-27 Statistics & Machine Learning sample path. Choice groups use
-# one representative default here; the UI exposes every published alternative.
-STATS_ML_STANDARD_PATH = requirements["stats-ml-major"]["required_courses"]
-STATS_ML_CHOICE_COURSES = list(dict.fromkeys(
-    option
-    for group in requirements["stats-ml-major"]["requirement_groups"]
-    for raw_option in group.get("options", [])
-    for option in raw_option.split(" + ")
-))
-MECHE_STANDARD_PATH = requirements["mechanical-engineering-major"]["required_courses"]
-MECHE_CHOICE_COURSES = list(dict.fromkeys(
-    option
-    for group in requirements["mechanical-engineering-major"]["requirement_groups"]
-    for raw_option in group.get("options", [])
-    for option in raw_option.split(" + ")
-    if re.fullmatch(r"\d{2}-\d{3}", option)
-))
-ROBOTICS_ADDITIONAL_COURSES = [
-    "16-450",
-    *[
-        option
-        for group in program_profiles["programs"]["robotics"]["additional_major"]["requirement_groups"]
-        for raw_option in group.get("options", [])
-        for option in raw_option.split(" + ")
-        if re.fullmatch(r"\d{2}-\d{3}", option)
-    ],
-]
-IS_MINOR_COURSES = [
-    "67-240", "67-250", "67-262", "15-112", "02-120",
-    "67-206", "67-220", "67-265", "67-306", "67-336",
-    "67-342", "67-347", "67-348", "67-364", "67-368",
-]
-STATS_ML_PREREQUISITES = {
-    "36-202": ["36-200"],
-    "21-256": ["21-120"],
-    "36-235": ["21-120"],
-    "36-236": ["36-235"],
-    "21-241": [],
-    "36-350": ["36-202"],
-    "10-301": ["15-122", "36-235"],
-    "36-401": ["21-241", "36-202", "36-236"],
-    "36-402": ["36-401"],
-    "15-351": ["15-122", "21-127"],
-    "21-122": ["21-120"],
-    "24-221": ["24-101", "21-122", "33-141"],
-    "24-231": ["21-122", "33-141"],
-    "24-261": ["24-101", "21-122", "33-141"],
-    "24-262": ["24-261"],
-    "21-254": ["21-122"],
-    "21-260": ["21-122"],
-    "24-321": ["24-231"],
-    "24-322": ["24-221"],
-    "24-351": ["24-101"],
-    "24-352": ["24-351", "21-260"],
-    "24-370": ["24-203", "24-262"],
-    "24-452": ["24-321", "24-352"],
-    "16-450": ["16-280"],
-}
-STATS_ML_MINIMUM_YEAR = {
-    "36-235": 2, "36-236": 2, "36-350": 2,
-    "10-301": 3, "36-401": 3, "36-402": 3, "15-351": 3,
-    "24-221": 2, "24-231": 2, "24-261": 2, "24-262": 2,
-    "21-254": 2, "21-260": 2, "24-203": 2, "24-251": 2,
-    "24-302": 3, "24-311": 3, "24-321": 3, "24-322": 3,
-    "24-351": 3, "24-352": 3, "24-370": 3, "36-220": 3,
-    "24-441": 4, "24-452": 4, "24-671": 4, "16-450": 4,
-    "80-310": 2, "80-311": 3, "80-595": 4,
-}
+elective_rules = load_json(POLICY_DIR / "elective_rules.json")
 
+ELECTIVE_CATEGORY_PREFIXES = elective_rules["elective_category_prefixes"]
+PROGRAM_ELECTIVE_PREFIXES = elective_rules["program_elective_prefixes"]
+GENERAL_EDUCATION_PREFIXES = tuple(elective_rules["general_education_prefixes"])
+COMMUNICATION_COURSES = elective_rules["communication_courses"]
+MATH_EQUIVALENCY_GROUPS = elective_rules["math_equivalency_groups"]
+NAMED_COURSE_SETS = elective_rules["named_course_sets"]
+COURSE_COMPLETION_IMPLICATIONS = load_json(POLICY_DIR / "completion_implications.json")
+course_progression_rules = load_json(POLICY_DIR / "course_progression_rules.json")
+CURATED_PREREQUISITES = course_progression_rules["prerequisites"]
+COURSE_RECOMMENDED_EARLIEST_YEAR = course_progression_rules["recommended_earliest_year"]
+# 兼容旧测试 / 旧调用。
+# 数据本身仍然只有一个 source of truth：
+# Data/policies/course_progression_rules.json
+STATS_ML_PREREQUISITES = CURATED_PREREQUISITES
+# Backward-compatibility alias.
+# TODO: Remove after tests and internal callers fully migrate to the universal name.
+STATS_ML_MATH_GROUPS = MATH_EQUIVALENCY_GROUPS
+
+def extract_course_ids_from_requirement_profile(profile: dict) -> list[str]:
+    """
+    从任意 requirement profile 中提取明确出现的 CMU 课程编号。
+
+    支持：
+    - required_courses
+    - required_course_ids
+    - requirement_groups 中的 options
+    - "15-122 + 21-127" 这种组合课程要求
+
+    只提取形如 XX-XXX 的具体课程编号，
+    不会把 "15-3xx"、"Approved elective" 这类抽象规则当成具体课程。
+    """
+    course_ids = set()
+
+    course_ids.update(profile.get("required_courses", []))
+    course_ids.update(profile.get("required_course_ids", []))
+
+    for group in profile.get("requirement_groups", []):
+        for raw_option in group.get("options", []):
+            for option in raw_option.split(" + "):
+                if re.fullmatch(r"\d{2}-\d{3}", option):
+                    course_ids.add(option)
+
+                elif re.fullmatch(r"\d{2}-\dxx", option, re.IGNORECASE):
+                    course_ids.update(
+                        courses_matching_pattern(option)
+                    )
+
+    return sorted(course_ids)
+
+def all_requirement_course_ids() -> list[str]:
+    """
+    收集系统中所有已配置专业、转专业、additional major 和 minor
+    requirement profile 引用的具体课程。
+
+    这样新增专业时，只需要更新 Data 层，
+    不再需要在 application.py 中新增专业专属课程列表。
+    """
+    course_ids = set()
+
+    # Primary-major requirements
+    for requirement in requirements.values():
+        course_ids.update(
+            extract_course_ids_from_requirement_profile(requirement)
+        )
+
+    # Transfer / additional-major / minor profiles
+    for profiles_by_type in program_profiles["programs"].values():
+        for profile in profiles_by_type.values():
+            course_ids.update(
+                extract_course_ids_from_requirement_profile(profile)
+            )
+
+    return sorted(course_ids)
 
 def hydrate_scheduled_courses(course_list: list[dict], course_ids: list[str]):
     """Add selected scheduled courses from SQLite to the small planning graph."""
@@ -207,7 +316,11 @@ def hydrate_scheduled_courses(course_list: list[dict], course_ids: list[str]):
             course_ids,
         ).fetchall()
     for course_id, title, units, offered in rows:
-        schedule_terms = sorted(set((offered or "").split(",")) - {""})
+        schedule_terms = sorted(
+            term
+            for term in (offered or "").split(",")
+            if term
+        )
         units = units if units is not None else 9
         if course_id in existing:
             # The SQLite schedule is the current source of truth for offering
@@ -218,91 +331,138 @@ def hydrate_scheduled_courses(course_list: list[dict], course_ids: list[str]):
             "id": course_id,
             "name": title,
             "units": int(units) if float(units).is_integer() else units,
-            "prerequisites": STATS_ML_PREREQUISITES.get(course_id, []),
+
+            # 当前课程已知的 prerequisite。
+            "prerequisites": CURATED_PREREQUISITES.get(course_id, []),
+
+            # 标记 prerequisite 数据是否已经被我们验证/整理。
             "prerequisite_data_status": (
                 "curated_mapping"
-                if course_id in STATS_ML_PREREQUISITES
+                if course_id in CURATED_PREREQUISITES
                 else "catalog_not_imported"
             ),
+
+            # SQLite 中的实际开课学期。
             "offered": schedule_terms,
-            "minimum_year": STATS_ML_MINIMUM_YEAR.get(course_id, 1),
+
+            # 暂时保留旧字段名 minimum_year，
+            # 避免现有 Engine / tests 因字段名变化而失效。
+            "minimum_year": COURSE_RECOMMENDED_EARLIEST_YEAR.get(
+                course_id,
+                1
+            ),
+
             "source": "processed_schedule_sqlite",
         })
 
+def courses_matching_pattern(option: str) -> list[str]:
+    """
+    将类似 "16-3xx"、"24-4xx" 这样的课程模式，
+    自动展开为数据库中实际存在的具体课程编号。
 
-hydrate_scheduled_courses(courses, STATS_ML_STANDARD_PATH + STATS_ML_CHOICE_COURSES)
-hydrate_scheduled_courses(courses, IS_MINOR_COURSES)
-hydrate_scheduled_courses(courses, MECHE_STANDARD_PATH + MECHE_CHOICE_COURSES)
-hydrate_scheduled_courses(courses, ROBOTICS_ADDITIONAL_COURSES)
+    例如：
+        "16-3xx"
+        -> 所有 16-300 到 16-399 范围内实际存在的课程
+    """
+    match = re.fullmatch(r"(\d{2})-(\d)xx", option, re.IGNORECASE)
 
-# Keep the planning catalog synchronized with every concrete course referenced
-# by a verified requirement profile. Previously only a few hand-maintained
-# majors were hydrated, leaving valid dropdown choices without units, offering
-# terms, or workload data.
-_referenced_requirement_courses = set()
-for _requirement in requirements.values():
-    _referenced_requirement_courses.update(_requirement.get("required_courses", []))
-    for _group in _requirement.get("requirement_groups", []):
-        for _raw_option in _group.get("options", []):
-            _referenced_requirement_courses.update(
-                _course_id for _course_id in _raw_option.split(" + ")
-                if re.fullmatch(r"\d{2}-\d{3}", _course_id)
-            )
-for _program_profiles in program_profiles["programs"].values():
-    for _profile in _program_profiles.values():
-        _referenced_requirement_courses.update(_profile.get("required_course_ids", []))
-        for _group in _profile.get("requirement_groups", []):
-            for _raw_option in _group.get("options", []):
-                _referenced_requirement_courses.update(
-                    _course_id for _course_id in _raw_option.split(" + ")
-                    if re.fullmatch(r"\d{2}-\d{3}", _course_id)
-                )
-hydrate_scheduled_courses(courses, sorted(_referenced_requirement_courses))
+    if not match:
+        return []
 
-with closing(sqlite3.connect(DATA_DIR / "courses.sqlite")) as _connection:
-    _robotics_elective_ids = [
-        row[0] for row in _connection.execute(
+    prefix, level = match.groups()
+
+    with closing(sqlite3.connect(DATA_DIR / "courses.sqlite")) as connection:
+        rows = connection.execute(
             """
-            select distinct canonical_course_id from courses
-            where canonical_course_id glob '16-[34][0-9][0-9]'
-            """
+            select distinct canonical_course_id
+            from courses
+            where substr(canonical_course_id, 1, 2) = ?
+              and substr(canonical_course_id, 4, 1) = ?
+            """,
+            (prefix, level),
         ).fetchall()
-    ]
-    _scs_undergraduate_ids = [
-        row[0] for row in _connection.execute(
-            """
-            select distinct canonical_course_id from courses
-            where substr(canonical_course_id, 1, 2) in
-                  ('02','05','07','10','11','15','16','17')
-              and cast(substr(canonical_course_id, 4, 3) as integer) < 600
-            """
+
+    return [row[0] for row in rows]
+
+def courses_from_named_set(set_id: str) -> list[str]:
+    """
+    根据 elective_rules.json 中定义的 named course set，
+    从课程数据库中返回所有符合规则的课程编号。
+
+    例如：
+        "scs_undergraduate"
+        -> 所有指定 SCS department prefix 下、课程号 <= 599 的课程
+
+    这样新增新的课程集合时，只需要修改 Data/policies/elective_rules.json，
+    不需要再在 application.py 中新增专属 SQL。
+    """
+    rule = NAMED_COURSE_SETS.get(set_id)
+
+    if not rule:
+        return []
+
+    prefixes = rule.get("department_prefixes", [])
+    maximum_course_number = rule.get("maximum_course_number")
+
+    if not prefixes:
+        return []
+
+    placeholders = ",".join("?" for _ in prefixes)
+
+    query = f"""
+        select distinct canonical_course_id
+        from courses
+        where substr(canonical_course_id, 1, 2) in ({placeholders})
+    """
+
+    parameters = list(prefixes)
+
+    if maximum_course_number is not None:
+        query += """
+            and cast(substr(canonical_course_id, 4, 3) as integer) <= ?
+        """
+        parameters.append(maximum_course_number)
+
+    with closing(sqlite3.connect(DATA_DIR / "courses.sqlite")) as connection:
+        rows = connection.execute(
+            query,
+            parameters,
         ).fetchall()
-    ]
-hydrate_scheduled_courses(courses, _robotics_elective_ids)
-hydrate_scheduled_courses(courses, _scs_undergraduate_ids)
+
+    return [row[0] for row in rows]
+# 补全所有 requirement profile 中实际引用到的课程。
+# 新增专业、转专业、additional major 或 minor 时，
+# 只需要更新 Data 层，不再需要在这里新增专属课程列表。
+hydrate_scheduled_courses(
+    courses,
+    all_requirement_course_ids()
+)
+ 
+# 自动加载 Data/policies/elective_rules.json 中定义的所有课程集合。
+# 新增新的 named course set 时，不需要再修改 application.py。
+for set_id in NAMED_COURSE_SETS:
+    hydrate_scheduled_courses(
+        courses,
+        courses_from_named_set(set_id)
+    )
+
+
+# 为没有 workload 数据的课程补充低置信度默认指标。
+# 这些值只是 fallback estimate，不应该和真实 FCE / curated 数据等价展示。
 for _course in courses:
-    course_metrics.setdefault(_course["id"], {
-        "hours_per_week": round(_course["units"] / 3, 1),
-        "workload": 3.0,
-        "difficulty": 3.0,
-        "stress": 3.0,
-        "intensity": "standard",
-        "source": "unit_based_estimate",
-    })
+    course_metrics.setdefault(
+        _course["id"],
+        {
+            "hours_per_week": round(_course["units"] / 3, 1),
+            "workload": 3.0,
+            "difficulty": 3.0,
+            "stress": 3.0,
+            "intensity": "standard",
+            "source": "unit_based_estimate",
+            "confidence": "low",
+        },
+    )
 
-
-# Completing a later course in a strict sequence is evidence that the earlier
-# course requirement has already been met, whether by CMU coursework,
-# transfer/advanced credit, or an approved placement decision.  Keep this
-# deliberately small and evidence-based; it is not a general "guess credits"
-# system.
-COURSE_COMPLETION_IMPLICATIONS = {
-    "21-122": ["21-120"],
-    "15-122": ["15-112"],
-    "15-210": ["15-150", "21-127"],
-    "15-213": ["15-122"],
-    "15-251": ["15-150", "21-127"],
-}
 
 
 def expand_completed_courses(course_ids: list[str]) -> list[str]:
@@ -973,7 +1133,7 @@ def list_electives(
         )
         parameters.extend(COMMUNICATION_COURSES)
     elif category == "stats-ml-math":
-        allowed = list(STATS_ML_MATH_GROUPS)
+        allowed = list(MATH_EQUIVALENCY_GROUPS)
         where.append(
             f"canonical_course_id in ({','.join('?' for _ in allowed)})"
         )
@@ -1003,7 +1163,7 @@ def list_electives(
             "term": term,
             "sections": section_count,
             "level": int(course_id.split("-")[1][0]) * 100,
-            "requirement_group": STATS_ML_MATH_GROUPS.get(course_id),
+            "requirement_group": MATH_EQUIVALENCY_GROUPS.get(course_id),
             "minimum_year": planning_course_by_id.get(course_id, {}).get(
                 "minimum_year", 1
             ),
@@ -1014,7 +1174,7 @@ def list_electives(
                 course_id, {}
             ).get("prerequisite_data_status", "catalog_not_imported"),
             "description": (
-                (f"{STATS_ML_MATH_GROUPS[course_id]} · " if course_id in STATS_ML_MATH_GROUPS else "")
+                (f"{MATH_EQUIVALENCY_GROUPS[course_id]} · " if course_id in MATH_EQUIVALENCY_GROUPS else "")
                 + f"{units:g} units · Offered {term.title()} 2026 · "
                 f"{section_count} scheduled section{'s' if section_count != 1 else ''}."
             ),
