@@ -1,0 +1,134 @@
+{
+  "eligibility_profiles": {
+    "stats-ml": {
+      "minimum_courses": 0,
+      "minimum_units": 0,
+      "required_course_ids": [],
+      "requirement_groups": [],
+      "minimum_overall_gpa": null,
+      "capacity_limited": true,
+      "application_timing": "Confirm the applicable internal-transfer process and deadline with Dietrich College and the Statistics & Data Science advisor.",
+      "eligibility": "No course-only automatic admission rule is encoded. Department and college approval are still required.",
+      "source_id": "stats-ml-transfer",
+      "policy_status": "advisor_confirmation_required"
+    },
+    "mechanical-engineering": {
+      "minimum_courses": 3,
+      "minimum_units": 34,
+      "required_course_ids": ["24-101", "21-120", "33-141"],
+      "requirement_groups": [],
+      "minimum_grade": "C",
+      "minimum_overall_gpa": null,
+      "capacity_limited": true,
+      "application_timing": "After final grades: one-week application window after the fall or spring semester.",
+      "eligibility": "Good academic standing, minimum C in the required courses, advisor meetings, and available space are required for consideration.",
+      "source_id": "engineering-transfer",
+      "policy_status": "official_verified"
+    },
+    "electrical-and-computer-engineering": {
+      "minimum_courses": 4,
+      "minimum_units": 40,
+      "required_course_ids": ["18-100", "21-120"],
+      "requirement_groups": [
+        {
+          "id": "ece-programming-corequisite",
+          "name": "ECE programming co-requisite",
+          "choose": 1,
+          "units": 12,
+          "options": ["15-110", "15-112"]
+        },
+        {
+          "id": "engineering-physics",
+          "name": "Engineering Physics I",
+          "choose": 1,
+          "units": 12,
+          "options": ["33-141", "33-151", "33-121"]
+        }
+      ],
+      "minimum_grade": "C",
+      "minimum_overall_gpa": null,
+      "capacity_limited": true,
+      "application_timing": "After final grades: one-week application window after the fall or spring semester.",
+      "eligibility": "Good academic standing, minimum C in the required courses, advisor meetings, and available space are required for consideration.",
+      "source_id": "engineering-transfer",
+      "policy_status": "official_verified"
+    },
+    "information-systems": {
+      "minimum_courses": 1,
+      "minimum_units": 12,
+      "required_course_ids": [],
+      "requirement_groups": [
+        {
+          "id": "is-programming-admission",
+          "name": "Programming admission requirement",
+          "choose": 1,
+          "units": 12,
+          "options": ["15-112", "02-120"]
+        }
+      ],
+      "minimum_grade": "B (A preferred)",
+      "minimum_overall_gpa": 3.5,
+      "capacity_limited": true,
+      "recommended_courses": ["15-121", "15-122"],
+      "application_timing": "Apply by the last day of classes in the second or third semester; fourth-semester applicants must submit a graduation plan.",
+      "application_milestone": "Submit all application materials by the last day of classes. If admitted, the major change takes effect the following semester.",
+      "application_requirements": [
+        {
+          "name": "Personal statement",
+          "detail": "Prepare a 1–2 page, single-spaced statement connecting your academic and career goals, prior experiences, and interest in Information Systems."
+        },
+        {
+          "name": "IS academic advisor interview",
+          "detail": "Schedule and complete an interview with the appropriate IS academic advisor by the current-semester deadline."
+        },
+        {
+          "name": "Internal-transfer application",
+          "detail": "Submit all application materials no later than the last day of classes in the fall or spring semester."
+        },
+        {
+          "name": "Graduation plan",
+          "detail": "Required only for students applying in their fourth semester."
+        }
+      ],
+      "eligibility": "Competitive admission also considers a personal statement and an interview with an IS academic advisor.",
+      "source_id": "information-systems-transfer",
+      "policy_status": "official_verified"
+    },
+    "computer-science": {
+      "minimum_courses": 6,
+      "minimum_units": 72,
+      "required_course_ids": ["21-127", "15-122", "15-150", "15-210", "15-213", "15-251"],
+      "requirement_groups": [],
+      "preparation_courses": ["15-112"],
+      "minimum_core_gpa": 3.6,
+      "minimum_overall_gpa": 3.0,
+      "capacity_limited": true,
+      "application_timing": "Apply by the mid-semester deadline when the last required course is completed or in progress.",
+      "eligibility": "The committee also considers the required essay, computing involvement, academic performance, and available space.",
+      "source_id": "computer-science-transfer",
+      "policy_status": "official_verified"
+    }
+  },
+  "scs_transfer": {
+    "programs": [
+      "artificial-intelligence",
+      "computational-biology",
+      "computer-science",
+      "human-computer-interaction",
+      "robotics"
+    ],
+    "defaults": {
+      "minimum_core_gpa": 3.6,
+      "minimum_overall_gpa": 3.0,
+      "capacity_limited": true,
+      "application_timing": "Apply by the mid-semester deadline in the semester when the final required course is completed or in progress.",
+      "application_milestone": "Submit the SCS transfer application by the published mid-semester deadline; in-progress required courses are evaluated using midterm grades.",
+      "source_id": "scs-transfer",
+      "policy_status": "official_verified"
+    }
+  },
+  "post_transfer_plan_programs": [
+    "information-systems",
+    "electrical-and-computer-engineering"
+  ]
+}

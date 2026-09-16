@@ -12,7 +12,7 @@
     "requirement_groups": [
       {"id":"calculus","name":"Calculus foundation","choose":1,"units":10,"options":["21-120","21-111 + 21-112"],"minimum_year":1},
       {"id":"multivariable","name":"Multivariable calculus","choose":1,"units":9,"options":["21-256","21-259","21-266","21-268"],"minimum_year":2},
-      {"id":"linear-algebra","name":"Linear algebra","choose":1,"units":10,"options":["21-240","21-241","21-242"],"minimum_year":2},
+      {"id":"linear-algebra","name":"Linear algebra","choose":1,"units":10,"options":["21-240","21-241","21-242"],"preferred_options":["21-241"],"minimum_year":2},
       {"id":"beginning-data","name":"Beginning Data Analysis","choose":1,"units":9,"options":["36-200","36-220"],"minimum_year":1},
       {"id":"intermediate-data","name":"Intermediate Data Analysis · Sequence 1","choose":1,"units":9,"options":["36-202","36-290","36-303","36-309","36-315"],"minimum_year":1},
       {"id":"advanced-data","name":"Advanced Data Analysis elective","choose":2,"units":18,"options":["36-311","36-313","36-318","36-396","36-460","36-461","36-462","36-463","36-464","36-465","36-466","36-467","36-468","36-469","36-470","36-471","36-472","36-473","36-490","36-493","36-497"],"minimum_year":3},
@@ -47,8 +47,8 @@
       {"id":"chemistry","name":"Chemistry","choose":1,"units":10,"options":["09-105","09-111"],"minimum_year":1},
       {"id":"capstone","name":"Mechanical Engineering capstone","choose":1,"units":12,"options":["24-441","24-671"],"minimum_year":4},
       {"id":"meche-technical-elective","name":"Mechanical Engineering technical elective","choose":1,"units":9,"options":["24-3xx","24-4xx"],"minimum_year":4},
-      {"id":"general-education","name":"Engineering General Education course","choose":5,"units":45,"options":["Approved Engineering GenEd"],"minimum_year":1},
-      {"id":"free-electives","name":"Free elective","choose":4,"units":36,"options":["Approved undergraduate elective"],"minimum_year":3}
+      {"id":"general-education","name":"Engineering General Education course","choose":5,"units":45,"options":["named_set:engineering_gen_ed_candidates"],"minimum_year":1},
+      {"id":"free-electives","name":"Free elective","choose":4,"units":36,"options":["named_set:undergraduate_elective_candidates"],"minimum_year":3}
     ],
     "notes": [
       "The official recommended sequence totals at least 382 units.",

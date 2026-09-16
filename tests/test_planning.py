@@ -1024,6 +1024,43 @@ class PlanningIntegrationTests(unittest.TestCase):
         )
         self.assertEqual(linear_algebra["default_option"], "21-241")
 
+    def test_universal_primary_requirement_option_resolver(self):
+        self.assertEqual(
+            application.resolve_requirement_option("15-122"),
+            ["15-122"],
+        )
+        self.assertEqual(
+            application.resolve_requirement_option("21-111 + 21-112"),
+            ["21-111 + 21-112"],
+        )
+        self.assertEqual(
+            application.resolve_requirement_option("16-3xx"),
+            application.courses_matching_pattern("16-3xx"),
+        )
+        self.assertEqual(
+            application.resolve_requirement_option(
+                "named_set:engineering_gen_ed_candidates"
+            ),
+            application.courses_from_named_set(
+                "engineering_gen_ed_candidates"
+            ),
+        )
+        self.assertEqual(
+            application.resolve_requirement_option("Unknown academic rule"),
+            [],
+        )
+
+    def test_requirement_preference_ordering_is_data_driven(self):
+        options = ["21-240", "21-241", "21-242"]
+        self.assertEqual(
+            application.apply_requirement_option_preferences(
+                options,
+                ["21-241"],
+            ),
+            ["21-241", "21-240", "21-242"],
+        )
+        self.assertEqual(options, ["21-240", "21-241", "21-242"])
+
     def test_planner_never_places_a_course_before_minimum_year(self):
         request = self.shared_request({
             "type": "internal_transfer",

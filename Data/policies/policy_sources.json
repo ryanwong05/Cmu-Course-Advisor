@@ -1,0 +1,19 @@
+{
+  "sources": {
+    "stats-ml-transfer": {
+      "url": "https://www.cmu.edu/dietrich/stats/undergraduate/academic-advising/index.html"
+    },
+    "engineering-transfer": {
+      "url": "https://engineering.cmu.edu/education/academic-policies/undergraduate-policies/transferring.html"
+    },
+    "information-systems-transfer": {
+      "url": "https://www.cmu.edu/information-systems/admissions.html"
+    },
+    "computer-science-transfer": {
+      "url": "https://csd.cmu.edu/guidelines-for-internal-transfer-or-dual-degree"
+    },
+    "scs-transfer": {
+      "url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/#transferintotheschoolofcomputersciencetext"
+    }
+  }
+}

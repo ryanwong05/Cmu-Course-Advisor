@@ -58,6 +58,69 @@
     "meche_undergraduate": {
       "department_prefixes": ["24"],
       "maximum_course_number": 599
+    },
+
+    "engineering_gen_ed_candidates": {
+      "department_prefixes": ["76", "79", "80", "82", "84", "85", "88"],
+      "source": "planning_course_graph",
+      "policy_status": "legacy_prefix_filter_unverified"
+    },
+
+    "undergraduate_elective_candidates": {
+      "source": "planning_course_graph",
+      "maximum_course_number": 599,
+      "policy_status": "unverified_candidate_pool"
+    }
+  },
+
+  "requirement_option_sets": {
+    "SCS 2xx+": {
+      "named_course_set": "scs_undergraduate",
+      "minimum_course_number": 200
+    },
+    "Published AI cluster electives": {
+      "profile_requirement_groups": {
+        "program": "artificial-intelligence",
+        "goal_type": "additional_major",
+        "group_ids": [
+          "cognition-action",
+          "machine-learning",
+          "perception-language",
+          "human-ai"
+        ]
+      }
+    },
+    "Approved HCI electives": {
+      "courses": [
+        "05-318", "05-333", "05-434", "11-411", "10-301",
+        "07-280", "15-388", "15-464", "15-362", "15-466",
+        "15-494", "16-467", "17-428", "17-437"
+      ]
+    },
+    "Approved robotics electives": {
+      "course_patterns": ["16-3xx", "16-4xx"],
+      "courses": ["16-597", "99-270"]
+    }
+  },
+
+  "course_pattern_constraints": {
+    "default": {
+      "maximum_course_number": 599
+    },
+    "15-xxx": {
+      "minimum_course_number": 213,
+      "maximum_course_number": 599
+    }
+  },
+
+  "program_requirement_adjustments": {
+    "mechanical-engineering|additional_major|robotics": {
+      "skip_groups": ["capstone"],
+      "preferred_options": {
+        "controls": ["24-451"],
+        "building": ["24-671", "24-778"],
+        "capstone": ["24-441"]
+      }
     }
   }
 
