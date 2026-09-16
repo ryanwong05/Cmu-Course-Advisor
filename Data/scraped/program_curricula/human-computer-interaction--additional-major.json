@@ -1,0 +1,158 @@
+{
+  "program_id": "human-computer-interaction--additional-major",
+  "planning_id": "human-computer-interaction",
+  "name": "Human-Computer Interaction",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-additional-major/",
+  "source_hash": "b17ac33d949c54d37988ff3d9290b2ff8d767c5950dde44236f0a0f7f11294ae",
+  "fixed_courses": [
+    {
+      "id": "05-410",
+      "name": "User-Centered Research and Evaluation",
+      "units": 12.0,
+      "source_text": "05-410 User-Centered Research and Evaluation 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisite-courses-4-1",
+      "name": "Psychology (Select one)",
+      "heading": "Prerequisite Courses (4)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-110",
+        "85-150",
+        "85-213",
+        "05-360"
+      ],
+      "source_instruction": "Psychology (Select one)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "prerequisite-courses-4-2",
+      "name": "Statistics (Select one)",
+      "heading": "Prerequisite Courses (4)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-200",
+        "36-220",
+        "36-225 + 36-226",
+        "36-226",
+        "70-207"
+      ],
+      "source_instruction": "Statistics (Select one)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "prerequisite-courses-4-3",
+      "name": "Introduction to Programming (Select one)",
+      "heading": "Prerequisite Courses (4)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "15-121",
+        "02-120"
+      ],
+      "source_instruction": "Introduction to Programming (Select one)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "hci-core-courses-4-2",
+      "name": "Select one (Advanced Design)",
+      "heading": "HCI Core Courses (4)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-361",
+        "05-312",
+        "05-315",
+        "05-317",
+        "05-362",
+        "05-418",
+        "05-452",
+        "05-470"
+      ],
+      "source_instruction": "Select one (Advanced Design):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "hci-core-courses-4-3",
+      "name": "Select one (Technical Core)",
+      "heading": "HCI Core Courses (4)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-380",
+        "05-391",
+        "05-431",
+        "05-571"
+      ],
+      "source_instruction": "Select one (Technical Core):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "All 05-xxx courses are pre-approved as HCI electives; however, core courses cannot double count as electives.",
+        "See the HCII website for a list of current pre-approved electives: https://www.hcii.cmu.edu/academics/hci-undergrad/electives Double Counting Students may double count up to two (2) of the required core and elective courses (prerequisite courses do not apply to the double-counting rule) with their primary major."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 27,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 27,
+    "extracted_unit_estimate": 64,
+    "scheduled_course_count": 24,
+    "missing_schedule_course_ids": [
+      "05-362",
+      "15-104",
+      "36-225 + 36-226"
+    ]
+  }
+}

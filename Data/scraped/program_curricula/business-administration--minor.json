@@ -1,0 +1,110 @@
+{
+  "program_id": "business-administration--minor",
+  "planning_id": "business-administration",
+  "name": "Business Administration",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-administration-minor/",
+  "source_hash": "06fac9bf38326f33f43b8c53942962f3d979ee11683f01fff73e8bec9fe957bc",
+  "fixed_courses": [
+    {
+      "id": "70-122",
+      "name": "Introduction to Accounting",
+      "units": 9.0,
+      "source_text": "70-122 Introduction to Accounting 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-1-alternative-1",
+      "name": "Global Business 1",
+      "heading": "Required",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-100",
+        "70-101"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-1-alternative-3",
+      "name": "Principles of Microeconomics 2",
+      "heading": "Required",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "constrained-elective-choose-one-1",
+      "name": "Constrained Elective ( choose one ) :",
+      "heading": "Constrained Elective ( choose one ) :",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-311",
+        "70-371",
+        "70-381",
+        "70-391"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting While there are no double counting restrictions between the minor and the student's home college general education requirements, only one minor course may double-count with any other major or minor requirements.",
+        "The Minor in Operations and Supply Chain Management allows an additional double-count for a total of 2 courses that may double-count with any other major or minor requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 9,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 9,
+    "extracted_unit_estimate": 36,
+    "scheduled_course_count": 8,
+    "missing_schedule_course_ids": [
+      "70-100"
+    ]
+  }
+}

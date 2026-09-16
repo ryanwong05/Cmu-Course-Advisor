@@ -1,0 +1,160 @@
+{
+  "program_id": "cybersecurity-and-international-conflict--minor",
+  "planning_id": "cybersecurity-and-international-conflict",
+  "name": "Cybersecurity and International Conflict",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/cybersecurity-international-conflict-minor/",
+  "source_hash": "7de5af5843bf8f0ddc7590761650f377f55594ff48a37f93c3f9c93401e70d8a",
+  "fixed_courses": [
+    {
+      "id": "84-363",
+      "name": "Click. Hack. Rule: Understanding the Power & Peril of Cyber Conflict",
+      "units": 9.0,
+      "source_text": "84-363 Click. Hack. Rule: Understanding the Power & Peril of Cyber Conflict 9"
+    },
+    {
+      "id": "84-387",
+      "name": "Remote Systems and the Cyber Domain in Conflict",
+      "units": 9.0,
+      "source_text": "84-387 Remote Systems and the Cyber Domain in Conflict 9"
+    },
+    {
+      "id": "84-405",
+      "name": "The Future of Warfare",
+      "units": 9.0,
+      "source_text": "84-405 The Future of Warfare 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "foundational-course-9-units",
+      "name": "Foundational Course 9 units",
+      "heading": "Foundational Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "84-101",
+        "84-104",
+        "84-226",
+        "84-275"
+      ],
+      "source_instruction": "Students must take one of the following foundational courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Students must take one of the following foundational courses"
+      ]
+    },
+    {
+      "id": "elective-courses-27-units",
+      "name": "Elective Courses 27 units",
+      "heading": "Elective Courses 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "84-110",
+        "84-200",
+        "84-274",
+        "84-280",
+        "84-304",
+        "84-312",
+        "84-314",
+        "84-319",
+        "84-323",
+        "84-325",
+        "84-328",
+        "84-329",
+        "84-330",
+        "84-331",
+        "84-341",
+        "84-343",
+        "84-345",
+        "84-347",
+        "84-349",
+        "84-350",
+        "84-353",
+        "84-356",
+        "84-365",
+        "84-368",
+        "84-370",
+        "84-371",
+        "84-373",
+        "84-375",
+        "84-380",
+        "84-383",
+        "84-386",
+        "84-389",
+        "16-735",
+        "17-200",
+        "17-303",
+        "17-331",
+        "17-333",
+        "17-334",
+        "17-702",
+        "79-302",
+        "80-249",
+        "95-444"
+      ],
+      "source_instruction": "Students must take three courses from the following list of elective courses (27 units). At least one course (9 units) must be taken from the Carnegie Mellon Institute for Strategy & Technology (CMIST) and have an 84-number:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Students must take three courses from the following list of elective courses (27 units). At least one course (9 units) must be taken from the Carnegie Mellon Institute for Strategy & Technology (CMIST) and have an 84-number"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Curriculum Students are permitted to double count a maximum of two courses between the minor in Cybersecurity and International Conflict and another major or minor.",
+        "Unlimited double counting is permitted with general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 49,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 49,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 41,
+    "missing_schedule_course_ids": [
+      "16-735",
+      "17-200",
+      "84-200",
+      "84-280",
+      "84-331",
+      "84-349",
+      "84-386",
+      "95-444"
+    ]
+  }
+}

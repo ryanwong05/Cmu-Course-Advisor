@@ -1,0 +1,262 @@
+{
+  "program_id": "statistics-and-data-science--minor",
+  "planning_id": "statistics-and-data-science",
+  "name": "Statistics and Data Science",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-minor/",
+  "source_hash": "b6f9c7cd273012568022578f9a4e19b8a89bb2edd9ef5a01552d5cfc89494206",
+  "fixed_courses": [
+    {
+      "id": "21-090",
+      "name": "Precalculus",
+      "units": 10.0,
+      "source_text": "21-090 Precalculus 10"
+    },
+    {
+      "id": "36-401",
+      "name": "Modern Regression",
+      "units": 9.0,
+      "source_text": "36-401 Modern Regression 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "1-mathematical-foundations-prerequisites-39-52-units-1-alternative-2",
+      "name": "Differential Calculus and Integral Calculus",
+      "heading": "1. Mathematical Foundations (Prerequisites) 39–52 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-111 + 21-112",
+        "21-120"
+      ],
+      "source_instruction": "Mathematics is the language in which statistical models are described and analyzed, so some experience with basic calculus and linear algebra is an important component for anyone pursuing a program of study in Statistics & Data Science. Complete the following prerequisites:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "1-mathematical-foundations-prerequisites-39-52-units-1-alternative-3",
+      "name": "Multivariate Analysis",
+      "heading": "1. Mathematical Foundations (Prerequisites) 39–52 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-256",
+        "21-259",
+        "21-266",
+        "21-268"
+      ],
+      "source_instruction": "Mathematics is the language in which statistical models are described and analyzed, so some experience with basic calculus and linear algebra is an important component for anyone pursuing a program of study in Statistics & Data Science. Complete the following prerequisites:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "1-mathematical-foundations-prerequisites-39-52-units-1-alternative-4",
+      "name": "Matrix Algebra with Applications",
+      "heading": "1. Mathematical Foundations (Prerequisites) 39–52 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-240",
+        "21-241",
+        "21-242"
+      ],
+      "source_instruction": "Mathematics is the language in which statistical models are described and analyzed, so some experience with basic calculus and linear algebra is an important component for anyone pursuing a program of study in Statistics & Data Science. Complete the following prerequisites:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "beginning-data-analysis-1",
+      "name": "Choose one (1) of the following courses",
+      "heading": "Beginning Data Analysis",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-200",
+        "36-220"
+      ],
+      "source_instruction": "Choose one (1) of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "intermediate-data-analysis-1",
+      "name": "The Intermediate Data Analysis requirement must be completed prior to 36-401 , if not, an additional Advanced Analysis and Methodology course is required. Choose one (1) of the following courses",
+      "heading": "Intermediate Data Analysis",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-202",
+        "36-290",
+        "36-303",
+        "36-309",
+        "36-315"
+      ],
+      "source_instruction": "The Intermediate Data Analysis requirement must be completed prior to 36-401 , if not, an additional Advanced Analysis and Methodology course is required. Choose one (1) of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "advanced-data-analysis-and-methodology-1",
+      "name": "and one of the following courses",
+      "heading": "Advanced Data Analysis and Methodology",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-402",
+        "36-410",
+        "36-460",
+        "36-461",
+        "36-462",
+        "36-463",
+        "36-464",
+        "36-465",
+        "36-466",
+        "36-467",
+        "36-468",
+        "36-469",
+        "36-470",
+        "36-471",
+        "36-472",
+        "36-473",
+        "36-490",
+        "36-493",
+        "36-497"
+      ],
+      "source_instruction": "and one of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "advanced-data-analysis-and-methodology-1",
+      "name": "and take two of the following courses (one of which must be 400-level)",
+      "heading": "Advanced Data Analysis and Methodology",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "36-311",
+        "36-313",
+        "36-318",
+        "36-319",
+        "36-396",
+        "36-402",
+        "36-410",
+        "36-460",
+        "36-461",
+        "36-462",
+        "36-463",
+        "36-464",
+        "36-465",
+        "36-466",
+        "36-467",
+        "36-468",
+        "36-469",
+        "36-470",
+        "36-471",
+        "36-472",
+        "36-473",
+        "36-490",
+        "36-493",
+        "36-497"
+      ],
+      "source_instruction": "and take two of the following courses (one of which must be 400-level):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 2
+      },
+      "track": null
+    },
+    {
+      "id": "3-probability-theory-and-statistical-theory-18-units",
+      "name": "3. Probability Theory and Statistical Theory 18 units",
+      "heading": "3. Probability Theory and Statistical Theory 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "36-235",
+        "36-236"
+      ],
+      "source_instruction": "The theory of probability gives a mathematical description of the randomness inherent in our observations. It is the language in which statistical models are stated, so an understanding of probability is essential for the study of statistical theory. Statistical theory provides a mathematical framework for making inferences about unknown quantities from data. The theory reduces statistical problems to their essential ingredients to help devise and evaluate inferential procedures. It provides a powerful and wide-ranging set of tools for dealing with uncertainty. To satisfy the theory requirement, complete the following:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "The theory of probability gives a mathematical description of the randomness inherent in our observations. It is the language in which statistical models are stated, so an understanding of probability is essential for the study of statistical theory. Statistical theory provides a mathematical framework for making inferences about unknown quantities from data. The theory reduces statistical problems to their essential ingredients to help devise and evaluate inferential procedures. It provides a powerful and wide-ranging set of tools for dealing with uncertainty. To satisfy the theory requirement, complete the following"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [
+        106
+      ],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Total number of units required for the minor 84-106 UNITS Double Counting With respect to double-counting courses, it is departmental policy that students must have at least three statistics courses (36-xxx) that do not count for their primary major.",
+        "Make sure to consult your Statistics Minor advisor regarding double counting."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 63,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 2 choices from an explicit 18-unit rule: 3. Probability Theory and Statistical Theory 18 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "13 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 44,
+    "extracted_unit_estimate": 109,
+    "scheduled_course_count": 31,
+    "missing_schedule_course_ids": [
+      "21-111 + 21-112",
+      "36-290",
+      "36-303",
+      "36-313",
+      "36-318",
+      "36-463",
+      "36-464",
+      "36-465",
+      "36-467",
+      "36-470",
+      "36-472",
+      "36-473",
+      "36-493"
+    ]
+  }
+}

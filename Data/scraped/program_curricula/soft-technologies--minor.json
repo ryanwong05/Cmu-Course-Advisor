@@ -1,0 +1,124 @@
+{
+  "program_id": "soft-technologies--minor",
+  "planning_id": "soft-technologies",
+  "name": "Soft Technologies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/soft-technologies-minor/",
+  "source_hash": "6f9609e3effe714dfa40a68813cd192651c4b28f3db4bdd1a38fc4d7d84fe3d4",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "one-computing-course-minimum-of-9-units",
+      "name": "One Computing Course - Minimum of 9 Units",
+      "heading": "One Computing Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "60-212"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Computing Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "one-ideate-portal-course-minimum-of-9-units",
+      "name": "One IDeATe Portal Course - Minimum of 9 Units",
+      "heading": "One IDeATe Portal Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "62-150",
+        "99-361"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One IDeATe Portal Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "ideate-soft-technologies-courses-minimum-of-27-units",
+      "name": "IDeATe Soft Technologies Courses - Minimum of 27 Units",
+      "heading": "IDeATe Soft Technologies Courses - Minimum of 27 Units",
+      "choose": 1,
+      "units": 27,
+      "options": [
+        "09-227",
+        "15-367",
+        "16-224",
+        "16-376",
+        "16-480",
+        "27-505",
+        "53-330",
+        "54-346",
+        "54-486",
+        "62-315"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "IDeATe Soft Technologies Courses - Minimum of 27 Units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Students may double-count up to two of their Soft Technologies minor courses toward requirements for other majors and minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 16,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: IDeATe Soft Technologies Courses - Minimum of 27 Units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 16,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 14,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "15-367"
+    ]
+  }
+}

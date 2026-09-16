@@ -1,0 +1,202 @@
+{
+  "program_id": "economics--additional-major",
+  "planning_id": "economics",
+  "name": "Economics",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-additional-major/",
+  "source_hash": "8805c66c1784433934ebaa58ab85360c577bc7358d0f66a7a538523c1cfdcae3",
+  "fixed_courses": [
+    {
+      "id": "73-265",
+      "name": "Economics and Data Science",
+      "units": 9.0,
+      "source_text": "73-265 Economics and Data Science 9"
+    },
+    {
+      "id": "73-274",
+      "name": "Econometrics I",
+      "units": 9.0,
+      "source_text": "73-274 Econometrics I 9"
+    },
+    {
+      "id": "73-103",
+      "name": "Principles of Macroeconomics",
+      "units": 9.0,
+      "source_text": "73-103 Principles of Macroeconomics 9"
+    },
+    {
+      "id": "73-230",
+      "name": "Intermediate Microeconomics",
+      "units": 9.0,
+      "source_text": "73-230 Intermediate Microeconomics 9"
+    },
+    {
+      "id": "73-240",
+      "name": "Intermediate Macroeconomics",
+      "units": 9.0,
+      "source_text": "73-240 Intermediate Macroeconomics 9"
+    },
+    {
+      "id": "70-340",
+      "name": "Business Communications",
+      "units": 9.0,
+      "source_text": "70-340 Business Communications 9"
+    },
+    {
+      "id": "70-345",
+      "name": "Business Presentations",
+      "units": 9.0,
+      "source_text": "70-345 Business Presentations 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "mathematics-requirement-1-alternative-1",
+      "name": "Differential and Integral Calculus",
+      "heading": "Mathematics Requirement",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-111 + 21-112"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "mathematics-requirement-1-alternative-2",
+      "name": "Multivariate Analysis",
+      "heading": "Mathematics Requirement",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-256",
+        "21-254",
+        "21-259",
+        "21-266"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "mathematics-requirement-1-alternative-3",
+      "name": "Matrix Algebra with Applications",
+      "heading": "Mathematics Requirement",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-240",
+        "21-241"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "quantitative-analysis-requirement-1-alternative-3",
+      "name": "Econometrics II",
+      "heading": "Quantitative Analysis Requirement",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-374",
+        "73-423",
+        "70-467"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "economic-core-requirement-1-alternative-1",
+      "name": "Principles of Microeconomics *",
+      "heading": "Economic Core Requirement",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "economics-electives-requirement-54-units",
+      "name": "Economics Electives Requirement (54 units)",
+      "heading": "Economics Electives Requirement (54 units)",
+      "choose": 2,
+      "units": 54,
+      "options": [
+        "73-497",
+        "73-500 + 73-501"
+      ],
+      "source_instruction": "Students must take six economics elective courses. Economics elective courses are those numbered 73-300 or higher.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 54.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Students must take six economics elective courses. Economics elective courses are those numbered 73-300 or higher."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Restrictions Students pursuing the additional major may double-count two economics electives with any other major or minor requirements.",
+        "There are no double counting restrictions between the additional major and a student's home college general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 22,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 164,
+    "scheduled_course_count": 19,
+    "missing_schedule_course_ids": [
+      "21-111 + 21-112",
+      "73-423",
+      "73-500 + 73-501"
+    ]
+  }
+}

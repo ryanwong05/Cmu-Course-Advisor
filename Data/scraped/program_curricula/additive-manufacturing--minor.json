@@ -1,0 +1,65 @@
+{
+  "program_id": "additive-manufacturing--minor",
+  "planning_id": "additive-manufacturing",
+  "name": "Additive Manufacturing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/additive-manufacturing-minor/",
+  "source_hash": "568e66403bd3a1719f0474c2388879cd8126f4407f7c56ded4edaf7903fe1b49",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "three-core-courses-36-units",
+      "name": "Three Core Courses 36 units",
+      "heading": "Three Core Courses 36 units",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "39-601",
+        "39-602",
+        "39-603"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Three Core Courses 36 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 3,
+    "confidence": 0.55,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 3,
+    "extracted_unit_estimate": 36,
+    "scheduled_course_count": 3,
+    "missing_schedule_course_ids": []
+  }
+}

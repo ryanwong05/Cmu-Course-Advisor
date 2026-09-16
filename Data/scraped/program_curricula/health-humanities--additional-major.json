@@ -1,0 +1,112 @@
+{
+  "program_id": "health-humanities--additional-major",
+  "planning_id": "health-humanities",
+  "name": "Health Humanities",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/health-humanities-additional-major/",
+  "source_hash": "d12980f0a665a465ebf76fd7a92deab112fe43cc96550eeb97585820d4eb028f",
+  "fixed_courses": [
+    {
+      "id": "79-330",
+      "name": "Medicine and Society: Health, Healers, and Hospitals",
+      "units": 9.0,
+      "source_text": "79-330 Medicine and Society: Health, Healers, and Hospitals 9"
+    },
+    {
+      "id": "80-245",
+      "name": "Medical Ethics",
+      "units": 9.0,
+      "source_text": "80-245 Medical Ethics 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1-alternative-1",
+      "name": "Structure and Function of the Human Body",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-135",
+        "03-132",
+        "42-202"
+      ],
+      "source_instruction": "Complete the following five (5) required courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-1-alternative-2",
+      "name": "Neurobiology of Disease",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-133",
+        "03-161",
+        "09-303",
+        "85-170"
+      ],
+      "source_instruction": "Complete the following five (5) required courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-1-alternative-5",
+      "name": "Reasoning with Data *",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-200",
+        "36-202"
+      ],
+      "source_instruction": "Complete the following five (5) required courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 11,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 11,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 10,
+    "missing_schedule_course_ids": [
+      "03-132"
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "program_id": "russian-studies--minor",
+  "planning_id": "russian-studies",
+  "name": "Russian Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/russian-studies-minor/",
+  "source_hash": "3bee832b25edc7efe84017c4932d5b3a7ee1fdf3fb611dad4bbb64f03b96f64a",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-russian-studies-5-courses-45-57-units",
+      "name": "1. Foundational Courses in Russian Studies (5 courses, 45-57 units)",
+      "heading": "1. Foundational Courses in Russian Studies (5 courses, 45-57 units)",
+      "choose": 3,
+      "units": 57,
+      "options": [
+        "82-191",
+        "82-192",
+        "82-291",
+        "82-292",
+        "82-194",
+        "82-294",
+        "82-295"
+      ],
+      "source_instruction": "Complete at least three semesters of Russian language study:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 57.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Complete at least three semesters of Russian language study",
+        "Complete two Russian Studies Electives"
+      ]
+    },
+    {
+      "id": "2-russian-studies-and-interdisciplinary-electives-1-course-9-units",
+      "name": "2. Russian Studies and Interdisciplinary Electives (1 course, 9 units)",
+      "heading": "2. Russian Studies and Interdisciplinary Electives (1 course, 9 units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-267",
+        "79-322",
+        "82-293",
+        "82-391",
+        "82-392",
+        "82-394",
+        "82-397"
+      ],
+      "source_instruction": "History",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "History",
+        "Languages, Cultures, and Applied Linguistics"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count up to two courses taken for the Russian Studies minor that is also being used to fulfill the requirements of other majors, minors, and programs."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 14,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: 2. Russian Studies and Interdisciplinary Electives (1 course, 9 units)",
+      "Assumed choose-one for ambiguous section: 2. Russian Studies and Interdisciplinary Electives (1 course, 9 units)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "7 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 14,
+    "extracted_unit_estimate": 66,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": [
+      "79-267",
+      "79-322",
+      "82-192",
+      "82-194",
+      "82-291",
+      "82-392",
+      "82-397"
+    ]
+  }
+}

@@ -114,6 +114,7 @@ POLICY_DIR = PROJECT_ROOT / "Data" / "policies"
 elective_rules = load_json(POLICY_DIR / "elective_rules.json")
 
 ELECTIVE_CATEGORY_PREFIXES = elective_rules["elective_category_prefixes"]
+ELECTIVE_CATEGORY_GROUPS = elective_rules.get("elective_category_groups", {})
 PROGRAM_ELECTIVE_PREFIXES = elective_rules["program_elective_prefixes"]
 GENERAL_EDUCATION_PREFIXES = tuple(elective_rules["general_education_prefixes"])
 COMMUNICATION_COURSES = elective_rules["communication_courses"]
@@ -515,6 +516,10 @@ def planning_inputs_for_profile(
                 "program_tier": source_tier,
                 "minimum_year": group.get("minimum_year", 1),
                 "offered": group.get("offered", []),
+                "cross_scope_overlap_limit": (
+                    profile.get("double_count_limit")
+                    if source_tier != "transfer_goal" else None
+                ),
             })
 
     return {
@@ -687,6 +692,9 @@ def list_electives(
             "sections": section_count,
             "level": int(course_id.split("-")[1][0]) * 100,
             "requirement_group": MATH_EQUIVALENCY_GROUPS.get(course_id),
+            "display_group": ELECTIVE_CATEGORY_GROUPS.get(category, {}).get(
+                course_id[:2]
+            ),
             "minimum_year": planning_course_by_id.get(course_id, {}).get(
                 "minimum_year", 1
             ),
@@ -1300,19 +1308,29 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         remaining_groups = result["fastest"].get(
             "remaining_program_requirements", []
         )
-        unscheduled = len(remaining_courses) + len(remaining_groups)
-        unresolved_labels = [*remaining_courses]
-        unresolved_labels.extend(
-            group.get("name", group.get("id", "requirement choice"))
-            if isinstance(group, dict) else str(group)
-            for group in remaining_groups
+        unscheduled_details = result["fastest"].get(
+            "unscheduled_requirements", []
         )
+        unscheduled = len(remaining_courses) + len(remaining_groups)
+        unresolved_labels = [
+            f"{item.get('name', item.get('id', 'requirement'))} "
+            f"({item.get('reason', 'unknown reason').replace('_', ' ')})"
+            for item in unscheduled_details
+        ]
+        if not unresolved_labels:
+            unresolved_labels = [*remaining_courses]
+            unresolved_labels.extend(
+                group.get("name", group.get("id", "requirement choice"))
+                if isinstance(group, dict) else str(group)
+                for group in remaining_groups
+            )
         unresolved_summary = ", ".join(unresolved_labels[:6])
         if len(unresolved_labels) > 6:
             unresolved_summary += f", and {len(unresolved_labels) - 6} more"
         planning_warnings.append({
             "code": "TARGET_DEADLINE_NOT_MET",
             "severity": "error",
+            "requirements": unscheduled_details,
             "message": (
                 f"{unscheduled} goal requirements could not be scheduled by "
                 f"the selected completion year: {unresolved_summary}. "

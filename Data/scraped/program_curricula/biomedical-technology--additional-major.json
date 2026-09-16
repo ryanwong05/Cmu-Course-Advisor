@@ -1,0 +1,522 @@
+{
+  "program_id": "biomedical-technology--additional-major",
+  "planning_id": "biomedical-technology",
+  "name": "Biomedical Technology",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-technology-additional-major/",
+  "source_hash": "375992e40f8cef8c4c656531b44800a49b381eb0d51207636ad7dcbe7fd9f8ac",
+  "fixed_courses": [
+    {
+      "id": "42-101",
+      "name": "Introduction to Biomedical Engineering",
+      "units": 12.0,
+      "source_text": "42-101 Introduction to Biomedical Engineering 12"
+    },
+    {
+      "id": "42-201",
+      "name": "Professional Issues in Biomedical Engineering",
+      "units": 3.0,
+      "source_text": "42-201 Professional Issues in Biomedical Engineering 3"
+    },
+    {
+      "id": "42-202",
+      "name": "Physiology",
+      "units": 9.0,
+      "source_text": "42-202 Physiology 9"
+    },
+    {
+      "id": "42-203",
+      "name": "Biomedical Engineering Laboratory *",
+      "units": 9.0,
+      "source_text": "42-203 Biomedical Engineering Laboratory * 9"
+    },
+    {
+      "id": "42-401",
+      "name": "Foundation of BME Design **",
+      "units": 6.0,
+      "source_text": "42-401 Foundation of BME Design ** 6"
+    },
+    {
+      "id": "42-402",
+      "name": "BME Design Project",
+      "units": 9.0,
+      "source_text": "42-402 BME Design Project 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "bmt-core-courses-1-alternative-1",
+      "name": "Modern Biology",
+      "heading": "BMT Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-121",
+        "03-151"
+      ],
+      "source_instruction": "All core courses are required.",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "bmec-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "BMEC Track Core courses (must take at least one of the following)",
+      "heading": "BMEC Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "42-649",
+        "24-664",
+        "42-648",
+        "24-612",
+        "42-691",
+        "24-663",
+        "42-697"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "BMEC Track"
+    },
+    {
+      "id": "bmec-track-elective-courses-1",
+      "name": "BMEC Track Elective courses",
+      "heading": "BMEC Track Elective courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-444",
+        "42-640",
+        "24-658",
+        "42-641",
+        "42-662",
+        "42-696",
+        "24-665",
+        "16-868",
+        "16-879"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": "BMEC Track"
+    },
+    {
+      "id": "bcam-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "BCAM Track Core courses (must take at least one of the following)",
+      "heading": "BCAM Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-656",
+        "42-671",
+        "42-640",
+        "24-658",
+        "42-648",
+        "24-612",
+        "42-675"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "BCAM Track"
+    },
+    {
+      "id": "bcam-track-elective-courses-1",
+      "name": "BCAM Track Elective courses",
+      "heading": "BCAM Track Elective courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-630",
+        "42-631",
+        "42-632",
+        "42-633",
+        "42-650",
+        "42-651",
+        "42-655",
+        "42-696",
+        "24-665",
+        "42-697",
+        "42-698",
+        "02-512",
+        "06-663",
+        "15-386"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": "BCAM Track"
+    },
+    {
+      "id": "bmdv-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "BMDV Track Core courses (must take at least one of the following)",
+      "heading": "BMDV Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-660",
+        "42-662",
+        "42-664",
+        "18-418"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "BMDV Track"
+    },
+    {
+      "id": "bmdv-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "BMDV Track Elective courses",
+      "heading": "BMDV Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-433",
+        "42-444",
+        "42-611",
+        "27-709",
+        "42-616",
+        "27-514",
+        "42-630",
+        "42-633",
+        "42-641",
+        "42-648",
+        "24-612",
+        "42-650",
+        "42-652",
+        "18-416",
+        "42-675",
+        "42-678",
+        "42-696",
+        "24-665",
+        "16-467",
+        "16-879"
+      ],
+      "source_instruction": "BMDV Track Elective courses",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "BMDV Track"
+    },
+    {
+      "id": "nebi-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "NEBI Track Core courses (must take at least one of the following)",
+      "heading": "NEBI Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-630",
+        "42-631",
+        "42-632",
+        "42-633",
+        "42-650",
+        "42-651"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "NEBI Track"
+    },
+    {
+      "id": "nebi-track-elective-courses-1",
+      "name": "NEBI Track Elective courses",
+      "heading": "NEBI Track Elective courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-433",
+        "42-437",
+        "42-640",
+        "24-658",
+        "42-641",
+        "42-652",
+        "18-416",
+        "42-656",
+        "42-660",
+        "42-675",
+        "86-783",
+        "15-386",
+        "16-725"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": "NEBI Track"
+    },
+    {
+      "id": "tcb-track-core-courses-must-take-one-of-the-following-1",
+      "name": "TCB Track Core courses (must take one of the following)",
+      "heading": "TCB Track Core courses (must take one of the following)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-611",
+        "27-709",
+        "42-612",
+        "27-520",
+        "42-620",
+        "42-624"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "TCB Track"
+    },
+    {
+      "id": "tcb-track-elective-courses-1",
+      "name": "TCB Track Elective courses",
+      "heading": "TCB Track Elective courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-613",
+        "27-570",
+        "42-616",
+        "27-514",
+        "42-618",
+        "42-626",
+        "06-634",
+        "42-667",
+        "42-671",
+        "42-695",
+        "06-722",
+        "03-320",
+        "03-232",
+        "06-685"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": "TCB Track"
+    },
+    {
+      "id": "bsip-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "BSIP Track Core courses (must take at least one of the following)",
+      "heading": "BSIP Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-650",
+        "42-651",
+        "42-631",
+        "42-632"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "BSIP Track"
+    },
+    {
+      "id": "bsip-track-elective-courses-1",
+      "name": "BSIP Track Elective courses",
+      "heading": "BSIP Track Elective courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-437",
+        "42-640",
+        "24-658",
+        "42-652",
+        "18-416",
+        "42-656",
+        "42-660",
+        "42-675",
+        "16-725",
+        "18-491"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": "BSIP Track"
+    },
+    {
+      "id": "neuro-track-core-courses-must-take-at-least-one-of-the-following-1",
+      "name": "Neuro Track Core courses (must take at least one of the following)",
+      "heading": "Neuro Track Core courses (must take at least one of the following)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "42-630",
+        "42-631",
+        "42-632",
+        "42-633"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": "Neuro Track"
+    },
+    {
+      "id": "neuro-track-elective-courses-1",
+      "name": "Neuro Track Elective courses",
+      "heading": "Neuro Track Elective courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "42-433",
+        "18-412",
+        "42-437",
+        "42-641",
+        "42-650",
+        "42-651",
+        "42-652",
+        "18-416",
+        "42-656",
+        "42-660",
+        "42-783",
+        "15-386",
+        "18-370",
+        "18-460"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": "Neuro Track"
+    }
+  ],
+  "track_rule": {
+    "type": "unresolved",
+    "count": null,
+    "tracks": [
+      {
+        "id": "bmec-track",
+        "name": "BMEC Track",
+        "requirement_group_ids": [
+          "bmec-track-core-courses-must-take-at-least-one-of-the-following-1",
+          "bmec-track-elective-courses-1"
+        ]
+      },
+      {
+        "id": "bcam-track",
+        "name": "BCAM Track",
+        "requirement_group_ids": [
+          "bcam-track-core-courses-must-take-at-least-one-of-the-following-1",
+          "bcam-track-elective-courses-1"
+        ]
+      },
+      {
+        "id": "bmdv-track",
+        "name": "BMDV Track",
+        "requirement_group_ids": [
+          "bmdv-track-core-courses-must-take-at-least-one-of-the-following-1",
+          "bmdv-track-core-courses-must-take-at-least-one-of-the-following-1"
+        ]
+      },
+      {
+        "id": "nebi-track",
+        "name": "NEBI Track",
+        "requirement_group_ids": [
+          "nebi-track-core-courses-must-take-at-least-one-of-the-following-1",
+          "nebi-track-elective-courses-1"
+        ]
+      },
+      {
+        "id": "tcb-track",
+        "name": "TCB Track",
+        "requirement_group_ids": [
+          "tcb-track-core-courses-must-take-one-of-the-following-1",
+          "tcb-track-elective-courses-1"
+        ]
+      },
+      {
+        "id": "bsip-track",
+        "name": "BSIP Track",
+        "requirement_group_ids": [
+          "bsip-track-core-courses-must-take-at-least-one-of-the-following-1",
+          "bsip-track-elective-courses-1"
+        ]
+      },
+      {
+        "id": "neuro-track",
+        "name": "Neuro Track",
+        "requirement_group_ids": [
+          "neuro-track-core-courses-must-take-at-least-one-of-the-following-1",
+          "neuro-track-elective-courses-1"
+        ]
+      }
+    ]
+  },
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 15,
+    "course_references": 140,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: BMEC Track Elective courses",
+      "Assumed choose-one for ambiguous section: BCAM Track Elective courses",
+      "Assumed choose-one for ambiguous section: NEBI Track Elective courses",
+      "Assumed choose-one for ambiguous section: TCB Track Elective courses",
+      "Assumed choose-one for ambiguous section: BSIP Track Elective courses",
+      "Assumed choose-one for ambiguous section: Neuro Track Elective courses"
+    ],
+    "explicit_group_ratio": 0.6
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Multiple tracks require an explicit track-selection rule.",
+      "6 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "11 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 73,
+    "extracted_unit_estimate": 189,
+    "scheduled_course_count": 62,
+    "missing_schedule_course_ids": [
+      "06-634",
+      "16-879",
+      "27-514",
+      "42-437",
+      "42-616",
+      "42-626",
+      "42-641",
+      "42-667",
+      "42-691",
+      "42-783",
+      "86-783"
+    ]
+  }
+}

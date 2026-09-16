@@ -1,0 +1,113 @@
+{
+  "program_id": "collaborative-piano--minor",
+  "planning_id": "collaborative-piano",
+  "name": "Collaborative Piano",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/collaborative-piano-minor/",
+  "source_hash": "79b633dbd62705bc2547ec37173ef2272c4e5641ee05dcdbc03545ea6749d1b3",
+  "fixed_courses": [
+    {
+      "id": "57-381",
+      "name": "Collaborative Piano I",
+      "units": 6.0,
+      "source_text": "57-381 Collaborative Piano I 6"
+    },
+    {
+      "id": "57-382",
+      "name": "Collaborative Piano II",
+      "units": 6.0,
+      "source_text": "57-382 Collaborative Piano II 6"
+    },
+    {
+      "id": "57-383",
+      "name": "Collaborative Piano III",
+      "units": 6.0,
+      "source_text": "57-383 Collaborative Piano III 6"
+    },
+    {
+      "id": "57-384",
+      "name": "Collaborative Piano IV",
+      "units": 6.0,
+      "source_text": "57-384 Collaborative Piano IV 6"
+    },
+    {
+      "id": "57-385",
+      "name": "Collaborative Piano V",
+      "units": 6.0,
+      "source_text": "57-385 Collaborative Piano V 6"
+    },
+    {
+      "id": "57-386",
+      "name": "Collaborative Piano VI",
+      "units": 6.0,
+      "source_text": "57-386 Collaborative Piano VI 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "elective-course-options-18-units",
+      "name": "Elective Course Options 18 units",
+      "heading": "Elective Course Options 18 units",
+      "choose": 3,
+      "units": 18,
+      "options": [
+        "57-220",
+        "57-221",
+        "57-222",
+        "57-223",
+        "57-332",
+        "57-336",
+        "57-433",
+        "57-434",
+        "57-459",
+        "57-557"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Course Options 18 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 16,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 3 choices from an explicit 18-unit rule: Elective Course Options 18 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 16,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 15,
+    "missing_schedule_course_ids": [
+      "57-433"
+    ]
+  }
+}

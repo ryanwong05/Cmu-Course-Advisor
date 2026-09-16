@@ -1,0 +1,192 @@
+{
+  "program_id": "robotics--additional-major",
+  "planning_id": "robotics",
+  "name": "Robotics",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-additional-major/",
+  "source_hash": "1789cc6a808de8ee9f2a149a3edd688c2c013859663a55d6e635d5f61dc69b68",
+  "fixed_courses": [
+    {
+      "id": "16-450",
+      "name": "Robotics Systems Engineering Can be taken concurrently with the Controls requirement.",
+      "units": 12.0,
+      "source_text": "16-450 Robotics Systems Engineering Can be taken concurrently with the Controls requirement. 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1",
+      "name": "Overview (one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-280",
+        "16-281"
+      ],
+      "source_instruction": "Overview (one of the following):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Controls (choose one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "06-464",
+        "16-299",
+        "18-370",
+        "24-451",
+        "24-773"
+      ],
+      "source_instruction": "Controls (choose one of the following):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Mechanisms and Manipulation (one of the following options)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-384",
+        "15-362",
+        "33-141"
+      ],
+      "source_instruction": "Mechanisms and Manipulation (one of the following options)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Sensing and Perception (one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-387",
+        "15-463",
+        "16-322",
+        "16-385",
+        "16-886",
+        "85-370"
+      ],
+      "source_instruction": "Sensing and Perception (one of the following)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Ethics (one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-161",
+        "16-735"
+      ],
+      "source_instruction": "Ethics (one of the following)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Robot Building Practices (choose one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-220",
+        "16-362",
+        "18-349",
+        "18-578",
+        "18-500",
+        "24-671"
+      ],
+      "source_instruction": "Robot Building Practices (choose one of the following)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-2",
+      "name": "To be taken during senior spring (one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-474",
+        "24-441"
+      ],
+      "source_instruction": "To be taken during senior spring (one of the following)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        5,
+        6
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Restriction Students are permitted to double count a maximum of six courses from their Primary Major towards the Additional Major in Robotics.",
+        "CS Majors are permitted to double count a maximum of five courses from their Primary Major towards the Additional Major in Robotics."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 27,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 27,
+    "extracted_unit_estimate": 90,
+    "scheduled_course_count": 23,
+    "missing_schedule_course_ids": [
+      "16-161",
+      "16-322",
+      "16-735",
+      "24-773"
+    ]
+  }
+}

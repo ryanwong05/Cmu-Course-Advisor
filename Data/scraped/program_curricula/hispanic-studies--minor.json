@@ -1,0 +1,202 @@
+{
+  "program_id": "hispanic-studies--minor",
+  "planning_id": "hispanic-studies",
+  "name": "Hispanic Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/hispanic-studies-minor/",
+  "source_hash": "cf1a7a19369a76929a48992bd3fe46082971faf64a877034149ab6e4e8489d4a",
+  "fixed_courses": [
+    {
+      "id": "48-348",
+      "name": "Architectural History of Mexico & Guatemala",
+      "units": 9.0,
+      "source_text": "48-348 Architectural History of Mexico & Guatemala 9"
+    },
+    {
+      "id": "84-306",
+      "name": "Latin American Politics",
+      "units": 9.0,
+      "source_text": "84-306 Latin American Politics 9"
+    },
+    {
+      "id": "57-306",
+      "name": "World Music",
+      "units": 9.0,
+      "source_text": "57-306 World Music 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-hispanic-studies-4-courses-36-units",
+      "name": "1. Foundational Courses in Hispanic Studies (4 courses, 36 units)",
+      "heading": "1. Foundational Courses in Hispanic Studies (4 courses, 36 units)",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "82-342",
+        "82-343",
+        "82-344",
+        "82-345"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "1. Foundational Courses in Hispanic Studies (4 courses, 36 units)"
+      ]
+    },
+    {
+      "id": "list-a-hispanic-studies-electives-1",
+      "name": "List A. Hispanic Studies Electives",
+      "heading": "List A. Hispanic Studies Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "82-441",
+        "82-443",
+        "82-444",
+        "82-445",
+        "82-451",
+        "82-455",
+        "82-541",
+        "82-542"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "list-b-interdisciplinary-electives-1",
+      "name": "English",
+      "heading": "List B. Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-385",
+        "76-386",
+        "76-484"
+      ],
+      "source_instruction": "English",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "list-b-interdisciplinary-electives-1",
+      "name": "Languages, Cultures, and Applied Linguistics",
+      "heading": "List B. Interdisciplinary Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "82-245",
+        "82-247",
+        "82-249",
+        "82-281",
+        "82-284",
+        "82-285",
+        "82-383",
+        "82-388",
+        "82-480",
+        "82-482"
+      ],
+      "source_instruction": "Languages, Cultures, and Applied Linguistics",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "list-b-interdisciplinary-electives-1",
+      "name": "Philosophy",
+      "heading": "List B. Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-180",
+        "80-280",
+        "80-285",
+        "80-286",
+        "80-381"
+      ],
+      "source_instruction": "Philosophy",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count two courses taken for the Hispanic Studies minor that is also being used to fulfill the requirements of other majors, minors, and programs.",
+        "This does not include double-counting with General Education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 33,
+    "confidence": 0.76,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 4 choices from an explicit 36-unit rule: 1. Foundational Courses in Hispanic Studies (4 courses, 36 units)",
+      "Assumed choose-one for ambiguous section: List A. Hispanic Studies Electives",
+      "Assumed choose-one for ambiguous section: List B. Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: List B. Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: List B. Interdisciplinary Electives"
+    ],
+    "explicit_group_ratio": 0.2
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "4 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "17 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 33,
+    "extracted_unit_estimate": 93,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "48-348",
+      "76-385",
+      "76-386",
+      "76-484",
+      "80-280",
+      "80-286",
+      "80-381",
+      "82-245",
+      "82-247",
+      "82-249",
+      "82-281",
+      "82-284",
+      "82-441",
+      "82-444",
+      "82-445",
+      "82-451",
+      "82-482"
+    ]
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "program_id": "engineering-and-arts--additional-major",
+  "planning_id": "engineering-and-arts",
+  "name": "Engineering and Arts",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-arts-additional-major/",
+  "source_hash": "1810dec342c9a757a21256f0c585a783d2939db2e3aa0bae6eb0fb2fa3f88946",
+  "fixed_courses": [
+    {
+      "id": "60-402",
+      "name": "Senior Studio",
+      "units": 10.0,
+      "source_text": "60-402 Senior Studio 10"
+    },
+    {
+      "id": "60-403",
+      "name": "Advanced Critique Seminar",
+      "units": 10.0,
+      "source_text": "60-403 Advanced Critique Seminar 10"
+    },
+    {
+      "id": "60-499",
+      "name": "Studio Independent Study (one only)",
+      "units": 10.0,
+      "source_text": "60-499 Studio Independent Study (one only) 10"
+    },
+    {
+      "id": "60-200",
+      "name": "Sophomore Review -Spring (pass/no pass)",
+      "units": 0.0,
+      "source_text": "60-200 Sophomore Review -Spring (pass/no pass) 0"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "bxa-required-courses-5-courses-36-units",
+      "name": "BXA Required Courses (5 courses, 36 units)",
+      "heading": "BXA Required Courses (5 courses, 36 units)",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "52-190",
+        "52-291",
+        "52-392",
+        "52-401",
+        "52-402"
+      ],
+      "source_instruction": "BXA-specific courses give students the opportunity to integrate their areas of concentration by focusing on interdisciplinary approaches and arts-based research techniques.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "BXA-specific courses give students the opportunity to integrate their areas of concentration by focusing on interdisciplinary approaches and arts-based research techniques."
+      ]
+    },
+    {
+      "id": "architecture-required-courses-9-courses-57-units-minimum",
+      "name": "Architecture Required Courses (9 courses, 57 units minimum)",
+      "heading": "Architecture Required Courses (9 courses, 57 units minimum)",
+      "choose": 1,
+      "units": 57,
+      "options": [
+        "48-100",
+        "48-095",
+        "48-104",
+        "48-119",
+        "48-120",
+        "48-121",
+        "48-125",
+        "48-126",
+        "48-240",
+        "48-241"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 57.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Architecture Required Courses (9 courses, 57 units minimum)"
+      ]
+    },
+    {
+      "id": "first-year-seminar-1-course-6-units",
+      "name": "First-Year Seminar (1 course, 6 units)",
+      "heading": "First-Year Seminar (1 course, 6 units)",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "60-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 6.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "First-Year Seminar (1 course, 6 units)"
+      ]
+    },
+    {
+      "id": "foundation-studios-3-courses-30-units",
+      "name": "Foundation Studios (3 courses, 30 units)",
+      "heading": "Foundation Studios (3 courses, 30 units)",
+      "choose": 3,
+      "units": 30,
+      "options": [
+        "60-110",
+        "60-120",
+        "60-131",
+        "60-135",
+        "60-150",
+        "60-170"
+      ],
+      "source_instruction": "Complete three courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 30.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Complete three courses"
+      ]
+    },
+    {
+      "id": "critical-studies-2-courses-18-units",
+      "name": "Critical Studies (2 courses, 18 units)",
+      "heading": "Critical Studies (2 courses, 18 units)",
+      "choose": 1,
+      "units": 18,
+      "options": [
+        "60-107"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Critical Studies (2 courses, 18 units)"
+      ]
+    },
+    {
+      "id": "dramaturgy-required-courses-13-courses-80-units",
+      "name": "Dramaturgy Required Courses (13 courses, 80 units)",
+      "heading": "Dramaturgy Required Courses (13 courses, 80 units)",
+      "choose": 9,
+      "units": 80,
+      "options": [
+        "54-177",
+        "54-109",
+        "54-284",
+        "54-200",
+        "54-159",
+        "54-281",
+        "54-184",
+        "54-200",
+        "54-117",
+        "54-241",
+        "54-256",
+        "54-247",
+        "54-381"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 80.0,
+        "course_count_estimate": 9
+      },
+      "track": null,
+      "source_categories": [
+        "Dramaturgy Required Courses (13 courses, 80 units)"
+      ]
+    },
+    {
+      "id": "music-composition-required-courses-13-courses-85-units",
+      "name": "Music Composition Required Courses (13 courses, 85 units)",
+      "heading": "Music Composition Required Courses (13 courses, 85 units)",
+      "choose": 1,
+      "units": 85,
+      "options": [
+        "57-152",
+        "57-149",
+        "57-161",
+        "57-181",
+        "57-180",
+        "57-185",
+        "57-173",
+        "57-188"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 85.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Music Composition Required Courses (13 courses, 85 units)"
+      ]
+    },
+    {
+      "id": "music-performance-required-courses-13-courses-85-units",
+      "name": "Music Performance Required Courses (13 courses, 85 units)",
+      "heading": "Music Performance Required Courses (13 courses, 85 units)",
+      "choose": 1,
+      "units": 85,
+      "options": [
+        "57-152",
+        "57-149",
+        "57-161",
+        "57-181",
+        "57-180",
+        "57-185",
+        "57-173",
+        "57-188"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 85.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Music Performance Required Courses (13 courses, 85 units)"
+      ]
+    },
+    {
+      "id": "music-technology-audio-recording-production-required-courses-8-courses-49-units",
+      "name": "Music Technology: Audio Recording & Production Required Courses (8 courses, 49 units)",
+      "heading": "Music Technology: Audio Recording & Production Required Courses (8 courses, 49 units)",
+      "choose": 1,
+      "units": 49,
+      "options": [
+        "57-152",
+        "57-149",
+        "57-101",
+        "57-181",
+        "57-180",
+        "57-185",
+        "57-173",
+        "57-188",
+        "57-337",
+        "57-338",
+        "57-438"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 49.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Music Technology: Audio Recording & Production Required Courses (8 courses, 49 units)"
+      ]
+    },
+    {
+      "id": "audio-recording-production-electives-59-units-minimum",
+      "name": "Audio Recording & Production Electives (59 units minimum)",
+      "heading": "Audio Recording & Production Electives (59 units minimum)",
+      "choose": 1,
+      "units": 59,
+      "options": [
+        "57-153",
+        "57-150",
+        "57-182",
+        "57-186",
+        "10-301",
+        "15-104",
+        "15-213",
+        "15-322",
+        "33-114",
+        "54-166",
+        "54-666",
+        "57-161",
+        "57-162",
+        "57-344",
+        "57-347",
+        "57-358",
+        "57-421",
+        "57-427",
+        "57-478",
+        "57-622",
+        "60-131",
+        "85-415"
+      ],
+      "source_instruction": "Choose 59 units from:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 59.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Choose 59 units from"
+      ]
+    },
+    {
+      "id": "music-technology-sound-theory-practice-required-courses-7-courses-44-units",
+      "name": "Music Technology: Sound Theory & Practice Required Courses (7 courses, 44 units)",
+      "heading": "Music Technology: Sound Theory & Practice Required Courses (7 courses, 44 units)",
+      "choose": 1,
+      "units": 44,
+      "options": [
+        "57-152",
+        "57-149",
+        "57-101",
+        "57-181",
+        "57-180",
+        "57-185",
+        "57-173",
+        "57-188",
+        "57-421"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 44.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Music Technology: Sound Theory & Practice Required Courses (7 courses, 44 units)"
+      ]
+    },
+    {
+      "id": "sound-theory-practice-electives-64-units-minimum",
+      "name": "Sound Theory & Practice Electives (64 units minimum)",
+      "heading": "Sound Theory & Practice Electives (64 units minimum)",
+      "choose": 1,
+      "units": 64,
+      "options": [
+        "57-153",
+        "57-150",
+        "57-182",
+        "57-186",
+        "15-104",
+        "15-322",
+        "33-114",
+        "57-161",
+        "57-162",
+        "57-337",
+        "57-338",
+        "57-344",
+        "57-347",
+        "57-358",
+        "57-438",
+        "57-478",
+        "57-616"
+      ],
+      "source_instruction": "Choose 64 units from:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 64.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Choose 64 units from"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        7,
+        8
+      ],
+      "unit_limit_candidates": [
+        44,
+        49,
+        59,
+        64
+      ],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Music Technology: Audio Recording & Production Required Courses (8 courses, 49 units) 57-152 Harmony I 9 or 57-149 Basic Harmony I 57-101 Introduction to Music Technology 6 57-181 Solfege I 3 or 57-180 Basic Solfege I or 57-185 Advanced Solfege I 57-173 Survey of Western Music History (co-requisite: 57-188 ) 9 57-188 Repertoire and Listening for Musicians 1 57-337 Sound Recording 6 57-338 Sound Editing and Mastering 6 57-438 Multitrack Recording 9 Audio Recording & Production Electives (59 units minimum) Choose 59 units from: 57-153 Harmony II 9 or 57-150 Basic Harmony II 57-182 Solfege II 3 or 57-186 Advanced Solfege II 10-301 Introduction to Machine Learning 12 15-104 Introduction to Computing for Creative Practice 10 15-213 Introduction to Computer Systems 12 15-322 Introduction to Computer Music 9 33-114 Physics of Musical Sound 9 54-166 Introduction to Sound Design for Theatre 6 54-666 Production Audio (section B) 4 57-161 Eurhythmics I 3 57-162 Eurhythmics II 3 57-344 Experimental Sound Synthesis 9 57-347 Electronic and Computer Music 6 57-358 Understanding Electronic Music (with instructor permission as space allows) 9 57-421 Exploded Ensemble 6 57-427 Advanced Seminar in Film Musicology 9 57-478 Survey of Historical Recording 6 57-622 Independent Study in Sound Recording Production 3 60-131 Foundations: Sculpture 10 85-415 Auditory Perception: Sense of Sound 9 Note: Students completing an IDeATe minor may double-count up to two of the IDeATe minor courses towards the Audio Recording & Production concentration.",
+        "Music Technology: Sound Theory & Practice Required Courses (7 courses, 44 units) 57-152 Harmony I 9 or 57-149 Basic Harmony I 57-101 Introduction to Music Technology 6 57-181 Solfege I 3 or 57-180 Basic Solfege I or 57-185 Advanced Solfege I 57-173 Survey of Western Music History (co-requisite: 57-188 ) 9 57-188 Repertoire and Listening for Musicians 1 57-421 Exploded Ensemble 6 Sound Theory & Practice Electives (64 units minimum) Choose 64 units from: 57-153 Harmony II 9 or 57-150 Basic Harmony II 57-182 Solfege II 3 or 57-186 Advanced Solfege II 15-104 Introduction to Computing for Creative Practice 10 15-322 Introduction to Computer Music (prerequisite: 15-112 ) 9 33-114 Physics of Musical Sound 9 57-161 Eurhythmics I 3 57-162 Eurhythmics II 3 57-337 Sound Recording 6 57-338 Sound Editing and Mastering 6 57-344 Experimental Sound Synthesis 9 57-347 Electronic and Computer Music (prerequisite: 57-101 or 57-171 ) 6 57-358 Understanding Electronic Music (with instructor permission as space allows) 9 57-438 Multitrack Recording 9 57-478 Survey of Historical Recording 6 57-616 Independent Study in Sound Studies 9 Note: Students completing an IDeATe minor may double-count up to two of the IDeATe minor courses towards the Sound Theory & Practice concentration."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 14,
+    "course_references": 115,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 4 choices from an explicit 36-unit rule: BXA Required Courses (5 courses, 36 units)",
+      "Assumed choose-one for ambiguous section: Architecture Required Courses (9 courses, 57 units minimum)",
+      "Inferred 1 choices from an explicit 6-unit rule: First-Year Seminar (1 course, 6 units)",
+      "Inferred 1 choices from an explicit 18-unit rule: Critical Studies (2 courses, 18 units)",
+      "Inferred 9 choices from an explicit 80-unit rule: Dramaturgy Required Courses (13 courses, 80 units)",
+      "Assumed choose-one for ambiguous section: Music Composition Required Courses (13 courses, 85 units)",
+      "Assumed choose-one for ambiguous section: Music Performance Required Courses (13 courses, 85 units)",
+      "Assumed choose-one for ambiguous section: Music Technology: Audio Recording & Production Required Courses (8 courses, 49 units)",
+      "Assumed choose-one for ambiguous section: Audio Recording & Production Electives (59 units minimum)",
+      "Assumed choose-one for ambiguous section: Music Technology: Sound Theory & Practice Required Courses (7 courses, 44 units)",
+      "Assumed choose-one for ambiguous section: Sound Theory & Practice Electives (64 units minimum)"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "Extracted requirement total is implausible (643 units)."
+    ],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 72,
+    "extracted_unit_estimate": 643,
+    "scheduled_course_count": 67,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "52-190",
+      "57-427",
+      "57-616",
+      "85-415"
+    ]
+  }
+}

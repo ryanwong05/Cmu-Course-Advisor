@@ -1,0 +1,113 @@
+{
+  "program_id": "the-history-of-the-arts--minor",
+  "planning_id": "the-history-of-the-arts",
+  "name": "The History of the Arts",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/history-arts-minor/",
+  "source_hash": "15485c9af80505ce17992ac5e70f9bd0400c2a2875d0de6052ba1efd437e0169",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "introductory-level-courses-27-units",
+      "name": "Introductory Level Courses 27 units",
+      "heading": "Introductory Level Courses 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "48-240",
+        "48-241",
+        "54-239",
+        "54-240",
+        "54-245",
+        "54-246",
+        "57-173",
+        "57-188",
+        "60-105",
+        "60-106"
+      ],
+      "source_instruction": "Choose at least three (3) introductory level courses. CFA students pick three (3) courses outside of major.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Choose at least three (3) introductory level courses. CFA students pick three (3) courses outside of major."
+      ]
+    },
+    {
+      "id": "intermediate-advanced-level-courses-27-units",
+      "name": "Intermediate/Advanced Level Courses 27 units",
+      "heading": "Intermediate/Advanced Level Courses 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "48-348",
+        "48-374",
+        "57-209",
+        "57-476",
+        "57-477",
+        "57-478",
+        "57-480",
+        "57-485",
+        "62-360",
+        "79-328",
+        "62-371",
+        "79-316",
+        "79-395"
+      ],
+      "source_instruction": "Choose at least three (3) intermediate/advanced level courses. CFA students pick three (3) courses outside of major. Other courses not on this list may qualify as approved by CFA Dean's Office (College of Fine Arts, Room 100).",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Choose at least three (3) intermediate/advanced level courses. CFA students pick three (3) courses outside of major. Other courses not on this list may qualify as approved by CFA Dean's Office (College of Fine Arts, Room 100)."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 23,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "6 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 23,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 17,
+    "missing_schedule_course_ids": [
+      "48-348",
+      "48-374",
+      "54-240",
+      "57-477",
+      "57-485",
+      "79-395"
+    ]
+  }
+}

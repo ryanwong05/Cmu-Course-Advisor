@@ -1818,9 +1818,23 @@ async function loadBaseline() {
                     slot.innerHTML = `<label>Course choice<input type="search" class="gened-option-search" placeholder="Search course number or title"><select class="gened-plan-choice"><option value="">Loading scheduled courses…</option></select></label>`;
                     Promise.all(["fall", "spring"].map(term => fetch(`/api/electives?term=${term}&category=${category}&primary_major=${encodeURIComponent(appState.student.primary_major)}&goal_program=${encodeURIComponent(appState.goals[0]?.program || "")}`).then(response => response.json())))
                         .then(responses => {
-                            const courses = new Map(responses.flatMap(response => response.courses || []).map(course => [course.id, course]));
+                            const courses = new Map(
+                                responses
+                                    .flatMap(response => response.courses || [])
+                                    .filter(course => Number(course.units || 0) >= Number(requirement.units || 0))
+                                    .map(course => [course.id, course])
+                            );
                             const select = slot.querySelector(".gened-plan-choice");
-                            select.innerHTML = '<option value="">Choose a scheduled course</option>' + Array.from(courses.values()).map(course => `<option value="${course.id}">${course.id} · ${course.name}</option>`).join("");
+                            const groupedCourses = Array.from(courses.values()).reduce((groups, course) => {
+                                const label = course.display_group || "Other scheduled courses";
+                                if (!groups.has(label)) groups.set(label, []);
+                                groups.get(label).push(course);
+                                return groups;
+                            }, new Map());
+                            select.innerHTML = '<option value="">Choose a scheduled course</option>'
+                                + Array.from(groupedCourses.entries()).map(([label, groupCourses]) =>
+                                    `<optgroup label="${label}">${groupCourses.map(course => `<option value="${course.id}">${course.id} · ${course.name}</option>`).join("")}</optgroup>`
+                                ).join("");
                             select.value = appState.genedSelections[requirement.id] || "";
                             const search = slot.querySelector(".gened-option-search");
                             search.addEventListener("input", () => {
@@ -2173,6 +2187,7 @@ function renderCourseSelection(
                 : 1;
             const groupMinimumYear = group.minimum_year || inferredMinimumYear;
             const entry = normalizedGroups.get(normalized.key) || {
+                key: normalized.key,
                 name: normalized.name,
                 minimumYear: groupMinimumYear,
                 choose: group.choose || 1,
@@ -2265,6 +2280,40 @@ function renderCourseSelection(
                     </span>`;
                 optionList.appendChild(label);
             });
+
+            // Keep required math courses visible beside the Mathematics choice
+            // without treating them as substitutes for its choose-one rule.
+            if (group.key === "mathematics") {
+                const requiredMathCourses = ["21-122", "21-241"]
+                    .map(id => data.courses.find(course => course.id === id))
+                    .filter(Boolean)
+                    .filter(course => !group.options.has(course.id));
+                if (requiredMathCourses.length) {
+                    const requiredSection = document.createElement("section");
+                    requiredSection.className = "required-math-courses";
+                    requiredSection.innerHTML = `
+                        <div class="required-math-courses-heading">
+                            <strong>Required math courses</strong>
+                            <small>Mark these if already completed. They do not replace the choose-one requirement above.</small>
+                        </div>
+                        <div class="completed-choice-options required-math-course-options"></div>`;
+                    const requiredList = requiredSection.querySelector(".required-math-course-options");
+                    requiredMathCourses.forEach(course => {
+                        renderedHistoryIds.add(course.id);
+                        const label = document.createElement("label");
+                        label.className = "course-option required-math-course-option";
+                        label.innerHTML = `
+                            <input type="checkbox" value="${course.id}" ${appState.student.completed_courses.includes(course.id) ? "checked" : ""}>
+                            <span>
+                                <strong>${course.id}</strong>
+                                ${course.name}
+                                <small class="required-math-course-status">${appState.student.completed_courses.includes(course.id) ? "Completed" : "Required · Auto-planned"}</small>
+                            </span>`;
+                        requiredList.appendChild(label);
+                    });
+                    groupPanel.querySelector(".decision-expanded").appendChild(requiredSection);
+                }
+            }
             const isNow = group.minimumYear <= Math.min(appState.student.year, appState.constraints.target_completion_year || 4);
             (isNow ? nowList : laterList).appendChild(groupPanel);
             panelsByGroup.set(group, groupPanel);
@@ -2347,6 +2396,17 @@ function renderCourseSelection(
         decisionSection.addEventListener("change", event => {
             if (event.target.matches('.requirement-choice-option input[type="checkbox"]')) {
                 updateDecisionProgress();
+                if (!results.classList.contains("hidden")) {
+                    window.clearTimeout(requirementReplanTimer);
+                    requirementReplanTimer = window.setTimeout(() => {
+                        document.getElementById("generateButton").click();
+                    }, 350);
+                }
+            }
+            if (event.target.matches('.required-math-course-option input[type="checkbox"]')) {
+                const status = event.target.closest(".required-math-course-option")
+                    .querySelector(".required-math-course-status");
+                status.textContent = event.target.checked ? "Completed" : "Required · Auto-planned";
                 if (!results.classList.contains("hidden")) {
                     window.clearTimeout(requirementReplanTimer);
                     requirementReplanTimer = window.setTimeout(() => {
@@ -2600,6 +2660,16 @@ function renderPath(
     const intensityData = intensity => intensity
         ? `data-intensity-tier="${intensity.tier}" data-hours="${intensity.hours_per_week}" data-workload="${intensity.workload}" data-difficulty="${intensity.difficulty}"`
         : "";
+    const baselineCategoryNames = {
+        "Communication": "communication",
+        "Humanities": "humanities",
+        "Social Sciences": "social-sciences",
+        "Data Analysis": "data-analysis"
+    };
+    const baselineRequirementForCategory = category =>
+        (appState.baselineRequirements || []).find(requirement =>
+            baselineCategoryNames[requirement.name] === category
+        );
 
     const fixedBlock = (block, number) => {
         const intensity = appState.latestCourseCatalog[block.id]?.intensity;
@@ -2626,13 +2696,7 @@ function renderPath(
     const choiceBlock = (block, number) => {
         const options = block.options || [];
         const isBaseline = block.kind === "baseline";
-        const baselineCategories = {
-            "Communication": "communication",
-            "Humanities": "humanities",
-            "Social Sciences": "social-sciences",
-            "Data Analysis": "data-analysis"
-        };
-        const baselineCategory = isBaseline ? baselineCategories[block.name] || "" : "";
+        const baselineCategory = isBaseline ? baselineCategoryNames[block.name] || "" : "";
         const defaultIntensity = appState.latestCourseCatalog[block.default_option]?.intensity;
         const minimumYear = appState.latestCourseCatalog[block.default_option]?.minimum_year || block.minimum_year || 1;
         return `
@@ -2673,8 +2737,16 @@ function renderPath(
         <div class="planner-course-block choice-block empty-block collapsed" data-units="0" draggable="true">
             <span class="block-number">${number}</span>
             <span class="block-main">
+                <span class="choice-course-summary">
+                    <span class="choice-summary-heading">
+                        <small class="choice-summary-kind">Course choice</small>
+                        <button type="button" class="change-course-button" aria-label="Change selected course">Change</button>
+                    </span>
+                    <strong class="choice-summary-id"></strong>
+                    <span class="choice-summary-name">Course choice</span>
+                </span>
                 <button type="button" class="add-elective-button">+ Add elective</button>
-                <div class="elective-controls" hidden>
+                <div class="elective-controls choice-edit-controls" hidden>
                 <select class="block-category" aria-label="Block ${number} category">
                     <option value="">Choose a category</option>
                     ${appState.student.primary_major === "stats-ml" ? '<option value="stats-ml-math">Stats/ML math requirement</option>' : ""}
@@ -2812,7 +2884,7 @@ function renderPath(
             if (!response.ok) throw new Error("Elective catalog unavailable");
             return response.json();
         };
-        const setCourseOptions = (courseSelect, electiveData) => {
+        const setCourseOptions = (courseSelect, electiveData, minimumUnits = 0) => {
             const alreadyScheduled = new Set(
                 Array.from(container.querySelectorAll("[data-course-id]"))
                     .map(block => block.dataset.courseId)
@@ -2832,7 +2904,10 @@ function renderPath(
             const poorRecommendation = /independent study|practicum|reading and research/i;
             const hasAdvancedMath = [...alreadyScheduled, ...appState.student.completed_courses]
                 .some(id => /^21-(1[2-9]\d|[2-5]\d\d)$/.test(id));
-            const available = electiveData.courses.filter(course => !alreadyScheduled.has(course.id));
+            const available = electiveData.courses.filter(course =>
+                !alreadyScheduled.has(course.id)
+                && Number(course.units || 0) >= minimumUnits
+            );
             const recommended = available.filter(course =>
                 relatedPrefixes.has(course.id.slice(0, 2))
                 && course.level >= 100
@@ -2843,9 +2918,18 @@ function renderPath(
             const other = available.filter(course => !recommendedIds.has(course.id));
             const optionHtml = (course, recommendedCourse = false) =>
                 `<option value="${course.id}" data-units="${course.units}" data-term="${course.term}" data-minimum-year="${course.minimum_year || 1}" data-intensity-tier="${course.intensity?.tier || ""}" data-hours="${course.intensity?.hours_per_week || ""}" data-workload="${course.intensity?.workload || ""}" data-difficulty="${course.intensity?.difficulty || ""}" data-intensity-label="${course.intensity?.label || ""}" data-description="${recommendedCourse ? "Recommended for your current and goal programs · " : ""}${course.description}">${recommendedCourse ? "★ " : ""}${course.requirement_group ? `[${course.requirement_group}] ` : ""}${course.id} · ${course.name} ${course.intensity ? `· ${course.intensity.label}` : ""}</option>`;
-            courseSelect.innerHTML = '<option value="" data-units="0">Choose a scheduled undergraduate course</option>' +
-                (recommended.length ? `<optgroup label="Recommended for your plan">${recommended.map(course => optionHtml(course, true)).join("")}</optgroup>` : "") +
-                `<optgroup label="Other undergraduate courses">${other.map(course => optionHtml(course)).join("")}</optgroup>`;
+            const grouped = available.some(course => course.display_group)
+                ? Array.from(available.reduce((groups, course) => {
+                    const label = course.display_group || "Other scheduled courses";
+                    if (!groups.has(label)) groups.set(label, []);
+                    groups.get(label).push(course);
+                    return groups;
+                }, new Map()).entries()).map(([label, groupCourses]) =>
+                    `<optgroup label="${label}">${groupCourses.map(course => optionHtml(course, recommendedIds.has(course.id))).join("")}</optgroup>`
+                ).join("")
+                : (recommended.length ? `<optgroup label="Recommended for your plan">${recommended.map(course => optionHtml(course, true)).join("")}</optgroup>` : "")
+                    + `<optgroup label="Other undergraduate courses">${other.map(course => optionHtml(course)).join("")}</optgroup>`;
+            courseSelect.innerHTML = '<option value="" data-units="0">Choose a scheduled undergraduate course</option>' + grouped;
             courseSelect.disabled = false;
         };
 
@@ -2879,7 +2963,7 @@ function renderPath(
             courseSelect.disabled = true;
             courseSelect.innerHTML = '<option value="" data-units="9">Loading scheduled candidates…</option>';
             fetchElectives(category).then(electiveData => {
-                setCourseOptions(courseSelect, electiveData);
+                setCourseOptions(courseSelect, electiveData, Number(block.dataset.units || 0));
                 const placeholder = courseSelect.querySelector('option[value=""]');
                 if (placeholder) {
                     placeholder.textContent = "Choose a scheduled candidate · confirm approval";
@@ -2956,7 +3040,12 @@ function renderPath(
                         const cardTerm = block.closest(".semester-card")
                             .querySelector(".semester-name").textContent.toLowerCase().endsWith("fall")
                             ? "fall" : "spring";
-                        setCourseOptions(courseSelect, await fetchElectives(event.target.value || "free-elective", cardTerm));
+                        const baselineRequirement = baselineRequirementForCategory(event.target.value);
+                        setCourseOptions(
+                            courseSelect,
+                            await fetchElectives(event.target.value || "free-elective", cardTerm),
+                            Number(baselineRequirement?.units || 0)
+                        );
                     } catch (error) {
                         courseSelect.innerHTML = '<option value="" data-units="0">Could not load courses</option>';
                     }
@@ -2968,6 +3057,7 @@ function renderPath(
             select.addEventListener("change", event => {
                 const block = event.target.closest(".planner-course-block");
                 const option = event.target.selectedOptions[0];
+                const previousCourseId = block.dataset.courseId || "";
                 block.dataset.units = option?.dataset.units || block.dataset.units || 0;
                 block.dataset.courseId = option?.value || "";
                 block.dataset.offeredTerm = option?.dataset.term || "";
@@ -2976,8 +3066,30 @@ function renderPath(
                 block.dataset.hours = option?.dataset.hours || "";
                 block.dataset.workload = option?.dataset.workload || "";
                 block.dataset.difficulty = option?.dataset.difficulty || "";
+                const selectedCategory = block.dataset.baselineCategory
+                    || block.querySelector(".block-category")?.value
+                    || "";
+                const baselineRequirement = baselineRequirementForCategory(selectedCategory);
+                if (baselineRequirement && option?.value) {
+                    block.dataset.baselineCategory = selectedCategory;
+                    appState.genedSelections[baselineRequirement.id] = option.value;
+                    container.querySelectorAll(`.choice-block[data-baseline-category="${selectedCategory}"]`).forEach(candidate => {
+                        candidate.hidden = candidate !== block;
+                    });
+                } else if (baselineRequirement && !option?.value) {
+                    if (appState.genedSelections[baselineRequirement.id] === previousCourseId) {
+                        delete appState.genedSelections[baselineRequirement.id];
+                    }
+                    container.querySelectorAll(`.choice-block[data-baseline-category="${selectedCategory}"]`).forEach(candidate => {
+                        candidate.hidden = false;
+                    });
+                }
                 block.classList.remove(...[1, 2, 3, 4, 5].map(tier => `intensity-tier-${tier}`));
                 block.classList.toggle("has-selected-course", Boolean(option?.value));
+                if (option?.value && block.classList.contains("empty-block")) {
+                    block.classList.remove("empty-block", "collapsed");
+                    block.querySelector(".add-elective-button").hidden = true;
+                }
                 if (block.dataset.intensityTier) block.classList.add(`intensity-tier-${block.dataset.intensityTier}`);
                 const intensitySlot = block.querySelector(".course-intensity-slot");
                 if (intensitySlot) intensitySlot.innerHTML = block.dataset.intensityTier

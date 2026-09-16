@@ -1,0 +1,68 @@
+{
+  "program_id": "design--minor",
+  "planning_id": "design",
+  "name": "Design",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/design-minor/",
+  "source_hash": "556724090b36965e0e6f1798030b237fe6eb6c5f9c6fc3c1721edc72cdacfd58",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-design-courses-27-units",
+      "name": "Required Design Courses 27 units",
+      "heading": "Required Design Courses 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "51-262",
+        "51-261",
+        "51-264",
+        "51-173"
+      ],
+      "source_instruction": "Three required courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Three required courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "No courses may be double counted."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 4,
+    "confidence": 0.55,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 4,
+    "extracted_unit_estimate": 27,
+    "scheduled_course_count": 4,
+    "missing_schedule_course_ids": []
+  }
+}

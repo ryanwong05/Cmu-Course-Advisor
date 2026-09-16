@@ -1,0 +1,202 @@
+{
+  "program_id": "japanese-studies--minor",
+  "planning_id": "japanese-studies",
+  "name": "Japanese Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/japanese-studies-minor/",
+  "source_hash": "c31b866be6fa058b119e0ed2b44a8da05aa7aaa4ecfa599cea57391518e50407",
+  "fixed_courses": [
+    {
+      "id": "57-306",
+      "name": "World Music",
+      "units": 9.0,
+      "source_text": "57-306 World Music 9"
+    },
+    {
+      "id": "85-421",
+      "name": "Language and Thought",
+      "units": 9.0,
+      "source_text": "85-421 Language and Thought 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-japanese-studies-4-courses-36-42-units",
+      "name": "1. Foundational Courses in Japanese Studies (4 courses, 36–42 units)",
+      "heading": "1. Foundational Courses in Japanese Studies (4 courses, 36–42 units)",
+      "choose": 4,
+      "units": 42,
+      "options": [
+        "82-271",
+        "82-272",
+        "82-273",
+        "82-371",
+        "82-372"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 42.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "1. Foundational Courses in Japanese Studies (4 courses, 36–42 units)"
+      ]
+    },
+    {
+      "id": "list-a-japanese-studies-electives-1",
+      "name": "List A. Japanese Studies Electives",
+      "heading": "List A. Japanese Studies Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-373",
+        "82-374",
+        "82-473",
+        "82-474",
+        "82-505",
+        "82-571",
+        "82-572"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "English",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-239",
+        "76-386"
+      ],
+      "source_instruction": "English",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "History",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-261",
+        "79-262",
+        "79-275"
+      ],
+      "source_instruction": "History",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Languages, Cultures, and Applied Linguistics",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-234",
+        "82-278",
+        "82-279",
+        "82-280",
+        "82-281",
+        "82-282",
+        "82-283",
+        "82-383",
+        "82-388",
+        "82-480"
+      ],
+      "source_instruction": "Languages, Cultures, and Applied Linguistics",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Philosophy",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-180",
+        "80-280"
+      ],
+      "source_instruction": "Philosophy",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count two courses taken for the Japanese Studies minor that is also being used to fulfill the requirements of other majors, minors, and programs.",
+        "This does not include double-counting with General Education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 8,
+    "course_references": 31,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 4 choices from an explicit 42-unit rule: 1. Foundational Courses in Japanese Studies (4 courses, 36–42 units)",
+      "Assumed choose-one for ambiguous section: List A. Japanese Studies Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives"
+    ],
+    "explicit_group_ratio": 0.17
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "5 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 31,
+    "extracted_unit_estimate": 105,
+    "scheduled_course_count": 23,
+    "missing_schedule_course_ids": [
+      "76-386",
+      "79-261",
+      "80-280",
+      "82-234",
+      "82-281",
+      "82-373",
+      "82-374",
+      "85-421"
+    ]
+  }
+}

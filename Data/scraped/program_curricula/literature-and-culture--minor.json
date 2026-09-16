@@ -1,0 +1,205 @@
+{
+  "program_id": "literature-and-culture--minor",
+  "planning_id": "literature-and-culture",
+  "name": "Literature and Culture",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-minor/",
+  "source_hash": "5522cab5131f06207bae4907cb682e94333332e5c31a294f2092b819d1a550e2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-courses-2-courses-18-units",
+      "name": "Required Courses (2 courses) 18 units",
+      "heading": "Required Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-275",
+        "76-212",
+        "76-260",
+        "76-261",
+        "76-265",
+        "76-269"
+      ],
+      "source_instruction": "Required Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Required Courses"
+      ]
+    },
+    {
+      "id": "200-level-literature-culture-courses-2-courses-18-units",
+      "name": "200-Level Literature & Culture Courses (2 courses) 18 units",
+      "heading": "200-Level Literature & Culture Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-203",
+        "76-207",
+        "76-210",
+        "76-217",
+        "76-220",
+        "76-221",
+        "76-230",
+        "76-236",
+        "76-239",
+        "76-241",
+        "76-242",
+        "76-244",
+        "76-245",
+        "76-247",
+        "76-259",
+        "76-268",
+        "76-278",
+        "76-295",
+        "76-296",
+        "76-299"
+      ],
+      "source_instruction": "200-Level Literature & Culture Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "200-Level Literature & Culture Courses"
+      ]
+    },
+    {
+      "id": "300-or-400-level-literature-culture-courses-2-courses-18-units",
+      "name": "300- or 400-Level Literature & Culture Courses (2 courses) 18 units",
+      "heading": "300- or 400-Level Literature & Culture Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-312",
+        "76-314",
+        "76-317",
+        "76-326",
+        "76-329",
+        "76-337",
+        "76-339",
+        "76-341",
+        "76-342",
+        "76-343",
+        "76-347",
+        "76-348",
+        "76-350",
+        "76-353",
+        "76-367",
+        "76-370",
+        "76-376",
+        "76-382",
+        "76-392",
+        "76-401",
+        "76-407",
+        "76-410",
+        "76-414",
+        "76-423",
+        "76-424",
+        "76-429",
+        "76-431",
+        "76-434",
+        "76-439",
+        "76-442",
+        "76-445",
+        "76-446",
+        "76-450",
+        "76-453",
+        "76-454",
+        "76-455",
+        "76-461",
+        "76-467",
+        "76-468",
+        "76-482",
+        "76-495"
+      ],
+      "source_instruction": "300- or 400-Level Literature & Culture Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "300- or 400-Level Literature & Culture Courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Double Counting Students who have a minor in English as well as a primary and/or an additional major in English may not double count any English courses with that minor.",
+        "Otherwise, up to two courses from the minor may double count with programs outside of the English Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 67,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "30 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 67,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 37,
+    "missing_schedule_course_ids": [
+      "76-203",
+      "76-230",
+      "76-242",
+      "76-244",
+      "76-268",
+      "76-312",
+      "76-326",
+      "76-329",
+      "76-337",
+      "76-343",
+      "76-347",
+      "76-348",
+      "76-353",
+      "76-367",
+      "76-376",
+      "76-401",
+      "76-407",
+      "76-410",
+      "76-414",
+      "76-423",
+      "76-431",
+      "76-442",
+      "76-445",
+      "76-446",
+      "76-450",
+      "76-454",
+      "76-467",
+      "76-468",
+      "76-482",
+      "76-495"
+    ]
+  }
+}

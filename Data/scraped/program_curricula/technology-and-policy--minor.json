@@ -1,0 +1,108 @@
+{
+  "program_id": "technology-and-policy--minor",
+  "planning_id": "technology-and-policy",
+  "name": "Technology and Policy",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/technology-policy-minor/",
+  "source_hash": "4612f9d64103e87ce1ac2b893829e832c93336ab3b1ae95e1c836040a178728c",
+  "fixed_courses": [
+    {
+      "id": "19-101",
+      "name": "Introduction to Engineering and Public Policy",
+      "units": 12.0,
+      "source_text": "19-101 Introduction to Engineering and Public Policy 12"
+    },
+    {
+      "id": "19-451",
+      "name": "EPP Projects I",
+      "units": 12.0,
+      "source_text": "19-451 EPP Projects I 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "course-requirements-1-alternative-2",
+      "name": "Decision Making Methods for Engineers and Scientists",
+      "heading": "Course Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "19-301",
+        "19-351"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "technology-policy-electives-minimum-18-units",
+      "name": "Technology Policy Electives (Minimum 18 units)",
+      "heading": "Technology Policy Electives (Minimum 18 units)",
+      "choose": 1,
+      "units": 18,
+      "options": [
+        "19-211",
+        "19-303",
+        "19-403",
+        "19-411",
+        "19-429",
+        "19-433",
+        "19-469",
+        "19-639",
+        "19-668"
+      ],
+      "source_instruction": "EPP Technical Electives include courses that address problems at the society-technology interface and the means of analyzing these issues. A list of qualifying Technology-Policy electives is assembled each semester and is available from the EPP Department. Example Technology Policy electives include:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "EPP Technical Electives include courses that address problems at the society-technology interface and the means of analyzing these issues. A list of qualifying Technology-Policy electives is assembled each semester and is available from the EPP Department. Example Technology Policy electives include"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 13,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Technology Policy Electives (Minimum 18 units)"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 13,
+    "extracted_unit_estimate": 51,
+    "scheduled_course_count": 9,
+    "missing_schedule_course_ids": [
+      "19-101",
+      "19-411",
+      "19-639",
+      "19-668"
+    ]
+  }
+}

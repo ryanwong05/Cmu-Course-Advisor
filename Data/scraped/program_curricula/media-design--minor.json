@@ -1,0 +1,131 @@
+{
+  "program_id": "media-design--minor",
+  "planning_id": "media-design",
+  "name": "Media Design",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/media-design-minor/",
+  "source_hash": "13c996352c31ec1b7335f0338a818f6589ee07d67508fb071cae1d2796a145ab",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "one-computing-course-minimum-of-9-units",
+      "name": "One Computing Course - Minimum of 9 Units",
+      "heading": "One Computing Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "60-212"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Computing Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "one-ideate-portal-course-minimum-of-9-units",
+      "name": "One IDeATe Portal Course - Minimum of 9 Units",
+      "heading": "One IDeATe Portal Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "62-150"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One IDeATe Portal Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "ideate-media-design-courses-minimum-of-27-units",
+      "name": "IDeATe Media Design Courses - Minimum of 27 Units",
+      "heading": "IDeATe Media Design Courses - Minimum of 27 Units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "15-294",
+        "15-394",
+        "54-375",
+        "24-672",
+        "51-236",
+        "51-400",
+        "53-312",
+        "54-399",
+        "60-110",
+        "60-428",
+        "62-423",
+        "62-478",
+        "67-240",
+        "76-374",
+        "82-285"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "IDeATe Media Design Courses - Minimum of 27 Units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Students may double-count up to two of their Media Design minor courses toward requirements for other majors or minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 20,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 3 choices from an explicit 27-unit rule: IDeATe Media Design Courses - Minimum of 27 Units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 20,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 15,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "53-312",
+      "60-428",
+      "67-240",
+      "76-374"
+    ]
+  }
+}

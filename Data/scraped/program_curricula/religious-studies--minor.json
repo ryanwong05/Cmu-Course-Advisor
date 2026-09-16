@@ -1,0 +1,176 @@
+{
+  "program_id": "religious-studies--minor",
+  "planning_id": "religious-studies",
+  "name": "Religious Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/religious-studies-minor/",
+  "source_hash": "a5a86dcfbd4f8fd6ca0b87257bb5b2864416edfa43aeb7cce35f7974b2af0906",
+  "fixed_courses": [
+    {
+      "id": "79-106",
+      "name": "Introduction to Asian Religions",
+      "units": 6.0,
+      "source_text": "79-106 Introduction to Asian Religions 6"
+    },
+    {
+      "id": "79-110",
+      "name": "Introduction to the Medieval Mediterranean World",
+      "units": 9.0,
+      "source_text": "79-110 Introduction to the Medieval Mediterranean World 9"
+    },
+    {
+      "id": "79-150",
+      "name": "Medieval Science, Magic, and Wonders of Nature",
+      "units": 9.0,
+      "source_text": "79-150 Medieval Science, Magic, and Wonders of Nature 9"
+    },
+    {
+      "id": "79-208",
+      "name": "Witchcraft and Witch-Hunting",
+      "units": 9.0,
+      "source_text": "79-208 Witchcraft and Witch-Hunting 9"
+    },
+    {
+      "id": "79-272",
+      "name": "Coexistence and Conflict: Muslims, Christians and Jews in Spain and Portugal",
+      "units": 9.0,
+      "source_text": "79-272 Coexistence and Conflict: Muslims, Christians and Jews in Spain and Portugal 9"
+    },
+    {
+      "id": "79-273",
+      "name": "Jews & Arabs: From the Time of Muhammad to the Present",
+      "units": 9.0,
+      "source_text": "79-273 Jews & Arabs: From the Time of Muhammad to the Present 9"
+    },
+    {
+      "id": "79-342",
+      "name": "Age of Crusading, 1000-2000",
+      "units": 9.0,
+      "source_text": "79-342 Age of Crusading, 1000-2000 9"
+    },
+    {
+      "id": "79-352",
+      "name": "Christianity Divided: The Protestant and Catholic Reformations, 1450-1650",
+      "units": 9.0,
+      "source_text": "79-352 Christianity Divided: The Protestant and Catholic Reformations, 1450-1650 9"
+    },
+    {
+      "id": "79-392",
+      "name": "Europe and the Islamic World",
+      "units": 9.0,
+      "source_text": "79-392 Europe and the Islamic World 9"
+    },
+    {
+      "id": "80-276",
+      "name": "Philosophy of Religion",
+      "units": 9.0,
+      "source_text": "80-276 Philosophy of Religion 9"
+    },
+    {
+      "id": "82-215",
+      "name": "Minorities in the Middle East and North Africa",
+      "units": 9.0,
+      "source_text": "82-215 Minorities in the Middle East and North Africa 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-core-course-9-units",
+      "name": "Required Core Course 9 units",
+      "heading": "Required Core Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-281"
+      ],
+      "source_instruction": "All Religious Studies minors are required to take 79-281 Introduction to Religion . This required course introduces several modes of inquiry into religion, such as the philosophy of religion, sociological and behavioral approaches to religion, historical analysis of religious subject, literary and critical analysis of religious texts, theological modes of thought, and anthropological treatments of religion. This course is offered regularly, usually in the Spring semester.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "All Religious Studies minors are required to take 79-281 Introduction to Religion . This required course introduces several modes of inquiry into religion, such as the philosophy of religion, sociological and behavioral approaches to religion, historical analysis of religious subject, literary and critical analysis of religious texts, theological modes of thought, and anthropological treatments of religion. This course is offered regularly, usually in the Spring semester."
+      ]
+    },
+    {
+      "id": "elective-courses-27-units",
+      "name": "Elective Courses 27 units",
+      "heading": "Elective Courses 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "79-115",
+        "79-121",
+        "79-124",
+        "79-159",
+        "79-202",
+        "79-228",
+        "79-241",
+        "79-270",
+        "79-284",
+        "79-296",
+        "79-349",
+        "79-350",
+        "79-375",
+        "79-393"
+      ],
+      "source_instruction": "In addition to the required Core Course and the Distribution Courses, students must complete Elective Courses totaling at least 27 units (usually three 9-unit courses). Unlike Distribution Courses, an Elective Course may focus on the study of only one religion (although courses examining more than one religious tradition can also count as Elective Courses if not otherwise used to fulfill the Distribution Requirement). Some examples of qualifying Elective Courses that have been offered recently are listed below. Please note that this list is not exclusive; other relevant courses, whether those offered through the History Department or other participating programs, not listed here may qualify as Elective Courses for the minor with the Faculty Advisor's permission. Professor Allyson Creasman should be consulted to identify qualifying courses (especially after the Schedule of Courses for a given semester becomes available).",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "In addition to the required Core Course and the Distribution Courses, students must complete Elective Courses totaling at least 27 units (usually three 9-unit courses). Unlike Distribution Courses, an Elective Course may focus on the study of only one religion (although courses examining more than one religious tradition can also count as Elective Courses if not otherwise used to fulfill the Distribution Requirement). Some examples of qualifying Elective Courses that have been offered recently are listed below. Please note that this list is not exclusive; other relevant courses, whether those offered through the History Department or other participating programs, not listed here may qualify as Elective Courses for the minor with the Faculty Advisor's permission. Professor Allyson Creasman should be consulted to identify qualifying courses (especially after the Schedule of Courses for a given semester becomes available)."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 26,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 3 choices from an explicit 27-unit rule: Elective Courses 27 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "10 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 26,
+    "extracted_unit_estimate": 132,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "79-110",
+      "79-115",
+      "79-159",
+      "79-284",
+      "79-342",
+      "79-349",
+      "79-375",
+      "79-392",
+      "80-276",
+      "82-215"
+    ]
+  }
+}

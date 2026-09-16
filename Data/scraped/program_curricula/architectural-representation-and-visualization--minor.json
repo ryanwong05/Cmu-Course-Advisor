@@ -1,0 +1,87 @@
+{
+  "program_id": "architectural-representation-and-visualization--minor",
+  "planning_id": "architectural-representation-and-visualization",
+  "name": "Architectural Representation and Visualization",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-representation-visualization-minor/",
+  "source_hash": "6ebb0d2ff1a50e607ff9107cbe46dcbff45a03edd735fb242f87e2abbc799fc9",
+  "fixed_courses": [
+    {
+      "id": "48-120",
+      "name": "Digital Media I",
+      "units": 6.0,
+      "source_text": "48-120 Digital Media I 6"
+    },
+    {
+      "id": "48-125",
+      "name": "Digital Media II",
+      "units": 6.0,
+      "source_text": "48-125 Digital Media II 6"
+    },
+    {
+      "id": "48-121",
+      "name": "Drawing I",
+      "units": 6.0,
+      "source_text": "48-121 Drawing I 6"
+    },
+    {
+      "id": "48-126",
+      "name": "Drawing II",
+      "units": 6.0,
+      "source_text": "48-126 Drawing II 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "selective-courses-1",
+      "name": "Selective Courses",
+      "heading": "Selective Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "48-568",
+        "48-724"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 6,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Selective Courses"
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "1 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [],
+    "catalog_course_count": 6,
+    "extracted_unit_estimate": 33,
+    "scheduled_course_count": 6,
+    "missing_schedule_course_ids": []
+  }
+}

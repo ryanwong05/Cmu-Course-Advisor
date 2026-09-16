@@ -1,0 +1,117 @@
+{
+  "program_id": "architecture--minor",
+  "planning_id": "architecture",
+  "name": "Architecture",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-minor/",
+  "source_hash": "690e568ded89ec9c5152147e551ad9907b141589196ba23ec5f9d8bd9b586019",
+  "fixed_courses": [
+    {
+      "id": "48-119",
+      "name": "Design Ethics & Social Justice in Architecture",
+      "units": 3.0,
+      "source_text": "48-119 Design Ethics & Social Justice in Architecture 3"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-22-27-units-1-alternative-1",
+      "name": "Architecture Design Studio: Core 1 - Foundations",
+      "heading": "Required Courses 22-27 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "48-100",
+        "48-095"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-22-27-units-1-alternative-2",
+      "name": "History of World Architecture, I",
+      "heading": "Required Courses 22-27 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "48-240",
+        "48-241"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "elective-courses-26-31-units",
+      "name": "Elective Courses* 26-31 units",
+      "heading": "Elective Courses* 26-31 units",
+      "choose": 4,
+      "units": 31,
+      "options": [
+        "48-121",
+        "48-126",
+        "48-120",
+        "48-125",
+        "48-116",
+        "48-215",
+        "48-234",
+        "48-380",
+        "48-381",
+        "48-383"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 31.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Courses* 26-31 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 15,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 4 choices from an explicit 31-unit rule: Elective Courses* 26-31 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 15,
+    "extracted_unit_estimate": 52,
+    "scheduled_course_count": 14,
+    "missing_schedule_course_ids": [
+      "48-234"
+    ]
+  }
+}

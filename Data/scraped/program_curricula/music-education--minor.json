@@ -1,0 +1,113 @@
+{
+  "program_id": "music-education--minor",
+  "planning_id": "music-education",
+  "name": "Music Education",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-education-minor/",
+  "source_hash": "1d4ebb4b9411477b77895c29bf0751aaec429d69cbe0d833bd7703fb7d87e3ce",
+  "fixed_courses": [
+    {
+      "id": "57-331",
+      "name": "Principles of Education",
+      "units": 9.0,
+      "source_text": "57-331 Principles of Education 9"
+    },
+    {
+      "id": "57-332",
+      "name": "Introduction to Conducting",
+      "units": 6.0,
+      "source_text": "57-332 Introduction to Conducting 6"
+    },
+    {
+      "id": "57-391",
+      "name": "Keyboard Studies for Music Education I",
+      "units": 3.0,
+      "source_text": "57-391 Keyboard Studies for Music Education I 3"
+    },
+    {
+      "id": "57-557",
+      "name": "Vocal Methods",
+      "units": 3.0,
+      "source_text": "57-557 Vocal Methods 3"
+    },
+    {
+      "id": "57-375",
+      "name": "Music in the Elementary School",
+      "units": 6.0,
+      "source_text": "57-375 Music in the Elementary School 6"
+    },
+    {
+      "id": "57-356",
+      "name": "Elementary Guided Teaching",
+      "units": 3.0,
+      "source_text": "57-356 Elementary Guided Teaching 3"
+    },
+    {
+      "id": "57-376",
+      "name": "Music in the Secondary School",
+      "units": 6.0,
+      "source_text": "57-376 Music in the Secondary School 6"
+    },
+    {
+      "id": "57-355",
+      "name": "Secondary Guided Teaching",
+      "units": 3.0,
+      "source_text": "57-355 Secondary Guided Teaching 3"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-pre-clinical-courses-30-units",
+      "name": "Required Pre-Clinical Courses 30 units",
+      "heading": "Required Pre-Clinical Courses 30 units",
+      "choose": 3,
+      "units": 30,
+      "options": [
+        "57-360",
+        "57-361",
+        "57-362",
+        "57-363"
+      ],
+      "source_instruction": "Choose three (3) of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 30.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Choose three (3) of the following courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 12,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 12,
+    "extracted_unit_estimate": 69,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": []
+  }
+}

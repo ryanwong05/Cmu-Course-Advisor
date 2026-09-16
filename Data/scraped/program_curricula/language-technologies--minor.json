@@ -1,0 +1,171 @@
+{
+  "program_id": "language-technologies--minor",
+  "planning_id": "language-technologies",
+  "name": "Language Technologies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/language-technologies-minor/",
+  "source_hash": "05c329949bcf6be0106a9b994cf411442bb8a501601537323aad0400c6e423e8",
+  "fixed_courses": [
+    {
+      "id": "15-122",
+      "name": "Principles of Imperative Computation",
+      "units": 12.0,
+      "source_text": "15-122 Principles of Imperative Computation 12"
+    },
+    {
+      "id": "15-150",
+      "name": "Principles of Functional Programming",
+      "units": 12.0,
+      "source_text": "15-150 Principles of Functional Programming 12"
+    },
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    },
+    {
+      "id": "21-122",
+      "name": "Integration and Approximation",
+      "units": 10.0,
+      "source_text": "21-122 Integration and Approximation 10"
+    },
+    {
+      "id": "11-324",
+      "name": "Human Language for Artificial Intelligence",
+      "units": 12.0,
+      "source_text": "11-324 Human Language for Artificial Intelligence 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisites-1-alternative-3",
+      "name": "Matrices and Linear Transformations",
+      "heading": "Prerequisites",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "21-241",
+        "21-242"
+      ],
+      "source_instruction": "Strongly Recommended",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "prerequisites-1-alternative-4",
+      "name": "Probability and Computing",
+      "heading": "Prerequisites",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "15-259",
+        "21-325",
+        "36-218",
+        "36-225"
+      ],
+      "source_instruction": "Strongly Recommended",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "electives-choose-3-1",
+      "name": "Electives (choose 3):",
+      "heading": "Electives (choose 3):",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "11-344",
+        "11-411",
+        "11-422",
+        "11-423",
+        "11-424",
+        "11-441",
+        "11-442",
+        "11-485",
+        "11-492",
+        "11-667",
+        "11-711",
+        "11-737",
+        "11-751",
+        "11-776",
+        "11-777",
+        "80-180"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 3
+      },
+      "track": null
+    },
+    {
+      "id": "project-choose-applicable-project-course-1",
+      "name": "Project",
+      "heading": "Project - Choose Applicable Project Course",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "11-390",
+        "11-490",
+        "11-590"
+      ],
+      "source_instruction": "Project:",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "12 11-751 Speech Recognition and Understanding 12 11-776 Multimodal Affective Computing 12 11-777 Multimodal Machine Learning 12 80-180 Introduction to Linguistics 9 Project - Choose Applicable Project Course Project: 11-390 LTI Minor Project - Juniors 12 11-490 LTI Minor Project - Seniors 12 11-590 LTI Minor Project - Advanced 12 Double Counting of Courses Students may double count 11-324 Human Language for Artificial Intelligence and 80-180 Introduction to Linguistics toward any other major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 30,
+    "confidence": 0.93,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Project - Choose Applicable Project Course"
+    ],
+    "explicit_group_ratio": 0.75
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "1 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 30,
+    "extracted_unit_estimate": 118,
+    "scheduled_course_count": 25,
+    "missing_schedule_course_ids": [
+      "11-324",
+      "11-441",
+      "11-667",
+      "11-737",
+      "11-776"
+    ]
+  }
+}

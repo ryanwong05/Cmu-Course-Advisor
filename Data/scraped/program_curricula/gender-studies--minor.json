@@ -1,0 +1,132 @@
+{
+  "program_id": "gender-studies--minor",
+  "planning_id": "gender-studies",
+  "name": "Gender Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/gender-studies-minor/",
+  "source_hash": "8686349fc6d7459d18dff31fabe6201326369446cf8adc5cf450bac6d8618628",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "complete-1-of-the-following-required-courses-9-units",
+      "name": "Complete 1 of the following required courses. 9 units",
+      "heading": "Complete 1 of the following required courses. 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-241",
+        "79-320",
+        "79-331"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete 1 of the following required courses. 9 units"
+      ]
+    },
+    {
+      "id": "complete-5-or-more-additional-courses-totaling-at-least-45-units-45-units",
+      "name": "Complete 5 or more additional courses totaling at least 45 units. 45 units",
+      "heading": "Complete 5 or more additional courses totaling at least 45 units. 45 units",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "60-369",
+        "60-372",
+        "66-152",
+        "76-211",
+        "76-241",
+        "76-327",
+        "76-329",
+        "76-341",
+        "76-342",
+        "76-423",
+        "76-431",
+        "76-473",
+        "79-178",
+        "79-208",
+        "79-236",
+        "79-246",
+        "79-256",
+        "79-305",
+        "79-320",
+        "79-329",
+        "79-330",
+        "79-331",
+        "80-234",
+        "82-186",
+        "82-215",
+        "82-248",
+        "82-275",
+        "82-283",
+        "82-331",
+        "85-446",
+        "90-403",
+        "90-404"
+      ],
+      "source_instruction": "See examples below, but other courses may fulfill this requirement.*",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 45.0,
+        "course_count_estimate": 5
+      },
+      "track": null,
+      "source_categories": [
+        "See examples below, but other courses may fulfill this requirement.*"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Courses may be double-counted, fulfilling the requirements of this minor, while also fulfilling other degree requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 35,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "11 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 32,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 21,
+    "missing_schedule_course_ids": [
+      "60-369",
+      "60-372",
+      "76-329",
+      "76-423",
+      "76-431",
+      "79-178",
+      "79-246",
+      "82-186",
+      "82-215",
+      "82-275",
+      "85-446"
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "program_id": "financial-management--minor",
+  "planning_id": "financial-management",
+  "name": "Financial Management",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/financial-management-minor/",
+  "source_hash": "e035b5ce7c4a6f47e76dd964539786ef2fe71d869dab8135524850ec1cce54fa",
+  "fixed_courses": [
+    {
+      "id": "70-391",
+      "name": "Finance",
+      "units": 9.0,
+      "source_text": "70-391 Finance 9"
+    },
+    {
+      "id": "70-493",
+      "name": "Valuation and Financial Modeling",
+      "units": 9.0,
+      "source_text": "70-493 Valuation and Financial Modeling 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-1-alternative-3",
+      "name": "Probability and Statistics for Business Applications",
+      "heading": "Required:",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-207",
+        "36-200",
+        "36-220",
+        "36-218",
+        "36-225"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "elective-courses-choose-three-1",
+      "name": "Elective Courses ( choose three ) :",
+      "heading": "Elective Courses ( choose three ) :",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "70-398",
+        "70-428",
+        "70-492",
+        "70-495",
+        "73-103",
+        "73-337",
+        "21-270"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 3
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Financial Management, Minor Course Requirements Required: Units 70-391 Finance 9 70-493 Valuation and Financial Modeling 9 70-207 Probability and Statistics for Business Applications 9 or 36-200 Reasoning with Data or 36-220 Engineering Statistics and Quality Control or 36-218 Probability Theory for Computer Scientists or 36-225 Introduction to Probability Theory Elective Courses ( choose three ) : 70-398 International Finance 9 70-428 Financial Statement Analysis 9 70-492 Investment Analysis 9 70-495 Corporate Finance 9 73-103 Principles of Macroeconomics 9 73-337 Business of Blockchain 9 21-270 Introduction to Mathematical Finance 9 Double-Counting While there are no double counting restrictions between the minor and the student's home college general education requirements, only one minor course may double-count with any other major or minor requirements.",
+        "The Minor in Operations and Supply Chain Management allows an additional double-count for a total of 2 courses that may double-count with any other major or minor requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 14,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 14,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 13,
+    "missing_schedule_course_ids": [
+      "73-337"
+    ]
+  }
+}

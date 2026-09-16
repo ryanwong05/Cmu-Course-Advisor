@@ -1,0 +1,250 @@
+{
+  "program_id": "computer-science--additional-major",
+  "planning_id": "computer-science",
+  "name": "Computer Science",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-additional-major/",
+  "source_hash": "343900e827da9b893af5a8880acda0364942f5d6fdd4666cca79b4da3c57945e",
+  "fixed_courses": [
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    },
+    {
+      "id": "21-122",
+      "name": "Integration and Approximation",
+      "units": 10.0,
+      "source_text": "21-122 Integration and Approximation 10"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "computer-science-requirements-12-courses-1",
+      "name": "Core courses (all are required)",
+      "heading": "Computer Science requirements (12 courses):",
+      "choose": 6,
+      "units": 72,
+      "options": [
+        "15-122",
+        "15-150",
+        "15-210",
+        "15-213",
+        "15-251",
+        "15-451"
+      ],
+      "source_instruction": "Core courses (all are required):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 6
+      },
+      "track": null
+    },
+    {
+      "id": "computer-science-requirements-12-courses",
+      "name": "Computer Science requirements (12 courses):",
+      "heading": "Computer Science requirements (12 courses):",
+      "choose": 9,
+      "units": 9,
+      "options": [
+        "07-280",
+        "10-301",
+        "11-411",
+        "11-485",
+        "15-382",
+        "15-386",
+        "16-280",
+        "16-384",
+        "16-385",
+        "02-251",
+        "05-391",
+        "11-324",
+        "15-322",
+        "15-330",
+        "15-362",
+        "15-455",
+        "17-313",
+        "15-311",
+        "15-312",
+        "15-316",
+        "15-317",
+        "15-414",
+        "17-355",
+        "17-363",
+        "80-413"
+      ],
+      "source_instruction": "One Artificial Intelligence elective (minimum 9 units). Students will be able to tackle complex, real-world problems using techniques from Artificial Intelligence, including symbolic and probabilistic reasoning, machine learning, optimization, and perception.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 9
+      },
+      "track": null,
+      "source_categories": [
+        "One Artificial Intelligence elective (minimum 9 units). Students will be able to tackle complex, real-world problems using techniques from Artificial Intelligence, including symbolic and probabilistic reasoning, machine learning, optimization, and perception.",
+        "One Domains elective (minimum 9 units). Students will gain expertise in fundamental principles from a larger domain of computer science not already represented by other constrained categories, currently logic and languages, systems, and artificial intelligence (which includes machine learning, language technologies, and robotics). Students will be able to apply theoretical and computational techniques from the Computer Science core to an introductory study of another major subarea of Computer Science.",
+        "One Logic & Languages elective (minimum 9 units). Students will master techniques for rigorous, formal reasoning about programs or systems, rooted in their logical foundations."
+      ]
+    },
+    {
+      "id": "computer-science-requirements-12-courses",
+      "name": "Computer Science requirements (12 courses):",
+      "heading": "Computer Science requirements (12 courses):",
+      "choose": 6,
+      "units": 12,
+      "options": [
+        "15-410",
+        "15-411",
+        "15-418",
+        "15-440",
+        "15-441",
+        "15-445"
+      ],
+      "source_instruction": "One Systems elective (minimum 12 units). Students will 1. be able to describe how the properties of modern hardware (e.g., processor architecture, networks, storage) influence the design and implementation of software systems, such as through reasoning about concurrency and performance. 2. be able to analyze failures and / or resource limitations of physical systems and plan for their mitigation or management. 3. be able to develop abstractions based on lower-level primitives to manage the failures or other difficulties inherent in working with hardware. 4. demonstrate their learning through significant project / system implementations, requiring both course-specific knowledge as well as general system-building skills (i.e., not just programming, but also design, debugging, testing, etc.). The programming tasks together constitute a significant fraction of the course grade (e.g., 40% or more).",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 12.0,
+        "course_count_estimate": 6
+      },
+      "track": null,
+      "source_categories": [
+        "One Systems elective (minimum 12 units). Students will 1. be able to describe how the properties of modern hardware (e.g., processor architecture, networks, storage) influence the design and implementation of software systems, such as through reasoning about concurrency and performance. 2. be able to analyze failures and / or resource limitations of physical systems and plan for their mitigation or management. 3. be able to develop abstractions based on lower-level primitives to manage the failures or other difficulties inherent in working with hardware. 4. demonstrate their learning through significant project / system implementations, requiring both course-specific knowledge as well as general system-building skills (i.e., not just programming, but also design, debugging, testing, etc.). The programming tasks together constitute a significant fraction of the course grade (e.g., 40% or more)."
+      ]
+    },
+    {
+      "id": "math-requirements-minimum-5-courses-1-alternative-3",
+      "name": "Concepts of Mathematics",
+      "heading": "Math requirements (minimum 5 courses):",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "21-127",
+        "21-128"
+      ],
+      "source_instruction": "All of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "math-requirements-minimum-5-courses-1-alternative-4",
+      "name": "Matrices and Linear Transformations",
+      "heading": "Math requirements (minimum 5 courses):",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "21-241",
+        "21-242"
+      ],
+      "source_instruction": "All of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "math-requirements-minimum-5-courses-1-alternative-5",
+      "name": "Calculus in Three Dimensions",
+      "heading": "Math requirements (minimum 5 courses):",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269"
+      ],
+      "source_instruction": "All of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "math-requirements-minimum-5-courses-2",
+      "name": "Plus one of the following",
+      "heading": "Math requirements (minimum 5 courses):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-259",
+        "21-325",
+        "21-425",
+        "36-218",
+        "36-226"
+      ],
+      "source_instruction": "Plus one of the following:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "technical-communication-requirement-1-course-1",
+      "name": "One Technical Communications course",
+      "heading": "Technical Communication requirement (1 course)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "07-300",
+        "17-200",
+        "76-270"
+      ],
+      "source_instruction": "One Technical Communications course:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "One Technical Communications course: Units 07-300 Research and Innovation in Computer Science 9 17-200 Ethics and Policy Issues in Computing 9 76-270 Writing for the Professions 9 Double-Counting Restriction Students pursuing an Additional Major in Computer Science must complete all requirements listed above.",
+        "In addition, at most 5 of the 12 computer science requirements can be double counted toward all other declared majors and minors.",
+        "The mathematics and technical communication requirements can be double counted without restriction.",
+        "Students, especially from interdisciplinary majors or with multiple majors or minors, are urged to consult with the Computer Science Program Director or the Undergraduate Program Coordinator in the CS Undergraduate Office to determine double-counting restrictions specific to their own situations."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 55,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 55,
+    "extracted_unit_estimate": 164,
+    "scheduled_course_count": 50,
+    "missing_schedule_course_ids": [
+      "02-251",
+      "11-324",
+      "15-382",
+      "17-200",
+      "17-363"
+    ]
+  }
+}

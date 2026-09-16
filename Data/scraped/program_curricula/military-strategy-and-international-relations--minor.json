@@ -1,0 +1,172 @@
+{
+  "program_id": "military-strategy-and-international-relations--minor",
+  "planning_id": "military-strategy-and-international-relations",
+  "name": "Military Strategy and International Relations",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/military-strategy-international-relations-minor/",
+  "source_hash": "e33a169a3d10763b0cf4dbd83b3d6d86fd19486de98fe1a0945781e73d18e8a9",
+  "fixed_courses": [
+    {
+      "id": "84-328",
+      "name": "Military Strategy and Doctrine",
+      "units": 9.0,
+      "source_text": "84-328 Military Strategy and Doctrine 9"
+    },
+    {
+      "id": "84-319",
+      "name": "Civil-Military Relations",
+      "units": 9.0,
+      "source_text": "84-319 Civil-Military Relations 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-27-units",
+      "name": "Core Courses 27 units",
+      "heading": "Core Courses 27 units",
+      "choose": 1,
+      "units": 27,
+      "options": [
+        "84-280",
+        "84-325",
+        "84-362"
+      ],
+      "source_instruction": "Diplomacy (select one)",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Diplomacy (select one)"
+      ]
+    },
+    {
+      "id": "electives-36-units",
+      "name": "Electives 36 units",
+      "heading": "Electives 36 units",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "84-104",
+        "84-120",
+        "84-200",
+        "84-226",
+        "84-274",
+        "84-275",
+        "84-280",
+        "84-303",
+        "84-304",
+        "84-309",
+        "84-312",
+        "84-318",
+        "84-322",
+        "84-323",
+        "84-324",
+        "84-325",
+        "84-329",
+        "84-330",
+        "84-331",
+        "84-333",
+        "84-341",
+        "84-343",
+        "84-345",
+        "84-347",
+        "84-349",
+        "84-350",
+        "84-353",
+        "84-362",
+        "84-363",
+        "84-365",
+        "84-366",
+        "84-367",
+        "84-368",
+        "84-370",
+        "84-371",
+        "84-373",
+        "84-380",
+        "84-383",
+        "84-386",
+        "84-387",
+        "84-389",
+        "84-393",
+        "84-405",
+        "17-200",
+        "32-201",
+        "32-310",
+        "32-402",
+        "79-257",
+        "79-268",
+        "79-302",
+        "80-136"
+      ],
+      "source_instruction": "Electives",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Electives"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [
+        18
+      ],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Curriculum Students may double count a maximum of two courses (18 units) with another major or minor.",
+        "Unlimited double counting is permitted with general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 56,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 3 choices from an explicit 36-unit rule: Electives 36 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "14 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 53,
+    "extracted_unit_estimate": 81,
+    "scheduled_course_count": 39,
+    "missing_schedule_course_ids": [
+      "17-200",
+      "79-257",
+      "79-268",
+      "80-136",
+      "84-200",
+      "84-280",
+      "84-303",
+      "84-318",
+      "84-324",
+      "84-331",
+      "84-333",
+      "84-349",
+      "84-367",
+      "84-386"
+    ]
+  }
+}

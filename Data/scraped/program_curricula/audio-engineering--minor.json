@@ -1,0 +1,193 @@
+{
+  "program_id": "audio-engineering--minor",
+  "planning_id": "audio-engineering",
+  "name": "Audio Engineering",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/audio-engineering-minor/",
+  "source_hash": "b6ff152458475719b8867732a25e8cd38c0a59e92f0624932e5189fadac4c4be",
+  "fixed_courses": [
+    {
+      "id": "57-103",
+      "name": "Elective Studio (Beginning Piano Class)",
+      "units": 3.0,
+      "source_text": "57-103 Elective Studio (Beginning Piano Class) 3"
+    },
+    {
+      "id": "57-104",
+      "name": "Elective Studio (Beginning Piano Class)",
+      "units": 3.0,
+      "source_text": "57-104 Elective Studio (Beginning Piano Class) 3"
+    },
+    {
+      "id": "57-121",
+      "name": "Elective Studio (Piano)",
+      "units": null,
+      "source_text": "57-121 Elective Studio (Piano) Var."
+    },
+    {
+      "id": "57-329",
+      "name": "Beginning Piano for Minors",
+      "units": 3.0,
+      "source_text": "57-329 Beginning Piano for Minors 3"
+    },
+    {
+      "id": "57-330",
+      "name": "Beginning Piano for Minors II",
+      "units": 3.0,
+      "source_text": "57-330 Beginning Piano for Minors II 3"
+    },
+    {
+      "id": "57-173",
+      "name": "Survey of Western Music History *",
+      "units": 9.0,
+      "source_text": "57-173 Survey of Western Music History * 9"
+    },
+    {
+      "id": "57-188",
+      "name": "Repertoire and Listening for Musicians",
+      "units": 1.0,
+      "source_text": "57-188 Repertoire and Listening for Musicians 1"
+    },
+    {
+      "id": "57-337",
+      "name": "Sound Recording",
+      "units": 6.0,
+      "source_text": "57-337 Sound Recording 6"
+    },
+    {
+      "id": "33-114",
+      "name": "Physics of Musical Sound",
+      "units": 9.0,
+      "source_text": "33-114 Physics of Musical Sound 9"
+    },
+    {
+      "id": "18-490",
+      "name": "Electroacoustics **",
+      "units": 12.0,
+      "source_text": "18-490 Electroacoustics ** 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "music-courses-43-49-units-1-alternative-1",
+      "name": "Introduction to Music Technology",
+      "heading": "Music Courses 43-49 units",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "57-101",
+        "57-171"
+      ],
+      "source_instruction": "Required Music Courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "music-courses-43-49-units-1-alternative-2",
+      "name": "Basic Harmony I",
+      "heading": "Music Courses 43-49 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "57-149",
+        "57-152"
+      ],
+      "source_instruction": "Required Music Courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "music-courses-43-49-units",
+      "name": "Music Courses 43-49 units",
+      "heading": "Music Courses 43-49 units",
+      "choose": 2,
+      "units": 49,
+      "options": [
+        "15-322",
+        "57-338",
+        "57-347",
+        "57-438"
+      ],
+      "source_instruction": "Choose two Music Tech Electives:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 49.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Choose two Music Tech Electives"
+      ]
+    },
+    {
+      "id": "technical-courses-33-units",
+      "name": "Technical Courses 33 units",
+      "heading": "Technical Courses 33 units",
+      "choose": 1,
+      "units": 33,
+      "options": [
+        "18-300",
+        "18-341",
+        "18-370",
+        "18-491",
+        "15-210",
+        "15-214",
+        "18-320",
+        "18-349"
+      ],
+      "source_instruction": "Choose one Technical course:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 33.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Choose one Technical course"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 26,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 26,
+    "extracted_unit_estimate": 146,
+    "scheduled_course_count": 22,
+    "missing_schedule_course_ids": [
+      "15-214",
+      "57-171",
+      "57-329",
+      "57-330"
+    ]
+  }
+}

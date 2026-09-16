@@ -1,0 +1,122 @@
+{
+  "program_id": "physical-computing--minor",
+  "planning_id": "physical-computing",
+  "name": "Physical Computing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/physical-computing-minor/",
+  "source_hash": "a1da7c6e2285a01b7b413e0c0271a61aac17dfce33665f9a92087cb8b75e2a04",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "one-computing-course-minimum-of-9-units",
+      "name": "One Computing Course - Minimum of 9 Units",
+      "heading": "One Computing Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "60-212"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Computing Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "one-ideate-portal-course-minimum-of-9-units",
+      "name": "One IDeATe Portal Course - Minimum of 9 Units",
+      "heading": "One IDeATe Portal Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "60-223",
+        "16-223"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One IDeATe Portal Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "ideate-physical-computing-courses-minimum-of-27-units",
+      "name": "IDeATe Physical Computing Courses - Minimum of 27 Units",
+      "heading": "IDeATe Physical Computing Courses - Minimum of 27 Units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "15-294",
+        "15-394",
+        "54-375",
+        "16-376",
+        "16-480",
+        "18-578",
+        "24-672",
+        "62-423",
+        "62-478"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "IDeATe Physical Computing Courses - Minimum of 27 Units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Students may double-count up to two of their Physical Computing minor courses toward requirements for other majors and minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 15,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 3 choices from an explicit 27-unit rule: IDeATe Physical Computing Courses - Minimum of 27 Units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 15,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 14,
+    "missing_schedule_course_ids": [
+      "15-104"
+    ]
+  }
+}

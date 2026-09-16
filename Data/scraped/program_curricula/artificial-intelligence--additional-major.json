@@ -1,0 +1,273 @@
+{
+  "program_id": "artificial-intelligence--additional-major",
+  "planning_id": "artificial-intelligence",
+  "name": "Artificial Intelligence",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-additional-major/",
+  "source_hash": "40aa9ac46283a50d3753e663a10908bc10c9793d3e138560685ec6aa4a1116ad",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "prerequisites-1",
+      "name": "(1 course)",
+      "heading": "Prerequisites",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "15-112"
+      ],
+      "source_instruction": "(1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "math-and-statistics-core-1",
+      "name": "(6 courses)",
+      "heading": "Math and Statistics Core",
+      "choose": 6,
+      "units": 54,
+      "options": [
+        "21-112",
+        "21-120",
+        "21-127",
+        "21-128",
+        "15-151",
+        "21-122",
+        "21-241",
+        "36-218",
+        "15-259",
+        "21-325 + 36-226",
+        "21-425 + 36-226",
+        "36-225 + 36-226",
+        "36-235 + 36-236",
+        "36-401"
+      ],
+      "source_instruction": "(6 courses)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 6
+      },
+      "track": null
+    },
+    {
+      "id": "computer-science-core-1",
+      "name": "(5 courses)",
+      "heading": "Computer Science Core",
+      "choose": 5,
+      "units": 60,
+      "options": [
+        "15-122",
+        "15-150",
+        "15-210",
+        "15-213",
+        "15-251"
+      ],
+      "source_instruction": "(5 courses)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 5
+      },
+      "track": null
+    },
+    {
+      "id": "artificial-intelligence-core-1",
+      "name": "(2 courses)",
+      "heading": "Artificial Intelligence Core",
+      "choose": 2,
+      "units": 24,
+      "options": [
+        "07-280",
+        "07-380"
+      ],
+      "source_instruction": "(2 courses)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 2
+      },
+      "track": null
+    },
+    {
+      "id": "ai-cluster-electives-1",
+      "name": "Cognition and Action Cluster (1 course)",
+      "heading": "AI Cluster Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-386",
+        "15-482",
+        "15-494",
+        "16-350",
+        "16-362",
+        "16-384"
+      ],
+      "source_instruction": "Cognition and Action Cluster (1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ai-cluster-electives-2",
+      "name": "Machine Learning Cluster (1 course)",
+      "heading": "AI Cluster Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "10-403",
+        "10-405",
+        "10-414",
+        "10-417",
+        "10-418",
+        "10-422",
+        "10-423",
+        "10-424",
+        "10-425",
+        "11-441",
+        "11-485",
+        "36-402"
+      ],
+      "source_instruction": "Machine Learning Cluster (1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ai-cluster-electives-3",
+      "name": "Perception and Language Cluster (1 course)",
+      "heading": "AI Cluster Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "11-411",
+        "11-442",
+        "11-492",
+        "15-387",
+        "15-463",
+        "16-385"
+      ],
+      "source_instruction": "Perception and Language Cluster (1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ai-cluster-electives-4",
+      "name": "Human-AI Interaction Cluster (1 course)",
+      "heading": "AI Cluster Electives",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-317",
+        "05-318",
+        "05-391",
+        "16-467"
+      ],
+      "source_instruction": "Human-AI Interaction Cluster (1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ethics-and-human-cognition-1",
+      "name": "Ethics (1 course)",
+      "heading": "Ethics and Human Cognition",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "16-161",
+        "16-735",
+        "17-200",
+        "80-249"
+      ],
+      "source_instruction": "Ethics (1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ethics-and-human-cognition-2",
+      "name": "Human Cognition (1 course)",
+      "heading": "Ethics and Human Cognition",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-110",
+        "85-213",
+        "85-413",
+        "85-408",
+        "85-421"
+      ],
+      "source_instruction": "Human Cognition (1 course)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        5
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Restrictions Students pursuing an additional major in AI can double count at most five courses total, from the Computer Science Core, the Artificial Intelligence Core, and the AI Cluster Electives, towards all other majors and minors they're pursuing.",
+        "The Mathematics, Ethics, and Human Cognition courses may double count without restriction, except for 36-402 Advanced Methods for Data Analysis , which is part of the Machine Learning Cluster."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 59,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "13 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 59,
+    "extracted_unit_estimate": 207,
+    "scheduled_course_count": 46,
+    "missing_schedule_course_ids": [
+      "10-418",
+      "10-424",
+      "10-425",
+      "11-441",
+      "16-161",
+      "16-735",
+      "17-200",
+      "21-325 + 36-226",
+      "21-425 + 36-226",
+      "36-225 + 36-226",
+      "36-235 + 36-236",
+      "85-408",
+      "85-421"
+    ]
+  }
+}

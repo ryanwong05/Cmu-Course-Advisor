@@ -1,0 +1,86 @@
+{
+  "program_id": "global-engineering--minor",
+  "planning_id": "global-engineering",
+  "name": "Global Engineering",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/global-engineering-minor/",
+  "source_hash": "a9e7754f088c689d03ddf249324784f873344ce37c087c5e31a3d170eeab2dd1",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "international-management-1-course-1",
+      "name": "Complete one course in international management or business such as",
+      "heading": "International Management (1 course)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-342",
+        "70-365",
+        "70-381",
+        "70-430"
+      ],
+      "source_instruction": "Complete one course in international management or business such as:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ethics-1-course-1",
+      "name": "Any ethics course that provides some exposure to international ethics issues such as",
+      "heading": "Ethics (1 course)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-332",
+        "80-136",
+        "80-244"
+      ],
+      "source_instruction": "Any ethics course that provides some exposure to international ethics issues such as:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 7,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 7,
+    "extracted_unit_estimate": 18,
+    "scheduled_course_count": 4,
+    "missing_schedule_course_ids": [
+      "70-365",
+      "70-430",
+      "80-136"
+    ]
+  }
+}

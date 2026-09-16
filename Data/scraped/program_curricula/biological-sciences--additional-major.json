@@ -1,0 +1,104 @@
+{
+  "program_id": "biological-sciences--additional-major",
+  "planning_id": "biological-sciences",
+  "name": "Biological Sciences",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-additional-major/",
+  "source_hash": "76b62d5e904d6700ff422ae56376d7ddbba93151072029d4231531502b985aa8",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "curriculum-1",
+      "name": "Biological Sciences",
+      "heading": "Curriculum",
+      "choose": 1,
+      "units": 1,
+      "options": [
+        "03-151",
+        "03-121",
+        "03-201",
+        "03-231",
+        "03-320",
+        "02-250",
+        "03-220",
+        "03-221",
+        "03-343",
+        "03-344",
+        "03-345",
+        "03-346",
+        "03-411",
+        "03-412"
+      ],
+      "source_instruction": "Biological Sciences",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "curriculum-1",
+      "name": "Chemistry",
+      "heading": "Curriculum",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-105",
+        "09-107",
+        "09-106",
+        "09-217",
+        "09-218",
+        "09-207",
+        "09-208"
+      ],
+      "source_instruction": "Chemistry",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Amanda Willard , for questions about double counting."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 21,
+    "confidence": 0.53,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Curriculum",
+      "Assumed choose-one for ambiguous section: Curriculum",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "2 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 21,
+    "extracted_unit_estimate": 10,
+    "scheduled_course_count": 20,
+    "missing_schedule_course_ids": [
+      "03-346"
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "program_id": "mechanical-behavior-of-materials--minor",
+  "planning_id": "mechanical-behavior-of-materials",
+  "name": "Mechanical Behavior of Materials",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/mechanical-behaviors-of-materials-minor/",
+  "source_hash": "42a333381ca98f25b15a2eb1a9589c27ca4f193bc88cb06a56e5428657bd0a1d",
+  "fixed_courses": [
+    {
+      "id": "27-201",
+      "name": "Structure of Materials",
+      "units": 9.0,
+      "source_text": "27-201 Structure of Materials 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-1-alternative-2",
+      "name": "Mechanics of Materials",
+      "heading": "Core Courses:",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "27-591",
+        "27-791"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "core-courses-1-alternative-3",
+      "name": "Statics",
+      "heading": "Core Courses:",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "12-212",
+        "24-261"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "group-a-materials-science-courses-1",
+      "name": "Each student must take one course from this list of Materials Science courses",
+      "heading": "Group A: Materials Science Courses",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "27-202",
+        "27-357",
+        "27-709"
+      ],
+      "source_instruction": "Each student must take one course from this list of Materials Science courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "group-b-solid-mechanics-courses-1",
+      "name": "Each student must take two of the following Solid Mechanics courses",
+      "heading": "Group B: Solid Mechanics Courses",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "12-231",
+        "24-262",
+        "12-635",
+        "24-351"
+      ],
+      "source_instruction": "Each student must take two of the following Solid Mechanics courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 2
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Although this minor is open to all CIT students, only students in the departments of Civil Engineering, Materials Science and Engineering, and Mechanical Engineering can take advantage of the double counting permitted for some courses in their department majors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 12,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 12,
+    "extracted_unit_estimate": 51,
+    "scheduled_course_count": 10,
+    "missing_schedule_course_ids": [
+      "27-591",
+      "27-791"
+    ]
+  }
+}

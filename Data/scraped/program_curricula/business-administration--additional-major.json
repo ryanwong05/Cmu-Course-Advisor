@@ -1,0 +1,238 @@
+{
+  "program_id": "business-administration--additional-major",
+  "planning_id": "business-administration",
+  "name": "Business Administration",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-additional-major/",
+  "source_hash": "c0453704c45d1e285490f612b546603092e26639d3fab6c4ff6fe631ecba458d",
+  "fixed_courses": [
+    {
+      "id": "73-103",
+      "name": "Principles of Macroeconomics",
+      "units": 9.0,
+      "source_text": "73-103 Principles of Macroeconomics 9"
+    },
+    {
+      "id": "70-110",
+      "name": "Business Computing",
+      "units": 9.0,
+      "source_text": "70-110 Business Computing 9"
+    },
+    {
+      "id": "70-122",
+      "name": "Introduction to Accounting",
+      "units": 9.0,
+      "source_text": "70-122 Introduction to Accounting 9"
+    },
+    {
+      "id": "70-311",
+      "name": "Organizational Behavior",
+      "units": 9.0,
+      "source_text": "70-311 Organizational Behavior 9"
+    },
+    {
+      "id": "70-332",
+      "name": "Business, Society and Ethics",
+      "units": 9.0,
+      "source_text": "70-332 Business, Society and Ethics 9"
+    },
+    {
+      "id": "70-340",
+      "name": "Business Communications",
+      "units": 9.0,
+      "source_text": "70-340 Business Communications 9"
+    },
+    {
+      "id": "70-345",
+      "name": "Business Presentations",
+      "units": 9.0,
+      "source_text": "70-345 Business Presentations 9"
+    },
+    {
+      "id": "70-371",
+      "name": "Operations Management",
+      "units": 9.0,
+      "source_text": "70-371 Operations Management 9"
+    },
+    {
+      "id": "70-381",
+      "name": "Marketing I",
+      "units": 9.0,
+      "source_text": "70-381 Marketing I 9"
+    },
+    {
+      "id": "70-391",
+      "name": "Finance",
+      "units": 9.0,
+      "source_text": "70-391 Finance 9"
+    },
+    {
+      "id": "70-401",
+      "name": "Management Game",
+      "units": 12.0,
+      "source_text": "70-401 Management Game 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "business-foundations-1-alternative-1",
+      "name": "Differential and Integral Calculus",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "21-120",
+        "21-111 + 21-112"
+      ],
+      "source_instruction": "Mathematics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-1-alternative-2",
+      "name": "Multivariate Analysis",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-256",
+        "21-254",
+        "21-259",
+        "21-266"
+      ],
+      "source_instruction": "Mathematics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-1-alternative-3",
+      "name": "Optimization for Business",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-257",
+        "21-292"
+      ],
+      "source_instruction": "Mathematics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-1-alternative-1",
+      "name": "Principles of Microeconomics",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": "Economics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-1-alternative-3",
+      "name": "Intermediate Microeconomics",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-230",
+        "73-240"
+      ],
+      "source_instruction": "Economics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-1-alternative-1",
+      "name": "Probability and Statistics for Business Applications",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-207",
+        "36-200"
+      ],
+      "source_instruction": "Statistics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-1-alternative-2",
+      "name": "Regression Analysis",
+      "heading": "Business Foundations",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-208",
+        "36-202"
+      ],
+      "source_instruction": "Statistics",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Restriction Students pursuing the additional major may double-count two courses with any other major or minor requirements and are allowed unlimited double-counts for the business foundation courses.",
+        "There are no double counting restrictions between the additional major and a student's home college general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 27,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 27,
+    "extracted_unit_estimate": 166,
+    "scheduled_course_count": 26,
+    "missing_schedule_course_ids": [
+      "21-111 + 21-112"
+    ]
+  }
+}

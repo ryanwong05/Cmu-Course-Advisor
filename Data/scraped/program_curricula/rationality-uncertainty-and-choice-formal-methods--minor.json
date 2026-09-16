@@ -1,0 +1,148 @@
+{
+  "program_id": "rationality-uncertainty-and-choice-formal-methods--minor",
+  "planning_id": "rationality-uncertainty-and-choice-formal-methods",
+  "name": "Rationality, Uncertainty, and Choice: Formal Methods",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/rationality-uncertainty-choice-formal-methods-minor/",
+  "source_hash": "9c99632158866040255331fd1e1b36b40a950e829dde1950b1a47320bfb70548",
+  "fixed_courses": [
+    {
+      "id": "80-305",
+      "name": "Game Theory",
+      "units": 9.0,
+      "source_text": "80-305 Game Theory 9"
+    },
+    {
+      "id": "80-306",
+      "name": "Decision Theory",
+      "units": 9.0,
+      "source_text": "80-306 Decision Theory 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-requirements-1-alternative-3",
+      "name": "Decision Analysis",
+      "heading": "Core Requirements",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "88-223",
+        "88-312"
+      ],
+      "source_instruction": "Complete all of the following:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "elective-category-1-formal-foundations-9-18-units",
+      "name": "Elective Category 1: Formal Foundations 9-18 units",
+      "heading": "Elective Category 1: Formal Foundations 9-18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "80-201",
+        "80-208",
+        "80-210",
+        "80-211",
+        "80-310",
+        "80-311",
+        "80-315",
+        "80-325",
+        "80-516",
+        "80-521",
+        "80-524",
+        "88-223",
+        "88-312",
+        "88-379"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Category 1: Formal Foundations 9-18 units"
+      ]
+    },
+    {
+      "id": "elective-category-2-theory-and-applications-9-18-units",
+      "name": "Elective Category 2: Theory and Applications 9-18 units",
+      "heading": "Elective Category 2: Theory and Applications 9-18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "80-220",
+        "80-221",
+        "80-222",
+        "80-246",
+        "80-249",
+        "80-261",
+        "80-324",
+        "80-330",
+        "80-335",
+        "88-252",
+        "88-255"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Category 2: Theory and Applications 9-18 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 29,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 2 choices from an explicit 18-unit rule: Elective Category 1: Formal Foundations 9-18 units",
+      "Inferred 2 choices from an explicit 18-unit rule: Elective Category 2: Theory and Applications 9-18 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 27,
+    "extracted_unit_estimate": 66,
+    "scheduled_course_count": 19,
+    "missing_schedule_course_ids": [
+      "80-201",
+      "80-220",
+      "80-222",
+      "80-246",
+      "80-261",
+      "80-324",
+      "80-521",
+      "80-524"
+    ]
+  }
+}

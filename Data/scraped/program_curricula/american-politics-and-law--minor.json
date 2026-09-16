@@ -1,0 +1,178 @@
+{
+  "program_id": "american-politics-and-law--minor",
+  "planning_id": "american-politics-and-law",
+  "name": "American Politics and Law",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/american-politics-law-minor/",
+  "source_hash": "5c5eedb35093354f0d6da2073e1d99217f2918be06458969fd79502368046e23",
+  "fixed_courses": [
+    {
+      "id": "84-104",
+      "name": "Decision Processes in American Political Institutions",
+      "units": 9.0,
+      "source_text": "84-104 Decision Processes in American Political Institutions 9"
+    },
+    {
+      "id": "84-120",
+      "name": "Introduction to US Constitutional Law",
+      "units": 9.0,
+      "source_text": "84-120 Introduction to US Constitutional Law 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "communication-6-9-units",
+      "name": "Communication 6-9 units",
+      "heading": "Communication 6-9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "84-250",
+        "84-252"
+      ],
+      "source_instruction": "Students must complete one of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete one of the following courses"
+      ]
+    },
+    {
+      "id": "american-politics-18-units",
+      "name": "American Politics 18 units",
+      "heading": "American Politics 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "84-280",
+        "84-301",
+        "84-304",
+        "84-309",
+        "84-319",
+        "84-324",
+        "84-325",
+        "84-327",
+        "84-328",
+        "84-338",
+        "84-347",
+        "84-352",
+        "84-353",
+        "84-355",
+        "84-358",
+        "84-365",
+        "84-366",
+        "84-367",
+        "84-380",
+        "84-393",
+        "84-402",
+        "79-248",
+        "79-250"
+      ],
+      "source_instruction": "Students must complete 18 units from the following list of courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete 18 units from the following list of courses"
+      ]
+    },
+    {
+      "id": "law-18-units",
+      "name": "Law 18 units",
+      "heading": "Law 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "84-285",
+        "84-331",
+        "84-332",
+        "84-333",
+        "84-338",
+        "84-343",
+        "84-345",
+        "84-349",
+        "84-373",
+        "84-402",
+        "17-333",
+        "66-221",
+        "66-226",
+        "70-244",
+        "70-364",
+        "73-408",
+        "76-219",
+        "76-475",
+        "79-178",
+        "79-360",
+        "88-281",
+        "88-284"
+      ],
+      "source_instruction": "Students must complete 18 units from the following list of courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete 18 units from the following list of courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Curriculum Students may double count a maximum of two courses with another major or minor.",
+        "Unlimited double counting is permitted with general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 49,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 2 choices from an explicit 18-unit rule: American Politics 18 units",
+      "Inferred 2 choices from an explicit 18-unit rule: Law 18 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "9 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 47,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 38,
+    "missing_schedule_course_ids": [
+      "79-178",
+      "79-360",
+      "84-280",
+      "84-324",
+      "84-331",
+      "84-333",
+      "84-349",
+      "84-367",
+      "84-402"
+    ]
+  }
+}

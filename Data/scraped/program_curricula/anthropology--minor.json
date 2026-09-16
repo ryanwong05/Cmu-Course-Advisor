@@ -1,0 +1,199 @@
+{
+  "program_id": "anthropology--minor",
+  "planning_id": "anthropology",
+  "name": "Anthropology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-minor/",
+  "source_hash": "7f8916ef7c988fd4c0ff57c6823b28483fde6e07fbd27c0786f02cf398ca4b00",
+  "fixed_courses": [
+    {
+      "id": "79-275",
+      "name": "Introduction to Global Studies",
+      "units": 9.0,
+      "source_text": "79-275 Introduction to Global Studies 9"
+    },
+    {
+      "id": "79-283",
+      "name": "Anthropology of Energy",
+      "units": 9.0,
+      "source_text": "79-283 Anthropology of Energy 9"
+    },
+    {
+      "id": "79-314",
+      "name": "How Do We Remember? The Politics and Cultures of Memory",
+      "units": 9.0,
+      "source_text": "79-314 How Do We Remember? The Politics and Cultures of Memory 9"
+    },
+    {
+      "id": "79-317",
+      "name": "Art, Anthropology, and Empire",
+      "units": 9.0,
+      "source_text": "79-317 Art, Anthropology, and Empire 9"
+    },
+    {
+      "id": "79-332",
+      "name": "Medical Anthropology",
+      "units": 9.0,
+      "source_text": "79-332 Medical Anthropology 9"
+    },
+    {
+      "id": "79-379",
+      "name": "Experimental Ethnography",
+      "units": 9.0,
+      "source_text": "79-379 Experimental Ethnography 9"
+    },
+    {
+      "id": "79-380",
+      "name": "Hostile Environments: The Politics of Pollution in Global Perspective",
+      "units": 9.0,
+      "source_text": "79-380 Hostile Environments: The Politics of Pollution in Global Perspective 9"
+    },
+    {
+      "id": "79-381",
+      "name": "The Multispecies City: Anthropology of Urban Environments",
+      "units": 9.0,
+      "source_text": "79-381 The Multispecies City: Anthropology of Urban Environments 9"
+    },
+    {
+      "id": "79-506",
+      "name": "Global Studies Internship",
+      "units": null,
+      "source_text": "79-506 Global Studies Internship 3-9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "i-general-education-course-disciplinary-perspectives-social-sciences-9-units",
+      "name": "I. General Education Course, Disciplinary Perspectives: Social Sciences 9 units",
+      "heading": "I. General Education Course, Disciplinary Perspectives: Social Sciences 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-201"
+      ],
+      "source_instruction": "This requirement need not be satisfied before beginning the minor.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "This requirement need not be satisfied before beginning the minor."
+      ]
+    },
+    {
+      "id": "iii-anthropological-electives-27-units",
+      "name": "III. Anthropological Electives 27 units",
+      "heading": "III. Anthropological Electives 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "57-306",
+        "79-110",
+        "79-112",
+        "79-115",
+        "79-116",
+        "79-122",
+        "79-150",
+        "79-170",
+        "79-203",
+        "79-208",
+        "79-210",
+        "79-211",
+        "79-215",
+        "79-221",
+        "79-223",
+        "79-227",
+        "79-234",
+        "79-239",
+        "79-245",
+        "79-246",
+        "79-262",
+        "79-264",
+        "79-270",
+        "79-276",
+        "79-278",
+        "79-280",
+        "79-289",
+        "79-304",
+        "79-305",
+        "79-313",
+        "79-315",
+        "79-329",
+        "79-331",
+        "79-368",
+        "79-377"
+      ],
+      "source_instruction": "Students must complete 27 units (typically 3 courses) in Anthropological Electives, selecting from the list below. (Other courses may fulfill these requirements with permission of the Faculty Advisor.)",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete 27 units (typically 3 courses) in Anthropological Electives, selecting from the list below. (Other courses may fulfill these requirements with permission of the Faculty Advisor.)"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Please note that students may “double-count” a maximum of two courses for the Anthropology minor that are used to fulfill the requirements of other majors and programs, including those administered directly by the History Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 45,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: I. General Education Course, Disciplinary Perspectives: Social Sciences 9 units",
+      "Inferred 3 choices from an explicit 27-unit rule: III. Anthropological Electives 27 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "19 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 45,
+    "extracted_unit_estimate": 108,
+    "scheduled_course_count": 26,
+    "missing_schedule_course_ids": [
+      "79-110",
+      "79-115",
+      "79-203",
+      "79-210",
+      "79-211",
+      "79-223",
+      "79-227",
+      "79-246",
+      "79-264",
+      "79-276",
+      "79-278",
+      "79-289",
+      "79-304",
+      "79-313",
+      "79-314",
+      "79-317",
+      "79-332",
+      "79-368",
+      "79-379"
+    ]
+  }
+}

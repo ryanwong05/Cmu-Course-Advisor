@@ -1,0 +1,184 @@
+{
+  "program_id": "policy-and-management--minor",
+  "planning_id": "policy-and-management",
+  "name": "Policy and Management",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-minor/",
+  "source_hash": "b04c7d738db3bd4e65cbb41dec2d2e055f9ee2cd9329ab4f629ebd60af3e7edd",
+  "fixed_courses": [
+    {
+      "id": "88-221",
+      "name": "Markets, Democracy, and Public Policy",
+      "units": 9.0,
+      "source_text": "88-221 Markets, Democracy, and Public Policy 9"
+    },
+    {
+      "id": "88-223",
+      "name": "Decision Analysis",
+      "units": 12.0,
+      "source_text": "88-223 Decision Analysis 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-39-units-1-alternative-1",
+      "name": "Principles of Microeconomics",
+      "heading": "Required Courses 39 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-39-units-1-alternative-2",
+      "name": "Managing Decisions",
+      "heading": "Required Courses 39 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-150",
+        "88-255"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "electives-18-units",
+      "name": "Electives 18 units",
+      "heading": "Electives 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "88-252",
+        "88-275",
+        "88-300",
+        "88-312",
+        "88-379",
+        "36-303",
+        "36-315",
+        "70-257",
+        "70-374",
+        "70-455",
+        "70-460",
+        "90-434",
+        "88-230",
+        "88-237",
+        "88-261",
+        "88-285",
+        "88-323 + 88-324",
+        "88-344",
+        "88-365",
+        "88-366",
+        "88-367",
+        "88-411",
+        "73-328",
+        "80-244",
+        "84-362",
+        "84-389",
+        "90-443",
+        "88-231",
+        "88-234",
+        "88-235",
+        "88-341",
+        "88-348",
+        "88-384",
+        "70-311",
+        "70-332",
+        "70-342",
+        "70-371",
+        "70-381",
+        "70-430",
+        "94-408",
+        "94-423",
+        "88-281",
+        "88-284",
+        "66-221",
+        "66-226",
+        "70-364",
+        "73-408",
+        "76-219",
+        "76-450",
+        "76-475",
+        "79-302",
+        "79-360",
+        "80-447",
+        "84-373"
+      ],
+      "source_instruction": "Analytics Concentration",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Analytics Concentration",
+        "Policy Concentration",
+        "Management Concentration",
+        "Law Concentration"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Students may double-count two courses with another major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 60,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 2 choices from an explicit 18-unit rule: Electives 18 units",
+      "Inferred 2 choices from an explicit 18-unit rule: Electives 18 units",
+      "Inferred 2 choices from an explicit 18-unit rule: Electives 18 units",
+      "Inferred 2 choices from an explicit 18-unit rule: Electives 18 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 60,
+    "extracted_unit_estimate": 57,
+    "scheduled_course_count": 52,
+    "missing_schedule_course_ids": [
+      "36-303",
+      "70-430",
+      "76-450",
+      "79-360",
+      "88-275",
+      "88-323 + 88-324",
+      "88-366",
+      "90-443"
+    ]
+  }
+}

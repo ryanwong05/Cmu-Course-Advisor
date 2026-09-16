@@ -1,0 +1,122 @@
+{
+  "program_id": "decision-making-and-intelligent-systems--minor",
+  "planning_id": "decision-making-and-intelligent-systems",
+  "name": "Decision Making and Intelligent Systems",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-making-intelligent-systems-minor/",
+  "source_hash": "6e70e0718238410a65600f35e2ff2b2e9351ee6cf09653cc77784bb7a14e94a4",
+  "fixed_courses": [
+    {
+      "id": "88-120",
+      "name": "Reason, Passion and Cognition",
+      "units": 9.0,
+      "source_text": "88-120 Reason, Passion and Cognition 9"
+    },
+    {
+      "id": "88-270",
+      "name": "AI and Social Upheaval",
+      "units": 9.0,
+      "source_text": "88-270 AI and Social Upheaval 9"
+    },
+    {
+      "id": "05-318",
+      "name": "Human AI Interaction",
+      "units": 12.0,
+      "source_text": "05-318 Human AI Interaction 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "electives-18-units",
+      "name": "Electives 18 units",
+      "heading": "Electives 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "80-249",
+        "84-350",
+        "84-371",
+        "85-213",
+        "85-414",
+        "88-230",
+        "88-231",
+        "88-275",
+        "88-302",
+        "88-312",
+        "88-367"
+      ],
+      "source_instruction": "Complete two courses from the following list. At least one of the courses (9 units) must be a Social and Decision Sciences course (88-xxx) from the approved list.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two courses from the following list. At least one of the courses (9 units) must be a Social and Decision Sciences course (88-xxx) from the approved list."
+      ]
+    },
+    {
+      "id": "integrating-ai-and-decision-making-advanced-course-9-units",
+      "name": "Integrating AI and Decision Making advanced course 9 units",
+      "heading": "Integrating AI and Decision Making advanced course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-436"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Integrating AI and Decision Making advanced course 9 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Students may double-count two courses with another major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 15,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: Integrating AI and Decision Making advanced course 9 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 15,
+    "extracted_unit_estimate": 57,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": [
+      "88-270",
+      "88-275",
+      "88-436"
+    ]
+  }
+}

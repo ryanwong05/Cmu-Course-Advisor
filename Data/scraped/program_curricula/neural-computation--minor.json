@@ -1,0 +1,165 @@
+{
+  "program_id": "neural-computation--minor",
+  "planning_id": "neural-computation",
+  "name": "Neural Computation",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neural-computation-minor/",
+  "source_hash": "cc731728d692f11f1a80bef8913cbc7c8806a60cc9045f7d0e64c45d5bd2f208",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "a-neural-computation-1",
+      "name": "A. Neural Computation",
+      "heading": "A. Neural Computation",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-386",
+        "15-387",
+        "15-883",
+        "85-414",
+        "85-419",
+        "85-420",
+        "86-452"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "b-neuroscience-1",
+      "name": "B. Neuroscience",
+      "heading": "B. Neuroscience",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-362",
+        "03-363",
+        "03-365",
+        "86-765"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "c-cognitive-psychology-1",
+      "name": "C. Cognitive Psychology",
+      "heading": "C. Cognitive Psychology",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-211",
+        "85-213",
+        "85-408",
+        "85-412",
+        "85-413",
+        "85-414",
+        "85-419",
+        "85-472",
+        "86-765"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "d-intelligent-system-analysis-1",
+      "name": "D. Intelligent System Analysis",
+      "heading": "D. Intelligent System Analysis",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "10-301",
+        "10-423",
+        "10-733",
+        "15-281",
+        "15-386",
+        "15-387",
+        "16-281",
+        "16-299",
+        "16-385",
+        "18-290",
+        "24-352",
+        "36-401",
+        "36-410",
+        "36-759",
+        "42-630",
+        "86-631",
+        "42-632",
+        "42-633",
+        "85-270",
+        "85-432"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "No more than two courses can be double counted toward the student’s major or other minors.",
+        "However, courses taken for general education requirements of the student’s degree are not considered to be double counted."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 40,
+    "confidence": 0.51,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: A. Neural Computation",
+      "Assumed choose-one for ambiguous section: B. Neuroscience",
+      "Assumed choose-one for ambiguous section: C. Cognitive Psychology",
+      "Assumed choose-one for ambiguous section: D. Intelligent System Analysis",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "4 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 35,
+    "extracted_unit_estimate": 36,
+    "scheduled_course_count": 27,
+    "missing_schedule_course_ids": [
+      "10-733",
+      "15-883",
+      "85-211",
+      "85-408",
+      "85-412",
+      "85-420",
+      "85-432",
+      "86-452"
+    ]
+  }
+}

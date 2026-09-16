@@ -1,9 +1,3341 @@
 {
   "catalog_year": "2026-2027",
-  "generated_at": "2026-09-06T19:18:08.569705+00:00",
+  "generated_at": "2026-09-16T14:10:53.226429+00:00",
   "status": "review_required",
-  "candidate_count": 3,
+  "candidate_count": 27,
   "candidates": {
+    "architecture--b-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "architecture--b-a",
+      "planning_id": "architecture",
+      "name": "Architecture",
+      "credential": "B.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 360,
+      "required_courses": [
+        "48-100",
+        "48-105",
+        "48-200",
+        "48-205",
+        "48-119",
+        "48-111",
+        "48-240",
+        "48-241",
+        "48-250",
+        "48-104",
+        "48-116",
+        "48-215",
+        "48-234",
+        "99-101",
+        "48-120",
+        "48-121",
+        "48-112",
+        "48-125",
+        "48-126",
+        "48-214",
+        "48-247"
+      ],
+      "requirement_groups": [
+        {
+          "id": "general-studies-electives-194-units",
+          "name": "General Studies & Electives 194 units",
+          "choose": 3,
+          "units": 194,
+          "options": [
+            "48-025",
+            "48-026",
+            "76-101"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 194.0,
+            "course_count_estimate": 3
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/",
+        "source_hash": "114b77729e8d34cf4d659a585d2b4df7f792a3db180b34fba78506102181e2a1",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "3 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 24,
+          "extracted_unit_estimate": 360,
+          "scheduled_course_count": 21,
+          "missing_schedule_course_ids": [
+            "48-025",
+            "48-026",
+            "48-234"
+          ]
+        }
+      }
+    },
+    "behavioral-economics--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "behavioral-economics--b-s",
+      "planning_id": "behavioral-economics",
+      "name": "Behavioral Economics",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 144,
+      "required_courses": [
+        "36-200",
+        "88-360",
+        "88-365",
+        "88-367",
+        "88-120",
+        "36-202",
+        "88-251",
+        "88-453"
+      ],
+      "requirement_groups": [
+        {
+          "id": "prerequisites-1-alternative-1",
+          "name": "Differential Calculus and Integral Calculus",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-111 + 21-112",
+            "21-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "core-courses-1-alternative-1",
+          "name": "Principles of Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "core-courses-1-alternative-2",
+          "name": "Markets, Democracy, and Public Policy",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "88-221",
+            "88-338",
+            "73-103",
+            "73-155",
+            "73-230",
+            "73-328",
+            "73-347",
+            "73-359",
+            "73-408",
+            "73-421",
+            "73-427"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "core-courses-1-alternative-2",
+          "name": "Behavioral Economics for Life",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "88-130",
+            "88-302"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "core-courses-1-alternative-3",
+          "name": "Causal Inference: from Data to Decisions",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "88-252",
+            "73-274"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "electives-27-units",
+          "name": "Electives 27 units",
+          "choose": 3,
+          "units": 27,
+          "options": [
+            "88-323 + 88-324",
+            "88-338",
+            "88-344",
+            "73-103",
+            "73-155",
+            "73-230",
+            "73-328",
+            "73-347",
+            "73-359",
+            "73-408",
+            "73-421",
+            "73-427",
+            "88-234",
+            "88-235",
+            "88-255",
+            "88-261",
+            "88-275",
+            "88-300",
+            "88-348",
+            "88-366",
+            "88-230",
+            "88-231",
+            "88-237",
+            "88-262",
+            "88-285",
+            "88-290",
+            "88-302",
+            "88-312",
+            "88-342",
+            "88-384",
+            "70-311",
+            "70-385",
+            "70-443",
+            "85-350",
+            "85-358",
+            "85-409",
+            "85-452",
+            "85-446",
+            "85-450",
+            "85-454"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 27.0,
+            "course_count_estimate": 3
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": true,
+          "source_sentences": [
+            "Behavioral Economics Courses Units 88-360 Behavioral Economics 9 88-365 Behavioral Economics and Public Policy 9 88-367 Designing Economics Experiments in the Wild 9 27 Economics Courses Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course* 88-221 Markets, Democracy, and Public Policy 9 or 88-338 Market Design or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 * Second-Level Economics course CANNOT double count with the Economics Elective course.",
+            "NOTE: The Economics Elective course CANNOT double count with the Second-Level Economics core requirement."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
+        "source_hash": "e0ad2cab4e1c69e08d92ae82290eb88eb4026bcdba2414e530f66f020b7674c7",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "10 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 56,
+          "extracted_unit_estimate": 144,
+          "scheduled_course_count": 46,
+          "missing_schedule_course_ids": [
+            "21-111 + 21-112",
+            "73-427",
+            "85-358",
+            "85-446",
+            "85-454",
+            "88-275",
+            "88-290",
+            "88-323 + 88-324",
+            "88-338",
+            "88-366"
+          ]
+        }
+      }
+    },
+    "biological-sciences-and-psychology--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "biological-sciences-and-psychology--b-s",
+      "planning_id": "biological-sciences-and-psychology",
+      "name": "Biological Sciences and Psychology",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 216,
+      "required_courses": [
+        "03-201",
+        "03-320",
+        "03-343",
+        "03-411",
+        "03-412",
+        "21-120",
+        "21-122",
+        "36-200",
+        "09-105",
+        "09-106",
+        "09-217",
+        "09-218",
+        "09-207",
+        "09-208",
+        "85-100",
+        "85-170",
+        "85-300"
+      ],
+      "requirement_groups": [
+        {
+          "id": "degree-requirements-1-alternative-1",
+          "name": "Honors Modern Biology",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "03-151",
+            "03-121"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-3",
+          "name": "Honors Biochemistry",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "03-231",
+            "03-232"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-5",
+          "name": "Genetics *New course number ( 03-330 ) starting Fall 2027",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "03-220",
+            "03-221"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-4",
+          "name": "Experimental Design for Behavioral & Social Sciences",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-309",
+            "85-309"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-5",
+          "name": "Physics I for Science Students",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "33-121",
+            "33-141"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-6",
+          "name": "Physics II for Biological Sciences and Chemistry Students *Only required for MCS Students",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "33-122",
+            "33-142"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-7",
+          "name": "Principles of Computing",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "additional-laboratory-or-research-methods-9-12-units",
+          "name": "Additional Laboratory or Research Methods 9-12 units",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "03-344",
+            "03-345",
+            "03-346",
+            "85-310",
+            "85-330",
+            "85-350",
+            "85-370"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 12.0,
+            "course_count_estimate": 1
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/",
+        "source_hash": "4f68c5cce0a173b65a6b47f14de65966ff46a9ca28545d4122008e7a5819799c",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "1 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 39,
+          "extracted_unit_estimate": 216,
+          "scheduled_course_count": 38,
+          "missing_schedule_course_ids": [
+            "03-346"
+          ]
+        }
+      }
+    },
+    "business-administration--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "business-administration--b-s",
+      "planning_id": "business-administration",
+      "name": "Business Administration",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 184,
+      "required_courses": [
+        "73-103",
+        "70-106",
+        "70-110",
+        "70-122",
+        "70-311",
+        "70-332",
+        "70-340",
+        "70-345",
+        "70-371",
+        "70-381",
+        "70-391",
+        "70-104",
+        "70-204",
+        "70-304"
+      ],
+      "requirement_groups": [
+        {
+          "id": "business-foundations-1-alternative-1",
+          "name": "Differential and Integral Calculus",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-120",
+            "21-111 + 21-112"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-foundations-1-alternative-2",
+          "name": "Multivariate Analysis",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-foundations-1-alternative-3",
+          "name": "Optimization for Business",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "70-257",
+            "21-292"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-foundations-1-alternative-1",
+          "name": "Principles of Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-foundations-1-alternative-3",
+          "name": "Intermediate Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-230",
+            "73-240"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-foundations-1-alternative-1",
+          "name": "Probability and Statistics for Business Applications",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "70-207",
+            "36-200"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-foundations-1-alternative-2",
+          "name": "Regression Analysis",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "70-208",
+            "36-202"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "business-core-1-alternative-1",
+          "name": "Management Game",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "70-401",
+            "70-447"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": true,
+          "source_sentences": [
+            "Concentration courses cannot double-count with any other degree requirement including the minor requirement.",
+            "Business Electives cannot double-count with any other degree requirement, including the minor.",
+            "Courses taken to meet concentration requirements are not allowed to double count toward any other BA degree requirements, including the minor requirement."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/",
+        "source_hash": "c3a1e97339639fddc8246a0b5d65e36e88e7f3d482dfb950442387f6117d6dc3",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "2 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 30,
+          "extracted_unit_estimate": 184,
+          "scheduled_course_count": 28,
+          "missing_schedule_course_ids": [
+            "21-111 + 21-112",
+            "70-447"
+          ]
+        }
+      }
+    },
+    "chemical-engineering--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "chemical-engineering--b-s",
+      "planning_id": "chemical-engineering",
+      "name": "Chemical Engineering",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 252,
+      "required_courses": [
+        "21-120",
+        "99-101",
+        "06-100",
+        "09-105",
+        "21-122",
+        "33-141",
+        "21-254",
+        "06-222",
+        "06-223",
+        "09-106",
+        "39-210",
+        "06-261",
+        "06-262",
+        "09-221",
+        "39-220",
+        "06-310",
+        "06-323",
+        "06-324",
+        "39-310",
+        "06-361",
+        "06-362",
+        "06-363",
+        "06-364",
+        "06-421",
+        "06-423",
+        "06-463",
+        "06-464"
+      ],
+      "requirement_groups": [
+        {
+          "id": "second-year-1",
+          "name": "B Computer Science/Physics II: Students should complete 15-110 Principles of Computing or 15-112 Fundamentals of Programming and Computer Science as well as 33-142 Physics II for Engineering and Physics Students by the end of the Sophomore year. The recommended sequence is 33-141 / 33-142 for engineering students, however, 33-151 / 33-152 will also meet the CIT Physics requirement. At the end of the Sophomore year, a student should have completed the following required basic science and computer science courses",
+          "choose": 8,
+          "units": 24,
+          "options": [
+            "09-105",
+            "09-106",
+            "09-221",
+            "15-110",
+            "15-112",
+            "33-141",
+            "33-142",
+            "99-101"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 8
+          }
+        },
+        {
+          "id": "third-year-1-alternative-4",
+          "name": "Organic Chemistry I",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "09-217",
+            "09-219"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/",
+        "source_hash": "6a3f783e532b9780572cd66243d69a1134ffa04f4b898ccec829a7e696a9b749",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "1 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 32,
+          "extracted_unit_estimate": 252,
+          "scheduled_course_count": 31,
+          "missing_schedule_course_ids": [
+            "06-362"
+          ]
+        }
+      }
+    },
+    "chemistry--b-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "chemistry--b-a",
+      "planning_id": "chemistry",
+      "name": "Chemistry",
+      "credential": "B.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 60,
+      "required_courses": [
+        "33-121",
+        "33-122",
+        "21-120",
+        "21-122"
+      ],
+      "requirement_groups": [
+        {
+          "id": "mcs-core-technical-requirements-1-alternative-3",
+          "name": "Principles of Computing",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mcs-core-technical-requirements-1-alternative-5",
+          "name": "Modern Biology",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "03-121",
+            "03-231",
+            "03-232"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": true,
+          "source_sentences": [
+            "Students may not double count courses across general education categories.",
+            "In some cases, chemistry electives may also satisfy general education requirements such as Science and Society or Cultural/Global Understanding, but students should consult with an advisor to confirm eligibility and avoid double-counting within the same category."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/",
+        "source_hash": "a37c41aa7de6c48730b6d1afdf4c0a2379c683d6688481703feaf604f51be949",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [],
+          "catalog_course_count": 10,
+          "extracted_unit_estimate": 60,
+          "scheduled_course_count": 10,
+          "missing_schedule_course_ids": []
+        }
+      }
+    },
+    "chemistry-biological-chemistry-track--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "chemistry-biological-chemistry-track--b-s",
+      "planning_id": "chemistry-biological-chemistry-track",
+      "name": "Chemistry/Biological Chemistry Track",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 60,
+      "required_courses": [
+        "33-121",
+        "33-122",
+        "03-121",
+        "21-120",
+        "21-122"
+      ],
+      "requirement_groups": [
+        {
+          "id": "mcs-core-technical-requirements-1-alternative-4",
+          "name": "Principles of Computing",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": true,
+          "source_sentences": [
+            "Students may not double count courses across general education categories."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/",
+        "source_hash": "d1d7e1309809e3cb719ce00503355907be674953e339459306e849510dcee8d9",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [],
+          "catalog_course_count": 8,
+          "extracted_unit_estimate": 60,
+          "scheduled_course_count": 8,
+          "missing_schedule_course_ids": []
+        }
+      }
+    },
+    "cognitive-science--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "cognitive-science--b-s",
+      "planning_id": "cognitive-science",
+      "name": "Cognitive Science",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 185,
+      "required_courses": [
+        "85-110",
+        "85-170",
+        "85-300",
+        "21-111",
+        "85-412",
+        "85-414",
+        "85-419",
+        "85-426",
+        "21-127",
+        "15-122",
+        "15-150",
+        "85-270"
+      ],
+      "requirement_groups": [
+        {
+          "id": "cognitive-science-core-1-alternative-1",
+          "name": "Experimental Design for Behavioral & Social Sciences",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-309",
+            "85-309",
+            "36-225",
+            "36-218"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "cognitive-science-core-1-alternative-2",
+          "name": "Integral Calculus",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-112",
+            "21-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "cognitive-science-core-1-alternative-1",
+          "name": "Fundamentals of Programming and Computer Science",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "15-112",
+            "02-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "choose-1-alternative-1",
+          "name": "Language, AI, and Thought",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "85-210",
+            "85-213"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "or-choose-1-alternative-2",
+          "name": "Cellular Neuroscience",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "03-362",
+            "03-363"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "or-choose-1-alternative-3",
+          "name": "Cognitive Neuropsychology Research Methods",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "85-370",
+            "85-403"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "or-choose-1-alternative-4",
+          "name": "How the Brain Makes Meaning",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "85-471",
+            "85-472"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "Courses taken for the major requirements can not be double counted in the concentration."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
+        "source_hash": "e71d3abdeb38d500b556a36772a1b045d1866a585ae7118c38b0ca23af2ee758",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "1 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 28,
+          "extracted_unit_estimate": 185,
+          "scheduled_course_count": 27,
+          "missing_schedule_course_ids": [
+            "85-412"
+          ]
+        }
+      }
+    },
+    "composition--b-f-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "composition--b-f-a",
+      "planning_id": "composition",
+      "name": "Composition",
+      "credential": "B.F.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 204,
+      "required_courses": [
+        "57-031",
+        "57-100",
+        "57-101",
+        "57-161",
+        "57-521",
+        "99-101",
+        "57-162",
+        "57-283",
+        "57-151",
+        "57-163",
+        "57-193",
+        "57-257",
+        "57-284",
+        "57-164",
+        "57-194",
+        "57-258",
+        "57-271",
+        "57-285",
+        "57-408",
+        "57-332",
+        "57-347",
+        "57-336",
+        "57-459",
+        "57-597"
+      ],
+      "requirement_groups": [
+        {
+          "id": "first-year-fall-53-units-1-alternative-4",
+          "name": "Basic Harmony I",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-149",
+            "57-152"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-53-units-1-alternative-6",
+          "name": "Basic Solfege I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-180",
+            "57-181",
+            "57-185"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-53-units-1-alternative-7",
+          "name": "Keyboard Studies I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-191",
+            "57-193"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-53-units-1-alternative-8",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-53-units-1-alternative-3",
+          "name": "Basic Harmony II",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-150",
+            "57-153"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-53-units-1-alternative-5",
+          "name": "Solfege II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-182",
+            "57-186"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-53-units-1-alternative-6",
+          "name": "Keyboard Studies II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-192",
+            "57-194"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-53-units-1-alternative-8",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-53-units-1-alternative-5",
+          "name": "Solfege III",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-183",
+            "57-487"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-53-units-1-alternative-9",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-53-units-1-alternative-4",
+          "name": "Solfege IV",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-184",
+            "57-488"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-53-units-1-alternative-10",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "third-year-fall-47-units-1-alternative-3",
+          "name": "Performance for Composers *",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-234",
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "third-year-spring-47-units-1-alternative-3",
+          "name": "Performance for Composers *",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-234",
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "fourth-year-fall-44-units-1-alternative-3",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "fourth-year-spring-45-units-1-alternative-3",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/",
+        "source_hash": "54695189ce419052d664c4cff8c86e7090147fcf2e48e1e8b88f7d50ecd110aa",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [],
+          "catalog_course_count": 42,
+          "extracted_unit_estimate": 204,
+          "scheduled_course_count": 42,
+          "missing_schedule_course_ids": []
+        }
+      }
+    },
+    "computational-finance--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "computational-finance--b-s",
+      "planning_id": "computational-finance",
+      "name": "Computational Finance",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 252,
+      "required_courses": [
+        "21-120",
+        "21-122",
+        "21-127",
+        "21-241",
+        "21-259",
+        "21-260",
+        "21-369",
+        "70-122",
+        "21-270",
+        "21-370",
+        "21-420",
+        "46-977",
+        "21-325",
+        "36-226",
+        "36-401",
+        "15-110",
+        "15-112",
+        "15-122",
+        "73-103",
+        "73-240",
+        "94-700",
+        "70-340",
+        "70-345"
+      ],
+      "requirement_groups": [
+        {
+          "id": "economics-1-alternative-1",
+          "name": "Principles of Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "depth-electives",
+          "name": "Depth Electives",
+          "choose": 3,
+          "units": 24,
+          "options": [
+            "07-280",
+            "10-301",
+            "10-423",
+            "10-424",
+            "10-425",
+            "10-601",
+            "10-605",
+            "10-617",
+            "10-618",
+            "10-623",
+            "10-625",
+            "15-150",
+            "15-210",
+            "15-213",
+            "15-351",
+            "15-451",
+            "21-326",
+            "21-355",
+            "21-378",
+            "21-393",
+            "36-402",
+            "36-410",
+            "36-462",
+            "36-463",
+            "70-337",
+            "70-391",
+            "70-492",
+            "70-495",
+            "70-497",
+            "73-337",
+            "73-347"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 24.0,
+            "course_count_estimate": 3
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            9
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "Foundations Units 21-120 Differential and Integral Calculus 10 21-122 Integration and Approximation 10 21-127 Concepts of Mathematics 12 21-241 Matrices and Linear Transformations 11 21-259 Calculus in Three Dimensions 10 21-260 Differential Equations 9 21-369 Numerical Methods 12 70-122 Introduction to Accounting 9 Mathematical Finance 21-270 Introduction to Mathematical Finance 9 21-370 Discrete Time Finance 9 21-420 Continuous-Time Finance 9 46-977 MSCF Studies in Financial Engineering 6 The Mathematical Finance courses in the BSCF curriculum may not be double counted toward other graduation requirements.",
+            "The courses listed below have been taken as depth electives in recent years, but other courses could be approved upon request 07-280 Artificial Intelligence and Machine Learning I 12 10-301 Introduction to Machine Learning 12 10-423 Generative AI 12 10-424 Bayesian Methods in Machine Learning 12 10-425 Introduction to Convex Optimization 12 10-601 Introduction to Machine Learning 12 10-605 Machine Learning with Large Datasets 12 10-617 Intermediate Deep Learning 12 10-618 Machine Learning for Structured Data 12 10-623 Generative AI 12 10-625 Introduction to Convex Optimization 12 15-150 Principles of Functional Programming 12 15-210 Parallel and Sequential Data Structures and Algorithms 12 15-213 Introduction to Computer Systems 12 15-351 Algorithms and Advanced Data Structures 12 15-451 Algorithm Design and Analysis 12 21-326 Markov Chains: Theory, Simulation and Applications 9 21-355 Principles of Real Analysis I 9 21-378 Mathematics of Fixed Income Markets 9 21-393 Operations Research II 9 36-402 Advanced Methods for Data Analysis 9 36-410 Introduction to Probability Modeling 9 36-462 Special Topics: Statistical Machine Learning 9 36-463 Special Topics: Multilevel and Hierarchical Models 9 70-337 Business of Blockchain 9 70-391 Finance 9 70-492 Investment Analysis 9 70-495 Corporate Finance 9 70-497 Derivative Securities 9 73-337 Business of Blockchain 9 73-347 Game Theory Applications for Economics and Business 9 Courses counted toward the BSCF Depth Elective requirements may not be double counted toward other graduation requirements."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/",
+        "source_hash": "4af750b0efb35ed94175d9121bfebde61364cc20d9c41f41e4e729560bfa9012",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "8 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 56,
+          "extracted_unit_estimate": 252,
+          "scheduled_course_count": 48,
+          "missing_schedule_course_ids": [
+            "10-424",
+            "10-425",
+            "10-618",
+            "10-625",
+            "21-326",
+            "36-463",
+            "70-337",
+            "73-337"
+          ]
+        }
+      }
+    },
+    "decision-science--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "decision-science--b-s",
+      "planning_id": "decision-science",
+      "name": "Decision Science",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 139,
+      "required_courses": [
+        "36-200",
+        "85-100",
+        "88-120",
+        "88-223",
+        "88-302",
+        "88-251"
+      ],
+      "requirement_groups": [
+        {
+          "id": "prerequisites-1-alternative-1",
+          "name": "Differential Calculus and Integral Calculus",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-111 + 21-112",
+            "21-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "prerequisites-1-alternative-1",
+          "name": "Integration and Approximation",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-122",
+            "21-256",
+            "36-401",
+            "36-410",
+            "80-210",
+            "80-211",
+            "80-315",
+            "88-252",
+            "88-300"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "core-courses-1-alternative-1",
+          "name": "Principles of Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "core-courses-1",
+          "name": "Statistical Research Methods (select one course)*",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-202",
+            "36-309",
+            "85-309"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "electives-45-units",
+          "name": "Electives 45 units",
+          "choose": 4,
+          "units": 45,
+          "options": [
+            "88-150",
+            "88-221",
+            "88-230",
+            "88-231",
+            "88-234",
+            "88-235",
+            "88-237",
+            "88-252",
+            "88-261",
+            "88-262",
+            "88-275",
+            "88-285",
+            "88-290",
+            "88-300",
+            "88-312",
+            "88-342",
+            "88-344",
+            "88-360",
+            "88-365",
+            "88-366",
+            "88-367",
+            "88-372",
+            "88-379",
+            "88-451",
+            "88-452",
+            "88-454",
+            "70-311",
+            "70-332",
+            "70-381",
+            "70-443",
+            "70-460",
+            "73-265",
+            "80-221",
+            "80-324",
+            "84-369",
+            "85-409",
+            "85-454"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 45.0,
+            "course_count_estimate": 4
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
+        "source_hash": "4c0b51b0ad8770eeececbba7c24f205328c17c95223c929398f092511fd2c6e5",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "7 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 57,
+          "extracted_unit_estimate": 139,
+          "scheduled_course_count": 50,
+          "missing_schedule_course_ids": [
+            "21-111 + 21-112",
+            "80-324",
+            "85-454",
+            "88-275",
+            "88-290",
+            "88-366",
+            "88-372"
+          ]
+        }
+      }
+    },
+    "design--b-des": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "design--b-des",
+      "planning_id": "design",
+      "name": "Design",
+      "credential": "B.Des.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 263,
+      "required_courses": [
+        "51-101",
+        "51-121",
+        "51-175",
+        "51-177",
+        "76-101",
+        "88-120",
+        "99-101",
+        "51-102",
+        "51-122",
+        "51-132",
+        "51-176",
+        "51-178",
+        "51-201",
+        "51-211",
+        "51-265",
+        "51-203",
+        "51-243",
+        "51-251",
+        "51-267",
+        "51-229",
+        "51-242",
+        "51-283",
+        "51-277",
+        "51-279",
+        "51-282",
+        "51-284",
+        "51-481",
+        "51-480"
+      ],
+      "requirement_groups": [
+        {
+          "id": "fall-1-alternative-2",
+          "name": "Introduction to Psychology",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "85-102",
+            "85-211",
+            "85-241"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "spring-1-alternative-1",
+          "name": "Communications Studio II: Designing Communications for Interactions",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "51-228",
+            "51-248",
+            "51-268"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "spring-1-alternative-1",
+          "name": "Products Studio II: Designing Products for Interactions Products students are also required to take 51-344 Advanced Digital Prototyping",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "51-248",
+            "51-228",
+            "51-268"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "fall-1-alternative-1",
+          "name": "Communications Studio III: Designing for Complex Communication Systems",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "51-323",
+            "51-343",
+            "51-363"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "spring-1-alternative-1",
+          "name": "Communications Studio IV: Designing Communications for Social Systems",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "51-330",
+            "51-350",
+            "51-360"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/",
+        "source_hash": "723527af64167d20c66ba029ac0443edf3840c2cda6a69cdd7ed5094fa4d8ad1",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "3 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 40,
+          "extracted_unit_estimate": 263,
+          "scheduled_course_count": 37,
+          "missing_schedule_course_ids": [
+            "85-102",
+            "85-211",
+            "85-241"
+          ]
+        }
+      }
+    },
+    "economics--b-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "economics--b-a",
+      "planning_id": "economics",
+      "name": "Economics",
+      "credential": "B.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 129,
+      "required_courses": [
+        "73-103",
+        "73-230",
+        "73-240",
+        "70-340",
+        "70-345",
+        "73-265",
+        "73-274"
+      ],
+      "requirement_groups": [
+        {
+          "id": "mathematics-prerequisites-1-alternative-1",
+          "name": "Differential and Integral Calculus",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-120",
+            "21-111 + 21-112"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mathematics-prerequisites-1-alternative-2",
+          "name": "Multivariate Analysis",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "economic-theory-requirements-1-alternative-1",
+          "name": "Principles of Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "quantitative-analysis-requirements-1-alternative-1",
+          "name": "Probability and Statistics for Business Applications",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "70-207",
+            "36-200"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "special-electives-18-units",
+          "name": "Special Electives (18 Units)",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "19-403",
+            "19-411",
+            "66-221",
+            "79-245",
+            "79-262",
+            "79-266",
+            "79-280",
+            "79-283",
+            "79-288",
+            "79-300",
+            "79-315",
+            "79-320",
+            "79-343",
+            "79-383",
+            "80-136",
+            "80-249",
+            "80-305",
+            "80-324",
+            "80-335",
+            "80-348",
+            "84-310",
+            "84-318",
+            "84-362",
+            "84-387",
+            "88-411"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "senior-work-1-alternative-1",
+          "name": "Senior Project",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "73-497",
+            "73-500 + 73-501"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/",
+        "source_hash": "d921ba3aeac805867b511a28bb0435b59f77a327e25b9df1720c4ca126860fd2",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "7 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 42,
+          "extracted_unit_estimate": 129,
+          "scheduled_course_count": 35,
+          "missing_schedule_course_ids": [
+            "19-411",
+            "21-111 + 21-112",
+            "73-500 + 73-501",
+            "79-383",
+            "80-136",
+            "80-324",
+            "84-318"
+          ]
+        }
+      }
+    },
+    "economics--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "economics--b-s",
+      "planning_id": "economics",
+      "name": "Economics",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 121,
+      "required_courses": [
+        "73-265",
+        "73-274",
+        "73-103",
+        "73-230",
+        "73-240",
+        "70-340",
+        "70-345"
+      ],
+      "requirement_groups": [
+        {
+          "id": "mathematics-requirements-1-alternative-1",
+          "name": "Differential and Integral Calculus",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-120",
+            "21-111 + 21-112"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mathematics-requirements-1-alternative-2",
+          "name": "Multivariate Analysis",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mathematics-requirements-1-alternative-3",
+          "name": "Matrix Algebra with Applications",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-240",
+            "21-241"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "quantitative-analysis-requirements-1-alternative-3",
+          "name": "Econometrics II",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-374",
+            "73-423",
+            "70-467"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "economic-core-requirements-1-alternative-1",
+          "name": "Principles of Microeconomics",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "senior-requirement-1-alternative-1",
+          "name": "Senior Project",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "73-497",
+            "73-500 + 73-501"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/",
+        "source_hash": "7802c7559fe04e1fef5bdd3c9516c649fae86bfa41473128ebdd086c1abb3b84",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "3 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 20,
+          "extracted_unit_estimate": 121,
+          "scheduled_course_count": 17,
+          "missing_schedule_course_ids": [
+            "21-111 + 21-112",
+            "73-423",
+            "73-500 + 73-501"
+          ]
+        }
+      }
+    },
+    "economics-and-politics--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "economics-and-politics--b-s",
+      "planning_id": "economics-and-politics",
+      "name": "Economics and Politics",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 217,
+      "required_courses": [
+        "73-103",
+        "73-230",
+        "73-240",
+        "73-265",
+        "73-274",
+        "84-101",
+        "84-250",
+        "84-266",
+        "84-310",
+        "84-311",
+        "73-497",
+        "84-500"
+      ],
+      "requirement_groups": [
+        {
+          "id": "mathematics-19-units-1-alternative-1",
+          "name": "Differential and Integral Calculus",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-120",
+            "21-112"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mathematics-19-units-1-alternative-2",
+          "name": "Multivariate Analysis",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "economics-core-54-units-1-alternative-1",
+          "name": "Principles of Microeconomics *",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "73-102",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "political-science-core-57-units",
+          "name": "Political Science Core 57 units",
+          "choose": 2,
+          "units": 57,
+          "options": [
+            "84-104",
+            "84-226",
+            "84-275"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 57.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "electives-27-units",
+          "name": "Electives 27 units",
+          "choose": 3,
+          "units": 27,
+          "options": [
+            "73-328",
+            "73-332",
+            "73-338",
+            "73-347",
+            "73-348",
+            "73-352",
+            "73-353",
+            "73-365",
+            "73-366",
+            "73-367",
+            "73-408",
+            "73-421",
+            "73-427",
+            "84-120",
+            "84-200",
+            "84-252",
+            "84-274",
+            "84-280",
+            "84-285",
+            "84-301",
+            "84-303",
+            "84-304",
+            "84-306",
+            "84-309",
+            "84-312",
+            "84-314",
+            "84-315",
+            "84-319",
+            "84-322",
+            "84-323",
+            "84-324",
+            "84-325",
+            "84-327",
+            "84-328",
+            "84-329",
+            "84-330",
+            "84-331",
+            "84-332",
+            "84-333",
+            "84-338",
+            "84-341",
+            "84-343",
+            "84-345",
+            "84-347",
+            "84-349",
+            "84-350",
+            "84-352",
+            "84-353",
+            "84-355",
+            "84-356",
+            "84-358",
+            "84-360",
+            "84-362",
+            "84-363",
+            "84-365",
+            "84-366",
+            "84-367",
+            "84-368",
+            "84-369",
+            "84-370",
+            "84-371",
+            "84-373",
+            "84-375",
+            "84-380",
+            "84-383",
+            "84-386",
+            "84-387",
+            "84-389",
+            "84-393",
+            "84-402",
+            "84-405",
+            "19-411",
+            "70-365",
+            "70-430",
+            "79-280",
+            "79-318",
+            "80-135",
+            "80-136",
+            "80-335",
+            "80-348",
+            "80-447",
+            "88-365",
+            "88-366",
+            "88-367"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 27.0,
+            "course_count_estimate": 3
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            4
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": true,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "A maximum of four courses may double count between the Economics and Politics major and any other majors or minor.",
+            "Unlimited double counting is permitted with General Education requirements.",
+            "Double counting between the major and General Education requirements is unlimited.",
+            "The plan below shows a very conservative view of double counting."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/",
+        "source_hash": "facd9fd8f1e8735870d1f747f594dd072c20122480be949f5951ca15ece99ced",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "21 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 105,
+          "extracted_unit_estimate": 217,
+          "scheduled_course_count": 84,
+          "missing_schedule_course_ids": [
+            "19-411",
+            "70-365",
+            "70-430",
+            "73-338",
+            "73-353",
+            "73-365",
+            "73-427",
+            "79-318",
+            "80-136",
+            "84-200",
+            "84-280",
+            "84-303",
+            "84-324",
+            "84-331",
+            "84-333",
+            "84-349",
+            "84-367",
+            "84-386",
+            "84-402",
+            "84-500",
+            "88-366"
+          ]
+        }
+      }
+    },
+    "economics-and-statistics--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "economics-and-statistics--b-s",
+      "planning_id": "economics-and-statistics",
+      "name": "Economics and Statistics",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 213,
+      "required_courses": [
+        "21-090",
+        "73-230",
+        "73-240",
+        "70-340",
+        "73-265",
+        "73-274"
+      ],
+      "requirement_groups": [
+        {
+          "id": "complete-the-following-2",
+          "name": "Complete one of the following options",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-111",
+            "21-112",
+            "21-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "complete-the-following-3",
+          "name": "And one of the following four courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259",
+            "21-266",
+            "21-268"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "complete-the-following-4",
+          "name": "And one of the following three courses",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-240",
+            "21-241",
+            "21-242"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "2-economics-foundations-18-units",
+          "name": "2. Economics Foundations 18 units",
+          "choose": 1,
+          "units": 18,
+          "options": [
+            "73-102",
+            "73-104",
+            "73-103"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "beginning-data-analysis-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-200",
+            "36-220"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "advanced-statistics-elective-1",
+          "name": "Choose two of the following courses",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-311",
+            "36-313",
+            "36-318",
+            "36-319",
+            "36-460",
+            "36-461",
+            "36-462",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-466",
+            "36-467",
+            "36-468",
+            "36-469",
+            "36-470",
+            "36-471",
+            "36-472",
+            "36-473",
+            "36-490",
+            "36-493",
+            "36-497"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 2
+          }
+        },
+        {
+          "id": "5-economics-quantitative-analysis-requirements-27-units",
+          "name": "5. Economics Quantitative Analysis Requirements 27 units",
+          "choose": 1,
+          "units": 27,
+          "options": [
+            "73-374",
+            "73-423",
+            "70-467"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 27.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "6-probability-theory-and-statistical-theory-18-units",
+          "name": "6. Probability Theory and Statistical Theory 18 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-235",
+            "36-236"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "7-modern-regression-and-advanced-methodology-18-units",
+          "name": "7. Modern Regression and Advanced Methodology 18 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-401",
+            "36-402"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "8-statistical-computing-19-21-units",
+          "name": "8. Statistical Computing 19-21 units",
+          "choose": 1,
+          "units": 21,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120",
+            "36-350"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 21.0,
+            "course_count_estimate": 1
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            6
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "With respect to double-counting courses, it is departmental policy that students must have at least six courses [three Economics (73-xxx) and three Statistics and Data Science (36-xxx)] that do not count for their primary major.",
+            "If students do not have at least three ECON and three STA classes, they will need to take additional advanced data analysis or economics electives, depending on where the double-counting issue is."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/",
+        "source_hash": "ae024c0147b7785574f6f235f29e7da7fc1323bf2ae706207cf5a36d7f5fa225",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "11 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 53,
+          "extracted_unit_estimate": 213,
+          "scheduled_course_count": 42,
+          "missing_schedule_course_ids": [
+            "36-313",
+            "36-318",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-467",
+            "36-470",
+            "36-472",
+            "36-473",
+            "36-493",
+            "73-423"
+          ]
+        }
+      }
+    },
+    "electronic-music--b-f-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "electronic-music--b-f-a",
+      "planning_id": "electronic-music",
+      "name": "Electronic Music",
+      "credential": "B.F.A",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 170,
+      "required_courses": [
+        "57-100",
+        "57-161",
+        "57-358",
+        "57-421",
+        "57-523",
+        "57-560",
+        "99-101",
+        "57-162",
+        "57-345",
+        "57-163",
+        "57-173",
+        "57-188",
+        "57-193",
+        "57-257",
+        "57-164",
+        "57-194",
+        "57-408",
+        "57-285",
+        "57-332",
+        "57-521",
+        "57-344",
+        "57-359",
+        "57-595"
+      ],
+      "requirement_groups": [
+        {
+          "id": "first-year-fall-58-units-1-alternative-2",
+          "name": "Basic Harmony I",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-149",
+            "57-152"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-58-units-1-alternative-4",
+          "name": "Basic Solfege I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-180",
+            "57-181",
+            "57-185"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-58-units-1-alternative-5",
+          "name": "Keyboard Studies I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-191",
+            "57-193"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-56-units-1-alternative-2",
+          "name": "Basic Harmony II",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-150",
+            "57-153"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-56-units-1-alternative-4",
+          "name": "Solfege II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-182",
+            "57-186"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-56-units-1-alternative-5",
+          "name": "Keyboard Studies II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-192",
+            "57-194"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-53-units-1-alternative-4",
+          "name": "Solfege III",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-183",
+            "57-487"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-52-units-1-alternative-3",
+          "name": "Solfege IV",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-184",
+            "57-488"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "third-year-fall-52-units-1-alternative-1",
+          "name": "Introduction to Computing for Creative Practice",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "15-104",
+            "15-110",
+            "15-112"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/",
+        "source_hash": "37496fad428f63f2a649e3f6ff8c82c6b915b4eaf718f5d969828de89b38bc94",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "2 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 41,
+          "extracted_unit_estimate": 170,
+          "scheduled_course_count": 39,
+          "missing_schedule_course_ids": [
+            "15-104",
+            "57-359"
+          ]
+        }
+      }
+    },
+    "history--b-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "history--b-a",
+      "planning_id": "history",
+      "name": "History",
+      "credential": "B.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 111,
+      "required_courses": [
+        "79-145",
+        "79-160",
+        "79-189",
+        "79-200",
+        "79-420"
+      ],
+      "requirement_groups": [
+        {
+          "id": "iii-required-survey-courses-choose-two-18-units",
+          "name": "III. Required Survey Courses (choose two) 18 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "79-110",
+            "79-112",
+            "79-116",
+            "79-120",
+            "79-170",
+            "79-174",
+            "79-202",
+            "79-203",
+            "79-204",
+            "79-205",
+            "79-206",
+            "79-211",
+            "79-212",
+            "79-223",
+            "79-225",
+            "79-226",
+            "79-227",
+            "79-240",
+            "79-241",
+            "79-242",
+            "79-245",
+            "79-246",
+            "79-248",
+            "79-249",
+            "79-250",
+            "79-255",
+            "79-260",
+            "79-261",
+            "79-262",
+            "79-265",
+            "79-266",
+            "79-269",
+            "79-270",
+            "79-272",
+            "79-288",
+            "79-320",
+            "79-329"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "iv-history-elective-courses-45-units",
+          "name": "IV. History Elective Courses 45 units",
+          "choose": 45,
+          "units": 45,
+          "options": [
+            "79-115",
+            "79-122",
+            "79-150",
+            "79-153",
+            "79-155",
+            "79-175",
+            "79-178",
+            "79-201",
+            "79-207",
+            "79-208",
+            "79-210",
+            "79-218",
+            "79-220",
+            "79-221",
+            "79-234",
+            "79-236",
+            "79-237",
+            "79-239",
+            "79-243",
+            "79-247",
+            "79-252",
+            "79-255",
+            "79-256",
+            "79-257",
+            "79-260",
+            "79-264",
+            "79-267",
+            "79-268",
+            "79-273",
+            "79-276",
+            "79-278",
+            "79-280",
+            "79-281",
+            "79-283",
+            "79-289",
+            "79-290",
+            "79-292",
+            "79-296",
+            "79-297",
+            "79-298",
+            "79-300",
+            "79-302",
+            "79-303",
+            "79-304",
+            "79-305",
+            "79-313",
+            "79-314",
+            "79-315",
+            "79-316",
+            "79-317",
+            "79-318",
+            "79-319",
+            "79-322",
+            "79-328",
+            "79-330",
+            "79-331",
+            "79-338",
+            "79-339",
+            "79-340",
+            "79-342",
+            "79-343",
+            "79-345",
+            "79-346",
+            "79-350",
+            "79-352",
+            "79-355",
+            "79-357",
+            "79-359",
+            "79-360",
+            "79-363",
+            "79-368",
+            "79-371",
+            "79-373",
+            "79-377",
+            "79-378",
+            "79-379",
+            "79-380",
+            "79-383",
+            "79-385",
+            "79-387",
+            "79-392",
+            "79-393",
+            "79-395"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 45.0,
+            "course_count_estimate": 45
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            2,
+            4
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "Students may “double-count” a maximum of four courses for the History major that are used to fulfill the requirements of other majors and programs--with the notable exception of the Ethics, History, and Public Policy major, for which a student can double-count a maximum of two courses."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/",
+        "source_hash": "5790d3ab116286205de6a5e013a976bfe5664bf77a23887e16171feddfd4ec15",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "55 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 123,
+          "extracted_unit_estimate": 111,
+          "scheduled_course_count": 68,
+          "missing_schedule_course_ids": [
+            "79-110",
+            "79-115",
+            "79-155",
+            "79-174",
+            "79-178",
+            "79-203",
+            "79-204",
+            "79-205",
+            "79-206",
+            "79-210",
+            "79-211",
+            "79-218",
+            "79-223",
+            "79-225",
+            "79-226",
+            "79-227",
+            "79-237",
+            "79-242",
+            "79-246",
+            "79-247",
+            "79-252",
+            "79-255",
+            "79-257",
+            "79-260",
+            "79-261",
+            "79-264",
+            "79-265",
+            "79-267",
+            "79-268",
+            "79-276",
+            "79-278",
+            "79-289",
+            "79-290",
+            "79-298",
+            "79-304",
+            "79-313",
+            "79-314",
+            "79-317",
+            "79-318",
+            "79-322",
+            "79-339",
+            "79-340",
+            "79-342",
+            "79-346",
+            "79-357",
+            "79-360",
+            "79-368",
+            "79-371",
+            "79-373",
+            "79-378",
+            "79-379",
+            "79-383",
+            "79-385",
+            "79-392",
+            "79-395"
+          ]
+        }
+      }
+    },
+    "international-relations-and-political-science--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "international-relations-and-political-science--b-s",
+      "planning_id": "international-relations-and-political-science",
+      "name": "International Relations and Political Science",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 162,
+      "required_courses": [
+        "84-101",
+        "84-250",
+        "84-266",
+        "84-369",
+        "36-202"
+      ],
+      "requirement_groups": [
+        {
+          "id": "political-science-core-courses-45-units-1-alternative-2",
+          "name": "The Economics of Politics and Technology",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "84-110",
+            "73-102",
+            "73-103",
+            "73-104"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "political-science-core-courses-45-units",
+          "name": "Political Science Core Courses 45 units",
+          "choose": 2,
+          "units": 45,
+          "options": [
+            "84-104",
+            "84-226",
+            "84-275"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 45.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "electives-54-units",
+          "name": "Electives 54 units",
+          "choose": 5,
+          "units": 54,
+          "options": [
+            "84-120",
+            "84-200",
+            "84-252",
+            "84-274",
+            "84-280",
+            "84-285",
+            "84-301",
+            "84-303",
+            "84-304",
+            "84-306",
+            "84-309",
+            "84-310",
+            "84-311",
+            "84-312",
+            "84-314",
+            "84-315",
+            "84-319",
+            "84-322",
+            "84-323",
+            "84-324",
+            "84-325",
+            "84-327",
+            "84-328",
+            "84-329",
+            "84-330",
+            "84-331",
+            "84-332",
+            "84-333",
+            "84-336",
+            "84-338",
+            "84-339",
+            "84-341",
+            "84-343",
+            "84-345",
+            "84-347",
+            "84-349",
+            "84-350",
+            "84-352",
+            "84-353",
+            "84-355",
+            "84-356",
+            "84-358",
+            "84-360",
+            "84-362",
+            "84-363",
+            "84-365",
+            "84-366",
+            "84-367",
+            "84-368",
+            "84-370",
+            "84-371",
+            "84-373",
+            "84-375",
+            "84-380",
+            "84-383",
+            "84-386",
+            "84-387",
+            "84-389",
+            "84-393",
+            "84-402",
+            "84-405",
+            "19-452",
+            "70-342",
+            "70-365",
+            "70-430",
+            "73-332",
+            "76-318",
+            "79-203",
+            "79-205",
+            "79-223",
+            "79-227",
+            "79-229",
+            "79-230",
+            "79-257",
+            "79-262",
+            "79-264",
+            "79-265",
+            "79-266",
+            "79-267",
+            "79-275",
+            "79-288",
+            "79-302",
+            "79-313",
+            "79-314",
+            "79-318",
+            "79-320",
+            "79-343",
+            "79-377",
+            "79-385",
+            "80-135",
+            "80-136",
+            "80-249",
+            "80-335",
+            "80-348",
+            "80-447",
+            "88-234",
+            "88-261",
+            "88-281",
+            "88-284"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 54.0,
+            "course_count_estimate": 5
+          }
+        },
+        {
+          "id": "senior-seminar-9-units",
+          "name": "Senior Seminar 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "84-500"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 9.0,
+            "course_count_estimate": 1
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            4
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": true,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "Curriculum A maximum of four courses may double count between the IRPS major and any other majors or minor.",
+            "Unlimited double counting is permitted with general education requirements.",
+            "Double counting between the major and the General Education requirements is unlimited.",
+            "The plan below shows a very conservative view of double counting."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/",
+        "source_hash": "19ff1ac3e7cf2376f532f821d4bc581e0b0552dc31fd6f4402756f0508563dc3",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "28 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 112,
+          "extracted_unit_estimate": 162,
+          "scheduled_course_count": 84,
+          "missing_schedule_course_ids": [
+            "70-365",
+            "70-430",
+            "76-318",
+            "79-203",
+            "79-205",
+            "79-223",
+            "79-227",
+            "79-229",
+            "79-257",
+            "79-264",
+            "79-265",
+            "79-267",
+            "79-313",
+            "79-314",
+            "79-318",
+            "79-385",
+            "80-136",
+            "84-200",
+            "84-280",
+            "84-303",
+            "84-324",
+            "84-331",
+            "84-333",
+            "84-349",
+            "84-367",
+            "84-386",
+            "84-402",
+            "84-500"
+          ]
+        }
+      }
+    },
     "linguistics--b-a": {
       "planner_status": "review_required",
       "curriculum_status": "catalog_extracted_candidate",
@@ -12,33 +3344,43 @@
       "planning_id": "linguistics",
       "name": "Linguistics",
       "credential": "B.A.",
-      "minimum_major_units_estimate": 243,
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 117,
       "required_courses": [
         "80-180",
-        "80-282",
-        "80-280",
-        "80-285",
-        "80-381",
-        "80-383",
-        "76-318",
-        "76-325",
-        "76-380",
-        "76-386",
-        "76-388",
-        "76-389",
-        "82-239",
-        "82-283",
-        "82-334",
-        "82-373",
-        "82-387",
-        "82-383",
-        "85-210",
-        "11-411",
-        "11-423",
-        "11-492",
-        "36-468"
+        "80-282"
       ],
       "requirement_groups": [
+        {
+          "id": "linguistics-core-36-units-1-alternative-3",
+          "name": "Linguistic Analysis",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "80-280",
+            "80-285"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "linguistics-core-36-units-1-alternative-4",
+          "name": "Meaning in Language",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "80-381",
+            "80-383"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
         {
           "id": "extended-core-27-units",
           "name": "Extended Core 27 units",
@@ -57,23 +3399,63 @@
             "80-388",
             "80-484",
             "80-488"
-          ]
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 27.0,
+            "course_count_estimate": 3
+          }
         },
         {
           "id": "electives-minimum-54-units",
           "name": "Electives minimum 54 units",
-          "choose": 2,
-          "units": 18,
+          "choose": 6,
+          "units": 54,
           "options": [
             "80-484",
-            "80-486"
-          ]
+            "80-486",
+            "76-318",
+            "76-325",
+            "76-380",
+            "76-386",
+            "76-388",
+            "76-389",
+            "82-239",
+            "82-283",
+            "82-334",
+            "82-373",
+            "82-387",
+            "82-383",
+            "85-210",
+            "11-411",
+            "11-423",
+            "11-492",
+            "36-468"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 54.0,
+            "course_count_estimate": 6
+          }
         }
       ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "Students may double count any course for the major simultaneously with another major or minor."
+          ]
+        }
+      },
       "provenance": {
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/",
         "source_hash": "ae278e0147930ad75d9c8c2bbc1e3ea849aeb1d1ff061130bdbc53c130a1e440",
-        "extraction_confidence": 1.0,
+        "extraction_confidence": 0.99,
         "automatic_validation": {
           "promotion_ready": true,
           "blockers": [],
@@ -81,7 +3463,7 @@
             "15 catalog course IDs are absent from the current schedule database."
           ],
           "catalog_course_count": 34,
-          "extracted_unit_estimate": 243,
+          "extracted_unit_estimate": 117,
           "scheduled_course_count": 19,
           "missing_schedule_course_ids": [
             "76-318",
@@ -103,463 +3485,1695 @@
         }
       }
     },
-    "mechanical-engineering--b-s": {
+    "mathematical-sciences--b-a": {
       "planner_status": "review_required",
       "curriculum_status": "catalog_extracted_candidate",
       "catalog_year": "2026-2027",
-      "program_id": "mechanical-engineering--b-s",
-      "planning_id": "mechanical-engineering",
-      "name": "Mechanical Engineering",
-      "credential": "B.S.",
-      "minimum_major_units_estimate": 291,
+      "program_id": "mathematical-sciences--b-a",
+      "planning_id": "mathematical-sciences",
+      "name": "Mathematical Sciences",
+      "credential": "B.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 80,
       "required_courses": [
-        "21-122"
+        "21-120",
+        "21-122",
+        "21-201"
       ],
       "requirement_groups": [
         {
-          "id": "first-year",
-          "name": "First Year",
+          "id": "mathematical-sciences-courses-required-1-alternative-3",
+          "name": "Concepts of Mathematics",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "21-127",
+            "21-128"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mathematical-sciences-courses-required-1-alternative-5",
+          "name": "Discrete Mathematics",
           "choose": 1,
           "units": 9,
           "options": [
-            "21-120",
-            "24-101",
-            "33-141",
-            "99-101",
-            "76-101"
-          ]
+            "21-228",
+            "15-251"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "sophomore-year",
-          "name": "Sophomore Year",
-          "choose": 6,
-          "units": 46,
-          "options": [
-            "24-221",
-            "24-261",
-            "21-254",
-            "24-203",
-            "24-251",
-            "39-210"
-          ]
-        },
-        {
-          "id": "sophomore-year",
-          "name": "Sophomore Year",
-          "choose": 6,
-          "units": 44,
-          "options": [
-            "24-231",
-            "24-262",
-            "21-260",
-            "24-203",
-            "24-251",
-            "39-220"
-          ]
-        },
-        {
-          "id": "junior-year",
-          "name": "Junior Year",
-          "choose": 6,
-          "units": 43,
-          "options": [
-            "24-302",
-            "24-322",
-            "24-351",
-            "24-370",
-            "36-220",
-            "39-310"
-          ]
-        },
-        {
-          "id": "junior-year",
-          "name": "Junior Year",
-          "choose": 4,
-          "units": 36,
-          "options": [
-            "24-302",
-            "24-311",
-            "24-321",
-            "24-352"
-          ]
-        },
-        {
-          "id": "senior-year",
-          "name": "Senior Year",
-          "choose": 3,
-          "units": 32,
-          "options": [
-            "24-441",
-            "24-671",
-            "24-452"
-          ]
-        },
-        {
-          "id": "robotics-and-automation",
-          "name": "Robotics and Automation",
-          "choose": 1,
-          "units": 12,
-          "options": [
-            "24-451",
-            "24-677",
-            "24-760",
-            "24-773",
-            "24-776",
-            "24-614",
-            "24-671",
-            "24-673",
-            "24-753",
-            "24-774",
-            "24-775",
-            "24-778"
-          ]
-        },
-        {
-          "id": "energy-environment-and-thermal-fluid-systems",
-          "name": "Energy, Environment, and Thermal Fluid Systems",
-          "choose": 1,
-          "units": 12,
-          "options": [
-            "24-711",
-            "24-718",
-            "24-721",
-            "24-722",
-            "24-730",
-            "24-381",
-            "24-423",
-            "24-623",
-            "24-626",
-            "24-628",
-            "24-629",
-            "24-643"
-          ]
-        },
-        {
-          "id": "product-design-and-development",
-          "name": "Product Design and Development",
-          "choose": 1,
-          "units": 12,
-          "options": [
-            "24-651",
-            "24-688",
-            "24-632",
-            "24-633",
-            "24-672",
-            "24-680",
-            "24-691",
-            "24-692"
-          ]
-        },
-        {
-          "id": "autonomous-systems-and-machine-learning",
-          "name": "Autonomous Systems and Machine Learning",
+          "id": "mathematical-sciences-courses-required-1-alternative-6",
+          "name": "Matrices and Linear Transformations",
           "choose": 1,
           "units": 11,
           "options": [
-            "24-451",
-            "24-677",
-            "24-704",
-            "24-789",
-            "24-774",
-            "24-775",
-            "24-784"
-          ]
+            "21-241",
+            "21-242"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "computational-engineering",
-          "name": "Computational Engineering",
+          "id": "mathematical-sciences-courses-required-1-alternative-7",
+          "name": "Calculus in Three Dimensions",
           "choose": 1,
-          "units": 12,
+          "units": 9,
           "options": [
-            "24-703",
-            "24-780",
-            "24-783",
-            "24-785",
-            "24-658",
-            "24-718",
-            "24-755",
-            "24-781"
-          ]
+            "21-259",
+            "21-266",
+            "21-268",
+            "21-269"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "engineering-mechanisms-and-materials",
-          "name": "Engineering Mechanisms and Materials",
+          "id": "mathematical-sciences-courses-required-1-alternative-8",
+          "name": "Differential Equations",
           "choose": 1,
-          "units": 12,
+          "units": 9,
           "options": [
-            "24-634",
-            "24-635",
-            "24-652",
-            "24-653",
-            "24-751",
-            "24-358",
-            "24-643",
-            "24-650",
-            "24-684",
-            "24-755",
-            "24-753"
-          ]
+            "21-260",
+            "21-261",
+            "33-231"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "mathematical-sciences-courses-required-1-alternative-9",
+          "name": "Probability",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-325",
+            "21-425",
+            "15-259",
+            "36-218"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         }
       ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
       "provenance": {
-        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/",
-        "source_hash": "ce6a2672cba3e433403ebbfa26841833bb580068bb0e908b45dc2bcd1cfc2cda",
-        "extraction_confidence": 0.97,
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/",
+        "source_hash": "ac091ed30a5e299176991b0bf36fa473d38d7e347ae61dcb8e7f8bb47bdf860c",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [],
+          "catalog_course_count": 20,
+          "extracted_unit_estimate": 80,
+          "scheduled_course_count": 20,
+          "missing_schedule_course_ids": []
+        }
+      }
+    },
+    "music-performance--b-f-a": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "music-performance--b-f-a",
+      "planning_id": "music-performance",
+      "name": "Music Performance",
+      "credential": "B.F.A.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 348,
+      "required_courses": [
+        "57-010",
+        "57-100",
+        "57-111",
+        "57-161",
+        "57-240",
+        "57-417",
+        "57-467",
+        "57-500",
+        "57-593",
+        "82-161",
+        "99-101",
+        "57-112",
+        "57-162",
+        "57-221",
+        "57-241",
+        "57-468",
+        "82-162",
+        "57-151",
+        "57-163",
+        "57-193",
+        "57-211",
+        "57-223",
+        "57-339",
+        "82-121",
+        "57-164",
+        "57-194",
+        "57-212",
+        "57-283",
+        "57-340",
+        "57-408",
+        "57-587",
+        "82-122",
+        "57-101",
+        "57-222",
+        "57-284",
+        "82-101",
+        "57-285",
+        "57-588",
+        "82-102",
+        "57-493",
+        "57-494",
+        "57-589",
+        "57-196",
+        "57-501",
+        "57-197",
+        "57-598",
+        "57-599",
+        "57-418",
+        "57-596"
+      ],
+      "requirement_groups": [
+        {
+          "id": "first-year-fall-60-units-1-alternative-4",
+          "name": "Basic Harmony I",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-149",
+            "57-152"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-60-units-1-alternative-6",
+          "name": "Basic Solfege I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-180",
+            "57-181",
+            "57-185"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-60-units-1-alternative-7",
+          "name": "Keyboard Studies I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-191",
+            "57-193"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-60-units-1-alternative-4",
+          "name": "Basic Harmony II",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-150",
+            "57-153"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-60-units-1-alternative-6",
+          "name": "Solfege II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-182",
+            "57-186"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-60-units-1-alternative-7",
+          "name": "Keyboard Studies II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-192",
+            "57-194"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-66-units-1-alternative-5",
+          "name": "Solfege III",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-183",
+            "57-487"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-64-units-1-alternative-4",
+          "name": "Solfege IV",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-184",
+            "57-488"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-52-units-1-alternative-3",
+          "name": "Basic Harmony I",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-149",
+            "57-152"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-52-units-1-alternative-5",
+          "name": "Basic Solfege I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-180",
+            "57-181",
+            "57-185"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-52-units-1-alternative-7",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-52-units-1-alternative-2",
+          "name": "Basic Harmony II",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "57-150",
+            "57-153"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-52-units-1-alternative-4",
+          "name": "Solfege II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-182",
+            "57-186"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-52-units-1-alternative-7",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-52-units-1-alternative-4",
+          "name": "Solfege III",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-183",
+            "57-487"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-52-units-1-alternative-7",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-46-units-1-alternative-3",
+          "name": "Solfege IV",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-184",
+            "57-488"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-46-units-1-alternative-6",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "third-year-fall-46-units-1-alternative-2",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "third-year-spring-47-units-1-alternative-2",
+          "name": "Major Instrumental Ensemble",
+          "choose": 1,
+          "units": 6,
+          "options": [
+            "57-418",
+            "57-419"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-fall-52-units-1-alternative-6",
+          "name": "Keyboard Studies I",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-191",
+            "57-193"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "first-year-spring-52-units-1-alternative-5",
+          "name": "Keyboard Studies II",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-192",
+            "57-194"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-spring-44-units-1-alternative-3",
+          "name": "Solfege IV",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-184",
+            "57-488"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "second-year-fall-49-units-1-alternative-4",
+          "name": "Solfege III",
+          "choose": 1,
+          "units": 3,
+          "options": [
+            "57-183",
+            "57-487"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/",
+        "source_hash": "12249b9457a69dee086e7671df55091bed448f6f6dcec84e6b0eeff2074a85d2",
+        "extraction_confidence": 1.0,
         "automatic_validation": {
           "promotion_ready": true,
           "blockers": [],
           "warnings": [
-            "9 catalog course IDs are absent from the current schedule database."
+            "1 catalog course IDs are absent from the current schedule database."
           ],
-          "catalog_course_count": 77,
-          "extracted_unit_estimate": 291,
-          "scheduled_course_count": 68,
+          "catalog_course_count": 65,
+          "extracted_unit_estimate": 348,
+          "scheduled_course_count": 64,
           "missing_schedule_course_ids": [
-            "24-623",
-            "24-629",
-            "24-653",
-            "24-692",
-            "24-711",
-            "24-730",
-            "24-753",
-            "24-773",
-            "24-781"
+            "57-010"
           ]
         }
       }
     },
-    "psychology--b-a-b-s": {
+    "political-science-security-and-technology--b-s": {
       "planner_status": "review_required",
       "curriculum_status": "catalog_extracted_candidate",
       "catalog_year": "2026-2027",
-      "program_id": "psychology--b-a-b-s",
-      "planning_id": "psychology",
-      "name": "Psychology",
-      "credential": "B.A./B.S",
-      "minimum_major_units_estimate": 229,
+      "program_id": "political-science-security-and-technology--b-s",
+      "planning_id": "political-science-security-and-technology",
+      "name": "Political Science, Security, and Technology",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 265,
       "required_courses": [
-        "85-100"
+        "84-101",
+        "84-104",
+        "84-226",
+        "84-250",
+        "84-274",
+        "84-314",
+        "84-330",
+        "84-343",
+        "84-345",
+        "84-347",
+        "84-349",
+        "84-350",
+        "84-353",
+        "84-356",
+        "84-363",
+        "84-368",
+        "84-370",
+        "84-371",
+        "84-375",
+        "84-383",
+        "84-387",
+        "84-405",
+        "84-266",
+        "36-202"
       ],
       "requirement_groups": [
         {
-          "id": "mathematics-10-units",
-          "name": "Mathematics 10 units",
+          "id": "methodology-core-28-units-1-alternative-3",
+          "name": "Principles of Computing",
           "choose": 1,
           "units": 10,
           "options": [
-            "21-090",
-            "21-111",
-            "21-112",
-            "21-120"
-          ]
+            "15-110",
+            "15-112"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "statistics-sequence-9-units",
-          "name": "Statistics Sequence 9 units",
+          "id": "electives-45-units",
+          "name": "Electives 45 units",
+          "choose": 4,
+          "units": 45,
+          "options": [
+            "84-110",
+            "84-200",
+            "84-275",
+            "84-304",
+            "84-312",
+            "84-322",
+            "84-323",
+            "84-325",
+            "84-329",
+            "84-336",
+            "84-339",
+            "84-341",
+            "84-360",
+            "84-362",
+            "84-365",
+            "84-369",
+            "84-373",
+            "84-386",
+            "84-389",
+            "84-120",
+            "84-252",
+            "84-280",
+            "84-285",
+            "84-301",
+            "84-309",
+            "84-319",
+            "84-324",
+            "84-327",
+            "84-328",
+            "84-331",
+            "84-332",
+            "84-333",
+            "84-338",
+            "84-352",
+            "84-355",
+            "84-358",
+            "84-366",
+            "84-367",
+            "84-380",
+            "84-393",
+            "84-402",
+            "17-200",
+            "17-303",
+            "17-331",
+            "17-333",
+            "17-334",
+            "19-403",
+            "19-411",
+            "70-334",
+            "79-234",
+            "79-302",
+            "79-370",
+            "80-249",
+            "88-270",
+            "95-444"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 45.0,
+            "course_count_estimate": 4
+          }
+        },
+        {
+          "id": "senior-seminar-9-units",
+          "name": "Senior Seminar 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "84-500"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 9.0,
+            "course_count_estimate": 1
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            4
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": true,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "Curriculum A maximum of four courses may double count between the PSST major and any other majors or minor.",
+            "Unlimited double counting is permitted with General Education requirements."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/",
+        "source_hash": "a6c42cef6913bfd182070de9743051596e212e2bab5100c276f7f3e7a081b570",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "15 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 82,
+          "extracted_unit_estimate": 265,
+          "scheduled_course_count": 67,
+          "missing_schedule_course_ids": [
+            "17-200",
+            "19-411",
+            "79-370",
+            "84-200",
+            "84-280",
+            "84-324",
+            "84-331",
+            "84-333",
+            "84-349",
+            "84-367",
+            "84-386",
+            "84-402",
+            "84-500",
+            "88-270",
+            "95-444"
+          ]
+        }
+      }
+    },
+    "psychology-and-biological-sciences--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "psychology-and-biological-sciences--b-s",
+      "planning_id": "psychology-and-biological-sciences",
+      "name": "Psychology and Biological Sciences",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 216,
+      "required_courses": [
+        "03-201",
+        "03-320",
+        "03-343",
+        "03-411",
+        "03-412",
+        "21-120",
+        "21-122",
+        "36-200",
+        "09-105",
+        "09-106",
+        "09-217",
+        "09-218",
+        "09-207",
+        "09-208",
+        "85-100",
+        "85-170",
+        "85-300"
+      ],
+      "requirement_groups": [
+        {
+          "id": "degree-requirements-1-alternative-1",
+          "name": "Honors Modern Biology",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "03-151",
+            "03-121"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-3",
+          "name": "Honors Biochemistry",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "03-231",
+            "03-232"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-5",
+          "name": "Genetics *New course number ( 03-330 ) starting Fall 2027",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "03-220",
+            "03-221"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-4",
+          "name": "Experimental Design for Behavioral & Social Sciences",
           "choose": 1,
           "units": 9,
           "options": [
             "36-309",
             "85-309"
-          ]
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "psychology-surveys-27-units",
-          "name": "Psychology Surveys 27 units",
+          "id": "degree-requirements-1-alternative-5",
+          "name": "Physics I for Science Students",
+          "choose": 1,
+          "units": 12,
+          "options": [
+            "33-121",
+            "33-141"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
+        },
+        {
+          "id": "degree-requirements-1-alternative-6",
+          "name": "Physics II for Biological Sciences and Chemistry Students *Only required for MCS Students",
           "choose": 1,
           "units": 9,
           "options": [
-            "85-110",
-            "85-130",
-            "85-150",
-            "85-170",
-            "85-190"
-          ]
+            "33-122",
+            "33-142"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "introduction-to-research-methods-9-units",
-          "name": "Introduction to Research Methods 9 units",
+          "id": "degree-requirements-1-alternative-7",
+          "name": "Principles of Computing",
           "choose": 1,
           "units": 9,
-          "options": [
-            "85-300"
-          ]
-        },
-        {
-          "id": "advanced-research-methods-12-units",
-          "name": "Advanced Research Methods 12 units",
-          "choose": 2,
-          "units": 19,
-          "options": [
-            "85-302",
-            "85-310",
-            "85-370",
-            "85-320",
-            "85-330",
-            "85-303",
-            "85-350"
-          ]
-        },
-        {
-          "id": "practical-application-9-units",
-          "name": "Practical Application 9 units",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-198",
-            "85-501",
-            "85-503",
-            "85-507",
-            "85-508",
-            "85-601",
-            "66-501",
-            "85-530",
-            "85-590",
-            "99-270"
-          ]
-        },
-        {
-          "id": "breadth-9-units",
-          "name": "Breadth 9 units",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-105",
-            "85-106",
-            "85-107",
-            "85-117",
-            "85-251",
-            "85-151",
-            "85-213"
-          ]
-        },
-        {
-          "id": "computer-science-requirement-10-units",
-          "name": "Computer Science Requirement 10 units",
-          "choose": 2,
-          "units": 20,
           "options": [
             "15-110",
-            "88-300",
             "15-112",
-            "15-104"
-          ]
+            "02-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          },
+          "relationship": "substitution"
         },
         {
-          "id": "learning-and-development",
-          "name": "Learning and Development",
-          "choose": 2,
-          "units": 18,
+          "id": "additional-laboratory-or-research-methods-9-12-units",
+          "name": "Additional Laboratory or Research Methods 9-12 units",
+          "choose": 1,
+          "units": 12,
           "options": [
-            "85-130",
-            "85-320",
-            "85-530",
-            "85-501"
-          ]
-        },
-        {
-          "id": "health-psychology",
-          "name": "Health Psychology",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-170",
-            "85-150",
-            "85-350",
-            "85-314",
-            "85-454",
-            "85-507",
-            "85-508",
-            "85-601",
-            "85-501",
-            "85-503"
-          ]
-        },
-        {
-          "id": "cognitive-psychology",
-          "name": "Cognitive Psychology",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-110",
+            "03-344",
+            "03-345",
+            "03-346",
             "85-310",
-            "85-507",
-            "85-508",
-            "85-601",
-            "85-501",
-            "85-503"
-          ]
-        },
-        {
-          "id": "social-psychology",
-          "name": "Social Psychology",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-150",
+            "85-330",
             "85-350",
-            "85-507",
-            "85-508",
-            "85-601",
-            "85-501",
-            "85-503"
-          ]
-        },
-        {
-          "id": "clinical-counseling-psychology",
-          "name": "Clinical/Counseling Psychology",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-190",
-            "85-320",
-            "85-350",
-            "85-590"
-          ]
-        },
-        {
-          "id": "cognitive-neuroscience",
-          "name": "Cognitive Neuroscience",
-          "choose": 2,
-          "units": 18,
-          "options": [
-            "85-110",
-            "85-170",
-            "85-370",
-            "85-472",
-            "85-507",
-            "85-508",
-            "85-601",
-            "85-501",
-            "85-503"
-          ]
+            "85-370"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 12.0,
+            "course_count_estimate": 1
+          }
         }
       ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": false,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": []
+        }
+      },
       "provenance": {
-        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
-        "source_hash": "0499c7fa9c71fd8a93ba908019a7eeb331acd95e504d84c5b2b1e6dd25bc6b6a",
-        "extraction_confidence": 0.92,
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/",
+        "source_hash": "9846e1d2a0b04f51990459e0ef36cc2081b31957a02aa79e990fb9f8ef60e88d",
+        "extraction_confidence": 1.0,
         "automatic_validation": {
           "promotion_ready": true,
           "blockers": [],
           "warnings": [
-            "11 catalog course IDs are absent from the current schedule database."
+            "1 catalog course IDs are absent from the current schedule database."
           ],
-          "catalog_course_count": 44,
-          "extracted_unit_estimate": 229,
-          "scheduled_course_count": 33,
+          "catalog_course_count": 39,
+          "extracted_unit_estimate": 216,
+          "scheduled_course_count": 38,
           "missing_schedule_course_ids": [
-            "15-104",
-            "85-107",
-            "85-117",
-            "85-151",
-            "85-251",
-            "85-302",
-            "85-303",
-            "85-314",
-            "85-320",
-            "85-454",
-            "99-270"
+            "03-346"
+          ]
+        }
+      }
+    },
+    "statistics-and-data-science--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "statistics-and-data-science--b-s",
+      "planning_id": "statistics-and-data-science",
+      "name": "Statistics and Data Science",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 150,
+      "required_courses": [
+        "21-090",
+        "36-401",
+        "36-402"
+      ],
+      "requirement_groups": [
+        {
+          "id": "complete-the-following-2",
+          "name": "Complete one of the following options",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-111",
+            "21-112",
+            "21-120"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "complete-the-following-3",
+          "name": "And one of the following four courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259",
+            "21-266",
+            "21-268"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "complete-the-following-4",
+          "name": "And one of the following three courses",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-240",
+            "21-241",
+            "21-242"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "beginning-data-analysis-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-200",
+            "36-220"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "intermediate-data-analysis-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-202",
+            "36-290",
+            "36-303",
+            "36-309",
+            "36-315"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "advanced-data-analysis-elective-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-311",
+            "36-313",
+            "36-318",
+            "36-319",
+            "36-390",
+            "36-396",
+            "36-490",
+            "36-493",
+            "36-497"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "advanced-data-analysis-electives-1",
+          "name": "Choose two of the following courses",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-311",
+            "36-313",
+            "36-318",
+            "36-319",
+            "36-390",
+            "36-396",
+            "36-490",
+            "36-493",
+            "36-497"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 2
+          }
+        },
+        {
+          "id": "3-probability-theory-and-statistical-theory-18-units",
+          "name": "3. Probability Theory and Statistical Theory 18 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-235",
+            "36-236"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "4-statistical-computing-19-to-21-units",
+          "name": "4. Statistical Computing 19 to 21 units",
+          "choose": 1,
+          "units": 21,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120",
+            "36-350"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 21.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "5-special-topics-9-units",
+          "name": "5. Special Topics 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-460",
+            "36-461",
+            "36-462",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-466",
+            "36-467",
+            "36-468",
+            "36-469",
+            "36-470",
+            "36-471",
+            "36-472",
+            "36-473"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 9.0,
+            "course_count_estimate": 1
+          }
+        }
+      ],
+      "track_rule": null,
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "With respect to double-counting courses, it is departmental policy that students must have at least five statistics courses that do not count for their primary major."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/",
+        "source_hash": "5dd689d33c7793e60eed69e102af6a5c92a4a7df761bb5ba9c3fc8114db74b0e",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "13 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 49,
+          "extracted_unit_estimate": 150,
+          "scheduled_course_count": 36,
+          "missing_schedule_course_ids": [
+            "36-290",
+            "36-303",
+            "36-313",
+            "36-318",
+            "36-390",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-467",
+            "36-470",
+            "36-472",
+            "36-473",
+            "36-493"
+          ]
+        }
+      }
+    },
+    "statistics-and-data-science-mathematical-sciences-track--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "statistics-and-data-science-mathematical-sciences-track--b-s",
+      "planning_id": "statistics-and-data-science-mathematical-sciences-track",
+      "name": "Statistics and Data Science (Mathematical Sciences Track)",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 202,
+      "required_courses": [
+        "21-090",
+        "36-401",
+        "36-402"
+      ],
+      "requirement_groups": [
+        {
+          "id": "complete-the-following-2",
+          "name": "Complete one of the following course options",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-111",
+            "21-112",
+            "21-120",
+            "21-122"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "complete-the-following-3",
+          "name": "And one of the following four courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "21-256",
+            "21-259",
+            "21-266",
+            "21-268"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "complete-the-following-4",
+          "name": "And one of the following three courses",
+          "choose": 1,
+          "units": 10,
+          "options": [
+            "21-240",
+            "21-241",
+            "21-242"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "beginning-data-analysis-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-200",
+            "36-220"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "intermediate-data-analysis-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-202",
+            "36-290",
+            "36-309",
+            "36-303",
+            "36-315"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "advanced-data-analysis-elective-1",
+          "name": "Choose one of the following courses",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-311",
+            "36-313",
+            "36-318",
+            "36-319",
+            "36-396",
+            "36-490",
+            "36-493",
+            "36-497"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 1
+          }
+        },
+        {
+          "id": "advanced-data-analysis-electives-1",
+          "name": "Choose two of the following courses",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-311",
+            "36-313",
+            "36-318",
+            "36-319",
+            "36-396",
+            "36-490",
+            "36-493",
+            "36-497"
+          ],
+          "selection_rule": {
+            "type": "course_count",
+            "count": 2
+          }
+        },
+        {
+          "id": "3-probability-theory-and-statistical-theory-18-units",
+          "name": "3. Probability Theory and Statistical Theory 18 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-235",
+            "36-226"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "4-statistical-computing-19-to-21-units",
+          "name": "4. Statistical Computing 19 to 21 units",
+          "choose": 1,
+          "units": 21,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120",
+            "36-350"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 21.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "5-special-topics-9-units",
+          "name": "5. Special Topics 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-460",
+            "36-461",
+            "36-462",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-466",
+            "36-467",
+            "36-468",
+            "36-469",
+            "36-470",
+            "36-471",
+            "36-472",
+            "36-473"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 9.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "7-mathematical-statistics-track-46-52-units",
+          "name": "7. Mathematical Statistics Track 46–52 UNITS",
+          "choose": 3,
+          "units": 52,
+          "options": [
+            "21-127",
+            "21-355",
+            "36-410",
+            "21-228",
+            "21-301",
+            "21-344",
+            "21-356",
+            "21-373",
+            "36-700"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 52.0,
+            "course_count_estimate": 3
+          },
+          "track": "7. Mathematical Statistics Track"
+        }
+      ],
+      "track_rule": {
+        "type": "unresolved",
+        "count": null,
+        "tracks": [
+          {
+            "id": "7-mathematical-statistics-track",
+            "name": "7. Mathematical Statistics Track",
+            "requirement_group_ids": [
+              "7-mathematical-statistics-track-46-52-units"
+            ]
+          }
+        ]
+      },
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            6
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "With respect to double-counting courses, it is departmental policy that students must have at least six courses [three Statistics and Data Science courses (36-xxx) and three Mathematical Sciences Track electives] that do not count for their primary major."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/",
+        "source_hash": "8479694f3d3641b9e3e41aa5f20d439e322c92214638b712d4a781e0a7cffb72",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "12 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 58,
+          "extracted_unit_estimate": 202,
+          "scheduled_course_count": 46,
+          "missing_schedule_course_ids": [
+            "36-290",
+            "36-303",
+            "36-313",
+            "36-318",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-467",
+            "36-470",
+            "36-472",
+            "36-473",
+            "36-493"
+          ]
+        }
+      }
+    },
+    "statistics-and-data-science-neuroscience-track--b-s": {
+      "planner_status": "review_required",
+      "curriculum_status": "catalog_extracted_candidate",
+      "catalog_year": "2026-2027",
+      "program_id": "statistics-and-data-science-neuroscience-track--b-s",
+      "planning_id": "statistics-and-data-science-neuroscience-track",
+      "name": "Statistics and Data Science (Neuroscience Track)",
+      "credential": "B.S.",
+      "program_type": "primary_major",
+      "minimum_major_units_estimate": 227,
+      "required_courses": [
+        "21-090",
+        "36-401",
+        "36-402"
+      ],
+      "requirement_groups": [
+        {
+          "id": "1-mathematical-foundations-prerequisites-39-52-units",
+          "name": "1. Mathematical Foundations (Prerequisites) 39–52 units",
+          "choose": 1,
+          "units": 52,
+          "options": [
+            "21-111",
+            "21-112",
+            "21-120",
+            "21-256",
+            "21-259",
+            "21-266",
+            "21-268",
+            "21-240",
+            "21-241",
+            "21-242"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 52.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "2-data-analysis-36-45-units",
+          "name": "2. Data Analysis 36-45 units",
+          "choose": 2,
+          "units": 45,
+          "options": [
+            "36-200",
+            "36-220",
+            "36-202",
+            "36-290",
+            "36-303",
+            "36-309",
+            "36-315",
+            "36-311",
+            "36-313",
+            "36-318",
+            "36-319",
+            "36-396",
+            "36-490",
+            "36-493",
+            "36-497"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 45.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "3-probability-theory-and-statistical-theory-18-units",
+          "name": "3. Probability Theory and Statistical Theory 18 units",
+          "choose": 2,
+          "units": 18,
+          "options": [
+            "36-235",
+            "36-236"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 18.0,
+            "course_count_estimate": 2
+          }
+        },
+        {
+          "id": "4-statistical-computing-19-to-21-units",
+          "name": "4. Statistical Computing 19 to 21 units",
+          "choose": 1,
+          "units": 21,
+          "options": [
+            "15-110",
+            "15-112",
+            "02-120",
+            "36-350"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 21.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "5-special-topics-9-units",
+          "name": "5. Special Topics 9 units",
+          "choose": 1,
+          "units": 9,
+          "options": [
+            "36-460",
+            "36-461",
+            "36-462",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-466",
+            "36-467",
+            "36-468",
+            "36-469",
+            "36-470",
+            "36-471",
+            "36-472",
+            "36-473"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 9.0,
+            "course_count_estimate": 1
+          }
+        },
+        {
+          "id": "7-statistics-and-neuroscience-track-45-54-units",
+          "name": "7. Statistics and Neuroscience Track 45–54 UNITS",
+          "choose": 6,
+          "units": 54,
+          "options": [
+            "85-110",
+            "85-170",
+            "10-301",
+            "18-290",
+            "42-630",
+            "42-632",
+            "36-700",
+            "86-631",
+            "85-310",
+            "85-370",
+            "03-362",
+            "03-363",
+            "15-386",
+            "85-408",
+            "85-413",
+            "85-419",
+            "85-472"
+          ],
+          "selection_rule": {
+            "type": "minimum_units",
+            "minimum_units": 54.0,
+            "course_count_estimate": 6
+          },
+          "track": "7. Statistics and Neuroscience Track"
+        }
+      ],
+      "track_rule": {
+        "type": "unresolved",
+        "count": null,
+        "tracks": [
+          {
+            "id": "7-statistics-and-neuroscience-track",
+            "name": "7. Statistics and Neuroscience Track",
+            "requirement_group_ids": [
+              "7-statistics-and-neuroscience-track-45-54-units"
+            ]
+          }
+        ]
+      },
+      "policy_signals": {
+        "shared_credit": {
+          "present": true,
+          "course_limit_candidates": [
+            6
+          ],
+          "unit_limit_candidates": [],
+          "unlimited_exception_present": false,
+          "prohibition_language_present": false,
+          "source_sentences": [
+            "With respect to double-counting courses, it is departmental policy that students must have at least six courses [three Statistics and Data Science courses (36-xxx) and three Neuroscience Track electives] that do not count for their primary major."
+          ]
+        }
+      },
+      "provenance": {
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/",
+        "source_hash": "d85815332b799088774e156ffc9ce7f25b6cec55328f20f518d0f8091a55e867",
+        "extraction_confidence": 1.0,
+        "automatic_validation": {
+          "promotion_ready": true,
+          "blockers": [],
+          "warnings": [
+            "13 catalog course IDs are absent from the current schedule database."
+          ],
+          "catalog_course_count": 65,
+          "extracted_unit_estimate": 227,
+          "scheduled_course_count": 52,
+          "missing_schedule_course_ids": [
+            "36-290",
+            "36-303",
+            "36-313",
+            "36-318",
+            "36-463",
+            "36-464",
+            "36-465",
+            "36-467",
+            "36-470",
+            "36-472",
+            "36-473",
+            "36-493",
+            "85-408"
           ]
         }
       }
@@ -567,7 +5181,39 @@
   },
   "skipped": [
     {
+      "program_id": "artificial-intelligence--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "computational-biology--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "computer-science--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "electrical-and-computer-engineering--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "human-computer-interaction--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
       "program_id": "information-systems--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "logic-and-computation--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "robotics--b-s",
+      "reason": "curated_template_exists"
+    },
+    {
+      "program_id": "statistics-and-machine-learning--b-s",
       "reason": "curated_template_exists"
     }
   ]

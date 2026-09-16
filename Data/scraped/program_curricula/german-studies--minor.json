@@ -1,0 +1,237 @@
+{
+  "program_id": "german-studies--minor",
+  "planning_id": "german-studies",
+  "name": "German Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/german-studies-minor/",
+  "source_hash": "0cea5a5c282d1d2ade92f5abcb0f4cbe7a9ccfd66cd2f6ecba86a2a22474e3e8",
+  "fixed_courses": [
+    {
+      "id": "57-306",
+      "name": "World Music",
+      "units": 9.0,
+      "source_text": "57-306 World Music 9"
+    },
+    {
+      "id": "85-421",
+      "name": "Language and Thought",
+      "units": 9.0,
+      "source_text": "85-421 Language and Thought 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-german-studies-5-courses-45-units",
+      "name": "1. Foundational Courses in German Studies (5 courses, 45 units)",
+      "heading": "1. Foundational Courses in German Studies (5 courses, 45 units)",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "82-221",
+        "82-222",
+        "82-320",
+        "82-323",
+        "82-425",
+        "82-426"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 45.0,
+        "course_count_estimate": 5
+      },
+      "track": null,
+      "source_categories": [
+        "1. Foundational Courses in German Studies (5 courses, 45 units)"
+      ]
+    },
+    {
+      "id": "german-electives-1",
+      "name": "German Electives",
+      "heading": "German Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-383",
+        "82-388",
+        "82-425",
+        "82-426",
+        "82-427",
+        "82-428",
+        "82-521",
+        "82-522"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Architecture",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "48-338",
+        "48-350"
+      ],
+      "source_instruction": "Architecture",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "English",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-239",
+        "76-386",
+        "76-483"
+      ],
+      "source_instruction": "English",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "History",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-205",
+        "79-257"
+      ],
+      "source_instruction": "History",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Languages, Cultures, and Applied Linguistics",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "82-227",
+        "82-280",
+        "82-281",
+        "82-282",
+        "82-283",
+        "82-284",
+        "82-285",
+        "82-286",
+        "82-383",
+        "82-388",
+        "82-427",
+        "82-428",
+        "82-480"
+      ],
+      "source_instruction": "Languages, Cultures, and Applied Linguistics",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Philosophy",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-136",
+        "80-180",
+        "80-251",
+        "80-253",
+        "80-275",
+        "80-280"
+      ],
+      "source_instruction": "Philosophy",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count two courses taken for the German Studies minor that are also being used to fulfill the requirements of other majors, minors, and programs.",
+        "This does not include double-counting with General Education requirements, which has no limit."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 9,
+    "course_references": 42,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 5 choices from an explicit 45-unit rule: 1. Foundational Courses in German Studies (5 courses, 45 units)",
+      "Assumed choose-one for ambiguous section: German Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives"
+    ],
+    "explicit_group_ratio": 0.14
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "6 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "16 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 36,
+    "extracted_unit_estimate": 114,
+    "scheduled_course_count": 20,
+    "missing_schedule_course_ids": [
+      "48-338",
+      "48-350",
+      "76-386",
+      "79-205",
+      "79-257",
+      "80-136",
+      "80-275",
+      "80-280",
+      "82-227",
+      "82-281",
+      "82-284",
+      "82-286",
+      "82-425",
+      "82-426",
+      "82-427",
+      "85-421"
+    ]
+  }
+}

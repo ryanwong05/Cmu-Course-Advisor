@@ -1,0 +1,231 @@
+{
+  "program_id": "film-and-visual-media--minor",
+  "planning_id": "film-and-visual-media",
+  "name": "Film and Visual Media",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-minor/",
+  "source_hash": "9ae21ef39a63bd5160004de65ed77539f226209a0183c781a299400e7519afe1",
+  "fixed_courses": [
+    {
+      "id": "76-239",
+      "name": "Introduction to Film Studies",
+      "units": 9.0,
+      "source_text": "76-239 Introduction to Film Studies 9"
+    },
+    {
+      "id": "76-310",
+      "name": "Advanced Studies in Film and Media",
+      "units": 9.0,
+      "source_text": "76-310 Advanced Studies in Film and Media 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "film-and-media-electives-27-units",
+      "name": "Film and Media Electives 27 units",
+      "heading": "Film and Media Electives 27 units",
+      "choose": 1,
+      "units": 27,
+      "options": [
+        "15-104",
+        "51-229",
+        "51-368",
+        "54-191",
+        "54-342",
+        "60-110",
+        "60-120",
+        "60-125",
+        "60-141",
+        "60-142",
+        "60-143",
+        "60-166",
+        "60-202",
+        "60-212",
+        "60-218",
+        "60-219",
+        "60-220",
+        "60-222",
+        "60-224",
+        "60-228",
+        "60-241",
+        "60-242",
+        "60-245",
+        "60-281",
+        "60-333",
+        "60-356",
+        "60-375",
+        "60-378",
+        "60-391",
+        "60-415",
+        "60-416",
+        "62-141",
+        "62-142",
+        "62-150",
+        "62-282",
+        "62-371",
+        "62-375",
+        "76-207",
+        "76-212",
+        "76-259",
+        "76-269",
+        "76-278",
+        "76-292",
+        "76-295",
+        "76-312",
+        "76-313",
+        "76-320",
+        "76-334",
+        "76-339",
+        "76-348",
+        "76-353",
+        "76-358",
+        "76-367",
+        "76-374",
+        "76-381",
+        "76-382",
+        "76-388",
+        "76-394",
+        "76-401",
+        "76-409",
+        "76-439",
+        "76-454",
+        "76-456",
+        "76-461",
+        "76-467",
+        "76-469",
+        "76-481",
+        "76-482",
+        "76-501",
+        "76-502",
+        "76-503",
+        "79-220",
+        "79-225",
+        "79-309",
+        "79-319",
+        "79-328",
+        "79-339",
+        "82-183",
+        "82-248",
+        "82-250",
+        "82-253",
+        "82-265",
+        "82-268",
+        "82-269",
+        "82-278",
+        "82-279",
+        "82-293",
+        "82-296",
+        "82-428",
+        "82-439"
+      ],
+      "source_instruction": "Complete a minimum of 27 units of course work related to film studies, visual media, digital media, screenwriting, and/or film production. Courses may include, but are not limited to, the following:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete a minimum of 27 units of course work related to film studies, visual media, digital media, screenwriting, and/or film production. Courses may include, but are not limited to, the following"
+      ]
+    },
+    {
+      "id": "400-level-film-and-media-course-9-units",
+      "name": "400-level Film and Media Course 9 units",
+      "heading": "400-level Film and Media Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-401",
+        "76-439",
+        "76-454",
+        "76-456",
+        "76-461",
+        "76-467",
+        "76-469",
+        "76-482"
+      ],
+      "source_instruction": "Complete one 400-level course from the Department of English that concentrates on film/media directly or that uses it as a tool of social or cultural analysis.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete one 400-level course from the Department of English that concentrates on film/media directly or that uses it as a tool of social or cultural analysis."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "A maximum of two courses may double count with other programs.",
+        "double counting A maximum of two courses from the minor may double count with other programs within or outside of the Department of English."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 100,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Film and Media Electives 27 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "31 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 92,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 61,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "60-143",
+      "60-219",
+      "60-228",
+      "60-242",
+      "60-333",
+      "60-356",
+      "60-375",
+      "60-391",
+      "60-415",
+      "62-375",
+      "76-312",
+      "76-320",
+      "76-348",
+      "76-353",
+      "76-367",
+      "76-374",
+      "76-394",
+      "76-401",
+      "76-454",
+      "76-467",
+      "76-482",
+      "76-501",
+      "76-502",
+      "76-503",
+      "79-225",
+      "79-309",
+      "79-339",
+      "82-183",
+      "82-269",
+      "82-296"
+    ]
+  }
+}

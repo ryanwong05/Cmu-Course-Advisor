@@ -1,0 +1,85 @@
+{
+  "program_id": "architectural-technology--minor",
+  "planning_id": "architectural-technology",
+  "name": "Architectural Technology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-technology-minor/",
+  "source_hash": "c41ca348e1e4cf434c59aaa21b08d59964e387815fbdf66259d814e81c5f3697",
+  "fixed_courses": [
+    {
+      "id": "33-141",
+      "name": "Physics I for Engineering Students",
+      "units": 12.0,
+      "source_text": "33-141 Physics I for Engineering Students 12"
+    },
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "selective-courses-32-units",
+      "name": "Selective Courses 32 units",
+      "heading": "Selective Courses 32 units",
+      "choose": 4,
+      "units": 32,
+      "options": [
+        "48-116",
+        "48-215",
+        "48-234",
+        "48-324",
+        "48-315",
+        "48-432"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 32.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "Selective Courses 32 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 8,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 4 choices from an explicit 32-unit rule: Selective Courses 32 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 8,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": [
+      "48-234"
+    ]
+  }
+}

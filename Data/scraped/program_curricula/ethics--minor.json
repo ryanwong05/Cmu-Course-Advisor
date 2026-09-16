@@ -1,0 +1,108 @@
+{
+  "program_id": "ethics--minor",
+  "planning_id": "ethics",
+  "name": "Ethics",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/ethics-minor/",
+  "source_hash": "6fc420ac0c32b9f648b9316d5ebc0b819938cfba6b962399e0d431a5c29c204d",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "ethics-core-courses-27-units",
+      "name": "Ethics Core Courses 27 units",
+      "heading": "Ethics Core Courses 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "80-130",
+        "80-135",
+        "80-136",
+        "80-244",
+        "80-245",
+        "80-246",
+        "80-249",
+        "80-330",
+        "80-335",
+        "80-336",
+        "80-348",
+        "80-447"
+      ],
+      "source_instruction": "Complete three courses from any of the following areas with at least two courses at the 200-level or higher.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Complete three courses from any of the following areas with at least two courses at the 200-level or higher."
+      ]
+    },
+    {
+      "id": "ethics-electives-18-units",
+      "name": "Ethics Electives 18 units",
+      "heading": "Ethics Electives 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "80-234",
+        "80-244",
+        "80-245",
+        "80-246",
+        "80-330",
+        "80-335",
+        "80-336",
+        "80-348",
+        "80-447"
+      ],
+      "source_instruction": "Complete two courses at the 200-level or higher. These courses may be additional courses from Ethics Core list above.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two courses at the 200-level or higher. These courses may be additional courses from Ethics Core list above."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 21,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 13,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 10,
+    "missing_schedule_course_ids": [
+      "80-136",
+      "80-246",
+      "80-336"
+    ]
+  }
+}

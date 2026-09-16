@@ -1,0 +1,192 @@
+{
+  "program_id": "conducting--minor",
+  "planning_id": "conducting",
+  "name": "Conducting",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/conducting-minor/",
+  "source_hash": "d842a88f8a016266028d4876e37f4f88c371258ff24ba7d37ba1d2a807952409",
+  "fixed_courses": [
+    {
+      "id": "57-152",
+      "name": "Harmony I",
+      "units": 9.0,
+      "source_text": "57-152 Harmony I 9"
+    },
+    {
+      "id": "57-153",
+      "name": "Harmony II",
+      "units": 9.0,
+      "source_text": "57-153 Harmony II 9"
+    },
+    {
+      "id": "57-161",
+      "name": "Eurhythmics I",
+      "units": 3.0,
+      "source_text": "57-161 Eurhythmics I 3"
+    },
+    {
+      "id": "57-162",
+      "name": "Eurhythmics II",
+      "units": 3.0,
+      "source_text": "57-162 Eurhythmics II 3"
+    },
+    {
+      "id": "57-189",
+      "name": "Introduction to Repertoire and Listening for Musicians",
+      "units": 3.0,
+      "source_text": "57-189 Introduction to Repertoire and Listening for Musicians 3"
+    },
+    {
+      "id": "57-191",
+      "name": "Keyboard Studies I",
+      "units": 3.0,
+      "source_text": "57-191 Keyboard Studies I 3"
+    },
+    {
+      "id": "57-332",
+      "name": "Introduction to Conducting",
+      "units": 6.0,
+      "source_text": "57-332 Introduction to Conducting 6"
+    },
+    {
+      "id": "57-257",
+      "name": "Orchestration I",
+      "units": 6.0,
+      "source_text": "57-257 Orchestration I 6"
+    },
+    {
+      "id": "57-336",
+      "name": "Instrumental/Choral Conducting",
+      "units": 6.0,
+      "source_text": "57-336 Instrumental/Choral Conducting 6"
+    },
+    {
+      "id": "57-364",
+      "name": "Conducting Practicum",
+      "units": 3.0,
+      "source_text": "57-364 Conducting Practicum 3"
+    },
+    {
+      "id": "57-459",
+      "name": "Score Reading for Composition Majors and Conducting Minors",
+      "units": 6.0,
+      "source_text": "57-459 Score Reading for Composition Majors and Conducting Minors 6"
+    },
+    {
+      "id": "57-618",
+      "name": "Independent Study in Conducting ( 57-364 co-req)",
+      "units": 6.0,
+      "source_text": "57-618 Independent Study in Conducting ( 57-364 co-req) 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisite-courses-1-alternative-7",
+      "name": "Solfege I",
+      "heading": "Prerequisite Courses",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-181",
+        "57-185"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-33-units",
+      "name": "Required Courses 33 units",
+      "heading": "Required Courses 33 units",
+      "choose": 2,
+      "units": 33,
+      "options": [
+        "57-360",
+        "57-361",
+        "57-362",
+        "57-363",
+        "57-557"
+      ],
+      "source_instruction": "Two (2) of the following courses, with instructor recommendation:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 33.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Two (2) of the following courses, with instructor recommendation"
+      ]
+    },
+    {
+      "id": "elective-course-options-21-units",
+      "name": "Elective Course Options 21 units",
+      "heading": "Elective Course Options 21 units",
+      "choose": 3,
+      "units": 21,
+      "options": [
+        "57-220",
+        "57-221",
+        "57-222",
+        "57-223",
+        "57-227",
+        "57-230",
+        "57-258",
+        "57-337",
+        "57-338",
+        "57-367",
+        "57-420",
+        "57-423",
+        "57-670",
+        "57-671",
+        "57-672",
+        "57-675"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 21.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Course Options 21 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 35,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 3 choices from an explicit 21-unit rule: Elective Course Options 21 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 35,
+    "extracted_unit_estimate": 120,
+    "scheduled_course_count": 35,
+    "missing_schedule_course_ids": []
+  }
+}

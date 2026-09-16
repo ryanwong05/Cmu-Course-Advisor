@@ -1,0 +1,219 @@
+{
+  "program_id": "environmental-and-sustainability-studies--additional-major",
+  "planning_id": "environmental-and-sustainability-studies",
+  "name": "Environmental and Sustainability Studies",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-additional-major/",
+  "source_hash": "81421060f9780f1fe6c818d496f65a7e2fb8c5b874e775d0a3f9fa9e65e254c0",
+  "fixed_courses": [
+    {
+      "id": "66-236",
+      "name": "Introduction to Environmental Ideas",
+      "units": 9.0,
+      "source_text": "66-236 Introduction to Environmental Ideas 9"
+    },
+    {
+      "id": "66-237",
+      "name": "Interdisciplinary Dialogues for Environmental & Sustainability Studies",
+      "units": 3.0,
+      "source_text": "66-237 Interdisciplinary Dialogues for Environmental & Sustainability Studies 3"
+    },
+    {
+      "id": "66-506",
+      "name": "Senior Capstone",
+      "units": 9.0,
+      "source_text": "66-506 Senior Capstone 9"
+    },
+    {
+      "id": "03-140",
+      "name": "Ecology and Environmental Science 3",
+      "units": 9.0,
+      "source_text": "03-140 Ecology and Environmental Science 3 9"
+    },
+    {
+      "id": "09-510",
+      "name": "Chemistry and Sustainability 3",
+      "units": 9.0,
+      "source_text": "09-510 Chemistry and Sustainability 3 9"
+    },
+    {
+      "id": "12-201",
+      "name": "Geology 3",
+      "units": 9.0,
+      "source_text": "12-201 Geology 3 9"
+    },
+    {
+      "id": "33-115",
+      "name": "Physics for Future Presidents 3",
+      "units": 9.0,
+      "source_text": "33-115 Physics for Future Presidents 3 9"
+    },
+    {
+      "id": "03-128",
+      "name": "Biology for Life Special Topics Section S, \"Tropical Ecology\" (9 units) offered at CMU Study Abroad Program in Costa Rica 3",
+      "units": 9.0,
+      "source_text": "03-128 Biology for Life Special Topics Section S, \"Tropical Ecology\" (9 units) offered at CMU Study Abroad Program in Costa Rica 3 9"
+    },
+    {
+      "id": "09-225",
+      "name": "Climate Change: Chemistry, Physics and Planetary Science",
+      "units": 9.0,
+      "source_text": "09-225 Climate Change: Chemistry, Physics and Planetary Science 9"
+    },
+    {
+      "id": "09-524",
+      "name": "Environmental Chemistry",
+      "units": 9.0,
+      "source_text": "09-524 Environmental Chemistry 9"
+    },
+    {
+      "id": "09-529",
+      "name": "Introduction to Sustainable Energy Science",
+      "units": 9.0,
+      "source_text": "09-529 Introduction to Sustainable Energy Science 9"
+    },
+    {
+      "id": "09-538",
+      "name": "Exposure and Risk Assessment for Environmental Pollutants",
+      "units": 9.0,
+      "source_text": "09-538 Exposure and Risk Assessment for Environmental Pollutants 9"
+    },
+    {
+      "id": "33-226",
+      "name": "Physics of Energy",
+      "units": 9.0,
+      "source_text": "33-226 Physics of Energy 9"
+    },
+    {
+      "id": "36-200",
+      "name": "Reasoning with Data 4",
+      "units": 9.0,
+      "source_text": "36-200 Reasoning with Data 4 9"
+    },
+    {
+      "id": "19-101",
+      "name": "Introduction to Engineering and Public Policy Without prerequisite",
+      "units": 12.0,
+      "source_text": "19-101 Introduction to Engineering and Public Policy Without prerequisite 12"
+    },
+    {
+      "id": "84-110",
+      "name": "The Economics of Politics and Technology Without prerequisite",
+      "units": 9.0,
+      "source_text": "84-110 The Economics of Politics and Technology Without prerequisite 9"
+    },
+    {
+      "id": "84-226",
+      "name": "International Relations Without prerequisite",
+      "units": 9.0,
+      "source_text": "84-226 International Relations Without prerequisite 9"
+    },
+    {
+      "id": "84-325",
+      "name": "Contemporary American Foreign Policy Without prerequisite",
+      "units": 9.0,
+      "source_text": "84-325 Contemporary American Foreign Policy Without prerequisite 9"
+    },
+    {
+      "id": "88-344",
+      "name": "Systems Analysis: Environmental Policy Without prerequisite",
+      "units": 9.0,
+      "source_text": "88-344 Systems Analysis: Environmental Policy Without prerequisite 9"
+    },
+    {
+      "id": "73-332",
+      "name": "Political Economy",
+      "units": 9.0,
+      "source_text": "73-332 Political Economy 9"
+    },
+    {
+      "id": "73-408",
+      "name": "Law and Economics",
+      "units": 9.0,
+      "source_text": "73-408 Law and Economics 9"
+    },
+    {
+      "id": "73-427",
+      "name": "Sustainability, Energy, and Environmental Economics",
+      "units": 9.0,
+      "source_text": "73-427 Sustainability, Energy, and Environmental Economics 9"
+    },
+    {
+      "id": "88-221",
+      "name": "Markets, Democracy, and Public Policy",
+      "units": 9.0,
+      "source_text": "88-221 Markets, Democracy, and Public Policy 9"
+    },
+    {
+      "id": "88-366",
+      "name": "Behavioral Economics of Poverty and Development",
+      "units": 9.0,
+      "source_text": "88-366 Behavioral Economics of Poverty and Development 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-cfa-dietrich-tepper-30-units-mcs-cit-scs-33-units-1-alternative-1",
+      "name": "Environmental Systems on a Changing Planet 1,2",
+      "heading": "Core Courses (CFA, Dietrich, Tepper - 30 units; MCS, CIT, SCS - 33 units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-291",
+        "09-381"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        3
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Maximum 3 courses, regardless of Units, can be double-counted for the Additional Major from any other Minor, Major, or Master’s program.",
+        "General Education courses Courses taken to fulfill a General Education requirement for the student’s college (the college of the student's primary major) are not calculated as “double-counting” for the Additional Major in Environmental and Sustainability Studies."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 26,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 26,
+    "extracted_unit_estimate": 222,
+    "scheduled_course_count": 18,
+    "missing_schedule_course_ids": [
+      "03-128",
+      "09-538",
+      "19-101",
+      "33-226",
+      "66-237",
+      "66-506",
+      "73-427",
+      "88-366"
+    ]
+  }
+}

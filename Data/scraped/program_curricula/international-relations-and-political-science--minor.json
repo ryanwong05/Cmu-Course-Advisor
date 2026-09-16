@@ -1,0 +1,242 @@
+{
+  "program_id": "international-relations-and-political-science--minor",
+  "planning_id": "international-relations-and-political-science",
+  "name": "International Relations and Political Science",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-minor/",
+  "source_hash": "6b4f83e549c8d1c9cd5159a0877bd477b3df5c3c707afcbb127c807d244d75ad",
+  "fixed_courses": [
+    {
+      "id": "84-101",
+      "name": "Introduction to Political Science",
+      "units": 9.0,
+      "source_text": "84-101 Introduction to Political Science 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-36-units-1-alternative-2",
+      "name": "The Economics of Politics and Technology",
+      "heading": "Core Courses 36 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "84-110",
+        "73-102",
+        "73-103",
+        "73-104"
+      ],
+      "source_instruction": "Students must take all of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "core-courses-36-units",
+      "name": "Core Courses 36 units",
+      "heading": "Core Courses 36 units",
+      "choose": 2,
+      "units": 36,
+      "options": [
+        "84-104",
+        "84-226",
+        "84-275"
+      ],
+      "source_instruction": "In addition, students must take two of the following three courses. If all three of the above courses are taken, the third may count as an elective.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "In addition, students must take two of the following three courses. If all three of the above courses are taken, the third may count as an elective."
+      ]
+    },
+    {
+      "id": "electives-27-units",
+      "name": "Electives 27 units",
+      "heading": "Electives 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "84-120",
+        "84-200",
+        "84-252",
+        "84-274",
+        "84-280",
+        "84-285",
+        "84-301",
+        "84-303",
+        "84-304",
+        "84-306",
+        "84-309",
+        "84-310",
+        "84-311",
+        "84-312",
+        "84-314",
+        "84-315",
+        "84-319",
+        "84-322",
+        "84-323",
+        "84-324",
+        "84-325",
+        "84-327",
+        "84-328",
+        "84-329",
+        "84-330",
+        "84-331",
+        "84-333",
+        "84-341",
+        "84-343",
+        "84-345",
+        "84-347",
+        "84-349",
+        "84-350",
+        "84-352",
+        "84-353",
+        "84-355",
+        "84-356",
+        "84-358",
+        "84-362",
+        "84-363",
+        "84-365",
+        "84-366",
+        "84-367",
+        "84-368",
+        "84-369",
+        "84-370",
+        "84-371",
+        "84-373",
+        "84-375",
+        "84-380",
+        "84-383",
+        "84-386",
+        "84-387",
+        "84-389",
+        "84-393",
+        "84-402",
+        "84-405",
+        "19-452",
+        "70-342",
+        "70-365",
+        "70-430",
+        "73-332",
+        "76-318",
+        "79-203",
+        "79-205",
+        "79-223",
+        "79-227",
+        "79-229",
+        "79-230",
+        "79-257",
+        "79-262",
+        "79-264",
+        "79-265",
+        "79-266",
+        "79-267",
+        "79-275",
+        "79-288",
+        "79-302",
+        "79-313",
+        "79-314",
+        "79-318",
+        "79-320",
+        "79-343",
+        "79-377",
+        "79-385",
+        "80-135",
+        "80-136",
+        "80-249",
+        "80-335",
+        "80-348",
+        "80-447",
+        "88-234",
+        "88-281",
+        "88-284",
+        "88-411"
+      ],
+      "source_instruction": "CMIST Electives",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "CMIST Electives",
+        "Additional Electives"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Curriculum A maximum of two courses may double count between the minor in International Relations and Political Science and another major or minor.",
+        "Unlimited double counting is permitted with general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 103,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 3 choices from an explicit 27-unit rule: Electives 27 units",
+      "Inferred 3 choices from an explicit 27-unit rule: Electives 27 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "27 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 103,
+    "extracted_unit_estimate": 81,
+    "scheduled_course_count": 76,
+    "missing_schedule_course_ids": [
+      "70-365",
+      "70-430",
+      "76-318",
+      "79-203",
+      "79-205",
+      "79-223",
+      "79-227",
+      "79-229",
+      "79-257",
+      "79-264",
+      "79-265",
+      "79-267",
+      "79-313",
+      "79-314",
+      "79-318",
+      "79-385",
+      "80-136",
+      "84-200",
+      "84-280",
+      "84-303",
+      "84-324",
+      "84-331",
+      "84-333",
+      "84-349",
+      "84-367",
+      "84-386",
+      "84-402"
+    ]
+  }
+}

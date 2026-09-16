@@ -1,0 +1,82 @@
+{
+  "program_id": "logic-and-computation--minor",
+  "planning_id": "logic-and-computation",
+  "name": "Logic and Computation",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-minor/",
+  "source_hash": "f921b49295994c735ab58a1262e347165b957e980a767546a831488a699a8e22",
+  "fixed_courses": [
+    {
+      "id": "80-150",
+      "name": "Nature of Reason",
+      "units": 9.0,
+      "source_text": "80-150 Nature of Reason 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "logic-and-computation-core-courses-27-units-1-alternative-2",
+      "name": "Logic and Mathematical Inquiry",
+      "heading": "Logic and Computation Core Courses 27 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-211",
+        "80-210"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "logic-and-computation-core-courses-27-units-1-alternative-3",
+      "name": "Formal Logic",
+      "heading": "Logic and Computation Core Courses 27 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-310",
+        "80-311"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 5,
+    "confidence": 0.75,
+    "status": "needs_review",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 5,
+    "extracted_unit_estimate": 27,
+    "scheduled_course_count": 5,
+    "missing_schedule_course_ids": []
+  }
+}

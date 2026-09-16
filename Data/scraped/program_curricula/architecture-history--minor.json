@@ -1,0 +1,55 @@
+{
+  "program_id": "architecture-history--minor",
+  "planning_id": "architecture-history",
+  "name": "Architecture History",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-history-minor/",
+  "source_hash": "87db9c6918741d622648cfdc241b62f3813246bc212b1970ffb711f7e295276b",
+  "fixed_courses": [
+    {
+      "id": "48-240",
+      "name": "History of World Architecture, I",
+      "units": 9.0,
+      "source_text": "48-240 History of World Architecture, I 9"
+    },
+    {
+      "id": "48-241",
+      "name": "Modern Architecture: History & Theory",
+      "units": 9.0,
+      "source_text": "48-241 Modern Architecture: History & Theory 9"
+    }
+  ],
+  "requirement_groups": [],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 2,
+    "confidence": 0.3,
+    "status": "needs_review",
+    "warnings": [
+      "No course-choice groups were found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 2,
+    "extracted_unit_estimate": 18,
+    "scheduled_course_count": 2,
+    "missing_schedule_course_ids": []
+  }
+}

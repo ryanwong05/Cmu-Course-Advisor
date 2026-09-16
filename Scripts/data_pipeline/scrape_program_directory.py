@@ -18,6 +18,9 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT_PATH = ROOT / "Data" / "scraped" / "program_directory.json"
 PROCESSED_OUTPUT_PATH = ROOT / "Data" / "processed" / "program_directory.json"
+REQUIREMENTS_PATH = ROOT / "Data" / "processed" / "requirements.json"
+PROGRAM_PROFILES_PATH = ROOT / "Data" / "processed" / "program_profiles.json"
+PROGRAM_ID_ALIASES_PATH = ROOT / "Data" / "policies" / "program_id_aliases.json"
 CATALOG_URL = "https://coursecatalog.web.cmu.edu/programs/"
 CATALOG_YEAR = "2026-2027"
 
@@ -41,16 +44,6 @@ INTERCOLLEGE_AFFILIATIONS = {
     "information-systems-bs": ["dietrich", "heinz"],
     "information-systems-minor": ["dietrich", "heinz"],
 }
-
-PLANNING_IDS = {
-    "artificial-intelligence": "artificial-intelligence",
-    "computational-biology": "computational-biology",
-    "computer-science": "computer-science",
-    "human-computer-interaction": "human-computer-interaction",
-    "robotics": "robotics",
-    "logic-and-computation": "logic-and-computation",
-}
-
 
 def slugify(value: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", value.lower())
@@ -79,21 +72,71 @@ def infer_home_colleges(path: str) -> list[str]:
     return ["unclassified"]
 
 
-def planning_identity(name: str, program_type: str) -> tuple[str | None, str]:
-    family_id = PLANNING_IDS.get(slugify(name))
-    if family_id is None:
-        return None, "directory_only"
-    supported_types = {
-        "primary_major": "internal_transfer",
+def load_json(path: Path, default):
+    if not path.exists():
+        return default
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_program_id_aliases() -> dict[str, str]:
+    """Return catalog-name aliases whose planner IDs cannot be inferred."""
+    payload = load_json(PROGRAM_ID_ALIASES_PATH, {})
+    return {
+        str(catalog_id): str(planning_id)
+        for catalog_id, planning_id in payload.get("aliases", {}).items()
+    }
+
+
+def load_planning_capabilities() -> dict[str, set[str]]:
+    """Derive planning-ready goal types from the validated live data."""
+    capabilities: dict[str, set[str]] = {}
+
+    profiles = load_json(PROGRAM_PROFILES_PATH, {}).get("programs", {})
+    profile_types = {
+        "internal_transfer": "primary_major",
         "additional_major": "additional_major",
         "minor": "minor",
     }
-    return family_id, (
-        "planning_ready" if program_type in supported_types else "directory_only"
+    for planning_id, goals in profiles.items():
+        for goal_type, program_type in profile_types.items():
+            if goals.get(goal_type):
+                capabilities.setdefault(str(planning_id), set()).add(program_type)
+
+    requirements = load_json(REQUIREMENTS_PATH, {})
+    requirement_suffixes = (
+        ("-additional-major", "additional_major"),
+        ("-transfer", "primary_major"),
+        ("-minor", "minor"),
+        ("-major", "primary_major"),
     )
+    for requirement_key, requirement in requirements.items():
+        if not isinstance(requirement, dict):
+            continue
+        for suffix, program_type in requirement_suffixes:
+            if requirement_key.endswith(suffix):
+                planning_id = requirement_key.removesuffix(suffix)
+                capabilities.setdefault(planning_id, set()).add(program_type)
+                break
+
+    return capabilities
+
+
+def planning_identity(
+    name: str,
+    program_type: str,
+    capabilities: dict[str, set[str]],
+    aliases: dict[str, str],
+) -> tuple[str | None, str]:
+    catalog_id = slugify(name)
+    planning_id = aliases.get(catalog_id, catalog_id)
+    if program_type not in capabilities.get(planning_id, set()):
+        return None, "directory_only"
+    return planning_id, "planning_ready"
 
 
 def scrape_program_directory() -> list[dict[str, object]]:
+    capabilities = load_planning_capabilities()
+    aliases = load_program_id_aliases()
     response = requests.get(
         CATALOG_URL,
         headers={"User-Agent": "CMU-Course-Advisor/1.0"},
@@ -131,7 +174,12 @@ def scrape_program_directory() -> list[dict[str, object]]:
             home_colleges = ["dietrich", "heinz"]
             affiliations = ["dietrich", "heinz"]
 
-        planning_id, planning_status = planning_identity(name, program_type)
+        planning_id, planning_status = planning_identity(
+            name,
+            program_type,
+            capabilities,
+            aliases,
+        )
         programs.append({
             "id": f"{slugify(name)}--{slugify(credential)}",
             "name": name,

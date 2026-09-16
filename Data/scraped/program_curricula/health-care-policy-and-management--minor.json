@@ -1,0 +1,162 @@
+{
+  "program_id": "health-care-policy-and-management--minor",
+  "planning_id": "health-care-policy-and-management",
+  "name": "Health Care Policy and Management",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/health-care-policy-management-minor/",
+  "source_hash": "89cb610547c0fce3207fc362d657986e961269aac54167b8b5618af37ff04ed5",
+  "fixed_courses": [
+    {
+      "id": "79-330",
+      "name": "Medicine and Society: Health, Healers, and Hospitals",
+      "units": 9.0,
+      "source_text": "79-330 Medicine and Society: Health, Healers, and Hospitals 9"
+    },
+    {
+      "id": "90-436",
+      "name": "Health Systems",
+      "units": 6.0,
+      "source_text": "90-436 Health Systems 6"
+    },
+    {
+      "id": "90-472",
+      "name": "Health Policy",
+      "units": 6.0,
+      "source_text": "90-472 Health Policy 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "elective-courses-1",
+      "name": "Heinz College Courses",
+      "heading": "Elective Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "94-409",
+        "73-328",
+        "90-834"
+      ],
+      "source_instruction": "Heinz College Courses",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "elective-courses",
+      "name": "Elective Courses",
+      "heading": "Elective Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-245",
+        "76-494",
+        "88-365",
+        "42-444"
+      ],
+      "source_instruction": "Humanities and Social Sciences Courses (9 units each)",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Humanities and Social Sciences Courses (9 units each)"
+      ]
+    },
+    {
+      "id": "elective-focus-areas-1",
+      "name": "Health Management/Administration Focus",
+      "heading": "Elective Focus Areas",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-245",
+        "76-494"
+      ],
+      "source_instruction": "Health Management/Administration Focus",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "elective-focus-areas-1",
+      "name": "Health Policy Focus",
+      "heading": "Elective Focus Areas",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-328",
+        "88-365",
+        "90-882"
+      ],
+      "source_instruction": "Health Policy Focus",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "elective-focus-areas-1",
+      "name": "Health Analytics & IT Focus",
+      "heading": "Elective Focus Areas",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "94-409",
+        "90-834",
+        "42-444"
+      ],
+      "source_instruction": "Health Analytics & IT Focus",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 18,
+    "confidence": 0.76,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Elective Courses",
+      "Inferred 1 choices from an explicit 9-unit rule: Elective Courses",
+      "Assumed choose-one for ambiguous section: Elective Focus Areas",
+      "Assumed choose-one for ambiguous section: Elective Focus Areas",
+      "Assumed choose-one for ambiguous section: Elective Focus Areas"
+    ],
+    "explicit_group_ratio": 0.2
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "4 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [],
+    "catalog_course_count": 11,
+    "extracted_unit_estimate": 69,
+    "scheduled_course_count": 11,
+    "missing_schedule_course_ids": []
+  }
+}

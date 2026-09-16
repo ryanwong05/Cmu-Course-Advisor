@@ -1,0 +1,86 @@
+{
+  "program_id": "environmental-and-sustainability-studies--minor",
+  "planning_id": "environmental-and-sustainability-studies",
+  "name": "Environmental and Sustainability Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-minor/",
+  "source_hash": "9355c7a43c3a9e19d93deb5327527e1ff0ecd5d772e7c55d995a4d12cdbd49b2",
+  "fixed_courses": [
+    {
+      "id": "66-236",
+      "name": "Introduction to Environmental Ideas",
+      "units": 9.0,
+      "source_text": "66-236 Introduction to Environmental Ideas 9"
+    },
+    {
+      "id": "66-237",
+      "name": "Interdisciplinary Dialogues for Environmental & Sustainability Studies",
+      "units": 3.0,
+      "source_text": "66-237 Interdisciplinary Dialogues for Environmental & Sustainability Studies 3"
+    },
+    {
+      "id": "36-200",
+      "name": "Reasoning with Data 3",
+      "units": 9.0,
+      "source_text": "36-200 Reasoning with Data 3 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-cfa-dietrich-tepper-21-units-mcs-cit-scs-24-units-1-alternative-1",
+      "name": "Environmental Systems on a Changing Planet 1,2",
+      "heading": "Core Courses (CFA, Dietrich, Tepper - 21 units; MCS, CIT, SCS - 24 units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-291",
+        "09-381"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Maximum 2 courses, regardless of units, can be double-counted for the Minor from any other Minor, Major, or Master’s program.",
+        "General Education Courses Courses taken to fulfill a General Education requirement for the student’s college (the college of the student's primary major) are not calculated as “double-counting” for the Minor in Environmental and Sustainability Studies."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 5,
+    "confidence": 0.75,
+    "status": "needs_review",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 5,
+    "extracted_unit_estimate": 30,
+    "scheduled_course_count": 4,
+    "missing_schedule_course_ids": [
+      "66-237"
+    ]
+  }
+}

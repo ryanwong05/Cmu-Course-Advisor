@@ -1,0 +1,192 @@
+{
+  "program_id": "tech-entrepreneurship--minor-cmu-q",
+  "planning_id": "tech-entrepreneurship",
+  "name": "Tech Entrepreneurship",
+  "credential": "Minor (CMU-Q)",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/qatar/tech-entrepreneurship-minor/",
+  "source_hash": "01235cd473f1d6a7ac231b080e7dac01110a4c3a9721a5835ceb1325c361a2bc",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "fundamentals-of-entrepreneurship-9-units",
+      "name": "Fundamentals of Entrepreneurship 9 units",
+      "heading": "Fundamentals of Entrepreneurship 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-390",
+        "70-409",
+        "70-415",
+        "67-257"
+      ],
+      "source_instruction": "Choose one (1) of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Choose one (1) of the following courses"
+      ]
+    },
+    {
+      "id": "digital-design-and-technology-18-units",
+      "name": "Digital Design and Technology 18 units",
+      "heading": "Digital Design and Technology 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "10-315",
+        "11-411",
+        "11-485",
+        "15-182",
+        "15-281",
+        "15-282",
+        "15-316",
+        "15-330",
+        "15-348",
+        "15-415",
+        "15-440",
+        "15-441",
+        "15-488",
+        "16-311",
+        "17-313",
+        "67-240",
+        "67-265",
+        "67-313",
+        "67-315",
+        "67-316",
+        "67-338",
+        "67-352",
+        "67-354",
+        "67-357",
+        "67-364",
+        "67-379",
+        "67-432",
+        "67-443",
+        "70-417",
+        "70-455"
+      ],
+      "source_instruction": "Choose two (2) of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Choose two (2) of the following courses"
+      ]
+    },
+    {
+      "id": "organizational-intelligence-18-units",
+      "name": "Organizational Intelligence 18 units",
+      "heading": "Organizational Intelligence 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "67-318",
+        "67-382",
+        "70-122",
+        "70-311",
+        "70-318",
+        "70-387",
+        "70-395",
+        "70-416",
+        "70-440",
+        "70-441",
+        "70-443",
+        "70-455"
+      ],
+      "source_instruction": "Choose two (2) of the following courses, including one (1) business course:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Choose two (2) of the following courses, including one (1) business course"
+      ]
+    },
+    {
+      "id": "capstone-project-course-9-units",
+      "name": "Capstone/Project Course 9 units",
+      "heading": "Capstone/Project Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "67-474"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Capstone/Project Course 9 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Each CMUQ student declaring the minor must take at least three (3) of the six (6) courses outside of their own major program of study.",
+        "No more than two (2) courses may double count between the minor and requirements of other majors or minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 47,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: Capstone/Project Course 9 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "19 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 46,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 27,
+    "missing_schedule_course_ids": [
+      "10-315",
+      "15-182",
+      "15-348",
+      "15-390",
+      "15-415",
+      "15-488",
+      "16-311",
+      "67-240",
+      "67-257",
+      "67-313",
+      "67-315",
+      "67-316",
+      "67-318",
+      "67-338",
+      "67-379",
+      "67-432",
+      "70-318",
+      "70-417",
+      "70-440"
+    ]
+  }
+}

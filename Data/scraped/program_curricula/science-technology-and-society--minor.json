@@ -1,0 +1,173 @@
+{
+  "program_id": "science-technology-and-society--minor",
+  "planning_id": "science-technology-and-society",
+  "name": "Science, Technology and Society",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-minor/",
+  "source_hash": "1168306d79c4568c7e1f84c28fa81f3ec81e23bdfe022d7049293fe4cfa4856e",
+  "fixed_courses": [
+    {
+      "id": "79-505",
+      "name": "Social & Political History Internship",
+      "units": null,
+      "source_text": "79-505 Social & Political History Internship 3-9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "area-1-history-of-science-core-1",
+      "name": "Take at least 1 course from the list below.",
+      "heading": "Area 1. History of Science Core",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-160",
+        "79-170",
+        "79-175",
+        "79-234",
+        "79-330",
+        "79-370",
+        "79-380"
+      ],
+      "source_instruction": "Take at least 1 course from the list below.",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "area-2-philosophy-of-science-core-1",
+      "name": "Take at least 1 course from the list below.",
+      "heading": "Area 2. Philosophy of Science Core",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-220",
+        "80-221",
+        "80-226",
+        "80-244",
+        "80-245",
+        "80-249"
+      ],
+      "source_instruction": "Take at least 1 course from the list below.",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "ii-electives-27-units",
+      "name": "II. Electives 27 units",
+      "heading": "II. Electives 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "73-427",
+        "76-395",
+        "76-425",
+        "76-476",
+        "76-492",
+        "76-494",
+        "79-150",
+        "79-176",
+        "79-202",
+        "79-204",
+        "79-208",
+        "79-213",
+        "79-215",
+        "79-221",
+        "79-280",
+        "79-283",
+        "79-289",
+        "79-297",
+        "79-302",
+        "79-303",
+        "79-304",
+        "79-315",
+        "79-331",
+        "79-332",
+        "79-357",
+        "79-365",
+        "79-368",
+        "79-375",
+        "79-381",
+        "80-101",
+        "80-150",
+        "80-222",
+        "80-312",
+        "80-324",
+        "80-335",
+        "80-348",
+        "84-387"
+      ],
+      "source_instruction": "Complete three courses from the approved list of elective courses. Courses listed in Areas 1 and 2 may also be taken as electives if not already completed for an Area requirement. To petition for a course not listed to be approved as an elective, contact the Faculty Advisor, cjp1@cmu.edu , directly.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Complete three courses from the approved list of elective courses. Courses listed in Areas 1 and 2 may also be taken as electives if not already completed for an Area requirement. To petition for a course not listed to be approved as an elective, contact the Faculty Advisor, cjp1@cmu.edu , directly."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Please note that students may “double-count” a maximum of two courses for the STS minor that are used to fulfill the requirements of other majors and programs, including those administered directly by the History Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 51,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "19 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 51,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 32,
+    "missing_schedule_course_ids": [
+      "73-427",
+      "76-395",
+      "76-425",
+      "76-476",
+      "76-492",
+      "79-176",
+      "79-204",
+      "79-213",
+      "79-289",
+      "79-304",
+      "79-332",
+      "79-357",
+      "79-365",
+      "79-368",
+      "79-370",
+      "79-375",
+      "80-220",
+      "80-222",
+      "80-324"
+    ]
+  }
+}

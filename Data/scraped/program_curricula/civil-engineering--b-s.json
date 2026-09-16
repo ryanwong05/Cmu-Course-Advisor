@@ -1,0 +1,261 @@
+{
+  "program_id": "civil-engineering--b-s",
+  "planning_id": "civil-engineering",
+  "name": "Civil Engineering",
+  "credential": "B.S.",
+  "program_type": "primary_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/",
+  "source_hash": "d94d031e0a84de286682b7a4e8fd9768a78d06e948d29da7a5e5fa5fce8c4ad2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "minimum-units-required-for-b-s-in-civil-engineering-384-1",
+      "name": "Restricted Technical Electives",
+      "heading": "Minimum units required for B.S. in Civil Engineering 384",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "09-101",
+        "09-105",
+        "09-111",
+        "15-110",
+        "21-120",
+        "21-122",
+        "21-259",
+        "21-254",
+        "21-260",
+        "33-141",
+        "33-142"
+      ],
+      "source_instruction": "Restricted Technical Electives",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "structural-engineering-1",
+      "name": "Structural Engineering",
+      "heading": "Structural Engineering",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "12-201",
+        "12-631",
+        "12-635",
+        "12-636",
+        "21-241",
+        "24-311",
+        "24-351"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "computing-in-civil-engineering-1",
+      "name": "Computing in Civil Engineering",
+      "heading": "Computing in Civil Engineering",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "12-600",
+        "12-623",
+        "12-645",
+        "12-659",
+        "24-451",
+        "24-650",
+        "24-658"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "engineering-and-society-1",
+      "name": "Engineering and Society",
+      "heading": "Engineering and Society",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "12-645",
+        "12-657",
+        "24-291",
+        "48-371",
+        "79-303",
+        "79-315"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "construction-management-1",
+      "name": "Construction Management",
+      "heading": "Construction Management",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "12-600",
+        "12-631",
+        "12-635",
+        "12-636",
+        "48-380",
+        "70-311",
+        "70-321"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "next-generation-building-and-construction-1",
+      "name": "Next-Generation Building and Construction",
+      "heading": "Next-Generation Building and Construction",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "12-631",
+        "39-245",
+        "48-530",
+        "48-555"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "smart-cities-1",
+      "name": "Smart Cities",
+      "heading": "Smart Cities",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "12-600",
+        "12-612",
+        "12-631",
+        "12-635",
+        "12-636",
+        "12-644",
+        "12-645",
+        "24-643"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "smart-buildings-1",
+      "name": "Smart Buildings",
+      "heading": "Smart Buildings",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "12-600",
+        "12-631",
+        "12-635",
+        "48-116",
+        "48-315",
+        "48-432"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "materials-1",
+      "name": "Materials",
+      "heading": "Materials",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "12-623",
+        "24-643",
+        "27-201",
+        "27-202",
+        "27-215",
+        "27-301",
+        "27-406",
+        "27-503"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 9,
+    "course_references": 64,
+    "confidence": 0.5,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Minimum units required for B.S. in Civil Engineering 384",
+      "Assumed choose-one for ambiguous section: Structural Engineering",
+      "Assumed choose-one for ambiguous section: Computing in Civil Engineering",
+      "Assumed choose-one for ambiguous section: Engineering and Society",
+      "Assumed choose-one for ambiguous section: Construction Management",
+      "Assumed choose-one for ambiguous section: Next-Generation Building and Construction",
+      "Assumed choose-one for ambiguous section: Smart Cities",
+      "Assumed choose-one for ambiguous section: Smart Buildings",
+      "Assumed choose-one for ambiguous section: Materials",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "9 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 48,
+    "extracted_unit_estimate": 48,
+    "scheduled_course_count": 43,
+    "missing_schedule_course_ids": [
+      "12-623",
+      "12-636",
+      "12-659",
+      "39-245",
+      "48-530"
+    ]
+  }
+}

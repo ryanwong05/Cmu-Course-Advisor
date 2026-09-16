@@ -1,0 +1,129 @@
+{
+  "program_id": "robotics--minor",
+  "planning_id": "robotics",
+  "name": "Robotics",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/robotics-minor/",
+  "source_hash": "926f5edc2e8eb064b51fbd8293209591c9e4927bdc93b7f69db19c43a0e039c7",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1",
+      "name": "Overview (one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-280",
+        "16-281"
+      ],
+      "source_instruction": "Overview (one of the following):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Controls (choose one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "06-464",
+        "16-299",
+        "18-370",
+        "24-451",
+        "24-773"
+      ],
+      "source_instruction": "Controls (choose one of the following):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Mechanisms and Manipulation (one of the following options)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-384",
+        "15-362",
+        "33-141"
+      ],
+      "source_instruction": "Mechanisms and Manipulation (one of the following options)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "required-courses-1",
+      "name": "Robot Building Practices (choose one of the following)",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "16-220",
+        "16-362",
+        "18-349",
+        "18-500",
+        "18-578",
+        "24-671"
+      ],
+      "source_instruction": "Robot Building Practices (choose one of the following)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Restriction Courses being used to satisfy the requirements for the Robotics Minor may not be counted towards another minor.",
+        "Students are permitted to double count a maximum of two courses from their Major (excluding General Education requirements) towards the Minor in Robotics.",
+        "Free electives are not subject to the double counting policy."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 16,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 16,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 15,
+    "missing_schedule_course_ids": [
+      "24-773"
+    ]
+  }
+}

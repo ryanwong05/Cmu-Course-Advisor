@@ -1,0 +1,91 @@
+{
+  "program_id": "computational-biology--minor",
+  "planning_id": "computational-biology",
+  "name": "Computational Biology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computational-biology-minor/",
+  "source_hash": "6a93edb21ce4ed771bc49eded120c5b74611db4243377a1b5e2d83a935cff3b9",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "prerequisites-1",
+      "name": "Students must take two courses as prerequisites from the following",
+      "heading": "Prerequisites",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "03-151",
+        "03-121",
+        "02-120",
+        "15-112",
+        "15-110"
+      ],
+      "source_instruction": "Students must take two courses as prerequisites from the following:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 2
+      },
+      "track": null
+    },
+    {
+      "id": "core-classes-1",
+      "name": "Students must take two from the following courses",
+      "heading": "Core Classes",
+      "choose": 2,
+      "units": 20,
+      "options": [
+        "02-250",
+        "02-180 + 02-181",
+        "02-261",
+        "02-262"
+      ],
+      "source_instruction": "Students must take two from the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 2
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Policy on Double Counting No more than two courses may be double counted with your major's core requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 9,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 9,
+    "extracted_unit_estimate": 38,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": [
+      "02-180 + 02-181",
+      "02-262"
+    ]
+  }
+}

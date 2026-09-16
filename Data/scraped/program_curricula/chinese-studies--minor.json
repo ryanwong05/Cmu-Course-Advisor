@@ -1,0 +1,261 @@
+{
+  "program_id": "chinese-studies--minor",
+  "planning_id": "chinese-studies",
+  "name": "Chinese Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/chinese-studies-minor/",
+  "source_hash": "3ecddf2dd62e81fbc433bbc442323071fbc7f57d625ac27402f7c349cb7e8afd",
+  "fixed_courses": [
+    {
+      "id": "48-551",
+      "name": "Lab for Cybernetics: Engaging Wicked Challenges",
+      "units": 9.0,
+      "source_text": "48-551 Lab for Cybernetics: Engaging Wicked Challenges 9"
+    },
+    {
+      "id": "60-399",
+      "name": "Critical Studies Independent Study",
+      "units": 9.0,
+      "source_text": "60-399 Critical Studies Independent Study 9"
+    },
+    {
+      "id": "85-421",
+      "name": "Language and Thought",
+      "units": 9.0,
+      "source_text": "85-421 Language and Thought 9"
+    },
+    {
+      "id": "88-411",
+      "name": "Rise of the Asian Economies",
+      "units": 9.0,
+      "source_text": "88-411 Rise of the Asian Economies 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-chinese-studies-4-courses-36-39-units",
+      "name": "1. Foundational Courses in Chinese Studies (4 courses, 36–39 units)",
+      "heading": "1. Foundational Courses in Chinese Studies (4 courses, 36–39 units)",
+      "choose": 4,
+      "units": 39,
+      "options": [
+        "82-232",
+        "82-331",
+        "82-332",
+        "82-333"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 39.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "1. Foundational Courses in Chinese Studies (4 courses, 36–39 units)"
+      ]
+    },
+    {
+      "id": "chinese-studies-electives-1",
+      "name": "Chinese Studies Electives",
+      "heading": "Chinese Studies Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "82-334",
+        "82-335",
+        "82-337",
+        "82-338",
+        "82-339",
+        "82-340",
+        "82-432",
+        "82-433",
+        "82-434",
+        "82-436",
+        "82-439",
+        "82-440",
+        "82-505",
+        "82-531",
+        "82-532"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Business Administration",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-342",
+        "70-365",
+        "70-430"
+      ],
+      "source_instruction": "Business Administration",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "English",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-318",
+        "76-339",
+        "76-386"
+      ],
+      "source_instruction": "English",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "History",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-261",
+        "79-262",
+        "79-281"
+      ],
+      "source_instruction": "History",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Languages, Cultures, and Applied Linguistics",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "82-137",
+        "82-230",
+        "82-234",
+        "82-238",
+        "82-280",
+        "82-281",
+        "82-282",
+        "82-283",
+        "82-284",
+        "82-285",
+        "82-286",
+        "82-383",
+        "82-388",
+        "82-480"
+      ],
+      "source_instruction": "Languages, Cultures, and Applied Linguistics",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Philosophy",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-180",
+        "80-276",
+        "80-280"
+      ],
+      "source_instruction": "Philosophy",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count two courses taken for the Chinese Studies minor that are also being used to fulfill the requirements of other majors, minors, and programs.",
+        "This does not include double-counting with General Education requirements, which has no limit."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 11,
+    "course_references": 49,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 4 choices from an explicit 39-unit rule: 1. Foundational Courses in Chinese Studies (4 courses, 36–39 units)",
+      "Assumed choose-one for ambiguous section: Chinese Studies Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives"
+    ],
+    "explicit_group_ratio": 0.14
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "6 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "23 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 49,
+    "extracted_unit_estimate": 126,
+    "scheduled_course_count": 26,
+    "missing_schedule_course_ids": [
+      "70-365",
+      "70-430",
+      "76-318",
+      "76-386",
+      "79-261",
+      "80-276",
+      "80-280",
+      "82-230",
+      "82-234",
+      "82-238",
+      "82-281",
+      "82-284",
+      "82-286",
+      "82-335",
+      "82-337",
+      "82-338",
+      "82-339",
+      "82-340",
+      "82-433",
+      "82-434",
+      "82-436",
+      "82-440",
+      "85-421"
+    ]
+  }
+}

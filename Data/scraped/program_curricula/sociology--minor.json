@@ -1,0 +1,147 @@
+{
+  "program_id": "sociology--minor",
+  "planning_id": "sociology",
+  "name": "Sociology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/sociology-minor/",
+  "source_hash": "ae530e562d7c69101cd92479fdb634e859be48feb2fda54330648eb7a83b9425",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "core-courses-18-units",
+      "name": "Core Courses 18 units",
+      "heading": "Core Courses 18 units",
+      "choose": 1,
+      "units": 18,
+      "options": [
+        "88-140",
+        "70-311",
+        "36-202",
+        "70-208",
+        "85-310",
+        "85-350",
+        "88-251",
+        "88-252"
+      ],
+      "source_instruction": "A. Organizations (complete one course):",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "A. Organizations (complete one course)",
+        "B. Methodology (complete one course)"
+      ]
+    },
+    {
+      "id": "elective-courses-36-units",
+      "name": "Elective Courses 36 units",
+      "heading": "Elective Courses 36 units",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "70-342",
+        "70-385",
+        "76-241",
+        "79-261",
+        "79-320",
+        "79-331",
+        "79-343",
+        "79-377",
+        "80-245",
+        "80-246",
+        "80-305",
+        "80-335",
+        "80-348",
+        "84-369",
+        "85-350",
+        "85-446",
+        "85-454",
+        "88-230",
+        "88-231",
+        "88-285",
+        "88-290",
+        "70-332",
+        "79-275",
+        "88-234",
+        "88-235",
+        "88-237",
+        "88-255",
+        "88-261",
+        "88-262",
+        "88-270",
+        "88-275",
+        "88-341",
+        "88-344",
+        "88-365",
+        "88-366",
+        "88-367",
+        "88-451",
+        "88-452",
+        "88-454"
+      ],
+      "source_instruction": "1. Sociology of Gender, Family, and Culture",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "1. Sociology of Gender, Family, and Culture",
+        "2. Sociology of Work, Organizations, and Technology"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double-count two courses with another major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 47,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 3 choices from an explicit 36-unit rule: Elective Courses 36 units",
+      "Inferred 3 choices from an explicit 36-unit rule: Elective Courses 36 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 46,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 38,
+    "missing_schedule_course_ids": [
+      "79-261",
+      "80-246",
+      "85-446",
+      "85-454",
+      "88-270",
+      "88-275",
+      "88-290",
+      "88-366"
+    ]
+  }
+}

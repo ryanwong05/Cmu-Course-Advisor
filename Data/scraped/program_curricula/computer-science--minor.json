@@ -1,0 +1,105 @@
+{
+  "program_id": "computer-science--minor",
+  "planning_id": "computer-science",
+  "name": "Computer Science",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computer-science-minor/",
+  "source_hash": "7bf03f0b2ffb185ab93411d552b44d30a9b88f065f369969ea334c79d92958b8",
+  "fixed_courses": [
+    {
+      "id": "15-112",
+      "name": "Fundamentals of Programming and Computer Science (some students may need to take 15-110 prior to 15-112 for additional preparation)",
+      "units": 12.0,
+      "source_text": "15-112 Fundamentals of Programming and Computer Science (some students may need to take 15-110 prior to 15-112 for additional preparation) 12"
+    },
+    {
+      "id": "15-122",
+      "name": "Principles of Imperative Computation",
+      "units": 12.0,
+      "source_text": "15-122 Principles of Imperative Computation 12"
+    },
+    {
+      "id": "15-150",
+      "name": "Principles of Functional Programming",
+      "units": 12.0,
+      "source_text": "15-150 Principles of Functional Programming 12"
+    },
+    {
+      "id": "15-210",
+      "name": "Parallel and Sequential Data Structures and Algorithms",
+      "units": 12.0,
+      "source_text": "15-210 Parallel and Sequential Data Structures and Algorithms 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisites-1-alternative-2",
+      "name": "Concepts of Mathematics",
+      "heading": "Prerequisites",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "21-127",
+        "21-128"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "prerequisites-1",
+      "name": "One of the following Computer Science core courses",
+      "heading": "Prerequisites",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "15-213",
+        "15-251"
+      ],
+      "source_instruction": "One of the following Computer Science core courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Restriction Students may double-count a maximum of 2 courses for the CS minor (not including the prerequisites) toward all other majors and minors.",
+        "Students, especially from computing-related majors, interdisciplinary majors or with multiple majors or minors, are urged to consult with the Computer Science Program Director or the Undergraduate Program Coordinator in the CS Undergraduate Office to review double-counting restrictions specific to their own situations."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 8,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 8,
+    "extracted_unit_estimate": 72,
+    "scheduled_course_count": 8,
+    "missing_schedule_course_ids": []
+  }
+}

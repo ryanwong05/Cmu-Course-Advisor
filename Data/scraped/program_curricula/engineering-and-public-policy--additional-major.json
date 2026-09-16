@@ -1,0 +1,184 @@
+{
+  "program_id": "engineering-and-public-policy--additional-major",
+  "planning_id": "engineering-and-public-policy",
+  "name": "Engineering and Public Policy",
+  "credential": "Additional Major",
+  "program_type": "additional_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/engineering-public-policy-additional-major/",
+  "source_hash": "a20ff00b00ac153790ab3b4b12e9832a44d3ffb910d271993c8c7511b45c5b7e",
+  "fixed_courses": [
+    {
+      "id": "19-101",
+      "name": "Introduction to Engineering and Public Policy",
+      "units": 12.0,
+      "source_text": "19-101 Introduction to Engineering and Public Policy 12"
+    },
+    {
+      "id": "19-201",
+      "name": "Professional Issues in Engineering, Science, Technology and Public Policy",
+      "units": 1.0,
+      "source_text": "19-201 Professional Issues in Engineering, Science, Technology and Public Policy 1"
+    },
+    {
+      "id": "19-351",
+      "name": "Applied Methods for Technology-Policy Analysis",
+      "units": 9.0,
+      "source_text": "19-351 Applied Methods for Technology-Policy Analysis 9"
+    },
+    {
+      "id": "19-451",
+      "name": "EPP Projects I",
+      "units": 12.0,
+      "source_text": "19-451 EPP Projects I 12"
+    },
+    {
+      "id": "19-452",
+      "name": "EPP Projects II",
+      "units": 12.0,
+      "source_text": "19-452 EPP Projects II 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-area-courses-1",
+      "name": "EPP Economics elective - one of the following, or other approved course",
+      "heading": "Core Area Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "84-110"
+      ],
+      "source_instruction": "EPP Economics elective - one of the following, or other approved course:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "core-area-courses-2",
+      "name": "EPP Statistics elective - one of the following, or other approved course",
+      "heading": "Core Area Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-220",
+        "36-226"
+      ],
+      "source_instruction": "EPP Statistics elective - one of the following, or other approved course:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "core-area-courses",
+      "name": "Core Area Courses",
+      "heading": "Core Area Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "19-301",
+        "19-469",
+        "19-488",
+        "84-369",
+        "88-223"
+      ],
+      "source_instruction": "EPP Decision Science elective - one of the following, or other approved course (9 units minimum):",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "EPP Decision Science elective - one of the following, or other approved course (9 units minimum)"
+      ]
+    },
+    {
+      "id": "core-area-courses-4",
+      "name": "EPP Writing and Communications elective - one of the following, or other approved course",
+      "heading": "Core Area Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-270"
+      ],
+      "source_instruction": "EPP Writing and Communications elective - one of the following, or other approved course",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "technology-policy-electives",
+      "name": "Technology-Policy Electives",
+      "heading": "Technology-Policy Electives",
+      "choose": 1,
+      "units": 24,
+      "options": [
+        "19-211",
+        "19-303",
+        "19-403",
+        "19-411",
+        "19-416",
+        "19-429",
+        "19-433",
+        "19-608",
+        "19-668"
+      ],
+      "source_instruction": "At least 3 courses of EPP Technology-Policy electives (24 units minimum) EPP Technology-Policy Electives include courses that belong to three categories. First, EPP Technology-Policy Electives include courses that synthesize engineering analysis and social analysis perspectives and apply them to problems with substantial societal and technological components. Specific areas of interest for these courses are (1) energy, resources, and the environment, (2) risk assessment, (3) technology innovation, (4) urban engineering, (5) information and communication technology, and (6) product engineering and design, among others. Second, EPP Technology-Policy Electives include courses that teach methods or analysis skills necessary for solving complex problems. Examples include mathematical or statistical courses related to optimization or estimation, or economics courses related to economic analysis. Finally, EPP Technology-Policy Electives include courses that provide technical background for policy relevant issues. These courses are fundamental for understanding our current engineering systems and how proposed changes can be implemented. Examples include courses on electricity systems, engine design, or atmospheric systems. A sample of courses for EPP Technology-Policy Electives is below. Other courses with approval.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 24.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "At least 3 courses of EPP Technology-Policy electives (24 units minimum) EPP Technology-Policy Electives include courses that belong to three categories. First, EPP Technology-Policy Electives include courses that synthesize engineering analysis and social analysis perspectives and apply them to problems with substantial societal and technological components. Specific areas of interest for these courses are (1) energy, resources, and the environment, (2) risk assessment, (3) technology innovation, (4) urban engineering, (5) information and communication technology, and (6) product engineering and design, among others. Second, EPP Technology-Policy Electives include courses that teach methods or analysis skills necessary for solving complex problems. Examples include mathematical or statistical courses related to optimization or estimation, or economics courses related to economic analysis. Finally, EPP Technology-Policy Electives include courses that provide technical background for policy relevant issues. These courses are fundamental for understanding our current engineering systems and how proposed changes can be implemented. Examples include courses on electricity systems, engine design, or atmospheric systems. A sample of courses for EPP Technology-Policy Electives is below. Other courses with approval."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "However, students may use an elective course from their traditional major requirements to meet the requirements of both their traditional engineering major and an EPP Technology-Policy elective, but the units for the course will not be double-counted toward units required for their degree."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 24,
+    "confidence": 0.99,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Technology-Policy Electives"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 24,
+    "extracted_unit_estimate": 106,
+    "scheduled_course_count": 21,
+    "missing_schedule_course_ids": [
+      "19-101",
+      "19-411",
+      "19-668"
+    ]
+  }
+}

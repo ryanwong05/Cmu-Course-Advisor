@@ -1,0 +1,151 @@
+{
+  "program_id": "professional-writing--minor",
+  "planning_id": "professional-writing",
+  "name": "Professional Writing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-minor/",
+  "source_hash": "c0dc75aea82f35707010830689c2e078eef322745a050d0c4fd257a1ba48048b",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-course-1-course-9-units",
+      "name": "Required Course (1 course) 9 units",
+      "heading": "Required Course (1 course) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-270",
+        "76-271"
+      ],
+      "source_instruction": "Required Intro Course",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Required Intro Course"
+      ]
+    },
+    {
+      "id": "core-writing-courses-2-courses-18-units",
+      "name": "Core Writing Courses (2 courses) 18 units",
+      "heading": "Core Writing Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-212",
+        "76-260",
+        "76-261",
+        "76-265",
+        "76-269",
+        "76-373",
+        "76-389",
+        "76-390"
+      ],
+      "source_instruction": "Two 200- or 300-Level Core Writing Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Two 200- or 300-Level Core Writing Courses"
+      ]
+    },
+    {
+      "id": "300-or-400-level-writing-courses-2-courses-18-units",
+      "name": "300- or 400-Level Writing Courses (2 courses) 18 units",
+      "heading": "300- or 400-Level Writing Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-306",
+        "76-314",
+        "76-318",
+        "76-325",
+        "76-354",
+        "76-366",
+        "76-368",
+        "76-372",
+        "76-375",
+        "76-384",
+        "76-388",
+        "76-391",
+        "76-395",
+        "76-415",
+        "76-425",
+        "76-464",
+        "76-473",
+        "76-474",
+        "76-475",
+        "76-476",
+        "76-481",
+        "76-483",
+        "76-487",
+        "76-492",
+        "76-494"
+      ],
+      "source_instruction": "Two 300- or 400-Level Writing Courses (18 units minimum)",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Two 300- or 400-Level Writing Courses (18 units minimum)"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Double Counting Students who have a minor in English as well as a primary and/or an additional major in English may not double count any English courses with that minor.",
+        "Otherwise, up to two courses from the minor may double count with programs outside of the English Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 35,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "8 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 35,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 27,
+    "missing_schedule_course_ids": [
+      "76-318",
+      "76-368",
+      "76-384",
+      "76-395",
+      "76-425",
+      "76-464",
+      "76-476",
+      "76-492"
+    ]
+  }
+}

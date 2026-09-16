@@ -1,0 +1,1400 @@
+{
+  "catalog_year": "2026-2027",
+  "generated_at": "2026-09-16T14:10:22.310642+00:00",
+  "program_types": [
+    "primary_major",
+    "additional_major",
+    "minor"
+  ],
+  "requested": 193,
+  "parsed": 193,
+  "failed": 0,
+  "high_confidence_candidates": 98,
+  "needs_review": 95,
+  "promotion_ready": 88,
+  "blocked_candidates": 10,
+  "review_queue": [
+    {
+      "program_id": "additive-manufacturing--minor",
+      "name": "Additive Manufacturing",
+      "confidence": 0.55,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "animation-and-special-effects--minor",
+      "name": "Animation and Special Effects",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IDeATe Animation & Special Effects Courses - minimum of 27 units",
+        "No unambiguous fixed-course table was found.",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "anthropology--b-a",
+      "name": "Anthropology",
+      "confidence": 0.75,
+      "blockers": [
+        "8 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 1 choices from an explicit 9-unit rule: I. Anthropology Introductory Course 9 units",
+        "Assumed choose-one for ambiguous section: Transnational and Global Courses",
+        "Assumed choose-one for ambiguous section: Regional Courses",
+        "Assumed choose-one for ambiguous section: Regional Courses",
+        "Assumed choose-one for ambiguous section: Regional Courses",
+        "Assumed choose-one for ambiguous section: Regional Courses",
+        "Assumed choose-one for ambiguous section: Regional Courses",
+        "Assumed choose-one for ambiguous section: Thematic Elective Courses",
+        "Assumed choose-one for ambiguous section: Area–based Elective Courses",
+        "Inferred 1 choices from an explicit 12-unit rule: V. Senior Capstone Course 12 units",
+        "42 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "arabic-studies--minor",
+      "name": "Arabic Studies",
+      "confidence": 0.73,
+      "blockers": [
+        "8 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Arabic Studies Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "20 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "architectural-representation-and-visualization--minor",
+      "name": "Architectural Representation and Visualization",
+      "confidence": 0.74,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Selective Courses"
+      ]
+    },
+    {
+      "program_id": "architecture--b-arch",
+      "name": "Architecture",
+      "confidence": 1.0,
+      "blockers": [
+        "Extracted requirement total is implausible (438 units)."
+      ],
+      "warnings": [
+        "Inferred 3 choices from an explicit 122-unit rule: General Studies & Electives 122 units",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "architecture-history--minor",
+      "name": "Architecture History",
+      "confidence": 0.3,
+      "blockers": [],
+      "warnings": [
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "art--minor",
+      "name": "Art",
+      "confidence": 0.55,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "art--b-f-a",
+      "name": "Art",
+      "confidence": 0.79,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First Year",
+        "12 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "artificial-intelligence--additional-major",
+      "name": "Artificial Intelligence",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "13 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "artificial-intelligence--minor",
+      "name": "Artificial Intelligence",
+      "confidence": 0.66,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Technical Electives",
+        "Assumed choose-one for ambiguous section: Societal Aspects of AI",
+        "No unambiguous fixed-course table was found.",
+        "12 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biological-sciences--additional-major",
+      "name": "Biological Sciences",
+      "confidence": 0.53,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Curriculum",
+        "Assumed choose-one for ambiguous section: Curriculum",
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biological-sciences--b-a",
+      "name": "Biological Sciences",
+      "confidence": 0.96,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Departmental Electives Group",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biological-sciences--b-s",
+      "name": "Biological Sciences",
+      "confidence": 0.97,
+      "blockers": [
+        "Multiple tracks require an explicit track-selection rule.",
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Departmental Electives Group",
+        "12 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biomedical-engineering--additional-major",
+      "name": "Biomedical Engineering",
+      "confidence": 0.79,
+      "blockers": [
+        "Multiple tracks require an explicit track-selection rule.",
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: BMEC Track Elective courses",
+        "Assumed choose-one for ambiguous section: BCAM Track Elective courses",
+        "Assumed choose-one for ambiguous section: NEBI Track Elective courses",
+        "Assumed choose-one for ambiguous section: TCB Track Elective courses",
+        "Assumed choose-one for ambiguous section: BSIP Track Elective courses",
+        "Assumed choose-one for ambiguous section: Neuro Track Elective courses",
+        "11 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "biomedical-engineering--minor",
+      "name": "Biomedical Engineering",
+      "confidence": 0.75,
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "program_id": "biomedical-technology--additional-major",
+      "name": "Biomedical Technology",
+      "confidence": 0.79,
+      "blockers": [
+        "Multiple tracks require an explicit track-selection rule.",
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: BMEC Track Elective courses",
+        "Assumed choose-one for ambiguous section: BCAM Track Elective courses",
+        "Assumed choose-one for ambiguous section: NEBI Track Elective courses",
+        "Assumed choose-one for ambiguous section: TCB Track Elective courses",
+        "Assumed choose-one for ambiguous section: BSIP Track Elective courses",
+        "Assumed choose-one for ambiguous section: Neuro Track Elective courses",
+        "11 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "building-science--minor",
+      "name": "Building Science",
+      "confidence": 0.74,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Selective Courses",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chemistry--minor",
+      "name": "Chemistry",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chemistry--b-s",
+      "name": "Chemistry",
+      "confidence": 0.79,
+      "blockers": [
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "Assumed choose-one for ambiguous section: Options for the Bachelor's Degrees in Chemistry",
+        "9 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "chinese-studies--minor",
+      "name": "Chinese Studies",
+      "confidence": 0.74,
+      "blockers": [
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 4 choices from an explicit 39-unit rule: 1. Foundational Courses in Chinese Studies (4 courses, 36–39 units)",
+        "Assumed choose-one for ambiguous section: Chinese Studies Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "23 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "civil-engineering--b-s",
+      "name": "Civil Engineering",
+      "confidence": 0.5,
+      "blockers": [
+        "9 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Minimum units required for B.S. in Civil Engineering 384",
+        "Assumed choose-one for ambiguous section: Structural Engineering",
+        "Assumed choose-one for ambiguous section: Computing in Civil Engineering",
+        "Assumed choose-one for ambiguous section: Engineering and Society",
+        "Assumed choose-one for ambiguous section: Construction Management",
+        "Assumed choose-one for ambiguous section: Next-Generation Building and Construction",
+        "Assumed choose-one for ambiguous section: Smart Cities",
+        "Assumed choose-one for ambiguous section: Smart Buildings",
+        "Assumed choose-one for ambiguous section: Materials",
+        "No unambiguous fixed-course table was found.",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "cognitive-neuroscience--minor",
+      "name": "Cognitive Neuroscience",
+      "confidence": 0.74,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Distribution Requirements",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "colloids-polymers-and-surfaces--minor",
+      "name": "Colloids, Polymers and Surfaces",
+      "confidence": 0.67,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Electives",
+        "No unambiguous fixed-course table was found.",
+        "9 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "computational-biology--minor",
+      "name": "Computational Biology",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "computational-design--minor",
+      "name": "Computational Design",
+      "confidence": 0.74,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Selective Courses",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "computer-science-and-arts--b-c-s-a",
+      "name": "Computer Science and Arts",
+      "confidence": 0.05,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "creative-writing--minor",
+      "name": "Creative Writing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "creative-writing--b-a",
+      "name": "Creative Writing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "35 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "decision-science--minor",
+      "name": "Decision Science",
+      "confidence": 0.75,
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "program_id": "design--minor",
+      "name": "Design",
+      "confidence": 0.55,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "design-for-learning--minor",
+      "name": "Design for Learning",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IDeATe Design for Learning Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "discrete-mathematics-and-logic--minor",
+      "name": "Discrete Mathematics and Logic",
+      "confidence": 0.79,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Mathematical Sciences Electives (36 units)",
+        "Inferred 3 choices from an explicit 36-unit rule: Mathematical Sciences Electives (36 units)",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "drama--minor",
+      "name": "Drama",
+      "confidence": 0.73,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Sample Elective Courses not requiring instructor permission:",
+        "Assumed choose-one for ambiguous section: Sample Elective Courses requiring instructor permission:",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "drama--b-f-a",
+      "name": "Drama",
+      "confidence": 0.71,
+      "blockers": [
+        "Implausibly large extracted curriculum; likely schedule/table contamination.",
+        "Extracted requirement total is implausible (446 units).",
+        "70 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "28 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "economics-and-mathematical-sciences--b-s",
+      "name": "Economics and Mathematical Sciences",
+      "confidence": 0.96,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Recommended Mathematical Science Depth Electives:",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "electronic-materials--minor",
+      "name": "Electronic Materials",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "engineering-design-innovation-and-entrepreneurship--additional-major",
+      "name": "Engineering Design, Innovation, and Entrepreneurship",
+      "confidence": 0.78,
+      "blockers": [
+        "3 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Engineering Design and Innovation Courses",
+        "Assumed choose-one for ambiguous section: Engineering Entrepreneurship Courses",
+        "Assumed choose-one for ambiguous section: edie capstone courses",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "engineering-studies--minor",
+      "name": "Engineering Studies",
+      "confidence": 0.55,
+      "blockers": [],
+      "warnings": [
+        "No course-choice groups were found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "engineering-studies-and-arts--b-e-s-a",
+      "name": "Engineering Studies and Arts",
+      "confidence": 0.05,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "engineering-and-arts--additional-major",
+      "name": "Engineering and Arts",
+      "confidence": 0.79,
+      "blockers": [
+        "Extracted requirement total is implausible (643 units)."
+      ],
+      "warnings": [
+        "Inferred 4 choices from an explicit 36-unit rule: BXA Required Courses (5 courses, 36 units)",
+        "Assumed choose-one for ambiguous section: Architecture Required Courses (9 courses, 57 units minimum)",
+        "Inferred 1 choices from an explicit 6-unit rule: First-Year Seminar (1 course, 6 units)",
+        "Inferred 1 choices from an explicit 18-unit rule: Critical Studies (2 courses, 18 units)",
+        "Inferred 9 choices from an explicit 80-unit rule: Dramaturgy Required Courses (13 courses, 80 units)",
+        "Assumed choose-one for ambiguous section: Music Composition Required Courses (13 courses, 85 units)",
+        "Assumed choose-one for ambiguous section: Music Performance Required Courses (13 courses, 85 units)",
+        "Assumed choose-one for ambiguous section: Music Technology: Audio Recording & Production Required Courses (8 courses, 49 units)",
+        "Assumed choose-one for ambiguous section: Audio Recording & Production Electives (59 units minimum)",
+        "Assumed choose-one for ambiguous section: Music Technology: Sound Theory & Practice Required Courses (7 courses, 44 units)",
+        "Assumed choose-one for ambiguous section: Sound Theory & Practice Electives (64 units minimum)",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "environmental-engineering--b-s",
+      "name": "Environmental Engineering",
+      "confidence": 0.5,
+      "blockers": [
+        "5 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Minimum units required for B.S. in Environmental Engineering 384",
+        "Assumed choose-one for ambiguous section: Environmental Engineering - Water Quality",
+        "Assumed choose-one for ambiguous section: Engineering and Society",
+        "Assumed choose-one for ambiguous section: Environmental Engineering - Energy",
+        "Assumed choose-one for ambiguous section: Environmental Engineering - Air Quality",
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "environmental-and-sustainability-studies--minor",
+      "name": "Environmental and Sustainability Studies",
+      "confidence": 0.75,
+      "blockers": [],
+      "warnings": [
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "ethics--minor",
+      "name": "Ethics",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "ethics-history-and-public-policy--b-a-b-s",
+      "name": "Ethics, History and Public Policy",
+      "confidence": 0.69,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 1 choices from an explicit 12-unit rule: V. EHPP Capstone Course 12 units",
+        "Assumed choose-one for ambiguous section: VI. Bachelor of Science Option",
+        "No unambiguous fixed-course table was found.",
+        "16 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "film-and-visual-media--minor",
+      "name": "Film and Visual Media",
+      "confidence": 0.79,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Film and Media Electives 27 units",
+        "31 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "film-and-visual-media--b-a",
+      "name": "Film and Visual Media",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "58 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "game-design--minor",
+      "name": "Game Design",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 2 choices from an explicit 27-unit rule: IDeATe Game Design Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "gender-studies--minor",
+      "name": "Gender Studies",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "11 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "general-studies--b-a-b-s",
+      "name": "General Studies",
+      "confidence": 0.55,
+      "blockers": [],
+      "warnings": [
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "german-studies--minor",
+      "name": "German Studies",
+      "confidence": 0.74,
+      "blockers": [
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 5 choices from an explicit 45-unit rule: 1. Foundational Courses in German Studies (5 courses, 45 units)",
+        "Assumed choose-one for ambiguous section: German Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "16 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "global-cultures-and-emerging-technologies--b-a",
+      "name": "Global Cultures and Emerging Technologies",
+      "confidence": 0.68,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 2 choices from an explicit 18-unit rule: Gateway/Methodology Courses in Cultural Studies and Sociolinguistics 18 units",
+        "Assumed choose-one for ambiguous section: List A: Culture-focused",
+        "Assumed choose-one for ambiguous section: List B: Technology-focused",
+        "Inferred 1 choices from an explicit 9-unit rule: IV. Capstone Course (1 course; 9 units)",
+        "No unambiguous fixed-course table was found.",
+        "13 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "global-engineering--minor",
+      "name": "Global Engineering",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "global-french-studies--minor",
+      "name": "Global French Studies",
+      "confidence": 0.55,
+      "blockers": [],
+      "warnings": [
+        "Inferred 4 choices from an explicit 45-unit rule: 1. Foundational Courses in French and Francophone Studies (5 courses, 45 units)",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "health-care-policy-and-management--minor",
+      "name": "Health Care Policy and Management",
+      "confidence": 0.76,
+      "blockers": [
+        "4 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Elective Courses",
+        "Inferred 1 choices from an explicit 9-unit rule: Elective Courses",
+        "Assumed choose-one for ambiguous section: Elective Focus Areas",
+        "Assumed choose-one for ambiguous section: Elective Focus Areas",
+        "Assumed choose-one for ambiguous section: Elective Focus Areas"
+      ]
+    },
+    {
+      "program_id": "hispanic-studies--minor",
+      "name": "Hispanic Studies",
+      "confidence": 0.76,
+      "blockers": [
+        "4 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 4 choices from an explicit 36-unit rule: 1. Foundational Courses in Hispanic Studies (4 courses, 36 units)",
+        "Assumed choose-one for ambiguous section: List A. Hispanic Studies Electives",
+        "Assumed choose-one for ambiguous section: List B. Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: List B. Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: List B. Interdisciplinary Electives",
+        "17 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "humanities-analytics--minor",
+      "name": "Humanities Analytics",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "humanities-and-arts--b-h-a",
+      "name": "Humanities and Arts",
+      "confidence": 0.05,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "immersive-technologies-in-arts-and-culture--minor",
+      "name": "Immersive Technologies in Arts and Culture",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IDeATe Immersive Technologies Courses - Minimum of 27 Units*",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "intelligent-environments--minor",
+      "name": "Intelligent Environments",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: IDeATe Intelligent Environments Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "japanese-studies--minor",
+      "name": "Japanese Studies",
+      "confidence": 0.74,
+      "blockers": [
+        "5 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Inferred 4 choices from an explicit 42-unit rule: 1. Foundational Courses in Japanese Studies (4 courses, 36–42 units)",
+        "Assumed choose-one for ambiguous section: List A. Japanese Studies Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "language-technologies--minor",
+      "name": "Language Technologies",
+      "confidence": 0.93,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Project - Choose Applicable Project Course",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "languages-and-cultures--b-a",
+      "name": "Languages and Cultures",
+      "confidence": 0.3,
+      "blockers": [],
+      "warnings": [
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "literature-and-culture--minor",
+      "name": "Literature and Culture",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "30 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "literature-and-culture--b-a",
+      "name": "Literature and Culture",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "38 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "logic-and-computation--minor",
+      "name": "Logic and Computation",
+      "confidence": 0.75,
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "program_id": "machine-learning--minor",
+      "name": "Machine Learning",
+      "confidence": 0.66,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Principal Courses",
+        "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+        "No unambiguous fixed-course table was found.",
+        "18 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "materials-science-and-engineering--minor",
+      "name": "Materials Science and Engineering",
+      "confidence": 0.79,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Elective Courses 24 units (minimum)",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "materials-science-and-engineering--b-s",
+      "name": "Materials Science and Engineering",
+      "confidence": 0.7,
+      "blockers": [
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: MSE Approved Technical Elective",
+        "Assumed choose-one for ambiguous section: MSE Restricted Electives",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "mathematical-sciences--b-s",
+      "name": "Mathematical Sciences",
+      "confidence": 0.89,
+      "blockers": [
+        "Extracted requirement total is implausible (425 units).",
+        "6 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Depth Electives (required)",
+        "Assumed choose-one for ambiguous section: Depth Electives (required)",
+        "Assumed choose-one for ambiguous section: Computer Science Electives (required)",
+        "Assumed choose-one for ambiguous section: List 1 (Discrete Mathematics and Logic Electives)",
+        "Assumed choose-one for ambiguous section: List 2 (Mathematics Electives)",
+        "Assumed choose-one for ambiguous section: Computational and Applied Mathematics Electives",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "mathematical-sciences-and-economics--b-s",
+      "name": "Mathematical Sciences and Economics",
+      "confidence": 0.96,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Recommended Mathematical Sciences Depth Electives:",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "mechanical-engineering--b-s",
+      "name": "Mechanical Engineering",
+      "confidence": 0.7,
+      "blockers": [
+        "11 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Sophomore Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Junior Year",
+        "Assumed choose-one for ambiguous section: Senior Year",
+        "Assumed choose-one for ambiguous section: Robotics and Automation",
+        "Assumed choose-one for ambiguous section: Energy, Environment, and Thermal Fluid Systems",
+        "Assumed choose-one for ambiguous section: Product Design and Development",
+        "Assumed choose-one for ambiguous section: Autonomous Systems and Machine Learning",
+        "Assumed choose-one for ambiguous section: Computational Engineering",
+        "Assumed choose-one for ambiguous section: Engineering Mechanisms and Materials",
+        "9 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "media-design--minor",
+      "name": "Media Design",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IDeATe Media Design Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "5 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "music-and-technology--b-s",
+      "name": "Music and Technology",
+      "confidence": 0.69,
+      "blockers": [
+        "Extracted requirement total is implausible (613 units)."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: First-Year Fall (52 units)",
+        "Assumed choose-one for ambiguous section: First-Year Spring (58 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Fall (52 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Spring (53 units)",
+        "Inferred 4 choices from an explicit 38-unit rule: Third-Year Fall (38 units)",
+        "Inferred 5 choices from an explicit 38-unit rule: Third-Year Spring (38 units)",
+        "Inferred 3 choices from an explicit 41-unit rule: Fourth-Year Fall (41 units)",
+        "Inferred 3 choices from an explicit 43-unit rule: Fourth-Year Spring (43 units)",
+        "Assumed choose-one for ambiguous section: First-Year Fall (55 units)",
+        "Assumed choose-one for ambiguous section: First-Year Spring (58 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Fall (50 units)",
+        "Assumed choose-one for ambiguous section: Second-Year Spring (52 units)",
+        "Inferred 4 choices from an explicit 37-unit rule: Third-Year Fall (37 units)",
+        "Inferred 4 choices from an explicit 44-unit rule: Third-Year Spring (44 units)",
+        "Inferred 3 choices from an explicit 41-unit rule: Fourth-Year Fall (41 units)",
+        "Inferred 2 choices from an explicit 43-unit rule: Fourth-Year Spring (43 units)",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "neural-computation--minor",
+      "name": "Neural Computation",
+      "confidence": 0.51,
+      "blockers": [
+        "4 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: A. Neural Computation",
+        "Assumed choose-one for ambiguous section: B. Neuroscience",
+        "Assumed choose-one for ambiguous section: C. Cognitive Psychology",
+        "Assumed choose-one for ambiguous section: D. Intelligent System Analysis",
+        "No unambiguous fixed-course table was found.",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "neuroscience--minor",
+      "name": "Neuroscience",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: Neurobiology Electives 27 units",
+        "No unambiguous fixed-course table was found.",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "neuroscience--b-s",
+      "name": "Neuroscience",
+      "confidence": 0.79,
+      "blockers": [
+        "5 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: C. Neurobiology Concentration",
+        "Assumed choose-one for ambiguous section: C. Neurobiology Concentration",
+        "Assumed choose-one for ambiguous section: D. Cognitive Neuroscience Concentration",
+        "Assumed choose-one for ambiguous section: D. Cognitive Neuroscience Concentration",
+        "Assumed choose-one for ambiguous section: E. Computational Neuroscience Concentration",
+        "Assumed choose-one for ambiguous section: E. Computational Neuroscience Concentration",
+        "Assumed choose-one for ambiguous section: F. Additional Neuroscience Electives",
+        "14 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "philosophy--minor",
+      "name": "Philosophy",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "12 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "philosophy--b-a",
+      "name": "Philosophy",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 1 choices from an explicit 9-unit rule: Introduction to Philosophy 9 units",
+        "No unambiguous fixed-course table was found.",
+        "27 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "photography--minor",
+      "name": "Photography",
+      "confidence": 0.75,
+      "blockers": [],
+      "warnings": []
+    },
+    {
+      "program_id": "physical-computing--minor",
+      "name": "Physical Computing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IDeATe Physical Computing Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "physics--additional-major",
+      "name": "Physics",
+      "confidence": 0.95,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Physics Graduate Courses",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "physics--minor",
+      "name": "Physics",
+      "confidence": 0.94,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Physics Graduate Courses",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "physics--b-a",
+      "name": "Physics",
+      "confidence": 0.79,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Non-Technical Electives",
+        "Assumed choose-one for ambiguous section: Physics Graduate Courses",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "physics--b-s",
+      "name": "Physics",
+      "confidence": 0.79,
+      "blockers": [
+        "Multiple tracks require an explicit track-selection rule.",
+        "7 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Non-Technical Electives",
+        "Assumed choose-one for ambiguous section: Physics Graduate Courses",
+        "Assumed choose-one for ambiguous section: Applied Physics Track",
+        "Assumed choose-one for ambiguous section: Biological Physics Track",
+        "Assumed choose-one for ambiguous section: Chemical Physics Track",
+        "Assumed choose-one for ambiguous section: Computational Physics Track",
+        "Assumed choose-one for ambiguous section: Quantum Physics Track",
+        "10 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "policy-and-management--b-s",
+      "name": "Policy and Management",
+      "confidence": 0.95,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Capstone",
+        "9 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "politics-and-public-policy--minor",
+      "name": "Politics and Public Policy",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 1 choices from an explicit 24-unit rule: Internship 24 units",
+        "Inferred 1 choices from an explicit 12-unit rule: Seminar on Public Policy Research, Writing, and Implementation 12 units",
+        "Inferred 2 choices from an explicit 12-unit rule: Seminars on American Politics, Governance, Institutions, and Law 12 units",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "professional-writing--minor",
+      "name": "Professional Writing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "professional-writing--b-a",
+      "name": "Professional Writing",
+      "confidence": 0.69,
+      "blockers": [
+        "1 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Text/Context Electives",
+        "No unambiguous fixed-course table was found.",
+        "42 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "psychology--minor",
+      "name": "Psychology",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 1 choices from an explicit 9-unit rule: Introductory Course 9 units",
+        "Assumed choose-one for ambiguous section: Statistics Courses 18 units",
+        "Inferred 1 choices from an explicit 9-unit rule: Research Methods Course 9 units",
+        "No unambiguous fixed-course table was found."
+      ]
+    },
+    {
+      "program_id": "psychology--b-a-b-s",
+      "name": "Psychology",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Mathematics 10 units",
+        "Assumed choose-one for ambiguous section: Statistics Sequence 9 units",
+        "Inferred 1 choices from an explicit 27-unit rule: Psychology Surveys 27 units",
+        "Inferred 1 choices from an explicit 9-unit rule: Introduction to Research Methods 9 units",
+        "Assumed choose-one for ambiguous section: Practical Application 9 units",
+        "Inferred 1 choices from an explicit 9-unit rule: Breadth 9 units",
+        "Assumed choose-one for ambiguous section: Computer Science Requirement 10 units",
+        "No unambiguous fixed-course table was found.",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "robotics--minor",
+      "name": "Robotics",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "russian-studies--minor",
+      "name": "Russian Studies",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 1 choices from an explicit 9-unit rule: 2. Russian Studies and Interdisciplinary Electives (1 course, 9 units)",
+        "Assumed choose-one for ambiguous section: 2. Russian Studies and Interdisciplinary Electives (1 course, 9 units)",
+        "No unambiguous fixed-course table was found.",
+        "7 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "science-and-arts--b-s-a",
+      "name": "Science and Arts",
+      "confidence": 0.05,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "No course-choice groups were found."
+      ]
+    },
+    {
+      "program_id": "science-technology-and-society--b-s",
+      "name": "Science, Technology and Society",
+      "confidence": 0.79,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IV. Electives in Science, Technology, and Medicine 27 units",
+        "Assumed choose-one for ambiguous section: V. Courses in Other Departments that Fulfill STS Elective Requirements (at least 18 units)",
+        "28 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "scientific-computing--minor",
+      "name": "Scientific Computing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "1 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "societal-computing--minor",
+      "name": "Societal Computing",
+      "confidence": 0.53,
+      "blockers": [
+        "2 requirement groups have unresolved selection rules."
+      ],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Required Courses",
+        "Assumed choose-one for ambiguous section: Methods Course",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "sociology--minor",
+      "name": "Sociology",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 36-unit rule: Elective Courses 36 units",
+        "Inferred 3 choices from an explicit 36-unit rule: Elective Courses 36 units",
+        "No unambiguous fixed-course table was found.",
+        "8 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "soft-technologies--minor",
+      "name": "Soft Technologies",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: IDeATe Soft Technologies Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "sonic-arts--minor",
+      "name": "Sonic Arts",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 3 choices from an explicit 27-unit rule: IDeATe Sonic Arts Courses - Minimum of 27 Units",
+        "No unambiguous fixed-course table was found.",
+        "2 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "tech-entrepreneurship--minor-cmu-q",
+      "name": "Tech Entrepreneurship",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "Inferred 1 choices from an explicit 9-unit rule: Capstone/Project Course 9 units",
+        "No unambiguous fixed-course table was found.",
+        "19 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "technical-writing--minor",
+      "name": "Technical Writing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "9 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "technical-writing--b-s",
+      "name": "Technical Writing",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "3 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "technology-and-policy--minor",
+      "name": "Technology and Policy",
+      "confidence": 0.79,
+      "blockers": [],
+      "warnings": [
+        "Assumed choose-one for ambiguous section: Technology Policy Electives (Minimum 18 units)",
+        "4 catalog course IDs are absent from the current schedule database."
+      ]
+    },
+    {
+      "program_id": "the-history-of-the-arts--minor",
+      "name": "The History of the Arts",
+      "confidence": 0.69,
+      "blockers": [],
+      "warnings": [
+        "No unambiguous fixed-course table was found.",
+        "6 catalog course IDs are absent from the current schedule database."
+      ]
+    }
+  ],
+  "changed_since_previous_run": [],
+  "failures": []
+}

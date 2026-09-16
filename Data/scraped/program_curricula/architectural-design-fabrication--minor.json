@@ -1,0 +1,79 @@
+{
+  "program_id": "architectural-design-fabrication--minor",
+  "planning_id": "architectural-design-fabrication",
+  "name": "Architectural Design Fabrication",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-design-fabrication-minor/",
+  "source_hash": "596d174aafcac3c8e5da7bb4c31d8c4217b08e1e75da957a0c935a204364365a",
+  "fixed_courses": [
+    {
+      "id": "48-531",
+      "name": "Fabricating Customization: Prototype",
+      "units": 9.0,
+      "source_text": "48-531 Fabricating Customization: Prototype 9"
+    },
+    {
+      "id": "48-545",
+      "name": "Design Fabrication",
+      "units": 9.0,
+      "source_text": "48-545 Design Fabrication 9"
+    },
+    {
+      "id": "48-555",
+      "name": "Introduction to Architectural Robotics",
+      "units": 9.0,
+      "source_text": "48-555 Introduction to Architectural Robotics 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1-alternative-4",
+      "name": "Architecture Design Studio: Core 7 - Integrations",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 18,
+      "options": [
+        "48-400",
+        "48-410",
+        "48-500",
+        "48-510"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 7,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 7,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": []
+  }
+}

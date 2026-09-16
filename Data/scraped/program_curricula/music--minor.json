@@ -1,0 +1,104 @@
+{
+  "program_id": "music--minor",
+  "planning_id": "music",
+  "name": "Music",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-minor/",
+  "source_hash": "a5da5b6885252e9896c9dd87a97babf7e403c1173f97b4565114e9d146cb5231",
+  "fixed_courses": [
+    {
+      "id": "57-329",
+      "name": "Beginning Piano for Minors *",
+      "units": 3.0,
+      "source_text": "57-329 Beginning Piano for Minors * 3"
+    },
+    {
+      "id": "57-173",
+      "name": "Survey of Western Music History",
+      "units": 9.0,
+      "source_text": "57-173 Survey of Western Music History 9"
+    },
+    {
+      "id": "57-188",
+      "name": "Repertoire and Listening for Musicians ( 57-173 co-req)",
+      "units": 1.0,
+      "source_text": "57-188 Repertoire and Listening for Musicians ( 57-173 co-req) 1"
+    },
+    {
+      "id": "57-161",
+      "name": "Eurhythmics I",
+      "units": 3.0,
+      "source_text": "57-161 Eurhythmics I 3"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-music-courses-52-units-1-alternative-2",
+      "name": "Harmony I *",
+      "heading": "Required Music Courses 52 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "57-152"
+      ],
+      "source_instruction": "Basic Harmony I and/or Basic Solfege I are required of students who do not qualify for entrance into Harmony I and/or Solfege I, based on their scores on the harmony and solfege placement tests. These classes fulfill the harmony and solfege requirements.",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-music-courses-52-units-1-alternative-3",
+      "name": "Basic Solfege I *",
+      "heading": "Required Music Courses 52 units",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "57-180",
+        "57-181",
+        "57-185"
+      ],
+      "source_instruction": "Basic Harmony I and/or Basic Solfege I are required of students who do not qualify for entrance into Harmony I and/or Solfege I, based on their scores on the harmony and solfege placement tests. These classes fulfill the harmony and solfege requirements.",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 8,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 8,
+    "extracted_unit_estimate": 28,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": [
+      "57-329"
+    ]
+  }
+}

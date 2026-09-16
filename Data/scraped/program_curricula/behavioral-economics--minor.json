@@ -1,0 +1,178 @@
+{
+  "program_id": "behavioral-economics--minor",
+  "planning_id": "behavioral-economics",
+  "name": "Behavioral Economics",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-minor/",
+  "source_hash": "9a5c4139109cbf2d5048b9417db6d63af10745dfe346c3fda7b5ecbbd2ff858c",
+  "fixed_courses": [
+    {
+      "id": "36-202",
+      "name": "Methods for Statistics & Data Science",
+      "units": 9.0,
+      "source_text": "36-202 Methods for Statistics & Data Science 9"
+    },
+    {
+      "id": "88-120",
+      "name": "Reason, Passion and Cognition",
+      "units": 9.0,
+      "source_text": "88-120 Reason, Passion and Cognition 9"
+    },
+    {
+      "id": "88-360",
+      "name": "Behavioral Economics",
+      "units": 9.0,
+      "source_text": "88-360 Behavioral Economics 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-54-units-1-alternative-1",
+      "name": "Principles of Microeconomics",
+      "heading": "Core Courses 54 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": "Economics Core",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "core-courses-54-units-1-alternative-2",
+      "name": "Markets, Democracy, and Public Policy",
+      "heading": "Core Courses 54 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-221",
+        "73-103",
+        "73-155",
+        "73-230",
+        "73-328",
+        "73-347",
+        "73-359",
+        "73-408",
+        "73-421",
+        "73-427"
+      ],
+      "source_instruction": "Economics Core",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "core-courses-54-units-1-alternative-2",
+      "name": "Designing Economics Experiments in the Wild *",
+      "heading": "Core Courses 54 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-367",
+        "88-365"
+      ],
+      "source_instruction": "Behavioral Economics Core",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "elective-courses-9-units",
+      "name": "Elective Courses 9 units",
+      "heading": "Elective Courses 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-130",
+        "88-221",
+        "88-230",
+        "88-231",
+        "88-234",
+        "88-235",
+        "88-251",
+        "88-252",
+        "88-255",
+        "88-261",
+        "88-275",
+        "88-285",
+        "88-290",
+        "88-300",
+        "88-302",
+        "88-312",
+        "88-323 + 88-324",
+        "88-344",
+        "88-365",
+        "88-366",
+        "88-367"
+      ],
+      "source_instruction": "Elective Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [
+        54,
+        63
+      ],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Double Counting Students may double-count two courses with another major or minor.",
+        "73-102 is excluded from this double count policy.",
+        "Minor in Behavioral Economics 63 units Core Courses 54 units Quantitative Methods Core Units 36-202 Methods for Statistics & Data Science 9 Economics Core Units 73-102 Principles of Microeconomics 9 or 73-104 Principles of Microeconomics Accelerated Second-Level Economics Course 88-221 Markets, Democracy, and Public Policy 9 or 73-103 Principles of Macroeconomics or 73-155 Models, Math, and Markets or 73-230 Intermediate Microeconomics or 73-328 Health Economics or 73-347 Game Theory Applications for Economics and Business or 73-359 Benefit-Cost Analysis or 73-408 Law and Economics or 73-421 Emerging Markets or 73-427 Sustainability, Energy, and Environmental Economics 18 Psychology Core Units 88-120 Reason, Passion and Cognition 9 Behavioral Economics Core Units 88-360 Behavioral Economics 9 88-367 Designing Economics Experiments in the Wild * 9 or 88-365 Behavioral Economics and Public Policy 18 * Behavioral Economics core courses CANNOT double count with the elective course."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 38,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: Elective Courses 9 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 35,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 30,
+    "missing_schedule_course_ids": [
+      "73-427",
+      "88-275",
+      "88-290",
+      "88-323 + 88-324",
+      "88-366"
+    ]
+  }
+}

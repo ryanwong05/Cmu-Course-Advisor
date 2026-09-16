@@ -1,0 +1,159 @@
+{
+  "program_id": "business-analytics-and-optimization--minor",
+  "planning_id": "business-analytics-and-optimization",
+  "name": "Business Analytics and Optimization",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-analytics-optimization-minor/",
+  "source_hash": "13e605558157c08877acccf504ad90dc256026c221f71b37062fd272e837d1d2",
+  "fixed_courses": [
+    {
+      "id": "70-469",
+      "name": "End to End Business Analytics",
+      "units": 9.0,
+      "source_text": "70-469 End to End Business Analytics 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "modeling-uncertainty-choose-one-1",
+      "name": "Modeling Uncertainty ( choose one ):",
+      "heading": "Modeling Uncertainty ( choose one ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-207",
+        "36-200",
+        "36-220",
+        "36-225"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "business-analytics-and-optimization-core-required-1-alternative-1",
+      "name": "Machine Learning for Business Analytics",
+      "heading": "Business Analytics and Optimization Core ( required ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-467",
+        "70-374",
+        "15-388"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-analytics-and-optimization-core-required-1-alternative-2",
+      "name": "Optimization for Business",
+      "heading": "Business Analytics and Optimization Core ( required ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-257",
+        "21-292"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "business-foundations-elective-choose-one-1",
+      "name": "Business Foundations Elective ( choose one ):",
+      "heading": "Business Foundations Elective ( choose one ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-122",
+        "70-311",
+        "70-371",
+        "70-381",
+        "70-391",
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "technical-elective-choose-one-1",
+      "name": "Technical Elective ( choose one ):",
+      "heading": "Technical Elective ( choose one ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-208",
+        "70-374",
+        "70-455",
+        "70-458",
+        "70-460",
+        "70-462",
+        "70-467",
+        "73-374",
+        "15-388",
+        "67-364"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Technical Elective ( choose one ): 70-208 Regression Analysis 9 70-374 Data Mining & Business Analytics 9 70-455 Data Management Fundamentals 9 70-458 Advanced Data Management 9 70-460 Mathematical Models for Consulting 9 70-462 Uncertainty and Risk Modeling 9 70-467 Machine Learning for Business Analytics 9 73-374 Econometrics II 9 15-388 Practical Data Science 9 67-364 Practical Data Science 9 Double-Counting While there are no double counting restrictions between the minor and the student's home college general education requirements, only one minor course may double-count with any other major or minor requirements.",
+        "The Minor in Operations and Supply Chain Management allows an additional double-count for a total of 2 courses that may double-count with any other major or minor requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 27,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 24,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 22,
+    "missing_schedule_course_ids": [
+      "15-388",
+      "70-462"
+    ]
+  }
+}

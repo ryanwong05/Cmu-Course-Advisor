@@ -1,0 +1,81 @@
+{
+  "program_id": "photography--minor",
+  "planning_id": "photography",
+  "name": "Photography",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/photography-minor/",
+  "source_hash": "7f7a90e6e6054a75433bf6215b24bdb462641e356b6ba1a6869b8dbf68e1ad38",
+  "fixed_courses": [
+    {
+      "id": "60-141",
+      "name": "Black and White Photography I *",
+      "units": 10.0,
+      "source_text": "62/60-141 Black and White Photography I * 10"
+    },
+    {
+      "id": "60-142",
+      "name": "Digital Photography I",
+      "units": 10.0,
+      "source_text": "62/60-142 Digital Photography I 10"
+    },
+    {
+      "id": "60-241",
+      "name": "Black and White Photography II",
+      "units": 10.0,
+      "source_text": "62/60-241 Black and White Photography II 10"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "photo-history-required-course-9-units",
+      "name": "Photo History Required Course 9 units",
+      "heading": "Photo History Required Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "62-371",
+        "62-360"
+      ],
+      "source_instruction": "Choose one (1) of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Choose one (1) of the following courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 5,
+    "confidence": 0.75,
+    "status": "needs_review",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 5,
+    "extracted_unit_estimate": 39,
+    "scheduled_course_count": 5,
+    "missing_schedule_course_ids": []
+  }
+}

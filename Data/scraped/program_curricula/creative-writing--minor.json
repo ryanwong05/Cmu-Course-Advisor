@@ -1,0 +1,152 @@
+{
+  "program_id": "creative-writing--minor",
+  "planning_id": "creative-writing",
+  "name": "Creative Writing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-minor/",
+  "source_hash": "47478f9a57824663043d1aa1f5d5e3b9c2140369af6de7b9f114d6a026803098",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-prerequisite-first-year-writing-9-units",
+      "name": "Required Prerequisite: First-Year Writing 9 units",
+      "heading": "Required Prerequisite: First-Year Writing 9 units",
+      "choose": 2,
+      "units": 9,
+      "options": [
+        "76-101",
+        "76-102",
+        "76-106",
+        "76-107",
+        "76-108"
+      ],
+      "source_instruction": "One of the full-semester courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "One of the full-semester courses",
+        "Any two of the following mini courses"
+      ]
+    },
+    {
+      "id": "introductory-genre-writing-course-1-course-9-units",
+      "name": "Introductory Genre Writing Course (1 course) 9 units",
+      "heading": "Introductory Genre Writing Course (1 course) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-212",
+        "76-260",
+        "76-261",
+        "76-265",
+        "76-269"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Introductory Genre Writing Course (1 course) 9 units"
+      ]
+    },
+    {
+      "id": "reading-in-forms-course-1-course-9-units",
+      "name": "Reading in Forms Course (1 course) 9 units",
+      "heading": "Reading in Forms Course (1 course) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-362",
+        "76-363",
+        "76-364"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Reading in Forms Course (1 course) 9 units"
+      ]
+    },
+    {
+      "id": "two-workshops-2-courses-18-units",
+      "name": "Two workshops (2 courses) 18 units",
+      "heading": "Two workshops (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-320",
+        "76-365",
+        "76-460",
+        "76-462",
+        "76-464",
+        "76-465",
+        "76-469"
+      ],
+      "source_instruction": "Creative Writing Workshops",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Creative Writing Workshops"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Double Counting Students who have a minor in English as well as a primary and/or an additional major in English may not double count any English courses with that minor.",
+        "Otherwise, up to two courses from the minor may double count with programs outside of the English Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 20,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 20,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "76-320",
+      "76-362",
+      "76-464",
+      "76-465"
+    ]
+  }
+}

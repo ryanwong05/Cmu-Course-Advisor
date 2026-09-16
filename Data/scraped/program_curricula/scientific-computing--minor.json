@@ -1,0 +1,94 @@
+{
+  "program_id": "scientific-computing--minor",
+  "planning_id": "scientific-computing",
+  "name": "Scientific Computing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/minors/scientific-computing-minor/",
+  "source_hash": "6a767738325b7e81a9006c5f80339a8bc9eabf05d87112630b6c9957a5cb3b78",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "b-computational-science-requirement-18-24-units",
+      "name": "B. Computational Science Requirement (18-24 units)",
+      "heading": "B. Computational Science Requirement (18-24 units)",
+      "choose": 2,
+      "units": 24,
+      "options": [
+        "03-250",
+        "03-511",
+        "15-386",
+        "33-241"
+      ],
+      "source_instruction": "Complete two (2) of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 24.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two (2) of the following courses"
+      ]
+    },
+    {
+      "id": "c-computational-methods-requirement-9-units",
+      "name": "C. Computational Methods Requirement (9 units)",
+      "heading": "C. Computational Methods Requirement (9 units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-369",
+        "33-658",
+        "33-232",
+        "33-456",
+        "36-410"
+      ],
+      "source_instruction": "Complete one (1) of the following courses from outside of your home department.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete one (1) of the following courses from outside of your home department."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 9,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 9,
+    "extracted_unit_estimate": 33,
+    "scheduled_course_count": 8,
+    "missing_schedule_course_ids": [
+      "03-250"
+    ]
+  }
+}

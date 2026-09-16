@@ -1,0 +1,72 @@
+{
+  "program_id": "global-french-studies--minor",
+  "planning_id": "global-french-studies",
+  "name": "Global French Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-french-studies-minor/",
+  "source_hash": "880c2c23fa5f931ae5665b5ed4a77d5e092363d94791c9d0c6f7deca7965656b",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-french-and-francophone-studies-5-courses-45-units",
+      "name": "1. Foundational Courses in French and Francophone Studies (5 courses, 45 units)",
+      "heading": "1. Foundational Courses in French and Francophone Studies (5 courses, 45 units)",
+      "choose": 4,
+      "units": 45,
+      "options": [
+        "82-201",
+        "82-202",
+        "82-303",
+        "82-304"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 45.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "1. Foundational Courses in French and Francophone Studies (5 courses, 45 units)"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count two courses taken for the French & Francophone Studies minor that are also being used to fulfill the requirements of other majors, minors, and programs.",
+        "This does not include double-counting with General Education requirements, which has no limit."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 4,
+    "confidence": 0.55,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 4 choices from an explicit 45-unit rule: 1. Foundational Courses in French and Francophone Studies (5 courses, 45 units)",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 4,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 4,
+    "missing_schedule_course_ids": []
+  }
+}

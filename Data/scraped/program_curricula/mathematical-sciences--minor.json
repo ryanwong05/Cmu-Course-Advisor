@@ -1,0 +1,159 @@
+{
+  "program_id": "mathematical-sciences--minor",
+  "planning_id": "mathematical-sciences",
+  "name": "Mathematical Sciences",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-minor/",
+  "source_hash": "23f4f51375765807dfae00ea03067da51acf907fbfc33776f05f7fe1004fa38c",
+  "fixed_courses": [
+    {
+      "id": "21-355",
+      "name": "Principles of Real Analysis I",
+      "units": 9.0,
+      "source_text": "21-355 Principles of Real Analysis I 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1-alternative-1",
+      "name": "Concepts of Mathematics",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "21-127",
+        "21-128",
+        "15-151"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-1-alternative-2",
+      "name": "Discrete Mathematics",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-228",
+        "15-251"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-1-alternative-3",
+      "name": "Matrices and Linear Transformations",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 11,
+      "options": [
+        "21-241",
+        "21-242"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-1-alternative-4",
+      "name": "Principles of Real Analysis I",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-355",
+        "21-373"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "required-courses-1-alternative-5",
+      "name": "Probability *",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-325",
+        "21-425",
+        "15-259",
+        "36-218"
+      ],
+      "source_instruction": "Computational Finance majors who declare a minor in Mathematical Sciences should take the following six (6) courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "mathematical-sciences-electives-1",
+      "name": "Nine (9) units of Mathematical Sciences Electives, to be chosen from the following list",
+      "heading": "Mathematical Sciences Electives",
+      "choose": 5,
+      "units": 45,
+      "options": [
+        "21-300",
+        "21-301",
+        "21-329",
+        "21-373",
+        "21-484"
+      ],
+      "source_instruction": "Nine (9) units of Mathematical Sciences Electives, to be chosen from the following list:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 5
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Course Requirements (non-Computational Finance majors) Required Courses Units 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs or 15-151 Mathematical Foundations for Computer Science 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory 21-355 Principles of Real Analysis I 9 or 21-373 Algebraic Structures Mathematical Sciences Electives 21-xxx Mathematical Sciences Elective (300-level or higher) 9-12 21-xxx Mathematical Sciences Elective (300-level or higher) 9-12 Double Counting To avoid excessive double-counting, the two (2) Mathematical Sciences electives may not also count toward any other major or minor requirement.",
+        "Course Requirements (Computational Finance majors) Required Courses Computational Finance majors who declare a minor in Mathematical Sciences should take the following six (6) courses: Units 21-127 Concepts of Mathematics 12 or 21-128 Mathematical Concepts and Proofs or 15-151 Mathematical Foundations for Computer Science 21-228 Discrete Mathematics 9-12 or 15-251 Great Ideas in Theoretical Computer Science 21-241 Matrices and Linear Transformations 11 or 21-242 Matrix Theory 21-355 Principles of Real Analysis I 9 21-325 Probability * 9-12 or 21-425 Probability and Martingales or 15-259 Probability and Computing or 36-218 Probability Theory for Computer Scientists Mathematical Sciences Electives Nine (9) units of Mathematical Sciences Electives, to be chosen from the following list: 21-300 Basic Logic 9 21-301 Combinatorics 9 21-329 Set Theory 9 21-373 Algebraic Structures 9 21-484 Graph Theory 9 * Students who take 21-325 (or 15-259 or 36-218 or 21-425 ) to fulfill their BSCF requirements should take an additional 21-3xx elective to avoid excessive double counting."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 19,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 17,
+    "extracted_unit_estimate": 104,
+    "scheduled_course_count": 17,
+    "missing_schedule_course_ids": []
+  }
+}

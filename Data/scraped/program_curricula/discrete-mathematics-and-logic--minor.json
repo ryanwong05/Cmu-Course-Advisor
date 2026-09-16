@@ -1,0 +1,114 @@
+{
+  "program_id": "discrete-mathematics-and-logic--minor",
+  "planning_id": "discrete-mathematics-and-logic",
+  "name": "Discrete Mathematics and Logic",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/discrete-mathematics-logic-minor/",
+  "source_hash": "b838e21bc5f3de2d376afa9b4d2819cd82a23bf7a5fcf508927c6493a274e7e6",
+  "fixed_courses": [
+    {
+      "id": "21-300",
+      "name": "Basic Logic",
+      "units": 9.0,
+      "source_text": "21-300 Basic Logic 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1-alternative-1",
+      "name": "Discrete Mathematics 1",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-228",
+        "21-301"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "mathematical-sciences-electives-36-units",
+      "name": "Mathematical Sciences Electives (36 units)",
+      "heading": "Mathematical Sciences Electives (36 units)",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "21-321",
+        "21-329",
+        "21-400",
+        "21-602",
+        "21-603",
+        "80-305",
+        "80-405",
+        "80-311",
+        "80-411",
+        "80-413",
+        "21-341",
+        "21-373",
+        "21-374",
+        "21-441",
+        "21-484",
+        "21-610",
+        "21-701"
+      ],
+      "source_instruction": "Logic",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Logic",
+        "Algebra and Discrete Mathematics"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Logic 21-321 Interactive Theorem Proving 9 21-329 Set Theory 9 21-400 Intermediate Logic 9 21-602 Introduction to Set Theory I 12 21-603 Model Theory I 12 80-305 Game Theory 9 or 80-405 Game Theory 80-311 Undecidability and Incompleteness 9 80-411 Proof Theory 9 80-413 Category Theory 9 Algebra and Discrete Mathematics 21-341 Linear Algebra 9 21-373 Algebraic Structures 9 21-374 Field Theory 9 21-441 Number Theory 9 21-484 Graph Theory 9 21-610 Algebra I 12 21-701 Discrete Mathematics 12 Double Counting To avoid excessive double-counting, at least two mathematical sciences electives may not also count toward any other major or minor requirement."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 20,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Mathematical Sciences Electives (36 units)",
+      "Inferred 3 choices from an explicit 36-unit rule: Mathematical Sciences Electives (36 units)"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 20,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "21-374",
+      "21-400",
+      "80-405",
+      "80-411"
+    ]
+  }
+}

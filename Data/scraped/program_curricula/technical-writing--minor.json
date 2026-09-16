@@ -1,0 +1,174 @@
+{
+  "program_id": "technical-writing--minor",
+  "planning_id": "technical-writing",
+  "name": "Technical Writing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-minor/",
+  "source_hash": "0e843b4c4000de30ba77fdd97f15aed3fddf8b229cee6a2d8fee80bdecb65d92",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-introductory-course-1-course-9-units",
+      "name": "Required Introductory Course (1 course) 9 units",
+      "heading": "Required Introductory Course (1 course) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-270",
+        "76-271"
+      ],
+      "source_instruction": "Required Intro Course",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Required Intro Course"
+      ]
+    },
+    {
+      "id": "two-300-level-core-writing-courses-2-courses-18-units",
+      "name": "Two 300-Level Core Writing Courses (2 courses) 18 units",
+      "heading": "Two 300-Level Core Writing Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-373",
+        "76-389",
+        "76-390",
+        "76-391"
+      ],
+      "source_instruction": "Two 300-Level Core Writing Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Two 300-Level Core Writing Courses"
+      ]
+    },
+    {
+      "id": "two-2-300-or-400-level-recommended-list-theory-specialization-courses-18-units",
+      "name": "Two (2) 300- or 400-Level \"Recommended List\" Theory/Specialization Courses 18 units*",
+      "heading": "Two (2) 300- or 400-Level \"Recommended List\" Theory/Specialization Courses 18 units*",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-314",
+        "76-318",
+        "76-327",
+        "76-366",
+        "76-375",
+        "76-380",
+        "76-395",
+        "76-425",
+        "76-474",
+        "76-476",
+        "76-481",
+        "76-483",
+        "76-487",
+        "76-488",
+        "76-492",
+        "76-494"
+      ],
+      "source_instruction": "Two 300- or 400-Level Recommended List Theory/Specialization Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Two 300- or 400-Level Recommended List Theory/Specialization Courses"
+      ]
+    },
+    {
+      "id": "one-1-300-or-400-level-core-or-theory-specialization-course-9-units",
+      "name": "One (1) 300- or 400-Level Core or Theory/Specialization Course 9 units*",
+      "heading": "One (1) 300- or 400-Level Core or Theory/Specialization Course 9 units*",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-306",
+        "76-307",
+        "76-325",
+        "76-354",
+        "76-368",
+        "76-372",
+        "76-384",
+        "76-393",
+        "76-415",
+        "76-416",
+        "76-427",
+        "76-455",
+        "76-464",
+        "76-473",
+        "76-475",
+        "76-490"
+      ],
+      "source_instruction": "One Additional 300- or 400-Level Core or Theory/Specialization Course",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Additional 300- or 400-Level Core or Theory/Specialization Course"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Double Counting Students who have a minor in English as well as a primary and/or an additional major in English may not double count any English courses with that minor.",
+        "Otherwise, up to two courses from the minor may double count with programs outside of the English Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 38,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "9 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 38,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 29,
+    "missing_schedule_course_ids": [
+      "76-318",
+      "76-368",
+      "76-384",
+      "76-395",
+      "76-425",
+      "76-427",
+      "76-464",
+      "76-476",
+      "76-492"
+    ]
+  }
+}

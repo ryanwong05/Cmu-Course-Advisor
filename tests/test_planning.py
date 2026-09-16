@@ -219,6 +219,13 @@ class PlanningIntegrationTests(unittest.TestCase):
             self.assertTrue(result["courses"])
             self.assertTrue(all(course["sections"] > 0 for course in result["courses"]))
 
+    def test_humanities_candidates_include_data_driven_department_groups(self):
+        result = app.list_electives(term="fall", category="humanities")
+        grouped = [course for course in result["courses"] if course["display_group"]]
+        self.assertTrue(grouped)
+        self.assertIn("English and Writing", {course["display_group"] for course in grouped})
+        self.assertIn("History", {course["display_group"] for course in grouped})
+
     def test_communication_uses_only_official_full_course_or_two_mini_paths(self):
         result = app.list_electives(term="fall", category="communication")
         ids = {course["id"] for course in result["courses"]}
@@ -614,6 +621,96 @@ class PlanningIntegrationTests(unittest.TestCase):
             for block in full_blocks
             if block["name"].startswith("AI cluster:")
         ))
+
+    def test_is_ai_additional_major_completes_by_senior_spring(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="dietrich",
+                primary_major="information-systems",
+                year=1,
+                completed_courses=[
+                    "21-127", "36-200", "15-112", "66-136", "73-102",
+                ],
+                completed_requirement_ids=[
+                    "data-analysis", "computational-thinking", "social-sciences",
+                ],
+            ),
+            goals=[app.PlanningGoal(
+                type="additional_major",
+                college="scs",
+                program="artificial-intelligence",
+            )],
+        )
+        request.constraints.start_semester = "spring"
+        request.constraints.planning_year = 1
+        request.constraints.target_completion_year = 4
+        request.constraints.max_units = 52
+
+        result = app.create_plan(request)
+        path = result["fastest"]
+
+        self.assertTrue(path["goal_complete"])
+        self.assertEqual(path["remaining"], [])
+        self.assertEqual(path["remaining_program_requirements"], [])
+        self.assertEqual(path["unscheduled_requirements"], [])
+
+        scheduled_courses = {
+            course_id
+            for semester in path["path"]
+            for course_id in semester["courses"]
+        }
+        self.assertIn("07-380", scheduled_courses)
+
+        scheduled_choices = {
+            requirement["name"]: requirement.get("default_option")
+            for semester in path["path"]
+            for requirement in semester["program_requirements"]
+        }
+        for requirement_name in (
+            "AI cluster: Human-AI Interaction",
+            "Ethics",
+            "Human Cognition",
+        ):
+            self.assertIn(requirement_name, scheduled_choices)
+            self.assertIsNotNone(scheduled_choices[requirement_name])
+
+        senior_spring = next(
+            semester for semester in path["path"]
+            if semester["academic_year"] == 4
+            and semester["semester"] == "spring"
+        )
+        self.assertLessEqual(senior_spring["total_units"], 52)
+        self.assertGreater(senior_spring["total_units"], 33)
+
+    def test_unscheduled_requirements_include_explicit_reasons(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="dietrich",
+                primary_major="information-systems",
+                year=1,
+                completed_courses=[],
+            ),
+            goals=[app.PlanningGoal(
+                type="additional_major",
+                college="scs",
+                program="artificial-intelligence",
+            )],
+        )
+        request.constraints.start_semester = "spring"
+        request.constraints.planning_year = 1
+        request.constraints.target_completion_year = 1
+
+        result = app.create_plan(request)
+        diagnostics = result["fastest"]["unscheduled_requirements"]
+
+        self.assertTrue(diagnostics)
+        self.assertTrue(all(item.get("reason") for item in diagnostics))
+        self.assertTrue(all(item.get("detail") for item in diagnostics))
+        deadline_warning = next(
+            warning for warning in result["planning_warnings"]
+            if warning["code"] == "TARGET_DEADLINE_NOT_MET"
+        )
+        self.assertEqual(deadline_warning["requirements"], diagnostics)
 
     def test_robotics_additional_major_uses_official_ten_course_structure(self):
         profile = app.program_profiles["programs"]["robotics"]["additional_major"]

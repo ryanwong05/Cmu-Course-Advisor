@@ -1,0 +1,156 @@
+{
+  "program_id": "innovation-and-entrepreneurship--minor",
+  "planning_id": "innovation-and-entrepreneurship",
+  "name": "Innovation and Entrepreneurship",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/innovation-entrepreneurship-minor/",
+  "source_hash": "724964685cc4bc512fe8f00bb25927f5c8920a29dcf6faa2e7dc1c8598c09da3",
+  "fixed_courses": [
+    {
+      "id": "70-246",
+      "name": "Innovation & Entrepreneurial Mindset",
+      "units": 6.0,
+      "source_text": "70-246 Innovation & Entrepreneurial Mindset 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisite-course-1-alternative-1",
+      "name": "Principles of Microeconomics (prerequisite for 70-438 Commercialization and Innovation)",
+      "heading": "Prerequisite Course",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "one-portal-course-1",
+      "name": "One Portal Course",
+      "heading": "One Portal Course",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "15-294",
+        "15-394",
+        "51-236",
+        "62-478",
+        "15-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "one-entrepreneurship-course-1",
+      "name": "One Entrepreneurship Course",
+      "heading": "One Entrepreneurship Course",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-415"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "one-venture-creation-or-finance-course-1",
+      "name": "One Venture Creation or Finance Course",
+      "heading": "One Venture Creation or Finance Course",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-395",
+        "70-416"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "one-innovation-process-course-1",
+      "name": "One Innovation Process Course",
+      "heading": "One Innovation Process Course",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-438"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "one-product-development-course-1",
+      "name": "One Product Development Course",
+      "heading": "One Product Development Course",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "49-300"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting No more than two minor courses may double-count toward a student's major core requirements or an additional minor's core requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 7,
+    "course_references": 13,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 13,
+    "extracted_unit_estimate": 59,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": [
+      "15-104"
+    ]
+  }
+}

@@ -193,6 +193,144 @@ def calculate_total_units(course_ids, courses):
 
     return total
 
+
+def _remaining_requirement_diagnostics(
+    remaining_courses,
+    remaining_program_slots,
+    courses,
+    completed_courses,
+    path,
+):
+    """Explain why requirements remain without changing legacy result fields."""
+    course_by_id = {course["id"]: course for course in courses}
+    completed = set(completed_courses)
+    planned_terms = [
+        (semester["academic_year"], semester["semester"])
+        for semester in path
+    ]
+
+    def course_reason(course_id):
+        course = course_by_id.get(course_id)
+        if course is None:
+            return {
+                "reason": "no_valid_candidate",
+                "detail": "The required course is not present in the planning course catalog.",
+            }
+        if not prerequisites_satisfied(course, completed):
+            missing = sorted(set(prerequisite_course_ids(course)) - completed)
+            return {
+                "reason": "unmet_prerequisite",
+                "detail": (
+                    "Missing prerequisite courses: " + ", ".join(missing)
+                    if missing else
+                    "The verified prerequisite expression is not yet satisfied."
+                ),
+            }
+        minimum_year = course.get("minimum_year", 1)
+        if planned_terms and minimum_year > max(year for year, _ in planned_terms):
+            return {
+                "reason": "class_standing_restriction",
+                "detail": f"The course requires year {minimum_year} or later.",
+            }
+        offered = set(course.get("offered", []))
+        eligible_terms = [
+            (year, term) for year, term in planned_terms
+            if year >= minimum_year and (not offered or term in offered)
+        ]
+        if not eligible_terms:
+            return {
+                "reason": "not_offered_in_remaining_semesters",
+                "detail": "No semester in the selected planning horizon matches the verified offering terms.",
+            }
+        return {
+            "reason": "planning_horizon_exhausted",
+            "detail": "The course was eligible in the selected horizon but was not placed before the deadline.",
+        }
+
+    diagnostics = []
+    for course_id in remaining_courses:
+        diagnostics.append({
+            "id": course_id,
+            "name": course_id,
+            "type": "course",
+            **course_reason(course_id),
+        })
+
+    for requirement in remaining_program_slots:
+        concrete_options = []
+        for option in requirement.get("options", []):
+            option_ids = option.split(" + ")
+            if option_ids and all(course_id in course_by_id for course_id in option_ids):
+                concrete_options.append(option_ids)
+
+        if not requirement.get("options"):
+            reason = "waiting_for_user_choice"
+            detail = "This requirement has no approved default options in the verified data."
+        elif not concrete_options:
+            reason = "no_valid_candidate"
+            detail = "None of the approved options is present in the planning course catalog."
+        else:
+            eligible_option_exists = False
+            unmet_prerequisites = set()
+            offered_option_exists = False
+            for option_ids in concrete_options:
+                option_courses = [course_by_id[course_id] for course_id in option_ids]
+                if all(prerequisites_satisfied(course, completed) for course in option_courses):
+                    for year, term in planned_terms:
+                        if all(
+                            year >= course.get("minimum_year", 1)
+                            and (
+                                not course.get("offered", [])
+                                or term in course.get("offered", [])
+                            )
+                            for course in option_courses
+                        ):
+                            eligible_option_exists = True
+                            break
+                else:
+                    for course in option_courses:
+                        if not prerequisites_satisfied(course, completed):
+                            unmet_prerequisites.update(
+                                set(prerequisite_course_ids(course)) - completed
+                            )
+                if any(
+                    all(
+                        year >= course.get("minimum_year", 1)
+                        and (
+                            not course.get("offered", [])
+                            or term in course.get("offered", [])
+                        )
+                        for course in option_courses
+                    )
+                    for year, term in planned_terms
+                ):
+                    offered_option_exists = True
+
+            if eligible_option_exists:
+                reason = "planning_horizon_exhausted"
+                detail = "A valid approved option existed, but the requirement was not placed before the deadline."
+            elif unmet_prerequisites:
+                reason = "unmet_prerequisite"
+                detail = "Approved options still require: " + ", ".join(sorted(unmet_prerequisites))
+            elif not offered_option_exists:
+                reason = "not_offered_in_remaining_semesters"
+                detail = "No approved option matches a semester in the selected planning horizon."
+            else:
+                reason = "no_valid_candidate"
+                detail = "No approved option is currently eligible."
+
+        requirement["unscheduled_reason"] = reason
+        requirement["unscheduled_detail"] = detail
+        diagnostics.append({
+            "id": requirement.get("id"),
+            "name": requirement.get("name", requirement.get("id")),
+            "type": "requirement_choice",
+            "reason": reason,
+            "detail": detail,
+        })
+
+    return diagnostics
+
 def build_next_semester_plan(
     completed_courses,
     courses,
@@ -373,6 +511,8 @@ def generate_semester_path(
         for requirement in (program_requirement_slots or [])
         if requirement.get("status") != "completed"
     ]
+    scheduled_choice_course_scopes = {}
+    cross_scope_overlap_count = 0
     semester_unit_limits = semester_unit_limits or []
 
     def unit_limit_for(semester_index):
@@ -607,8 +747,32 @@ def generate_semester_path(
         # major should make progress without hiding the student's degree, and
         # the primary degree should not consume every available requirement
         # slot either.
-        max_slots_now = 3 if has_primary_slots and has_goal_slots else (
+        default_max_slots_now = 3 if has_primary_slots and has_goal_slots else (
             1 if goal_max_units is not None else 2
+        )
+        semesters_left = num_semesters - semester_number + 1
+        slots_needed_for_even_pacing = (
+            len(remaining_program_slots) + semesters_left - 1
+        ) // semesters_left
+        # Keep the normal balanced pace when possible, but do not strand valid
+        # choices merely because earlier fixed courses left no choice-slot room.
+        max_slots_now = max(default_max_slots_now, slots_needed_for_even_pacing)
+        remaining_primary_slot_count = sum(
+            requirement.get("scope") == "primary_major"
+            for requirement in remaining_program_slots
+        )
+        remaining_goal_slot_count = (
+            len(remaining_program_slots) - remaining_primary_slot_count
+        )
+        primary_scope_limit = max(
+            1,
+            (remaining_primary_slot_count + semesters_left - 1)
+            // semesters_left,
+        )
+        goal_scope_limit = max(
+            2,
+            (remaining_goal_slot_count + semesters_left - 1)
+            // semesters_left,
         )
         ordered_program_slots = sorted(
             remaining_program_slots,
@@ -638,8 +802,14 @@ def generate_semester_path(
                 has_primary_slots
                 and has_goal_slots
                 and (
-                    (requirement_is_primary and same_scope_count >= 1)
-                    or (not requirement_is_primary and same_scope_count >= 2)
+                    (
+                        requirement_is_primary
+                        and same_scope_count >= primary_scope_limit
+                    )
+                    or (
+                        not requirement_is_primary
+                        and same_scope_count >= goal_scope_limit
+                    )
                 )
             ):
                 continue
@@ -647,6 +817,33 @@ def generate_semester_path(
                 break
             course_by_id_for_options = {course["id"]: course for course in courses}
             fixed_courses_this_semester = set(semester_courses)
+            requirement_scope = requirement.get("scope", "goal")
+            satisfied_by_other_scope = False
+            overlap_limit = requirement.get("cross_scope_overlap_limit")
+            for option in requirement.get("options", []):
+                option_ids = option.split(" + ")
+                if not set(option_ids).issubset(completed):
+                    continue
+                option_scopes = {
+                    scheduled_choice_course_scopes.get(course_id)
+                    for course_id in option_ids
+                }
+                if (
+                    isinstance(overlap_limit, int)
+                    and cross_scope_overlap_count < overlap_limit
+                    and option_scopes
+                    and None not in option_scopes
+                    and any(scope != requirement_scope for scope in option_scopes)
+                ):
+                    satisfied_by_other_scope = True
+                    break
+            if satisfied_by_other_scope:
+                # A course selected for the primary curriculum may also satisfy
+                # a goal choice (or vice versa). This is cross-program overlap,
+                # not duplicate scheduling of two choices inside one program.
+                satisfied_program_slot_ids.add(requirement["id"])
+                cross_scope_overlap_count += 1
+                continue
             if any(
                 set(option.split(" + ")).issubset(fixed_courses_this_semester)
                 for option in requirement.get("options", [])
@@ -855,12 +1052,36 @@ def generate_semester_path(
             default_option = requirement.get("default_option")
             if default_option:
                 completed.extend(default_option.split(" + "))
+                for course_id in default_option.split(" + "):
+                    scheduled_choice_course_scopes[course_id] = requirement.get(
+                        "scope", "goal"
+                    )
         scheduled_ids = {item["id"] for item in baseline_slots}
         remaining_baseline = [
             item for item in remaining_baseline
             if item["id"] not in scheduled_ids
         ]
         scheduled_program_ids = {item["id"] for item in program_slots}
+        for pending_requirement in remaining_program_slots:
+            pending_scope = pending_requirement.get("scope", "goal")
+            overlap_limit = pending_requirement.get("cross_scope_overlap_limit")
+            for option in pending_requirement.get("options", []):
+                option_ids = option.split(" + ")
+                option_scopes = {
+                    scheduled_choice_course_scopes.get(course_id)
+                    for course_id in option_ids
+                }
+                if (
+                    set(option_ids).issubset(completed)
+                    and isinstance(overlap_limit, int)
+                    and cross_scope_overlap_count < overlap_limit
+                    and option_scopes
+                    and None not in option_scopes
+                    and any(scope != pending_scope for scope in option_scopes)
+                ):
+                    scheduled_program_ids.add(pending_requirement["id"])
+                    cross_scope_overlap_count += 1
+                    break
         remaining_program_slots = [
             item for item in remaining_program_slots
             if item["id"] not in scheduled_program_ids
@@ -889,6 +1110,13 @@ def generate_semester_path(
         item for item in remaining_program_slots
         if item.get("scope") != "primary_major"
     ]
+    unscheduled_requirements = _remaining_requirement_diagnostics(
+        remaining_after_plan,
+        remaining_goal_slots,
+        courses,
+        completed,
+        path,
+    )
 
     return {
         "path": path,
@@ -896,6 +1124,7 @@ def generate_semester_path(
         "remaining_current_major": remaining_current_major,
         "remaining_baseline": remaining_baseline,
         "remaining_program_requirements": remaining_goal_slots,
+        "unscheduled_requirements": unscheduled_requirements,
         "remaining_primary_requirements": remaining_primary_slots,
         "goal_complete": (
             len(remaining_after_plan) == 0

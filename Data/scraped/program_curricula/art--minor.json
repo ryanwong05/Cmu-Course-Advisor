@@ -1,0 +1,90 @@
+{
+  "program_id": "art--minor",
+  "planning_id": "art",
+  "name": "Art",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/art-minor/",
+  "source_hash": "c64ddb0f120424fe878a0c650bfd505bf424eea36e6e9f7941b9170663f67572",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "art-studio-courses-choose-5-50-units",
+      "name": "Art Studio Courses (choose 5) 50 units",
+      "heading": "Art Studio Courses (choose 5) 50 units",
+      "choose": 3,
+      "units": 50,
+      "options": [
+        "60-136",
+        "60-137",
+        "60-157"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 50.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Art Studio Courses (choose 5) 50 units"
+      ]
+    },
+    {
+      "id": "critical-studies-choose-one-9-units",
+      "name": "Critical Studies (choose one) 9 units",
+      "heading": "Critical Studies (choose one) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "60-105",
+        "60-106"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Critical Studies (choose one) 9 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 5,
+    "confidence": 0.55,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 5,
+    "extracted_unit_estimate": 59,
+    "scheduled_course_count": 4,
+    "missing_schedule_course_ids": [
+      "60-137"
+    ]
+  }
+}

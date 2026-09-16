@@ -1,0 +1,133 @@
+{
+  "program_id": "psychology--minor",
+  "planning_id": "psychology",
+  "name": "Psychology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-minor/",
+  "source_hash": "a0d34d7bbbb304a7bc42efaf2b92f41fd58ec9f26027f91bd1feb1c641979ff7",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "introductory-course-9-units",
+      "name": "Introductory Course 9 units",
+      "heading": "Introductory Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-100"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Introductory Course 9 units"
+      ]
+    },
+    {
+      "id": "area-survey-course-9-units",
+      "name": "Area Survey Course 9 units",
+      "heading": "Area Survey Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-110",
+        "85-190",
+        "85-130",
+        "85-150",
+        "85-170"
+      ],
+      "source_instruction": "Complete one (1) of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete one (1) of the following courses"
+      ]
+    },
+    {
+      "id": "statistics-courses-18-units",
+      "name": "Statistics Courses 18 units",
+      "heading": "Statistics Courses 18 units",
+      "choose": 1,
+      "units": 18,
+      "options": [
+        "36-200",
+        "36-309",
+        "85-309",
+        "36-202"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Statistics Courses 18 units"
+      ]
+    },
+    {
+      "id": "research-methods-course-9-units",
+      "name": "Research Methods Course 9 units",
+      "heading": "Research Methods Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "85-300"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Research Methods Course 9 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 11,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: Introductory Course 9 units",
+      "Assumed choose-one for ambiguous section: Statistics Courses 18 units",
+      "Inferred 1 choices from an explicit 9-unit rule: Research Methods Course 9 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 11,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 11,
+    "missing_schedule_course_ids": []
+  }
+}

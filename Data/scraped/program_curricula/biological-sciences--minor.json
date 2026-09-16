@@ -1,0 +1,111 @@
+{
+  "program_id": "biological-sciences--minor",
+  "planning_id": "biological-sciences",
+  "name": "Biological Sciences",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-minor/",
+  "source_hash": "25d4735b53ce2bf1eb435fd7ca9da07a22f4ad3d235516a65fb8bb7c6d0d4f3c",
+  "fixed_courses": [
+    {
+      "id": "09-105",
+      "name": "Introduction to Modern Chemistry I",
+      "units": 10.0,
+      "source_text": "09-105 Introduction to Modern Chemistry I 10"
+    },
+    {
+      "id": "09-217",
+      "name": "Organic Chemistry I",
+      "units": 9.0,
+      "source_text": "09-217 Organic Chemistry I 9"
+    },
+    {
+      "id": "03-320",
+      "name": "Cell Biology *New course number ( 03-240 ) starting Fall 2027",
+      "units": 9.0,
+      "source_text": "03-320 Cell Biology *New course number ( 03-240 ) starting Fall 2027 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "course-requirements-1-alternative-3",
+      "name": "Modern Biology",
+      "heading": "Course Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-121",
+        "03-151"
+      ],
+      "source_instruction": "Courses for the Minor in Biological Sciences",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "course-requirements-1-alternative-4",
+      "name": "Honors Biochemistry",
+      "heading": "Course Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-231",
+        "03-232"
+      ],
+      "source_instruction": "Courses for the Minor in Biological Sciences",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "course-requirements-1-alternative-6",
+      "name": "Genetics *New course number ( 03-330 ) starting Fall 2027",
+      "heading": "Course Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-220",
+        "03-221"
+      ],
+      "source_instruction": "Courses for the Minor in Biological Sciences",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 9,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 9,
+    "extracted_unit_estimate": 55,
+    "scheduled_course_count": 9,
+    "missing_schedule_course_ids": []
+  }
+}

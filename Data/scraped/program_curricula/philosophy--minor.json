@@ -1,0 +1,129 @@
+{
+  "program_id": "philosophy--minor",
+  "planning_id": "philosophy",
+  "name": "Philosophy",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-minor/",
+  "source_hash": "408e933a60a6a17a4786fd100027b6aa2049749d2c1b73287060b27a450a9150",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "logic-methodology-requirements-9-units",
+      "name": "Logic/Methodology Requirements 9 units",
+      "heading": "Logic/Methodology Requirements 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-210",
+        "80-211",
+        "80-220",
+        "80-221",
+        "80-226",
+        "80-310",
+        "80-311",
+        "80-312",
+        "80-315",
+        "80-324",
+        "80-325",
+        "80-365",
+        "80-411",
+        "80-413",
+        "80-490",
+        "80-514",
+        "80-516",
+        "80-521",
+        "80-524"
+      ],
+      "source_instruction": "Complete one course:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete one course"
+      ]
+    },
+    {
+      "id": "history-of-philosophy-requirements-18-units",
+      "name": "History of Philosophy Requirements 18 units",
+      "heading": "History of Philosophy Requirements 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "80-150",
+        "80-226",
+        "80-250",
+        "80-251",
+        "80-252",
+        "80-253",
+        "80-255",
+        "80-254",
+        "80-260",
+        "80-261",
+        "80-350",
+        "80-490",
+        "80-551",
+        "80-365"
+      ],
+      "source_instruction": "Complete two courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 33,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "12 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 30,
+    "extracted_unit_estimate": 27,
+    "scheduled_course_count": 18,
+    "missing_schedule_course_ids": [
+      "80-220",
+      "80-250",
+      "80-254",
+      "80-255",
+      "80-261",
+      "80-324",
+      "80-350",
+      "80-365",
+      "80-411",
+      "80-521",
+      "80-524",
+      "80-551"
+    ]
+  }
+}

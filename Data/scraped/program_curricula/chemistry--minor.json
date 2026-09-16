@@ -1,0 +1,132 @@
+{
+  "program_id": "chemistry--minor",
+  "planning_id": "chemistry",
+  "name": "Chemistry",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-minor/",
+  "source_hash": "0c565fc508e56499e7cf39969ff62e26d7ae67d52ba7ac63b5eee0eb0ed9666d",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "a-four-4-required-core-courses-1",
+      "name": "A. Four (4) Required Core Courses",
+      "heading": "A. Four (4) Required Core Courses",
+      "choose": 4,
+      "units": 40,
+      "options": [
+        "09-106",
+        "09-221",
+        "09-207",
+        "09-217",
+        "09-219"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 4
+      },
+      "track": null
+    },
+    {
+      "id": "a-four-4-required-core-courses-2",
+      "name": "Choice of one of the following courses",
+      "heading": "A. Four (4) Required Core Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "09-331",
+        "09-344",
+        "09-345",
+        "09-348",
+        "09-507",
+        "09-529"
+      ],
+      "source_instruction": "Choice of one of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "b-two-2-elective-courses-from-the-following-list-1",
+      "name": "B. Two (2) Elective Courses from the following list.",
+      "heading": "B. Two (2) Elective Courses from the following list.",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "09-344",
+        "09-345",
+        "09-348",
+        "09-222",
+        "09-208",
+        "09-218",
+        "09-220",
+        "03-231",
+        "09-381",
+        "09-403",
+        "09-502",
+        "09-507",
+        "09-510",
+        "09-518",
+        "09-519",
+        "09-524",
+        "09-525",
+        "09-530",
+        "09-538",
+        "09-563",
+        "09-615",
+        "09-616",
+        "09-714",
+        "09-737",
+        "09-760"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 2
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 36,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 32,
+    "extracted_unit_estimate": 67,
+    "scheduled_course_count": 27,
+    "missing_schedule_course_ids": [
+      "09-507",
+      "09-530",
+      "09-538",
+      "09-714",
+      "09-760"
+    ]
+  }
+}

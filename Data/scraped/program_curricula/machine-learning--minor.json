@@ -1,0 +1,192 @@
+{
+  "program_id": "machine-learning--minor",
+  "planning_id": "machine-learning",
+  "name": "Machine Learning",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/machine-learning-minor/",
+  "source_hash": "d8a5eec4fd525f304257d6717048411190a10cc0870b657054c159e589abed74",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "core-courses-24-units-1-alternative-1",
+      "name": "Introduction to Machine Learning",
+      "heading": "Core Courses (24 units)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "10-301",
+        "10-315",
+        "07-280"
+      ],
+      "source_instruction": "Core Courses",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "core-courses-24-units-1-alternative-2",
+      "name": "Deep Reinforcement Learning & Control",
+      "heading": "Core Courses (24 units)",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "10-403",
+        "10-405",
+        "10-414",
+        "10-417",
+        "10-418",
+        "10-422"
+      ],
+      "source_instruction": "Core Courses",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "principal-courses-1",
+      "name": "Principal Courses",
+      "heading": "Principal Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "10-403",
+        "10-703",
+        "10-405",
+        "10-605",
+        "10-745",
+        "10-414",
+        "10-714",
+        "10-417",
+        "11-485",
+        "10-707",
+        "10-418",
+        "10-618",
+        "10-708",
+        "10-422",
+        "10-423",
+        "10-623",
+        "10-425",
+        "10-625",
+        "10-725",
+        "10-613",
+        "10-643",
+        "10-743",
+        "10-735",
+        "10-777",
+        "36-401"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Interdisciplinary Electives",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "02-510",
+        "03-511",
+        "10-335",
+        "11-411",
+        "11-441",
+        "11-481",
+        "11-781",
+        "11-661",
+        "11-731",
+        "11-751",
+        "11-755",
+        "11-777",
+        "15-281",
+        "15-386",
+        "15-388",
+        "15-482",
+        "16-311",
+        "16-385",
+        "16-720",
+        "16-745",
+        "16-824",
+        "16-831",
+        "17-537",
+        "36-402",
+        "36-462",
+        "36-463",
+        "36-700"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "10-500 Senior Research Project 24 Double Counting No course in the Machine Learning Minor may be counted towards another SCS minor.",
+        "(These double counting restrictions apply specifically to the Core Courses and the Electives."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 61,
+    "confidence": 0.66,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Principal Courses",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.5
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "2 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "18 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 55,
+    "extracted_unit_estimate": 42,
+    "scheduled_course_count": 37,
+    "missing_schedule_course_ids": [
+      "10-315",
+      "10-418",
+      "10-425",
+      "10-613",
+      "10-618",
+      "10-625",
+      "10-643",
+      "10-735",
+      "10-743",
+      "10-745",
+      "10-777",
+      "11-441",
+      "11-661",
+      "11-731",
+      "15-388",
+      "16-311",
+      "17-537",
+      "36-463"
+    ]
+  }
+}

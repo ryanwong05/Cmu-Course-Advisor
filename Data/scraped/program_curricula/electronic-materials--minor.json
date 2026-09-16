@@ -1,0 +1,89 @@
+{
+  "program_id": "electronic-materials--minor",
+  "planning_id": "electronic-materials",
+  "name": "Electronic Materials",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/electronic-materials-minor/",
+  "source_hash": "aa0816625e5212a41ae487177f0edb88fce8b6bd1e864477877c5acc0e33beca",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "54-units-from-the-following-courses-1-2-3",
+      "name": "54 Units from the Following Courses 1,2,3 :",
+      "heading": "54 Units from the Following Courses 1,2,3 :",
+      "choose": 21,
+      "units": 54,
+      "options": [
+        "27-100",
+        "27-201",
+        "27-211",
+        "18-100",
+        "27-202",
+        "27-212",
+        "27-432",
+        "27-545",
+        "27-433",
+        "27-445",
+        "27-542",
+        "27-533",
+        "18-220",
+        "18-410",
+        "18-614",
+        "18-617",
+        "18-619",
+        "18-817",
+        "18-300",
+        "18-310",
+        "33-225"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 54.0,
+        "course_count_estimate": 21
+      },
+      "track": null,
+      "source_categories": [
+        "54 Units from the Following Courses 1,2,3 :"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 21,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 21,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 18,
+    "missing_schedule_course_ids": [
+      "27-433",
+      "27-445",
+      "27-542"
+    ]
+  }
+}

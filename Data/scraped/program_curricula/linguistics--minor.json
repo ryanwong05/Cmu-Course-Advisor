@@ -1,0 +1,157 @@
+{
+  "program_id": "linguistics--minor",
+  "planning_id": "linguistics",
+  "name": "Linguistics",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-minor/",
+  "source_hash": "43d88811138a7f9cb244e8904c87dc2238bdb5314c333c5dcf9321d98bc2f153",
+  "fixed_courses": [
+    {
+      "id": "80-180",
+      "name": "Introduction to Linguistics",
+      "units": 9.0,
+      "source_text": "80-180 Introduction to Linguistics 9"
+    },
+    {
+      "id": "36-468",
+      "name": "Special Topics: Text Analysis",
+      "units": 9.0,
+      "source_text": "36-468 Special Topics: Text Analysis 9"
+    },
+    {
+      "id": "76-389",
+      "name": "Rhetorical Grammar",
+      "units": 9.0,
+      "source_text": "76-389 Rhetorical Grammar 9"
+    },
+    {
+      "id": "80-283",
+      "name": "It Matters How You Say It",
+      "units": 9.0,
+      "source_text": "80-283 It Matters How You Say It 9"
+    },
+    {
+      "id": "80-286",
+      "name": "Words and Word Formation: Introduction to Morphology",
+      "units": 9.0,
+      "source_text": "80-286 Words and Word Formation: Introduction to Morphology 9"
+    },
+    {
+      "id": "80-287",
+      "name": "Language Variation and Change",
+      "units": 9.0,
+      "source_text": "80-287 Language Variation and Change 9"
+    },
+    {
+      "id": "80-288",
+      "name": "Intonation: The Meaning of Linguistic Tunes",
+      "units": 9.0,
+      "source_text": "80-288 Intonation: The Meaning of Linguistic Tunes 9"
+    },
+    {
+      "id": "80-382",
+      "name": "Laboratory Phonology",
+      "units": 9.0,
+      "source_text": "80-382 Laboratory Phonology 9"
+    },
+    {
+      "id": "80-384",
+      "name": "Linguistics of Turkic Languages",
+      "units": 9.0,
+      "source_text": "80-384 Linguistics of Turkic Languages 9"
+    },
+    {
+      "id": "80-385",
+      "name": "Linguistics of Germanic Languages",
+      "units": 9.0,
+      "source_text": "80-385 Linguistics of Germanic Languages 9"
+    },
+    {
+      "id": "80-388",
+      "name": "Linguistic Typology: Diversity and Universals",
+      "units": 9.0,
+      "source_text": "80-388 Linguistic Typology: Diversity and Universals 9"
+    },
+    {
+      "id": "80-488",
+      "name": "Acoustics of Human Speech: Theory, Data, and Analysis",
+      "units": 9.0,
+      "source_text": "80-488 Acoustics of Human Speech: Theory, Data, and Analysis 9"
+    },
+    {
+      "id": "80-484",
+      "name": "Language and Thought",
+      "units": 9.0,
+      "source_text": "80-484 Language and Thought 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-27-units",
+      "name": "Core Courses 27 units",
+      "heading": "Core Courses 27 units",
+      "choose": 2,
+      "units": 27,
+      "options": [
+        "80-282",
+        "80-280",
+        "80-285",
+        "80-381",
+        "80-383"
+      ],
+      "source_instruction": "Select 2 from the following 3 options",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Select 2 from the following 3 options"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 18,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "10 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 18,
+    "extracted_unit_estimate": 144,
+    "scheduled_course_count": 8,
+    "missing_schedule_course_ids": [
+      "80-280",
+      "80-283",
+      "80-286",
+      "80-287",
+      "80-288",
+      "80-381",
+      "80-382",
+      "80-385",
+      "80-388",
+      "80-484"
+    ]
+  }
+}

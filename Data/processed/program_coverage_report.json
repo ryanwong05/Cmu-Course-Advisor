@@ -1,0 +1,2243 @@
+{
+  "catalog_year": "2026-2027",
+  "generated_at": "2026-09-16T14:10:53.448193+00:00",
+  "overall": {
+    "total": 193,
+    "planning_ready": 25,
+    "not_ready": 168,
+    "coverage_percent": 13.0
+  },
+  "by_program_type": {
+    "additional_major": {
+      "total": 17,
+      "planning_ready": 6,
+      "not_ready": 11,
+      "coverage_percent": 35.3,
+      "statuses": {
+        "directory_only": 11,
+        "planning_ready": 6
+      }
+    },
+    "minor": {
+      "total": 105,
+      "planning_ready": 8,
+      "not_ready": 97,
+      "coverage_percent": 7.6,
+      "statuses": {
+        "directory_only": 97,
+        "planning_ready": 8
+      }
+    },
+    "primary_major": {
+      "total": 71,
+      "planning_ready": 11,
+      "not_ready": 60,
+      "coverage_percent": 15.5,
+      "statuses": {
+        "directory_only": 60,
+        "planning_ready": 11
+      }
+    }
+  },
+  "curriculum_extraction": {
+    "requested": 193,
+    "parsed": 193,
+    "failed": 0,
+    "high_confidence_candidates": 98,
+    "promotion_ready": 88,
+    "needs_review": 95
+  },
+  "coverage_layers": {
+    "catalog_discovered": 193,
+    "curriculum_pages_extracted": 193,
+    "automatic_promotion_candidates": 88,
+    "verified_planner_ready": 25
+  },
+  "transfer_policy_coverage": {
+    "catalog_primary_major_count": 71,
+    "published_transfer_profile_count": 10,
+    "coverage_percent": 14.1,
+    "profile_ids": [
+      "artificial-intelligence",
+      "computational-biology",
+      "computer-science",
+      "computer-science-and-arts",
+      "electrical-and-computer-engineering",
+      "human-computer-interaction",
+      "information-systems",
+      "mechanical-engineering",
+      "robotics",
+      "stats-ml"
+    ],
+    "without_published_transfer_profile": [
+      {
+        "id": "anthropology--b-a",
+        "name": "Anthropology",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/"
+      },
+      {
+        "id": "architecture--b-a",
+        "name": "Architecture",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/"
+      },
+      {
+        "id": "architecture--b-arch",
+        "name": "Architecture",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/"
+      },
+      {
+        "id": "art--b-f-a",
+        "name": "Art",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/"
+      },
+      {
+        "id": "behavioral-economics--b-s",
+        "name": "Behavioral Economics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/"
+      },
+      {
+        "id": "biological-sciences--b-a",
+        "name": "Biological Sciences",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/"
+      },
+      {
+        "id": "biological-sciences--b-s",
+        "name": "Biological Sciences",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-bs/"
+      },
+      {
+        "id": "biological-sciences-and-psychology--b-s",
+        "name": "Biological Sciences and Psychology",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/"
+      },
+      {
+        "id": "business-administration--b-s",
+        "name": "Business Administration",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/"
+      },
+      {
+        "id": "chemical-engineering--b-s",
+        "name": "Chemical Engineering",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/"
+      },
+      {
+        "id": "chemistry--b-a",
+        "name": "Chemistry",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/"
+      },
+      {
+        "id": "chemistry--b-s",
+        "name": "Chemistry",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/"
+      },
+      {
+        "id": "chemistry-biological-chemistry-track--b-s",
+        "name": "Chemistry/Biological Chemistry Track",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/"
+      },
+      {
+        "id": "civil-engineering--b-s",
+        "name": "Civil Engineering",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/"
+      },
+      {
+        "id": "cognitive-science--b-s",
+        "name": "Cognitive Science",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/"
+      },
+      {
+        "id": "composition--b-f-a",
+        "name": "Composition",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/"
+      },
+      {
+        "id": "computational-finance--b-s",
+        "name": "Computational Finance",
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/"
+      },
+      {
+        "id": "creative-writing--b-a",
+        "name": "Creative Writing",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-ba/"
+      },
+      {
+        "id": "decision-science--b-s",
+        "name": "Decision Science",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/"
+      },
+      {
+        "id": "design--b-des",
+        "name": "Design",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/"
+      },
+      {
+        "id": "drama--b-f-a",
+        "name": "Drama",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/"
+      },
+      {
+        "id": "economics--b-a",
+        "name": "Economics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/"
+      },
+      {
+        "id": "economics--b-s",
+        "name": "Economics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/"
+      },
+      {
+        "id": "economics-and-mathematical-sciences--b-s",
+        "name": "Economics and Mathematical Sciences",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-mathematical-sciences-bs/"
+      },
+      {
+        "id": "economics-and-politics--b-s",
+        "name": "Economics and Politics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/"
+      },
+      {
+        "id": "economics-and-statistics--b-s",
+        "name": "Economics and Statistics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/"
+      },
+      {
+        "id": "electronic-music--b-f-a",
+        "name": "Electronic Music",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/"
+      },
+      {
+        "id": "engineering-studies-and-arts--b-e-s-a",
+        "name": "Engineering Studies and Arts",
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/"
+      },
+      {
+        "id": "environmental-engineering--b-s",
+        "name": "Environmental Engineering",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/"
+      },
+      {
+        "id": "ethics-history-and-public-policy--b-a-b-s",
+        "name": "Ethics, History and Public Policy",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/"
+      },
+      {
+        "id": "film-and-visual-media--b-a",
+        "name": "Film and Visual Media",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-ba/"
+      },
+      {
+        "id": "general-studies--b-a-b-s",
+        "name": "General Studies",
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/general-studies-major/"
+      },
+      {
+        "id": "global-cultures-and-emerging-technologies--b-a",
+        "name": "Global Cultures and Emerging Technologies",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/"
+      },
+      {
+        "id": "history--b-a",
+        "name": "History",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/"
+      },
+      {
+        "id": "humanities-and-arts--b-h-a",
+        "name": "Humanities and Arts",
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/"
+      },
+      {
+        "id": "international-relations-and-political-science--b-s",
+        "name": "International Relations and Political Science",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/"
+      },
+      {
+        "id": "languages-and-cultures--b-a",
+        "name": "Languages and Cultures",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/"
+      },
+      {
+        "id": "linguistics--b-a",
+        "name": "Linguistics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/"
+      },
+      {
+        "id": "literature-and-culture--b-a",
+        "name": "Literature and Culture",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/"
+      },
+      {
+        "id": "logic-and-computation--b-s",
+        "name": "Logic and Computation",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/"
+      },
+      {
+        "id": "materials-science-and-engineering--b-s",
+        "name": "Materials Science and Engineering",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/"
+      },
+      {
+        "id": "mathematical-sciences--b-a",
+        "name": "Mathematical Sciences",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/"
+      },
+      {
+        "id": "mathematical-sciences--b-s",
+        "name": "Mathematical Sciences",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/"
+      },
+      {
+        "id": "mathematical-sciences-and-economics--b-s",
+        "name": "Mathematical Sciences and Economics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/"
+      },
+      {
+        "id": "music-performance--b-f-a",
+        "name": "Music Performance",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/"
+      },
+      {
+        "id": "music-and-technology--b-s",
+        "name": "Music and Technology",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-technology-bs/"
+      },
+      {
+        "id": "neuroscience--b-s",
+        "name": "Neuroscience",
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/"
+      },
+      {
+        "id": "philosophy--b-a",
+        "name": "Philosophy",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/"
+      },
+      {
+        "id": "physics--b-a",
+        "name": "Physics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/"
+      },
+      {
+        "id": "physics--b-s",
+        "name": "Physics",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-bs/"
+      },
+      {
+        "id": "policy-and-management--b-s",
+        "name": "Policy and Management",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/"
+      },
+      {
+        "id": "political-science-security-and-technology--b-s",
+        "name": "Political Science, Security, and Technology",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/"
+      },
+      {
+        "id": "professional-writing--b-a",
+        "name": "Professional Writing",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-ba/"
+      },
+      {
+        "id": "psychology--b-a-b-s",
+        "name": "Psychology",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/"
+      },
+      {
+        "id": "psychology-and-biological-sciences--b-s",
+        "name": "Psychology and Biological Sciences",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/"
+      },
+      {
+        "id": "science-and-arts--b-s-a",
+        "name": "Science and Arts",
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/science-arts/"
+      },
+      {
+        "id": "science-technology-and-society--b-s",
+        "name": "Science, Technology and Society",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/"
+      },
+      {
+        "id": "statistics-and-data-science--b-s",
+        "name": "Statistics and Data Science",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/"
+      },
+      {
+        "id": "statistics-and-data-science-mathematical-sciences-track--b-s",
+        "name": "Statistics and Data Science (Mathematical Sciences Track)",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/"
+      },
+      {
+        "id": "statistics-and-data-science-neuroscience-track--b-s",
+        "name": "Statistics and Data Science (Neuroscience Track)",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/"
+      },
+      {
+        "id": "technical-writing--b-s",
+        "name": "Technical Writing",
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-bs/"
+      }
+    ],
+    "note": "Transfer eligibility is an admission-policy dataset; degree curriculum extraction does not automatically create these profiles."
+  },
+  "pipeline_gaps": [
+    "All primary majors, additional majors, and minors are extracted, but ambiguous catalog structures remain in the review queue.",
+    "Unit-threshold, concentration, substitution, and shared-course rules need richer normalized policy data before automatic promotion.",
+    "Internal-transfer admission policies remain a separate data source and cannot be inferred from degree curricula.",
+    "Directory-only programs must not be promoted until requirement groups and sources are validated."
+  ],
+  "not_ready_programs": {
+    "additional_major": [
+      {
+        "id": "biological-sciences--additional-major",
+        "name": "Biological Sciences",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "biomedical-engineering--additional-major",
+        "name": "Biomedical Engineering",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-engineering-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "biomedical-technology--additional-major",
+        "name": "Biomedical Technology",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-technology-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "business-administration--additional-major",
+        "name": "Business Administration",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "engineering-design-innovation-and-entrepreneurship--additional-major",
+        "name": "Engineering Design, Innovation, and Entrepreneurship",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/integratedinnovationinstitute/engineering-design-innovation-entrepreneurship-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "engineering-and-arts--additional-major",
+        "name": "Engineering and Arts",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-arts-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "engineering-and-public-policy--additional-major",
+        "name": "Engineering and Public Policy",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/engineering-public-policy-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "environmental-and-sustainability-studies--additional-major",
+        "name": "Environmental and Sustainability Studies",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "health-humanities--additional-major",
+        "name": "Health Humanities",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/health-humanities-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "physics--additional-major",
+        "name": "Physics",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "science-technology-and-public-policy--additional-major",
+        "name": "Science, Technology, and Public Policy",
+        "credential": "Additional Major",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/science-technology-public-policy-additional-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      }
+    ],
+    "minor": [
+      {
+        "id": "additive-manufacturing--minor",
+        "name": "Additive Manufacturing",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/additive-manufacturing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "african-and-african-american-studies--minor",
+        "name": "African and African American Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/african-african-american-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "american-politics-and-law--minor",
+        "name": "American Politics and Law",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/american-politics-law-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "animation-and-special-effects--minor",
+        "name": "Animation and Special Effects",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/animation-special-effects-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "anthropology--minor",
+        "name": "Anthropology",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "arabic-studies--minor",
+        "name": "Arabic Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/arabic-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "architectural-design-fabrication--minor",
+        "name": "Architectural Design Fabrication",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-design-fabrication-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "architectural-representation-and-visualization--minor",
+        "name": "Architectural Representation and Visualization",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-representation-visualization-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "architectural-technology--minor",
+        "name": "Architectural Technology",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-technology-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "architecture--minor",
+        "name": "Architecture",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "architecture-history--minor",
+        "name": "Architecture History",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-history-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "art--minor",
+        "name": "Art",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/art-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "audio-engineering--minor",
+        "name": "Audio Engineering",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/audio-engineering-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "behavioral-economics--minor",
+        "name": "Behavioral Economics",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "biological-sciences--minor",
+        "name": "Biological Sciences",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "biomedical-engineering--minor",
+        "name": "Biomedical Engineering",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/biomedical-engineering-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "building-science--minor",
+        "name": "Building Science",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/building-science-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "business-analytics-and-optimization--minor",
+        "name": "Business Analytics and Optimization",
+        "credential": "Minor",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-analytics-optimization-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "chemistry--minor",
+        "name": "Chemistry",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "chinese-studies--minor",
+        "name": "Chinese Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/chinese-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "cognitive-neuroscience--minor",
+        "name": "Cognitive Neuroscience",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-neuroscience-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "collaborative-piano--minor",
+        "name": "Collaborative Piano",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/collaborative-piano-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "colloids-polymers-and-surfaces--minor",
+        "name": "Colloids, Polymers and Surfaces",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/colloids-polymers-surfaces-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "computational-design--minor",
+        "name": "Computational Design",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/computational-design-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "computational-finance--minor",
+        "name": "Computational Finance",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "conducting--minor",
+        "name": "Conducting",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/conducting-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "creative-writing--minor",
+        "name": "Creative Writing",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "cybersecurity-and-international-conflict--minor",
+        "name": "Cybersecurity and International Conflict",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/cybersecurity-international-conflict-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "decision-making-and-intelligent-systems--minor",
+        "name": "Decision Making and Intelligent Systems",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-making-intelligent-systems-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "decision-science--minor",
+        "name": "Decision Science",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "design--minor",
+        "name": "Design",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/design-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "design-for-learning--minor",
+        "name": "Design for Learning",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/design-learning-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "discrete-mathematics-and-logic--minor",
+        "name": "Discrete Mathematics and Logic",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/discrete-mathematics-logic-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "drama--minor",
+        "name": "Drama",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/drama-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "economics--minor",
+        "name": "Economics",
+        "credential": "Minor",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/economics-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "electronic-materials--minor",
+        "name": "Electronic Materials",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/electronic-materials-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "engineering-studies--minor",
+        "name": "Engineering Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/engineering-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "environmental-and-sustainability-studies--minor",
+        "name": "Environmental and Sustainability Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "ethics--minor",
+        "name": "Ethics",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/ethics-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "film-and-visual-media--minor",
+        "name": "Film and Visual Media",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "financial-management--minor",
+        "name": "Financial Management",
+        "credential": "Minor",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/financial-management-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "game-design--minor",
+        "name": "Game Design",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/game-design-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "gender-studies--minor",
+        "name": "Gender Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/gender-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "german-studies--minor",
+        "name": "German Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/german-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "global-engineering--minor",
+        "name": "Global Engineering",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/global-engineering-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "global-french-studies--minor",
+        "name": "Global French Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-french-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "health-care-policy-and-management--minor",
+        "name": "Health Care Policy and Management",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/health-care-policy-management-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "hispanic-studies--minor",
+        "name": "Hispanic Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/hispanic-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "history--minor",
+        "name": "History",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "humanities-analytics--minor",
+        "name": "Humanities Analytics",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/humanities-analytics-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "immersive-technologies-in-arts-and-culture--minor",
+        "name": "Immersive Technologies in Arts and Culture",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/immersive-technologies-arts-culture-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "information-security-privacy-and-policy--minor",
+        "name": "Information Security, Privacy and Policy",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/information-security-privacy-policy-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "innovation-and-entrepreneurship--minor",
+        "name": "Innovation and Entrepreneurship",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/innovation-entrepreneurship-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "intelligent-environments--minor",
+        "name": "Intelligent Environments",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/intelligent-environments-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "international-relations-and-political-science--minor",
+        "name": "International Relations and Political Science",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "japanese-studies--minor",
+        "name": "Japanese Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/japanese-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "language-technologies--minor",
+        "name": "Language Technologies",
+        "credential": "Minor",
+        "home_colleges": [
+          "scs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/language-technologies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "linguistics--minor",
+        "name": "Linguistics",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "literature-and-culture--minor",
+        "name": "Literature and Culture",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "logic-and-computation--minor",
+        "name": "Logic and Computation",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "materials-science-and-engineering--minor",
+        "name": "Materials Science and Engineering",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/materials-science-engineering-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "mathematical-sciences--minor",
+        "name": "Mathematical Sciences",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "mechanical-behavior-of-materials--minor",
+        "name": "Mechanical Behavior of Materials",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/mechanical-behaviors-of-materials-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "media-design--minor",
+        "name": "Media Design",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/media-design-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "medical-decision-making--minor",
+        "name": "Medical Decision Making",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/medical-decision-making-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "military-strategy-and-international-relations--minor",
+        "name": "Military Strategy and International Relations",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/military-strategy-international-relations-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "music--minor",
+        "name": "Music",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "music-education--minor",
+        "name": "Music Education",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-education-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "music-technology--minor",
+        "name": "Music Technology",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-technology-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "neural-computation--minor",
+        "name": "Neural Computation",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neural-computation-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "neuroscience--minor",
+        "name": "Neuroscience",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/neuroscience-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "philosophy--minor",
+        "name": "Philosophy",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "photography--minor",
+        "name": "Photography",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/photography-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "physical-computing--minor",
+        "name": "Physical Computing",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/physical-computing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "physics--minor",
+        "name": "Physics",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "policy-and-management--minor",
+        "name": "Policy and Management",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "political-science-security-and-technology--minor",
+        "name": "Political Science, Security, and Technology",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "politics-and-public-policy--minor",
+        "name": "Politics and Public Policy",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/politics-public-policy-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "product-management--minor",
+        "name": "Product Management",
+        "credential": "Minor",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/product-management-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "professional-writing--minor",
+        "name": "Professional Writing",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "psychology--minor",
+        "name": "Psychology",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "rationality-uncertainty-and-choice-formal-methods--minor",
+        "name": "Rationality, Uncertainty, and Choice: Formal Methods",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/rationality-uncertainty-choice-formal-methods-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "religious-studies--minor",
+        "name": "Religious Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/religious-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "russian-studies--minor",
+        "name": "Russian Studies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/russian-studies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "science-technology-and-society--minor",
+        "name": "Science, Technology and Society",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "scientific-computing--minor",
+        "name": "Scientific Computing",
+        "credential": "Minor",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/minors/scientific-computing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "societal-computing--minor",
+        "name": "Societal Computing",
+        "credential": "Minor",
+        "home_colleges": [
+          "scs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/societal-computing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "societal-and-human-impacts-of-future-technologies--minor",
+        "name": "Societal and Human Impacts of Future Technologies",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/societal-human-impacts-future-technologies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "sociology--minor",
+        "name": "Sociology",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/sociology-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "soft-technologies--minor",
+        "name": "Soft Technologies",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/soft-technologies-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "software-engineering--minor",
+        "name": "Software Engineering",
+        "credential": "Minor",
+        "home_colleges": [
+          "scs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/software-engineering-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "sonic-arts--minor",
+        "name": "Sonic Arts",
+        "credential": "Minor",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/sonic-arts-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "statistics-and-data-science--minor",
+        "name": "Statistics and Data Science",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "tech-entrepreneurship--minor-cmu-q",
+        "name": "Tech Entrepreneurship",
+        "credential": "Minor (CMU-Q)",
+        "home_colleges": [
+          "qatar"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/qatar/tech-entrepreneurship-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "technical-writing--minor",
+        "name": "Technical Writing",
+        "credential": "Minor",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "technology-and-policy--minor",
+        "name": "Technology and Policy",
+        "credential": "Minor",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/technology-policy-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "the-history-of-the-arts--minor",
+        "name": "The History of the Arts",
+        "credential": "Minor",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/history-arts-minor/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      }
+    ],
+    "primary_major": [
+      {
+        "id": "anthropology--b-a",
+        "name": "Anthropology",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "architecture--b-a",
+        "name": "Architecture",
+        "credential": "B.A.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "architecture--b-arch",
+        "name": "Architecture",
+        "credential": "B.Arch.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "art--b-f-a",
+        "name": "Art",
+        "credential": "B.F.A.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "behavioral-economics--b-s",
+        "name": "Behavioral Economics",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "biological-sciences--b-a",
+        "name": "Biological Sciences",
+        "credential": "B.A.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "biological-sciences--b-s",
+        "name": "Biological Sciences",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "biological-sciences-and-psychology--b-s",
+        "name": "Biological Sciences and Psychology",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "business-administration--b-s",
+        "name": "Business Administration",
+        "credential": "B.S.",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "chemical-engineering--b-s",
+        "name": "Chemical Engineering",
+        "credential": "B.S.",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "chemistry--b-a",
+        "name": "Chemistry",
+        "credential": "B.A.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "chemistry--b-s",
+        "name": "Chemistry",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "chemistry-biological-chemistry-track--b-s",
+        "name": "Chemistry/Biological Chemistry Track",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "civil-engineering--b-s",
+        "name": "Civil Engineering",
+        "credential": "B.S.",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "cognitive-science--b-s",
+        "name": "Cognitive Science",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "composition--b-f-a",
+        "name": "Composition",
+        "credential": "B.F.A.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "computational-finance--b-s",
+        "name": "Computational Finance",
+        "credential": "B.S.",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "creative-writing--b-a",
+        "name": "Creative Writing",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "decision-science--b-s",
+        "name": "Decision Science",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "design--b-des",
+        "name": "Design",
+        "credential": "B.Des.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "drama--b-f-a",
+        "name": "Drama",
+        "credential": "B.F.A.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "economics--b-a",
+        "name": "Economics",
+        "credential": "B.A.",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "economics--b-s",
+        "name": "Economics",
+        "credential": "B.S.",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "economics-and-mathematical-sciences--b-s",
+        "name": "Economics and Mathematical Sciences",
+        "credential": "B.S.",
+        "home_colleges": [
+          "tepper"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-mathematical-sciences-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "economics-and-politics--b-s",
+        "name": "Economics and Politics",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "economics-and-statistics--b-s",
+        "name": "Economics and Statistics",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "electronic-music--b-f-a",
+        "name": "Electronic Music",
+        "credential": "B.F.A",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "engineering-studies-and-arts--b-e-s-a",
+        "name": "Engineering Studies and Arts",
+        "credential": "B.E.S.A.",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "environmental-engineering--b-s",
+        "name": "Environmental Engineering",
+        "credential": "B.S.",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "ethics-history-and-public-policy--b-a-b-s",
+        "name": "Ethics, History and Public Policy",
+        "credential": "B.A/B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "film-and-visual-media--b-a",
+        "name": "Film and Visual Media",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "general-studies--b-a-b-s",
+        "name": "General Studies",
+        "credential": "B.A./B.S.",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/general-studies-major/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "global-cultures-and-emerging-technologies--b-a",
+        "name": "Global Cultures and Emerging Technologies",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "history--b-a",
+        "name": "History",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "humanities-and-arts--b-h-a",
+        "name": "Humanities and Arts",
+        "credential": "B.H.A.",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "international-relations-and-political-science--b-s",
+        "name": "International Relations and Political Science",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "languages-and-cultures--b-a",
+        "name": "Languages and Cultures",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "linguistics--b-a",
+        "name": "Linguistics",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "literature-and-culture--b-a",
+        "name": "Literature and Culture",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "materials-science-and-engineering--b-s",
+        "name": "Materials Science and Engineering",
+        "credential": "B.S.",
+        "home_colleges": [
+          "engineering"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "mathematical-sciences--b-a",
+        "name": "Mathematical Sciences",
+        "credential": "B.A.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "mathematical-sciences--b-s",
+        "name": "Mathematical Sciences",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "mathematical-sciences-and-economics--b-s",
+        "name": "Mathematical Sciences and Economics",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "music-performance--b-f-a",
+        "name": "Music Performance",
+        "credential": "B.F.A.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "music-and-technology--b-s",
+        "name": "Music and Technology",
+        "credential": "B.S.",
+        "home_colleges": [
+          "cfa"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-technology-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "neuroscience--b-s",
+        "name": "Neuroscience",
+        "credential": "B.S.",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "philosophy--b-a",
+        "name": "Philosophy",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "physics--b-a",
+        "name": "Physics",
+        "credential": "B.A.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "physics--b-s",
+        "name": "Physics",
+        "credential": "B.S.",
+        "home_colleges": [
+          "mcs"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "policy-and-management--b-s",
+        "name": "Policy and Management",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "political-science-security-and-technology--b-s",
+        "name": "Political Science, Security, and Technology",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "professional-writing--b-a",
+        "name": "Professional Writing",
+        "credential": "B.A.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-ba/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "psychology--b-a-b-s",
+        "name": "Psychology",
+        "credential": "B.A./B.S",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "psychology-and-biological-sciences--b-s",
+        "name": "Psychology and Biological Sciences",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "science-and-arts--b-s-a",
+        "name": "Science and Arts",
+        "credential": "B.S.A",
+        "home_colleges": [
+          "intercollege"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/science-arts/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "science-technology-and-society--b-s",
+        "name": "Science, Technology and Society",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      },
+      {
+        "id": "statistics-and-data-science--b-s",
+        "name": "Statistics and Data Science",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "statistics-and-data-science-mathematical-sciences-track--b-s",
+        "name": "Statistics and Data Science (Mathematical Sciences Track)",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "statistics-and-data-science-neuroscience-track--b-s",
+        "name": "Statistics and Data Science (Neuroscience Track)",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "promotion_candidate"
+      },
+      {
+        "id": "technical-writing--b-s",
+        "name": "Technical Writing",
+        "credential": "B.S.",
+        "home_colleges": [
+          "dietrich"
+        ],
+        "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-bs/",
+        "planning_status": "directory_only",
+        "curriculum_extraction_status": "needs_review"
+      }
+    ]
+  }
+}

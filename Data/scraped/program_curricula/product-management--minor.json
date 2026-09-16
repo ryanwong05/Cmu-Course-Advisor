@@ -1,0 +1,123 @@
+{
+  "program_id": "product-management--minor",
+  "planning_id": "product-management",
+  "name": "Product Management",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/product-management-minor/",
+  "source_hash": "1ba2b601fa35e9d6111451aec2cce7d39a58f467d1a6e1584057126e92b21775",
+  "fixed_courses": [
+    {
+      "id": "70-381",
+      "name": "Marketing I",
+      "units": 9.0,
+      "source_text": "70-381 Marketing I 9"
+    },
+    {
+      "id": "70-387",
+      "name": "Strategy for High-Tech Products and Services",
+      "units": 9.0,
+      "source_text": "70-387 Strategy for High-Tech Products and Services 9"
+    },
+    {
+      "id": "70-452",
+      "name": "Introduction to Product Management",
+      "units": 9.0,
+      "source_text": "70-452 Introduction to Product Management 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "required-1-alternative-4",
+      "name": "Principles of Microeconomics *",
+      "heading": "Required:",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "course-in-design-thinking-choose-one-1",
+      "name": "Course in Design Thinking ( choose one ):",
+      "heading": "Course in Design Thinking ( choose one ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-389",
+        "05-391",
+        "05-410"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "marketing-course-choose-one-1",
+      "name": "Marketing Course ( choose one ):",
+      "heading": "Marketing Course ( choose one ):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-385",
+        "70-481",
+        "70-482",
+        "70-483"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Course in Design Thinking ( choose one ): 70-389 Design Thinking with AI 9 05-391 Designing Human Centered Software 12 05-410 User-Centered Research and Evaluation 12 Marketing Course ( choose one ): 70-385 Consumer Behavior 9 70-481 Marketing Research 9 70-482 Pricing Strategy 9 70-483 Advertising and Marketing Communications 9 Double-Counting While there are no double counting restrictions between the minor and the student's home college general education requirements, only one minor course may double-count with any other major or minor requirements.",
+        "The Minor in Operations and Supply Chain Management allows an additional double-count for a total of 2 courses that may double-count with any other major or minor requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 12,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 12,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 11,
+    "missing_schedule_course_ids": [
+      "70-482"
+    ]
+  }
+}

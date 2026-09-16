@@ -1,16 +1,18 @@
-# Major curriculum pipeline
+# Program curriculum pipeline
 
-This pipeline indexes every primary undergraduate major in the program directory
-from its official CMU catalog page. Extraction and publication are intentionally
-separate: a successful download does not make a curriculum verified.
+This pipeline indexes primary majors, additional majors, and minors from their
+official CMU catalog pages. Extraction and publication are intentionally separate:
+a successful download does not make a curriculum verified.
 
 ## Current coverage audit
 
-The September 2026 full run downloaded and parsed 71 primary-major pages with
-zero request failures. Only four raw extracts passed the original generic
-promotion gate. This low number is a parser-quality result, not a scraping
-failure: catalog pages mix required-course tables, OR choices, tracks, sample
-curricula, recommended schedules, and narrative exceptions in different ways.
+The September 2026 full run downloaded and parsed all 193 catalog programs with
+zero request failures: 71 primary majors, 17 additional majors, and 105 minors.
+Eighty-eight extracts passed the strict automatic candidate gate: 36 primary
+majors, 10 additional majors, and 42 minors. This is not the live
+planning-coverage number: these records still require human review before
+publication. The remaining records are available in the review queue rather
+than being silently presented as verified policy.
 
 The live planner therefore uses a smaller curated layer in
 `Data/processed/requirements.json`. Logic and Computation is now included in
@@ -22,6 +24,7 @@ in an elective pool as required.
 
 ```bash
 venv/bin/python Scripts/data_pipeline/scrape_major_curricula.py
+venv/bin/python Scripts/data_pipeline/scrape_major_curricula.py --program-type all
 ```
 
 Use `--offline` to reparse the cached official pages without downloading them
@@ -33,6 +36,11 @@ again. Use `--limit N` for a small development run.
 - `Data/scraped/major_curricula/*.json`: per-program extracted records.
 - `Data/processed/major_curriculum_registry.json`: normalized full registry.
 - `Data/processed/major_curriculum_report.json`: run totals and review queue.
+- `Data/scraped/program_curricula/*`: all-program source snapshots and extracts.
+- `Data/processed/program_curriculum_registry.json`: normalized all-program registry.
+- `Data/processed/program_curriculum_report.json`: all-program validation report.
+- `Data/processed/program_coverage_report.json`: catalog, extraction, candidate,
+  and verified-planner coverage layers.
 
 ## Publication gate
 
@@ -50,9 +58,11 @@ Generate engine-shaped review candidates with:
 
 ```bash
 venv/bin/python Scripts/data_pipeline/build_major_template_candidates.py
+venv/bin/python Scripts/data_pipeline/build_major_template_candidates.py --all
 ```
 
-This writes `Data/processed/major_template_candidates.json`. Existing curated
+The second command writes `Data/processed/program_template_candidates.json`.
+Existing curated
 program profiles and verified major templates are skipped. Candidate records stay
 `review_required` until their groups, unit totals, and program-specific policies
 have been checked against the official source.
@@ -61,7 +71,8 @@ have been checked against the official source.
 
 1. Scrape the complete official directory and cache every source page.
 2. Parse tables into typed rules: `required`, `choose_n`, `one_of`, `track`,
-   `minimum_units`, `prerequisite`, and `sample_only`.
+   `minimum_units`, `substitution`, `cross_listed`, `prerequisite`, and
+   `sample_only`. Preserve double-counting prose as reviewable policy signals.
 3. Reject impossible totals, duplicated requirements, contaminated sample
    schedules, empty options, and unknown course identifiers.
 4. Compare each new source hash with the previous catalog snapshot.

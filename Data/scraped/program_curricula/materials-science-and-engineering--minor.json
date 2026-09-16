@@ -1,0 +1,107 @@
+{
+  "program_id": "materials-science-and-engineering--minor",
+  "planning_id": "materials-science-and-engineering",
+  "name": "Materials Science and Engineering",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/materials-science-engineering-minor/",
+  "source_hash": "c563a4cb965f11a2e238105ecd9ef7e0acb71f4e4b71036eef97dd64655df538",
+  "fixed_courses": [
+    {
+      "id": "27-211",
+      "name": "Structure of Materials (Minor Option)",
+      "units": 6.0,
+      "source_text": "27-211 Structure of Materials (Minor Option) 6"
+    },
+    {
+      "id": "27-212",
+      "name": "Defects in Materials (Minor Option)",
+      "units": 6.0,
+      "source_text": "27-212 Defects in Materials (Minor Option) 6"
+    },
+    {
+      "id": "27-227",
+      "name": "Phase Relations and Diagrams (Minor Option)",
+      "units": 9.0,
+      "source_text": "27-227 Phase Relations and Diagrams (Minor Option) 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "elective-courses-24-units-minimum",
+      "name": "Elective Courses 24 units (minimum)",
+      "heading": "Elective Courses 24 units (minimum)",
+      "choose": 1,
+      "units": 24,
+      "options": [
+        "27-100",
+        "27-301",
+        "27-570",
+        "27-477",
+        "27-357",
+        "27-367",
+        "27-433",
+        "27-432",
+        "27-421",
+        "27-445",
+        "27-591",
+        "27-454",
+        "27-533",
+        "27-555",
+        "27-565",
+        "27-542",
+        "27-592",
+        "42-444"
+      ],
+      "source_instruction": "Select a minimum of 24 units from the following list:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 24.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Select a minimum of 24 units from the following list"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 21,
+    "confidence": 0.79,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Elective Courses 24 units (minimum)"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 21,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "27-433",
+      "27-445",
+      "27-542",
+      "27-591",
+      "27-592"
+    ]
+  }
+}

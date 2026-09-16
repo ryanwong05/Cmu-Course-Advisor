@@ -6,6 +6,22 @@
     "data-analysis": ["05", "10", "36"]
   },
 
+  "elective_category_groups": {
+    "humanities": {
+      "76": "English and Writing",
+      "79": "History",
+      "80": "Philosophy",
+      "82": "Languages, Cultures, and Applied Linguistics"
+    },
+    "social-sciences": {
+      "73": "Economics",
+      "79": "History and Anthropology",
+      "84": "Strategy, Technology, and Policy",
+      "85": "Psychology",
+      "88": "Social and Decision Sciences"
+    }
+  },
+
   "program_elective_prefixes": {
     "stats-ml": ["10", "15", "21", "36"],
     "mechanical-engineering": ["24"],

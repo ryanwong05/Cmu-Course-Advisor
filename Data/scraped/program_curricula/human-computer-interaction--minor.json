@@ -1,0 +1,81 @@
+{
+  "program_id": "human-computer-interaction--minor",
+  "planning_id": "human-computer-interaction",
+  "name": "Human Computer Interaction",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/human-computer-interaction-minor/",
+  "source_hash": "f1e17f7ee03952ad79b978b0f1c72dc471b808bea39b9d5d5f8cb029e0ede0f6",
+  "fixed_courses": [
+    {
+      "id": "05-391",
+      "name": "Designing Human Centered Software",
+      "units": 12.0,
+      "source_text": "05-391 Designing Human Centered Software 12"
+    },
+    {
+      "id": "05-360",
+      "name": "Interaction Design Fundamentals",
+      "units": 12.0,
+      "source_text": "05-360 Interaction Design Fundamentals 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "prerequisite-select-one-1",
+      "name": "Prerequisite (select one)",
+      "heading": "Prerequisite (select one)",
+      "choose": 1,
+      "units": 10,
+      "options": [
+        "15-110",
+        "15-112",
+        "15-121",
+        "15-104",
+        "02-120"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "All 05-xxx courses are pre-approved as HCI electives; however, core courses cannot double-count as electives.",
+        "Double Counting Students may double count up to two (2) of the required core and elective courses (prerequisite courses do not apply to the double-counting rule) with their primary major."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 7,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 7,
+    "extracted_unit_estimate": 34,
+    "scheduled_course_count": 6,
+    "missing_schedule_course_ids": [
+      "15-104"
+    ]
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "program_id": "artificial-intelligence--minor",
+  "planning_id": "artificial-intelligence",
+  "name": "Artificial Intelligence",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/artificial-intelligence-minor/",
+  "source_hash": "4643ddd8bcbccb3ac0be09f4eadb776a758e732591e0fcec20b807a8ff3331cc",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "prerequisites-1",
+      "name": "(4 courses)",
+      "heading": "Prerequisites",
+      "choose": 4,
+      "units": 40,
+      "options": [
+        "15-121",
+        "15-122",
+        "21-112",
+        "21-120",
+        "21-259",
+        "21-127",
+        "21-128",
+        "15-151",
+        "21-240",
+        "21-241"
+      ],
+      "source_instruction": "(4 courses)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 4
+      },
+      "track": null
+    },
+    {
+      "id": "required-core-courses-1",
+      "name": "(3 courses)",
+      "heading": "Required Core Courses",
+      "choose": 3,
+      "units": 36,
+      "options": [
+        "15-259",
+        "21-325",
+        "21-425",
+        "36-218",
+        "36-225",
+        "36-235",
+        "07-280",
+        "07-380"
+      ],
+      "source_instruction": "(3 courses)",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 3
+      },
+      "track": null
+    },
+    {
+      "id": "technical-electives-1",
+      "name": "(2 courses from any of the three areas)",
+      "heading": "Technical Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-386",
+        "15-482",
+        "15-494",
+        "16-350",
+        "16-362",
+        "16-384",
+        "85-213",
+        "85-412",
+        "85-419",
+        "85-420",
+        "85-472",
+        "10-403",
+        "10-405",
+        "10-414",
+        "10-417",
+        "10-418",
+        "10-422",
+        "10-423",
+        "10-424",
+        "10-425",
+        "11-441",
+        "11-485",
+        "15-388",
+        "67-364",
+        "36-401",
+        "36-402",
+        "11-411",
+        "11-442",
+        "11-492",
+        "15-387",
+        "15-463",
+        "16-385",
+        "85-370",
+        "85-408"
+      ],
+      "source_instruction": "(2 courses from any of the three areas)",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "societal-aspects-of-ai-1",
+      "name": "(1 course from one of the two cluster areas)",
+      "heading": "Societal Aspects of AI",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "05-317",
+        "05-318",
+        "05-391",
+        "16-467",
+        "16-161",
+        "16-735",
+        "17-200",
+        "79-302",
+        "80-249",
+        "88-230",
+        "88-275"
+      ],
+      "source_instruction": "(1 course from one of the two cluster areas)",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Students pursuing a minor in AI can double count, at most, two courses total from the AI course requirements (not counting the prerequisite courses) towards all other majors and minors they're pursuing."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 63,
+    "confidence": 0.66,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Technical Electives",
+      "Assumed choose-one for ambiguous section: Societal Aspects of AI",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.5
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "2 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "12 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 63,
+    "extracted_unit_estimate": 94,
+    "scheduled_course_count": 51,
+    "missing_schedule_course_ids": [
+      "10-418",
+      "10-424",
+      "10-425",
+      "11-441",
+      "15-388",
+      "16-161",
+      "16-735",
+      "17-200",
+      "85-408",
+      "85-412",
+      "85-420",
+      "88-275"
+    ]
+  }
+}

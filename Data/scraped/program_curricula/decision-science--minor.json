@@ -1,0 +1,81 @@
+{
+  "program_id": "decision-science--minor",
+  "planning_id": "decision-science",
+  "name": "Decision Science",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-minor/",
+  "source_hash": "8259d16df4246bc7915c8e4e945b843c25a2e39d91e96e0adcb5f4fab689ebd9",
+  "fixed_courses": [
+    {
+      "id": "88-120",
+      "name": "Reason, Passion and Cognition",
+      "units": 9.0,
+      "source_text": "88-120 Reason, Passion and Cognition 9"
+    },
+    {
+      "id": "88-223",
+      "name": "Decision Analysis",
+      "units": 12.0,
+      "source_text": "88-223 Decision Analysis 12"
+    },
+    {
+      "id": "88-302",
+      "name": "Behavioral Decision Making",
+      "units": 9.0,
+      "source_text": "88-302 Behavioral Decision Making 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-courses-39-units-1-alternative-1",
+      "name": "Principles of Microeconomics",
+      "heading": "Core Courses 39 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Students may double-count two courses with another major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 5,
+    "confidence": 0.75,
+    "status": "needs_review",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 5,
+    "extracted_unit_estimate": 39,
+    "scheduled_course_count": 5,
+    "missing_schedule_course_ids": []
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "program_id": "political-science-security-and-technology--minor",
+  "planning_id": "political-science-security-and-technology",
+  "name": "Political Science, Security, and Technology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-minor/",
+  "source_hash": "cb9e6926258e86969bc3bbbecc925f8128b0df3acf8110be91ca2b91e21016b0",
+  "fixed_courses": [
+    {
+      "id": "84-101",
+      "name": "Introduction to Political Science",
+      "units": 9.0,
+      "source_text": "84-101 Introduction to Political Science 9"
+    },
+    {
+      "id": "84-274",
+      "name": "An Introduction to Technology and War",
+      "units": 9.0,
+      "source_text": "84-274 An Introduction to Technology and War 9"
+    },
+    {
+      "id": "84-314",
+      "name": "Politics, Technological Change, and Economic Growth",
+      "units": 9.0,
+      "source_text": "84-314 Politics, Technological Change, and Economic Growth 9"
+    },
+    {
+      "id": "84-330",
+      "name": "Race for the Future: US-China Tech Competition",
+      "units": 6.0,
+      "source_text": "84-330 Race for the Future: US-China Tech Competition 6"
+    },
+    {
+      "id": "84-343",
+      "name": "Offensive Cyber: Law & Policy",
+      "units": 6.0,
+      "source_text": "84-343 Offensive Cyber: Law & Policy 6"
+    },
+    {
+      "id": "84-345",
+      "name": "Hackers, the Law, & Policy Responses",
+      "units": 6.0,
+      "source_text": "84-345 Hackers, the Law, & Policy Responses 6"
+    },
+    {
+      "id": "84-347",
+      "name": "Congress & National Security",
+      "units": 9.0,
+      "source_text": "84-347 Congress & National Security 9"
+    },
+    {
+      "id": "84-349",
+      "name": "Digital Diplomacy: Cybersecurity Challenges and Global Governance",
+      "units": 9.0,
+      "source_text": "84-349 Digital Diplomacy: Cybersecurity Challenges and Global Governance 9"
+    },
+    {
+      "id": "84-350",
+      "name": "A Strategist's Introduction to Artificial Intelligence",
+      "units": 9.0,
+      "source_text": "84-350 A Strategist's Introduction to Artificial Intelligence 9"
+    },
+    {
+      "id": "84-353",
+      "name": "US-China Strategic Stability",
+      "units": 6.0,
+      "source_text": "84-353 US-China Strategic Stability 6"
+    },
+    {
+      "id": "84-356",
+      "name": "Applied Political Data Analytics",
+      "units": 9.0,
+      "source_text": "84-356 Applied Political Data Analytics 9"
+    },
+    {
+      "id": "84-363",
+      "name": "Click. Hack. Rule: Understanding the Power & Peril of Cyber Conflict",
+      "units": 9.0,
+      "source_text": "84-363 Click. Hack. Rule: Understanding the Power & Peril of Cyber Conflict 9"
+    },
+    {
+      "id": "84-368",
+      "name": "Technology Ethics",
+      "units": 9.0,
+      "source_text": "84-368 Technology Ethics 9"
+    },
+    {
+      "id": "84-370",
+      "name": "Nuclear Security & Arms Control",
+      "units": 9.0,
+      "source_text": "84-370 Nuclear Security & Arms Control 9"
+    },
+    {
+      "id": "84-371",
+      "name": "International Governance of Artificial Intelligence",
+      "units": 9.0,
+      "source_text": "84-371 International Governance of Artificial Intelligence 9"
+    },
+    {
+      "id": "84-375",
+      "name": "Geopolitics of Innovation",
+      "units": 9.0,
+      "source_text": "84-375 Geopolitics of Innovation 9"
+    },
+    {
+      "id": "84-383",
+      "name": "National Cyber Policy & Strategy",
+      "units": 6.0,
+      "source_text": "84-383 National Cyber Policy & Strategy 6"
+    },
+    {
+      "id": "84-387",
+      "name": "Remote Systems and the Cyber Domain in Conflict",
+      "units": 9.0,
+      "source_text": "84-387 Remote Systems and the Cyber Domain in Conflict 9"
+    },
+    {
+      "id": "84-405",
+      "name": "The Future of Warfare",
+      "units": 9.0,
+      "source_text": "84-405 The Future of Warfare 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "political-science-core-18-units",
+      "name": "Political Science Core 18 units",
+      "heading": "Political Science Core 18 units",
+      "choose": 1,
+      "units": 18,
+      "options": [
+        "84-104",
+        "84-226",
+        "84-275"
+      ],
+      "source_instruction": "Students must complete one of the following courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete one of the following courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Curriculum A maximum of two courses may double count between the minor in Politics and Public Policy and another major or minor.",
+        "Unlimited double counting is permitted with General Education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 22,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 174,
+    "scheduled_course_count": 21,
+    "missing_schedule_course_ids": [
+      "84-349"
+    ]
+  }
+}

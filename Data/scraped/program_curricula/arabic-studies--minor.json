@@ -1,0 +1,292 @@
+{
+  "program_id": "arabic-studies--minor",
+  "planning_id": "arabic-studies",
+  "name": "Arabic Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/arabic-studies-minor/",
+  "source_hash": "aaa701a995e5b06e9a22fec40b9d8f76fb11e2bbd26d5525c3f151485c9326fd",
+  "fixed_courses": [
+    {
+      "id": "19-411",
+      "name": "Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech",
+      "units": 9.0,
+      "source_text": "19-411 Science and Innovation Leadership for the 21st Century: Firms, Nations, and Tech 9"
+    },
+    {
+      "id": "85-421",
+      "name": "Language and Thought",
+      "units": 9.0,
+      "source_text": "85-421 Language and Thought 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "1-foundational-courses-in-arabic-studies-5-courses-45-51-units",
+      "name": "1. Foundational Courses in Arabic Studies (5 courses, 45-51 units)",
+      "heading": "1. Foundational Courses in Arabic Studies (5 courses, 45-51 units)",
+      "choose": 5,
+      "units": 51,
+      "options": [
+        "82-211",
+        "82-212",
+        "82-311",
+        "82-312",
+        "82-411",
+        "82-412",
+        "82-511",
+        "82-512"
+      ],
+      "source_instruction": "Complete 5 courses.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 51.0,
+        "course_count_estimate": 5
+      },
+      "track": null,
+      "source_categories": [
+        "Complete 5 courses."
+      ]
+    },
+    {
+      "id": "arabic-studies-electives-1",
+      "name": "Arabic Studies Electives",
+      "heading": "Arabic Studies Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "82-117",
+        "82-118",
+        "82-313",
+        "82-314",
+        "82-411",
+        "82-412",
+        "82-417",
+        "82-505",
+        "82-511",
+        "82-512"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Architecture",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "48-240",
+        "48-315"
+      ],
+      "source_instruction": "Architecture",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Business Administration",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-321",
+        "70-342",
+        "70-365"
+      ],
+      "source_instruction": "Business Administration",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "English",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-318",
+        "76-386",
+        "76-484",
+        "76-491"
+      ],
+      "source_instruction": "English",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "History",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "79-229",
+        "79-230",
+        "79-302"
+      ],
+      "source_instruction": "History",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Institute for Politics and Strategy",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "84-275",
+        "84-310",
+        "84-322",
+        "84-323",
+        "84-362",
+        "84-389"
+      ],
+      "source_instruction": "Institute for Politics and Strategy",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Languages, Cultures, and Applied Linguistics",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "82-114",
+        "82-214",
+        "82-215",
+        "82-216",
+        "82-280",
+        "82-282",
+        "82-283",
+        "82-300",
+        "82-313",
+        "82-314",
+        "82-383",
+        "82-411",
+        "82-412",
+        "82-480",
+        "82-505"
+      ],
+      "source_instruction": "Languages, Cultures, and Applied Linguistics",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "interdisciplinary-electives-1",
+      "name": "Philosophy",
+      "heading": "Interdisciplinary Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "80-180",
+        "80-280",
+        "80-282",
+        "80-381",
+        "80-383",
+        "80-136",
+        "80-244",
+        "80-324",
+        "80-381"
+      ],
+      "source_instruction": "Philosophy",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Students may double count two courses taken for the Arabic Studies minor that are also being used to fulfill the requirements of other majors, minors, and programs.",
+        "This does not include double-counting with General Education requirements, which has no limit."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 11,
+    "course_references": 62,
+    "confidence": 0.73,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Arabic Studies Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives",
+      "Assumed choose-one for ambiguous section: Interdisciplinary Electives"
+    ],
+    "explicit_group_ratio": 0.11
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "8 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "20 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 52,
+    "extracted_unit_estimate": 132,
+    "scheduled_course_count": 32,
+    "missing_schedule_course_ids": [
+      "19-411",
+      "70-365",
+      "76-318",
+      "76-386",
+      "76-484",
+      "76-491",
+      "79-229",
+      "80-136",
+      "80-280",
+      "80-324",
+      "80-381",
+      "82-114",
+      "82-117",
+      "82-118",
+      "82-214",
+      "82-215",
+      "82-216",
+      "82-300",
+      "82-417",
+      "85-421"
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "program_id": "game-design--minor",
+  "planning_id": "game-design",
+  "name": "Game Design",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/game-design-minor/",
+  "source_hash": "c12e35a1e217721c2d277b92a0a21f8912b2b7b82d1e681df23f84cd0174ab6a",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "one-computing-course-minimum-of-9-units",
+      "name": "One Computing Course - Minimum of 9 Units",
+      "heading": "One Computing Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "60-212"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Computing Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "one-ideate-portal-course-minimum-of-9-units",
+      "name": "One IDeATe Portal Course - Minimum of 9 Units",
+      "heading": "One IDeATe Portal Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "53-322",
+        "62-150"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One IDeATe Portal Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "ideate-game-design-courses-minimum-of-27-units",
+      "name": "IDeATe Game Design Courses - Minimum of 27 Units",
+      "heading": "IDeATe Game Design Courses - Minimum of 27 Units",
+      "choose": 2,
+      "units": 27,
+      "options": [
+        "05-418",
+        "05-499",
+        "15-466",
+        "53-325",
+        "53-353",
+        "53-354",
+        "53-362",
+        "53-371",
+        "76-368",
+        "53-409",
+        "53-451",
+        "53-471",
+        "53-472",
+        "60-419"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "IDeATe Game Design Courses - Minimum of 27 Units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Students may double-count up to two of their Game Design minor courses toward requirements for other majors or minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 20,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 2 choices from an explicit 27-unit rule: IDeATe Game Design Courses - Minimum of 27 Units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 20,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "53-371",
+      "53-472",
+      "76-368"
+    ]
+  }
+}

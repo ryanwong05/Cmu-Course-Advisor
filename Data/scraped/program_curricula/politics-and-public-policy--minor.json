@@ -1,0 +1,160 @@
+{
+  "program_id": "politics-and-public-policy--minor",
+  "planning_id": "politics-and-public-policy",
+  "name": "Politics and Public Policy",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/politics-public-policy-minor/",
+  "source_hash": "1c25e9bb48d0a48a8ffdce25009c6d16050e192eb19808c81cb5ba17b90ce9b2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "foundational-course-9-units",
+      "name": "Foundational Course 9 units",
+      "heading": "Foundational Course 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "84-101",
+        "84-104",
+        "84-226",
+        "84-275"
+      ],
+      "source_instruction": "Students select one course (9 units) from the following list of courses offered at Carnegie Mellon University’s Pittsburgh or Qatar campus. Students may take this course before or after participating in the CMU/WSP.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Students select one course (9 units) from the following list of courses offered at Carnegie Mellon University’s Pittsburgh or Qatar campus. Students may take this course before or after participating in the CMU/WSP."
+      ]
+    },
+    {
+      "id": "data-science-economics-requirement-9-units",
+      "name": "Data Science/Economics Requirement 9 units",
+      "heading": "Data Science/Economics Requirement 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "84-110",
+        "36-202",
+        "73-102",
+        "73-103",
+        "73-104"
+      ],
+      "source_instruction": "Students must complete one course (9 units) from the following list of courses offered Carnegie Mellon University’s Pittsburgh or Qatar campus. Students may take this course before or after participating in the CMU/WSP.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete one course (9 units) from the following list of courses offered Carnegie Mellon University’s Pittsburgh or Qatar campus. Students may take this course before or after participating in the CMU/WSP."
+      ]
+    },
+    {
+      "id": "internship-24-units",
+      "name": "Internship 24 units",
+      "heading": "Internship 24 units",
+      "choose": 1,
+      "units": 24,
+      "options": [
+        "84-360"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 24.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Internship 24 units"
+      ]
+    },
+    {
+      "id": "seminar-on-public-policy-research-writing-and-implementation-12-units",
+      "name": "Seminar on Public Policy Research, Writing, and Implementation 12 units",
+      "heading": "Seminar on Public Policy Research, Writing, and Implementation 12 units",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "84-336",
+        "84-339"
+      ],
+      "source_instruction": "Full semester course. Options vary by semester. Students enroll in one course from the following list:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 12.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Full semester course. Options vary by semester. Students enroll in one course from the following list"
+      ]
+    },
+    {
+      "id": "seminars-on-american-politics-governance-institutions-and-law-12-units",
+      "name": "Seminars on American Politics, Governance, Institutions, and Law 12 units",
+      "heading": "Seminars on American Politics, Governance, Institutions, and Law 12 units",
+      "choose": 2,
+      "units": 12,
+      "options": [
+        "84-332",
+        "84-338"
+      ],
+      "source_instruction": "Students enroll in one course in each mini during the semester they are in Washington, DC, for a total of 2 seminars and 12 units.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 12.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Students enroll in one course in each mini during the semester they are in Washington, DC, for a total of 2 seminars and 12 units."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": true,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "84-332 Contemporary US Constitutional Law Issues 6 84-338 Analysis of US Presidential Powers 6 Double Counting Students may double count a maximum of two courses with another major or minor.",
+        "Unlimited double counting is permitted with general education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 14,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 1 choices from an explicit 24-unit rule: Internship 24 units",
+      "Inferred 1 choices from an explicit 12-unit rule: Seminar on Public Policy Research, Writing, and Implementation 12 units",
+      "Inferred 2 choices from an explicit 12-unit rule: Seminars on American Politics, Governance, Institutions, and Law 12 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 14,
+    "extracted_unit_estimate": 66,
+    "scheduled_course_count": 14,
+    "missing_schedule_course_ids": []
+  }
+}

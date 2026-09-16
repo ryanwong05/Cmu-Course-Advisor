@@ -1,0 +1,121 @@
+{
+  "program_id": "design-for-learning--minor",
+  "planning_id": "design-for-learning",
+  "name": "Design for Learning",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/design-learning-minor/",
+  "source_hash": "bb9481b3da62d036b9fa14d5508a4985d13963ba7b86bb23fa3d2368330b39ab",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "one-computing-course-minimum-of-9-units",
+      "name": "One Computing Course - Minimum of 9 Units",
+      "heading": "One Computing Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "60-212"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Computing Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "one-ideate-portal-course-minimum-of-9-units",
+      "name": "One IDeATe Portal Course - Minimum of 9 Units",
+      "heading": "One IDeATe Portal Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "99-361"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One IDeATe Portal Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "ideate-design-for-learning-courses-minimum-of-27-units",
+      "name": "IDeATe Design for Learning Courses - Minimum of 27 Units",
+      "heading": "IDeATe Design for Learning Courses - Minimum of 27 Units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "05-291",
+        "05-292",
+        "05-418",
+        "05-432",
+        "05-738",
+        "05-823",
+        "51-486",
+        "99-362"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "IDeATe Design for Learning Courses - Minimum of 27 Units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Students may double-count up to two of their Design for Learning minor courses toward requirements for other majors and minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 13,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 3 choices from an explicit 27-unit rule: IDeATe Design for Learning Courses - Minimum of 27 Units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 13,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 11,
+    "missing_schedule_course_ids": [
+      "05-291",
+      "15-104"
+    ]
+  }
+}

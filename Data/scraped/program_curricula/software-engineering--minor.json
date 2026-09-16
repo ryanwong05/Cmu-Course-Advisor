@@ -1,0 +1,172 @@
+{
+  "program_id": "software-engineering--minor",
+  "planning_id": "software-engineering",
+  "name": "Software Engineering",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/software-engineering-minor/",
+  "source_hash": "ce0937de96f5e32fde4e4920c5f10ea17e9913289e89cdab96272790fc5605e7",
+  "fixed_courses": [
+    {
+      "id": "17-214",
+      "name": "Principles of Software Construction: Objects, Design, and Concurrency",
+      "units": 12.0,
+      "source_text": "17-214 Principles of Software Construction: Objects, Design, and Concurrency 12"
+    },
+    {
+      "id": "17-313",
+      "name": "Foundations of Software Engineering",
+      "units": 12.0,
+      "source_text": "17-313 Foundations of Software Engineering 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "core-course-requirements-1-alternative-2",
+      "name": "Software Engineering Practicum",
+      "heading": "Core Course Requirements",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "17-413",
+        "15-413"
+      ],
+      "source_instruction": "Complete both of the following courses.",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "1-one-domain-independent-course-focused-on-technical-software-engineering-material-min-9-units",
+      "name": "1. One domain-independent course focused on technical software engineering material (min. 9 units):",
+      "heading": "1. One domain-independent course focused on technical software engineering material (min. 9 units):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-414",
+        "17-355",
+        "17-356",
+        "17-480",
+        "17-653",
+        "17-614",
+        "17-612",
+        "17-622",
+        "17-623",
+        "17-731",
+        "17-423"
+      ],
+      "source_instruction": "Must complete at least 9 units, may comprise one 9-12 unit course or multiple minis",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Must complete at least 9 units, may comprise one 9-12 unit course or multiple minis"
+      ]
+    },
+    {
+      "id": "2-one-engineering-focused-course-with-a-significant-software-component-min-9-units",
+      "name": "2. One engineering-focused course with a significant software component (min. 9 units):",
+      "heading": "2. One engineering-focused course with a significant software component (min. 9 units):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-410",
+        "15-412",
+        "17-437",
+        "15-440",
+        "17-422",
+        "15-441",
+        "15-445",
+        "18-749",
+        "67-443"
+      ],
+      "source_instruction": "At least 9 units of the following:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "At least 9 units of the following"
+      ]
+    },
+    {
+      "id": "3-one-course-that-explores-computer-science-problems-in-society-and-industry-related-to-existing-and-emerging-technologies-and-their-associated-social-political-legal-business-and-organizational-contexts-min-9-units",
+      "name": "3. One course that explores computer science problems in society and industry, related to existing and emerging technologies and their associated social, political, legal, business, and organizational contexts (min. 9 units):",
+      "heading": "3. One course that explores computer science problems in society and industry, related to existing and emerging technologies and their associated social, political, legal, business, and organizational contexts (min. 9 units):",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-390",
+        "17-200",
+        "70-311",
+        "17-331",
+        "17-733",
+        "17-334",
+        "19-403",
+        "70-471",
+        "17-562",
+        "17-781",
+        "17-801",
+        "17-821",
+        "88-341"
+      ],
+      "source_instruction": "At least 9 units of the following:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "At least 9 units of the following"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting At most 2 of the courses used to fulfill the minor requirements may be counted towards any other major or minor program.",
+        "This rule does not apply to 17-214 (a prerequisite for the minor) or courses counted for general education requirements, nor does it apply to double-counting with the SCS General Education requirements."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 37,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 37,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 32,
+    "missing_schedule_course_ids": [
+      "15-390",
+      "17-200",
+      "17-612",
+      "17-653",
+      "17-781"
+    ]
+  }
+}

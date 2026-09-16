@@ -1,0 +1,183 @@
+{
+  "program_id": "societal-and-human-impacts-of-future-technologies--minor",
+  "planning_id": "societal-and-human-impacts-of-future-technologies",
+  "name": "Societal and Human Impacts of Future Technologies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/societal-human-impacts-future-technologies-minor/",
+  "source_hash": "0888496d88042919d947e3305c83b6e1e13e91dce0d771d208a3e84fd5e8507d",
+  "fixed_courses": [
+    {
+      "id": "80-249",
+      "name": "AI, Society, and Humanity",
+      "units": 9.0,
+      "source_text": "80-249 AI, Society, and Humanity 9"
+    },
+    {
+      "id": "80-445",
+      "name": "Shift Capstone Experience",
+      "units": null,
+      "source_text": "80-445 Shift Capstone Experience 1-9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "technology-area-18-units",
+      "name": "Technology area (18 units)",
+      "heading": "Technology area (18 units)",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "05-317",
+        "05-318",
+        "05-320",
+        "05-452",
+        "15-110",
+        "15-112",
+        "16-467",
+        "17-303",
+        "17-313",
+        "17-331",
+        "17-333",
+        "17-355",
+        "36-202",
+        "67-250",
+        "88-300"
+      ],
+      "source_instruction": "Complete two courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two courses"
+      ]
+    },
+    {
+      "id": "social-behavioral-sciences-area-18-units",
+      "name": "Social & Behavioral Sciences area (18 units)",
+      "heading": "Social & Behavioral Sciences area (18 units)",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "05-413",
+        "36-200",
+        "36-309",
+        "70-311",
+        "70-321",
+        "70-341",
+        "73-102",
+        "73-103",
+        "84-266",
+        "84-369"
+      ],
+      "source_instruction": "Complete two courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two courses"
+      ]
+    },
+    {
+      "id": "ethics-policy-design-area-18-units",
+      "name": "Ethics, Policy & Design Area (18 units)",
+      "heading": "Ethics, Policy & Design Area (18 units)",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "05-413",
+        "16-161",
+        "36-200",
+        "51-173",
+        "51-371",
+        "51-373",
+        "51-382",
+        "70-311",
+        "70-321",
+        "70-332",
+        "70-341",
+        "70-364",
+        "73-102",
+        "73-103",
+        "79-175",
+        "79-234",
+        "79-302",
+        "80-130",
+        "80-135",
+        "80-330",
+        "80-335",
+        "84-266",
+        "84-275",
+        "84-319",
+        "84-325",
+        "84-369",
+        "84-370",
+        "84-372",
+        "84-373",
+        "84-380",
+        "84-386",
+        "84-387",
+        "84-389",
+        "84-390",
+        "84-405",
+        "88-221"
+      ],
+      "source_instruction": "Complete two courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Complete two courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "The SHIFT minor requires eight total courses, with no limit to double-counting with other majors or minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 63,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "6 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 54,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 48,
+    "missing_schedule_course_ids": [
+      "05-320",
+      "05-413",
+      "16-161",
+      "51-371",
+      "51-373",
+      "84-386"
+    ]
+  }
+}

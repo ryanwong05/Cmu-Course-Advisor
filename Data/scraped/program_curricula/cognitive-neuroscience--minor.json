@@ -1,0 +1,162 @@
+{
+  "program_id": "cognitive-neuroscience--minor",
+  "planning_id": "cognitive-neuroscience",
+  "name": "Cognitive Neuroscience",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-neuroscience-minor/",
+  "source_hash": "2b2093cd27089cb354a2203b9be42b76633df775f31226538fe2504b8ab0717c",
+  "fixed_courses": [
+    {
+      "id": "03-121",
+      "name": "Modern Biology",
+      "units": 9.0,
+      "source_text": "03-121 Modern Biology 9"
+    },
+    {
+      "id": "03-363",
+      "name": "Systems Neuroscience",
+      "units": 9.0,
+      "source_text": "03-363 Systems Neuroscience 9"
+    },
+    {
+      "id": "85-110",
+      "name": "Cognitive Psychology",
+      "units": 9.0,
+      "source_text": "85-110 Cognitive Psychology 9"
+    },
+    {
+      "id": "85-170",
+      "name": "Foundations of Brain and Behavior",
+      "units": 9.0,
+      "source_text": "85-170 Foundations of Brain and Behavior 9"
+    },
+    {
+      "id": "85-213",
+      "name": "Human Information Processing and Artificial Intelligence",
+      "units": 9.0,
+      "source_text": "85-213 Human Information Processing and Artificial Intelligence 9"
+    },
+    {
+      "id": "85-314",
+      "name": "Cognitive Neuroscience Research Methods 85-370 ::starting S26",
+      "units": 9.0,
+      "source_text": "85-314 Cognitive Neuroscience Research Methods 85-370 ::starting S26 9"
+    },
+    {
+      "id": "85-412",
+      "name": "Cognitive Modeling",
+      "units": 9.0,
+      "source_text": "85-412 Cognitive Modeling 9"
+    },
+    {
+      "id": "85-414",
+      "name": "Cognition in the Age of AI",
+      "units": 9.0,
+      "source_text": "85-414 Cognition in the Age of AI 9"
+    },
+    {
+      "id": "85-419",
+      "name": "Introduction to Parallel Distributed Processing",
+      "units": 9.0,
+      "source_text": "85-419 Introduction to Parallel Distributed Processing 9"
+    },
+    {
+      "id": "15-386",
+      "name": "Neural Computation",
+      "units": 9.0,
+      "source_text": "15-386 Neural Computation 9"
+    },
+    {
+      "id": "86-375",
+      "name": "Computational Perception",
+      "units": 9.0,
+      "source_text": "86-375 Computational Perception 9"
+    },
+    {
+      "id": "85-426",
+      "name": "Reverse engineering brains and machines",
+      "units": 9.0,
+      "source_text": "85-426 Reverse engineering brains and machines 9"
+    },
+    {
+      "id": "85-432",
+      "name": "Data Science for Psychology and Neuroscience",
+      "units": 9.0,
+      "source_text": "85-432 Data Science for Psychology and Neuroscience 9"
+    },
+    {
+      "id": "85-472",
+      "name": "Cognitive Neuropsychology",
+      "units": 9.0,
+      "source_text": "85-472 Cognitive Neuropsychology 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "distribution-requirements-1",
+      "name": "Cognitive Neuroscience Electives",
+      "heading": "Distribution Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-133",
+        "03-362",
+        "03-365",
+        "85-359",
+        "85-110",
+        "85-370",
+        "85-106",
+        "85-190",
+        "85-416"
+      ],
+      "source_instruction": "Cognitive Neuroscience Electives",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 23,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Distribution Requirements"
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "1 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "5 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 135,
+    "scheduled_course_count": 17,
+    "missing_schedule_course_ids": [
+      "85-314",
+      "85-359",
+      "85-412",
+      "85-432",
+      "86-375"
+    ]
+  }
+}

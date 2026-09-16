@@ -1,0 +1,119 @@
+{
+  "program_id": "medical-decision-making--minor",
+  "planning_id": "medical-decision-making",
+  "name": "Medical Decision Making",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/medical-decision-making-minor/",
+  "source_hash": "7c123a4453288a58e700fdae31e68b39bfaef15f2b02ad235e9276ddad8d331f",
+  "fixed_courses": [
+    {
+      "id": "88-120",
+      "name": "Reason, Passion and Cognition",
+      "units": 9.0,
+      "source_text": "88-120 Reason, Passion and Cognition 9"
+    },
+    {
+      "id": "88-261",
+      "name": "Health Policy and Decision Making",
+      "units": 9.0,
+      "source_text": "88-261 Health Policy and Decision Making 9"
+    },
+    {
+      "id": "88-262",
+      "name": "Rationality and Irrationality in Medicine",
+      "units": 9.0,
+      "source_text": "88-262 Rationality and Irrationality in Medicine 9"
+    },
+    {
+      "id": "88-302",
+      "name": "Behavioral Decision Making",
+      "units": 9.0,
+      "source_text": "88-302 Behavioral Decision Making 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "foundation-courses-45-units-1-alternative-1",
+      "name": "Behavioral Economics for Life",
+      "heading": "Foundation Courses 45 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-130",
+        "88-140",
+        "85-100",
+        "85-150"
+      ],
+      "source_instruction": "Required",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "electives-choose-one-9-units",
+      "name": "Electives (choose one) 9 units",
+      "heading": "Electives (choose one) 9 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "88-365",
+        "73-328",
+        "80-245",
+        "85-108",
+        "85-409",
+        "85-454"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Electives (choose one) 9 units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting Students may double-count two courses with another major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 14,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 14,
+    "extracted_unit_estimate": 54,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": [
+      "85-108",
+      "85-454"
+    ]
+  }
+}

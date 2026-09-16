@@ -1,0 +1,296 @@
+{
+  "program_id": "artificial-intelligence--b-s",
+  "planning_id": "artificial-intelligence",
+  "name": "Artificial Intelligence",
+  "credential": "B.S.",
+  "program_type": "primary_major",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-bs/",
+  "source_hash": "4cf686e595b84f6839c1f1b2927f630a89feeb4b25c0a4184a71b23e3c535df0",
+  "fixed_courses": [
+    {
+      "id": "15-151",
+      "name": "Mathematical Foundations for Computer Science (if not offered, substitute 21-127 )",
+      "units": 12.0,
+      "source_text": "15-151 Mathematical Foundations for Computer Science (if not offered, substitute 21-127 ) 12"
+    },
+    {
+      "id": "21-120",
+      "name": "Differential and Integral Calculus",
+      "units": 10.0,
+      "source_text": "21-120 Differential and Integral Calculus 10"
+    },
+    {
+      "id": "21-122",
+      "name": "Integration and Approximation",
+      "units": 10.0,
+      "source_text": "21-122 Integration and Approximation 10"
+    },
+    {
+      "id": "21-241",
+      "name": "Matrices and Linear Transformations",
+      "units": 11.0,
+      "source_text": "21-241 Matrices and Linear Transformations 11"
+    },
+    {
+      "id": "21-259",
+      "name": "Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269",
+      "units": 10.0,
+      "source_text": "21-259 Calculus in Three Dimensions or 21-266 , or 21-268 , or 21-269 10"
+    },
+    {
+      "id": "36-401",
+      "name": "Modern Regression",
+      "units": 9.0,
+      "source_text": "36-401 Modern Regression 9"
+    },
+    {
+      "id": "15-122",
+      "name": "Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 )",
+      "units": 12.0,
+      "source_text": "15-122 Principles of Imperative Computation (students without credit or a waiver for 15-112 , Fundamentals of Programming and Computer Science, must take 15-112 before 15-122 ) 12"
+    },
+    {
+      "id": "15-150",
+      "name": "Principles of Functional Programming",
+      "units": 12.0,
+      "source_text": "15-150 Principles of Functional Programming 12"
+    },
+    {
+      "id": "15-210",
+      "name": "Parallel and Sequential Data Structures and Algorithms",
+      "units": 12.0,
+      "source_text": "15-210 Parallel and Sequential Data Structures and Algorithms 12"
+    },
+    {
+      "id": "15-213",
+      "name": "Introduction to Computer Systems",
+      "units": 12.0,
+      "source_text": "15-213 Introduction to Computer Systems 12"
+    },
+    {
+      "id": "15-251",
+      "name": "Great Ideas in Theoretical Computer Science",
+      "units": 12.0,
+      "source_text": "15-251 Great Ideas in Theoretical Computer Science 12"
+    },
+    {
+      "id": "07-280",
+      "name": "Artificial Intelligence and Machine Learning I",
+      "units": 12.0,
+      "source_text": "07-280 Artificial Intelligence and Machine Learning I 12"
+    },
+    {
+      "id": "07-380",
+      "name": "Artificial Intelligence and Machine Learning II",
+      "units": 12.0,
+      "source_text": "07-380 Artificial Intelligence and Machine Learning II 12"
+    },
+    {
+      "id": "07-128",
+      "name": "First Year Seminar",
+      "units": 3.0,
+      "source_text": "07-128 First Year Seminar 3"
+    },
+    {
+      "id": "99-101",
+      "name": "Core@CMU",
+      "units": 3.0,
+      "source_text": "99-101 Core@CMU 3"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "math-and-statistics-2",
+      "name": "Probability and Statistics (one of the following options)",
+      "heading": "Math and Statistics",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "36-218",
+        "15-259",
+        "21-325 + 36-226",
+        "21-425 + 36-226",
+        "36-225 + 36-226",
+        "36-235 + 36-236"
+      ],
+      "source_instruction": "Probability and Statistics (one of the following options):",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "artificial-intelligence-2",
+      "name": "plus one of the following AI core courses",
+      "heading": "Artificial Intelligence",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "11-411",
+        "16-385"
+      ],
+      "source_instruction": "plus one of the following AI core courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "heading": "Artificial Intelligence",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-386",
+        "15-482",
+        "15-494",
+        "16-280",
+        "16-350",
+        "16-362",
+        "16-384",
+        "10-403",
+        "10-405",
+        "10-414",
+        "10-417",
+        "10-418",
+        "10-422",
+        "10-423",
+        "10-424",
+        "10-425",
+        "11-441",
+        "11-485",
+        "36-402",
+        "11-442",
+        "11-492",
+        "15-387",
+        "15-463"
+      ],
+      "source_instruction": "One Decision Making and Robotics course (min. 9 units):",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Decision Making and Robotics course (min. 9 units)",
+        "One Machine Learning course from the following (min. 9 units)",
+        "One Perception and Language course from the following (min. 9 units)"
+      ]
+    },
+    {
+      "id": "artificial-intelligence",
+      "name": "Artificial Intelligence",
+      "heading": "Artificial Intelligence",
+      "choose": 1,
+      "units": 12,
+      "options": [
+        "05-317",
+        "05-318",
+        "05-391",
+        "16-467"
+      ],
+      "source_instruction": "One Human-AI Interaction course from the following (min. 12 units):",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 12.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Human-AI Interaction course from the following (min. 12 units)"
+      ]
+    },
+    {
+      "id": "ethics-course-1",
+      "name": "Ethics Course",
+      "heading": "Ethics Course",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "16-161",
+        "16-735",
+        "17-200",
+        "80-249"
+      ],
+      "source_instruction": "One of the following courses:",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "humanities-and-arts",
+      "name": "Humanities and Arts",
+      "heading": "Humanities and Arts",
+      "choose": 1,
+      "units": 63,
+      "options": [
+        "85-110",
+        "85-213",
+        "85-408",
+        "85-421",
+        "85-413"
+      ],
+      "source_instruction": "All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . SPECIAL NOTE FOR AI STUDENTS: AI majors must satisfy Category 1 of the General Education requirements by taking one of the following Cognitive Studies (Category 1A) courses:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 63.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "All candidates for the bachelor's degree in Artificial Intelligence must complete a minimum of 63 units offered by the College of Humanities & Social Sciences and/or the College of Fine Arts. These courses offer students breadth in their education and perspectives and provide students with a better appreciation of social, artistic, cultural, political and economic issues that can influence their effectiveness as computer scientists upon graduation. Requirements for this component of the degree are listed under the SCS main page under General Education Requirements . SPECIAL NOTE FOR AI STUDENTS: AI majors must satisfy Category 1 of the General Education requirements by taking one of the following Cognitive Studies (Category 1A) courses"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 11,
+    "course_references": 59,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "13 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 59,
+    "extracted_unit_estimate": 266,
+    "scheduled_course_count": 46,
+    "missing_schedule_course_ids": [
+      "10-418",
+      "10-424",
+      "10-425",
+      "11-441",
+      "16-161",
+      "16-735",
+      "17-200",
+      "21-325 + 36-226",
+      "21-425 + 36-226",
+      "36-225 + 36-226",
+      "36-235 + 36-236",
+      "85-408",
+      "85-421"
+    ]
+  }
+}

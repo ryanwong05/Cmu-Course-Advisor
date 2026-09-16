@@ -1,0 +1,111 @@
+{
+  "program_id": "neuroscience--minor",
+  "planning_id": "neuroscience",
+  "name": "Neuroscience",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/neuroscience-minor/",
+  "source_hash": "e53a621c2d698efae3962c17eb96f34b674f78945347a4aeda451d331174ca96",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-coursework-4-courses-36-units",
+      "name": "Required Coursework (4 courses) 36 units",
+      "heading": "Required Coursework (4 courses) 36 units",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "03-121",
+        "03-151",
+        "03-362",
+        "03-363",
+        "85-170",
+        "03-161"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "Required Coursework (4 courses) 36 units"
+      ]
+    },
+    {
+      "id": "neurobiology-electives-27-units",
+      "name": "Neurobiology Electives 27 units",
+      "heading": "Neurobiology Electives 27 units",
+      "choose": 3,
+      "units": 27,
+      "options": [
+        "03-119",
+        "03-133",
+        "03-351",
+        "03-360",
+        "02-319",
+        "03-365",
+        "03-366",
+        "85-110",
+        "85-190",
+        "85-310",
+        "85-370",
+        "85-406",
+        "85-413",
+        "85-414",
+        "85-420",
+        "85-472"
+      ],
+      "source_instruction": "Neurobiology Electives",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Neurobiology Electives"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 22,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Inferred 3 choices from an explicit 27-unit rule: Neurobiology Electives 27 units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 18,
+    "missing_schedule_course_ids": [
+      "03-119",
+      "03-351",
+      "85-406",
+      "85-420"
+    ]
+  }
+}

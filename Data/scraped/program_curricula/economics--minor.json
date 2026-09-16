@@ -1,0 +1,155 @@
+{
+  "program_id": "economics--minor",
+  "planning_id": "economics",
+  "name": "Economics",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/economics-minor/",
+  "source_hash": "e9cb6a1be128aec56a26877b3c8d016a8f6f30b856a290df480d56da8f1dc32a",
+  "fixed_courses": [
+    {
+      "id": "73-103",
+      "name": "Principles of Macroeconomics",
+      "units": 9.0,
+      "source_text": "73-103 Principles of Macroeconomics 9"
+    },
+    {
+      "id": "73-265",
+      "name": "Economics and Data Science",
+      "units": 9.0,
+      "source_text": "73-265 Economics and Data Science 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "mathematics-requirements-1-alternative-1",
+      "name": "Differential and Integral Calculus",
+      "heading": "Mathematics Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-120",
+        "21-111 + 21-112"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "mathematics-requirements-1-alternative-2",
+      "name": "Multivariate Analysis",
+      "heading": "Mathematics Requirements",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "21-256",
+        "21-254",
+        "21-259",
+        "21-266",
+        "21-268",
+        "21-269"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "economic-theory-requirements-27-units-1-alternative-1",
+      "name": "Principles of Microeconomics *",
+      "heading": "Economic Theory Requirements (27 Units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-102",
+        "73-104"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "economic-theory-requirements-27-units-1-alternative-3",
+      "name": "Intermediate Microeconomics",
+      "heading": "Economic Theory Requirements (27 Units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "73-230",
+        "73-240"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    },
+    {
+      "id": "quantitative-analysis-requirements-18-units-1-alternative-1",
+      "name": "Probability and Statistics for Business Applications",
+      "heading": "Quantitative Analysis Requirements (18 Units)",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "70-207",
+        "36-200",
+        "15-259",
+        "21-325",
+        "36-218",
+        "36-219",
+        "36-220",
+        "36-225"
+      ],
+      "source_instruction": "Students who have taken coursework in intermediate-level regression analysis and data visualization may petition to substitute 73-274 Econometrics I or 73-423 Forecasting for Economics and Business for 73-265 Economics and Data Science .",
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Required Coursework While there are no double counting restrictions between the minor and the student's home college general education requirements, 73-265 Economics and Data Science and the 3 economics electives must be unique for the minor and cannot double count with any other major or minor."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 22,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 63,
+    "scheduled_course_count": 21,
+    "missing_schedule_course_ids": [
+      "21-111 + 21-112"
+    ]
+  }
+}

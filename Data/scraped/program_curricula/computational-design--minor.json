@@ -1,0 +1,104 @@
+{
+  "program_id": "computational-design--minor",
+  "planning_id": "computational-design",
+  "name": "Computational Design",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/computational-design-minor/",
+  "source_hash": "a4c479fee1419130bda4bd8f41d8d9501d416d477cd7a0e587a10ff0aaf23479",
+  "fixed_courses": [
+    {
+      "id": "48-120",
+      "name": "Digital Media I",
+      "units": 6.0,
+      "source_text": "48-120 Digital Media I 6"
+    },
+    {
+      "id": "48-125",
+      "name": "Digital Media II",
+      "units": 6.0,
+      "source_text": "48-125 Digital Media II 6"
+    },
+    {
+      "id": "48-214",
+      "name": "Generative Modeling",
+      "units": 9.0,
+      "source_text": "48-214 Generative Modeling 9"
+    },
+    {
+      "id": "48-247",
+      "name": "Fundamentals of Computational Design",
+      "units": 9.0,
+      "source_text": "48-247 Fundamentals of Computational Design 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "selective-courses-1",
+      "name": "Selective Courses",
+      "heading": "Selective Courses",
+      "choose": 1,
+      "units": 5,
+      "options": [
+        "48-568",
+        "51-367",
+        "62-315",
+        "48-530",
+        "48-545",
+        "48-555",
+        "54-399",
+        "54-405",
+        "60-212",
+        "48-727",
+        "48-749",
+        "48-599"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 16,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Selective Courses"
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "1 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "4 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 16,
+    "extracted_unit_estimate": 35,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": [
+      "48-530",
+      "48-749",
+      "51-367",
+      "54-405"
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "program_id": "humanities-analytics--minor",
+  "planning_id": "humanities-analytics",
+  "name": "Humanities Analytics",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/humanities-analytics-minor/",
+  "source_hash": "71dc50dbd6c320bccb3db51c99de354536bc7673eb0b062bccc63fd53dd227a2",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-courses-2-courses-18-units",
+      "name": "Required Courses (2 courses) 18 units",
+      "heading": "Required Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-275",
+        "76-380"
+      ],
+      "source_instruction": "Required Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Required Courses"
+      ]
+    },
+    {
+      "id": "core-courses-2-courses-18-units",
+      "name": "Core Courses (2 courses) 18 units",
+      "heading": "Core Courses (2 courses) 18 units",
+      "choose": 2,
+      "units": 18,
+      "options": [
+        "76-314",
+        "76-388",
+        "76-425",
+        "76-429",
+        "88-275",
+        "88-300"
+      ],
+      "source_instruction": "Core Courses",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 18.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "Core Courses"
+      ]
+    },
+    {
+      "id": "list-a-choose-one-1",
+      "name": "List A - Choose one",
+      "heading": "List A - Choose one",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "05-391",
+        "05-434",
+        "11-344",
+        "11-411",
+        "11-441",
+        "15-104",
+        "15-110",
+        "16-223",
+        "16-385",
+        "17-450",
+        "17-562",
+        "19-713",
+        "36-202",
+        "36-204",
+        "36-226",
+        "36-311",
+        "36-315",
+        "36-350",
+        "36-462",
+        "48-095",
+        "48-120",
+        "51-229",
+        "53-451",
+        "62-142",
+        "60-427",
+        "62-142",
+        "62-150"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "list-b-choose-one-1",
+      "name": "List B - Choose one",
+      "heading": "List B - Choose one",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "76-210",
+        "76-245",
+        "76-247",
+        "76-318",
+        "76-325",
+        "76-373",
+        "76-389",
+        "76-390",
+        "76-476",
+        "79-200",
+        "79-234",
+        "79-305",
+        "80-180",
+        "80-280",
+        "80-381",
+        "80-383",
+        "82-282",
+        "82-283",
+        "82-383",
+        "82-480"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": true,
+      "source_sentences": [
+        "Double Counting Students who have a minor in English as well as a primary and/or an additional major in English may not double count any English courses with that minor.",
+        "Otherwise, up to two courses from the minor may double count with programs outside of the English Department."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 4,
+    "course_references": 55,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "10 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 54,
+    "extracted_unit_estimate": 48,
+    "scheduled_course_count": 44,
+    "missing_schedule_course_ids": [
+      "11-441",
+      "15-104",
+      "17-450",
+      "60-427",
+      "76-318",
+      "76-425",
+      "76-476",
+      "80-280",
+      "80-381",
+      "88-275"
+    ]
+  }
+}

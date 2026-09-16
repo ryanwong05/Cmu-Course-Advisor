@@ -1,0 +1,71 @@
+{
+  "program_id": "biomedical-engineering--minor",
+  "planning_id": "biomedical-engineering",
+  "name": "Biomedical Engineering",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/biomedical-engineering-minor/",
+  "source_hash": "5214624afd39eb89520ec9157d7effdb95ccf674c2f21191ea22785a7d4f71b8",
+  "fixed_courses": [
+    {
+      "id": "42-101",
+      "name": "Introduction to Biomedical Engineering",
+      "units": 12.0,
+      "source_text": "42-101 Introduction to Biomedical Engineering 12"
+    },
+    {
+      "id": "42-202",
+      "name": "Physiology",
+      "units": 9.0,
+      "source_text": "42-202 Physiology 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "minimum-units-required-for-minor-57-units-1-alternative-1",
+      "name": "Modern Biology",
+      "heading": "Minimum units required for minor: 57 units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "03-121",
+        "03-151"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "course_count",
+        "count": 1
+      },
+      "relationship": "substitution"
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 1,
+    "course_references": 4,
+    "confidence": 0.75,
+    "status": "needs_review",
+    "warnings": [],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [],
+    "catalog_course_count": 4,
+    "extracted_unit_estimate": 30,
+    "scheduled_course_count": 4,
+    "missing_schedule_course_ids": []
+  }
+}

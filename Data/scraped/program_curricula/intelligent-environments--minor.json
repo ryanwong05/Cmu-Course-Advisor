@@ -1,0 +1,119 @@
+{
+  "program_id": "intelligent-environments--minor",
+  "planning_id": "intelligent-environments",
+  "name": "Intelligent Environments",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/intelligent-environments-minor/",
+  "source_hash": "0aec011710ad5cf8780fea784b533f264c730d254e72258c3213d32c0f1cb582",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "one-computing-course-minimum-of-9-units",
+      "name": "One Computing Course - Minimum of 9 Units",
+      "heading": "One Computing Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-104",
+        "15-110",
+        "15-112",
+        "60-212"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One Computing Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "one-ideate-portal-course-minimum-of-9-units",
+      "name": "One IDeATe Portal Course - Minimum of 9 Units",
+      "heading": "One IDeATe Portal Course - Minimum of 9 Units",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "99-361",
+        "16-223",
+        "60-223"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "One IDeATe Portal Course - Minimum of 9 Units"
+      ]
+    },
+    {
+      "id": "ideate-intelligent-environments-courses-minimum-of-27-units",
+      "name": "IDeATe Intelligent Environments Courses - Minimum of 27 Units",
+      "heading": "IDeATe Intelligent Environments Courses - Minimum of 27 Units",
+      "choose": 1,
+      "units": 27,
+      "options": [
+        "54-375",
+        "16-376",
+        "16-467",
+        "62-315",
+        "99-362"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 27.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "IDeATe Intelligent Environments Courses - Minimum of 27 Units"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double-Counting Students may double-count up to two of their Intelligent Environments minor courses toward other majors and minors."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 12,
+    "confidence": 0.69,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: IDeATe Intelligent Environments Courses - Minimum of 27 Units",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [],
+    "warnings": [
+      "1 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 12,
+    "extracted_unit_estimate": 45,
+    "scheduled_course_count": 11,
+    "missing_schedule_course_ids": [
+      "15-104"
+    ]
+  }
+}

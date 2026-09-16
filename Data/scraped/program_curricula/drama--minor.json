@@ -1,0 +1,111 @@
+{
+  "program_id": "drama--minor",
+  "planning_id": "drama",
+  "name": "Drama",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/drama-minor/",
+  "source_hash": "71c633a6bd58fc31203c48e7836fb453e94c902accc2979717469b07e68806b1",
+  "fixed_courses": [
+    {
+      "id": "54-163",
+      "name": "Production for Non Majors (must be taken twice for a total of 12 units)",
+      "units": 12.0,
+      "source_text": "54-163 Production for Non Majors (must be taken twice for a total of 12 units) 12"
+    },
+    {
+      "id": "54-177",
+      "name": "Foundations of Drama I",
+      "units": 6.0,
+      "source_text": "54-177 Foundations of Drama I 6"
+    },
+    {
+      "id": "54-281",
+      "name": "Foundations of Drama II",
+      "units": 6.0,
+      "source_text": "54-281 Foundations of Drama II 6"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "sample-elective-courses-not-requiring-instructor-permission-1",
+      "name": "Sample Elective Courses not requiring instructor permission:",
+      "heading": "Sample Elective Courses not requiring instructor permission:",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "54-187",
+        "54-190",
+        "54-191",
+        "54-193",
+        "54-196"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "sample-elective-courses-requiring-instructor-permission-1",
+      "name": "Sample Elective Courses requiring instructor permission:",
+      "heading": "Sample Elective Courses requiring instructor permission:",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "54-109",
+        "54-157",
+        "54-169",
+        "54-171",
+        "54-184",
+        "54-330"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 14,
+    "confidence": 0.73,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Sample Elective Courses not requiring instructor permission:",
+      "Assumed choose-one for ambiguous section: Sample Elective Courses requiring instructor permission:"
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "2 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 14,
+    "extracted_unit_estimate": 39,
+    "scheduled_course_count": 12,
+    "missing_schedule_course_ids": [
+      "54-190",
+      "54-193"
+    ]
+  }
+}

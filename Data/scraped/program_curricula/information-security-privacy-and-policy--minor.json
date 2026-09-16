@@ -1,0 +1,139 @@
+{
+  "program_id": "information-security-privacy-and-policy--minor",
+  "planning_id": "information-security-privacy-and-policy",
+  "name": "Information Security, Privacy and Policy",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/information-security-privacy-policy-minor/",
+  "source_hash": "67a8767956627dd1dcf7af9ea24ad80a4e16852e24bbbe3658406a3f974c1266",
+  "fixed_courses": [
+    {
+      "id": "17-331",
+      "name": "Information Security, Privacy and Policy in the Age of AI",
+      "units": 12.0,
+      "source_text": "17-331 Information Security, Privacy and Policy in the Age of AI 12"
+    },
+    {
+      "id": "17-333",
+      "name": "Privacy Policy, Law, and Technology",
+      "units": 9.0,
+      "source_text": "17-333 Privacy Policy, Law, and Technology 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "privacy-electives",
+      "name": "Privacy Electives",
+      "heading": "Privacy Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "19-534",
+        "17-334",
+        "19-602",
+        "17-702",
+        "17-731"
+      ],
+      "source_instruction": "Complete a minimum of 9 units:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete a minimum of 9 units"
+      ]
+    },
+    {
+      "id": "technology-and-policy-electives",
+      "name": "Technology and Policy Electives",
+      "heading": "Technology and Policy Electives",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "19-211",
+        "17-562",
+        "19-101",
+        "19-403",
+        "19-639",
+        "84-387"
+      ],
+      "source_instruction": "Complete a minimum of 9 units:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Complete a minimum of 9 units"
+      ]
+    },
+    {
+      "id": "additional-approved-elective",
+      "name": "Additional Approved Elective",
+      "heading": "Additional Approved Elective",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "15-316",
+        "15-356",
+        "17-303",
+        "19-534",
+        "17-334",
+        "18-334",
+        "18-435"
+      ],
+      "source_instruction": "Students must complete an additional elective of 9 units or more. Students may choose an additional privacy elective or technology policy elective from the list above, or the one of the following security electives:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 9.0,
+        "course_count_estimate": 1
+      },
+      "track": null,
+      "source_categories": [
+        "Students must complete an additional elective of 9 units or more. Students may choose an additional privacy elective or technology policy elective from the list above, or the one of the following security electives"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "Double Counting: At most 2 of the courses used to fulfill the minor requirements may be counted towards any other undergraduate major or minor program."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 5,
+    "course_references": 20,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 1 choices from an explicit 9-unit rule: Privacy Electives",
+      "Inferred 1 choices from an explicit 9-unit rule: Technology and Policy Electives"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 18,
+    "extracted_unit_estimate": 48,
+    "scheduled_course_count": 16,
+    "missing_schedule_course_ids": [
+      "19-101",
+      "19-639"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "program_id": "societal-computing--minor",
+  "planning_id": "societal-computing",
+  "name": "Societal Computing",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/societal-computing-minor/",
+  "source_hash": "a2ce1c1c54cb56af09adf9466ae704e2a1f42a67538efb53e8c4a73a69bae246",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "required-courses-1",
+      "name": "Students must take both of the classes below for the minor/concentration.",
+      "heading": "Required Courses",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "17-222",
+        "17-200"
+      ],
+      "source_instruction": "Students must take both of the classes below for the minor/concentration.",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    },
+    {
+      "id": "methods-course-1",
+      "name": "At least one of the electives must be a course focused on the techniques used by professionals in the field to analyze, build and make decisions about computing systems. Select from the following list.",
+      "heading": "Methods Course",
+      "choose": 1,
+      "units": 9,
+      "options": [
+        "17-320",
+        "17-338",
+        "17-334",
+        "17-422",
+        "17-537",
+        "17-685",
+        "17-803"
+      ],
+      "source_instruction": "At least one of the electives must be a course focused on the techniques used by professionals in the field to analyze, build and make decisions about computing systems. Select from the following list.",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": true,
+      "course_limit_candidates": [
+        2
+      ],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": [
+        "17-331 Information Security, Privacy and Policy in the Age of AI * 12 17-333/733 Privacy Policy, Law, and Technology * 9 17-416 Responsible AI & AI Governance: Identifying and Mitigating Risks * 6 or 12 17-562/762 Computer and AI Law 9 17-731 Foundations of Privacy 12 17-735 Engineering Privacy in Software * 12 02-120 Programming for Scientists 12 05-315 Persuasive Design * 12 05-318 Human AI Interaction 12 05-391 Designing Human Centered Software 12 11-430 Ethics, Safety, and Social Impact in NLP and LLMs * 12 16-161 Artificial Intelligence and Humanity 12 16-467 Introduction to Human Robot Interaction * 12 16-735 Ethics and Robotics 12 19-101 Introduction to Engineering and Public Policy 12 19-433 Data Science for Technology, Innovation and Policy 9 19-469 Behavior, Decision and Policy 9 19-654 Regulation of Internet Edge Platforms 6 67-348 Black Mirror - Cultural Representations of Technology 9 73-367 AI, Technology, and Work 9 88-237 The Happy Cyborg 9 88-436/10-736 Human-AI Complementarity for Decision Making * 9 Double-Counting At most two courses can be double-counted with any major, minor or other concentration."
+      ]
+    }
+  },
+  "extraction": {
+    "tables_seen": 3,
+    "course_references": 9,
+    "confidence": 0.53,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Required Courses",
+      "Assumed choose-one for ambiguous section: Methods Course",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "2 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "2 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 9,
+    "extracted_unit_estimate": 18,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": [
+      "17-200",
+      "17-537"
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "program_id": "african-and-african-american-studies--minor",
+  "planning_id": "african-and-african-american-studies",
+  "name": "African and African American Studies",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/african-african-american-studies-minor/",
+  "source_hash": "93cbc93cf5903d6a9b7bd2e402bc33a0e263f838e05517ff8058512e40d547e2",
+  "fixed_courses": [
+    {
+      "id": "79-226",
+      "name": "African History: Earliest Times to 1780",
+      "units": 9.0,
+      "source_text": "79-226 African History: Earliest Times to 1780 9"
+    },
+    {
+      "id": "79-227",
+      "name": "Modern Africa: The Slave Trade to the End of Apartheid",
+      "units": 9.0,
+      "source_text": "79-227 Modern Africa: The Slave Trade to the End of Apartheid 9"
+    },
+    {
+      "id": "79-212",
+      "name": "Jim Crow America",
+      "units": 9.0,
+      "source_text": "79-212 Jim Crow America 9"
+    },
+    {
+      "id": "79-242",
+      "name": "African American History: Reconstruction to the Present",
+      "units": 9.0,
+      "source_text": "79-242 African American History: Reconstruction to the Present 9"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "elective-courses-36-units",
+      "name": "Elective Courses 36 units",
+      "heading": "Elective Courses 36 units",
+      "choose": 4,
+      "units": 36,
+      "options": [
+        "79-225",
+        "79-237",
+        "79-290",
+        "79-385",
+        "82-260",
+        "82-303",
+        "82-304",
+        "57-480",
+        "76-407",
+        "79-120",
+        "79-155",
+        "79-247",
+        "79-252",
+        "79-333",
+        "79-371",
+        "79-317",
+        "82-343",
+        "82-451"
+      ],
+      "source_instruction": "African",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 36.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "African",
+        "African American",
+        "Caribbean",
+        "Latin American"
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 22,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 4 choices from an explicit 36-unit rule: Elective Courses 36 units",
+      "Inferred 4 choices from an explicit 36-unit rule: Elective Courses 36 units",
+      "Inferred 4 choices from an explicit 36-unit rule: Elective Courses 36 units",
+      "Inferred 3 choices from an explicit 36-unit rule: Elective Courses 36 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "15 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 72,
+    "scheduled_course_count": 7,
+    "missing_schedule_course_ids": [
+      "76-407",
+      "79-155",
+      "79-225",
+      "79-226",
+      "79-227",
+      "79-237",
+      "79-242",
+      "79-247",
+      "79-252",
+      "79-290",
+      "79-317",
+      "79-333",
+      "79-371",
+      "79-385",
+      "82-451"
+    ]
+  }
+}

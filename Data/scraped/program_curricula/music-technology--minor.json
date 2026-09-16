@@ -1,0 +1,184 @@
+{
+  "program_id": "music-technology--minor",
+  "planning_id": "music-technology",
+  "name": "Music Technology",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-technology-minor/",
+  "source_hash": "c636c05b470744f3e6085a912fcb2fb53f7a32282f1d29e27ff20bfbf643f050",
+  "fixed_courses": [
+    {
+      "id": "57-337",
+      "name": "Sound Recording",
+      "units": 6.0,
+      "source_text": "57-337 Sound Recording 6"
+    },
+    {
+      "id": "57-338",
+      "name": "Sound Editing and Mastering",
+      "units": 6.0,
+      "source_text": "57-338 Sound Editing and Mastering 6"
+    },
+    {
+      "id": "57-438",
+      "name": "Multitrack Recording",
+      "units": 9.0,
+      "source_text": "57-438 Multitrack Recording 9"
+    },
+    {
+      "id": "57-329",
+      "name": "Beginning Piano for Minors",
+      "units": 3.0,
+      "source_text": "57-329 Beginning Piano for Minors 3"
+    },
+    {
+      "id": "57-152",
+      "name": "Harmony I",
+      "units": 9.0,
+      "source_text": "57-152 Harmony I 9"
+    },
+    {
+      "id": "57-161",
+      "name": "Eurhythmics I",
+      "units": 3.0,
+      "source_text": "57-161 Eurhythmics I 3"
+    },
+    {
+      "id": "57-173",
+      "name": "Survey of Western Music History",
+      "units": 9.0,
+      "source_text": "57-173 Survey of Western Music History 9"
+    },
+    {
+      "id": "57-181",
+      "name": "Solfege I",
+      "units": 3.0,
+      "source_text": "57-181 Solfege I 3"
+    },
+    {
+      "id": "57-188",
+      "name": "Repertoire and Listening for Musicians",
+      "units": 1.0,
+      "source_text": "57-188 Repertoire and Listening for Musicians 1"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "elective-course-options-33-units",
+      "name": "Elective Course Options 33 units",
+      "heading": "Elective Course Options 33 units",
+      "choose": 4,
+      "units": 33,
+      "options": [
+        "15-104",
+        "15-322",
+        "33-114",
+        "54-166",
+        "54-505",
+        "54-666",
+        "57-344",
+        "57-345",
+        "57-347",
+        "57-421"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 33.0,
+        "course_count_estimate": 4
+      },
+      "track": null,
+      "source_categories": [
+        "Elective Course Options 33 units"
+      ]
+    },
+    {
+      "id": "sound-recording-courses-21-units",
+      "name": "Sound Recording Courses 21 units",
+      "heading": "Sound Recording Courses 21 units",
+      "choose": 3,
+      "units": 21,
+      "options": [
+        "57-337",
+        "57-338",
+        "57-438"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 21.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Sound Recording Courses 21 units"
+      ]
+    },
+    {
+      "id": "music-technology-sound-courses-choose-at-least-three-21-units",
+      "name": "Music Technology/Sound Courses (choose at least three) 21 units",
+      "heading": "Music Technology/Sound Courses (choose at least three) 21 units",
+      "choose": 3,
+      "units": 21,
+      "options": [
+        "15-104",
+        "15-322",
+        "33-114",
+        "57-102",
+        "54-166",
+        "57-344",
+        "57-347",
+        "57-478",
+        "57-421"
+      ],
+      "source_instruction": "Choose at least three courses. One of the three courses must be either Introduction to Computer Music or Electronic and Computer Music. (Note that 15-112 is a prerequisite for 15-322 ; 57-101 or 57-171 is a prerequisite for 57-347 .) Other courses may be taken with the permission of the music technology minor advisor.",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 21.0,
+        "course_count_estimate": 3
+      },
+      "track": null,
+      "source_categories": [
+        "Choose at least three courses. One of the three courses must be either Introduction to Computer Music or Electronic and Computer Music. (Note that 15-112 is a prerequisite for 15-322 ; 57-101 or 57-171 is a prerequisite for 57-347 .) Other courses may be taken with the permission of the music technology minor advisor."
+      ]
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 6,
+    "course_references": 31,
+    "confidence": 1.0,
+    "status": "high_confidence_candidate",
+    "warnings": [
+      "Inferred 4 choices from an explicit 33-unit rule: Elective Course Options 33 units",
+      "Inferred 3 choices from an explicit 21-unit rule: Sound Recording Courses 21 units"
+    ],
+    "explicit_group_ratio": 1.0
+  },
+  "validation": {
+    "promotion_ready": true,
+    "blockers": [],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 21,
+    "extracted_unit_estimate": 124,
+    "scheduled_course_count": 18,
+    "missing_schedule_course_ids": [
+      "15-104",
+      "57-102",
+      "57-329"
+    ]
+  }
+}

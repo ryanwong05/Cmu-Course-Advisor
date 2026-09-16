@@ -1,0 +1,114 @@
+{
+  "program_id": "colloids-polymers-and-surfaces--minor",
+  "planning_id": "colloids-polymers-and-surfaces",
+  "name": "Colloids, Polymers and Surfaces",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/colloids-polymers-surfaces-minor/",
+  "source_hash": "5bceafbec8e48d1e9ff86b85795ed3c3b86cd2deda3f345d6ab70a497b159d5e",
+  "fixed_courses": [],
+  "requirement_groups": [
+    {
+      "id": "primary-requirement",
+      "name": "Primary Requirement",
+      "heading": "Primary Requirement",
+      "choose": 2,
+      "units": 45,
+      "options": [
+        "06-607",
+        "06-609",
+        "09-509",
+        "06-612"
+      ],
+      "source_instruction": "This minor requires a total of five or more classes and a minimum of 45 units. Primary Requirement Students must complete two (2) courses from the following primary list:",
+      "selection_rule": {
+        "type": "minimum_units",
+        "minimum_units": 45.0,
+        "course_count_estimate": 2
+      },
+      "track": null,
+      "source_categories": [
+        "This minor requires a total of five or more classes and a minimum of 45 units. Primary Requirement Students must complete two (2) courses from the following primary list"
+      ]
+    },
+    {
+      "id": "electives-1",
+      "name": "For the remaining three (3) courses, students may choose an additional course from the primary list above or courses from the elective list below. Students must meet any prerequisites for these courses.",
+      "heading": "Electives",
+      "choose": 1,
+      "units": 3,
+      "options": [
+        "06-426",
+        "06-466",
+        "06-610",
+        "06-686",
+        "06-714",
+        "09-502",
+        "09-507",
+        "09-224",
+        "24-684",
+        "27-477",
+        "27-565",
+        "27-570",
+        "42-613",
+        "27-577",
+        "27-704",
+        "33-355",
+        "42-611",
+        "42-676"
+      ],
+      "source_instruction": "For the remaining three (3) courses, students may choose an additional course from the primary list above or courses from the elective list below. Students must meet any prerequisites for these courses.",
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 22,
+    "confidence": 0.67,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Electives",
+      "No unambiguous fixed-course table was found."
+    ],
+    "explicit_group_ratio": 0.5
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "1 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "9 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 22,
+    "extracted_unit_estimate": 48,
+    "scheduled_course_count": 13,
+    "missing_schedule_course_ids": [
+      "06-426",
+      "06-466",
+      "06-607",
+      "06-609",
+      "09-224",
+      "09-507",
+      "09-509",
+      "33-355",
+      "42-676"
+    ]
+  }
+}

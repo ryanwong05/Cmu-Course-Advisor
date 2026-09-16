@@ -1,0 +1,78 @@
+{
+  "program_id": "building-science--minor",
+  "planning_id": "building-science",
+  "name": "Building Science",
+  "credential": "Minor",
+  "program_type": "minor",
+  "catalog_year": "2026-2027",
+  "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/building-science-minor/",
+  "source_hash": "93243d1758052ef7bca9761cffadbdacf6318cda9601cbcf2510195dfe18ac5c",
+  "fixed_courses": [
+    {
+      "id": "48-722",
+      "name": "Building Performance Modeling",
+      "units": 12.0,
+      "source_text": "48-722 Building Performance Modeling 12"
+    }
+  ],
+  "requirement_groups": [
+    {
+      "id": "selective-courses-1",
+      "name": "Selective Courses",
+      "heading": "Selective Courses",
+      "choose": 1,
+      "units": 6,
+      "options": [
+        "48-795",
+        "48-721",
+        "48-723",
+        "48-729",
+        "48-749"
+      ],
+      "source_instruction": null,
+      "selection_rule": {
+        "type": "unresolved",
+        "count": 1
+      },
+      "track": null
+    }
+  ],
+  "track_rule": null,
+  "policy_signals": {
+    "shared_credit": {
+      "present": false,
+      "course_limit_candidates": [],
+      "unit_limit_candidates": [],
+      "unlimited_exception_present": false,
+      "prohibition_language_present": false,
+      "source_sentences": []
+    }
+  },
+  "extraction": {
+    "tables_seen": 2,
+    "course_references": 6,
+    "confidence": 0.74,
+    "status": "needs_review",
+    "warnings": [
+      "Assumed choose-one for ambiguous section: Selective Courses"
+    ],
+    "explicit_group_ratio": 0.0
+  },
+  "validation": {
+    "promotion_ready": false,
+    "blockers": [
+      "1 requirement groups have unresolved selection rules."
+    ],
+    "warnings": [
+      "3 catalog course IDs are absent from the current schedule database."
+    ],
+    "catalog_course_count": 6,
+    "extracted_unit_estimate": 18,
+    "scheduled_course_count": 3,
+    "missing_schedule_course_ids": [
+      "48-723",
+      "48-749",
+      "48-795"
+    ]
+  }
+}
