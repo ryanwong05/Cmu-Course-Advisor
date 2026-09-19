@@ -1,6 +1,7 @@
 import json
 import os
 import unittest
+from pathlib import Path
 from unittest.mock import Mock, patch
 
 from fastapi import HTTPException
@@ -840,6 +841,67 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertNotIn("21-120", scheduled)
         self.assertNotIn("21-122", scheduled)
         self.assertEqual(len(scheduled), len(set(scheduled)))
+
+    def test_linguistics_cs_transfer_respects_completed_fixed_courses(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="dietrich",
+                primary_major="linguistics",
+                year=1,
+                completed_courses=["21-127", "15-122"],
+            ),
+            goals=[app.PlanningGoal(
+                type="internal_transfer",
+                college="scs",
+                program="computer-science",
+            )],
+            constraints=app.PlanningConstraints(target_completion_year=2),
+        )
+        result = app.create_plan(request)
+        scheduled = {
+            course_id
+            for semester in result["fastest"]["path"]
+            for course_id in semester["courses"]
+        }
+
+        self.assertTrue({"15-150", "15-210", "15-213", "15-251"} & scheduled)
+        self.assertTrue({"21-127", "15-122", "15-112"}.isdisjoint(scheduled))
+
+    def test_completed_fixed_courses_are_not_rescheduled_across_goal_types(self):
+        scenarios = [
+            ("internal_transfer", "computer-science", "15-122"),
+            ("additional_major", "robotics", "16-450"),
+            ("minor", "human-computer-interaction", "05-391"),
+        ]
+        for goal_type, program, completed_course in scenarios:
+            with self.subTest(goal_type=goal_type, program=program):
+                request = self.shared_request({
+                    "type": goal_type,
+                    "college": "scs",
+                    "program": program,
+                })
+                request.student.completed_courses = [completed_course]
+                scheduled = {
+                    course_id
+                    for semester in app.create_plan(request)["fastest"]["path"]
+                    for course_id in semester["courses"]
+                }
+                self.assertNotIn(completed_course, scheduled)
+
+    def test_frontend_collects_completed_courses_from_fixed_course_only_profiles(self):
+        source = (Path(__file__).parents[1] / "static" / "app.js").read_text()
+        self.assertIn("function collectCompletedCourseIds()", source)
+        self.assertIn("#courseList .course-option input", source)
+        self.assertNotIn(
+            "'.requirement-decision-page .course-option input[type=\"checkbox\"]:checked:not(#noCompletedCourses)'",
+            source,
+        )
+
+    def test_frontend_prioritizes_foundation_and_early_core_audit_sections(self):
+        source = (Path(__file__).parents[1] / "static" / "app.js").read_text()
+        self.assertIn("const prioritizedHistorySections = [];", source)
+        self.assertIn("Number(groupIndex) <= 1", source)
+        self.assertIn("auditFixedContainer.prepend(...prioritizedHistorySections);", source)
 
     def test_profile_required_courses_are_stably_deduplicated(self):
         goal = app.PlanningGoal(

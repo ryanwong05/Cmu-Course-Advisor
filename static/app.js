@@ -115,6 +115,7 @@ const appState = {
     latestCourseCatalog: {},
     latestSecondaryPathType: null,
     latestPlan: null,
+    latestPlanningRequest: null,
     genedSelections: {}
 };
 
@@ -662,7 +663,11 @@ function showScreen(screen) {
 function renderResultsRequirementProgress() {
     const panel = document.getElementById("resultsRequirementPanel");
     const progress = appState.requirementDecisionProgress;
-    if (!progress) {
+    const hasRecommendationSlots = (appState.latestPlan?.fastest?.path || []).some(semester =>
+        (semester.program_requirements || []).some(requirement => (requirement.options || []).length)
+        || (semester.baseline_requirements || []).length
+    );
+    if (!progress && !hasRecommendationSlots) {
         panel.innerHTML = "";
         panel.classList.add("hidden");
         return;
@@ -670,11 +675,99 @@ function renderResultsRequirementProgress() {
     panel.classList.remove("hidden");
     panel.innerHTML = `
         <div class="results-progress-copy">
-            <span><strong>Requirement choices</strong><small>${progress.complete} of ${progress.total} decisions complete</small></span>
-            <button class="secondary-button edit-requirements-button" type="button">Edit choices</button>
+            <span><strong>Requirement choices</strong><small>${progress ? `${progress.complete} of ${progress.total} decisions complete` : "Review the remaining approved-course choices"}</small></span>
+            <span class="results-requirement-actions"><button class="secondary-button recommend-remaining-button" type="button">✨ Recommend remaining choices</button><button class="secondary-button edit-requirements-button" type="button">Edit choices</button></span>
         </div>
-        <div class="decision-progress-track" role="progressbar" aria-label="Requirement choice completion" aria-valuemin="0" aria-valuemax="${progress.total}" aria-valuenow="${progress.complete}"><span style="width:${progress.percent}%"></span></div>`;
+        ${progress ? `<div class="decision-progress-track" role="progressbar" aria-label="Requirement choice completion" aria-valuemin="0" aria-valuemax="${progress.total}" aria-valuenow="${progress.complete}"><span style="width:${progress.percent}%"></span></div>` : ""}
+        <div class="course-recommendation-summary hidden" aria-live="polite"></div>`;
     panel.querySelector(".edit-requirements-button").addEventListener("click", () => showScreen(step3));
+    panel.querySelector(".recommend-remaining-button").addEventListener("click", requestCourseRecommendations);
+}
+
+function collectManualRequirementSelections() {
+    const selections = {...appState.genedSelections};
+    document.querySelectorAll('#fastestResults .choice-block[data-requirement-id][data-user-selected="true"]').forEach(block => {
+        if (block.dataset.courseId) selections[block.dataset.requirementId] = block.dataset.courseId;
+    });
+    return selections;
+}
+
+function applyCourseRecommendation(item, candidate = item.recommended) {
+    if (!candidate) return false;
+    const block = document.querySelector(`#fastestResults .choice-block[data-requirement-id="${item.requirement_id}"]`);
+    const select = block?.querySelector(".block-course");
+    if (!select) return false;
+    let option = Array.from(select.options).find(entry => entry.value === candidate.course_id);
+    if (!option) {
+        option = document.createElement("option");
+        option.value = candidate.course_id;
+        option.textContent = `${candidate.course_id} · ${candidate.course_name}`;
+        option.dataset.units = candidate.units;
+        select.appendChild(option);
+    }
+    block.dataset.userSelected = "true";
+    select.value = candidate.course_id;
+    select.dispatchEvent(new Event("change", {bubbles: true}));
+    return true;
+}
+
+function renderCourseRecommendations(data) {
+    const panel = document.querySelector("#resultsRequirementPanel .course-recommendation-summary");
+    if (!panel) return;
+    const actionable = data.recommendations.filter(item => item.status === "recommended" && item.recommended);
+    panel.classList.remove("hidden");
+    panel.innerHTML = `
+        <div class="course-recommendation-heading"><span><strong>Recommended choices</strong><small>Based on the current generated semesters, prerequisites, offerings, units, and workload data.</small></span>${actionable.length > 1 ? '<button type="button" class="primary-button use-all-recommendations">Use all recommendations</button>' : ""}</div>
+        <div class="course-recommendation-list">${data.recommendations.map((item, index) => item.recommended ? `
+            <article class="course-recommendation-card ${item.status === "candidate_requires_verification" ? "verification-required" : ""}">
+                <div><small>${item.status === "candidate_requires_verification" ? "Candidate · verify approval" : item.status === "manual_selection_preserved" ? "Your manual choice" : "★ Recommended"}</small><strong>${item.requirement_name}</strong><span>${item.recommended.course_id} · ${item.recommended.course_name} · ${item.recommended.units}u</span><p>${item.recommended.reasons.slice(0, 2).join(" · ")}</p>${item.recommended.warnings.length ? `<em>${item.recommended.warnings.join(" · ")}</em>` : ""}</div>
+                <div class="course-recommendation-actions"><button type="button" class="secondary-button use-course-recommendation" data-recommendation-index="${index}">${item.status === "candidate_requires_verification" ? "Use candidate" : "Use this course"}</button>${item.alternatives.length ? `<details><summary>See alternatives</summary><ul>${item.alternatives.map((option, alternativeIndex) => `<li><span><strong>${option.course_id}</strong> ${option.course_name}<small>${option.reasons.slice(0, 2).join(" · ")}</small></span><button type="button" class="secondary-button use-course-alternative" data-recommendation-index="${index}" data-alternative-index="${alternativeIndex}">Use</button></li>`).join("")}</ul></details>` : item.only_legal_candidate ? "<small>Only valid candidate found.</small>" : ""}</div>
+            </article>` : `
+            <article class="course-recommendation-card no-recommendation"><div><small>Needs review</small><strong>${item.requirement_name}</strong><span>${item.message}</span></div></article>`).join("")}</div>`;
+    panel.querySelectorAll(".use-course-recommendation").forEach(button => {
+        button.addEventListener("click", () => {
+            const item = data.recommendations[Number(button.dataset.recommendationIndex)];
+            if (applyCourseRecommendation(item)) button.textContent = "Selected ✓";
+        });
+    });
+    panel.querySelectorAll(".use-course-alternative").forEach(button => {
+        button.addEventListener("click", () => {
+            const item = data.recommendations[Number(button.dataset.recommendationIndex)];
+            const candidate = item.alternatives[Number(button.dataset.alternativeIndex)];
+            if (applyCourseRecommendation(item, candidate)) button.textContent = "Selected ✓";
+        });
+    });
+    panel.querySelector(".use-all-recommendations")?.addEventListener("click", event => {
+        let applied = 0;
+        actionable.forEach(item => { if (applyCourseRecommendation(item)) applied += 1; });
+        event.currentTarget.textContent = `${applied} choices selected ✓`;
+    });
+}
+
+async function requestCourseRecommendations(event) {
+    const button = event.currentTarget;
+    const originalText = button.textContent;
+    button.disabled = true;
+    button.textContent = "Finding valid choices…";
+    try {
+        const response = await fetch("/api/recommend-courses", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                ...appState.latestPlanningRequest,
+                current_plan: appState.latestPlan,
+                manual_selections: collectManualRequirementSelections()
+            })
+        });
+        if (!response.ok) throw new Error(await response.text());
+        renderCourseRecommendations(await response.json());
+    } catch (error) {
+        showPlannerError("Course recommendations could not be generated from the current plan.");
+        console.error("Course recommendation failed:", error);
+    } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+    }
 }
 
 function renderTransferReadiness(data) {
@@ -1713,6 +1806,16 @@ function buildPlanningRequest() {
     };
 }
 
+function collectCompletedCourseIds() {
+    // Fixed-course-only profiles do not render a requirement-decision-page.
+    // The course list is the stable owner of both fixed and choice inputs.
+    return [...new Set(
+        Array.from(document.querySelectorAll(
+            '#courseList .course-option input[type="checkbox"]:checked:not(#noCompletedCourses)'
+        )).flatMap(input => input.value.split(" + "))
+    )];
+}
+
 
 async function loadBaseline() {
     const baselineSummary = document.getElementById("baselineSummary");
@@ -2192,7 +2295,9 @@ function renderCourseSelection(
                 minimumYear: groupMinimumYear,
                 choose: group.choose || 1,
                 options: new Map(),
-                scopes: new Set()
+                scopes: new Set(),
+                alsoSatisfies: new Set(),
+                showRequiredMathCourses: normalized.key === "mathematics"
             };
             entry.minimumYear = Math.min(entry.minimumYear, groupMinimumYear);
             entry.choose = Math.max(entry.choose, group.choose || 1);
@@ -2235,7 +2340,22 @@ function renderCourseSelection(
         const auditList = decisionSection.querySelector(".requirement-audit-list");
         auditFixedContainer = auditList;
         const yearNames = ["", "freshman", "sophomore", "junior", "senior"];
-        const allGroups = Array.from(normalizedGroups.values());
+        const rawGroups = Array.from(normalizedGroups.values());
+        const redundantGroups = new Set();
+        rawGroups.forEach(broader => {
+            rawGroups.forEach(narrower => {
+                if (broader === narrower || broader.choose !== narrower.choose) return;
+                const broaderOptions = new Set(broader.options.keys());
+                const narrowerOptions = new Set(narrower.options.keys());
+                const isStrictSubset = narrowerOptions.size < broaderOptions.size
+                    && Array.from(narrowerOptions).every(option => broaderOptions.has(option));
+                if (!isStrictSubset) return;
+                redundantGroups.add(broader);
+                narrower.alsoSatisfies.add(broader.name);
+                if (broader.showRequiredMathCourses) narrower.showRequiredMathCourses = true;
+            });
+        });
+        const allGroups = rawGroups.filter(group => !redundantGroups.has(group));
         // A requirement with no real alternative (or where every option must
         // be completed) is an audit item, not a user decision.
         const groups = allGroups.filter(group => group.choose > 0 && group.options.size > group.choose);
@@ -2256,13 +2376,13 @@ function renderCourseSelection(
             groupPanel.dataset.choose = group.choose;
             groupPanel.innerHTML = `
                 <summary>
-                    <strong class="decision-summary-name">${group.name}</strong>
+                    <strong class="decision-summary-name">${group.name}${group.alsoSatisfies.size ? `<small>Also satisfies ${Array.from(group.alsoSatisfies).join(" + ")}</small>` : ""}</strong>
                     <span class="decision-summary-rule">${ruleText(group)}</span>
                     <span class="decision-status-text">${group.options.size} options</span>
                     <small class="decision-deadline">${deadlineText(group)}</small>
                 </summary>
                 <div class="decision-expanded">
-                    <p>${ruleText(group)} from the verified ${Array.from(group.scopes).join(" and ").toLowerCase()} requirement options.</p>
+                    <p>${ruleText(group)} from the verified ${Array.from(group.scopes).join(" and ").toLowerCase()} requirement options.${group.alsoSatisfies.size ? ` This choice also completes ${Array.from(group.alsoSatisfies).join(" and ")}.` : ""}</p>
                     ${group.options.size >= 10 ? `<div class="requirement-option-tools"><label>Search within ${group.name}<input type="search" class="requirement-option-search" placeholder="Search course number or name"></label><label>Show<select class="requirement-option-filter"><option value="all">All options</option><option value="selected">Selected only</option><option value="unselected">Unselected only</option></select></label></div>` : ""}
                     <div class="completed-choice-options"></div>
                 </div>`;
@@ -2283,7 +2403,7 @@ function renderCourseSelection(
 
             // Keep required math courses visible beside the Mathematics choice
             // without treating them as substitutes for its choose-one rule.
-            if (group.key === "mathematics") {
+            if (group.showRequiredMathCourses) {
                 const requiredMathCourses = ["21-122", "21-241"]
                     .map(id => data.courses.find(course => course.id === id))
                     .filter(Boolean)
@@ -2468,6 +2588,7 @@ function renderCourseSelection(
             (groups[group] ||= []).push(course);
             return groups;
         }, {});
+    const prioritizedHistorySections = [];
 
     Object.entries(groupedCourses).forEach(([groupIndex, groupCourses]) => {
         const section = document.createElement("section");
@@ -2520,8 +2641,15 @@ function renderCourseSelection(
             list.appendChild(label);
         }
         section.appendChild(list);
-        auditFixedContainer.appendChild(section);
+        if (choiceGroups.length && Number(groupIndex) <= 1) {
+            prioritizedHistorySections.push(section);
+        } else {
+            auditFixedContainer.appendChild(section);
+        }
     });
+    if (prioritizedHistorySections.length) {
+        auditFixedContainer.prepend(...prioritizedHistorySections);
+    }
     courseList.querySelectorAll(".audit-course-option input").forEach(input => {
         input.addEventListener("change", event => {
             const status = event.target.closest(".audit-course-option").querySelector(".audit-course-status");
@@ -2668,7 +2796,7 @@ function renderPath(
     };
     const baselineRequirementForCategory = category =>
         (appState.baselineRequirements || []).find(requirement =>
-            baselineCategoryNames[requirement.name] === category
+            requirement.id === category || baselineCategoryNames[requirement.name] === category
         );
 
     const fixedBlock = (block, number) => {
@@ -2696,11 +2824,11 @@ function renderPath(
     const choiceBlock = (block, number) => {
         const options = block.options || [];
         const isBaseline = block.kind === "baseline";
-        const baselineCategory = isBaseline ? baselineCategoryNames[block.name] || "" : "";
+        const baselineCategory = isBaseline ? block.id : "";
         const defaultIntensity = appState.latestCourseCatalog[block.default_option]?.intensity;
         const minimumYear = appState.latestCourseCatalog[block.default_option]?.minimum_year || block.minimum_year || 1;
         return `
-            <div class="planner-course-block choice-block ${block.default_option ? "has-selected-course choice-resolved" : ""} ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${intensityClass(defaultIntensity)}" data-units="${block.units}" data-course-id="${block.default_option || ""}" data-minimum-year="${minimumYear}" ${intensityData(defaultIntensity)} data-baseline-category="${baselineCategory}" draggable="true">
+            <div class="planner-course-block choice-block ${block.default_option ? "has-selected-course choice-resolved" : ""} ${block.program_tier === "additional_major" ? "additional-major-block" : block.program_tier === "minor_foundation" ? "minor-foundation-block" : ""} ${intensityClass(defaultIntensity)}" data-units="${block.units}" data-course-id="${block.default_option || ""}" data-requirement-id="${block.id}" data-minimum-year="${minimumYear}" ${intensityData(defaultIntensity)} data-baseline-category="${baselineCategory}" draggable="true">
                 <span class="block-number">${number}</span>
                 <span class="block-main">
                     <span class="choice-course-summary">
@@ -3056,6 +3184,7 @@ function renderPath(
         card.querySelectorAll(".block-course").forEach(select => {
             select.addEventListener("change", event => {
                 const block = event.target.closest(".planner-course-block");
+                if (event.isTrusted) block.dataset.userSelected = "true";
                 const option = event.target.selectedOptions[0];
                 const previousCourseId = block.dataset.courseId || "";
                 block.dataset.units = option?.dataset.units || block.dataset.units || 0;
@@ -3349,15 +3478,7 @@ document
             // #region 10A. COLLECT COMPLETED COURSES
             // ------------------------------------------------
 
-            const checkedCourses =
-                document.querySelectorAll(
-                    '.requirement-decision-page .course-option input[type="checkbox"]:checked:not(#noCompletedCourses)'
-                );
-
-
-            const completedCourses = [...new Set([
-                ...Array.from(checkedCourses).flatMap(input => input.value.split(" + "))
-            ])];
+            const completedCourses = collectCompletedCourseIds();
 
             appState.student.completed_courses =
                 completedCourses;
@@ -3463,6 +3584,7 @@ document
                 await response.json();
 
             appState.latestPlan = data;
+            appState.latestPlanningRequest = requestBody;
 
             appState.latestProgramProfile = data.program_profile;
             appState.latestCourseCatalog = data.course_catalog || {};
@@ -3579,6 +3701,7 @@ document
             renderGoalName();
 
             renderOverlapSummary(data.overlap_summary);
+            renderPathAlternatives(data.path_alternatives || []);
 
             // #endregion
 
@@ -3699,6 +3822,104 @@ function renderPathExplanation(
 
     }
 
+}
+
+function formatComparisonValue(value, suffix = "") {
+    return value === null || value === undefined ? "Unknown / Not verified" : `${value}${suffix}`;
+}
+
+function formatPrerequisiteBottlenecks(items) {
+    if (!items.length) return "None identified from verified planner data";
+    return items.map(item => `${item.course} after ${item.prerequisites.join(" + ")}`).join("; ");
+}
+
+function formatLimitedOfferings(items) {
+    if (!items.length) return "None identified from available offering data";
+    return items.map(item => `${item.course} (${item.offered.join("/")})`).join("; ");
+}
+
+function renderPathComparison(comparison) {
+    const panel = document.getElementById("pathComparisonResult");
+    const current = comparison.current;
+    const alternative = comparison.alternative;
+    const rows = [
+        ["Additional courses", current.metrics.additional_courses, alternative.metrics.additional_courses],
+        ["Additional units", formatComparisonValue(current.metrics.additional_units), formatComparisonValue(alternative.metrics.additional_units)],
+        ["Finish", `${current.metrics.completion_term || "No additional term"}${current.metrics.goal_complete ? "" : " · incomplete"}`, `${alternative.metrics.completion_term || "No additional term"}${alternative.metrics.goal_complete ? "" : " · incomplete"}`],
+        ["High-workload semesters", current.metrics.high_workload_semesters, alternative.metrics.high_workload_semesters],
+        ["Peak workload", formatComparisonValue(current.metrics.peak_workload, " / 5"), formatComparisonValue(alternative.metrics.peak_workload, " / 5")],
+        ["Shared with primary major", `${current.metrics.shared_course_count} courses`, `${alternative.metrics.shared_course_count} courses`],
+        ["Units saved through scheduled overlap", `${current.metrics.overlap_units_saved}u`, `${alternative.metrics.overlap_units_saved}u`],
+        ["Potential additional overlap", `${current.metrics.potential_overlap_course_count} courses`, `${alternative.metrics.potential_overlap_course_count} courses`],
+        ["Overload required", current.metrics.overload_required === null ? "Unknown / Not verified" : current.metrics.overload_required ? "Yes" : "No", alternative.metrics.overload_required === null ? "Unknown / Not verified" : alternative.metrics.overload_required ? "Yes" : "No"],
+        ["Open unit capacity", `${current.metrics.free_elective_units}u`, `${alternative.metrics.free_elective_units}u`],
+        ["Unscheduled requirements", current.metrics.unscheduled_requirements.length, alternative.metrics.unscheduled_requirements.length]
+    ];
+    panel.innerHTML = `
+        <div class="path-comparison-heading"><div><p class="eyebrow">COMPARE PATHS</p><h3>${current.label} <span>vs.</span> ${alternative.label}</h3></div><button class="secondary-button close-path-comparison" type="button">Close</button></div>
+        <div class="comparison-table" role="table">
+            <div class="comparison-row comparison-header" role="row"><strong>Measure</strong><strong>${current.label}</strong><strong>${alternative.label}</strong></div>
+            ${rows.map(row => `<div class="comparison-row" role="row"><span>${row[0]}</span><strong>${row[1]}</strong><strong>${row[2]}</strong></div>`).join("")}
+        </div>
+        <div class="tradeoff-summary"><h4>Tradeoffs</h4><ul>${comparison.opportunity_cost.map(item => `<li>${item}</li>`).join("")}</ul></div>
+        <div class="comparison-bottlenecks">
+            <span><strong>${current.label} prerequisite bottlenecks</strong>${formatPrerequisiteBottlenecks(current.metrics.prerequisite_bottlenecks)}<strong>Limited offerings</strong>${formatLimitedOfferings(current.metrics.limited_offerings)}</span>
+            <span><strong>${alternative.label} prerequisite bottlenecks</strong>${formatPrerequisiteBottlenecks(alternative.metrics.prerequisite_bottlenecks)}<strong>Limited offerings</strong>${formatLimitedOfferings(alternative.metrics.limited_offerings)}</span>
+        </div>
+        <details class="course-difference"><summary>View course differences</summary>
+            <div><span><strong>Only ${current.label}</strong>${comparison.course_diff.only_current.join(", ") || "None"}</span><span><strong>Shared</strong>${comparison.course_diff.shared.join(", ") || "None"}</span><span><strong>Only ${alternative.label}</strong>${comparison.course_diff.only_alternative.join(", ") || "None"}</span></div>
+            ${comparison.course_diff.semester_changes.length ? `<ul class="semester-change-list">${comparison.course_diff.semester_changes.map(change => `<li><strong>${change.course}</strong>: ${change.current_term} → ${change.alternative_term}</li>`).join("")}</ul>` : ""}
+        </details>`;
+    panel.classList.remove("hidden");
+    panel.querySelector(".close-path-comparison").addEventListener("click", () => panel.classList.add("hidden"));
+    panel.scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+function renderPathAlternatives(alternatives) {
+    const section = document.getElementById("pathAlternatives");
+    const cards = document.getElementById("pathAlternativeCards");
+    const comparisonPanel = document.getElementById("pathComparisonResult");
+    comparisonPanel.classList.add("hidden");
+    comparisonPanel.innerHTML = "";
+    if (!alternatives.length || !appState.goals[0]) {
+        section.classList.add("hidden");
+        return;
+    }
+    section.classList.remove("hidden");
+    cards.innerHTML = alternatives.map((alternative, index) => `
+        <article class="path-alternative-card">
+            <div><small>${alternative.goal_type.replaceAll("_", " ")}</small><h3>${alternative.label}</h3><p>Generate this path with the same student record, constraints, and verified planner data.</p></div>
+            <button class="secondary-button compare-path-button" type="button" data-alternative-index="${index}">Compare</button>
+        </article>`).join("");
+    cards.querySelectorAll(".compare-path-button").forEach(button => {
+        button.addEventListener("click", async event => {
+            const alternative = alternatives[Number(event.currentTarget.dataset.alternativeIndex)];
+            const originalText = event.currentTarget.textContent;
+            event.currentTarget.disabled = true;
+            event.currentTarget.textContent = "Comparing…";
+            try {
+                const response = await fetch("/api/program-comparison", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        student: appState.student,
+                        current_goal: appState.goals[0],
+                        alternative_goal: {type: alternative.goal_type, program: alternative.program},
+                        constraints: appState.constraints,
+                        current_plan: appState.latestPlan
+                    })
+                });
+                if (!response.ok) throw new Error(await response.text());
+                renderPathComparison(await response.json());
+            } catch (error) {
+                showPlannerError("This alternative could not be compared with the current planning data.");
+                console.error("Path comparison failed:", error);
+            } finally {
+                event.currentTarget.disabled = false;
+                event.currentTarget.textContent = originalText;
+            }
+        });
+    });
 }
 
 

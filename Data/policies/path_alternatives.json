@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "max_alternatives": 4,
+  "alternatives": {
+    "artificial-intelligence|additional_major": [
+      {"program": "artificial-intelligence", "goal_type": "minor"},
+      {"program": "robotics", "goal_type": "additional_major"},
+      {"program": "human-computer-interaction", "goal_type": "minor"}
+    ],
+    "artificial-intelligence|minor": [
+      {"program": "artificial-intelligence", "goal_type": "additional_major"},
+      {"program": "robotics", "goal_type": "minor"},
+      {"program": "human-computer-interaction", "goal_type": "minor"}
+    ],
+    "robotics|additional_major": [
+      {"program": "robotics", "goal_type": "minor"},
+      {"program": "artificial-intelligence", "goal_type": "additional_major"},
+      {"program": "computer-science", "goal_type": "minor"}
+    ],
+    "robotics|minor": [
+      {"program": "robotics", "goal_type": "additional_major"},
+      {"program": "artificial-intelligence", "goal_type": "minor"},
+      {"program": "computer-science", "goal_type": "minor"}
+    ],
+    "computer-science|additional_major": [
+      {"program": "computer-science", "goal_type": "minor"},
+      {"program": "artificial-intelligence", "goal_type": "additional_major"},
+      {"program": "robotics", "goal_type": "additional_major"}
+    ],
+    "computer-science|minor": [
+      {"program": "computer-science", "goal_type": "additional_major"},
+      {"program": "artificial-intelligence", "goal_type": "minor"},
+      {"program": "robotics", "goal_type": "minor"}
+    ],
+    "human-computer-interaction|additional_major": [
+      {"program": "human-computer-interaction", "goal_type": "minor"},
+      {"program": "artificial-intelligence", "goal_type": "additional_major"},
+      {"program": "robotics", "goal_type": "minor"}
+    ],
+    "human-computer-interaction|minor": [
+      {"program": "human-computer-interaction", "goal_type": "additional_major"},
+      {"program": "artificial-intelligence", "goal_type": "minor"},
+      {"program": "robotics", "goal_type": "minor"}
+    ],
+    "computational-biology|additional_major": [
+      {"program": "computational-biology", "goal_type": "minor"},
+      {"program": "computer-science", "goal_type": "minor"},
+      {"program": "artificial-intelligence", "goal_type": "minor"}
+    ],
+    "computational-biology|minor": [
+      {"program": "computational-biology", "goal_type": "additional_major"},
+      {"program": "computer-science", "goal_type": "minor"},
+      {"program": "artificial-intelligence", "goal_type": "minor"}
+    ]
+  }
+}

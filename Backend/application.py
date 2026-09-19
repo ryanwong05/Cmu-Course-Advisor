@@ -55,6 +55,16 @@ from Backend.transfer_advisor import (
     request_ollama_transfer_advice,
     request_openai_transfer_advice,
 )
+from Backend.path_comparison import (
+    compare_generated_plans,
+    discover_path_alternatives,
+    load_path_alternatives,
+)
+from Backend.course_recommendation import (
+    load_recommendation_policy,
+    recommendation_slots_from_plan,
+    recommend_courses_for_plan,
+)
 
 # Backend/application.py
 #         ↓
@@ -123,6 +133,8 @@ NAMED_COURSE_SETS = elective_rules["named_course_sets"]
 REQUIREMENT_OPTION_SETS = elective_rules["requirement_option_sets"]
 COURSE_PATTERN_CONSTRAINTS = elective_rules["course_pattern_constraints"]
 PROGRAM_REQUIREMENT_ADJUSTMENTS = elective_rules["program_requirement_adjustments"]
+PATH_ALTERNATIVES = load_path_alternatives(POLICY_DIR)
+COURSE_RECOMMENDATION_POLICY = load_recommendation_policy(POLICY_DIR)
 COURSE_COMPLETION_IMPLICATIONS = load_json(POLICY_DIR / "completion_implications.json")
 course_progression_rules = load_json(POLICY_DIR / "course_progression_rules.json")
 CURATED_PREREQUISITES = course_progression_rules["prerequisites"]
@@ -282,6 +294,16 @@ class ComparisonRequest(BaseModel):
     goal_types: list[Literal["internal_transfer", "additional_major", "minor"]] = Field(
         default_factory=lambda: ["additional_major", "minor"]
     )
+    current_goal: PlanningGoal | None = None
+    alternative_goal: PlanningGoal | None = None
+    constraints: PlanningConstraints = Field(default_factory=PlanningConstraints)
+    current_plan: dict | None = None
+
+
+class CourseRecommendationRequest(PlanningRequest):
+    current_plan: dict | None = None
+    requirement_ids: list[str] = Field(default_factory=list)
+    manual_selections: dict[str, str] = Field(default_factory=dict)
 
 
 class LegacyPlanRequest(BaseModel):
@@ -883,6 +905,32 @@ def get_primary_major_profile(program_id: str):
 
 @app.post("/api/program-comparison")
 def compare_programs(request: ComparisonRequest):
+    if request.current_goal is not None or request.alternative_goal is not None:
+        if request.current_goal is None or request.alternative_goal is None:
+            raise HTTPException(
+                status_code=422,
+                detail="Both current_goal and alternative_goal are required for a path comparison",
+            )
+        current_result = request.current_plan or create_plan(PlanningRequest(
+            student=request.student,
+            goals=[request.current_goal],
+            constraints=request.constraints,
+        ))
+        alternative_result = create_plan(PlanningRequest(
+            student=request.student,
+            goals=[request.alternative_goal],
+            constraints=request.constraints,
+        ))
+        return compare_generated_plans(
+            current_result=current_result,
+            alternative_result=alternative_result,
+            current_goal=request.current_goal.model_dump(),
+            alternative_goal=request.alternative_goal.model_dump(),
+            primary_course_ids=current_major_course_universe(request.student),
+            completed_courses=set(expand_completed_courses(request.student.completed_courses)),
+            program_names={program["id"]: program["name"] for program in programs},
+        )
+
     selected = request.programs or [program["id"] for program in programs]
     names = {program["id"]: program["name"] for program in programs}
     current_major_courses = current_major_course_universe(request.student)
@@ -927,6 +975,101 @@ def compare_programs(request: ComparisonRequest):
         "current_major_scope": "verified_subset",
         "comparisons": comparisons,
         "notes": program_profiles["notes"],
+    }
+
+
+def recommendation_baseline_pools(plan: dict, request: CourseRecommendationRequest):
+    """Reuse the existing elective catalog without claiming unverified approval."""
+    pools = {}
+    candidate_catalog = {}
+    for semester in plan.get("path", []):
+        term = semester.get("semester", request.constraints.start_semester)
+        for requirement in semester.get("baseline_requirements", []):
+            requirement_id = requirement["id"]
+            category_policy = COURSE_RECOMMENDATION_POLICY[
+                "baseline_candidate_categories"
+            ].get(requirement_id)
+            if not category_policy or requirement_id in pools:
+                continue
+            category = category_policy["category"]
+            response = list_electives(
+                term=term,
+                category=category,
+                primary_major=request.student.primary_major,
+                goal_program=request.goals[0].program if request.goals else None,
+            )
+            options = [course["id"] for course in response["courses"]]
+            verified = bool(category_policy.get("eligibility_verified")) or bool(
+                requirement.get("courses")
+            )
+            note = (
+                None
+                if verified
+                else "Scheduled candidate only; confirm that it satisfies this Dietrich category in SIO or with an advisor"
+            )
+            pools[requirement_id] = {
+                "options": options,
+                "eligibility_verified": verified,
+                "eligibility_note": note,
+            }
+            for course in response["courses"]:
+                existing = candidate_catalog.get(course["id"], {})
+                candidate_catalog[course["id"]] = {
+                    **existing,
+                    **course,
+                    "offered": sorted({
+                        *existing.get("offered", []),
+                        course["term"],
+                    }),
+                    "prerequisite_expression": None,
+                }
+    return pools, candidate_catalog
+
+
+@app.post("/api/recommend-courses")
+def recommend_courses(request: CourseRecommendationRequest):
+    if not request.goals:
+        raise HTTPException(status_code=422, detail="At least one goal is required")
+    planning_request = PlanningRequest(
+        student=request.student,
+        goals=request.goals,
+        constraints=request.constraints,
+    )
+    generated = (
+        request.current_plan
+        if request.current_plan and request.current_plan.get("course_catalog")
+        else create_plan(planning_request)
+    )
+    fastest = generated.get("fastest", generated)
+    pools, candidate_catalog = recommendation_baseline_pools(fastest, request)
+    slots = recommendation_slots_from_plan(fastest, pools)
+    catalog = dict(generated.get("course_catalog", {}))
+    for course_id, candidate in candidate_catalog.items():
+        existing = catalog.get(course_id, {})
+        catalog[course_id] = {
+            **candidate,
+            **existing,
+            "offered": sorted({
+                *candidate.get("offered", []),
+                *existing.get("offered", []),
+            }),
+        }
+    goal_profile = profile_for_goal(request.goals[0]) or {}
+    result = recommend_courses_for_plan(
+        plan=fastest,
+        slots=slots,
+        catalog=catalog,
+        completed_courses=set(expand_completed_courses(request.student.completed_courses)),
+        primary_course_ids=current_major_course_universe(request.student),
+        goal_course_ids=set(extract_course_ids_from_requirement_profile(goal_profile)),
+        manual_selections=request.manual_selections,
+        policy=COURSE_RECOMMENDATION_POLICY,
+        requirement_ids=set(request.requirement_ids) or None,
+    )
+    return {
+        **result,
+        "policy_version": COURSE_RECOMMENDATION_POLICY["version"],
+        "advisory_only": True,
     }
 
 
@@ -1453,6 +1596,17 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             }
             if goal is not None and goal.type == "additional_major"
             else None
+        ),
+        "path_alternatives": (
+            discover_path_alternatives(
+                goal.model_dump(),
+                request.student.model_dump(),
+                PATH_ALTERNATIVES,
+                program_profiles,
+                {program["id"]: program["name"] for program in programs},
+            )
+            if isinstance(request, PlanningRequest) and goal is not None
+            else []
         ),
     }
 

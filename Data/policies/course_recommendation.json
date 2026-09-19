@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "maximum_alternatives": 4,
+  "baseline_candidate_categories": {
+    "communication": {"category": "communication", "eligibility_verified": true},
+    "humanities": {"category": "humanities", "eligibility_verified": false},
+    "social-sciences": {"category": "social-sciences", "eligibility_verified": false},
+    "data-analysis": {"category": "data-analysis", "eligibility_verified": true},
+    "computational-thinking": {"category": "general-education", "eligibility_verified": false},
+    "contextual-thinking": {"category": "general-education", "eligibility_verified": false},
+    "intercultural-global-inquiry": {"category": "general-education", "eligibility_verified": false},
+    "scientific-inquiry": {"category": "general-education", "eligibility_verified": false},
+    "logic-mathematical-reasoning": {"category": "general-education", "eligibility_verified": false},
+    "arts": {"category": "general-education", "eligibility_verified": false},
+    "additional-disciplines": {"category": "general-education", "eligibility_verified": false},
+    "justice-injustice": {"category": "general-education", "eligibility_verified": false}
+  },
+  "weights": {
+    "cross_program_overlap": 24,
+    "future_unlock": 8,
+    "no_additional_prerequisites": 6,
+    "lighter_workload": 5,
+    "planner_default": 3,
+    "prerequisite_step": -3,
+    "heavy_course_in_busy_semester": -12,
+    "single_term_offering": -5,
+    "unverified_prerequisites": -8,
+    "unverified_requirement_eligibility": -20
+  }
+}

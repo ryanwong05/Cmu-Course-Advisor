@@ -731,6 +731,26 @@ input[type="number"]:focus {
 .results-progress-copy strong { color: #254f31; font-size: 14px; }
 .results-progress-copy small { color: #747b75; font-size: 11px; }
 .results-progress-copy .secondary-button { flex: none; padding: 8px 12px; }
+.results-requirement-actions { display: flex; gap: 8px; }
+.course-recommendation-summary { display: grid; gap: 12px; padding-top: 12px; border-top: 1px solid #dfe7e0; }
+.course-recommendation-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.course-recommendation-heading > span { display: grid; gap: 3px; }
+.course-recommendation-heading small { color: #707770; font-size: 11px; }
+.course-recommendation-list { display: grid; gap: 9px; }
+.course-recommendation-card { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 13px 14px; border: 1px solid #dce5dd; border-radius: 12px; background: white; }
+.course-recommendation-card > div:first-child { display: grid; gap: 3px; min-width: 0; }
+.course-recommendation-card > div:first-child > small { color: #347348; font-size: 9px; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+.course-recommendation-card span, .course-recommendation-card p, .course-recommendation-card em { margin: 0; color: #646b65; font-size: 11px; line-height: 1.4; }
+.course-recommendation-card em { color: #8a5b11; font-style: normal; }
+.course-recommendation-card.verification-required { border-color: #e8cf9d; background: #fffaf0; }
+.course-recommendation-card.no-recommendation { border-color: #e5d7d1; background: #fff9f7; }
+.course-recommendation-actions { display: grid; justify-items: end; gap: 6px; flex: none; }
+.course-recommendation-actions details { max-width: 360px; color: #4f5850; font-size: 11px; }
+.course-recommendation-actions summary { cursor: pointer; font-weight: 750; text-align: right; }
+.course-recommendation-actions ul { display: grid; gap: 6px; margin: 7px 0 0; padding-left: 18px; }
+.course-recommendation-actions li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+.course-recommendation-actions li > span { display: grid; gap: 2px; }
+.course-recommendation-actions li small { display: block; color: #777e77; }
 .results-requirement-heading { display: grid; gap: 5px; }
 .results-requirement-heading h2,
 .results-requirement-heading p { margin: 0; }
@@ -746,6 +766,8 @@ input[type="number"]:focus {
 .decision-progress > div:first-child { display: flex; justify-content: space-between; gap: 16px; }
 .decision-progress-label { color: #254f31; font-size: 14px; }
 .decision-progress-percent { color: #647067; font-size: 12px; font-weight: 750; }
+.decision-summary-name { display: grid; gap: 2px; }
+.decision-summary-name small { color: #39724a; font-size: 10px; font-weight: 750; }
 .decision-progress-track { height: 8px; overflow: hidden; border-radius: 999px; background: #e2e9e3; }
 .decision-progress-track span { display: block; height: 100%; border-radius: inherit; background: #3b8c55; transition: width .2s ease; }
 .requirement-tabs { display: flex; gap: 5px; padding: 4px; border-radius: 12px; background: #efefec; }
@@ -1729,6 +1751,52 @@ input[type="number"]:focus {
     width: min(1480px, calc(100vw - 36px));
     margin-left: 50%;
     transform: translateX(-50%);
+}
+
+.path-alternatives {
+    display: grid;
+    gap: 18px;
+    margin: 34px 0;
+    padding: 24px;
+    border: 1px solid #d8e3da;
+    border-radius: 18px;
+    background: #f8fbf8;
+}
+.path-alternatives-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+.path-alternatives-heading h2, .path-alternatives-heading p { margin: 0; }
+.path-alternatives-heading > p { max-width: 470px; color: #6d746e; font-size: 13px; }
+.path-alternative-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.path-alternative-card { display: flex; justify-content: space-between; gap: 18px; padding: 18px; border: 1px solid #e0e3df; border-radius: 14px; background: white; }
+.path-alternative-card > div { display: grid; gap: 5px; }
+.path-alternative-card small { color: #387149; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.path-alternative-card h3, .path-alternative-card p { margin: 0; }
+.path-alternative-card p { color: #737873; font-size: 12px; line-height: 1.45; }
+.path-alternative-card button { align-self: end; flex: none; }
+.path-comparison-result { display: grid; gap: 18px; padding: 20px; border: 1px solid #cbdace; border-radius: 14px; background: white; }
+.path-comparison-heading { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.path-comparison-heading h3 { margin: 0; }
+.path-comparison-heading h3 span { color: #8b918c; font-weight: 500; }
+.comparison-table { display: grid; border: 1px solid #e2e4e1; border-radius: 12px; overflow: hidden; }
+.comparison-row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 12px; padding: 11px 14px; border-top: 1px solid #eceeeb; font-size: 12px; }
+.comparison-row:first-child { border-top: 0; }
+.comparison-header { background: #f3f6f3; }
+.tradeoff-summary h4 { margin: 0 0 7px; }
+.tradeoff-summary ul { margin: 0; padding-left: 20px; color: #4f5550; font-size: 13px; }
+.comparison-bottlenecks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.comparison-bottlenecks span { display: grid; gap: 4px; padding: 12px; border-radius: 10px; background: #f6f7f5; color: #5f655f; font-size: 12px; }
+.course-difference summary { cursor: pointer; font-weight: 800; }
+.course-difference > div { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+.course-difference span { display: grid; gap: 5px; padding: 12px; border-radius: 10px; background: #f6f7f5; font-size: 12px; }
+.semester-change-list { margin: 12px 0 0; padding-left: 20px; color: #555c56; font-size: 12px; }
+
+@media (max-width: 900px) {
+    .results-progress-copy, .course-recommendation-heading, .course-recommendation-card { align-items: stretch; flex-direction: column; }
+    .results-requirement-actions { flex-wrap: wrap; }
+    .course-recommendation-actions { justify-items: start; }
+    .path-alternatives-heading { align-items: start; flex-direction: column; }
+    .path-alternative-cards, .course-difference > div, .comparison-bottlenecks { grid-template-columns: 1fr; }
+    .comparison-row { grid-template-columns: 1fr; }
+    .comparison-header { display: none; }
 }
 
 .semester-name {
