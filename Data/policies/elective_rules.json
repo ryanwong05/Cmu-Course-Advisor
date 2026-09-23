@@ -28,7 +28,8 @@
     "electrical-and-computer-engineering": ["18"],
     "computer-science": ["15"],
     "information-systems": ["67"],
-    "computer-science-and-arts": ["15", "52"]
+    "computer-science-and-arts": ["15", "52"],
+    "mathematical-sciences--b-s": ["21"]
   },
 
   "general_education_prefixes": [
@@ -86,6 +87,34 @@
       "source": "planning_course_graph",
       "maximum_course_number": 599,
       "policy_status": "unverified_candidate_pool"
+    },
+
+    "mathematical_sciences_bs_math_electives": {
+      "department_prefixes": ["21"],
+      "minimum_course_number": 300,
+      "maximum_course_number": 599,
+      "courses": ["21-270", "21-292"],
+      "excluded_courses": [
+        "21-325", "21-341", "21-355", "21-356", "21-373",
+        "21-374", "21-425", "21-455", "21-456"
+      ],
+      "policy_status": "official_catalog_rule"
+    },
+
+    "mathematical_sciences_bs_cs_technical_electives": {
+      "department_prefixes": ["15"],
+      "minimum_course_number": 200,
+      "maximum_course_number": 599,
+      "excluded_courses": ["15-251", "15-259"],
+      "policy_status": "official_catalog_rule"
+    },
+
+    "mathematical_sciences_bs_physics_technical_electives": {
+      "department_prefixes": ["33"],
+      "minimum_course_number": 300,
+      "maximum_course_number": 599,
+      "excluded_courses": ["33-231"],
+      "policy_status": "official_catalog_rule"
     }
   },
 

@@ -93,7 +93,10 @@ const appState = {
         enrollment_status: "enrolled",
         current_term: "fall",
         completed_courses: [],
-        completed_requirement_ids: []
+        completed_requirement_ids: [],
+        in_progress_courses: [],
+        planned_courses: [],
+        locked_semesters: []
     },
     goals: [],
     constraints: {
@@ -286,6 +289,58 @@ document.getElementById("toggleSavedPaths").addEventListener("click", () => {
 });
 
 renderSavedPaths();
+
+function displayProgramName(id) {
+    return (id || "Not selected")
+        .replaceAll("--", " ")
+        .replaceAll("-", " ")
+        .replace(/\b\w/g, letter => letter.toUpperCase());
+}
+
+function renderAcademicDashboard() {
+    const grid = document.getElementById("academicDashboardGrid");
+    if (!grid) return;
+    const plan = appState.latestPlan;
+    const primary = plan?.degree_audits?.primary_degree;
+    const goalAudit = plan?.degree_audits?.selected_goal;
+    const goal = appState.goals[0];
+    const path = plan?.lower_workload?.path?.length
+        ? plan.lower_workload.path
+        : plan?.fastest?.path || [];
+    const nextSemester = path[0];
+    const nextCourses = (nextSemester?.course_blocks || [])
+        .filter(block => !block.estimated)
+        .slice(0, 4)
+        .map(block => block.default_option || block.id || block.name);
+    const primaryProgress = primary?.total_requirements
+        ? `${primary.requirements_completed || 0} completed · ${primary.requirements_planned || 0} planned · ${primary.requirements_unresolved || 0} unresolved`
+        : "Progress appears after a verified plan is generated.";
+    const goalProgress = goalAudit?.total_requirements
+        ? `${goalAudit.requirements_completed || 0} completed · ${goalAudit.requirements_planned || 0} planned · ${goalAudit.requirements_unresolved || 0} unresolved`
+        : goal ? "Generate a plan to calculate verified progress." : "No academic goal selected yet.";
+    grid.innerHTML = `
+        <article><small>WHERE YOU ARE</small><strong>${displayProgramName(appState.student.primary_major)}</strong><span>${primaryProgress}</span></article>
+        <article><small>WHERE YOU'RE GOING</small><strong>${goal ? displayProgramName(goal.program) : "Explore a goal"}</strong><span>${goalProgress}</span></article>
+        <article><small>WHAT'S NEXT</small><strong>${nextSemester ? `${nextSemester.academic_year_name} ${nextSemester.semester}` : "Create a starting plan"}</strong><span>${nextCourses.length ? nextCourses.join(" · ") : "The planner will propose the first useful semester."}</span></article>
+        <article><small>CURRENT PATH</small><strong>${plan ? "Balanced path" : "No plan yet"}</strong><span>${path.length ? `Target shown through ${path.at(-1).academic_year_name} ${path.at(-1).semester}` : "Your unit limits and verified requirements remain editable."}</span></article>`;
+    document.getElementById("viewCurrentPathButton")?.classList.toggle("hidden", !plan);
+}
+
+document.getElementById("viewCurrentPathButton")?.addEventListener("click", () => showScreen(results));
+document.getElementById("exploreGoalButton")?.addEventListener("click", () => {
+    const [status, currentYear, currentTerm, planYear, planTerm] =
+        document.getElementById("planningStart").value.split("|");
+    appState.student.college = document.getElementById("college").value;
+    appState.student.primary_major = document.getElementById("major").value;
+    appState.student.enrollment_status = status;
+    appState.student.year = Number(currentYear);
+    appState.student.current_term = currentTerm;
+    document.getElementById("planningYear").value = planYear;
+    document.getElementById("semester").value = planTerm;
+    showScreen(step2);
+});
+
+renderAcademicDashboard();
 // #endregion
 
 
@@ -320,50 +375,14 @@ const goalNames = {
 // #endregion
 
 
-// #region 4. TEMPORARY SCS PROGRAM DATA
+// #region 4. PROGRAM DIRECTORY DATA
 // ============================================================
-// TEMPORARY ONLY.
-//
-// We are keeping these here so we can finish the frontend
-// architecture before connecting programs.json.
-//
-// Later, delete this whole region and replace it with:
-//
-// const response = await fetch("/api/programs");
-// const programData = await response.json();
-//
+// Program existence, available forms, and readiness all come from the
+// canonical backend directory. The browser does not maintain an allowlist.
 // ============================================================
-
-let temporarySCSPrograms = [
-
-    {
-        id: "computer-science",
-        name: "Computer Science"
-    },
-
-    {
-        id: "artificial-intelligence",
-        name: "Artificial Intelligence"
-    },
-
-    {
-        id: "robotics",
-        name: "Robotics"
-    },
-
-    {
-        id: "human-computer-interaction",
-        name: "Human-Computer Interaction"
-    },
-
-    {
-        id: "computational-biology",
-        name: "Computational Biology"
-    }
-
-];
 
 let programDirectory = [];
+let programExplorerDirectory = [];
 
 const currentMajorAliases = {
     "Statistics and Machine Learning": "stats-ml",
@@ -400,14 +419,11 @@ function populateCurrentMajors() {
 
 async function loadProgramRegistry() {
     try {
-        const [programResponse, directoryResponse] = await Promise.all([
-            fetch("/api/programs"),
-            fetch("/api/program-directory")
-        ]);
-        if (programResponse.ok) temporarySCSPrograms = await programResponse.json();
+        const directoryResponse = await fetch("/api/program-directory");
         if (directoryResponse.ok) {
             const payload = await directoryResponse.json();
             programDirectory = payload.programs;
+            programExplorerDirectory = payload.canonical_programs || [];
             populateCurrentMajors();
         }
     } catch (error) {
@@ -652,6 +668,8 @@ function showScreen(screen) {
 
     screen.classList.remove("hidden");
 
+    if (screen === step1) renderAcademicDashboard();
+
 
     window.scrollTo({
         top: 0,
@@ -851,10 +869,19 @@ function renderTransferReadiness(data) {
         <p class="transfer-policy-note">${policy.eligibility || "Confirm all criteria with the destination program."} ${policy.source_url ? `<a href="${policy.source_url}" target="_blank" rel="noopener">View official policy</a>` : ""}</p>
         ${transfer.mode === "eligibility" && transfer.post_transfer_plan_available ? '<button class="secondary-button plan-after-transfer-button" type="button">Plan courses after I transfer →</button>' : ""}`;
     panel.querySelector(".plan-after-transfer-button")?.addEventListener("click", () => {
+        appState.student.locked_semesters = structuredClone(data.fastest?.path || []);
+        appState.student.planned_courses = [];
         appState.selection.includePostTransferPlan = true;
         updatePlanningGoal();
         document.getElementById("generateButton").click();
     });
+}
+
+function clearTransferContinuation() {
+    appState.selection.includePostTransferPlan = false;
+    appState.student.in_progress_courses = [];
+    appState.student.planned_courses = [];
+    appState.student.locked_semesters = [];
 }
 
 function prepareTransferAdvisor(data) {
@@ -959,7 +986,10 @@ document
             enrollment_status: document.getElementById("enrollmentStatus").value,
             current_term: document.getElementById("currentTerm").value,
             completed_courses: appState.student.completed_courses,
-            completed_requirement_ids: appState.student.completed_requirement_ids
+            completed_requirement_ids: appState.student.completed_requirement_ids,
+            in_progress_courses: appState.student.in_progress_courses || [],
+            planned_courses: appState.student.planned_courses || [],
+            locked_semesters: appState.student.locked_semesters || []
         };
 
         const [status, currentYear, currentTerm, planYear, planTerm] =
@@ -1095,6 +1125,7 @@ goalTypeCards.forEach(card => {
 
 
         // Save the user's choice
+        clearTransferContinuation();
         appState.selection.goalType =
             card.dataset.goalType;
 
@@ -1287,7 +1318,8 @@ schoolSelect.addEventListener(
             schoolSelect.value;
 
 
-        // Changing school invalidates old program choice.
+        // Changing school invalidates old program choice and continuation.
+        clearTransferContinuation();
         appState.selection.program =
             null;
 
@@ -1365,157 +1397,10 @@ schoolSelect.addEventListener(
 //
 // ============================================================
 
-function renderTemporarySCSPrograms() {
-
-    const programSection =
-        document.getElementById(
-            "programSection"
-        );
-
-    const programOptions =
-        document.getElementById(
-            "programOptions"
-        );
-
-
-    // --------------------------------------------------------
-    // Remove old program cards before rendering again
-    // --------------------------------------------------------
-
-    programOptions.innerHTML = "";
-
-
-    // --------------------------------------------------------
-    // Create one button per program
-    // --------------------------------------------------------
-
-    for (
-        const program
-        of temporarySCSPrograms
-    ) {
-
-        const button =
-            document.createElement(
-                "button"
-            );
-
-
-        button.className =
-            "program-card";
-
-
-        button.dataset.program =
-            program.id;
-
-
-        button.innerHTML = `<strong>${program.name}</strong>`;
-
-        if (appState.selection.goalType === "add-program") {
-            const route = document.createElement("span");
-            route.className = "program-upgrade-label";
-            route.textContent = "Minor foundation → Additional Major";
-            button.appendChild(route);
-        }
-
-
-        // ----------------------------------------------------
-        // PROGRAM CLICK EVENT
-        // ----------------------------------------------------
-
-        button.addEventListener(
-            "click",
-            event => {
-
-                // --------------------------------------------
-                // Clear previous program selection
-                // --------------------------------------------
-
-                document
-                    .querySelectorAll(
-                        ".program-card"
-                    )
-                    .forEach(otherCard => {
-
-                        otherCard
-                            .classList
-                            .remove(
-                                "selected"
-                            );
-
-                    });
-
-
-                // --------------------------------------------
-                // Highlight current program
-                // --------------------------------------------
-
-                button.classList.add(
-                    "selected"
-                );
-
-
-                // --------------------------------------------
-                // Save program
-                // --------------------------------------------
-
-                appState.selection.program =
-                    program.id;
-
-                if (appState.selection.goalType === "add-program") {
-                    appState.selection.programType = "additional_major";
-                    renderProgramComparison(program.id);
-                }
-
-
-                console.log(
-                    "Selected program:",
-                    appState.selection.program
-                );
-
-
-                // --------------------------------------------
-                // Convert new frontend selection into
-                // old backend planner goal
-                // --------------------------------------------
-
-                updatePlanningGoal();
-
-
-                // --------------------------------------------
-                // Allow user to continue
-                // --------------------------------------------
-
-                document
-                    .getElementById(
-                        "step2bNext"
-                    )
-                    .disabled = false;
-
-            }
-        );
-
-
-        programOptions.appendChild(
-            button
-        );
-
-    }
-
-
-    // --------------------------------------------------------
-    // Reveal program section
-    // --------------------------------------------------------
-
-    programSection.classList.remove(
-        "hidden"
-    );
-
-}
-
-
 function renderProgramsForSchool(school) {
     if (!programDirectory.length) {
-        if (school === "scs") renderTemporarySCSPrograms();
+        const helper = document.querySelector("#programSection .program-helper");
+        if (helper) helper.textContent = "Program directory is unavailable. Please reload and try again.";
         return;
     }
 
@@ -1524,11 +1409,11 @@ function renderProgramsForSchool(school) {
     const helper = programSection.querySelector(".program-helper");
     const schoolLabel = programSection.querySelector(".eyebrow");
     const allowedTypes = appState.selection.goalType === "transfer"
-        ? ["primary_major"]
-        : ["additional_major", "minor"];
-    const matches = programDirectory
+        ? ["transfer_destination"]
+        : ["additional_major", "additional_degree", "minor"];
+    const matches = programExplorerDirectory
         .filter(program =>
-            allowedTypes.includes(program.program_type)
+            program.available_as.some(programType => allowedTypes.includes(programType))
             && (
                 program.home_colleges.includes(school)
                 || program.affiliations.includes(school)
@@ -1538,38 +1423,48 @@ function renderProgramsForSchool(school) {
 
     programOptions.innerHTML = "";
     schoolLabel.textContent = school.replaceAll("-", " ").toUpperCase();
-    helper.textContent = `${matches.length} programs in the 2026–27 directory`;
+    helper.textContent = `${matches.length} programs in the 2026–27 official inventory`;
 
     for (const program of matches) {
-        const button = document.createElement("button");
-        button.className = "program-card";
-        button.dataset.program = program.id;
-        const planningId = program.planning_id || program.id;
-        // The API derives readiness from the real profile/curriculum data.
-        // Do not maintain a second browser-side program allowlist.
-        const readyForSelectedGoal = appState.selection.goalType === "transfer"
-            ? program.transfer_planning_status === "planning_ready"
-            : program.planning_status === "planning_ready";
-        button.disabled = !readyForSelectedGoal;
-        button.setAttribute("aria-disabled", String(!readyForSelectedGoal));
-        button.innerHTML = `
-            <strong>${program.name}</strong>
-            <span class="program-upgrade-label">${program.credential}</span>
-            <small>${readyForSelectedGoal
-                ? "Verified planning available"
-                : appState.selection.goalType === "transfer"
-                    ? "Transfer planning coming soon"
-                    : "Directory only · requirements coming soon"}</small>
-        `;
-        button.addEventListener("click", () => {
+        const variants = program.variants.filter(variant =>
+            appState.selection.goalType === "transfer"
+                ? variant.available_as.includes("transfer_destination")
+                    && variant.program_type === "primary_major"
+                : allowedTypes.includes(variant.program_type)
+        );
+        const group = document.createElement("div");
+        group.className = "program-card-group";
+        group.innerHTML = `<strong>${program.name}</strong>`;
+        for (const variant of variants) {
+            const button = document.createElement("button");
+            button.className = "program-card program-variant-card";
+            button.dataset.program = variant.id;
+            // The API derives readiness from real profiles and curricula.
+            const readyForSelectedGoal = appState.selection.goalType === "transfer"
+                ? variant.transfer_planning_status === "planning_ready"
+                : variant.planner_ready;
+            button.disabled = !readyForSelectedGoal;
+            button.setAttribute("aria-disabled", String(!readyForSelectedGoal));
+            button.innerHTML = `
+                <span class="program-upgrade-label">${variant.credential}</span>
+                <small>${readyForSelectedGoal
+                    ? "Verified planning available"
+                    : variant.requirements_loaded
+                        ? "Requirements loaded · planner review pending"
+                        : appState.selection.goalType === "transfer"
+                            ? "Transfer policy not yet verified"
+                            : "Planning support is still being added"}</small>
+            `;
+            button.addEventListener("click", () => {
             document.querySelectorAll(".program-card").forEach(card => {
                 card.classList.remove("selected");
             });
             button.classList.add("selected");
-            appState.selection.program = program.planning_id || program.id;
-            appState.selection.programType = program.program_type === "minor"
+            clearTransferContinuation();
+            appState.selection.program = variant.planning_id || variant.id;
+            appState.selection.programType = variant.program_type === "minor"
                 ? "minor"
-                : program.program_type === "additional_major"
+                : variant.program_type === "additional_major"
                     ? "additional_major"
                     : null;
             updatePlanningGoal();
@@ -1585,8 +1480,10 @@ function renderProgramsForSchool(school) {
             } else {
                 document.getElementById("programComparison").classList.add("hidden");
             }
-        });
-        programOptions.appendChild(button);
+            });
+            group.appendChild(button);
+        }
+        programOptions.appendChild(group);
     }
 
     if (!matches.length) {
@@ -1618,6 +1515,7 @@ function resetProgramExplorer() {
     appState.selection.school = null;
     appState.selection.program = null;
     appState.selection.programType = null;
+    clearTransferContinuation();
 
 
     // Reset school dropdown.
@@ -2816,6 +2714,8 @@ function renderPath(
                 ${block.estimated ? "" : `<strong>${block.id}</strong>`}
                 <span>${block.name}</span>
                 ${intensityBadge(intensity)}
+                <button type="button" class="why-here-button">Why here?</button>
+                <span class="why-here-panel" hidden></span>
             </span>
             <strong class="block-units">${block.units}u</strong>
         </div>`;
@@ -2856,6 +2756,8 @@ function renderPath(
                         <small class="course-description" aria-live="polite"></small>
                     </span>
                     <span class="course-intensity-slot">${intensityBadge(defaultIntensity)}</span>
+                    <button type="button" class="why-here-button">Why here?</button>
+                    <span class="why-here-panel" hidden></span>
                 </span>
                 <strong class="block-units">${block.units}u</strong>
             </div>`;
@@ -2990,6 +2892,44 @@ function renderPath(
                 <div>Stress ${average("stress")} / 5</div>`;
         };
         card.updatePlannerTotal = updateTotal;
+
+        card.querySelectorAll(".why-here-button").forEach(button => {
+            button.addEventListener("click", event => {
+                const block = event.currentTarget.closest(".planner-course-block");
+                const panel = block.querySelector(".why-here-panel");
+                const courseIds = (block.dataset.courseId || "").split(" + ").filter(Boolean);
+                const details = courseIds.map(courseId => appState.latestCourseCatalog[courseId]).filter(Boolean);
+                const prerequisites = [...new Set(details.flatMap(detail =>
+                    detail.prerequisite_expression?.options?.map(option => option.course_id)
+                    || detail.prerequisites || []
+                ))];
+                const offered = [...new Set(details.flatMap(detail => detail.offered || []))];
+                const requirement = block.querySelector(".choice-summary-kind")?.textContent
+                    || block.querySelector(".block-main > small")?.textContent
+                    || "this academic plan";
+                const cards = Array.from(container.querySelectorAll(".semester-card"));
+                const currentIndex = cards.indexOf(card);
+                const downstream = Array.from(container.querySelectorAll('.planner-course-block[data-course-id]'))
+                    .filter(candidate => cards.indexOf(candidate.closest(".semester-card")) > currentIndex)
+                    .filter(candidate => {
+                        const candidateIds = candidate.dataset.courseId.split(" + ");
+                        return candidateIds.some(candidateId => {
+                            const detail = appState.latestCourseCatalog[candidateId] || {};
+                            const needed = detail.prerequisite_expression?.options?.map(option => option.course_id)
+                                || detail.prerequisites || [];
+                            return needed.some(courseId => courseIds.includes(courseId));
+                        });
+                    })
+                    .flatMap(candidate => candidate.dataset.courseId.split(" + "));
+                panel.innerHTML = `
+                    <strong>Why this course</strong><span>Supports ${requirement.trim()}.</span>
+                    <strong>Why this semester</strong><span>${prerequisites.length ? `Placed after or alongside the verified sequence for ${prerequisites.join(" / ")}.` : offered.length ? `Current schedule data lists it in ${offered.join(" or ")}.` : "Placed by the deterministic requirement and unit rules."}</span>
+                    <strong>What it unlocks</strong><span>${downstream.length ? [...new Set(downstream)].join(", ") : "No downstream course is proven by the current prerequisite data."}</span>
+                    <strong>Plan impact</strong><span>${offered.length === 1 ? `Moving it may require waiting for another ${offered[0]} offering.` : "Moving it triggers prerequisite, offering, year, and unit checks."}</span>`;
+                panel.hidden = !panel.hidden;
+                event.currentTarget.textContent = panel.hidden ? "Why here?" : "Hide explanation";
+            });
+        });
 
         card.querySelectorAll(".add-elective-button").forEach(button => {
             button.addEventListener("click", event => {
@@ -3187,6 +3127,23 @@ function renderPath(
                 if (event.isTrusted) block.dataset.userSelected = "true";
                 const option = event.target.selectedOptions[0];
                 const previousCourseId = block.dataset.courseId || "";
+                const selectedComponents = new Set((option?.value || "").split(" + ").filter(Boolean));
+                const duplicateBlock = selectedComponents.size
+                    ? Array.from(container.querySelectorAll('.planner-course-block[data-course-id]')).find(candidate => {
+                        if (candidate === block || candidate.hidden || !candidate.dataset.courseId) return false;
+                        return candidate.dataset.courseId.split(" + ").some(courseId => selectedComponents.has(courseId));
+                    })
+                    : null;
+                if (duplicateBlock) {
+                    event.target.value = previousCourseId;
+                    const duplicateIds = duplicateBlock.dataset.courseId.split(" + ")
+                        .filter(courseId => selectedComponents.has(courseId));
+                    const message = `${duplicateIds.join(" + ")} is already scheduled elsewhere. A course can have only one scheduled instance; choose another approved option.`;
+                    validationMessage.textContent = message;
+                    validationMessage.hidden = false;
+                    showPlannerError(message);
+                    return;
+                }
                 block.dataset.units = option?.dataset.units || block.dataset.units || 0;
                 block.dataset.courseId = option?.value || "";
                 block.dataset.offeredTerm = option?.dataset.term || "";
@@ -3585,6 +3542,7 @@ document
 
             appState.latestPlan = data;
             appState.latestPlanningRequest = requestBody;
+            renderAcademicDashboard();
 
             appState.latestProgramProfile = data.program_profile;
             appState.latestCourseCatalog = data.course_catalog || {};
@@ -3946,26 +3904,27 @@ function renderDegreeAudits(audits, baseline, warnings = []) {
     }
     const primary = audits.primary_degree;
     const goal = audits.selected_goal;
+    const goalCovered = Number(goal.requirements_completed || 0) + Number(goal.requirements_planned || 0);
     const goalPercent = goal.total_requirements
-        ? Math.min(100, Math.round((goal.total_requirements - (goal.requirements_remaining_to_complete ?? goal.requirements_remaining ?? 0)) / goal.total_requirements * 100))
+        ? Math.min(100, Math.round(goalCovered / goal.total_requirements * 100))
         : 0;
     const programName = id => programDirectory.find(program =>
         program.planning_id === id || program.id === id
     )?.name || id.replaceAll("-", " ").replace(/\b\w/g, letter => letter.toUpperCase());
-    const primaryRemaining = primary.requirements_remaining_to_graduate;
-    const goalRemaining = goal.requirements_remaining_to_complete ?? goal.requirements_remaining;
+    const primaryRemaining = primary.requirements_unresolved ?? primary.requirements_remaining_to_graduate;
+    const goalRemaining = goal.requirements_unresolved ?? goal.requirements_remaining_to_complete ?? goal.requirements_remaining;
     const placementSummary = Number.isFinite(goal.total_requirements) && Number.isFinite(goal.requirements_scheduled)
         ? `${goal.requirements_scheduled} of ${goal.total_requirements} published requirements are placed in this plan.`
         : "";
     container.innerHTML = `
         ${primary.status === "replaced_by_transfer" ? "" : `<article class="degree-audit-card degree-audit-row primary-audit-card">
             <div><p class="eyebrow">CURRENT BACHELOR'S DEGREE</p><h3>${programName(primary.program)}</h3></div>
-            <div class="audit-remaining"><strong>${primaryRemaining == null ? "Curriculum audit in progress" : `${primaryRemaining} major requirements remaining`}</strong><small>${primary.minimum_degree_units ? `${primary.minimum_degree_units} total units required for the degree; GenEd and free electives are tracked separately.` : primary.message}</small></div>
+            <div class="audit-remaining"><strong>${primaryRemaining == null ? "Curriculum audit in progress" : `${primaryRemaining} major requirements unresolved`}</strong>${Number.isFinite(primary.total_requirements) ? `<div class="audit-state-pills"><span class="completed">Completed ${primary.requirements_completed || 0}</span><span class="planned">Planned ${primary.requirements_planned || 0}</span><span class="unresolved">Unresolved ${primary.requirements_unresolved || 0}</span></div>` : ""}<small>${primary.minimum_degree_units ? `${primary.minimum_degree_units} total units required for the degree; GenEd and free electives are tracked separately.` : primary.message}</small></div>
         </article>`}
-        <article class="degree-audit-card degree-audit-row goal-audit-card">
+        ${goal.type === "current_major" && goal.program === primary.program ? "" : `<article class="degree-audit-card degree-audit-row goal-audit-card">
             <div><p class="eyebrow">${goal.type.replaceAll("_", " ")}</p><h3>${programName(goal.program)}</h3></div>
-            <div class="audit-remaining"><strong>${goalRemaining == null ? "Curriculum audit in progress" : `${goalRemaining} requirements not yet completed`}</strong><div class="audit-progress" role="progressbar" aria-label="Goal requirements placed in plan" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${goalPercent}"><span style="width:${goalPercent}%"></span></div><small>${[placementSummary, goal.message].filter(Boolean).join(" ")}</small></div>
-        </article>
+            <div class="audit-remaining"><strong>${goalRemaining == null ? "Curriculum audit in progress" : `${goalRemaining} requirements unresolved`}</strong>${Number.isFinite(goal.total_requirements) ? `<div class="audit-state-pills"><span class="completed">Completed ${goal.requirements_completed || 0}</span><span class="planned">Planned ${goal.requirements_planned || 0}</span><span class="unresolved">Unresolved ${goal.requirements_unresolved || 0}</span></div>` : ""}<div class="audit-progress" role="progressbar" aria-label="Goal requirements covered by completed or planned courses" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${goalPercent}"><span style="width:${goalPercent}%"></span></div><small>${[placementSummary, goal.message].filter(Boolean).join(" ")}</small></div>
+        </article>`}
         ${warnings.length ? `<section class="planning-warning-list" aria-label="Planning checks">
             ${warnings.map(warning => `<article class="planning-warning ${warning.severity || "warning"}">
                 <strong>${warning.severity === "error" ? "Action required" : warning.severity === "info" ? "Eligibility checkpoint" : "Verify before enrolling"}</strong>
@@ -4008,28 +3967,38 @@ function renderDegreeRequirementTree() {
         const count = (group.options || []).length;
         return choose === 1 ? "fulfill one" : choose >= count && count ? "fulfill all" : `fulfill ${choose}`;
     };
-    const plannedFor = group => {
+    const coverageFor = group => {
         const options = (group.options || []).flatMap(option => option.split(" + "));
-        const matches = [
+        const plannedMatches = [
             ...planned.filter(item => item.requirement.toLowerCase() === (group.name || "").toLowerCase()).map(item => item.id),
-            ...options.filter(id => plannedIds.has(id) || completedCourses.has(id))
+            ...options.filter(id => plannedIds.has(id) && !completedCourses.has(id))
         ];
-        return [...new Set(matches)];
+        return {
+            completed: [...new Set(options.filter(id => completedCourses.has(id)))],
+            planned: [...new Set(plannedMatches)],
+        };
     };
-    const requirementLeaf = (name, ruleLabel, course, complete = Boolean(course)) => `
-        <article class="degree-tree-leaf ${complete ? "fulfilled" : ""}">
-            <span class="tree-status-icon">${course || complete ? "✓" : "○"}</span>
+    const requirementLeaf = (name, ruleLabel, course, state = course ? "planned" : "unresolved") => `
+        <article class="degree-tree-leaf ${state}">
+            <span class="tree-status-icon">${state === "completed" ? "✓" : state === "planned" ? "◷" : "○"}</span>
             <span><strong>${name}</strong><small>${ruleLabel}</small></span>
-            <span class="tree-course-link">${complete && course ? `Satisfied by ${course}` : course ? `Planned: ${course}` : complete ? "Completed" : "Still needed"}</span>
+            <span class="tree-course-link">${state === "completed" ? `Completed${course ? `: ${course}` : ""}` : state === "planned" ? `Planned: ${course}` : "Unresolved"}</span>
         </article>`;
     const groupBranch = (label, groups, remaining) => `
         <details class="degree-tree-branch">
             <summary><span><strong>${label}</strong><small>${remaining == null ? "Verified requirements" : `${remaining} remaining`}</small></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
                 ${groups.length ? groups.map(group => {
-                    const courses = plannedFor(group);
+                    const coverage = coverageFor(group);
                     const choose = group.choose || 1;
-                    return requirementLeaf(group.name, rule(group), courses.join(", "), courses.length >= choose);
+                    const completedEnough = coverage.completed.length >= choose;
+                    const covered = [...coverage.completed, ...coverage.planned];
+                    return requirementLeaf(
+                        group.name,
+                        rule(group),
+                        (completedEnough ? coverage.completed : covered).join(", "),
+                        completedEnough ? "completed" : covered.length >= choose ? "planned" : "unresolved",
+                    );
                 }).join("") : '<p class="tree-empty-note">No unresolved course-choice categories.</p>'}
             </div>
         </details>`;
@@ -4048,7 +4017,8 @@ function renderDegreeRequirementTree() {
                 const linked = appState.genedSelections[requirement.id]
                     || planned.find(item => item.requirement.toLowerCase() === requirement.name.toLowerCase())?.id
                     || (requirement.courses || []).find(id => plannedIds.has(id) || completedCourses.has(id));
-                return requirementLeaf(requirement.name, "fulfill one", linked, Boolean(linked) || completedRequirements.has(requirement.id));
+                const isCompleted = completedRequirements.has(requirement.id);
+                return requirementLeaf(requirement.name, "fulfill one", linked, isCompleted ? "completed" : linked ? "planned" : "unresolved");
             }).join("")}</div>
         </details>`;
     }).join("");
@@ -4059,18 +4029,18 @@ function renderDegreeRequirementTree() {
             <span class="rules-badge">Live plan audit</span>
         </div>
         ${isEligibilityPlan || goal.type !== "internal_transfer" ? `<details class="degree-tree-root">
-            <summary><span><strong>${programName(primary.program)}</strong><small>Current bachelor's degree</small></span><span class="tree-rule-badge">fulfill all</span></summary>
+            <summary><span><strong>${programName(primary.program)}</strong><small>Current bachelor's degree</small><span class="tree-state-summary"><b>Completed ${primary.requirements_completed ?? "—"}</b><b>Planned ${primary.requirements_planned ?? "—"}</b><b>Unresolved ${primary.requirements_unresolved ?? "—"}</b></span></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
                 ${groupBranch("Major requirements", currentGroups, primary.requirements_remaining_to_graduate)}
                 <details class="degree-tree-branch"><summary><span><strong>General Education</strong><small>${(appState.baselineRequirements || []).length} categories</small></span><span class="tree-rule-badge">fulfill all</span></summary><div class="degree-tree-children">${genEdBranches}</div></details>
             </div>
         </details>` : ""}
-        <details class="degree-tree-root target-tree-root">
-            <summary><span><strong>${programName(goal.program)}</strong><small>${(goal.type || "Selected goal").replaceAll("_", " ")}</small></span><span class="tree-rule-badge">fulfill all</span></summary>
+        ${goal.type === "current_major" && goal.program === primary.program ? "" : `<details class="degree-tree-root target-tree-root">
+            <summary><span><strong>${programName(goal.program)}</strong><small>${(goal.type || "Selected goal").replaceAll("_", " ")}</small><span class="tree-state-summary"><b>Completed ${goal.requirements_completed ?? "—"}</b><b>Planned ${goal.requirements_planned ?? goal.requirements_placed ?? "—"}</b><b>Unresolved ${goal.requirements_unresolved ?? goal.requirements_remaining ?? "—"}</b></span></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
                 ${groupBranch("Target program requirements", goalGroups, goal.requirements_remaining_to_complete ?? goal.requirements_remaining)}
             </div>
-        </details>`;
+        </details>`}`;
 }
 refreshDegreeRequirementTree = renderDegreeRequirementTree;
 
@@ -4095,8 +4065,11 @@ function renderGenEdProgress() {
     const plannedCourseFor = requirement => appState.genedSelections[requirement.id]
         || plannedByName.get(requirement.name)
         || (requirement.courses || []).find(id => plannedCourseIds.has(id));
-    const satisfied = requirements.filter(requirement => completed.has(requirement.id) || Boolean(plannedCourseFor(requirement)));
-    const percent = requirements.length ? Math.round(satisfied.length / requirements.length * 100) : 0;
+    const completedRequirements = requirements.filter(requirement => completed.has(requirement.id));
+    const plannedRequirements = requirements.filter(requirement => !completed.has(requirement.id) && Boolean(plannedCourseFor(requirement)));
+    const unresolvedRequirements = requirements.filter(requirement => !completed.has(requirement.id) && !plannedCourseFor(requirement));
+    const coveredCount = completedRequirements.length + plannedRequirements.length;
+    const percent = requirements.length ? Math.round(coveredCount / requirements.length * 100) : 0;
     const ruleFor = requirement => requirement.name === "Communication"
         ? "Choose one approved full course OR one approved two-mini sequence"
         : requirement.name === "Experiential Learning Activity"
@@ -4116,11 +4089,11 @@ function renderGenEdProgress() {
     panel.innerHTML = `
         <details class="gened-progress-details" ${wasOpen ? "open" : ""}>
             <summary><div class="gened-progress-heading">
-                <div><p class="eyebrow">DIETRICH GENERAL EDUCATION</p><h2>GenEd progress</h2><p>115 units across Foundations, Disciplinary Perspectives, Special Seminars, and Experiential Learning.</p></div>
-                <strong>${satisfied.length} / ${requirements.length}</strong>
+                <div><p class="eyebrow">DIETRICH GENERAL EDUCATION</p><h2>GenEd progress</h2><p>${completedRequirements.length} completed · ${plannedRequirements.length} planned · ${unresolvedRequirements.length} unresolved</p>${unresolvedRequirements.length ? `<p class="gened-unresolved-summary">Needs attention: ${unresolvedRequirements.map(requirement => requirement.name).join(", ")}</p>` : ""}</div>
+                <strong>${coveredCount} / ${requirements.length} covered</strong>
             </div></summary>
             <div class="gened-progress-body">
-            <div class="gened-progress-track" role="progressbar" aria-label="GenEd completion" aria-valuemin="0" aria-valuemax="${requirements.length}" aria-valuenow="${satisfied.length}"><span style="width:${percent}%"></span></div>
+            <div class="gened-progress-track" role="progressbar" aria-label="GenEd requirements completed or planned" aria-valuemin="0" aria-valuemax="${requirements.length}" aria-valuenow="${coveredCount}"><span style="width:${percent}%"></span></div>
             <div class="gened-rule-key"><span><b>AND</b> Complete every category</span><span><b>OR</b> Choose one approved option inside a category</span></div>
             <div class="gened-category-list">
                 ${Object.entries(grouped).map(([groupId, groupRequirements]) => `
@@ -4128,10 +4101,11 @@ function renderGenEdProgress() {
                         <div class="gened-category-group-heading"><strong>${groupLabels[groupId] || groupId.replaceAll("_", " ")}</strong><span>${groupRequirements.filter(requirement => completed.has(requirement.id) || Boolean(plannedCourseFor(requirement))).length} / ${groupRequirements.length}</span></div>
                         ${groupRequirements.map((requirement, index) => {
                             const courseId = plannedCourseFor(requirement);
-                            const done = completed.has(requirement.id) || Boolean(courseId);
-                            return `${index ? '<div class="gened-and-connector">AND</div>' : ""}<article class="gened-category ${done ? "complete" : ""}">
+                            const isCompleted = completed.has(requirement.id);
+                            const isPlanned = !isCompleted && Boolean(courseId);
+                            return `${index ? '<div class="gened-and-connector">AND</div>' : ""}<article class="gened-category ${isCompleted ? "complete" : isPlanned ? "planned" : "unresolved"}">
                                 <span><strong>${requirement.name}</strong><small>${ruleFor(requirement)} · ${requirement.timeline?.source_text || "Complete before graduation"}</small></span>
-                                <span class="gened-category-status">${done ? `✓ ${courseId || "Completed"}` : "Choose in your path"}</span>
+                                <span class="gened-category-status">${isCompleted ? `✓ Completed${courseId ? ` · ${courseId}` : ""}` : isPlanned ? `◷ Planned · ${courseId}` : "○ Unresolved"}</span>
                             </article>`;
                         }).join("")}
                     </section>`).join("")}
@@ -4255,9 +4229,7 @@ function renderGoalName() {
 
 
     const goal = appState.goals[0];
-    const programName = temporarySCSPrograms.find(
-        program => program.id === goal.program
-    )?.name ?? programDirectory.find(
+    const programName = programDirectory.find(
         program => program.planning_id === goal.program
     )?.name ?? goal.program;
     const typeName = {
@@ -4310,7 +4282,7 @@ function renderGoalName() {
 //
 // Move:
 //
-// temporarySCSPrograms
+// Canonical program directory
 //
 // into:
 //

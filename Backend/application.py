@@ -28,6 +28,11 @@ from Engine.baseline import (
     get_student_planning_baseline,
 )
 from Engine.degree_audit import build_degree_audits, primary_baseline_for
+from Engine.student_state import (
+    derive_academic_state,
+    planning_boundary_after_locked_semesters,
+    prepend_locked_semesters,
+)
 from Backend.requirements import (
     apply_requirement_option_preferences,
     build_primary_major_requirement_slots,
@@ -44,6 +49,7 @@ from Backend.requirements import (
     load_transfer_requirements,
     primary_major_course_universe,
     primary_major_required_courses,
+    resolve_curriculum_requirement_options,
     resolve_data_requirement_option,
 )
 from Backend.course_metrics import (
@@ -96,6 +102,12 @@ programs = load_json(DATA_DIR / "programs.json")
 program_profiles = load_json(DATA_DIR / "program_profiles.json")
 advanced_credit = load_json(DATA_DIR / "advanced_credit.json")
 program_directory = load_json(DATA_DIR / "program_directory.json")
+program_curriculum_registry = {
+    item["program_id"]: item
+    for item in load_json(DATA_DIR / "program_curriculum_registry.json").get(
+        "programs", []
+    )
+}
 
 INTENSITY_LABELS = {
     1: "Very light", 2: "Light", 3: "Moderate", 4: "Heavy", 5: "Very heavy"
@@ -122,6 +134,9 @@ def five_level_course_metric(course_id: str, units: float = 9):
 POLICY_DIR = PROJECT_ROOT / "Data" / "policies"
 
 elective_rules = load_json(POLICY_DIR / "elective_rules.json")
+program_declaration_policies = load_json(
+    POLICY_DIR / "program_declaration_policies.json"
+).get("policies", {})
 
 ELECTIVE_CATEGORY_PREFIXES = elective_rules["elective_category_prefixes"]
 ELECTIVE_CATEGORY_GROUPS = elective_rules.get("elective_category_groups", {})
@@ -264,6 +279,9 @@ class StudentState(BaseModel):
     current_term: Literal["fall", "spring"] = "fall"
     completed_courses: list[str] = Field(default_factory=list)
     completed_requirement_ids: list[str] = Field(default_factory=list)
+    in_progress_courses: list[str] = Field(default_factory=list)
+    planned_courses: list[str] = Field(default_factory=list)
+    locked_semesters: list[dict] = Field(default_factory=list)
 
 
 class PlanningGoal(BaseModel):
@@ -406,7 +424,12 @@ def planning_inputs_for_profile(
     profile.setdefault("source_url", official_program_source(goal.program, goal.type))
     profile.setdefault("policy_status", "official_verified")
 
-    supported_ids = {course["id"] for course in courses}
+    supported_ids = {
+        course["id"] for course in courses
+        if course.get("name")
+        and isinstance(course.get("units"), (int, float))
+        and course["units"] >= 0
+    }
     course_units = {course["id"]: course["units"] for course in courses}
     minor_profile = (
         program_profiles["programs"].get(goal.program, {}).get("minor")
@@ -522,7 +545,10 @@ def planning_inputs_for_profile(
                 [],
             ),
         )
-        completed_in_group = len(courses_satisfying_groups.intersection(options))
+        completed_in_group = sum(
+            set(option.split(" + ")).issubset(courses_satisfying_groups)
+            for option in options
+        )
         remaining_choices = max(0, group.get("choose", 1) - completed_in_group)
         total_group_units = group.get("units", group.get("choose", 1) * 9)
         per_choice_units = max(1, total_group_units // max(1, group.get("choose", 1)))
@@ -595,9 +621,11 @@ def list_programs():
 @app.get("/api/program-directory")
 def list_program_directory(
     college: str | None = None,
-    program_type: Literal["primary_major", "additional_major", "minor"] | None = None,
+    program_type: Literal[
+        "primary_major", "additional_major", "additional_degree", "minor"
+    ] | None = None,
 ):
-    """Return CMU-wide directory entries, optionally filtered by affiliation."""
+    """Return official program existence separately from planning capability."""
     results = []
     for raw_program in program_directory:
         program = dict(raw_program)
@@ -621,6 +649,19 @@ def list_program_directory(
                 or program_profiles["programs"].get(planning_id, {}).get("internal_transfer")
             )
         )
+        curriculum_id = (
+            program.get("requirements_source_program_id") or program.get("id")
+        )
+        curriculum = program_curriculum_registry.get(curriculum_id)
+        requirements_loaded = curriculum is not None
+        requirements_validation_status = "not_loaded"
+        if curriculum:
+            requirements_validation_status = (
+                "promotion_ready"
+                if curriculum.get("validation", {}).get("promotion_ready")
+                else "needs_review"
+            )
+        planner_ready_for_entry = has_profile or has_primary_curriculum
         if program.get("program_type") == "primary_major":
             program["current_major_planning_status"] = (
                 "planning_ready" if has_primary_curriculum else "directory_only"
@@ -628,6 +669,24 @@ def list_program_directory(
             program["transfer_planning_status"] = (
                 "planning_ready" if has_transfer_profile else "directory_only"
             )
+        available_as = list(program.get("available_as", [program.get("program_type")]))
+        if has_transfer_profile and "transfer_destination" not in available_as:
+            available_as.append("transfer_destination")
+        program["available_as"] = available_as
+        program["discoverable"] = True
+        program["requirements_loaded"] = requirements_loaded
+        program["requirements_validation_status"] = requirements_validation_status
+        program["planner_ready"] = planner_ready_for_entry
+        program["application_policy_loaded"] = program["id"] in program_declaration_policies
+        program["support"] = {
+            "discoverable": True,
+            "requirements_loaded": requirements_loaded,
+            "planner_ready": planner_ready_for_entry,
+            "transfer_policy_loaded": has_transfer_profile,
+            "application_policy_loaded": program["application_policy_loaded"],
+        }
+        if program["application_policy_loaded"]:
+            program["application_policy"] = program_declaration_policies[program["id"]]
         if has_profile or has_primary_curriculum or has_transfer_profile:
             program["planning_id"] = planning_id
             program["planning_status"] = "planning_ready"
@@ -645,10 +704,31 @@ def list_program_directory(
             for program in results
             if program.get("program_type") == program_type
         ]
+    canonical_programs_by_id = {}
+    for program in results:
+        canonical_id = program.get("canonical_program_id") or program["id"]
+        canonical = canonical_programs_by_id.setdefault(canonical_id, {
+            "id": canonical_id,
+            "name": program["name"],
+            "home_colleges": [],
+            "affiliations": [],
+            "available_as": [],
+            "variants": [],
+        })
+        for field in ("home_colleges", "affiliations", "available_as"):
+            canonical[field] = list(dict.fromkeys([
+                *canonical[field], *program.get(field, [])
+            ]))
+        canonical["variants"].append(program)
     return {
         "catalog_year": "2026-2027",
         "count": len(results),
         "programs": results,
+        "canonical_count": len(canonical_programs_by_id),
+        "canonical_programs": sorted(
+            canonical_programs_by_id.values(),
+            key=lambda item: item["name"],
+        ),
     }
 
 
@@ -884,27 +964,35 @@ def get_primary_major_profile(program_id: str):
     curriculum = requirements.get(f"{program_id}-major")
     if curriculum is None or curriculum.get("planner_status") != "ready":
         raise HTTPException(status_code=404, detail="Primary-major curriculum is not configured")
+    public_curriculum = resolve_curriculum_requirement_options(
+        curriculum,
+        resolve_requirement_option,
+    )
     course_by_id = {course["id"]: course for course in courses}
     return {
         "program_id": program_id,
-        "catalog_year": curriculum.get("catalog_year"),
-        "curriculum_status": curriculum.get("curriculum_status"),
-        "minimum_degree_units": curriculum.get("minimum_degree_units"),
+        "catalog_year": public_curriculum.get("catalog_year"),
+        "curriculum_status": public_curriculum.get("curriculum_status"),
+        "minimum_degree_units": public_curriculum.get("minimum_degree_units"),
         "fixed_courses": [
             {
                 "id": course_id,
                 "name": course_by_id.get(course_id, {}).get("name", "Catalog requirement"),
                 "is_current_major": True,
             }
-            for course_id in curriculum.get("required_courses", [])
+            for course_id in public_curriculum.get("required_courses", [])
         ],
-        "requirement_groups": curriculum.get("requirement_groups", []),
-        "notes": curriculum.get("notes", []),
+        "requirement_groups": public_curriculum.get("requirement_groups", []),
+        "notes": public_curriculum.get("notes", []),
     }
 
 
 @app.post("/api/program-comparison")
 def compare_programs(request: ComparisonRequest):
+    academic_state = derive_academic_state(
+        request.student.model_dump(),
+        expand_completed_courses,
+    )
     if request.current_goal is not None or request.alternative_goal is not None:
         if request.current_goal is None or request.alternative_goal is None:
             raise HTTPException(
@@ -927,14 +1015,14 @@ def compare_programs(request: ComparisonRequest):
             current_goal=request.current_goal.model_dump(),
             alternative_goal=request.alternative_goal.model_dump(),
             primary_course_ids=current_major_course_universe(request.student),
-            completed_courses=set(expand_completed_courses(request.student.completed_courses)),
+            completed_courses=set(academic_state["accumulated_courses"]),
             program_names={program["id"]: program["name"] for program in programs},
         )
 
     selected = request.programs or [program["id"] for program in programs]
     names = {program["id"]: program["name"] for program in programs}
     current_major_courses = current_major_course_universe(request.student)
-    completed_courses = set(expand_completed_courses(request.student.completed_courses))
+    completed_courses = set(academic_state["accumulated_courses"])
     course_units = {course["id"]: course["units"] for course in courses}
     comparisons = []
 
@@ -1055,11 +1143,15 @@ def recommend_courses(request: CourseRecommendationRequest):
             }),
         }
     goal_profile = profile_for_goal(request.goals[0]) or {}
+    academic_state = derive_academic_state(
+        request.student.model_dump(),
+        expand_completed_courses,
+    )
     result = recommend_courses_for_plan(
         plan=fastest,
         slots=slots,
         catalog=catalog,
-        completed_courses=set(expand_completed_courses(request.student.completed_courses)),
+        completed_courses=set(academic_state["accumulated_courses"]),
         primary_course_ids=current_major_course_universe(request.student),
         goal_course_ids=set(extract_course_ids_from_requirement_profile(goal_profile)),
         manual_selections=request.manual_selections,
@@ -1088,11 +1180,21 @@ def create_baseline(request: PlanningRequest):
             "planner_status", "not_configured"
         )
 
+    academic_state = derive_academic_state(
+        request.student.model_dump(),
+        expand_completed_courses,
+    )
+    baseline_student = request.student.model_dump()
+    baseline_student["completed_courses"] = academic_state["accumulated_courses"]
+    baseline_student["completed_requirement_ids"] = list(dict.fromkeys([
+        *academic_state["completed_requirement_ids"],
+        *academic_state["planned_requirement_ids"],
+    ]))
     return {
         "student": request.student.model_dump(),
         "goal": goal.model_dump(),
         "baseline": get_student_planning_baseline(
-            request.student.model_dump(),
+            baseline_student,
             # The requirement-selection and audit screens must always show the
             # full college curriculum. Scheduling uses the narrower planning
             # horizon separately below.
@@ -1182,6 +1284,50 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
     goal_key, completed_courses, start_semester, max_units = planning_context(request)
 
     goal = request.goals[0] if isinstance(request, PlanningRequest) else None
+    academic_state = None
+    locked_semesters = []
+    transfer_boundary = None
+    effective_planning_year = (
+        request.constraints.planning_year
+        if isinstance(request, PlanningRequest) else 1
+    )
+    effective_first_semester_max_units = (
+        request.constraints.first_semester_max_units
+        if isinstance(request, PlanningRequest) else max_units
+    )
+    effective_semester_unit_limits = (
+        request.constraints.semester_unit_limits
+        if isinstance(request, PlanningRequest) else []
+    )
+    planning_student_state = (
+        request.student.model_dump()
+        if isinstance(request, PlanningRequest) else None
+    )
+    if isinstance(request, PlanningRequest):
+        academic_state = derive_academic_state(
+            request.student.model_dump(),
+            expand_completed_courses,
+        )
+        completed_courses = academic_state["accumulated_courses"]
+        planning_student_state["completed_courses"] = completed_courses
+        planning_student_state["completed_requirement_ids"] = list(dict.fromkeys([
+            *academic_state["completed_requirement_ids"],
+            *academic_state["planned_requirement_ids"],
+        ]))
+        if goal is not None and goal.type == "internal_transfer" and goal.include_post_transfer_plan:
+            locked_semesters = academic_state["locked_semesters"]
+            transfer_boundary = planning_boundary_after_locked_semesters(
+                locked_semesters
+            )
+            if transfer_boundary is not None:
+                start_semester = transfer_boundary["semester"]
+                effective_planning_year = transfer_boundary["academic_year"]
+                effective_first_semester_max_units = max_units
+                effective_semester_unit_limits = request.constraints.semester_unit_limits[
+                    len(locked_semesters):
+                ]
+                if goal.college:
+                    planning_student_state["college"] = goal.college
     if (
         isinstance(request, PlanningRequest)
         and goal is not None
@@ -1306,14 +1452,14 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         max_units=max_units,
         baseline_requirements=(
             get_student_planning_baseline(
-                request.student.model_dump(),
+                planning_student_state,
                 through_year=baseline_through_year_for_plan(request),
             )["requirements"]
             if isinstance(request, PlanningRequest)
             else []
         ),
         first_semester_max_units=(
-            request.constraints.first_semester_max_units
+            effective_first_semester_max_units
             if (
                 isinstance(request, PlanningRequest)
                 and request.student.enrollment_status == "precollege"
@@ -1321,13 +1467,13 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             else max_units
         ),
         semester_unit_limits=(
-            request.constraints.semester_unit_limits
+            effective_semester_unit_limits
             if isinstance(request, PlanningRequest)
             else []
         ),
-        student_year=(request.student.year if isinstance(request, PlanningRequest) else 1),
+        student_year=(effective_planning_year if isinstance(request, PlanningRequest) else 1),
         planning_year=(
-            request.constraints.planning_year
+            effective_planning_year
             if isinstance(request, PlanningRequest)
             else 1
         ),
@@ -1382,7 +1528,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             start_semester=start_semester,
             max_units=max_units,
             baseline_requirements=get_student_planning_baseline(
-                request.student.model_dump(),
+                planning_student_state,
                 through_year=baseline_through_year_for_plan(request),
             )["requirements"],
             first_semester_max_units=(
@@ -1390,9 +1536,9 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 if request.student.enrollment_status == "precollege"
                 else max_units
             ),
-            semester_unit_limits=request.constraints.semester_unit_limits,
-            student_year=request.student.year,
-            planning_year=request.constraints.planning_year,
+            semester_unit_limits=effective_semester_unit_limits,
+            student_year=effective_planning_year,
+            planning_year=effective_planning_year,
             target_completion_year=request.constraints.target_completion_year,
             primary_major_reserved_units=primary_reserved_units,
             primary_major_baseline_name=primary_baseline["name"],
@@ -1427,6 +1573,12 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
     result["lower_workload"] = attach_workload_to_path(
         result["lower_workload"]
         )
+    if locked_semesters:
+        # Workload and scheduling are calculated only for the future plan.
+        # Locked history must remain byte-for-byte equivalent to the plan the
+        # student approved before crossing the transfer boundary.
+        prepend_locked_semesters(result["fastest"], locked_semesters)
+        prepend_locked_semesters(result["lower_workload"], locked_semesters)
 
     explanation = get_path_explanation(
         completed_courses=completed_courses,
@@ -1514,14 +1666,24 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 f"{len(unverified_prerequisites)} scheduled courses."
             ),
         })
+    audit_student = (
+        request.student.model_copy(update={
+            "completed_courses": academic_state["completed_courses"],
+        })
+        if isinstance(request, PlanningRequest) and academic_state is not None
+        else None
+    )
     degree_audits = (
         build_degree_audits(
-            request.student,
+            audit_student,
             goal,
             display_profile,
             result["fastest"],
             primary_baseline,
-            requirements.get(f"{request.student.primary_major}-major"),
+            resolve_curriculum_requirement_options(
+                requirements.get(f"{request.student.primary_major}-major"),
+                resolve_requirement_option,
+            ),
             {
                 "required_courses": goal_requirements.get("required_courses", []),
                 "requirement_groups": goal_requirements.get("requirement_groups", []),
@@ -1558,6 +1720,8 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 "policy": transfer_policy_for_goal(goal),
                 "post_transfer_plan_available": goal.program in POST_TRANSFER_PLAN_PROGRAMS,
                 "application_term": transfer_application_term,
+                "effective_term": transfer_boundary,
+                "locked_semester_count": len(locked_semesters),
             }
             if goal is not None and goal.type == "internal_transfer"
             else None
@@ -1566,6 +1730,12 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             course["id"]: {
                 "name": course["name"],
                 "units": course["units"],
+                "metadata_status": (
+                    "catalog_zero_unit"
+                    if course["units"] == 0
+                    else "available"
+                ),
+                "source": course.get("source"),
                 "offered": course.get("offered", []),
                 "minimum_year": course.get("minimum_year", 1),
                 "prerequisites": course.get("prerequisites", []),

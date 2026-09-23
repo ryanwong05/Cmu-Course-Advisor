@@ -226,6 +226,125 @@
     ]
   },
 
+  "mathematical-sciences--b-s-major": {
+    "planner_status": "ready",
+    "catalog_year": "2026-2027",
+    "curriculum_status": "verified",
+    "minimum_degree_units": 360,
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
+    "required_courses": [
+      "21-120", "21-122", "21-201", "21-373"
+    ],
+    "requirement_groups": [
+      {
+        "id": "concepts",
+        "name": "Concepts of Mathematics",
+        "choose": 1,
+        "units": 12,
+        "options": ["21-127", "21-128"],
+        "minimum_year": 1
+      },
+      {
+        "id": "discrete-mathematics",
+        "name": "Discrete Mathematics",
+        "choose": 1,
+        "units": 9,
+        "options": ["21-228", "15-251"],
+        "minimum_year": 2
+      },
+      {
+        "id": "matrices",
+        "name": "Matrices and Linear Transformations",
+        "choose": 1,
+        "units": 11,
+        "options": ["21-241", "21-242"],
+        "minimum_year": 2
+      },
+      {
+        "id": "multivariable-calculus",
+        "name": "Calculus in Three Dimensions",
+        "choose": 1,
+        "units": 10,
+        "options": ["21-259", "21-266", "21-268", "21-269"],
+        "minimum_year": 2
+      },
+      {
+        "id": "differential-equations",
+        "name": "Differential Equations",
+        "choose": 1,
+        "units": 9,
+        "options": ["21-260", "21-261", "33-231"],
+        "minimum_year": 2
+      },
+      {
+        "id": "probability",
+        "name": "Probability",
+        "choose": 1,
+        "units": 9,
+        "options": ["21-325", "21-425", "15-259", "36-218"],
+        "minimum_year": 2
+      },
+      {
+        "id": "linear-algebra",
+        "name": "Linear Algebra",
+        "choose": 1,
+        "units": 9,
+        "options": ["21-341", "21-374"],
+        "minimum_year": 3
+      },
+      {
+        "id": "real-analysis-one",
+        "name": "Real Analysis I",
+        "choose": 1,
+        "units": 9,
+        "options": ["21-355", "21-455"],
+        "minimum_year": 3
+      },
+      {
+        "id": "real-analysis-two",
+        "name": "Real Analysis II",
+        "choose": 1,
+        "units": 9,
+        "options": ["21-356", "21-456"],
+        "minimum_year": 3
+      },
+      {
+        "id": "computing",
+        "name": "Computing foundation",
+        "choose": 1,
+        "units": 10,
+        "options": ["15-110", "15-112", "02-120", "15-104"],
+        "minimum_year": 1
+      },
+      {
+        "id": "mathematical-sciences-depth",
+        "name": "Mathematical Sciences depth electives",
+        "choose": 5,
+        "units": 45,
+        "options": ["named_set:mathematical_sciences_bs_math_electives"],
+        "minimum_year": 3
+      },
+      {
+        "id": "technical-depth",
+        "name": "Technical depth electives",
+        "choose": 3,
+        "units": 27,
+        "options": [
+          "named_set:mathematical_sciences_bs_math_electives",
+          "named_set:mathematical_sciences_bs_cs_technical_electives",
+          "named_set:mathematical_sciences_bs_physics_technical_electives"
+        ],
+        "minimum_year": 3
+      }
+    ],
+    "notes": [
+      "This profile represents the flexible B.S. in Mathematical Sciences, not one of its four concentrations.",
+      "The degree requires 45 units of Mathematical Sciences depth electives and 27 units of technical depth electives.",
+      "Statistics electives requiring 36-225 and 07-, 10-, or 11- technical courses requiring department approval remain advisor-confirmed alternatives and are not auto-selected.",
+      "MCS general education and the 360-unit degree total are audited separately."
+    ]
+  },
+
   "robotics-transfer": {
     "planner_status": "choice_required",
     "required_courses": ["21-127", "15-122", "15-213", "15-251"],

@@ -103,19 +103,35 @@ def find_courses_from_named_set(
 
     prefixes = rule.get("department_prefixes", [])
     source = rule.get("source", "course_database")
+    minimum_course_number = rule.get("minimum_course_number")
     maximum_course_number = rule.get("maximum_course_number")
+    explicit_courses = rule.get("courses", [])
+    excluded_courses = set(rule.get("excluded_courses", []))
     if source == "planning_course_graph":
-        return [
+        matched = [
             course["id"]
             for course in planning_courses
             if (not prefixes or course["id"][:2] in prefixes)
+            and (
+                minimum_course_number is None
+                or int(course["id"].split("-")[1]) >= minimum_course_number
+            )
             and (
                 maximum_course_number is None
                 or int(course["id"].split("-")[1]) <= maximum_course_number
             )
         ]
+        return [
+            course_id
+            for course_id in dict.fromkeys([*explicit_courses, *matched])
+            if course_id not in excluded_courses
+        ]
     if not prefixes:
-        return []
+        return [
+            course_id
+            for course_id in dict.fromkeys(explicit_courses)
+            if course_id not in excluded_courses
+        ]
 
     placeholders = ",".join("?" for _ in prefixes)
     query = f"""
@@ -124,6 +140,11 @@ def find_courses_from_named_set(
         where substr(canonical_course_id, 1, 2) in ({placeholders})
     """
     parameters = list(prefixes)
+    if minimum_course_number is not None:
+        query += """
+            and cast(substr(canonical_course_id, 4, 3) as integer) >= ?
+        """
+        parameters.append(minimum_course_number)
     if maximum_course_number is not None:
         query += """
             and cast(substr(canonical_course_id, 4, 3) as integer) <= ?
@@ -131,7 +152,14 @@ def find_courses_from_named_set(
         parameters.append(maximum_course_number)
     with closing(sqlite3.connect(database)) as connection:
         rows = connection.execute(query, parameters).fetchall()
-    return [row[0] for row in rows]
+    return [
+        course_id
+        for course_id in dict.fromkeys([
+            *explicit_courses,
+            *(row[0] for row in rows),
+        ])
+        if course_id not in excluded_courses
+    ]
 
 
 def resolve_data_requirement_option(
@@ -261,6 +289,26 @@ def apply_requirement_option_preferences(
             preferred_rank.get(option, 0),
         ),
     )
+
+
+def resolve_curriculum_requirement_options(
+    curriculum: dict | None,
+    option_resolver,
+) -> dict | None:
+    """Return a curriculum whose group options are concrete planner choices."""
+    if curriculum is None:
+        return None
+    resolved = dict(curriculum)
+    resolved["requirement_groups"] = []
+    for group in curriculum.get("requirement_groups", []):
+        options = []
+        for option in group.get("options", []):
+            options.extend(option_resolver(option))
+        resolved["requirement_groups"].append({
+            **group,
+            "options": list(dict.fromkeys(options)),
+        })
+    return resolved
 
 
 def get_program_requirement_adjustment(

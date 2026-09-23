@@ -71,6 +71,16 @@ MAJOR_BASELINES = {
             "requirements are represented directly."
         ),
     },
+    "mathematical-sciences--b-s": {
+        "name": "Mathematical Sciences B.S. verified curriculum",
+        "units": 0,
+        "status": "verified_curriculum",
+        "note": (
+            "The 2026–27 flexible Mathematical Sciences B.S. core and "
+            "depth-elective requirements are represented directly; MCS "
+            "general education is audited separately."
+        ),
+    },
 }
 
 
@@ -111,6 +121,54 @@ def _remaining_requirement_count(curriculum, completed_courses):
     return fixed_remaining + choice_remaining
 
 
+def _requirement_total(curriculum):
+    """Return the number of fixed-course and choose-N requirement slots."""
+    if not curriculum:
+        return None
+    return len(curriculum.get(
+        "required_courses",
+        curriculum.get("required_course_ids", []),
+    )) + sum(
+        group.get("choose", 1)
+        for group in curriculum.get("requirement_groups", [])
+    )
+
+
+def _planned_course_ids(path_result):
+    """Collect real future course choices without treating them as completed."""
+    planned = set()
+    for semester in path_result.get("path", []):
+        planned.update(semester.get("courses", []))
+        for requirement in semester.get("program_requirements", []):
+            option = requirement.get("default_option")
+            if option:
+                planned.update(option.split(" + "))
+    return planned
+
+
+def _requirement_progress(curriculum, completed_courses, planned_courses):
+    """Keep academic completion, future placement, and unresolved work separate."""
+    total = _requirement_total(curriculum)
+    if total is None:
+        return {
+            "total_requirements": None,
+            "requirements_completed": None,
+            "requirements_planned": None,
+            "requirements_unresolved": None,
+        }
+    completed_remaining = _remaining_requirement_count(curriculum, completed_courses)
+    covered_remaining = _remaining_requirement_count(
+        curriculum,
+        set(completed_courses) | set(planned_courses),
+    )
+    return {
+        "total_requirements": total,
+        "requirements_completed": max(0, total - completed_remaining),
+        "requirements_planned": max(0, completed_remaining - covered_remaining),
+        "requirements_unresolved": covered_remaining,
+    }
+
+
 def build_degree_audits(
     student,
     goal,
@@ -120,6 +178,7 @@ def build_degree_audits(
     primary_curriculum=None,
     goal_curriculum=None,
 ):
+    planned_course_ids = _planned_course_ids(path_result)
     completed_semesters = max(
         0,
         (student.year - 1) * 2 + (1 if student.current_term == "spring" else 0),
@@ -153,6 +212,11 @@ def build_degree_audits(
             primary_curriculum, student.completed_courses
         ),
         "minimum_degree_units": (primary_curriculum or {}).get("minimum_degree_units"),
+        **_requirement_progress(
+            primary_curriculum,
+            student.completed_courses,
+            planned_course_ids,
+        ),
     }
 
     if goal.type == "internal_transfer" and goal.include_post_transfer_plan:
@@ -185,6 +249,11 @@ def build_degree_audits(
                 "Published planning requirements are mapped for this path."
                 if legacy_remaining is not None
                 else "No verified requirement profile is available for this goal."
+            ),
+            **_requirement_progress(
+                goal_curriculum,
+                student.completed_courses,
+                planned_course_ids,
             ),
         }
     else:
@@ -224,6 +293,11 @@ def build_degree_audits(
                 "All published curriculum requirements are scheduled; they are not marked academically completed until the student reports completion."
                 if remaining == 0
                 else f"{remaining} curriculum requirements remain outside this planning horizon."
+            ),
+            **_requirement_progress(
+                profile,
+                student.completed_courses,
+                planned_course_ids,
             ),
         }
 

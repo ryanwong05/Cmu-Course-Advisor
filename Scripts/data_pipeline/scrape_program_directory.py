@@ -21,6 +21,9 @@ PROCESSED_OUTPUT_PATH = ROOT / "Data" / "processed" / "program_directory.json"
 REQUIREMENTS_PATH = ROOT / "Data" / "processed" / "requirements.json"
 PROGRAM_PROFILES_PATH = ROOT / "Data" / "processed" / "program_profiles.json"
 PROGRAM_ID_ALIASES_PATH = ROOT / "Data" / "policies" / "program_id_aliases.json"
+PROGRAM_INVENTORY_REVIEW_PATH = (
+    ROOT / "Data" / "policies" / "program_inventory_review.json"
+)
 CATALOG_URL = "https://coursecatalog.web.cmu.edu/programs/"
 CATALOG_YEAR = "2026-2027"
 
@@ -134,6 +137,77 @@ def planning_identity(
     return planning_id, "planning_ready"
 
 
+def merge_reviewed_inventory_entries(
+    programs: list[dict[str, object]],
+    reviewed_payload: dict[str, object],
+    capabilities: dict[str, set[str]],
+    aliases: dict[str, str],
+) -> list[dict[str, object]]:
+    """Merge human-verified program forms omitted by the A-Z index.
+
+    The official A-Z page is the primary discovery source, but some official
+    curriculum pages document an Additional Major or Dual Degree only inside
+    the page body.  The reviewed file is the human-review gate between those
+    page-level discoveries and the canonical directory.
+    """
+    merged = [dict(program) for program in programs]
+    by_id = {str(program["id"]): program for program in merged}
+    for reviewed in reviewed_payload.get("reviewed_entries", []):
+        entry_id = str(reviewed["id"])
+        if entry_id in by_id:
+            continue
+        inherited = by_id.get(str(reviewed.get("inherits_from", "")))
+        if inherited is None:
+            raise ValueError(
+                f"Reviewed program {entry_id} references a missing base entry"
+            )
+        program_type = str(reviewed["program_type"])
+        planning_id, planning_status = planning_identity(
+            str(reviewed["name"]), program_type, capabilities, aliases
+        )
+        entry = {
+            "id": entry_id,
+            "name": reviewed["name"],
+            "credential": reviewed["credential"],
+            "program_type": program_type,
+            "home_colleges": list(inherited.get("home_colleges", [])),
+            "affiliations": list(inherited.get("affiliations", [])),
+            "interdisciplinary": bool(inherited.get("interdisciplinary")),
+            "planning_id": planning_id,
+            "planning_status": planning_status,
+            "catalog_year": reviewed_payload.get("catalog_year", CATALOG_YEAR),
+            "source_url": reviewed.get("source_url", inherited.get("source_url")),
+            "inventory_source": "reviewed_official_program_page",
+            "requirements_source_program_id": reviewed.get(
+                "requirements_source_program_id"
+            ),
+            "evidence_heading": reviewed.get("evidence_heading"),
+        }
+        merged.append(entry)
+        by_id[entry_id] = entry
+    return merged
+
+
+def annotate_program_availability(
+    programs: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    """Attach canonical identity and all officially reviewed program forms."""
+    available_by_program: dict[str, set[str]] = {}
+    for program in programs:
+        canonical_id = slugify(str(program["name"]))
+        available_by_program.setdefault(canonical_id, set()).add(
+            str(program["program_type"])
+        )
+    annotated = []
+    for raw_program in programs:
+        program = dict(raw_program)
+        canonical_id = slugify(str(program["name"]))
+        program["canonical_program_id"] = canonical_id
+        program["available_as"] = sorted(available_by_program[canonical_id])
+        annotated.append(program)
+    return annotated
+
+
 def scrape_program_directory() -> list[dict[str, object]]:
     capabilities = load_planning_capabilities()
     aliases = load_program_id_aliases()
@@ -173,6 +247,11 @@ def scrape_program_directory() -> list[dict[str, object]]:
         if page_slug.startswith("information-systems-"):
             home_colleges = ["dietrich", "heinz"]
             affiliations = ["dietrich", "heinz"]
+        elif page_slug.startswith("computational-finance-"):
+            # The official program page identifies MCS and Tepper as the two
+            # possible home colleges and Heinz as a joint program sponsor.
+            home_colleges = ["mcs", "tepper"]
+            affiliations = ["mcs", "heinz", "tepper", "intercollege"]
 
         planning_id, planning_status = planning_identity(
             name,
@@ -194,6 +273,14 @@ def scrape_program_directory() -> list[dict[str, object]]:
             "source_url": source_url,
         })
 
+    reviewed_payload = load_json(PROGRAM_INVENTORY_REVIEW_PATH, {})
+    programs = merge_reviewed_inventory_entries(
+        programs,
+        reviewed_payload,
+        capabilities,
+        aliases,
+    )
+    programs = annotate_program_availability(programs)
     return sorted(
         programs,
         key=lambda item: (str(item["name"]), str(item["program_type"])),

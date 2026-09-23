@@ -1,14 +1,67 @@
 import unittest
 from unittest.mock import patch
+from pathlib import Path
 
 from Scripts.data_pipeline.scrape_program_directory import (
+    annotate_program_availability,
     load_planning_capabilities,
+    merge_reviewed_inventory_entries,
     planning_identity,
 )
 from Scripts.data_pipeline.audit_program_coverage import transfer_policy_coverage
 
 
 class ProgramDirectoryPipelineTests(unittest.TestCase):
+    def test_frontend_uses_canonical_directory_without_program_allowlist(self):
+        app_js = Path("static/app.js").read_text(encoding="utf-8")
+        self.assertIn("payload.canonical_programs", app_js)
+        self.assertIn("program.available_as", app_js)
+        self.assertNotIn("temporarySCSPrograms", app_js)
+
+    def test_availability_is_derived_from_one_canonical_inventory(self):
+        programs = annotate_program_availability([
+            {"id": "sample--b-s", "name": "Sample", "program_type": "primary_major"},
+            {"id": "sample--additional", "name": "Sample", "program_type": "additional_major"},
+            {"id": "sample--minor", "name": "Sample", "program_type": "minor"},
+        ])
+
+        self.assertEqual(
+            programs[0]["available_as"],
+            ["additional_major", "minor", "primary_major"],
+        )
+        self.assertTrue(all(
+            program["canonical_program_id"] == "sample" for program in programs
+        ))
+
+    def test_reviewed_discovery_entry_does_not_imply_planner_support(self):
+        base = [{
+            "id": "sample--b-s",
+            "name": "Sample",
+            "program_type": "primary_major",
+            "home_colleges": ["mcs"],
+            "affiliations": ["mcs"],
+            "interdisciplinary": False,
+            "source_url": "https://example.test/sample/",
+        }]
+        review = {
+            "catalog_year": "2026-2027",
+            "reviewed_entries": [{
+                "id": "sample--additional-major",
+                "name": "Sample",
+                "credential": "Additional Major",
+                "program_type": "additional_major",
+                "inherits_from": "sample--b-s",
+                "requirements_source_program_id": "sample--b-s",
+                "evidence_heading": "Additional Major",
+            }],
+        }
+
+        merged = merge_reviewed_inventory_entries(base, review, {}, {})
+        added = merged[-1]
+        self.assertEqual(added["planning_status"], "directory_only")
+        self.assertIsNone(added["planning_id"])
+        self.assertEqual(added["home_colleges"], ["mcs"])
+
     def test_planning_identity_uses_verified_capabilities(self):
         capabilities = {
             "robotics": {"primary_major", "additional_major"},

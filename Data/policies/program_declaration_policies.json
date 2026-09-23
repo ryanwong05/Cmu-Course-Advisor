@@ -1,0 +1,32 @@
+{
+  "catalog_year": "2026-2027",
+  "policies": {
+    "computational-finance--additional-major": {
+      "policy_status": "official_verified",
+      "application_required": true,
+      "application_windows": ["fall", "spring"],
+      "timing_note": "The application deadline has traditionally been just after the mid-semester break.",
+      "required_before_or_during_application": [
+        ["21-127", "21-128"],
+        ["21-241", "21-242"],
+        ["21-270"]
+      ],
+      "incompatible_programs": [
+        "business-administration",
+        "mathematical-sciences",
+        "economics-and-mathematical-sciences"
+      ],
+      "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/"
+    },
+    "computational-finance--minor": {
+      "policy_status": "official_verified",
+      "application_required": false,
+      "declaration_options": [
+        {"courses": ["21-270"], "minimum_grade": "A", "minimum_overall_qpa": 3.2},
+        {"courses": ["21-270", "21-370"], "minimum_average_grade": "B", "minimum_overall_qpa": 3.0},
+        {"courses": ["21-270", "21-378"], "minimum_average_grade": "B", "minimum_overall_qpa": 3.0}
+      ],
+      "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-minor/"
+    }
+  }
+}

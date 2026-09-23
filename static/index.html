@@ -19,7 +19,7 @@
 
     <link
         rel="stylesheet"
-        href="style.css?v=20260912-ai-transfer-advisor"
+        href="style.css?v=20260920-academic-dashboard"
     >
 
 </head>
@@ -81,6 +81,24 @@
         class="screen"
         id="step1"
     >
+
+        <section class="academic-dashboard" id="academicDashboard" aria-labelledby="academicDashboardTitle">
+            <div class="academic-dashboard-heading">
+                <div>
+                    <p class="eyebrow">YOUR ACADEMIC PLAN</p>
+                    <h1 id="academicDashboardTitle">Start with the big picture.</h1>
+                </div>
+                <span class="rules-badge">Student state + verified plan</span>
+            </div>
+            <div class="academic-dashboard-grid" id="academicDashboardGrid"></div>
+            <div class="academic-dashboard-actions">
+                <button class="primary-button hidden" id="viewCurrentPathButton" type="button">View my path</button>
+                <button class="secondary-button" id="exploreGoalButton" type="button">+ Explore a goal</button>
+            </div>
+        </section>
+
+        <details class="academic-profile-setup" open>
+        <summary>Update my academic profile</summary>
 
         <p class="eyebrow">
             STEP 1
@@ -245,6 +263,8 @@
             Continue →
 
         </button>
+
+        </details>
 
     </section>
 
@@ -639,17 +659,22 @@
             based on the user's selected goal/program.
         -->
 
-        <div
-            class="course-list"
-            id="courseList"
-        >
+        <div class="starting-plan-callout">
+            <strong>We can propose a starting plan now.</strong>
+            <span>Course history and manual requirement choices are optional refinements. The planner will use verified defaults where it can and leave uncertain choices unresolved.</span>
         </div>
 
-        <div class="history-section">
-            <p class="eyebrow">COMPLETED BASELINE / GENED</p>
-            <p class="history-helper">Select requirement slots you have already completed. Course history alone does not guess these.</p>
-            <div class="course-list" id="genedHistory"></div>
-        </div>
+        <details class="optional-planning-details" id="manualPlanningControls">
+            <summary>Add completed courses or adjust requirements <span>Optional</span></summary>
+            <div class="optional-planning-body">
+                <div class="course-list" id="courseList"></div>
+                <div class="history-section">
+                    <p class="eyebrow">COMPLETED BASELINE / GENED</p>
+                    <p class="history-helper">Select requirement slots you have actually completed. Planned courses are kept separate.</p>
+                    <div class="course-list" id="genedHistory"></div>
+                </div>
+            </div>
+        </details>
 
         <div class="settings-row">
 
@@ -742,7 +767,7 @@
                 id="generateButton"
                 type="button"
             >
-                Generate my path →
+                Create my starting plan →
             </button>
 
         </div>
@@ -916,6 +941,22 @@
                 <div><span class="guide-program-swatch"></span><span><strong>Program label</strong><small>Green outline and label identify Additional Major requirements.</small></span></div>
                 <div><span class="guide-workload-scale"><i></i><i></i><i></i></span><span><strong>Workload marker</strong><small>The small colored bar shows course intensity, separately from program status.</small></span></div>
                 <div><span class="guide-icon">Change</span><span><strong>Change a choice</strong><small>Use Change on a selected requirement to pick another approved course.</small></span></div>
+            </div>
+        </section>
+
+        <section class="path-strategy-panel" id="pathStrategyPanel" aria-labelledby="pathStrategyTitle">
+            <div><p class="eyebrow">PATH STRATEGY</p><h2 id="pathStrategyTitle">Shape the plan without rebuilding it.</h2></div>
+            <div class="path-strategy-grid">
+                <article class="path-strategy-card active"><strong>Balanced</strong><span>Uses the current rules-based schedule and workload checks.</span><small>Current plan</small></article>
+                <article class="path-strategy-card future"><strong>Explore first</strong><span>Preserve flexibility before specialized courses.</span><small>Not enabled yet</small></article>
+                <article class="path-strategy-card future"><strong>Goal-focused</strong><span>Pull verified target-program courses earlier.</span><small>Not enabled yet</small></article>
+            </div>
+            <div class="path-reactions" aria-label="Future planning reactions">
+                <span>How does this feel?</span>
+                <button type="button" disabled title="Reaction-based replanning is not enabled yet">Too hard</button>
+                <button type="button" disabled title="Reaction-based replanning is not enabled yet">More exploration</button>
+                <button type="button" disabled title="Reaction-based replanning is not enabled yet">More goal courses</button>
+                <button type="button" disabled title="Reaction-based replanning is not enabled yet">More flexibility</button>
             </div>
         </section>
 

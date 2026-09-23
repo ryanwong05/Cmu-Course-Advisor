@@ -1296,7 +1296,35 @@ class PlanningIntegrationTests(unittest.TestCase):
         self.assertNotEqual(audit["status"], "not_verified")
         self.assertIn("all_requirements_scheduled", audit)
         self.assertIn("requirements_remaining_to_complete", audit)
+        self.assertEqual(
+            audit["total_requirements"],
+            audit["requirements_completed"]
+            + audit["requirements_planned"]
+            + audit["requirements_unresolved"],
+        )
+        self.assertGreater(audit["requirements_completed"], 0)
+        self.assertGreater(audit["requirements_planned"], 0)
+        self.assertEqual(
+            audit["requirements_completed"],
+            audit["total_requirements"]
+            - audit["requirements_remaining_to_complete"],
+        )
         self.assertTrue(result["program_profile"]["eligibility"])
+
+    def test_planned_courses_are_not_reported_as_completed(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "scs",
+            "program": "computer-science",
+        })
+        result = app.create_plan(request)
+        audit = result["degree_audits"]["selected_goal"]
+        self.assertEqual(audit["requirements_completed"], 0)
+        self.assertGreater(audit["requirements_planned"], 0)
+        self.assertEqual(
+            audit["total_requirements"],
+            audit["requirements_planned"] + audit["requirements_unresolved"],
+        )
 
     def test_infeasible_deadline_returns_structured_warning(self):
         request = self.shared_request({
@@ -1487,6 +1515,54 @@ class PlanningIntegrationTests(unittest.TestCase):
         }
         self.assertTrue(expected.issubset(available))
 
+    def test_computational_finance_inventory_separates_discovery_from_support(self):
+        payload = app.list_program_directory()
+        variants = [
+            item for item in payload["programs"]
+            if item.get("canonical_program_id") == "computational-finance"
+        ]
+        self.assertEqual(
+            {item["program_type"] for item in variants},
+            {"primary_major", "additional_major", "minor"},
+        )
+        self.assertTrue(all(item["requirements_loaded"] for item in variants))
+        self.assertTrue(all(not item["planner_ready"] for item in variants))
+        self.assertFalse(any(
+            "transfer_destination" in item["available_as"] for item in variants
+        ))
+        additional = next(
+            item for item in variants if item["program_type"] == "additional_major"
+        )
+        minor = next(item for item in variants if item["program_type"] == "minor")
+        self.assertTrue(additional["application_policy_loaded"])
+        self.assertTrue(minor["application_policy_loaded"])
+        self.assertEqual(
+            set(additional["affiliations"]),
+            {"mcs", "heinz", "tepper", "intercollege"},
+        )
+
+    def test_canonical_directory_has_one_explorer_record_per_program(self):
+        payload = app.list_program_directory()
+        canonical_ids = [item["id"] for item in payload["canonical_programs"]]
+        self.assertEqual(len(canonical_ids), len(set(canonical_ids)))
+        computational_finance = next(
+            item for item in payload["canonical_programs"]
+            if item["id"] == "computational-finance"
+        )
+        self.assertEqual(
+            set(computational_finance["available_as"]),
+            {"primary_major", "additional_major", "minor"},
+        )
+
+    def test_directory_only_computational_finance_does_not_generate_fake_plan(self):
+        request = self.shared_request({
+            "type": "minor",
+            "program": "computational-finance",
+        })
+        with self.assertRaises(HTTPException) as context:
+            app.create_plan(request)
+        self.assertEqual(context.exception.status_code, 404)
+
     def test_all_six_scs_transfer_programs_are_planning_ready(self):
         expected = {
             "artificial-intelligence",
@@ -1564,6 +1640,80 @@ class PlanningIntegrationTests(unittest.TestCase):
                 continue
             profile = app.get_primary_major_profile(item["planning_id"])
             self.assertTrue(profile["fixed_courses"] or profile["requirement_groups"])
+
+    def test_mathematical_sciences_bs_is_ready_without_enabling_the_ba(self):
+        directory = app.list_program_directory(
+            college="mcs",
+            program_type="primary_major",
+        )["programs"]
+        math_bs = next(
+            item for item in directory
+            if item["id"] == "mathematical-sciences--b-s"
+        )
+        math_ba = next(
+            item for item in directory
+            if item["id"] == "mathematical-sciences--b-a"
+        )
+        self.assertEqual(math_bs["planning_id"], "mathematical-sciences--b-s")
+        self.assertEqual(math_bs["current_major_planning_status"], "planning_ready")
+        self.assertEqual(math_ba["current_major_planning_status"], "directory_only")
+
+    def test_mathematical_sciences_bs_profile_expands_safe_depth_candidates(self):
+        profile = app.get_primary_major_profile("mathematical-sciences--b-s")
+        self.assertEqual(profile["curriculum_status"], "verified")
+        self.assertEqual(
+            {course["id"] for course in profile["fixed_courses"]},
+            {"21-120", "21-122", "21-201", "21-373"},
+        )
+        groups = {group["id"]: group for group in profile["requirement_groups"]}
+        self.assertEqual(groups["mathematical-sciences-depth"]["choose"], 5)
+        self.assertEqual(groups["technical-depth"]["choose"], 3)
+        self.assertTrue(groups["mathematical-sciences-depth"]["options"])
+        self.assertTrue(groups["technical-depth"]["options"])
+        self.assertTrue(all(
+            not option.startswith("named_set:")
+            for group in groups.values()
+            for option in group["options"]
+        ))
+        self.assertNotIn("21-373", groups["mathematical-sciences-depth"]["options"])
+
+    def test_mathematical_sciences_bs_plans_through_senior_year(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="mcs",
+                primary_major="mathematical-sciences--b-s",
+                year=1,
+                completed_courses=["21-120", "21-127"],
+            ),
+            goals=[app.PlanningGoal(
+                type="current_major",
+                program="mathematical-sciences--b-s",
+            )],
+            constraints=app.PlanningConstraints(target_completion_year=4),
+        )
+        result = app.create_plan(request)
+        fastest = result["fastest"]
+        scheduled = {
+            course_id
+            for semester in fastest["path"]
+            for course_id in semester["courses"]
+        }
+        selected = [
+            slot["default_option"]
+            for semester in fastest["path"]
+            for slot in semester.get("program_requirements", [])
+            if slot.get("scope") == "primary_major"
+        ]
+        self.assertTrue(fastest["primary_major_complete"])
+        self.assertNotIn("21-120", scheduled)
+        self.assertNotIn("21-127", scheduled)
+        self.assertNotIn("21-127", selected)
+        self.assertEqual(len(selected), len(set(selected)))
+        self.assertFalse(fastest["remaining_program_requirements"])
+        self.assertEqual(
+            result["degree_audits"]["primary_degree"]["requirements_unresolved"],
+            0,
+        )
 
     def test_popular_current_major_audits_are_verified_and_structured(self):
         expected_groups = {

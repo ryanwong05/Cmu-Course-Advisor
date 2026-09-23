@@ -14,7 +14,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/additive-manufacturing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/additive-manufacturing-minor/",
+    "canonical_program_id": "additive-manufacturing",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "african-and-african-american-studies--minor",
@@ -31,7 +35,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/african-african-american-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/african-african-american-studies-minor/",
+    "canonical_program_id": "african-and-african-american-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "american-politics-and-law--minor",
@@ -48,7 +56,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/american-politics-law-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/american-politics-law-minor/",
+    "canonical_program_id": "american-politics-and-law",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "animation-and-special-effects--minor",
@@ -65,7 +77,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/animation-special-effects-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/animation-special-effects-minor/",
+    "canonical_program_id": "animation-and-special-effects",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "anthropology--additional-major",
+    "name": "Anthropology",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "anthropology--b-a",
+    "evidence_heading": "VII. Additional Major",
+    "canonical_program_id": "anthropology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "anthropology--minor",
@@ -82,7 +124,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-minor/",
+    "canonical_program_id": "anthropology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "anthropology--b-a",
@@ -99,7 +147,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/",
+    "canonical_program_id": "anthropology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "arabic-studies--minor",
@@ -116,7 +170,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/arabic-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/arabic-studies-minor/",
+    "canonical_program_id": "arabic-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "architectural-design-fabrication--minor",
@@ -133,7 +191,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-design-fabrication-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-design-fabrication-minor/",
+    "canonical_program_id": "architectural-design-fabrication",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "architectural-representation-and-visualization--minor",
@@ -150,7 +212,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-representation-visualization-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-representation-visualization-minor/",
+    "canonical_program_id": "architectural-representation-and-visualization",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "architectural-technology--minor",
@@ -167,7 +233,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-technology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-technology-minor/",
+    "canonical_program_id": "architectural-technology",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "architecture--minor",
@@ -184,7 +254,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-minor/",
+    "canonical_program_id": "architecture",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "architecture--b-a",
@@ -201,7 +276,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/",
+    "canonical_program_id": "architecture",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "architecture--b-arch",
@@ -218,7 +298,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/",
+    "canonical_program_id": "architecture",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "architecture-history--minor",
@@ -235,7 +320,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-history-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-history-minor/",
+    "canonical_program_id": "architecture-history",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "art--minor",
@@ -252,7 +341,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/art-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/art-minor/",
+    "canonical_program_id": "art",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "art--b-f-a",
@@ -269,7 +363,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/",
+    "canonical_program_id": "art",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "artificial-intelligence--additional-major",
@@ -286,7 +385,13 @@
     "planning_id": "artificial-intelligence",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-additional-major/",
+    "canonical_program_id": "artificial-intelligence",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "artificial-intelligence--minor",
@@ -303,7 +408,13 @@
     "planning_id": "artificial-intelligence",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/artificial-intelligence-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/artificial-intelligence-minor/",
+    "canonical_program_id": "artificial-intelligence",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "artificial-intelligence--b-s",
@@ -320,7 +431,13 @@
     "planning_id": "artificial-intelligence",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/artificialintelligence/artificial-intelligence-bs/",
+    "canonical_program_id": "artificial-intelligence",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "audio-engineering--minor",
@@ -337,7 +454,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/audio-engineering-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/audio-engineering-minor/",
+    "canonical_program_id": "audio-engineering",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "behavioral-economics--additional-major",
+    "name": "Behavioral Economics",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "behavioral-economics--b-s",
+    "evidence_heading": "Additional Major",
+    "canonical_program_id": "behavioral-economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "behavioral-economics--minor",
@@ -354,7 +501,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-minor/",
+    "canonical_program_id": "behavioral-economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "behavioral-economics--b-s",
@@ -371,7 +524,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
+    "canonical_program_id": "behavioral-economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "biological-sciences--additional-major",
@@ -388,7 +547,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-additional-major/",
+    "canonical_program_id": "biological-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "biological-sciences--minor",
@@ -405,7 +570,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-minor/",
+    "canonical_program_id": "biological-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "biological-sciences--b-a",
@@ -422,7 +593,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/",
+    "canonical_program_id": "biological-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "biological-sciences--b-s",
@@ -439,7 +616,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-bs/",
+    "canonical_program_id": "biological-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "biological-sciences-and-psychology--b-s",
@@ -456,7 +639,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/",
+    "canonical_program_id": "biological-sciences-and-psychology",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "biomedical-engineering--additional-major",
@@ -473,7 +660,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-engineering-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-engineering-additional-major/",
+    "canonical_program_id": "biomedical-engineering",
+    "available_as": [
+      "additional_major",
+      "minor"
+    ]
   },
   {
     "id": "biomedical-engineering--minor",
@@ -490,7 +682,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/biomedical-engineering-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/biomedical-engineering-minor/",
+    "canonical_program_id": "biomedical-engineering",
+    "available_as": [
+      "additional_major",
+      "minor"
+    ]
   },
   {
     "id": "biomedical-technology--additional-major",
@@ -507,7 +704,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-technology-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-technology-additional-major/",
+    "canonical_program_id": "biomedical-technology",
+    "available_as": [
+      "additional_major"
+    ]
   },
   {
     "id": "building-science--minor",
@@ -524,7 +725,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/building-science-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/building-science-minor/",
+    "canonical_program_id": "building-science",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "business-administration--additional-major",
@@ -541,7 +746,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-additional-major/",
+    "canonical_program_id": "business-administration",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "business-administration--minor",
@@ -555,10 +766,16 @@
       "tepper"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "business-administration",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-administration-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-administration-minor/",
+    "canonical_program_id": "business-administration",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "business-administration--b-s",
@@ -575,7 +792,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/",
+    "canonical_program_id": "business-administration",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "business-analytics-and-optimization--minor",
@@ -592,7 +815,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-analytics-optimization-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-analytics-optimization-minor/",
+    "canonical_program_id": "business-analytics-and-optimization",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "chemical-engineering--b-s",
@@ -609,7 +836,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/",
+    "canonical_program_id": "chemical-engineering",
+    "available_as": [
+      "primary_major"
+    ]
+  },
+  {
+    "id": "chemistry--additional-major",
+    "name": "Chemistry",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "chemistry--b-s",
+    "evidence_heading": "B.S. in Chemistry (and requirements for additional major in chemistry)",
+    "canonical_program_id": "chemistry",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "chemistry--minor",
@@ -626,7 +883,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-minor/",
+    "canonical_program_id": "chemistry",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "chemistry--b-a",
@@ -643,7 +906,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/",
+    "canonical_program_id": "chemistry",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "chemistry--b-s",
@@ -660,7 +929,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/",
+    "canonical_program_id": "chemistry",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "chemistry-biological-chemistry-track--b-s",
@@ -677,7 +952,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/",
+    "canonical_program_id": "chemistry-biological-chemistry-track",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "chinese-studies--minor",
@@ -694,7 +973,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/chinese-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/chinese-studies-minor/",
+    "canonical_program_id": "chinese-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "civil-engineering--b-s",
@@ -711,7 +994,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/",
+    "canonical_program_id": "civil-engineering",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "cognitive-neuroscience--minor",
@@ -728,7 +1015,36 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-neuroscience-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-neuroscience-minor/",
+    "canonical_program_id": "cognitive-neuroscience",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "cognitive-science--additional-major",
+    "name": "Cognitive Science",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "cognitive-science--b-s",
+    "evidence_heading": "Additional Major in Cognitive Science",
+    "canonical_program_id": "cognitive-science",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "cognitive-science--b-s",
@@ -745,7 +1061,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
+    "canonical_program_id": "cognitive-science",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "collaborative-piano--minor",
@@ -762,7 +1083,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/collaborative-piano-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/collaborative-piano-minor/",
+    "canonical_program_id": "collaborative-piano",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "colloids-polymers-and-surfaces--minor",
@@ -779,7 +1104,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/colloids-polymers-surfaces-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/colloids-polymers-surfaces-minor/",
+    "canonical_program_id": "colloids-polymers-and-surfaces",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "composition--b-f-a",
@@ -796,7 +1125,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/",
+    "canonical_program_id": "composition",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "computational-biology--additional-major",
@@ -813,7 +1146,13 @@
     "planning_id": "computational-biology",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-additional-major/",
+    "canonical_program_id": "computational-biology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computational-biology--minor",
@@ -830,7 +1169,13 @@
     "planning_id": "computational-biology",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computational-biology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computational-biology-minor/",
+    "canonical_program_id": "computational-biology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computational-biology--b-s",
@@ -847,7 +1192,13 @@
     "planning_id": "computational-biology",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputatonalbiology/computational-biology-bs/",
+    "canonical_program_id": "computational-biology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computational-design--minor",
@@ -864,7 +1215,41 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/computational-design-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/computational-design-minor/",
+    "canonical_program_id": "computational-design",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "computational-finance--additional-major",
+    "name": "Computational Finance",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "mcs",
+      "tepper"
+    ],
+    "affiliations": [
+      "mcs",
+      "heinz",
+      "tepper",
+      "intercollege"
+    ],
+    "interdisciplinary": true,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "computational-finance--b-s",
+    "evidence_heading": "Additional Major",
+    "canonical_program_id": "computational-finance",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computational-finance--minor",
@@ -872,16 +1257,26 @@
     "credential": "Minor",
     "program_type": "minor",
     "home_colleges": [
-      "intercollege"
+      "mcs",
+      "tepper"
     ],
     "affiliations": [
+      "mcs",
+      "heinz",
+      "tepper",
       "intercollege"
     ],
     "interdisciplinary": true,
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-minor/",
+    "canonical_program_id": "computational-finance",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computational-finance--b-s",
@@ -889,16 +1284,53 @@
     "credential": "B.S.",
     "program_type": "primary_major",
     "home_colleges": [
-      "intercollege"
+      "mcs",
+      "tepper"
     ],
     "affiliations": [
+      "mcs",
+      "heinz",
+      "tepper",
       "intercollege"
     ],
     "interdisciplinary": true,
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/",
+    "canonical_program_id": "computational-finance",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "computer-science--dual-degree",
+    "name": "Computer Science",
+    "credential": "Dual Degree",
+    "program_type": "additional_degree",
+    "home_colleges": [
+      "scs"
+    ],
+    "affiliations": [
+      "scs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "computer-science--b-s",
+    "evidence_heading": "Dual Degree in Computer Science",
+    "canonical_program_id": "computer-science",
+    "available_as": [
+      "additional_degree",
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computer-science--additional-major",
@@ -915,7 +1347,14 @@
     "planning_id": "computer-science",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-additional-major/",
+    "canonical_program_id": "computer-science",
+    "available_as": [
+      "additional_degree",
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computer-science--minor",
@@ -932,7 +1371,14 @@
     "planning_id": "computer-science",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computer-science-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/computer-science-minor/",
+    "canonical_program_id": "computer-science",
+    "available_as": [
+      "additional_degree",
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computer-science--b-s",
@@ -949,7 +1395,14 @@
     "planning_id": "computer-science",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/",
+    "canonical_program_id": "computer-science",
+    "available_as": [
+      "additional_degree",
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "computer-science-and-arts--b-c-s-a",
@@ -964,10 +1417,14 @@
       "scs"
     ],
     "interdisciplinary": true,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "computer-science-and-arts",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/computer-science-arts/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/computer-science-arts/",
+    "canonical_program_id": "computer-science-and-arts",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "conducting--minor",
@@ -984,7 +1441,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/conducting-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/conducting-minor/",
+    "canonical_program_id": "conducting",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "creative-writing--minor",
@@ -1001,7 +1462,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-minor/",
+    "canonical_program_id": "creative-writing",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "creative-writing--b-a",
@@ -1018,7 +1484,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-ba/",
+    "canonical_program_id": "creative-writing",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "cybersecurity-and-international-conflict--minor",
@@ -1035,7 +1506,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/cybersecurity-international-conflict-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/cybersecurity-international-conflict-minor/",
+    "canonical_program_id": "cybersecurity-and-international-conflict",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "decision-making-and-intelligent-systems--minor",
@@ -1052,7 +1527,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-making-intelligent-systems-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-making-intelligent-systems-minor/",
+    "canonical_program_id": "decision-making-and-intelligent-systems",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "decision-science--additional-major",
+    "name": "Decision Science",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "decision-science--b-s",
+    "evidence_heading": "Additional Major in Decision Science",
+    "canonical_program_id": "decision-science",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "decision-science--minor",
@@ -1069,7 +1574,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-minor/",
+    "canonical_program_id": "decision-science",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "decision-science--b-s",
@@ -1086,7 +1597,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
+    "canonical_program_id": "decision-science",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "design--minor",
@@ -1103,7 +1620,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/design-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/design-minor/",
+    "canonical_program_id": "design",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "design--b-des",
@@ -1120,7 +1642,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/",
+    "canonical_program_id": "design",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "design-for-learning--minor",
@@ -1137,7 +1664,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/design-learning-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/design-learning-minor/",
+    "canonical_program_id": "design-for-learning",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "discrete-mathematics-and-logic--minor",
@@ -1154,7 +1685,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/discrete-mathematics-logic-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/discrete-mathematics-logic-minor/",
+    "canonical_program_id": "discrete-mathematics-and-logic",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "drama--minor",
@@ -1171,7 +1706,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/drama-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/drama-minor/",
+    "canonical_program_id": "drama",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "drama--b-f-a",
@@ -1188,7 +1728,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/",
+    "canonical_program_id": "drama",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "economics--additional-major",
@@ -1202,10 +1747,16 @@
       "tepper"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "economics",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-additional-major/",
+    "canonical_program_id": "economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "economics--minor",
@@ -1222,7 +1773,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/economics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/economics-minor/",
+    "canonical_program_id": "economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "economics--b-a",
@@ -1239,7 +1796,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/",
+    "canonical_program_id": "economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "economics--b-s",
@@ -1256,7 +1819,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/",
+    "canonical_program_id": "economics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "economics-and-mathematical-sciences--b-s",
@@ -1273,7 +1842,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-mathematical-sciences-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-mathematical-sciences-bs/",
+    "canonical_program_id": "economics-and-mathematical-sciences",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "economics-and-politics--b-s",
@@ -1290,7 +1863,36 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/",
+    "canonical_program_id": "economics-and-politics",
+    "available_as": [
+      "primary_major"
+    ]
+  },
+  {
+    "id": "economics-and-statistics--additional-major",
+    "name": "Economics and Statistics",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "economics-and-statistics--b-s",
+    "evidence_heading": "Additional Major in Economics and Statistics",
+    "canonical_program_id": "economics-and-statistics",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "economics-and-statistics--b-s",
@@ -1307,7 +1909,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/",
+    "canonical_program_id": "economics-and-statistics",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "electrical-and-computer-engineering--b-s",
@@ -1321,10 +1928,14 @@
       "engineering"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "electrical-and-computer-engineering",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofelectricalandcomputerengineering/electrical-computer-engineering-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofelectricalandcomputerengineering/electrical-computer-engineering-bs/",
+    "canonical_program_id": "electrical-and-computer-engineering",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "electronic-materials--minor",
@@ -1341,7 +1952,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/electronic-materials-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/electronic-materials-minor/",
+    "canonical_program_id": "electronic-materials",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "electronic-music--b-f-a",
@@ -1358,7 +1973,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/",
+    "canonical_program_id": "electronic-music",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "engineering-design-innovation-and-entrepreneurship--additional-major",
@@ -1375,7 +1994,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/integratedinnovationinstitute/engineering-design-innovation-entrepreneurship-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/integratedinnovationinstitute/engineering-design-innovation-entrepreneurship-additional-major/",
+    "canonical_program_id": "engineering-design-innovation-and-entrepreneurship",
+    "available_as": [
+      "additional_major"
+    ]
   },
   {
     "id": "engineering-studies--minor",
@@ -1392,7 +2015,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/engineering-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/engineering-studies-minor/",
+    "canonical_program_id": "engineering-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "engineering-studies-and-arts--b-e-s-a",
@@ -1410,7 +2037,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/",
+    "canonical_program_id": "engineering-studies-and-arts",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "engineering-and-arts--additional-major",
@@ -1428,7 +2059,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-arts-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-arts-additional-major/",
+    "canonical_program_id": "engineering-and-arts",
+    "available_as": [
+      "additional_major"
+    ]
   },
   {
     "id": "engineering-and-public-policy--additional-major",
@@ -1445,7 +2080,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/engineering-public-policy-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/engineering-public-policy-additional-major/",
+    "canonical_program_id": "engineering-and-public-policy",
+    "available_as": [
+      "additional_major"
+    ]
   },
   {
     "id": "environmental-engineering--b-s",
@@ -1462,7 +2101,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/",
+    "canonical_program_id": "environmental-engineering",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "environmental-and-sustainability-studies--additional-major",
@@ -1479,7 +2122,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-additional-major/",
+    "canonical_program_id": "environmental-and-sustainability-studies",
+    "available_as": [
+      "additional_major",
+      "minor"
+    ]
   },
   {
     "id": "environmental-and-sustainability-studies--minor",
@@ -1496,7 +2144,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-minor/",
+    "canonical_program_id": "environmental-and-sustainability-studies",
+    "available_as": [
+      "additional_major",
+      "minor"
+    ]
   },
   {
     "id": "ethics--minor",
@@ -1513,7 +2166,36 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/ethics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/ethics-minor/",
+    "canonical_program_id": "ethics",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "ethics-history-and-public-policy--additional-major",
+    "name": "Ethics, History and Public Policy",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "ethics-history-and-public-policy--b-a-b-s",
+    "evidence_heading": "VII. Additional Major",
+    "canonical_program_id": "ethics-history-and-public-policy",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "ethics-history-and-public-policy--b-a-b-s",
@@ -1530,7 +2212,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/",
+    "canonical_program_id": "ethics-history-and-public-policy",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "film-and-visual-media--minor",
@@ -1547,7 +2234,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-minor/",
+    "canonical_program_id": "film-and-visual-media",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "film-and-visual-media--b-a",
@@ -1564,7 +2256,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-ba/",
+    "canonical_program_id": "film-and-visual-media",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "financial-management--minor",
@@ -1581,7 +2278,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/financial-management-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/financial-management-minor/",
+    "canonical_program_id": "financial-management",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "game-design--minor",
@@ -1598,7 +2299,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/game-design-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/game-design-minor/",
+    "canonical_program_id": "game-design",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "gender-studies--minor",
@@ -1615,7 +2320,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/gender-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/gender-studies-minor/",
+    "canonical_program_id": "gender-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "general-studies--b-a-b-s",
@@ -1632,7 +2341,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/general-studies-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/general-studies-major/",
+    "canonical_program_id": "general-studies",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "german-studies--minor",
@@ -1649,7 +2362,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/german-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/german-studies-minor/",
+    "canonical_program_id": "german-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "global-cultures-and-emerging-technologies--b-a",
@@ -1666,7 +2383,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/",
+    "canonical_program_id": "global-cultures-and-emerging-technologies",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "global-engineering--minor",
@@ -1683,7 +2404,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/global-engineering-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/global-engineering-minor/",
+    "canonical_program_id": "global-engineering",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "global-french-studies--minor",
@@ -1700,7 +2425,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-french-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-french-studies-minor/",
+    "canonical_program_id": "global-french-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "health-care-policy-and-management--minor",
@@ -1717,7 +2446,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/health-care-policy-management-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/health-care-policy-management-minor/",
+    "canonical_program_id": "health-care-policy-and-management",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "health-humanities--additional-major",
@@ -1734,7 +2467,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/health-humanities-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/health-humanities-additional-major/",
+    "canonical_program_id": "health-humanities",
+    "available_as": [
+      "additional_major"
+    ]
   },
   {
     "id": "hispanic-studies--minor",
@@ -1751,7 +2488,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/hispanic-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/hispanic-studies-minor/",
+    "canonical_program_id": "hispanic-studies",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "history--additional-major",
+    "name": "History",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "history--b-a",
+    "evidence_heading": "VII. Additional Major in History",
+    "canonical_program_id": "history",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "history--minor",
@@ -1768,7 +2535,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-minor/",
+    "canonical_program_id": "history",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "history--b-a",
@@ -1785,7 +2558,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/",
+    "canonical_program_id": "history",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "human-computer-interaction--minor",
@@ -1802,7 +2581,13 @@
     "planning_id": "human-computer-interaction",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/human-computer-interaction-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/human-computer-interaction-minor/",
+    "canonical_program_id": "human-computer-interaction",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "human-computer-interaction--additional-major",
@@ -1819,7 +2604,13 @@
     "planning_id": "human-computer-interaction",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-additional-major/",
+    "canonical_program_id": "human-computer-interaction",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "human-computer-interaction--b-s",
@@ -1836,7 +2627,13 @@
     "planning_id": "human-computer-interaction",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/humancomputerinteractionprogram/human-computer-interaction-bs/",
+    "canonical_program_id": "human-computer-interaction",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "humanities-analytics--minor",
@@ -1853,7 +2650,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/humanities-analytics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/humanities-analytics-minor/",
+    "canonical_program_id": "humanities-analytics",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "humanities-and-arts--b-h-a",
@@ -1871,7 +2672,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/",
+    "canonical_program_id": "humanities-and-arts",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "immersive-technologies-in-arts-and-culture--minor",
@@ -1888,7 +2693,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/immersive-technologies-arts-culture-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/immersive-technologies-arts-culture-minor/",
+    "canonical_program_id": "immersive-technologies-in-arts-and-culture",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "information-security-privacy-and-policy--minor",
@@ -1905,7 +2714,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/information-security-privacy-policy-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/information-security-privacy-policy-minor/",
+    "canonical_program_id": "information-security-privacy-and-policy",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "information-systems--minor",
@@ -1913,18 +2726,22 @@
     "credential": "Minor",
     "program_type": "minor",
     "home_colleges": [
-      "dietrich",
-      "heinz"
+      "dietrich"
     ],
     "affiliations": [
       "dietrich",
       "heinz"
     ],
-    "interdisciplinary": true,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "interdisciplinary": false,
+    "planning_id": "information-systems",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-minor/",
+    "canonical_program_id": "information-systems",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "information-systems--b-s",
@@ -1932,18 +2749,22 @@
     "credential": "B.S.",
     "program_type": "primary_major",
     "home_colleges": [
-      "dietrich",
-      "heinz"
+      "dietrich"
     ],
     "affiliations": [
       "dietrich",
       "heinz"
     ],
-    "interdisciplinary": true,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "interdisciplinary": false,
+    "planning_id": "information-systems",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/informationsystems/information-systems-bs/",
+    "canonical_program_id": "information-systems",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "innovation-and-entrepreneurship--minor",
@@ -1960,7 +2781,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/innovation-entrepreneurship-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/innovation-entrepreneurship-minor/",
+    "canonical_program_id": "innovation-and-entrepreneurship",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "intelligent-environments--minor",
@@ -1977,7 +2802,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/intelligent-environments-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/intelligent-environments-minor/",
+    "canonical_program_id": "intelligent-environments",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "international-relations-and-political-science--minor",
@@ -1994,7 +2823,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-minor/",
+    "canonical_program_id": "international-relations-and-political-science",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "international-relations-and-political-science--b-s",
@@ -2011,7 +2845,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/",
+    "canonical_program_id": "international-relations-and-political-science",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "japanese-studies--minor",
@@ -2028,7 +2867,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/japanese-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/japanese-studies-minor/",
+    "canonical_program_id": "japanese-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "language-technologies--minor",
@@ -2045,7 +2888,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/language-technologies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/language-technologies-minor/",
+    "canonical_program_id": "language-technologies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "languages-and-cultures--b-a",
@@ -2062,7 +2909,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/",
+    "canonical_program_id": "languages-and-cultures",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "linguistics--minor",
@@ -2079,7 +2930,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-minor/",
+    "canonical_program_id": "linguistics",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "linguistics--b-a",
@@ -2096,7 +2952,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/",
+    "canonical_program_id": "linguistics",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "literature-and-culture--minor",
@@ -2113,7 +2974,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-minor/",
+    "canonical_program_id": "literature-and-culture",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "literature-and-culture--b-a",
@@ -2130,7 +2996,38 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/",
+    "canonical_program_id": "literature-and-culture",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "logic-and-computation--additional-major",
+    "name": "Logic and Computation",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "logic-and-computation--b-s",
+    "evidence_heading": "Additional major in Logic and Computation",
+    "canonical_program_id": "logic-and-computation",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "logic-and-computation--minor",
@@ -2147,7 +3044,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-minor/",
+    "canonical_program_id": "logic-and-computation",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "logic-and-computation--b-s",
@@ -2164,7 +3067,13 @@
     "planning_id": "logic-and-computation",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/",
+    "canonical_program_id": "logic-and-computation",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "machine-learning--minor",
@@ -2178,10 +3087,14 @@
       "scs"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "machine-learning",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/machine-learning-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/machine-learning-minor/",
+    "canonical_program_id": "machine-learning",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "materials-science-and-engineering--minor",
@@ -2198,7 +3111,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/materials-science-engineering-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/materials-science-engineering-minor/",
+    "canonical_program_id": "materials-science-and-engineering",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "materials-science-and-engineering--b-s",
@@ -2215,7 +3133,38 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/",
+    "canonical_program_id": "materials-science-and-engineering",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "mathematical-sciences--additional-major",
+    "name": "Mathematical Sciences",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "mcs"
+    ],
+    "affiliations": [
+      "mcs"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "mathematical-sciences--b-s",
+    "evidence_heading": "Additional Major Requirements",
+    "canonical_program_id": "mathematical-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "mathematical-sciences--minor",
@@ -2232,7 +3181,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-minor/",
+    "canonical_program_id": "mathematical-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "mathematical-sciences--b-a",
@@ -2249,7 +3204,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/",
+    "canonical_program_id": "mathematical-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "mathematical-sciences--b-s",
@@ -2266,7 +3227,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
+    "canonical_program_id": "mathematical-sciences",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "mathematical-sciences-and-economics--b-s",
@@ -2283,7 +3250,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/",
+    "canonical_program_id": "mathematical-sciences-and-economics",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "mechanical-behavior-of-materials--minor",
@@ -2300,7 +3271,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/mechanical-behaviors-of-materials-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/mechanical-behaviors-of-materials-minor/",
+    "canonical_program_id": "mechanical-behavior-of-materials",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "mechanical-engineering--b-s",
@@ -2314,10 +3289,14 @@
       "engineering"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "mechanical-engineering",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofmechanicalengineering/mechanical-engineering-bs/",
+    "canonical_program_id": "mechanical-engineering",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "media-design--minor",
@@ -2334,7 +3313,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/media-design-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/media-design-minor/",
+    "canonical_program_id": "media-design",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "medical-decision-making--minor",
@@ -2351,7 +3334,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/medical-decision-making-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/medical-decision-making-minor/",
+    "canonical_program_id": "medical-decision-making",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "military-strategy-and-international-relations--minor",
@@ -2368,7 +3355,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/military-strategy-international-relations-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/military-strategy-international-relations-minor/",
+    "canonical_program_id": "military-strategy-and-international-relations",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "music--minor",
@@ -2385,7 +3376,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-minor/",
+    "canonical_program_id": "music",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "music-education--minor",
@@ -2402,7 +3397,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-education-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-education-minor/",
+    "canonical_program_id": "music-education",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "music-performance--b-f-a",
@@ -2419,7 +3418,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/",
+    "canonical_program_id": "music-performance",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "music-technology--minor",
@@ -2436,7 +3439,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-technology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-technology-minor/",
+    "canonical_program_id": "music-technology",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "music-and-technology--b-s",
@@ -2453,7 +3460,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-technology-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-technology-bs/",
+    "canonical_program_id": "music-and-technology",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "neural-computation--minor",
@@ -2470,7 +3481,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neural-computation-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neural-computation-minor/",
+    "canonical_program_id": "neural-computation",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "neuroscience--minor",
@@ -2487,7 +3502,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/neuroscience-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/neuroscience-minor/",
+    "canonical_program_id": "neuroscience",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "neuroscience--b-s",
@@ -2504,7 +3524,38 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/",
+    "canonical_program_id": "neuroscience",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "philosophy--additional-major",
+    "name": "Philosophy",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "philosophy--b-a",
+    "evidence_heading": "Additional Major",
+    "canonical_program_id": "philosophy",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "philosophy--minor",
@@ -2521,7 +3572,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-minor/",
+    "canonical_program_id": "philosophy",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "philosophy--b-a",
@@ -2538,7 +3595,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/",
+    "canonical_program_id": "philosophy",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "photography--minor",
@@ -2555,7 +3618,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/photography-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/photography-minor/",
+    "canonical_program_id": "photography",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "physical-computing--minor",
@@ -2572,7 +3639,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/physical-computing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/physical-computing-minor/",
+    "canonical_program_id": "physical-computing",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "physics--additional-major",
@@ -2589,7 +3660,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-additional-major/",
+    "canonical_program_id": "physics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "physics--minor",
@@ -2606,7 +3683,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-minor/",
+    "canonical_program_id": "physics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "physics--b-a",
@@ -2623,7 +3706,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/",
+    "canonical_program_id": "physics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "physics--b-s",
@@ -2640,7 +3729,39 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-bs/",
+    "canonical_program_id": "physics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "policy-and-management--additional-major",
+    "name": "Policy and Management",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "policy-and-management--b-s",
+    "evidence_heading": "Additional Major",
+    "canonical_program_id": "policy-and-management",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "policy-and-management--minor",
@@ -2657,7 +3778,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-minor/",
+    "canonical_program_id": "policy-and-management",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "policy-and-management--b-s",
@@ -2674,7 +3801,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/",
+    "canonical_program_id": "policy-and-management",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "political-science-security-and-technology--minor",
@@ -2691,7 +3824,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-minor/",
+    "canonical_program_id": "political-science-security-and-technology",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "political-science-security-and-technology--b-s",
@@ -2708,7 +3846,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/",
+    "canonical_program_id": "political-science-security-and-technology",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "politics-and-public-policy--minor",
@@ -2725,7 +3868,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/politics-public-policy-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/politics-public-policy-minor/",
+    "canonical_program_id": "politics-and-public-policy",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "product-management--minor",
@@ -2742,7 +3889,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/product-management-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/product-management-minor/",
+    "canonical_program_id": "product-management",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "professional-writing--minor",
@@ -2759,7 +3910,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-minor/",
+    "canonical_program_id": "professional-writing",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "professional-writing--b-a",
@@ -2776,7 +3932,38 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-ba/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-ba/",
+    "canonical_program_id": "professional-writing",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "psychology--additional-major",
+    "name": "Psychology",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "psychology--b-a-b-s",
+    "evidence_heading": "Additional Major in Psychology",
+    "canonical_program_id": "psychology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "psychology--minor",
@@ -2793,7 +3980,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-minor/",
+    "canonical_program_id": "psychology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "psychology--b-a-b-s",
@@ -2810,7 +4003,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
+    "canonical_program_id": "psychology",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "psychology-and-biological-sciences--b-s",
@@ -2827,7 +4026,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/",
+    "canonical_program_id": "psychology-and-biological-sciences",
+    "available_as": [
+      "primary_major"
+    ]
   },
   {
     "id": "rationality-uncertainty-and-choice-formal-methods--minor",
@@ -2844,7 +4047,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/rationality-uncertainty-choice-formal-methods-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/rationality-uncertainty-choice-formal-methods-minor/",
+    "canonical_program_id": "rationality-uncertainty-and-choice-formal-methods",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "religious-studies--minor",
@@ -2861,7 +4068,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/religious-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/religious-studies-minor/",
+    "canonical_program_id": "religious-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "robotics--additional-major",
@@ -2878,7 +4089,13 @@
     "planning_id": "robotics",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-additional-major/",
+    "canonical_program_id": "robotics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "robotics--minor",
@@ -2895,7 +4112,13 @@
     "planning_id": "robotics",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/robotics-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/robotics-minor/",
+    "canonical_program_id": "robotics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "robotics--b-s",
@@ -2912,7 +4135,13 @@
     "planning_id": "robotics",
     "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/robotics/robotics-bs/",
+    "canonical_program_id": "robotics",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "russian-studies--minor",
@@ -2929,7 +4158,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/russian-studies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/russian-studies-minor/",
+    "canonical_program_id": "russian-studies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "science-and-arts--b-s-a",
@@ -2947,7 +4180,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/science-arts/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/science-arts/",
+    "canonical_program_id": "science-and-arts",
+    "available_as": [
+      "primary_major"
+    ]
+  },
+  {
+    "id": "science-technology-and-society--additional-major",
+    "name": "Science, Technology and Society",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "science-technology-and-society--b-s",
+    "evidence_heading": "VII. Additional Major in Science, Technology and Society",
+    "canonical_program_id": "science-technology-and-society",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "science-technology-and-society--minor",
@@ -2964,7 +4227,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-minor/",
+    "canonical_program_id": "science-technology-and-society",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "science-technology-and-society--b-s",
@@ -2981,7 +4250,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/",
+    "canonical_program_id": "science-technology-and-society",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "science-technology-and-public-policy--additional-major",
@@ -2998,7 +4273,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/science-technology-public-policy-additional-major/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/science-technology-public-policy-additional-major/",
+    "canonical_program_id": "science-technology-and-public-policy",
+    "available_as": [
+      "additional_major"
+    ]
   },
   {
     "id": "scientific-computing--minor",
@@ -3015,7 +4294,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/minors/scientific-computing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/minors/scientific-computing-minor/",
+    "canonical_program_id": "scientific-computing",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "societal-computing--minor",
@@ -3032,7 +4315,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/societal-computing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/societal-computing-minor/",
+    "canonical_program_id": "societal-computing",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "societal-and-human-impacts-of-future-technologies--minor",
@@ -3049,7 +4336,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/societal-human-impacts-future-technologies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/societal-human-impacts-future-technologies-minor/",
+    "canonical_program_id": "societal-and-human-impacts-of-future-technologies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "sociology--minor",
@@ -3066,7 +4357,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/sociology-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/sociology-minor/",
+    "canonical_program_id": "sociology",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "soft-technologies--minor",
@@ -3083,7 +4378,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/soft-technologies-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/soft-technologies-minor/",
+    "canonical_program_id": "soft-technologies",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "software-engineering--minor",
@@ -3100,7 +4399,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/software-engineering-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/software-engineering-minor/",
+    "canonical_program_id": "software-engineering",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "sonic-arts--minor",
@@ -3117,7 +4420,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/sonic-arts-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/sonic-arts-minor/",
+    "canonical_program_id": "sonic-arts",
+    "available_as": [
+      "minor"
+    ]
+  },
+  {
+    "id": "statistics-and-data-science--additional-major",
+    "name": "Statistics and Data Science",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "statistics-and-data-science--b-s",
+    "evidence_heading": "Additional Major in Statistics and Data Science",
+    "canonical_program_id": "statistics-and-data-science",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "statistics-and-data-science--minor",
@@ -3134,7 +4467,13 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-minor/",
+    "canonical_program_id": "statistics-and-data-science",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "statistics-and-data-science--b-s",
@@ -3151,7 +4490,38 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/",
+    "canonical_program_id": "statistics-and-data-science",
+    "available_as": [
+      "additional_major",
+      "minor",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "statistics-and-data-science-mathematical-sciences-track--additional-major",
+    "name": "Statistics and Data Science (Mathematical Sciences Track)",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "statistics-and-data-science-mathematical-sciences-track--b-s",
+    "evidence_heading": "Additional Major in Statistics and Data Science (Mathematical Science Track)",
+    "canonical_program_id": "statistics-and-data-science-mathematical-sciences-track",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "statistics-and-data-science-mathematical-sciences-track--b-s",
@@ -3168,7 +4538,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/",
+    "canonical_program_id": "statistics-and-data-science-mathematical-sciences-track",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "statistics-and-data-science-neuroscience-track--additional-major",
+    "name": "Statistics and Data Science (Neuroscience Track)",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "statistics-and-data-science-neuroscience-track--b-s",
+    "evidence_heading": "Additional Major in Statistics and Data Science (Neuroscience Track)",
+    "canonical_program_id": "statistics-and-data-science-neuroscience-track",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "statistics-and-data-science-neuroscience-track--b-s",
@@ -3185,7 +4585,37 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/",
+    "canonical_program_id": "statistics-and-data-science-neuroscience-track",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
+  },
+  {
+    "id": "statistics-and-machine-learning--additional-major",
+    "name": "Statistics and Machine Learning",
+    "credential": "Additional Major",
+    "program_type": "additional_major",
+    "home_colleges": [
+      "dietrich"
+    ],
+    "affiliations": [
+      "dietrich"
+    ],
+    "interdisciplinary": false,
+    "planning_id": null,
+    "planning_status": "directory_only",
+    "catalog_year": "2026-2027",
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-machine-learning-bs/",
+    "inventory_source": "reviewed_official_program_page",
+    "requirements_source_program_id": "statistics-and-machine-learning--b-s",
+    "evidence_heading": "Additional Major in Statistics and Machine Learning",
+    "canonical_program_id": "statistics-and-machine-learning",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "statistics-and-machine-learning--b-s",
@@ -3199,10 +4629,15 @@
       "dietrich"
     ],
     "interdisciplinary": false,
-    "planning_id": null,
-    "planning_status": "directory_only",
+    "planning_id": "stats-ml",
+    "planning_status": "planning_ready",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-machine-learning-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-machine-learning-bs/",
+    "canonical_program_id": "statistics-and-machine-learning",
+    "available_as": [
+      "additional_major",
+      "primary_major"
+    ]
   },
   {
     "id": "tech-entrepreneurship--minor-cmu-q",
@@ -3219,7 +4654,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/qatar/tech-entrepreneurship-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/qatar/tech-entrepreneurship-minor/",
+    "canonical_program_id": "tech-entrepreneurship",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "technical-writing--minor",
@@ -3236,7 +4675,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-minor/",
+    "canonical_program_id": "technical-writing",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "technical-writing--b-s",
@@ -3253,7 +4697,12 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-bs/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-bs/",
+    "canonical_program_id": "technical-writing",
+    "available_as": [
+      "minor",
+      "primary_major"
+    ]
   },
   {
     "id": "technology-and-policy--minor",
@@ -3270,7 +4719,11 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/technology-policy-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/technology-policy-minor/",
+    "canonical_program_id": "technology-and-policy",
+    "available_as": [
+      "minor"
+    ]
   },
   {
     "id": "the-history-of-the-arts--minor",
@@ -3287,6 +4740,10 @@
     "planning_id": null,
     "planning_status": "directory_only",
     "catalog_year": "2026-2027",
-    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/history-arts-minor/"
+    "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/history-arts-minor/",
+    "canonical_program_id": "the-history-of-the-arts",
+    "available_as": [
+      "minor"
+    ]
   }
 ]

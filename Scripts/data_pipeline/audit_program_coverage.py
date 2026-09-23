@@ -13,6 +13,8 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = ROOT / "Data" / "processed"
@@ -23,6 +25,8 @@ OUTPUT_PATH = DATA_DIR / "program_coverage_report.json"
 TRANSFER_REQUIREMENTS_PATH = ROOT / "Data" / "policies" / "transfer_requirements.json"
 PROGRAM_PROFILES_PATH = DATA_DIR / "program_profiles.json"
 PROGRAM_ID_ALIASES_PATH = ROOT / "Data" / "policies" / "program_id_aliases.json"
+PROGRAM_INVENTORY_REVIEW_PATH = ROOT / "Data" / "policies" / "program_inventory_review.json"
+SCRAPED_CURRICULA_DIR = ROOT / "Data" / "scraped" / "program_curricula"
 
 
 def load_json(path: Path, default):
@@ -33,6 +37,53 @@ def load_json(path: Path, default):
 
 def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+
+
+def embedded_program_type_candidates(
+    programs: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    """Find page-level program forms for human review without promoting them."""
+    existing = {
+        (str(program.get("canonical_program_id") or slugify(str(program["name"]))),
+         str(program["program_type"]))
+        for program in programs
+    }
+    candidates = []
+    for program in programs:
+        if program.get("program_type") != "primary_major":
+            continue
+        cache_path = SCRAPED_CURRICULA_DIR / f"{program['id']}.html"
+        if not cache_path.exists():
+            continue
+        soup = BeautifulSoup(cache_path.read_text(encoding="utf-8"), "html.parser")
+        headings = [
+            " ".join(heading.get_text(" ", strip=True).split())
+            for heading in soup.select("h1,h2,h3,h4,h5")
+        ]
+        discoveries: list[tuple[str, str]] = []
+        for heading in headings:
+            normalized = heading.lower()
+            if "additional major" in normalized and "additional majors:" not in normalized:
+                discoveries.append(("additional_major", heading))
+            if "dual degree" in normalized or "additional degree" in normalized:
+                discoveries.append(("additional_degree", heading))
+        canonical_id = str(
+            program.get("canonical_program_id") or slugify(str(program["name"]))
+        )
+        for program_type, heading in discoveries:
+            if (canonical_id, program_type) in existing:
+                continue
+            candidate = {
+                "canonical_program_id": canonical_id,
+                "name": program["name"],
+                "program_type": program_type,
+                "source_url": program.get("source_url"),
+                "evidence_heading": heading,
+                "status": "manual_review_required",
+            }
+            if candidate not in candidates:
+                candidates.append(candidate)
+    return candidates
 
 
 def transfer_policy_coverage(programs: list[dict[str, object]]) -> dict[str, object]:
@@ -91,7 +142,10 @@ def run() -> dict[str, object]:
     for program in programs:
         program_type = str(program.get("program_type", "unknown"))
         status = str(program.get("planning_status", "missing"))
-        curriculum = extracted.get(str(program.get("id")))
+        curriculum_id = str(
+            program.get("requirements_source_program_id") or program.get("id")
+        )
+        curriculum = extracted.get(curriculum_id)
         extraction_status = "not_extracted"
         if curriculum:
             extraction_status = (
@@ -109,6 +163,9 @@ def run() -> dict[str, object]:
                 "source_url": program.get("source_url"),
                 "planning_status": status,
                 "curriculum_extraction_status": extraction_status,
+                "requirements_source_program_id": program.get(
+                    "requirements_source_program_id"
+                ),
             })
 
     type_summary = {}
@@ -126,6 +183,14 @@ def run() -> dict[str, object]:
     total = len(programs)
     ready = sum(
         program.get("planning_status") == "planning_ready"
+        for program in programs
+    )
+    reviewed_inventory = load_json(PROGRAM_INVENTORY_REVIEW_PATH, {})
+    reviewed_entries = reviewed_inventory.get("reviewed_entries", [])
+    discoverable_with_requirements = sum(
+        bool(extracted.get(str(
+            program.get("requirements_source_program_id") or program.get("id")
+        )))
         for program in programs
     )
     report = {
@@ -151,12 +216,25 @@ def run() -> dict[str, object]:
         },
         "coverage_layers": {
             "catalog_discovered": len(programs),
-            "curriculum_pages_extracted": len(extracted),
+            "requirements_loaded": discoverable_with_requirements,
+            "unique_curriculum_pages_extracted": len(extracted),
             "automatic_promotion_candidates": sum(
                 item.get("validation", {}).get("promotion_ready", False)
                 for item in curriculum_registry
             ),
             "verified_planner_ready": ready,
+        },
+        "official_inventory_diff": {
+            "a_z_directory_entries": len(programs) - len(reviewed_entries),
+            "reviewed_page_level_additions": reviewed_entries,
+            "unreviewed_page_level_candidates": embedded_program_type_candidates(programs),
+            "missing_from_project": [],
+            "wrong_program_type": [],
+            "possibly_outdated": [],
+            "note": (
+                "Programs A-Z plus reviewed program-page declarations form the "
+                "canonical discovery inventory. Planner support remains separate."
+            ),
         },
         "transfer_policy_coverage": transfer_policy_coverage(programs),
         "pipeline_gaps": [
