@@ -96,7 +96,8 @@ const appState = {
         completed_requirement_ids: [],
         in_progress_courses: [],
         planned_courses: [],
-        locked_semesters: []
+        locked_semesters: [],
+        academic_history: []
     },
     goals: [],
     constraints: {
@@ -1707,12 +1708,212 @@ function buildPlanningRequest() {
 function collectCompletedCourseIds() {
     // Fixed-course-only profiles do not render a requirement-decision-page.
     // The course list is the stable owner of both fixed and choice inputs.
-    return [...new Set(
+    const checked =
         Array.from(document.querySelectorAll(
             '#courseList .course-option input[type="checkbox"]:checked:not(#noCompletedCourses)'
         )).flatMap(input => input.value.split(" + "))
-    )];
+    ;
+    const imported = (appState.student.academic_history || [])
+        .filter(record => record.status === "completed")
+        .map(record => record.course_id);
+    return [...new Set([...checked, ...imported])];
 }
+
+
+// #region ACADEMIC HISTORY IMPORT
+let pendingAcademicHistoryCourses = [];
+let academicHistoryCatalog = [];
+
+function escapeHistoryHtml(value) {
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
+
+function academicHistoryError(detail) {
+    if (typeof detail === "string") return detail;
+    const warnings = detail?.warnings || detail?.detail?.warnings;
+    if (Array.isArray(warnings)) {
+        return warnings.map(item => item.message || item).join(" ");
+    }
+    return "We could not read this file. Try a text-based PDF or enter courses manually.";
+}
+
+async function ensureAcademicHistoryCatalog() {
+    if (academicHistoryCatalog.length) return;
+    const response = await fetch("/api/course-catalog");
+    if (!response.ok) throw new Error("The course catalog could not be loaded.");
+    academicHistoryCatalog = (await response.json()).courses;
+    document.getElementById("academicHistoryCourseCatalog").innerHTML = academicHistoryCatalog
+        .map(course => `<option value="${escapeHistoryHtml(course.id)}">${escapeHistoryHtml(course.name)}</option>`)
+        .join("");
+}
+
+function historyTermLabel(record) {
+    const term = record.semester ? record.semester[0].toUpperCase() + record.semester.slice(1) : "Term needs review";
+    return `${term}${record.year ? ` ${record.year}` : ""}`;
+}
+
+function renderAcademicHistoryReview() {
+    const review = document.getElementById("academicHistoryReview");
+    const rows = document.getElementById("academicHistoryReviewRows");
+    const grouped = new Map();
+    pendingAcademicHistoryCourses.forEach(record => {
+        const key = historyTermLabel(record);
+        if (!grouped.has(key)) grouped.set(key, []);
+        grouped.get(key).push(record);
+    });
+    rows.innerHTML = [...grouped.entries()].map(([label, records]) => `
+        <section class="academic-history-term-group">
+            <h3>${escapeHistoryHtml(label)}</h3>
+            ${records.map(record => `
+                <div class="academic-history-review-row" data-record-id="${escapeHistoryHtml(record.record_id)}">
+                    <label>Course
+                        <input class="history-course-id" list="academicHistoryCourseCatalog" value="${escapeHistoryHtml(record.course_id)}" placeholder="15-112">
+                    </label>
+                    <label>Semester
+                        <select class="history-semester">
+                            <option value="">Verify</option>
+                            ${["fall", "spring", "summer"].map(term => `<option value="${term}" ${record.semester === term ? "selected" : ""}>${term[0].toUpperCase() + term.slice(1)}</option>`).join("")}
+                        </select>
+                    </label>
+                    <label>Year
+                        <input class="history-year" type="number" min="1900" max="2200" value="${record.year || ""}">
+                    </label>
+                    <label>Status
+                        <select class="history-status">
+                            <option value="">Verify</option>
+                            <option value="completed" ${record.status === "completed" ? "selected" : ""}>Completed</option>
+                            <option value="in_progress" ${record.status === "in_progress" ? "selected" : ""}>In progress</option>
+                            <option value="planned" ${record.status === "planned" ? "selected" : ""}>Planned</option>
+                        </select>
+                    </label>
+                    <button type="button" class="remove-history-course" aria-label="Remove course">Remove</button>
+                    <div class="academic-history-course-name">
+                        ${record.course_name ? escapeHistoryHtml(record.course_name) : "Course must be matched to the CMU catalog."}
+                        ${record.issues?.length ? `<span class="academic-history-issues"> · ${escapeHistoryHtml(record.issues.join(", ").replaceAll("_", " "))}</span>` : ""}
+                    </div>
+                </div>
+            `).join("")}
+        </section>
+    `).join("");
+    document.getElementById("academicHistoryReviewTitle").textContent =
+        `We found ${pendingAcademicHistoryCourses.length} course${pendingAcademicHistoryCourses.length === 1 ? "" : "s"}`;
+    review.classList.remove("hidden");
+}
+
+function readAcademicHistoryReviewRows() {
+    return Array.from(document.querySelectorAll(".academic-history-review-row")).map(row => ({
+        course_id: row.querySelector(".history-course-id").value.trim(),
+        semester: row.querySelector(".history-semester").value || null,
+        year: Number(row.querySelector(".history-year").value) || null,
+        status: row.querySelector(".history-status").value || null,
+        grade: pendingAcademicHistoryCourses.find(item => item.record_id === row.dataset.recordId)?.grade || null
+    }));
+}
+
+document.getElementById("academicHistoryFiles")?.addEventListener("change", async event => {
+    const files = Array.from(event.target.files || []);
+    if (!files.length) return;
+    const status = document.getElementById("academicHistoryUploadStatus");
+    status.classList.remove("is-error");
+    status.textContent = "Reading document…";
+    const formData = new FormData();
+    files.forEach(file => formData.append("files", file));
+    try {
+        status.textContent = "Finding courses and terms…";
+        const response = await fetch("/api/academic-history/extract", {method: "POST", body: formData});
+        const data = await response.json();
+        if (!response.ok) throw new Error(academicHistoryError(data.detail));
+        status.textContent = "Matching courses to the CMU catalog…";
+        await ensureAcademicHistoryCatalog();
+        pendingAcademicHistoryCourses = data.courses;
+        renderAcademicHistoryReview();
+        const partialWarning = data.warnings?.length
+            ? ` ${data.warnings.length} file${data.warnings.length === 1 ? "" : "s"} could not be fully read.`
+            : "";
+        status.textContent = (data.review_count
+            ? `${data.recognized_count} courses found; ${data.review_count} need review.`
+            : `${data.recognized_count} courses found. Review them before importing.`) + partialWarning;
+    } catch (error) {
+        status.classList.add("is-error");
+        status.textContent = error.message;
+    } finally {
+        event.target.value = "";
+    }
+});
+
+document.getElementById("academicHistoryReviewRows")?.addEventListener("click", event => {
+    if (!event.target.matches(".remove-history-course")) return;
+    const row = event.target.closest(".academic-history-review-row");
+    pendingAcademicHistoryCourses = pendingAcademicHistoryCourses.filter(
+        item => item.record_id !== row.dataset.recordId
+    );
+    renderAcademicHistoryReview();
+});
+
+document.getElementById("addAcademicHistoryCourse")?.addEventListener("click", async () => {
+    await ensureAcademicHistoryCatalog();
+    pendingAcademicHistoryCourses.push({
+        record_id: `manual-${Date.now()}`,
+        course_id: "",
+        course_name: null,
+        semester: null,
+        year: null,
+        status: "completed",
+        grade: null,
+        issues: ["manual_entry"]
+    });
+    renderAcademicHistoryReview();
+});
+
+document.getElementById("confirmAcademicHistoryImport")?.addEventListener("click", async event => {
+    const button = event.currentTarget;
+    const records = readAcademicHistoryReviewRows();
+    if (!records.length) return;
+    if (records.some(record =>
+        !/^\d{2}-\d{3}$/.test(record.course_id)
+        || !record.status
+        || !record.semester
+        || !record.year
+    )) {
+        document.getElementById("academicHistoryReviewMessage").textContent =
+            "Verify every course ID, semester, year, and status before importing.";
+        return;
+    }
+    button.disabled = true;
+    button.textContent = "Importing…";
+    try {
+        const response = await fetch("/api/academic-history/merge", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({student: appState.student, courses: records})
+        });
+        const data = await response.json();
+        if (!response.ok) throw new Error(typeof data.detail === "string" ? data.detail : "Import failed.");
+        appState.student = data.student;
+        renderCourseSelection(appState.plannerKey);
+        await loadBaseline();
+        document.getElementById("academicHistoryReview").classList.add("hidden");
+        const summary = document.getElementById("academicHistoryImportSummary");
+        summary.innerHTML = `
+            <h2>Academic history imported</h2>
+            <p>${data.imported_count} course records added or updated; ${data.duplicate_count} duplicate${data.duplicate_count === 1 ? "" : "s"} merged.</p>
+            <p><strong>Your progress:</strong> ${data.summary.completed} completed · ${data.summary.in_progress} in progress · ${data.summary.planned} planned.</p>
+            <p>Requirements and prerequisite checks will now use the same updated academic state.</p>
+        `;
+        summary.classList.remove("hidden");
+    } catch (error) {
+        document.getElementById("academicHistoryReviewMessage").textContent = error.message;
+    } finally {
+        button.disabled = false;
+        button.textContent = "Confirm & Import";
+    }
+});
+// #endregion
 
 
 async function loadBaseline() {

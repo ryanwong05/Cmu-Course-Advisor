@@ -29,10 +29,26 @@ def derive_academic_state(student_state, completion_expander=None):
     """Build one normalized view of completed and committed coursework."""
     expand = completion_expander or (lambda values: list(values))
     locked_semesters = deepcopy(student_state.get("locked_semesters", []))
-    reported_completed = _ordered_unique(student_state.get("completed_courses", []))
-    in_progress = _ordered_unique(student_state.get("in_progress_courses", []))
+    academic_history = deepcopy(student_state.get("academic_history", []))
+    history_by_status = {
+        status: [
+            record.get("course_id")
+            for record in academic_history
+            if record.get("status") == status
+        ]
+        for status in ("completed", "in_progress", "planned")
+    }
+    reported_completed = _ordered_unique([
+        *student_state.get("completed_courses", []),
+        *history_by_status["completed"],
+    ])
+    in_progress = _ordered_unique([
+        *student_state.get("in_progress_courses", []),
+        *history_by_status["in_progress"],
+    ])
     planned = _ordered_unique([
         *student_state.get("planned_courses", []),
+        *history_by_status["planned"],
         *(
             course_id
             for semester in locked_semesters
@@ -61,6 +77,7 @@ def derive_academic_state(student_state, completion_expander=None):
         ),
         "planned_requirement_ids": planned_requirement_ids,
         "locked_semesters": locked_semesters,
+        "academic_history": academic_history,
     }
 
 
@@ -103,6 +120,7 @@ def build_student_state(
     in_progress_courses=None,
     planned_courses=None,
     locked_semesters=None,
+    academic_history=None,
 ):
     return {
         "college": college,
@@ -112,6 +130,7 @@ def build_student_state(
         "in_progress_courses": list(in_progress_courses or []),
         "planned_courses": list(planned_courses or []),
         "locked_semesters": deepcopy(locked_semesters or []),
+        "academic_history": deepcopy(academic_history or []),
     }
 
 

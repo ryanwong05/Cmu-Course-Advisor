@@ -14,7 +14,7 @@ from typing import Literal, Union
 # Path       → 文件路径
 # Literal    → Pydantic 类型限制
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 import requests
@@ -32,6 +32,14 @@ from Engine.student_state import (
     derive_academic_state,
     planning_boundary_after_locked_semesters,
     prepend_locked_semesters,
+)
+from Engine.availability import prerequisite_course_ids, prerequisites_satisfied
+from Backend.academic_history_import import (
+    AcademicHistoryFile,
+    AcademicHistoryImportError,
+    MAX_UPLOAD_BYTES,
+    extract_academic_history,
+    merge_academic_history,
 )
 from Backend.requirements import (
     apply_requirement_option_preferences,
@@ -282,6 +290,7 @@ class StudentState(BaseModel):
     in_progress_courses: list[str] = Field(default_factory=list)
     planned_courses: list[str] = Field(default_factory=list)
     locked_semesters: list[dict] = Field(default_factory=list)
+    academic_history: list[dict] = Field(default_factory=list)
 
 
 class PlanningGoal(BaseModel):
@@ -322,6 +331,19 @@ class CourseRecommendationRequest(PlanningRequest):
     current_plan: dict | None = None
     requirement_ids: list[str] = Field(default_factory=list)
     manual_selections: dict[str, str] = Field(default_factory=dict)
+
+
+class AcademicHistoryCourseRecord(BaseModel):
+    course_id: str
+    semester: Literal["fall", "spring", "summer"]
+    year: int = Field(ge=1900, le=2200)
+    status: Literal["completed", "in_progress", "planned"]
+    grade: str | None = None
+
+
+class AcademicHistoryMergeRequest(BaseModel):
+    student: StudentState
+    courses: list[AcademicHistoryCourseRecord]
 
 
 class LegacyPlanRequest(BaseModel):
@@ -1890,6 +1912,121 @@ def transfer_advice(request: PlanningRequest):
             "'ollama pull qwen3:1.7b', then try again."
         )
     raise HTTPException(status_code=503, detail=detail)
+
+
+def prerequisite_analysis_for_student(student: dict) -> list[dict]:
+    """Evaluate imported in-progress/planned courses using canonical data."""
+    academic_state = derive_academic_state(student, expand_completed_courses)
+    completed = academic_state["completed_courses"]
+    course_by_id = {course["id"]: course for course in courses}
+    targets = list(dict.fromkeys([
+        *academic_state["in_progress_courses"],
+        *academic_state["planned_courses"],
+    ]))
+    analysis = []
+    for course_id in targets:
+        course = course_by_id.get(course_id)
+        if course is None:
+            continue
+        required_ids = prerequisite_course_ids(course)
+        analysis.append({
+            "course_id": course_id,
+            "status": (
+                "satisfied"
+                if prerequisites_satisfied(course, completed)
+                else "not_satisfied"
+            ),
+            "prerequisites": required_ids,
+            "prerequisite_expression": course.get("prerequisite_expression"),
+            "missing_courses": (
+                []
+                if prerequisites_satisfied(course, completed)
+                else [
+                    prerequisite for prerequisite in required_ids
+                    if prerequisite not in completed
+                ]
+            ),
+            "data_status": course.get(
+                "prerequisite_data_status", "catalog_not_imported"
+            ),
+        })
+    return analysis
+
+
+@app.get("/api/course-catalog")
+def get_course_catalog():
+    """Small canonical catalog projection used by the import review UI."""
+    return {
+        "courses": [
+            {"id": course["id"], "name": course["name"], "units": course["units"]}
+            for course in courses
+        ]
+    }
+
+
+@app.post("/api/academic-history/extract")
+async def extract_uploaded_academic_history(
+    files: list[UploadFile] = File(...),
+):
+    if not files:
+        raise HTTPException(status_code=422, detail="Choose at least one file.")
+    combined_courses = []
+    warnings = []
+    next_record_number = 1
+    for upload in files:
+        try:
+            content = await upload.read(MAX_UPLOAD_BYTES + 1)
+            result = extract_academic_history(
+                AcademicHistoryFile(
+                    filename=upload.filename or "upload",
+                    content_type=upload.content_type or "",
+                    content=content,
+                ),
+                courses,
+            )
+            for record in result["courses"]:
+                record["record_id"] = f"import-{next_record_number}"
+                record["source_file"] = upload.filename or "upload"
+                next_record_number += 1
+                combined_courses.append(record)
+            warnings.extend(result.get("warnings", []))
+        except AcademicHistoryImportError as error:
+            warnings.append({
+                "file": upload.filename or "upload",
+                "message": str(error),
+            })
+        finally:
+            await upload.close()
+    if not combined_courses and warnings:
+        raise HTTPException(status_code=422, detail={"warnings": warnings})
+    return {
+        "courses": combined_courses,
+        "recognized_count": len(combined_courses),
+        "review_count": sum(item["needs_review"] for item in combined_courses),
+        "warnings": warnings,
+        "raw_upload_retained": False,
+    }
+
+
+@app.post("/api/academic-history/merge")
+def confirm_academic_history_import(request: AcademicHistoryMergeRequest):
+    try:
+        merged = merge_academic_history(
+            request.student.model_dump(),
+            [record.model_dump() for record in request.courses],
+            courses,
+        )
+    except AcademicHistoryImportError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+    merged["prerequisite_analysis"] = prerequisite_analysis_for_student(
+        merged["student"]
+    )
+    merged["summary"] = {
+        "completed": len(merged["student"]["completed_courses"]),
+        "in_progress": len(merged["student"]["in_progress_courses"]),
+        "planned": len(merged["student"]["planned_courses"]),
+    }
+    return merged
 
 
 @app.get("/api/baseline")
