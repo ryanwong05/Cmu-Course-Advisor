@@ -1,17 +1,17 @@
 # CMU Course Advisor — Bug Audit
 
-> 审计日期：2026-10-15。严重度：P0 = 会生成实质错误/不完整的核心规划；P1 = 会误导用户、破坏状态一致性或造成安全/可靠性风险；P2 = 体验、命名或维护风险。本文件只记录问题，不修改 planner 或数据。
+> 审计日期：2026-10-15；实现状态更新：2026-10-16。严重度：P0 = 会生成实质错误/不完整的核心规划；P1 = 会误导用户、破坏状态一致性或造成安全/可靠性风险；P2 = 体验、命名或维护风险。
 
 ## 执行摘要
 
 当前最危险的不是 UI 小瑕疵，而是三类可信度问题：**合法课程链无法排出、同一计划的不同 audit 给出不同数字、产品把“可转入”误写成“这个项目本身可规划”**。另外，Computational Biology minor 的已验证候选集不足以满足 choose-N，却被误报成 planning horizon 不够；结果页的手工编辑也没有回到后端 canonical state 重新审计。
 
-本轮 171 个 `unittest` 全部通过，因此下列问题同时说明现有测试缺少关键的 cross-layer invariants。
+当前 173 个 `unittest` 全部通过。BUG-001 与 BUG-002 已修复并补回归，其余条目仍说明需要更多 cross-layer invariants。
 
 ## BUG-001 — 当前 CS 主修不会自动铺设先修链
 
 - **Severity:** P0
-- **状态:** Confirmed
+- **状态:** Resolved 2026-10-16
 - **影响文件:** `Engine/planning.py:617-734`、`Backend/application.py:1435-1470`、`Data/processed/requirements.json:60-80`
 - **复现:** freshman、Computer Science current major、无 completed courses、52-unit limit、规划到 Senior Spring。
 - **Expected:** 在剩余容量内依次安排 15-112/15-122、15-150、15-210/15-251、15-213、15-451 等合法链路；若确实无法完成，应给出真实约束。
@@ -19,11 +19,12 @@
 - **Root cause:** fixed-course candidate loop 只考虑“本学期开始时先修已经满足”的 remaining courses。它不会为 current-major fixed requirements 插入必要准备课程，也不会在后续学期重新构造一条完整 prerequisite chain；已有自动 preparation 主要服务 SCS transfer profile，未通用于 current-major curriculum。
 - **Smallest robust fix:** 在固定 requirement 排程前，以已有 prerequisite expression 和 completion implication 构建通用的 prerequisite closure；只加入 catalog 中存在、确实为未完成目标解锁的课程，并继续经过 offered/year/unit filters。不要写 CS 专属 course list。
 - **Regression test:** `computer-science` current-major、freshman、空历史、Senior Spring；断言 6 门目标或其合法替代均排入，先修顺序正确、无重复、每学期不超 limit；若 catalog/offering 使其中一门不可排，断言诊断是具体 prerequisite/offering 原因而非笼统 horizon。
+- **Implemented:** 增加通用、catalog-backed prerequisite closure，并只对 current-major flow 启用。7 个已支持 current majors 均在代表 fixture 完成；完成课程 implication 不会重新加入已满足的准备课。
 
 ## BUG-002 — 同一 CS 计划的两个 degree audit 数字不一致
 
 - **Severity:** P1
-- **状态:** Confirmed
+- **状态:** Resolved 2026-10-16
 - **影响文件:** `Backend/application.py:1699-1713`、`Engine/degree_audit.py:115-169`
 - **复现:** 使用 BUG-001 的同一计划，比较 `degree_audits.primary_degree`、`degree_audits.selected_goal` 与 `fastest.remaining`。
 - **Expected:** 对同一 current-major curriculum，primary 与 selected-goal audit 的 total/planned/unresolved 应一致，并与 planner remaining 对齐。
@@ -31,6 +32,7 @@
 - **Root cause:** `build_degree_audits()` 的 `primary_curriculum` 先经过 `resolve_curriculum_requirement_options()`，但 `goal_curriculum` 直接传入原始 `goal_requirements`。原始 pattern/named-set options（例如 `15-3xx`）无法与 `_planned_course_ids()` 中的具体 course IDs 匹配，于是同一课程在 selected-goal audit 中没有被认作覆盖。
 - **Smallest robust fix:** 在进入 `build_degree_audits()` 前，对 primary 和 goal curriculum 使用同一 universal resolver；或在 audit 边界统一要求 resolved curriculum。不要在 `_requirement_progress()` 内增加 program-specific special cases。
 - **Regression test:** current-major 目标的 `primary_degree` 与 `selected_goal` 三个 progress 字段完全一致；另覆盖 pattern、bundle、named course set 各一个案例。
+- **Implemented:** goal curriculum 与 primary curriculum 现在在 degree audit 前使用同一 universal resolver；CS fixture 的两个 audit 均为 total 21 / planned 21 / unresolved 0。
 
 ## BUG-003 — Computational Biology minor 的 choose-3 只有两个不同候选
 
@@ -137,8 +139,8 @@
 
 ## 修复顺序
 
-1. BUG-001（CS prerequisite closure）。
-2. BUG-002（audit 单一口径）与 BUG-003（候选 cardinality/promotion gate）。
+1. ✅ BUG-001（CS prerequisite closure）与 BUG-002（audit 单一口径）已完成。
+2. BUG-003（候选 cardinality/promotion gate）。
 3. BUG-004（readiness 诚实展示）。
 4. BUG-005（canonical edits/re-audit）。
 5. BUG-006（upload aggregate limits）。

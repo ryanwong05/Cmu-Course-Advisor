@@ -953,6 +953,75 @@ class PlanningIntegrationTests(unittest.TestCase):
             for item in semester["program_requirements"]
         ))
 
+    def test_current_cs_major_schedules_generic_prerequisite_closure(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="scs",
+                primary_major="computer-science",
+                year=1,
+                completed_courses=[],
+            ),
+            goals=[app.PlanningGoal(
+                type="current_major",
+                college="scs",
+                program="computer-science",
+            )],
+            constraints=app.PlanningConstraints(target_completion_year=4),
+        )
+        result = app.create_plan(request)
+        fastest = result["fastest"]
+        semester_for = {
+            course_id: semester["semester_number"]
+            for semester in fastest["path"]
+            for course_id in semester["courses"]
+        }
+
+        self.assertTrue(fastest["goal_complete"])
+        self.assertTrue(fastest["primary_major_complete"])
+        self.assertFalse(fastest["remaining"])
+        self.assertFalse(fastest["remaining_current_major"])
+        self.assertIn("15-112", semester_for)
+        self.assertIn("21-127", semester_for)
+        self.assertLess(semester_for["15-112"], semester_for["15-122"])
+        self.assertLess(semester_for["21-127"], semester_for["15-150"])
+        self.assertLess(semester_for["15-150"], semester_for["15-210"])
+        self.assertLess(semester_for["15-150"], semester_for["15-251"])
+        self.assertLess(semester_for["15-210"], semester_for["15-451"])
+        self.assertLess(semester_for["15-251"], semester_for["15-451"])
+        self.assertEqual(
+            result["degree_audits"]["primary_degree"]["requirements_unresolved"],
+            0,
+        )
+        self.assertEqual(
+            result["degree_audits"]["selected_goal"]["requirements_unresolved"],
+            0,
+        )
+
+    def test_current_major_prerequisite_closure_respects_completion_implications(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="scs",
+                primary_major="computer-science",
+                year=1,
+                completed_courses=["15-122", "21-127"],
+            ),
+            goals=[app.PlanningGoal(
+                type="current_major",
+                college="scs",
+                program="computer-science",
+            )],
+            constraints=app.PlanningConstraints(target_completion_year=4),
+        )
+        result = app.create_plan(request)
+        scheduled = {
+            course_id
+            for semester in result["fastest"]["path"]
+            for course_id in semester["courses"]
+        }
+        self.assertNotIn("15-112", scheduled)
+        self.assertNotIn("15-122", scheduled)
+        self.assertNotIn("21-127", scheduled)
+
     def test_21_127_accepts_any_verified_prerequisite(self):
         course = next(item for item in app.courses if item["id"] == "21-127")
         self.assertTrue(prerequisites_satisfied(course, ["21-120"]))

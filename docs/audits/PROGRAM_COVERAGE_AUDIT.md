@@ -1,6 +1,6 @@
 # Program Coverage Audit
 
-> Audit date: 2026-10-15. Catalog year: 2026–2027. This file is generated from the current repository data and actual local planner executions; it does not treat directory discovery as planning support.
+> Audit date: 2026-10-15; implementation status updated 2026-10-16. Catalog year: 2026–2027. This file is generated from the current repository data and actual local planner executions; it does not treat directory discovery as planning support.
 
 ## Method and coverage levels
 
@@ -19,7 +19,7 @@ Execution baseline: freshman, no completed courses, 52-unit semester limit, targ
 | Discoverable | 213 | 100.0% |
 | Non-empty structured extraction | 209 | 98.1% |
 | Entry-specific planner flow executes | 21 | 9.9% |
-| Representative directory flow completes | 15 | 7.0% |
+| Representative directory flow completes | 16 | 7.5% |
 | Internal-transfer targets separately executable | 10 of 71 primary majors | 14.1% of primary majors |
 | Internal-transfer representative flow completes | 9 of 10 configured targets | 90.0% of configured targets |
 
@@ -29,7 +29,7 @@ The raw `program_directory.json` contains 25 `planning_ready` entries, while the
 
 | Program type | Directory | Executable | Level 4 | Executable % | Level 4 % |
 |---|---:|---:|---:|---:|---:|
-| Primary major | 71 | 7 | 6 | 9.9% | 8.5% |
+| Primary major | 71 | 7 | 7 | 9.9% | 9.9% |
 | Additional major | 36 | 6 | 2 | 16.7% | 5.6% |
 | Minor | 105 | 8 | 7 | 7.6% | 6.7% |
 | Additional degree | 1 | 0 | 0 | 0.0% | 0.0% |
@@ -46,14 +46,14 @@ Multi-college programs are counted in every listed home college, so college tota
 | Intercollege | 21 | 0 | 0 | 0.0% | 0.0% |
 | Mellon College of Science | 25 | 1 | 1 | 4.0% | 4.0% |
 | CMU-Q | 1 | 0 | 0 | 0.0% | 0.0% |
-| School of Computer Science | 20 | 12 | 7 | 60.0% | 35.0% |
+| School of Computer Science | 20 | 12 | 8 | 60.0% | 40.0% |
 | Tepper School of Business | 14 | 2 | 1 | 14.3% | 7.1% |
 
 ## Planner-ready and verified programs
 
-**Level 4 directory flows (15):** Statistics and Machine Learning B.S.; Mathematical Sciences B.S.; Mechanical Engineering B.S.; Electrical and Computer Engineering B.S.; Information Systems B.S.; Logic and Computation B.S.; HCI additional major; Robotics additional major; AI, Business Administration, CS, HCI, IS, Machine Learning, and Robotics minors.
+**Level 4 directory flows (16):** Statistics and Machine Learning B.S.; Mathematical Sciences B.S.; Mechanical Engineering B.S.; Electrical and Computer Engineering B.S.; Information Systems B.S.; Logic and Computation B.S.; Computer Science B.S.; HCI additional major; Robotics additional major; AI, Business Administration, CS, HCI, IS, Machine Learning, and Robotics minors.
 
-**Executed but incomplete (6):** AI additional major, Computational Biology additional major, Computational Biology minor, Computer Science additional major, Computer Science primary major, and Economics additional major.
+**Executed but incomplete (5):** AI additional major, Computational Biology additional major, Computational Biology minor, Computer Science additional major, and Economics additional major.
 
 **Broadly marked planning-ready but wrong for the entry's own flow (5):** AI B.S., Computational Biology B.S., BCSA, HCI B.S., and Robotics B.S. Their runtime API correctly exposes `current_major_planning_status=directory_only`, but the broad `planning_status=planning_ready` is inherited from transfer capability and should not be used as a generic readiness flag.
 
@@ -269,7 +269,7 @@ BCSA is an important boundary case: its transfer/admission profile executes, but
 | School of Computer Science | Computer Science | Additional degree | 2026-2027 | Structured · promotion candidate | Not connected | Not executed | 2 |
 | School of Computer Science | Computer Science | Additional major | 2026-2027 | Structured · promotion candidate | Executed | Incomplete: Artificial Intelligence elective, Domains elective, Logic and Languages elective, Systems elective, Technical Communication | 3 |
 | School of Computer Science | Computer Science | Minor | 2026-2027 | Structured · promotion candidate | Executed | Pass | 4 |
-| School of Computer Science | Computer Science | Primary major | 2026-2027 | Structured · promotion candidate | Executed | Incomplete: 15-122, 15-150, 15-210, 15-213, 15-251, 15-451 | 3 |
+| School of Computer Science | Computer Science | Primary major | 2026-2027 | Structured · promotion candidate | Executed | Pass | 4 |
 | School of Computer Science | Human Computer Interaction | Minor | 2026-2027 | Structured · promotion candidate | Executed | Pass | 4 |
 | School of Computer Science | Human-Computer Interaction | Additional major | 2026-2027 | Structured · promotion candidate | Executed | Pass | 4 |
 | School of Computer Science | Human-Computer Interaction | Primary major | 2026-2027 | Structured · promotion candidate | Not connected | Not executed | 2 |

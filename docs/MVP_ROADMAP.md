@@ -1,6 +1,6 @@
 # CMU Course Advisor — MVP Roadmap
 
-> 更新日期：2026-10-15。目标不是一次支持 CMU 全部 213 个 program forms，而是先交付一个对明确人群诚实、可验证、能持续扩展的 MVP。
+> 更新日期：2026-10-16。目标不是一次支持 CMU 全部 213 个 program forms，而是先交付一个对明确人群诚实、可验证、能持续扩展的 MVP。
 
 ## MVP 定义
 
@@ -8,7 +8,7 @@
 
 第一阶段面向 CMU 大一/大二学生，重点是：
 
-- 已支持的 6 个完整 current majors；
+- 已支持的 7 个完整 current majors；
 - 已配置的 9 个完整 internal-transfer targets；
 - 已通过代表场景的 2 个 additional majors 和 7 个 minors；
 - 需要把已修课转成未来学期路径、比较两个可信方案、发现风险的学生。
@@ -33,9 +33,9 @@
 | Directory program forms | 213 |
 | Non-empty structured extraction | 209 |
 | Entry-specific planner flows | 21（9.9%） |
-| Representative complete flows | 15（7.0%） |
+| Representative complete flows | 16（7.5%） |
 | Configured transfer targets | 10；9 个代表场景完整 |
-| Automated backend tests | 171 passed |
+| Automated backend tests | 173 passed |
 | Browser E2E | 0 |
 | CI workflow | 0 |
 
@@ -43,11 +43,15 @@
 
 ### 1. 修复 current-major prerequisite closure
 
+**状态：已于 2026-10-16 完成。** 通用、catalog-backed closure 仅在 current-major flow 启用；7 个已支持 current majors 的代表场景现均可完成。
+
 - 目标：CS current major 从 freshman/no-history 到 Senior Spring 能排出合法链，或给出真实不可行原因。
 - 方法：通用 prerequisite closure，复用已有 prerequisite expression 和 completion implications；禁止 CS-specific hardcode。
 - 验收：无重复、顺序正确、不超 units；6 个当前 stranded fixed courses 不再因 algorithm 缺陷遗漏。
 
 ### 2. 统一 planner、degree audit 与 UI counters
+
+**状态：核心 resolver 不一致已于 2026-10-16 修复。** primary 与 goal curriculum 现在使用同一 option resolver；仍需把该 invariant 扩展到浏览器编辑后的状态。
 
 - 对 primary/goal curriculum 使用同一个 resolved representation。
 - 建立 invariants：`remaining == audit unresolved == UI remaining`（定义差异必须显式命名）。
@@ -75,7 +79,7 @@
 
 ### 5. CI 与浏览器 smoke tests
 
-- 将现有 171 tests 放入 CI。
+- 将现有 173 tests 放入 CI。
 - 明确使用 `unittest`，或正式加入 pytest dependency；不能 README 写 pytest、环境却没有。
 - Playwright/等价工具覆盖：创建计划、completed 不重复、换课、移动、保存恢复、unsupported program、import review。
 
@@ -126,18 +130,17 @@
 
 **Day 1: Freeze fixtures and invariants**
 
-- 固定当前 15 个 Level-4 flows 和 6 个 Level-3 flows 的 JSON fixtures。
+- 固定当前 16 个 Level-4 flows 和 5 个 Level-3 flows 的 JSON fixtures。
 - 加全局 invariants：no duplicate、unit limit、completed not scheduled、explicit unscheduled reason。
 
 **Day 2: CS prerequisite closure**
 
-- 实现通用 prerequisite closure。
-- 增加 CS current-major chain tests 和 late-start/partial-history tests。
+- ✅ 已实现通用 prerequisite closure，并限制在 current-major flow，避免改变 transfer/additional-major 行为。
+- ✅ 已增加 CS current-major chain 与 completion-implication regression tests。
 
 **Day 3: Audit consistency + choose-N validation**
 
-- primary/goal 使用同一 resolver。
-- 修复 6 vs 8 discrepancy。
+- ✅ primary/goal 使用同一 resolver，已修复 6 vs 8 discrepancy。
 - 加 distinct-candidate promotion check；CB minor 保守降级，直到补官方数据。
 
 **Day 4: Scoped readiness + import safeguards**
@@ -147,7 +150,7 @@
 
 **Day 5: CI and browser smoke**
 
-- CI 跑 171 tests + coverage audit。
+- CI 跑 173 tests + coverage audit。
 - 浏览器 smoke 覆盖 generate/edit/reload/import-review。
 
 ### Week 2 — Canonical editing and pilot
@@ -228,6 +231,6 @@
 
 ## 最值得做的下一项工作
 
-**先完成 Week 1 的 correctness gate，第一张任务就是通用 prerequisite closure + CS current-major regression。**
+**下一张任务应是 choose-N distinct-candidate promotion gate（BUG-003），随后建立 canonical editable plan + revalidation。**
 
-原因：它直接修复一个有大量空余容量却排不完的核心路径；同时建立的通用依赖闭包会帮助后续 major/minor/transfer 扩展，而不会引入新的 program hardcode。完成后立刻统一 degree audit resolver 和 coverage promotion gate，才能安全地扩大数据覆盖。
+原因：prerequisite closure 与 audit resolver 已完成并通过 173 个测试。当前最小 MVP 的主要可信度风险已经转为“数据候选集是否真的足够满足 choose-N”以及“用户编辑后各视图是否仍基于同一个计划状态”。

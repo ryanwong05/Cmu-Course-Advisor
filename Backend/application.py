@@ -1520,6 +1520,11 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             profile_inputs["required_course_tiers"]
             if profile_inputs is not None else {}
         ),
+        expand_current_major_prerequisites=(
+            isinstance(request, PlanningRequest)
+            and goal is not None
+            and goal.type == "current_major"
+        ),
     )
     secondary_path_type = "lower_workload"
     if (
@@ -1706,10 +1711,13 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 requirements.get(f"{request.student.primary_major}-major"),
                 resolve_requirement_option,
             ),
-            {
-                "required_courses": goal_requirements.get("required_courses", []),
-                "requirement_groups": goal_requirements.get("requirement_groups", []),
-            },
+            resolve_curriculum_requirement_options(
+                {
+                    "required_courses": goal_requirements.get("required_courses", []),
+                    "requirement_groups": goal_requirements.get("requirement_groups", []),
+                },
+                resolve_requirement_option,
+            ),
         )
         if isinstance(request, PlanningRequest) and goal is not None
         else None

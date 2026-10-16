@@ -194,6 +194,71 @@ def calculate_total_units(course_ids, courses):
     return total
 
 
+def _required_course_prerequisite_closure(
+    required_course_ids,
+    completed_course_ids,
+    courses,
+):
+    """Include the smallest catalog-backed prerequisite path for fixed courses.
+
+    Direct prerequisite lists are all-of requirements. For a verified any-of
+    expression, prefer an alternative that the curriculum already plans; only
+    choose the first catalog-backed policy option when none is already present.
+    This keeps the scheduler generic without adding every valid alternative.
+    """
+    course_by_id = {course["id"]: course for course in courses}
+    completed = set(completed_course_ids)
+    expanded = list(dict.fromkeys(required_course_ids))
+    expanded_set = set(expanded)
+    queue = list(expanded)
+    index = 0
+
+    while index < len(queue):
+        course = course_by_id.get(queue[index])
+        index += 1
+        if course is None or prerequisites_satisfied(course, completed):
+            continue
+
+        expression = course.get("prerequisite_expression")
+        if expression and expression.get("type") == "any_of":
+            alternatives = [
+                option.get("course_id")
+                for option in expression.get("options", [])
+                if option.get("course_id")
+            ]
+            planned_alternative = next(
+                (course_id for course_id in alternatives if course_id in expanded_set),
+                None,
+            )
+            catalog_alternative = next(
+                (course_id for course_id in alternatives if course_id in course_by_id),
+                None,
+            )
+            prerequisites = [planned_alternative or catalog_alternative]
+            prerequisites = [course_id for course_id in prerequisites if course_id]
+        elif expression and expression.get("type") == "all_of":
+            prerequisites = [
+                option.get("course_id")
+                for option in expression.get("options", [])
+                if option.get("course_id")
+            ]
+        else:
+            prerequisites = list(course.get("prerequisites", []))
+
+        for prerequisite in prerequisites:
+            if prerequisite in completed or prerequisite in expanded_set:
+                continue
+            if prerequisite not in course_by_id:
+                # Keep the target course unscheduled with its existing explicit
+                # prerequisite diagnostic rather than inventing catalog data.
+                continue
+            expanded.append(prerequisite)
+            expanded_set.add(prerequisite)
+            queue.append(prerequisite)
+
+    return expanded
+
+
 def _remaining_requirement_diagnostics(
     remaining_courses,
     remaining_program_slots,
@@ -488,6 +553,7 @@ def generate_semester_path(
     required_course_tiers=None,
     primary_major_reserved_units=0,
     primary_major_baseline_name="Primary-major baseline",
+    expand_current_major_prerequisites=False,
 ):
     completed = list(completed_courses)
     path = []
@@ -496,6 +562,12 @@ def generate_semester_path(
 
     goal_required_courses = requirements[program_id]["required_courses"]
     current_major_courses = current_major_courses or []
+    if expand_current_major_prerequisites:
+        current_major_courses = _required_course_prerequisite_closure(
+            current_major_courses,
+            completed,
+            courses,
+        )
     course_metrics = course_metrics or {}
     required_course_tiers = required_course_tiers or {}
     required_courses = list(dict.fromkeys(
@@ -1157,6 +1229,7 @@ def generate_multiple_paths(
     target_completion_year=None,
     primary_major_reserved_units=0,
     primary_major_baseline_name="Primary-major baseline",
+    expand_current_major_prerequisites=False,
 ):
     start_year = planning_year or student_year
     if target_completion_year is None:
@@ -1190,6 +1263,7 @@ def generate_multiple_paths(
             required_course_tiers=required_course_tiers,
             primary_major_reserved_units=primary_major_reserved_units,
             primary_major_baseline_name=primary_major_baseline_name,
+            expand_current_major_prerequisites=expand_current_major_prerequisites,
         )
 
     # Start gently, increasing course density only when the selected deadline
@@ -1235,6 +1309,7 @@ def generate_multiple_paths(
         required_course_tiers=required_course_tiers,
         primary_major_reserved_units=primary_major_reserved_units,
         primary_major_baseline_name=primary_major_baseline_name,
+        expand_current_major_prerequisites=expand_current_major_prerequisites,
     )
 
     return {

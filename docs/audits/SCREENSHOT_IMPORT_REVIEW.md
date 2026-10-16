@@ -53,7 +53,7 @@ merge into completed / in-progress / planned Student State
 
 ### Confirmed working
 
-- 171 个项目测试全部通过，其中包含 import validation、normalization、merge 与 mocked extractor 分支。
+- 173 个项目测试全部通过，其中包含 import validation、normalization、merge 与 mocked extractor 分支。
 - 本轮对合成 text PDF 的 sanity check 能读出课程并进入 catalog validation。
 - API 和前端都存在 review/confirm 阶段；没有静默把 OCR 结果当成 completed。
 - completed-course merge 进入统一 Student State 后，Linguistics → CS fixture 不会重复安排 21-127、15-122 或多余 15-112。

@@ -1,6 +1,6 @@
 # CMU Course Advisor — Project Status Audit
 
-> 审计日期：2026-10-15。对象为当前工作区实际代码，而不是 README 或历史对话中的目标状态。本轮未修改 planner、API 或 academic data。
+> 审计日期：2026-10-15；实现状态更新：2026-10-16。对象为当前工作区实际代码，而不是 README 或历史对话中的目标状态。
 
 ## 一句话结论
 
@@ -19,7 +19,7 @@
 
 ```text
 venv/bin/python -m unittest discover -s tests -v
-Ran 171 tests in 31.397s
+Ran 173 tests in 17.452s
 OK
 ```
 
@@ -30,7 +30,7 @@ venv/bin/python -m pytest -q
 No module named pytest
 ```
 
-因此不能声称 pytest 通过；当前仓库的真实测试入口是 `unittest`。171 个测试通过证明现有回归面较好，但不等价于 213 个项目都可用，尤其没有浏览器 E2E 测试。
+因此不能声称 pytest 通过；当前仓库的真实测试入口是 `unittest`。173 个测试通过证明现有回归面较好，但不等价于 213 个项目都可用，尤其没有浏览器 E2E 测试。
 
 ## 当前架构
 
@@ -114,7 +114,7 @@ localStorage snapshot（不是后端 canonical plan）
 
 | 能力 | 状态 | 证据/限制 |
 |---|---|---|
-| 当前主修 planning | 部分 | 7 个 entry-specific primary flows 可执行；6 个代表场景完整，CS 不完整。 |
+| 当前主修 planning | 部分偏强 | 7 个 entry-specific primary flows 均在代表场景完整；其余绝大多数 CMU 主修仍只有目录/结构化数据。 |
 | Internal transfer | 部分偏强 | 10 个目标可执行，9 个代表场景完整；BCSA post-transfer path 不完整。 |
 | Additional major | 部分 | 6 个可执行，只有 HCI、Robotics 在统一代表场景完整。 |
 | Minor | 部分偏强 | 8 个可执行，7 个完整；CB minor 候选不足。 |
@@ -169,7 +169,7 @@ localStorage snapshot（不是后端 canonical plan）
 
 | 项目 | 评价 |
 |---|---|
-| Backend unit/integration tests | 良好：171/171 通过 |
+| Backend unit/integration tests | 良好：173/173 通过 |
 | Frontend automated tests | 缺失 |
 | CI | 缺失 |
 | Dependency reproducibility | 一般：有版本范围，但缺 test dependencies/lockfile |

@@ -1,6 +1,6 @@
 # CMU Course Advisor — Path Completeness Audit
 
-> 审计日期：2026-10-15。这里的“完整”只表示在当前数据、代表学生和目标期限下，planner 把已发布的 requirement slots 放入计划；不表示获准转系、不表示正式 degree audit，也不表示未来课程一定开设。
+> 审计日期：2026-10-15；实现状态更新：2026-10-16。这里的“完整”只表示在当前数据、代表学生和目标期限下，planner 把已发布的 requirement slots 放入计划；不表示获准转系、不表示正式 degree audit，也不表示未来课程一定开设。
 
 ## 评分口径
 
@@ -19,7 +19,7 @@
 
 | Path type | 分数 | 当前结论 |
 |---|---:|---|
-| Current major | 5/10 | 71 个 primary entries 中 7 个可执行、6 个代表场景完整；CS 存在 P0 先修链 bug，其余绝大多数只可发现。 |
+| Current major | 6/10 | 71 个 primary entries 中 7 个可执行且代表场景均完整；其余绝大多数仍只可发现。 |
 | Internal transfer | 7/10 | 10 个目标可执行、9 个代表场景完整；配置内最成熟，但“完成”通常指申请前置要求，不等于目标学位全程。 |
 | Additional major | 4/10 | 36 个 entries 中 6 个可执行，仅 HCI 与 Robotics 的代表场景完整。 |
 | Minor | 6/10 | 105 个 entries 中 8 个可执行、7 个完整；CB minor 数据集合本身不足。 |
@@ -33,7 +33,7 @@
 |---|---|---|
 | Stats/ML current major | Complete | 7 个 future semesters；最大 50 units；14 个 Dietrich GenEd 均有安排；有 prerequisite-data warning。 |
 | Information Systems current major | Complete | verified primary curriculum 可排完。 |
-| Computer Science current major | **Incomplete** | 6 门 fixed courses 未排且仍有大量容量；属于 prerequisite-chain bug，不是 horizon/capacity。 |
+| Computer Science current major | Complete | 通用 prerequisite closure 会加入 catalog-backed 准备课程；无重复、无超限，primary 与 selected-goal audit 一致。 |
 | Stats/ML → CS transfer | Complete | 5 个 semesters 到 application milestone；有 eligibility 与 prerequisite-data warning。 |
 | Stats/ML → BCSA transfer/post-transfer | **Incomplete** | breadth、applications/CS electives、CFA concentration 等大量 slots 未解决。 |
 | Stats/ML + Robotics additional major | Complete | 无重复、无超限；路径很密集。 |
@@ -57,7 +57,7 @@
 - Logic and Computation B.S.
 - Computer Science B.S.
 
-前 6 个代表场景完成；CS 因 BUG-001 为 Level 3。其余 64 个 primary entries 即便大多已有 structured extraction，也没有 promotion 成 planner-ready curriculum。
+7 个代表场景均完成。其余 64 个 primary entries 即便大多已有 structured extraction，也没有 promotion 成 planner-ready curriculum。
 
 ### Fallback 的含义
 
@@ -65,7 +65,7 @@ Linguistics 等未 promotion 的 primary major 会使用 college-level reserve�
 
 ### 必须补的能力
 
-- 通用 prerequisite closure，先解决 CS。
+- 已完成通用 prerequisite closure；当前只在 current-major flow 启用，以避免改变 transfer/additional-major 的既有排程。
 - promotion gate：来源、catalog year、choose-N candidate cardinality、units、nested AND/OR、capstone/timing。
 - 明确区分 verified curriculum 与 college workload reserve。
 - catalog-year ownership；当前主要围绕 2026–2027。
@@ -139,10 +139,10 @@ AI、Business Administration、Computational Biology、CS、HCI、IS、Machine L
 
 | 能力 | 状态 | 结论 |
 |---|---|---|
-| Fixed course | 已实现 | completed filtering 正常；CS chain insertion 有缺口。 |
+| Fixed course | 已实现 | completed filtering 与 current-major prerequisite closure 的 regression fixtures 均通过。 |
 | Choose-N | 已实现但需 data gate | CB minor 证明 candidate cardinality 未验证。 |
 | Multi-course bundle | 已实现 | `A + B` 可作为一个 option；仍需更多跨项目 fixtures。 |
-| Course pattern | 已实现 | universal resolver 可展开 `16-3xx` 等；audit 调用不一致导致 BUG-002。 |
+| Course pattern | 已实现 | universal resolver 可展开 `16-3xx` 等；primary/goal audit 现使用同一 resolved representation。 |
 | Named course set | 已实现 | 数据驱动优于在 slot builder 写 special case。 |
 | Preference ordering | 已实现 | 只应改变推荐顺序，不改变官方 option set。 |
 | Prerequisite AND/OR | 部分验证 | engine 支持，数据覆盖/语义未全量证明。 |
@@ -156,7 +156,7 @@ AI、Business Administration、Computational Biology、CS、HCI、IS、Machine L
 
 - `primary_degree` 与 `selected_goal` 分开是正确方向。
 - planned、completed、unresolved 字段也有清晰意图。
-- 但 BUG-002 证明 raw/resolved curriculum 边界未统一，当前不能把所有 audit 数字当作最终可信。
+- raw/resolved curriculum 的已知不一致已修复；仍需为浏览器编辑后的 re-audit 建立 canonical state。
 - `graduation_ready=false` 在 planned-but-not-completed 场景是正确的保守行为。
 - college GenEd、degree minimum units、primary curriculum、goal program 应保持四个独立层，避免一个“complete”覆盖所有含义。
 
