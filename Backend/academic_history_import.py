@@ -13,6 +13,8 @@ import os
 import re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from datetime import date
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -172,12 +174,87 @@ def parse_academic_history_text(text: str) -> dict[str, Any]:
     return {"courses": records, "warnings": []}
 
 
+def _term_relative_to_today(semester: str, year: int, today: date) -> int:
+    """Compare a registrar term with the term currently being taught."""
+    current_semester = (
+        "spring" if today.month <= 5 else
+        "summer" if today.month <= 7 else "fall"
+    )
+    order = {"spring": 0, "summer": 1, "fall": 2}
+    term = (year, order[semester])
+    current = (today.year, order[current_semester])
+    return (term > current) - (term < current)
+
+
+def parse_sio_academic_record_layout_text(
+    text: str, *, as_of: date | None = None
+) -> dict[str, Any]:
+    """Read SIO record rows without treating current enrollment as a final grade.
+
+    The record's extracted text can put a term heading *after* its course rows;
+    this parser is used only with layout-preserving extraction.
+    """
+    today = as_of or date.today()
+    term_pattern = re.compile(r"^\s*(Fall|Spring|Summer)\s+(20\d{2})\b", re.I)
+    course_pattern = re.compile(
+        r"^\s*[A-Z]{2,4}\s+(?P<id>\d{5})\s+(?P<title>.+?)\s+"
+        r"(?P<units>\d+(?:\.\d+)?)\s*"
+        r"(?P<grade>AD|A[+-]?|B[+-]?|C[+-]?|D|P|S|F|W|I)?(?=\s|$)"
+    )
+    records = []
+    section = None
+    semester = None
+    year = None
+    for line in text.splitlines():
+        if "Advanced Placement / Transfer Credits" in line:
+            section = "prior_credit"
+            semester = year = None
+            continue
+        term_match = term_pattern.match(line)
+        if term_match:
+            section = "term"
+            semester = normalize_semester(term_match.group(1))
+            year = int(term_match.group(2))
+            continue
+        match = course_pattern.match(line)
+        if not match or section not in {"prior_credit", "term"}:
+            continue
+        grade = match.group("grade")
+        if section == "prior_credit":
+            status = "completed" if grade == "AD" else None
+        elif grade in {"A", "A+", "A-", "B", "B+", "B-", "C", "C+", "C-", "D", "P", "S"}:
+            status = "completed"
+        elif grade in {"F", "W", "I"}:
+            status = None
+        else:
+            relative_term = _term_relative_to_today(semester, year, today)
+            status = "in_progress" if relative_term == 0 else "planned" if relative_term > 0 else None
+        records.append({
+            "course_id": match.group("id"),
+            "course_name": match.group("title").strip(),
+            "semester": semester,
+            "year": year,
+            "status": status,
+            "grade": grade,
+            "confidence": 0.96 if status else 0.7,
+        })
+    return {"courses": records, "warnings": []}
+
+
 class NativePdfAcademicHistoryExtractor(AcademicHistoryExtractor):
     def extract(self, document: AcademicHistoryFile) -> dict[str, Any]:
         try:
             from pypdf import PdfReader
             reader = PdfReader(io.BytesIO(document.content))
             text = "\n".join(page.extract_text() or "" for page in reader.pages)
+            is_sio_record = (
+                "Unofficial Academic Record" in text
+                and "Beginning of Undergraduate Record" in text
+            )
+            layout_text = (
+                "\n".join(page.extract_text(extraction_mode="layout") or "" for page in reader.pages)
+                if is_sio_record else None
+            )
         except ImportError as error:
             raise AcademicHistoryImportError(
                 "PDF support is not installed on the server."
@@ -186,7 +263,10 @@ class NativePdfAcademicHistoryExtractor(AcademicHistoryExtractor):
             raise AcademicHistoryImportError("This PDF could not be read.") from error
         if not text.strip():
             return {"courses": [], "warnings": ["PDF_NO_NATIVE_TEXT"]}
-        result = parse_academic_history_text(text)
+        result = (
+            parse_sio_academic_record_layout_text(layout_text)
+            if layout_text is not None else parse_academic_history_text(text)
+        )
         result["native_text_found"] = True
         return result
 
@@ -303,7 +383,11 @@ def validate_extracted_courses(raw_result: dict[str, Any], catalog: list[dict]) 
             issues.append("unknown_course")
         if status is None:
             issues.append("status_needs_review")
-        if semester is None or year is None:
+        documented_prior_credit = (
+            status == "completed" and raw.get("grade") == "AD"
+            and semester is None and year is None
+        )
+        if (semester is None or year is None) and not documented_prior_credit:
             issues.append("term_needs_review")
         dedupe_key = (normalized_id or original_id, semester, year, status)
         if dedupe_key in seen:
@@ -337,10 +421,32 @@ def validate_extracted_courses(raw_result: dict[str, Any], catalog: list[dict]) 
     }
 
 
+def catalog_with_scheduled_courses(
+    catalog: list[dict], course_ids: list[str], schedule_database: Path | None
+) -> list[dict]:
+    """Validate import-only course IDs against the existing schedule catalog."""
+    if schedule_database is None:
+        return catalog
+    known_ids = {course["id"] for course in catalog}
+    missing_ids = sorted({
+        normalized
+        for value in course_ids
+        if (normalized := normalize_course_id(value)) and normalized not in known_ids
+    })
+    if not missing_ids:
+        return catalog
+    from Backend.requirements import hydrate_courses_from_schedule
+
+    extended = list(catalog)
+    hydrate_courses_from_schedule(extended, missing_ids, schedule_database, {}, {})
+    return extended
+
+
 def extract_academic_history(
     document: AcademicHistoryFile,
     catalog: list[dict],
     extractor: AcademicHistoryExtractor | None = None,
+    schedule_database: Path | None = None,
 ) -> dict[str, Any]:
     media_type = validate_upload(document)
     normalized_document = AcademicHistoryFile(
@@ -357,12 +463,27 @@ def extract_academic_history(
         raw_result = LocalOllamaVisionAcademicHistoryExtractor().extract(
             normalized_document
         )
-    return validate_extracted_courses(raw_result, catalog)
+    import_catalog = catalog_with_scheduled_courses(
+        catalog,
+        [str(raw.get("course_id") or raw.get("id") or "")
+         for raw in raw_result.get("courses", []) if isinstance(raw, dict)],
+        schedule_database,
+    )
+    return validate_extracted_courses(raw_result, import_catalog)
 
 
-def merge_academic_history(student_state: dict, records: list[dict], catalog: list[dict]) -> dict:
+def merge_academic_history(
+    student_state: dict,
+    records: list[dict],
+    catalog: list[dict],
+    schedule_database: Path | None = None,
+) -> dict:
     """Merge confirmed records into the existing canonical student state."""
-    catalog_ids = {course["id"] for course in catalog}
+    import_catalog = catalog_with_scheduled_courses(
+        catalog, [str(record.get("course_id") or "") for record in records],
+        schedule_database,
+    )
+    catalog_ids = {course["id"] for course in import_catalog}
     merged = dict(student_state)
     history_by_term: dict[tuple, dict] = {
         (record["course_id"], record.get("semester"), record.get("year")): dict(record)

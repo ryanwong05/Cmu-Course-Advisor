@@ -97,7 +97,9 @@ const appState = {
         in_progress_courses: [],
         planned_courses: [],
         locked_semesters: [],
-        academic_history: []
+        academic_history: [],
+        deferred_current_major_requirement_ids: [],
+        deferred_current_major_course_ids: []
     },
     goals: [],
     constraints: {
@@ -409,7 +411,9 @@ function populateCurrentMajors() {
     majorSelect.innerHTML = "";
     for (const program of matches) {
         const option = document.createElement("option");
-        option.value = currentMajorAliases[program.name] || program.planning_id || program.id;
+        option.value = program.planner_ready
+            ? (currentMajorAliases[program.name] || program.planning_id || program.id)
+            : program.id;
         option.textContent = `${program.name} (${program.credential})`;
         majorSelect.appendChild(option);
     }
@@ -880,8 +884,6 @@ function renderTransferReadiness(data) {
 
 function clearTransferContinuation() {
     appState.selection.includePostTransferPlan = false;
-    appState.student.in_progress_courses = [];
-    appState.student.planned_courses = [];
     appState.student.locked_semesters = [];
 }
 
@@ -890,7 +892,9 @@ function prepareTransferAdvisor(data) {
     const button = document.getElementById("analyzeTransferButton");
     const status = document.getElementById("aiTransferAdvisorStatus");
     const output = document.getElementById("aiTransferAdvisorOutput");
-    const isTransferPlan = appState.goals[0]?.type === "internal_transfer" && data.transfer_planning;
+    const isTransferPlan = appState.goals[0]?.type === "internal_transfer"
+        && data.transfer_planning
+        && data.transfer_planning.mode !== "catalog_exploration";
 
     panel.classList.toggle("hidden", !isTransferPlan);
     button.disabled = false;
@@ -1414,7 +1418,9 @@ function renderProgramsForSchool(school) {
         : ["additional_major", "additional_degree", "minor"];
     const matches = programExplorerDirectory
         .filter(program =>
-            program.available_as.some(programType => allowedTypes.includes(programType))
+            (appState.selection.goalType === "transfer"
+                ? program.variants.some(variant => variant.program_type === "primary_major")
+                : program.available_as.some(programType => allowedTypes.includes(programType)))
             && (
                 program.home_colleges.includes(school)
                 || program.affiliations.includes(school)
@@ -1429,8 +1435,7 @@ function renderProgramsForSchool(school) {
     for (const program of matches) {
         const variants = program.variants.filter(variant =>
             appState.selection.goalType === "transfer"
-                ? variant.available_as.includes("transfer_destination")
-                    && variant.program_type === "primary_major"
+                ? variant.program_type === "primary_major"
                 : allowedTypes.includes(variant.program_type)
         );
         const group = document.createElement("div");
@@ -1440,16 +1445,22 @@ function renderProgramsForSchool(school) {
             const button = document.createElement("button");
             button.className = "program-card program-variant-card";
             button.dataset.program = variant.id;
-            // The API derives readiness from real profiles and curricula.
-            const readyForSelectedGoal = appState.selection.goalType === "transfer"
+            // Verified readiness and catalog-draft access remain separate.
+            const verifiedForSelectedGoal = appState.selection.goalType === "transfer"
                 ? variant.transfer_planning_status === "planning_ready"
                 : variant.planner_ready;
+            const draftForSelectedGoal = appState.selection.goalType === "transfer"
+                ? variant.transfer_draft_available
+                : variant.draft_planning_available;
+            const readyForSelectedGoal = verifiedForSelectedGoal || draftForSelectedGoal;
             button.disabled = !readyForSelectedGoal;
             button.setAttribute("aria-disabled", String(!readyForSelectedGoal));
             button.innerHTML = `
                 <span class="program-upgrade-label">${variant.credential}</span>
-                <small>${readyForSelectedGoal
+                <small>${verifiedForSelectedGoal
                     ? "Verified planning available"
+                    : draftForSelectedGoal
+                        ? "Exploratory draft · advisor review needed"
                     : variant.requirements_loaded
                         ? "Requirements loaded · planner review pending"
                         : appState.selection.goalType === "transfer"
@@ -1462,21 +1473,29 @@ function renderProgramsForSchool(school) {
             });
             button.classList.add("selected");
             clearTransferContinuation();
-            appState.selection.program = variant.planning_id || variant.id;
+            // A draft must retain its credential-specific catalog ID. A shared
+            // curated planning ID may describe a different credential.
+            appState.selection.program = verifiedForSelectedGoal
+                ? (variant.planning_id || variant.id)
+                : variant.id;
             appState.selection.programType = variant.program_type === "minor"
                 ? "minor"
                 : variant.program_type === "additional_major"
                     ? "additional_major"
-                    : null;
+                    : variant.program_type === "additional_degree"
+                        ? "additional_degree"
+                        : null;
             updatePlanningGoal();
             const ready = readyForSelectedGoal;
             document.getElementById("step2bNext").disabled = !ready;
             helper.textContent = ready
-                ? "Verified planning is available for this path."
+                ? verifiedForSelectedGoal
+                    ? "Verified planning is available for this path."
+                    : "An exploratory catalog draft is available. Unverified rules remain visible for advisor review."
                 : appState.selection.goalType === "transfer"
                     ? "This major is listed, but its transfer planner is not verified yet."
                     : "This program is listed, but its planning requirements have not been verified yet.";
-            if (ready && appState.selection.goalType === "add-program") {
+            if (verifiedForSelectedGoal && appState.selection.goalType === "add-program") {
                 renderProgramComparison(appState.selection.program);
             } else {
                 document.getElementById("programComparison").classList.add("hidden");
@@ -1647,6 +1666,7 @@ function plannerKeyForGoal(goal) {
     const suffix = {
         internal_transfer: "transfer",
         additional_major: "additional-major",
+        additional_degree: "additional-degree",
         minor: "minor"
     }[goal.type];
     return suffix ? `${goal.program}-${suffix}` : null;
@@ -1705,6 +1725,29 @@ function buildPlanningRequest() {
     };
 }
 
+function renderDeferredCurrentMajorItems(items = []) {
+    const panel = document.getElementById("deferredCurrentMajorPanel");
+    if (!panel) return;
+    panel.classList.toggle("hidden", !items.length);
+    panel.innerHTML = items.length ? `
+        <h3>Deferred from this transfer plan</h3>
+        <p>These current-major requirements are still unresolved. They are not required for the target transfer application and can be restored at any time.</p>
+        <ul>${items.map(item => `
+            <li><span>${escapeHistoryHtml(item.name)}${item.kind === "course" ? ` · ${escapeHistoryHtml(item.id)}` : ""}</span>
+                <button type="button" class="restore-current-major-button" data-kind="${item.kind}" data-id="${escapeHistoryHtml(item.id)}">Restore to plan</button>
+            </li>`).join("")}</ul>` : "";
+}
+
+document.getElementById("deferredCurrentMajorPanel")?.addEventListener("click", event => {
+    const button = event.target.closest(".restore-current-major-button");
+    if (!button) return;
+    const field = button.dataset.kind === "requirement"
+        ? "deferred_current_major_requirement_ids"
+        : "deferred_current_major_course_ids";
+    appState.student[field] = (appState.student[field] || []).filter(id => id !== button.dataset.id);
+    document.getElementById("generateButton").click();
+});
+
 function collectCompletedCourseIds() {
     // Fixed-course-only profiles do not render a requirement-decision-page.
     // The course list is the stable owner of both fixed and choice inputs.
@@ -1753,8 +1796,35 @@ async function ensureAcademicHistoryCatalog() {
 }
 
 function historyTermLabel(record) {
+    if (!record.semester && !record.year && record.status === "completed" && record.grade === "AD") {
+        return "Prior credit · term not specified";
+    }
     const term = record.semester ? record.semester[0].toUpperCase() + record.semester.slice(1) : "Term needs review";
     return `${term}${record.year ? ` ${record.year}` : ""}`;
+}
+
+function renderAcademicHistoryImportSummary(importResult = null) {
+    const summary = document.getElementById("academicHistoryImportSummary");
+    const completed = appState.student.completed_courses || [];
+    const inProgress = appState.student.in_progress_courses || [];
+    const planned = appState.student.planned_courses || [];
+    const names = new Map([
+        ...academicHistoryCatalog.map(course => [course.id, course.name]),
+        ...pendingAcademicHistoryCourses
+            .filter(course => course.course_name)
+            .map(course => [course.course_id, course.course_name])
+    ]);
+    summary.innerHTML = `
+        <h2>Academic history imported</h2>
+        ${importResult ? `<p>${importResult.imported_count} course records added or updated; ${importResult.duplicate_count} duplicate${importResult.duplicate_count === 1 ? "" : "s"} merged.</p>` : ""}
+        <p><strong>Your progress:</strong> ${completed.length} completed · ${inProgress.length} in progress · ${planned.length} planned.</p>
+        <p>Courses in progress count toward your proposed plan, but are not marked completed before a final result. If you drop one, remove it here and regenerate your plan.</p>
+        ${inProgress.length ? `<ul class="academic-history-in-progress">${inProgress.map(courseId => `
+            <li>${escapeHistoryHtml(courseId)} · ${escapeHistoryHtml(names.get(courseId) || "Current course")}
+                <button type="button" class="remove-in-progress-course" data-course-id="${escapeHistoryHtml(courseId)}">I dropped this course</button>
+            </li>`).join("")}</ul>` : ""}
+    `;
+    summary.classList.remove("hidden");
 }
 
 function renderAcademicHistoryReview() {
@@ -1877,11 +1947,12 @@ document.getElementById("confirmAcademicHistoryImport")?.addEventListener("click
     if (records.some(record =>
         !/^\d{2}-\d{3}$/.test(record.course_id)
         || !record.status
-        || !record.semester
-        || !record.year
+        || ((!record.semester || !record.year)
+            && !(record.status === "completed" && record.grade === "AD"
+                && !record.semester && !record.year))
     )) {
         document.getElementById("academicHistoryReviewMessage").textContent =
-            "Verify every course ID, semester, year, and status before importing.";
+            "Verify every course ID and status. Semester and year are optional only for documented AD prior credit.";
         return;
     }
     button.disabled = true;
@@ -1898,20 +1969,28 @@ document.getElementById("confirmAcademicHistoryImport")?.addEventListener("click
         renderCourseSelection(appState.plannerKey);
         await loadBaseline();
         document.getElementById("academicHistoryReview").classList.add("hidden");
-        const summary = document.getElementById("academicHistoryImportSummary");
-        summary.innerHTML = `
-            <h2>Academic history imported</h2>
-            <p>${data.imported_count} course records added or updated; ${data.duplicate_count} duplicate${data.duplicate_count === 1 ? "" : "s"} merged.</p>
-            <p><strong>Your progress:</strong> ${data.summary.completed} completed · ${data.summary.in_progress} in progress · ${data.summary.planned} planned.</p>
-            <p>Requirements and prerequisite checks will now use the same updated academic state.</p>
-        `;
-        summary.classList.remove("hidden");
+        renderAcademicHistoryImportSummary(data);
     } catch (error) {
         document.getElementById("academicHistoryReviewMessage").textContent = error.message;
     } finally {
         button.disabled = false;
         button.textContent = "Confirm & Import";
     }
+});
+
+document.getElementById("academicHistoryImportSummary")?.addEventListener("click", async event => {
+    const button = event.target.closest(".remove-in-progress-course");
+    if (!button) return;
+    const courseId = button.dataset.courseId;
+    appState.student.in_progress_courses = (appState.student.in_progress_courses || [])
+        .filter(id => id !== courseId);
+    appState.student.planned_courses = (appState.student.planned_courses || [])
+        .filter(id => id !== courseId);
+    appState.student.academic_history = (appState.student.academic_history || [])
+        .filter(record => !(record.course_id === courseId && record.status === "in_progress"));
+    renderAcademicHistoryImportSummary();
+    renderCourseSelection(appState.plannerKey);
+    await loadBaseline();
 });
 // #endregion
 
@@ -1938,7 +2017,7 @@ async function loadBaseline() {
     genedHistory.innerHTML = data.baseline.requirements.map(requirement => `
         <label class="course-option gened-option">
             <input type="checkbox" value="${requirement.id}"
-                ${appState.student.completed_requirement_ids.includes(requirement.id) ? "checked" : ""}>
+                ${appState.student.completed_requirement_ids.includes(requirement.id) || requirement.status === "completed" ? "checked" : ""}>
             <span>
                 <strong>${requirement.name}</strong>
                 ${requirement.units} ${requirement.units === 1 ? "unit" : "units"} · ${requirement.timeline.source_text}
@@ -1955,11 +2034,15 @@ async function loadBaseline() {
         auditList.querySelectorAll(".baseline-audit-row").forEach(row => row.remove());
         decisionPage.querySelectorAll(".baseline-decision-requirement").forEach(row => row.remove());
         data.baseline.requirements.forEach(requirement => {
-            const completed = appState.student.completed_requirement_ids.includes(requirement.id);
+            const completed = appState.student.completed_requirement_ids.includes(requirement.id)
+                || requirement.status === "completed";
+            const pendingLabel = requirement.status === "in_progress"
+                ? "In progress"
+                : requirement.status === "planned" ? "Already planned" : "Choose in plan";
             const row = document.createElement("div");
             row.className = `requirement-audit-row baseline-audit-row${completed ? " audit-complete" : ""}`;
             row.dataset.requirementId = requirement.id;
-            row.innerHTML = `<label><input type="checkbox" class="baseline-audit-toggle" ${completed ? "checked" : ""}><span><strong>${requirement.name}</strong><small>${requirement.units} ${requirement.units === 1 ? "unit" : "units"} · ${requirement.timeline.source_text}</small></span></label><span class="audit-row-status">${completed ? "Completed" : "Choose in plan"}</span>`;
+            row.innerHTML = `<label><input type="checkbox" class="baseline-audit-toggle" ${completed ? "checked" : ""}><span><strong>${requirement.name}</strong><small>${requirement.units} ${requirement.units === 1 ? "unit" : "units"} · ${requirement.timeline.source_text}</small></span></label><span class="audit-row-status">${completed ? "Completed" : pendingLabel}</span>`;
             const matchingDecision = requirement.id === "data-analysis"
                 ? Array.from(decisionPage.querySelectorAll(".decision-requirement")).find(panel =>
                     panel.querySelector('input[value="36-200"]')
@@ -1971,12 +2054,12 @@ async function loadBaseline() {
                 if (source) source.checked = checked;
                 row.querySelector("input").checked = checked;
                 row.classList.toggle("audit-complete", checked);
-                row.querySelector(".audit-row-status").textContent = checked ? "Completed" : "Choose in plan";
+                row.querySelector(".audit-row-status").textContent = checked ? "Completed" : pendingLabel;
                 const baselineCard = decisionPage.querySelector(`.baseline-decision-requirement[data-requirement-id="${requirement.id}"]`);
                 if (baselineCard) {
                     baselineCard.querySelector("input").checked = checked;
                     baselineCard.classList.toggle("decision-complete", checked);
-                    baselineCard.querySelector(".decision-status-text").textContent = checked ? "✓ Completed" : "Choose in plan";
+                    baselineCard.querySelector(".decision-status-text").textContent = checked ? "✓ Completed" : pendingLabel;
                 }
                 refreshDegreeRequirementTree();
             };
@@ -1999,7 +2082,7 @@ async function loadBaseline() {
                 const detailText = (requirement.source_text || "").split("\n")
                     .find(line => line.length > 60 && line !== requirement.name)
                     || "Choose an approved option; the same selection will appear in your generated plan.";
-                decision.innerHTML = `<summary><strong class="decision-summary-name">${requirement.name}</strong><span class="decision-summary-rule">Choose one approved option</span><span class="decision-status-text">${completed ? "✓ Completed" : appState.genedSelections[requirement.id] ? "✓ Selected" : "Choose in plan"}</span><small class="decision-deadline">${requirement.timeline.source_text}</small></summary><div class="decision-expanded"><p>${detailText}</p><div class="gened-plan-choice-slot" aria-live="polite"></div><label class="baseline-completed-toggle"><input type="checkbox" ${completed ? "checked" : ""}> I already completed this requirement</label></div>`;
+                decision.innerHTML = `<summary><strong class="decision-summary-name">${requirement.name}</strong><span class="decision-summary-rule">Choose one approved option</span><span class="decision-status-text">${completed ? "✓ Completed" : appState.genedSelections[requirement.id] ? "✓ Selected" : pendingLabel}</span><small class="decision-deadline">${requirement.timeline.source_text}</small></summary><div class="decision-expanded"><p>${detailText}</p><div class="gened-plan-choice-slot" aria-live="polite"></div><label class="baseline-completed-toggle"><input type="checkbox" ${completed ? "checked" : ""}> I already completed this requirement</label></div>`;
                 const deadlineYear = requirement.timeline.year || (requirement.timeline.type === "after_semester" ? 4 : 1);
                 const moveToChooseNow = ["humanities", "social-sciences", "experiential-learning"].includes(requirement.id);
                 (moveToChooseNow || deadlineYear <= Math.max(1, appState.student.year) ? nowList : laterList).appendChild(decision);
@@ -2049,7 +2132,7 @@ async function loadBaseline() {
                     if (event.target.value) appState.genedSelections[requirement.id] = event.target.value;
                     else delete appState.genedSelections[requirement.id];
                     decision.classList.toggle("decision-complete", Boolean(event.target.value) || decision.querySelector('.baseline-completed-toggle input').checked);
-                    decision.querySelector(".decision-status-text").textContent = event.target.value ? "✓ Selected" : decision.querySelector('.baseline-completed-toggle input').checked ? "✓ Completed" : "Choose in plan";
+                    decision.querySelector(".decision-status-text").textContent = event.target.value ? "✓ Selected" : decision.querySelector('.baseline-completed-toggle input').checked ? "✓ Completed" : pendingLabel;
                     refreshRequirementDecisionProgress();
                     refreshGenEdProgress();
                     refreshDegreeRequirementTree();
@@ -2102,7 +2185,7 @@ document
             appState.plannerKey = plannerKeyForGoal(appState.goals[0]);
 
             const goal = appState.goals[0];
-            if (goal && ["internal_transfer", "additional_major", "minor"].includes(goal.type)) {
+            if (goal && ["internal_transfer", "additional_major", "additional_degree", "minor"].includes(goal.type)) {
                 const response = await fetch(
                     `/api/programs/${goal.program}/${goal.type}`
                 );
@@ -2111,6 +2194,7 @@ document
                     return;
                 }
                 const detail = await response.json();
+                const isCatalogDraft = detail.profile?.policy_status === "catalog_extracted_unverified";
                 let currentMajorHistory = [];
                 let currentMajorChoiceGroups = [];
                 const primaryResponse = await fetch(
@@ -2141,15 +2225,19 @@ document
                 });
                 const historyCourses = [...historyById.values()];
                 step3CourseData[appState.plannerKey] = {
-                    eyebrow: `${(goal.college || "CMU").toUpperCase()} · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : goal.type === "internal_transfer" ? "B.S. TRANSFER" : "ADDITIONAL MAJOR"}`,
+                    eyebrow: `${(goal.college || "CMU").toUpperCase()} · ${detail.program_name.toUpperCase()} · ${goal.type === "minor" ? "MINOR" : goal.type === "internal_transfer" ? "TRANSFER EXPLORATION" : goal.type === "additional_degree" ? "ADDITIONAL DEGREE" : "ADDITIONAL MAJOR"}`,
                     title: "Which current-major and goal courses have you completed?",
-                    description: `Select completed courses from your current major and this goal. Anything left unchecked may be placed in your future plan.`,
+                    description: isCatalogDraft
+                        ? "Catalog-extracted possibilities only. Select courses you completed; missing rules and advisor decisions will remain unresolved."
+                        : "Select completed courses from your current major and this goal. Anything left unchecked may be placed in your future plan.",
                     courses: historyCourses,
                     choiceGroups: [
                         ...currentMajorChoiceGroups.map(group => ({...group, history_scope: "current_major"})),
                         ...detail.requirement_groups.map(group => ({...group, history_scope: "goal"}))
                     ],
-                    plannerNote: `Catalog ${detail.catalog_year}: ${detail.requirement_groups.map(group => `${group.name} (${group.options.join(" / ")})`).join("; ") || "all listed requirements are fixed courses"}.`,
+                    plannerNote: isCatalogDraft
+                        ? "Exploratory draft, not a verified degree or transfer-admission plan. Confirm requirements with the program advisor."
+                        : `Catalog ${detail.catalog_year}: ${detail.requirement_groups.map(group => `${group.name} (${group.options.join(" / ")})`).join("; ") || "all listed requirements are fixed courses"}.`,
                     plannerReady: true
                 };
                 renderCourseSelection(appState.plannerKey);
@@ -2241,11 +2329,14 @@ async function prepareCurrentMajorStep() {
         return false;
     }
     const detail = await response.json();
+    const isCatalogDraft = detail.curriculum_status === "catalog_extracted_unverified";
     const selectedName = document.getElementById("major").selectedOptions[0]?.textContent || currentMajor;
     step3CourseData[appState.plannerKey] = {
         eyebrow: `CURRENT MAJOR · ${detail.catalog_year}`,
         title: `What have you completed for ${selectedName}?`,
-        description: "Select completed fixed courses and requirement choices. Remaining verified requirements will be scheduled into your path.",
+        description: isCatalogDraft
+            ? "Select completed courses. Extracted requirements are provisional; unparsed rules remain visible for advisor review."
+            : "Select completed fixed courses and requirement choices. Remaining verified requirements will be scheduled into your path.",
         courses: detail.fixed_courses,
         choiceGroups: detail.requirement_groups.map(group => ({...group, history_scope: "current_major"})),
         plannerNote: detail.notes.join(" "),
@@ -2591,13 +2682,20 @@ function renderCourseSelection(
             });
             decisionSection.querySelectorAll(".baseline-decision-requirement").forEach(panel => {
                 const requirementId = panel.dataset.requirementId;
-                const done = panel.querySelector('.baseline-completed-toggle input[type="checkbox"]')?.checked
-                    || Boolean(appState.genedSelections[requirementId]);
+                const requirement = (appState.baselineRequirements || []).find(item => item.id === requirementId);
+                const historyStatus = requirement?.status;
+                const completed = Boolean(panel.querySelector('.baseline-completed-toggle input[type="checkbox"]')?.checked);
+                const selected = Boolean(appState.genedSelections[requirementId]);
+                const coveredByHistory = historyStatus === "in_progress" || historyStatus === "planned";
+                const done = completed || selected || coveredByHistory;
                 total += 1;
                 complete += done ? 1 : 0;
                 panel.classList.toggle("decision-complete", done);
-                panel.querySelector(".decision-status-text").textContent = appState.genedSelections[requirementId]
-                    ? "✓ Selected" : done ? "✓ Completed" : "Choose in plan";
+                panel.querySelector(".decision-status-text").textContent = completed
+                    ? "✓ Completed"
+                    : coveredByHistory
+                        ? historyStatus === "in_progress" ? "In progress" : "Already planned"
+                        : selected ? "✓ Selected" : "Choose in plan";
             });
             const remaining = Math.max(0, total - complete);
             const percent = total ? Math.round(complete / total * 100) : 100;
@@ -2879,6 +2977,8 @@ function renderPath(
         program_choice: "Program choice",
         current_major_choice: "Current major requirement"
     };
+    const canDeferCurrentMajor = appState.goals[0]?.type === "internal_transfer"
+        && !appState.goals[0]?.include_post_transfer_plan;
 
     const intensityClass = intensity => intensity ? `intensity-tier-${intensity.tier}` : "";
     const intensityBadge = intensity => intensity
@@ -2916,6 +3016,11 @@ function renderPath(
                 <span>${block.name}</span>
                 ${intensityBadge(intensity)}
                 <button type="button" class="why-here-button">Why here?</button>
+                ${canDeferCurrentMajor && block.kind === "current_major"
+                    && !(appState.student.completed_courses || []).includes(block.id)
+                    && !(appState.student.in_progress_courses || []).includes(block.id)
+                    && !(appState.student.planned_courses || []).includes(block.id)
+                    ? '<button type="button" class="defer-current-major-button" data-defer-kind="course">Skip in this transfer plan</button>' : ""}
                 <span class="why-here-panel" hidden></span>
             </span>
             <strong class="block-units">${block.units}u</strong>
@@ -2958,6 +3063,8 @@ function renderPath(
                     </span>
                     <span class="course-intensity-slot">${intensityBadge(defaultIntensity)}</span>
                     <button type="button" class="why-here-button">Why here?</button>
+                    ${canDeferCurrentMajor && block.scope === "primary_major"
+                        ? '<button type="button" class="defer-current-major-button" data-defer-kind="requirement">Skip in this transfer plan</button>' : ""}
                     <span class="why-here-panel" hidden></span>
                 </span>
                 <strong class="block-units">${block.units}u</strong>
@@ -3279,6 +3386,20 @@ function renderPath(
             });
         });
 
+        card.querySelectorAll(".defer-current-major-button").forEach(button => {
+            button.addEventListener("click", event => {
+                const block = event.currentTarget.closest(".planner-course-block");
+                const isRequirement = event.currentTarget.dataset.deferKind === "requirement";
+                const field = isRequirement
+                    ? "deferred_current_major_requirement_ids"
+                    : "deferred_current_major_course_ids";
+                const id = isRequirement ? block.dataset.requirementId : block.dataset.courseId;
+                if (!id) return;
+                appState.student[field] = [...new Set([...(appState.student[field] || []), id])];
+                document.getElementById("generateButton").click();
+            });
+        });
+
         card.querySelectorAll(".empty-block .block-category").forEach(select => {
             select.addEventListener("change", async event => {
                 const block = event.target.closest(".planner-course-block");
@@ -3461,7 +3582,16 @@ function renderPath(
             card.updatePlannerTotal?.();
         });
 
-        const completed = new Set(appState.student.completed_courses);
+        // The API treats confirmed in-progress coursework as available to a
+        // proposed future plan. Mirror that rule while editing the path, while
+        // keeping its academic-history status distinct from "completed".
+        const availableBeforePlan = new Set([
+            ...(appState.student.completed_courses || []),
+            ...(appState.student.in_progress_courses || []),
+            ...(appState.student.academic_history || [])
+                .filter(record => record.status === "completed" || record.status === "in_progress")
+                .map(record => record.course_id)
+        ]);
         const cards = Array.from(container.querySelectorAll(".semester-card"));
         const scheduledBefore = courseId => {
             const block = container.querySelector(`[data-course-id="${courseId}"]`);
@@ -3478,7 +3608,7 @@ function renderPath(
             const expression = detail.prerequisite_expression;
             const prerequisites = expression?.options?.map(option => option.course_id)
                 || detail.prerequisites || [];
-            const satisfied = prerequisite => completed.has(prerequisite)
+            const satisfied = prerequisite => availableBeforePlan.has(prerequisite)
                 || (scheduledBefore(prerequisite) >= 0 && scheduledBefore(prerequisite) < semesterIndex);
             const valid = expression?.type === "any_of"
                 ? prerequisites.some(satisfied)
@@ -3743,6 +3873,7 @@ document
 
             appState.latestPlan = data;
             appState.latestPlanningRequest = requestBody;
+            renderDeferredCurrentMajorItems(data.deferred_current_major_items || []);
             renderAcademicDashboard();
 
             appState.latestProgramProfile = data.program_profile;
@@ -4147,6 +4278,8 @@ function renderDegreeRequirementTree() {
     const audits = plan.degree_audits || {};
     const primary = audits.primary_degree || {};
     const goal = audits.selected_goal || {};
+    const isCatalogDraft = plan.program_profile?.policy_status === "catalog_extracted_unverified";
+    const draftUnresolved = plan.program_profile?.draft_unresolved_requirements || [];
     const isEligibilityPlan = plan.transfer_planning?.mode === "eligibility";
     const completedCourses = new Set(appState.student.completed_courses || []);
     const completedRequirements = new Set(appState.student.completed_requirement_ids || []);
@@ -4217,8 +4350,13 @@ function renderDegreeRequirementTree() {
             <div class="degree-tree-children">${requirements.map(requirement => {
                 const linked = appState.genedSelections[requirement.id]
                     || planned.find(item => item.requirement.toLowerCase() === requirement.name.toLowerCase())?.id
-                    || (requirement.courses || []).find(id => plannedIds.has(id) || completedCourses.has(id));
-                const isCompleted = completedRequirements.has(requirement.id);
+                    || (requirement.courses || []).find(id =>
+                        plannedIds.has(id)
+                        || completedCourses.has(id)
+                        || (appState.student.in_progress_courses || []).includes(id)
+                        || (appState.student.planned_courses || []).includes(id)
+                    );
+                const isCompleted = completedRequirements.has(requirement.id) || requirement.status === "completed";
                 return requirementLeaf(requirement.name, "fulfill one", linked, isCompleted ? "completed" : linked ? "planned" : "unresolved");
             }).join("")}</div>
         </details>`;
@@ -4226,9 +4364,10 @@ function renderDegreeRequirementTree() {
 
     container.innerHTML = `
         <div class="degree-tree-heading">
-            <div><p class="eyebrow">DEGREE REQUIREMENTS</p><h2>How this plan fulfills your degree</h2><p>Open a branch to see every fulfill-all and fulfill-one rule. Course links update when you edit the plan.</p></div>
-            <span class="rules-badge">Live plan audit</span>
+            <div><p class="eyebrow">${isCatalogDraft ? "CATALOG EXPLORATION" : "DEGREE REQUIREMENTS"}</p><h2>${isCatalogDraft ? "Partial course map — review required" : "How this plan fulfills your degree"}</h2><p>${isCatalogDraft ? "Only machine-extracted course possibilities are shown. This is not a complete degree or transfer audit." : "Open a branch to see every fulfill-all and fulfill-one rule. Course links update when you edit the plan."}</p></div>
+            <span class="rules-badge">${isCatalogDraft ? "Unverified draft" : "Live plan audit"}</span>
         </div>
+        ${isCatalogDraft ? `<section class="planning-warning-list" aria-label="Catalog requirements needing review"><article class="planning-warning warning"><strong>Still needs program review</strong><ul>${draftUnresolved.map(item => `<li>${escapeHistoryHtml(item.name)} — ${escapeHistoryHtml(item.detail)}</li>`).join("")}</ul>${plan.program_profile.source_url ? `<a href="${escapeHistoryHtml(plan.program_profile.source_url)}" target="_blank" rel="noopener">Official catalog source</a>` : ""}</article></section>` : ""}
         ${isEligibilityPlan || goal.type !== "internal_transfer" ? `<details class="degree-tree-root">
             <summary><span><strong>${programName(primary.program)}</strong><small>Current bachelor's degree</small><span class="tree-state-summary"><b>Completed ${primary.requirements_completed ?? "—"}</b><b>Planned ${primary.requirements_planned ?? "—"}</b><b>Unresolved ${primary.requirements_unresolved ?? "—"}</b></span></span><span class="tree-rule-badge">fulfill all</span></summary>
             <div class="degree-tree-children">
@@ -4265,10 +4404,15 @@ function renderGenEdProgress() {
     ).flatMap(block => (block.dataset.courseId || "").split(" + ")).filter(Boolean));
     const plannedCourseFor = requirement => appState.genedSelections[requirement.id]
         || plannedByName.get(requirement.name)
-        || (requirement.courses || []).find(id => plannedCourseIds.has(id));
-    const completedRequirements = requirements.filter(requirement => completed.has(requirement.id));
-    const plannedRequirements = requirements.filter(requirement => !completed.has(requirement.id) && Boolean(plannedCourseFor(requirement)));
-    const unresolvedRequirements = requirements.filter(requirement => !completed.has(requirement.id) && !plannedCourseFor(requirement));
+        || (requirement.courses || []).find(id =>
+            plannedCourseIds.has(id)
+            || (appState.student.in_progress_courses || []).includes(id)
+            || (appState.student.planned_courses || []).includes(id)
+        );
+    const isRequirementCompleted = requirement => completed.has(requirement.id) || requirement.status === "completed";
+    const completedRequirements = requirements.filter(isRequirementCompleted);
+    const plannedRequirements = requirements.filter(requirement => !isRequirementCompleted(requirement) && Boolean(plannedCourseFor(requirement)));
+    const unresolvedRequirements = requirements.filter(requirement => !isRequirementCompleted(requirement) && !plannedCourseFor(requirement));
     const coveredCount = completedRequirements.length + plannedRequirements.length;
     const percent = requirements.length ? Math.round(coveredCount / requirements.length * 100) : 0;
     const ruleFor = requirement => requirement.name === "Communication"
@@ -4299,14 +4443,14 @@ function renderGenEdProgress() {
             <div class="gened-category-list">
                 ${Object.entries(grouped).map(([groupId, groupRequirements]) => `
                     <section class="gened-category-group">
-                        <div class="gened-category-group-heading"><strong>${groupLabels[groupId] || groupId.replaceAll("_", " ")}</strong><span>${groupRequirements.filter(requirement => completed.has(requirement.id) || Boolean(plannedCourseFor(requirement))).length} / ${groupRequirements.length}</span></div>
+                        <div class="gened-category-group-heading"><strong>${groupLabels[groupId] || groupId.replaceAll("_", " ")}</strong><span>${groupRequirements.filter(requirement => isRequirementCompleted(requirement) || Boolean(plannedCourseFor(requirement))).length} / ${groupRequirements.length}</span></div>
                         ${groupRequirements.map((requirement, index) => {
                             const courseId = plannedCourseFor(requirement);
-                            const isCompleted = completed.has(requirement.id);
+                            const isCompleted = isRequirementCompleted(requirement);
                             const isPlanned = !isCompleted && Boolean(courseId);
                             return `${index ? '<div class="gened-and-connector">AND</div>' : ""}<article class="gened-category ${isCompleted ? "complete" : isPlanned ? "planned" : "unresolved"}">
                                 <span><strong>${requirement.name}</strong><small>${ruleFor(requirement)} · ${requirement.timeline?.source_text || "Complete before graduation"}</small></span>
-                                <span class="gened-category-status">${isCompleted ? `✓ Completed${courseId ? ` · ${courseId}` : ""}` : isPlanned ? `◷ Planned · ${courseId}` : "○ Unresolved"}</span>
+                                <span class="gened-category-status">${isCompleted ? `✓ Completed${courseId ? ` · ${courseId}` : ""}` : isPlanned ? `◷ ${requirement.status === "in_progress" ? "In progress" : "Planned"} · ${courseId}` : "○ Unresolved"}</span>
                             </article>`;
                         }).join("")}
                     </section>`).join("")}
@@ -4372,6 +4516,10 @@ function renderGoalStatus(
     const balancedPath = data.secondary_path_type === "minor_foundation"
         ? data.fastest
         : (data.lower_workload || data.fastest);
+    if (data.program_profile?.policy_status === "catalog_extracted_unverified") {
+        goalStatus.textContent = "Exploratory course draft · official requirements still need review";
+        return;
+    }
     if (
         balancedPath.goal_complete
     ) {
@@ -4431,12 +4579,13 @@ function renderGoalName() {
 
     const goal = appState.goals[0];
     const programName = programDirectory.find(
-        program => program.planning_id === goal.program
+        program => program.planning_id === goal.program || program.id === goal.program
     )?.name ?? goal.program;
     const typeName = {
         current_major: "Current Major",
         internal_transfer: "Transfer to",
         additional_major: "Additional Major in",
+        additional_degree: "Additional Degree in",
         minor: "Minor in"
     }[goal.type] ?? goal.type;
     const fullGoalName = goal.type === "additional_major"

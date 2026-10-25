@@ -10,6 +10,9 @@ COLLEGE_REQUIREMENTS_PATH = (
     / "scraped"
     / "scraped_college_requirements.json"
 )
+COLLEGE_REQUIREMENT_COURSES_PATH = (
+    PROJECT_ROOT / "Data" / "policies" / "college_requirement_course_mappings.json"
+)
 
 
 def load_college_requirements():
@@ -18,7 +21,19 @@ def load_college_requirements():
         "r",
         encoding="utf-8",
     ) as file:
-        return json.load(file)
+        colleges = json.load(file)
+    with open(COLLEGE_REQUIREMENT_COURSES_PATH, "r", encoding="utf-8") as file:
+        verified_mappings = json.load(file)
+    for college in colleges:
+        mappings = verified_mappings.get(college["id"], {})
+        for requirement in college["requirements"]:
+            mapping = mappings.get(requirement["id"])
+            if mapping:
+                requirement["courses"] = list(dict.fromkeys([
+                    *requirement.get("courses", []),
+                    *mapping["courses"],
+                ]))
+    return colleges
 
 def get_college_by_id(college_id):
     colleges = load_college_requirements()
@@ -91,6 +106,9 @@ def get_requirements_through_year(
     through_year,
     completed_courses,
     completed_requirement_ids=None,
+    in_progress_courses=None,
+    planned_courses=None,
+    planned_requirement_ids=None,
 ):
     college = get_college_by_id(college_id)
 
@@ -99,6 +117,9 @@ def get_requirements_through_year(
 
     requirements = []
     completed_requirement_ids = set(completed_requirement_ids or [])
+    in_progress_courses = set(in_progress_courses or [])
+    planned_courses = set(planned_courses or [])
+    planned_requirement_ids = set(planned_requirement_ids or [])
 
     for raw_requirement in college["requirements"]:
         requirement = dict(raw_requirement)
@@ -127,16 +148,23 @@ def get_requirements_through_year(
         )
 
         if is_due_in_horizon or is_eligible_in_horizon:
+            if (
+                requirement.get("id") in completed_requirement_ids
+                or is_requirement_satisfied(requirement, completed_courses)
+            ):
+                status = "completed"
+            elif is_requirement_satisfied(requirement, in_progress_courses):
+                status = "in_progress"
+            elif (
+                requirement.get("id") in planned_requirement_ids
+                or is_requirement_satisfied(requirement, planned_courses)
+            ):
+                status = "planned"
+            else:
+                status = "remaining"
             requirements.append({
                 **requirement,
-                "status": (
-                    "completed"
-                    if (
-                        requirement.get("id") in completed_requirement_ids
-                        or is_requirement_satisfied(requirement, completed_courses)
-                    )
-                    else "remaining"
-                )
+                "status": status,
             })
 
     return requirements
@@ -224,6 +252,9 @@ def get_student_planning_baseline(
         through_year,
         completed_courses,
         completed_requirement_ids,
+        student_state.get("in_progress_courses", []),
+        student_state.get("planned_courses", []),
+        student_state.get("planned_requirement_ids", []),
     )
 
     return {

@@ -194,6 +194,44 @@ def calculate_total_units(course_ids, courses):
     return total
 
 
+def maximum_distinct_requirement_choices(options, unavailable_course_ids=None):
+    """Return the largest set of concrete, course-disjoint requirement options."""
+    unavailable = set(unavailable_course_ids or [])
+    concrete_options = []
+    for option in dict.fromkeys(options):
+        course_ids = option.split(" + ")
+        if not course_ids or not all(
+            re.fullmatch(r"\d{2}-\d{3}", course_id)
+            for course_id in course_ids
+        ):
+            continue
+        course_set = frozenset(course_ids)
+        if course_set & unavailable:
+            continue
+        concrete_options.append(course_set)
+
+    best = 0
+
+    def search(index, used_courses, selected):
+        nonlocal best
+        if selected + len(concrete_options) - index <= best:
+            return
+        if index == len(concrete_options):
+            best = max(best, selected)
+            return
+        search(index + 1, used_courses, selected)
+        option_courses = concrete_options[index]
+        if not used_courses & option_courses:
+            search(
+                index + 1,
+                used_courses | option_courses,
+                selected + 1,
+            )
+
+    search(0, frozenset(), 0)
+    return best
+
+
 def _required_course_prerequisite_closure(
     required_course_ids,
     completed_course_ids,
@@ -328,7 +366,28 @@ def _remaining_requirement_diagnostics(
             if option_ids and all(course_id in course_by_id for course_id in option_ids):
                 concrete_options.append(option_ids)
 
-        if not requirement.get("options"):
+        matching_remaining_slots = sum(
+            other.get("name") == requirement.get("name")
+            and other.get("scope", "goal") == requirement.get("scope", "goal")
+            and other.get("options", []) == requirement.get("options", [])
+            for other in remaining_program_slots
+        )
+        unused_distinct_candidates = maximum_distinct_requirement_choices(
+            requirement.get("options", []),
+            completed,
+        )
+
+        if (
+            concrete_options
+            and unused_distinct_candidates < matching_remaining_slots
+        ):
+            reason = "insufficient_distinct_candidates"
+            detail = (
+                f"Only {unused_distinct_candidates} unused distinct approved "
+                f"candidate(s) remain for {matching_remaining_slots} "
+                "remaining choice slot(s)."
+            )
+        elif not requirement.get("options"):
             reason = "waiting_for_user_choice"
             detail = "This requirement has no approved default options in the verified data."
         elif not concrete_options:
@@ -576,7 +635,7 @@ def generate_semester_path(
     remaining_baseline = [
         dict(requirement)
         for requirement in (baseline_requirements or [])
-        if requirement.get("status") != "completed"
+        if requirement.get("status", "remaining") == "remaining"
     ]
     remaining_program_slots = [
         dict(requirement)

@@ -48,6 +48,92 @@ class PlanningIntegrationTests(unittest.TestCase):
             },
         )
 
+    def test_in_progress_grand_challenge_is_reserved_not_completed_or_rescheduled(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "engineering",
+            "program": "electrical-and-computer-engineering",
+        })
+        request.student.academic_history = [{
+            "course_id": "66-136",
+            "semester": "fall",
+            "year": 2026,
+            "status": "in_progress",
+        }]
+        baseline = app.create_baseline(request)["baseline"]["requirements"]
+        seminar = next(item for item in baseline if item["id"] == "grand-challenge-seminar")
+        self.assertEqual(seminar["status"], "in_progress")
+        self.assertIn("66-136", seminar["courses"])
+        path = app.create_plan(request)["fastest"]["path"]
+        self.assertFalse(any(
+            block.get("id") == "grand-challenge-seminar"
+            for semester in path for block in semester["course_blocks"]
+        ))
+        request.student.academic_history = []
+        baseline_after_drop = app.create_baseline(request)["baseline"]["requirements"]
+        self.assertEqual(
+            next(item for item in baseline_after_drop if item["id"] == "grand-challenge-seminar")["status"],
+            "remaining",
+        )
+
+    def test_ece_transfer_can_defer_current_major_choice_without_deferring_goal(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "engineering",
+            "program": "electrical-and-computer-engineering",
+        })
+        request.student.completed_courses = [
+            "21-127", "36-200", "15-112", "73-102", "99-101",
+        ]
+        request.student.in_progress_courses = ["66-136"]
+        initial = app.create_plan(request)
+        initial_options = [
+            block.get("default_option")
+            for semester in initial["fastest"]["path"]
+            for block in semester["course_blocks"]
+        ]
+        self.assertIn("36-202", initial_options)
+
+        request.student.deferred_current_major_requirement_ids = [
+            "stats-ml-intermediate-data-1",
+        ]
+        deferred = app.create_plan(request)
+        scheduled = [
+            block.get("default_option") or block.get("id")
+            for semester in deferred["fastest"]["path"]
+            for block in semester["course_blocks"]
+        ]
+        self.assertNotIn("36-202", scheduled)
+        self.assertNotIn("stats-ml-intermediate-data-1", scheduled)
+        self.assertTrue({"18-100", "21-120", "33-141"}.issubset(scheduled))
+        self.assertEqual(
+            deferred["deferred_current_major_items"][0]["id"],
+            "stats-ml-intermediate-data-1",
+        )
+
+    def test_ece_transfer_can_defer_current_major_course_but_not_goal_course(self):
+        request = self.shared_request({
+            "type": "internal_transfer",
+            "college": "engineering",
+            "program": "electrical-and-computer-engineering",
+        })
+        request.student.completed_courses = [
+            "21-127", "36-200", "15-112", "73-102", "99-101",
+        ]
+        request.student.deferred_current_major_course_ids = ["36-235", "21-120"]
+        result = app.create_plan(request)
+        scheduled = {
+            block.get("default_option") or block.get("id")
+            for semester in result["fastest"]["path"]
+            for block in semester["course_blocks"]
+        }
+        self.assertNotIn("36-235", scheduled)
+        self.assertIn("21-120", scheduled)
+        self.assertEqual(
+            [item["id"] for item in result["deferred_current_major_items"]],
+            ["36-235"],
+        )
+
     def test_transfer_target_does_not_replace_home_college(self):
         result = app.create_baseline(self.shared_request({
             "type": "internal_transfer",
@@ -712,6 +798,45 @@ class PlanningIntegrationTests(unittest.TestCase):
             if warning["code"] == "TARGET_DEADLINE_NOT_MET"
         )
         self.assertEqual(deadline_warning["requirements"], diagnostics)
+
+    def test_cb_minor_reports_insufficient_distinct_candidates(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="dietrich",
+                primary_major="stats-ml",
+                year=1,
+                completed_courses=[],
+            ),
+            goals=[app.PlanningGoal(
+                type="minor",
+                college="scs",
+                program="computational-biology",
+            )],
+            constraints=app.PlanningConstraints(target_completion_year=4),
+        )
+        result = app.create_plan(request)
+        diagnostic = next(
+            item for item in result["fastest"]["unscheduled_requirements"]
+            if item["name"] == "300-level Computational Biology electives"
+        )
+        self.assertEqual(
+            diagnostic["reason"],
+            "insufficient_distinct_candidates",
+        )
+        self.assertIn("0 unused distinct approved candidate", diagnostic["detail"])
+
+    def test_cb_minor_is_not_advertised_as_planner_ready(self):
+        entry = next(
+            item for item in app.list_program_directory()["programs"]
+            if item["planning_id"] == "computational-biology"
+            and item["program_type"] == "minor"
+        )
+        self.assertFalse(entry["planner_ready"])
+        self.assertEqual(entry["planning_status"], "needs_review")
+        self.assertEqual(
+            entry["requirements_validation_issues"][0]["reason"],
+            "insufficient_distinct_candidates",
+        )
 
     def test_robotics_additional_major_uses_official_ten_course_structure(self):
         profile = app.program_profiles["programs"]["robotics"]["additional_major"]

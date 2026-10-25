@@ -382,6 +382,43 @@ def merge_minimum_unit_groups(groups: list[dict[str, object]]) -> list[dict[str,
     return merged
 
 
+def unrepresented_unit_headings(
+    main: Tag,
+    fixed: list[dict[str, object]],
+    groups: list[dict[str, object]],
+) -> list[dict[str, object]]:
+    """Flag leaf curriculum blocks whose stated units have no parsed requirement.
+
+    A catalog can state an elective requirement entirely in prose, without a
+    course table. In that case an otherwise plausible extraction is incomplete.
+    Parent headings are skipped because their units are represented by children.
+    """
+    represented = {
+        str(item.get("source_heading")) for item in fixed
+    } | {
+        str(group.get("heading")) for group in groups
+    }
+    headings = main.find_all(["h2", "h3", "h4", "h5", "h6"])
+    gaps: list[dict[str, object]] = []
+    for index, heading in enumerate(headings):
+        title = clean_text(heading.get_text(" ", strip=True))
+        units = required_units(title)
+        if not units or title in represented:
+            continue
+        if any(marker in title.lower() for marker in IGNORE_HEADINGS):
+            continue
+        # A range such as "3-9 units" usually describes an optional internship,
+        # not a minimum-unit requirement that the planner must fill.
+        if re.search(r"\d+\s*[-–]\s*\d+\s*units?\b", title, re.IGNORECASE):
+            continue
+        level = int(heading.name[1])
+        next_heading = headings[index + 1] if index + 1 < len(headings) else None
+        if next_heading is not None and int(next_heading.name[1]) > level:
+            continue
+        gaps.append({"heading": title, "units": units})
+    return gaps
+
+
 def parse_curriculum_html(html: str, program: dict[str, object]) -> dict[str, object]:
     soup = BeautifulSoup(html, "html.parser")
     main = soup.find("main") or soup
@@ -513,6 +550,7 @@ def parse_curriculum_html(html: str, program: dict[str, object]) -> dict[str, ob
                             "name": cluster[0]["name"],
                             "units": cluster[0]["units"],
                             "source_text": cluster[0]["source_text"],
+                            "source_heading": heading,
                         })
                         seen_fixed.add(course_id)
                 continue
@@ -633,6 +671,7 @@ def parse_curriculum_html(html: str, program: dict[str, object]) -> dict[str, ob
         warnings.append("No unambiguous fixed-course table was found.")
     if not groups:
         warnings.append("No course-choice groups were found.")
+    uncovered_units = unrepresented_unit_headings(main, fixed, groups)
     return {
         "program_id": program["id"],
         "planning_id": program.get("planning_id") or str(program["id"]).split("--")[0],
@@ -655,6 +694,7 @@ def parse_curriculum_html(html: str, program: dict[str, object]) -> dict[str, ob
             "status": "high_confidence_candidate" if confidence >= 0.8 else "needs_review",
             "warnings": warnings,
             "explicit_group_ratio": round(explicit_ratio, 2),
+            "unrepresented_unit_headings": uncovered_units,
         },
     }
 
@@ -672,16 +712,45 @@ def scheduled_course_ids() -> set[str]:
 def validate_curriculum(curriculum: dict[str, object], known_ids: set[str]) -> dict[str, object]:
     fixed_ids = [str(item["id"]) for item in curriculum["fixed_courses"]]
     groups = curriculum["requirement_groups"]
-    option_ids = [str(option) for group in groups for option in group["options"]]
+    option_ids = [
+        course_id
+        for group in groups
+        for option in group["options"]
+        for course_id in COURSE_RE.findall(str(option))
+    ]
     all_ids = fixed_ids + option_ids
     blockers: list[str] = []
     warnings: list[str] = []
     duplicate_fixed = sorted({item for item in fixed_ids if fixed_ids.count(item) > 1})
     if duplicate_fixed:
         blockers.append("Duplicate fixed courses: " + ", ".join(duplicate_fixed))
-    invalid_groups = [str(group["id"]) for group in groups if not 0 < int(group["choose"]) <= len(group["options"])]
+    invalid_groups = [
+        str(group["id"])
+        for group in groups
+        if not 0 < int(group["choose"]) <= len(set(group["options"]))
+    ]
     if invalid_groups:
         blockers.append("Invalid choice counts: " + ", ".join(invalid_groups))
+    unrepresented_units = curriculum["extraction"].get("unrepresented_unit_headings", [])
+    if unrepresented_units:
+        blockers.append(
+            "Unit requirements without parsed course choices: "
+            + ", ".join(str(item["heading"]) for item in unrepresented_units)
+        )
+    for group in groups:
+        choose = int(group["choose"])
+        units = float(group.get("units") or 0)
+        # Even a generous 36 units per distinct course cannot satisfy a
+        # larger minimum. This catches prose totals attached to tiny tables.
+        maximum = sum(sorted((
+            36 * max(1, len(COURSE_RE.findall(str(option))))
+            for option in set(group["options"])
+        ), reverse=True)[:choose])
+        if units > maximum:
+            blockers.append(
+                f"Group {group['id']} requires {units:g} units but its "
+                f"listed options can cover at most {maximum:g} units."
+            )
     if len(fixed_ids) > 60 or len(groups) > 50:
         blockers.append("Implausibly large extracted curriculum; likely schedule/table contamination.")
     track_rule = curriculum.get("track_rule")
@@ -706,11 +775,33 @@ def validate_curriculum(curriculum: dict[str, object], known_ids: set[str]) -> d
         blockers.append(
             f"{len(unresolved_groups)} requirement groups have unresolved selection rules."
         )
+    if not known_ids:
+        blockers.append("Scheduling database is unavailable; course candidates cannot be checked.")
     missing = sorted(set(all_ids) - known_ids) if known_ids else []
     if missing:
         warnings.append(
             f"{len(missing)} catalog course IDs are absent from the current schedule database."
         )
+        missing_fixed = sorted(set(fixed_ids) - known_ids)
+        if missing_fixed:
+            blockers.append(
+                "Required courses absent from the scheduling database: "
+                + ", ".join(missing_fixed)
+            )
+        unavailable_groups = [
+            str(group["id"])
+            for group in groups
+            if sum(
+                bool(COURSE_RE.findall(str(option)))
+                and all(course_id in known_ids for course_id in COURSE_RE.findall(str(option)))
+                for option in set(group["options"])
+            ) < int(group["choose"])
+        ]
+        if unavailable_groups:
+            blockers.append(
+                "Too few schedulable course choices: "
+                + ", ".join(unavailable_groups)
+            )
     promotion_ready = (
         curriculum["extraction"]["status"] == "high_confidence_candidate"
         and not blockers

@@ -16,11 +16,12 @@ from typing import Literal, Union
 
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 import requests
 from Engine.planning import (
     generate_multiple_paths,
-    get_path_explanation
+    get_path_explanation,
+    maximum_distinct_requirement_choices,
 )
 from Engine.workload import calculate_semester_load
 from Engine.baseline import (
@@ -59,6 +60,7 @@ from Backend.requirements import (
     primary_major_required_courses,
     resolve_curriculum_requirement_options,
     resolve_data_requirement_option,
+    requirement_profile_cardinality_issues,
 )
 from Backend.course_metrics import (
     calculate_five_level_course_metric,
@@ -78,6 +80,12 @@ from Backend.course_recommendation import (
     load_recommendation_policy,
     recommendation_slots_from_plan,
     recommend_courses_for_plan,
+)
+from Backend.catalog_drafts import (
+    build_catalog_draft_profile,
+    catalog_course_ids,
+    find_catalog_entry,
+    mark_catalog_draft_unresolved,
 )
 
 # Backend/application.py
@@ -223,11 +231,34 @@ for set_id in NAMED_COURSE_SETS:
         courses_from_named_set(set_id)
     )
 
+# Keep the draft graph separate: extra catalog courses must not silently
+# change candidate expansion or scoring in already verified paths.
+catalog_draft_courses = [dict(course) for course in courses]
+_catalog_ids = catalog_course_ids(program_curriculum_registry)
+for _offset in range(0, len(_catalog_ids), 500):
+    hydrate_scheduled_courses(
+        catalog_draft_courses, _catalog_ids[_offset:_offset + 500]
+    )
+
 
 # 为没有 workload 数据的课程补充低置信度默认指标。
 # 这些值只是 fallback estimate，不应该和真实 FCE / curated 数据等价展示。
 for _course in courses:
     course_metrics.setdefault(
+        _course["id"],
+        {
+            "hours_per_week": round(_course["units"] / 3, 1),
+            "workload": 3.0,
+            "difficulty": 3.0,
+            "stress": 3.0,
+            "intensity": "standard",
+            "source": "unit_based_estimate",
+            "confidence": "low",
+        },
+    )
+catalog_draft_course_metrics = dict(course_metrics)
+for _course in catalog_draft_courses:
+    catalog_draft_course_metrics.setdefault(
         _course["id"],
         {
             "hours_per_week": round(_course["units"] / 3, 1),
@@ -291,10 +322,12 @@ class StudentState(BaseModel):
     planned_courses: list[str] = Field(default_factory=list)
     locked_semesters: list[dict] = Field(default_factory=list)
     academic_history: list[dict] = Field(default_factory=list)
+    deferred_current_major_requirement_ids: list[str] = Field(default_factory=list)
+    deferred_current_major_course_ids: list[str] = Field(default_factory=list)
 
 
 class PlanningGoal(BaseModel):
-    type: Literal["current_major", "internal_transfer", "additional_major", "minor"]
+    type: Literal["current_major", "internal_transfer", "additional_major", "additional_degree", "minor"]
     program: str
     college: str | None = None
     include_post_transfer_plan: bool = False
@@ -335,10 +368,21 @@ class CourseRecommendationRequest(PlanningRequest):
 
 class AcademicHistoryCourseRecord(BaseModel):
     course_id: str
-    semester: Literal["fall", "spring", "summer"]
-    year: int = Field(ge=1900, le=2200)
+    semester: Literal["fall", "spring", "summer"] | None = None
+    year: int | None = Field(default=None, ge=1900, le=2200)
     status: Literal["completed", "in_progress", "planned"]
     grade: str | None = None
+
+    @model_validator(mode="after")
+    def require_term_unless_prior_credit(self):
+        if self.semester is not None and self.year is not None:
+            return self
+        if (
+            self.semester is None and self.year is None
+            and self.status == "completed" and self.grade == "AD"
+        ):
+            return self
+        raise ValueError("Semester and year are required except for documented AD prior credit.")
 
 
 class AcademicHistoryMergeRequest(BaseModel):
@@ -371,6 +415,7 @@ def planner_key_for_goal(goal: PlanningGoal):
     suffixes = {
         "internal_transfer": "transfer",
         "additional_major": "additional-major",
+        "additional_degree": "additional-degree",
         "minor": "minor",
     }
     suffix = suffixes.get(goal.type)
@@ -415,7 +460,11 @@ def expand_requirement_options(raw_options: list[str]) -> list[str]:
 
 
 def profile_for_goal(goal: PlanningGoal):
-    if goal.type not in {"internal_transfer", "additional_major", "minor"}:
+    if goal.type not in {"current_major", "internal_transfer", "additional_major", "additional_degree", "minor"}:
+        return None
+    if goal.type == "current_major" and requirements.get(
+        f"{goal.program}-major", {}
+    ).get("planner_status") == "ready":
         return None
     if goal.type == "internal_transfer" and not goal.include_post_transfer_plan:
         eligibility_profile = transfer_policy_for_goal(goal)
@@ -427,11 +476,19 @@ def profile_for_goal(goal: PlanningGoal):
     profile = program_profiles["programs"].get(goal.program, {}).get(goal.type)
     if profile is not None:
         return profile
-    if goal.type == "internal_transfer":
-        # A graduation curriculum is not an admissions policy. Do not silently
-        # plan the whole destination degree when transfer criteria are absent.
+    entry = find_catalog_entry(program_directory, goal.program, goal.type)
+    if entry is None:
         return None
-    return None
+    curriculum_id = entry.get("requirements_source_program_id") or entry["id"]
+    curriculum = program_curriculum_registry.get(curriculum_id)
+    if curriculum is None:
+        return None
+    return build_catalog_draft_profile(
+        entry,
+        curriculum,
+        {course["id"] for course in catalog_draft_courses},
+        goal.type,
+    )
 
 
 def planning_inputs_for_profile(
@@ -445,17 +502,23 @@ def planning_inputs_for_profile(
     profile = dict(profile)
     profile.setdefault("source_url", official_program_source(goal.program, goal.type))
     profile.setdefault("policy_status", "official_verified")
+    planning_courses = (
+        catalog_draft_courses
+        if profile["policy_status"] == "catalog_extracted_unverified"
+        else courses
+    )
 
     supported_ids = {
-        course["id"] for course in courses
+        course["id"] for course in planning_courses
         if course.get("name")
         and isinstance(course.get("units"), (int, float))
         and course["units"] >= 0
     }
-    course_units = {course["id"]: course["units"] for course in courses}
+    course_units = {course["id"]: course["units"] for course in planning_courses}
     minor_profile = (
         program_profiles["programs"].get(goal.program, {}).get("minor")
-        if goal.type == "additional_major" else profile
+        if goal.type == "additional_major" else
+        profile if goal.type == "minor" else {}
     )
     minor_fixed_ids = (minor_profile or {}).get("required_course_ids", [])
     minor_group_ids = {
@@ -479,7 +542,7 @@ def planning_inputs_for_profile(
     # needed to reach them. Add the verified prerequisite chain to the plan as
     # clearly labelled preparation so requirements such as 15-251 never remain
     # mysteriously unschedulable.
-    planning_course_by_id = {course["id"]: course for course in courses}
+    planning_course_by_id = {course["id"]: course for course in planning_courses}
     prerequisite_queue = [*official_fixed_ids, *preparation_ids]
     seen_prerequisites = set(prerequisite_queue)
     while prerequisite_queue:
@@ -501,11 +564,15 @@ def planning_inputs_for_profile(
             )
             if goal.type == "internal_transfer"
             else (
+                "current_major"
+                if goal.type == "current_major"
+                else (
                 "minor_foundation"
                 if course_id in minor_fixed_ids or course_id in minor_option_ids
                 else (
                     "minor_foundation"
                     if goal.type == "minor" else "additional_major"
+                )
                 )
             )
         )
@@ -540,9 +607,13 @@ def planning_inputs_for_profile(
             "transfer_goal"
             if goal.type == "internal_transfer"
             else (
+                "current_major"
+                if goal.type == "current_major"
+                else (
                 "minor_foundation"
                 if goal.type == "minor" or group["id"] in minor_group_ids
                 else "additional_major"
+                )
             )
         )
         if group["id"] in seen_group_ids:
@@ -660,6 +731,14 @@ def list_program_directory(
             profile_type
             and program_profiles["programs"].get(planning_id, {}).get(profile_type)
         )
+        profile_cardinality_issues = []
+        if has_profile:
+            profile_cardinality_issues = requirement_profile_cardinality_issues(
+                program_profiles["programs"][planning_id][profile_type],
+                expand_requirement_options,
+                maximum_distinct_requirement_choices,
+            )
+            has_profile = not profile_cardinality_issues
         has_primary_curriculum = bool(
             program.get("program_type") == "primary_major"
             and requirements.get(f"{planning_id}-major", {}).get("planner_status") == "ready"
@@ -676,6 +755,7 @@ def list_program_directory(
         )
         curriculum = program_curriculum_registry.get(curriculum_id)
         requirements_loaded = curriculum is not None
+        draft_available = requirements_loaded and not (has_profile or has_primary_curriculum)
         requirements_validation_status = "not_loaded"
         if curriculum:
             requirements_validation_status = (
@@ -691,6 +771,7 @@ def list_program_directory(
             program["transfer_planning_status"] = (
                 "planning_ready" if has_transfer_profile else "directory_only"
             )
+            program["transfer_draft_available"] = requirements_loaded and not has_transfer_profile
         available_as = list(program.get("available_as", [program.get("program_type")]))
         if has_transfer_profile and "transfer_destination" not in available_as:
             available_as.append("transfer_destination")
@@ -698,18 +779,23 @@ def list_program_directory(
         program["discoverable"] = True
         program["requirements_loaded"] = requirements_loaded
         program["requirements_validation_status"] = requirements_validation_status
+        program["requirements_validation_issues"] = profile_cardinality_issues
         program["planner_ready"] = planner_ready_for_entry
+        program["draft_planning_available"] = draft_available
         program["application_policy_loaded"] = program["id"] in program_declaration_policies
         program["support"] = {
             "discoverable": True,
             "requirements_loaded": requirements_loaded,
             "planner_ready": planner_ready_for_entry,
+            "draft_planning_available": draft_available,
             "transfer_policy_loaded": has_transfer_profile,
             "application_policy_loaded": program["application_policy_loaded"],
         }
         if program["application_policy_loaded"]:
             program["application_policy"] = program_declaration_policies[program["id"]]
-        if has_profile or has_primary_curriculum or has_transfer_profile:
+        if profile_cardinality_issues:
+            program["planning_status"] = "needs_review"
+        elif has_profile or has_primary_curriculum or has_transfer_profile:
             program["planning_id"] = planning_id
             program["planning_status"] = "planning_ready"
         results.append(program)
@@ -909,16 +995,26 @@ def list_electives(
 def get_program_profile(program_id: str, goal_type: str):
     profile = program_profiles["programs"].get(program_id, {}).get(goal_type)
     if profile is None:
-        raise HTTPException(status_code=404, detail="Unknown program path")
+        try:
+            goal = PlanningGoal(type=goal_type, program=program_id)
+        except ValueError:
+            raise HTTPException(status_code=404, detail="Unknown program path") from None
+        profile = profile_for_goal(goal)
+        if profile is None:
+            raise HTTPException(status_code=404, detail="Unknown program path")
     degree_profile = profile
-    if goal_type == "internal_transfer":
+    is_catalog_draft = profile.get("policy_status") == "catalog_extracted_unverified"
+    if goal_type == "internal_transfer" and not is_catalog_draft:
         profile = transfer_policy_for_goal(PlanningGoal(
             type="internal_transfer", program=program_id
         )) or profile
     profile = dict(profile)
     profile.setdefault("source_url", official_program_source(program_id, goal_type))
     profile.setdefault("policy_status", "official_verified")
-    course_names = {course["id"]: course["name"] for course in courses}
+    course_names = {
+        course["id"]: course["name"]
+        for course in (catalog_draft_courses if is_catalog_draft else courses)
+    }
     public_profile = dict(profile)
     public_profile["requirement_groups"] = [
         {
@@ -943,16 +1039,20 @@ def get_program_profile(program_id: str, goal_type: str):
         "program_id": program_id,
         "program_name": next(
             (item["name"] for item in programs if item["id"] == program_id),
-            program_id,
+            next((
+                item["name"] for item in program_directory
+                if item["id"] == program_id
+            ), program_id),
         ),
         "goal_type": goal_type,
         "catalog_year": program_profiles["catalog_year"],
         "profile": public_profile,
-        "transfer_eligibility": public_profile if goal_type == "internal_transfer" else None,
+        "transfer_eligibility": public_profile if goal_type == "internal_transfer" and not is_catalog_draft else None,
         "post_transfer_profile_available": bool(
             goal_type == "internal_transfer"
             and program_id in POST_TRANSFER_PLAN_PROGRAMS
             and degree_profile
+            and not is_catalog_draft
         ),
         "fixed_courses": [
             {
@@ -985,7 +1085,23 @@ def get_program_profile(program_id: str, goal_type: str):
 def get_primary_major_profile(program_id: str):
     curriculum = requirements.get(f"{program_id}-major")
     if curriculum is None or curriculum.get("planner_status") != "ready":
-        raise HTTPException(status_code=404, detail="Primary-major curriculum is not configured")
+        draft = profile_for_goal(PlanningGoal(type="current_major", program=program_id))
+        if draft is None:
+            raise HTTPException(status_code=404, detail="Primary-major curriculum is not configured")
+        course_by_id = {course["id"]: course for course in catalog_draft_courses}
+        return {
+            "program_id": program_id,
+            "catalog_year": draft.get("catalog_year"),
+            "curriculum_status": "catalog_extracted_unverified",
+            "minimum_degree_units": None,
+            "fixed_courses": [
+                {"id": course_id, "name": course_by_id[course_id]["name"], "is_current_major": True}
+                for course_id in draft["required_course_ids"]
+            ],
+            "requirement_groups": draft["requirement_groups"],
+            "notes": [draft["eligibility"]],
+            "unresolved_requirements": draft["draft_unresolved_requirements"],
+        }
     public_curriculum = resolve_curriculum_requirement_options(
         curriculum,
         resolve_requirement_option,
@@ -1196,7 +1312,11 @@ def create_baseline(request: PlanningRequest):
     planner_key = planner_key_for_goal(goal)
     planner_status = "not_configured"
     if profile_for_goal(goal) is not None:
-        planner_status = "ready_with_requirement_slots"
+        planner_status = (
+            "catalog_draft"
+            if profile_for_goal(goal).get("policy_status") == "catalog_extracted_unverified"
+            else "ready_with_requirement_slots"
+        )
     elif planner_key in requirements:
         planner_status = requirements[planner_key].get(
             "planner_status", "not_configured"
@@ -1207,11 +1327,11 @@ def create_baseline(request: PlanningRequest):
         expand_completed_courses,
     )
     baseline_student = request.student.model_dump()
-    baseline_student["completed_courses"] = academic_state["accumulated_courses"]
-    baseline_student["completed_requirement_ids"] = list(dict.fromkeys([
-        *academic_state["completed_requirement_ids"],
-        *academic_state["planned_requirement_ids"],
-    ]))
+    baseline_student["completed_courses"] = academic_state["completed_courses"]
+    baseline_student["in_progress_courses"] = academic_state["in_progress_courses"]
+    baseline_student["planned_courses"] = academic_state["planned_courses"]
+    baseline_student["completed_requirement_ids"] = academic_state["completed_requirement_ids"]
+    baseline_student["planned_requirement_ids"] = academic_state["planned_requirement_ids"]
     return {
         "student": request.student.model_dump(),
         "goal": goal.model_dump(),
@@ -1331,11 +1451,11 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             expand_completed_courses,
         )
         completed_courses = academic_state["accumulated_courses"]
-        planning_student_state["completed_courses"] = completed_courses
-        planning_student_state["completed_requirement_ids"] = list(dict.fromkeys([
-            *academic_state["completed_requirement_ids"],
-            *academic_state["planned_requirement_ids"],
-        ]))
+        planning_student_state["completed_courses"] = academic_state["completed_courses"]
+        planning_student_state["in_progress_courses"] = academic_state["in_progress_courses"]
+        planning_student_state["planned_courses"] = academic_state["planned_courses"]
+        planning_student_state["completed_requirement_ids"] = academic_state["completed_requirement_ids"]
+        planning_student_state["planned_requirement_ids"] = academic_state["planned_requirement_ids"]
         if goal is not None and goal.type == "internal_transfer" and goal.include_post_transfer_plan:
             locked_semesters = academic_state["locked_semesters"]
             transfer_boundary = planning_boundary_after_locked_semesters(
@@ -1382,6 +1502,14 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             else None
         )
     )
+    is_catalog_draft = (
+        (display_profile or {}).get("policy_status")
+        == "catalog_extracted_unverified"
+    )
+    active_courses = catalog_draft_courses if is_catalog_draft else courses
+    active_course_metrics = (
+        catalog_draft_course_metrics if is_catalog_draft else course_metrics
+    )
     effective_requirements = requirements
     if profile_inputs is not None:
         effective_requirements = dict(requirements)
@@ -1419,6 +1547,20 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         and goal.type == "internal_transfer"
         and goal.include_post_transfer_plan
     )
+    can_defer_primary = (
+        isinstance(request, PlanningRequest)
+        and goal is not None
+        and goal.type == "internal_transfer"
+        and not goal.include_post_transfer_plan
+    )
+    deferred_requirement_ids = (
+        set(request.student.deferred_current_major_requirement_ids)
+        if can_defer_primary else set()
+    )
+    deferred_course_ids = (
+        set(request.student.deferred_current_major_course_ids)
+        if can_defer_primary else set()
+    )
     current_major_courses = (
         current_major_courses_for(request.student)
         if isinstance(request, PlanningRequest) and (
@@ -1431,6 +1573,12 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         )
         else []
     )
+    all_current_major_courses = current_major_courses
+    current_major_courses = [
+        course_id for course_id in current_major_courses
+        if course_id not in deferred_course_ids
+        or course_id in goal_requirements.get("required_courses", [])
+    ]
     primary_baseline = (
         primary_baseline_for(request.student)
         if isinstance(request, PlanningRequest) else None
@@ -1453,7 +1601,13 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
     primary_reserved_units = (
         primary_baseline["units"] if primary_baseline is not None else 0
     )
-    primary_requirement_slots = (
+    if goal is not None and goal.type == "current_major" and (
+        display_profile or {}
+    ).get("policy_status") == "catalog_extracted_unverified":
+        # The extracted courses are the draft's visible scope. Do not add an
+        # unrelated college-wide reserve on top and double-count those units.
+        primary_reserved_units = 0
+    all_primary_requirement_slots = (
         primary_major_requirement_slots(
             request.student.primary_major,
             completed_courses + goal_requirements.get("required_courses", [])
@@ -1465,9 +1619,33 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         ) == "verified"
         else []
     )
+    primary_requirement_slots = [
+        slot for slot in all_primary_requirement_slots
+        if slot["id"] not in deferred_requirement_ids
+    ]
+    deferred_current_major_items = (
+        [
+            {"id": slot["id"], "name": slot["name"], "kind": "requirement"}
+            for slot in all_primary_requirement_slots
+            if slot["id"] in deferred_requirement_ids
+        ]
+        + [
+            {
+                "id": course_id,
+                "name": next(
+                    (course["name"] for course in active_courses if course["id"] == course_id),
+                    course_id,
+                ),
+                "kind": "course",
+            }
+            for course_id in all_current_major_courses
+            if course_id in deferred_course_ids
+            and course_id not in goal_requirements.get("required_courses", [])
+        ]
+    )
     result = generate_multiple_paths(
         completed_courses=completed_courses,
-        courses=courses,
+        courses=active_courses,
         program_id=goal_key,
         requirements=effective_requirements,
         start_semester=start_semester,
@@ -1509,7 +1687,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             "name", "Primary-major baseline"
         ),
         current_major_courses=current_major_courses,
-        course_metrics=course_metrics,
+        course_metrics=active_course_metrics,
         program_requirement_slots=(
             primary_requirement_slots + (
                 profile_inputs["program_requirement_slots"]
@@ -1549,7 +1727,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         }
         minor_result = generate_multiple_paths(
             completed_courses=completed_courses,
-            courses=courses,
+            courses=active_courses,
             program_id=minor_key,
             requirements=minor_requirements,
             start_semester=start_semester,
@@ -1570,7 +1748,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
             primary_major_reserved_units=primary_reserved_units,
             primary_major_baseline_name=primary_baseline["name"],
             current_major_courses=current_major_courses,
-            course_metrics=course_metrics,
+            course_metrics=active_course_metrics,
             program_requirement_slots=(
                 primary_requirement_slots + minor_inputs["program_requirement_slots"]
             ),
@@ -1578,6 +1756,9 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         )
         result["lower_workload"] = minor_result["fastest"]
         secondary_path_type = "minor_foundation"
+    if is_catalog_draft:
+        for path_result in (result["fastest"], result["lower_workload"]):
+            mark_catalog_draft_unresolved(path_result, display_profile)
     transfer_application_term = None
     if (
         isinstance(request, PlanningRequest)
@@ -1585,6 +1766,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         and goal.type == "internal_transfer"
         and not goal.include_post_transfer_plan
         and profile_inputs is not None
+        and not is_catalog_draft
     ):
         transfer_application_term = trim_to_transfer_application(
             result["fastest"], completed_courses, profile_inputs
@@ -1609,7 +1791,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
 
     explanation = get_path_explanation(
         completed_courses=completed_courses,
-        courses=courses,
+        courses=active_courses,
         program_id=goal_key,
         requirements=effective_requirements
     )
@@ -1625,6 +1807,16 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         if course_id in overlap_course_ids
     ]
     planning_warnings = []
+    if is_catalog_draft:
+        planning_warnings.append({
+            "code": "CATALOG_DRAFT_NOT_VERIFIED",
+            "severity": "warning",
+            "message": (
+                "Exploratory catalog draft only: parsed courses are tentative. "
+                "Unresolved requirements remain visible below; this is not a "
+                "verified degree plan or transfer-admission checklist."
+            ),
+        })
     if not result["fastest"].get("goal_complete"):
         remaining_courses = result["fastest"].get("remaining", [])
         remaining_groups = result["fastest"].get(
@@ -1650,10 +1842,17 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         if len(unresolved_labels) > 6:
             unresolved_summary += f", and {len(unresolved_labels) - 6} more"
         planning_warnings.append({
-            "code": "TARGET_DEADLINE_NOT_MET",
-            "severity": "error",
+            "code": (
+                "CATALOG_DRAFT_INCOMPLETE" if is_catalog_draft
+                else "TARGET_DEADLINE_NOT_MET"
+            ),
+            "severity": "warning" if is_catalog_draft else "error",
             "requirements": unscheduled_details,
             "message": (
+                f"{unscheduled} extracted or unverified requirements remain "
+                f"unresolved: {unresolved_summary}. This draft is not a "
+                "complete program or transfer plan."
+                if is_catalog_draft else
                 f"{unscheduled} goal requirements could not be scheduled by "
                 f"the selected completion year: {unresolved_summary}. "
                 "They remain visible as unscheduled requirements."
@@ -1676,7 +1875,7 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         for semester in result["fastest"]["path"]
         for course_id in semester.get("courses", [])
     }
-    course_by_id = {course["id"]: course for course in courses}
+    course_by_id = {course["id"]: course for course in active_courses}
     unverified_prerequisites = sorted(
         course_id for course_id in scheduled_ids
         if course_by_id.get(course_id, {}).get(
@@ -1731,11 +1930,12 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         "degree_audits": degree_audits,
         "explanation": explanation,
         "planning_warnings": planning_warnings,
+        "deferred_current_major_items": deferred_current_major_items,
         "overlap_summary": {
             "courses": shared_course_ids,
             "units": sum(
                 course["units"]
-                for course in courses
+                for course in active_courses
                 if course["id"] in shared_course_ids
             ),
             "current_major_scope": (primary_baseline or {}).get("status"),
@@ -1743,12 +1943,15 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
         "program_profile": display_profile,
         "transfer_planning": (
             {
-                "mode": "post_transfer_degree" if (
+                "mode": "catalog_exploration" if is_catalog_draft else "post_transfer_degree" if (
                     goal.include_post_transfer_plan
                     and goal.program in POST_TRANSFER_PLAN_PROGRAMS
                 ) else "eligibility",
-                "policy": transfer_policy_for_goal(goal),
-                "post_transfer_plan_available": goal.program in POST_TRANSFER_PLAN_PROGRAMS,
+                "policy": None if is_catalog_draft else transfer_policy_for_goal(goal),
+                "post_transfer_plan_available": (
+                    not is_catalog_draft
+                    and goal.program in POST_TRANSFER_PLAN_PROGRAMS
+                ),
                 "application_term": transfer_application_term,
                 "effective_term": transfer_boundary,
                 "locked_semester_count": len(locked_semesters),
@@ -1776,10 +1979,13 @@ def create_plan(request: Union[PlanningRequest, LegacyPlanRequest]):
                 "recommended_preparation": course.get(
                     "recommended_preparation", []
                 ),
-                "metrics": course_metrics.get(course["id"]),
-                "intensity": five_level_course_metric(course["id"], course["units"]),
+                "metrics": active_course_metrics.get(course["id"]),
+                "intensity": calculate_five_level_course_metric(
+                    course["id"], course["units"], active_course_metrics,
+                    fce_course_averages, INTENSITY_LABELS,
+                ),
             }
-            for course in courses
+            for course in active_courses
         },
         "minor_status": (
             {
@@ -1991,6 +2197,7 @@ async def extract_uploaded_academic_history(
                     content=content,
                 ),
                 courses,
+                schedule_database=DATA_DIR / "courses.sqlite",
             )
             for record in result["courses"]:
                 record["record_id"] = f"import-{next_record_number}"
@@ -2023,6 +2230,7 @@ def confirm_academic_history_import(request: AcademicHistoryMergeRequest):
             request.student.model_dump(),
             [record.model_dump() for record in request.courses],
             courses,
+            schedule_database=DATA_DIR / "courses.sqlite",
         )
     except AcademicHistoryImportError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error

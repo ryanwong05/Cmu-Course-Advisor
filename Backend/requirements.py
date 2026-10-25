@@ -291,6 +291,28 @@ def apply_requirement_option_preferences(
     )
 
 
+def requirement_profile_cardinality_issues(
+    profile: dict,
+    option_expander,
+    capacity_calculator,
+) -> list[dict]:
+    """Report choose-N groups whose verified candidates cannot fill N slots."""
+    issues = []
+    for group in profile.get("requirement_groups", []):
+        options = option_expander(group.get("options", []))
+        choose = group.get("choose", 1)
+        capacity = capacity_calculator(options)
+        if capacity < choose:
+            issues.append({
+                "group_id": group.get("id"),
+                "group_name": group.get("name", group.get("id")),
+                "required_choices": choose,
+                "distinct_candidate_capacity": capacity,
+                "reason": "insufficient_distinct_candidates",
+            })
+    return issues
+
+
 def resolve_curriculum_requirement_options(
     curriculum: dict | None,
     option_resolver,

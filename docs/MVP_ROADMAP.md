@@ -35,7 +35,7 @@
 | Entry-specific planner flows | 21（9.9%） |
 | Representative complete flows | 16（7.5%） |
 | Configured transfer targets | 10；9 个代表场景完整 |
-| Automated backend tests | 173 passed |
+| Automated backend tests | 176 passed |
 | Browser E2E | 0 |
 | CI workflow | 0 |
 
@@ -59,6 +59,8 @@
 
 ### 3. 建立真实 coverage/promotion gate
 
+**状态：choose-N distinct-candidate gate 已于 2026-10-16 完成。** 候选不足的 CB minor 现在降级为 `needs_review`，planner 诊断为 `insufficient_distinct_candidates`；其余 promotion 条件仍需逐步纳入自动 gate。
+
 每个 planner-ready entry 必须通过：
 
 - 官方 source URL 与 catalog year；
@@ -79,7 +81,7 @@
 
 ### 5. CI 与浏览器 smoke tests
 
-- 将现有 173 tests 放入 CI。
+- 将现有 176 tests 放入 CI。
 - 明确使用 `unittest`，或正式加入 pytest dependency；不能 README 写 pytest、环境却没有。
 - Playwright/等价工具覆盖：创建计划、completed 不重复、换课、移动、保存恢复、unsupported program、import review。
 
@@ -150,7 +152,7 @@
 
 **Day 5: CI and browser smoke**
 
-- CI 跑 173 tests + coverage audit。
+- CI 跑 176 tests + coverage audit。
 - 浏览器 smoke 覆盖 generate/edit/reload/import-review。
 
 ### Week 2 — Canonical editing and pilot
@@ -231,6 +233,6 @@
 
 ## 最值得做的下一项工作
 
-**下一张任务应是 choose-N distinct-candidate promotion gate（BUG-003），随后建立 canonical editable plan + revalidation。**
+**下一张任务应是统一 scoped readiness 的所有消费点（BUG-004），随后建立 canonical editable plan + revalidation（BUG-005）。**
 
-原因：prerequisite closure 与 audit resolver 已完成并通过 173 个测试。当前最小 MVP 的主要可信度风险已经转为“数据候选集是否真的足够满足 choose-N”以及“用户编辑后各视图是否仍基于同一个计划状态”。
+原因：prerequisite closure、audit resolver 与 choose-N cardinality gate 已完成并通过 176 个测试。当前最小 MVP 的主要可信度风险已经转为“各入口是否诚实展示自己支持的 flow”以及“用户编辑后各视图是否仍基于同一个计划状态”。

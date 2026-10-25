@@ -1,9 +1,11 @@
 import io
 import unittest
+from datetime import date
 
 from PIL import Image
 
 import app
+from pydantic import ValidationError
 from Backend.academic_history_import import (
     AcademicHistoryFile,
     AcademicHistoryImportError,
@@ -12,6 +14,7 @@ from Backend.academic_history_import import (
     extract_academic_history,
     merge_academic_history,
     normalize_course_id,
+    parse_sio_academic_record_layout_text,
 )
 from Engine.availability import prerequisites_satisfied
 from Engine.student_state import derive_academic_state
@@ -82,6 +85,78 @@ class AcademicHistoryImportTests(unittest.TestCase):
         self.assertEqual(result["recognized_count"], 3)
         self.assertTrue(all(record["catalog_validated"] for record in result["courses"]))
 
+    def test_sio_record_distinguishes_prior_credit_current_and_final_grade(self):
+        layout_text = """
+        Beginning of Undergraduate Record
+        Advanced Placement / Transfer Credits
+        DPT CRS # COURSE TITLE UNITS FINAL GRADE
+        MSC 21120 DIFFERENTIAL INT CAL 10.0 AD
+        Fall 2026
+        DPT CRS # COURSE TITLE UNITS FINAL GRADE QUALITY POINTS
+        CS 15112 FNDMTLS OF PGMG & CS 12.0 0.0
+        MSC 21127 CONCEPTS OF MATHMTCS 12.0 0.0
+        Spring 2026
+        STA 36200 REASONING DATA 9.0 A 36.0
+        End of Undergraduate Record
+        """
+        result = parse_sio_academic_record_layout_text(
+            layout_text, as_of=date(2026, 10, 19)
+        )
+        self.assertEqual(
+            [(row["course_id"], row["status"], row["semester"], row["year"])
+             for row in result["courses"]],
+            [
+                ("21120", "completed", None, None),
+                ("15112", "in_progress", "fall", 2026),
+                ("21127", "in_progress", "fall", 2026),
+                ("36200", "completed", "spring", 2026),
+            ],
+        )
+
+    def test_ungraded_past_term_is_not_assumed_completed(self):
+        result = parse_sio_academic_record_layout_text(
+            "Fall 2025\nCS 15112 FNDMTLS OF PGMG & CS 12.0 0.0",
+            as_of=date(2026, 10, 19),
+        )
+        self.assertIsNone(result["courses"][0]["status"])
+
+    def test_schedule_backed_course_can_be_imported_without_manual_catalog_entry(self):
+        course_id = "66-136"
+        small_catalog = [course for course in self.catalog if course["id"] != course_id]
+        document = AcademicHistoryFile("sio.pdf", "application/pdf", b"%PDF-1.7\nfixture")
+        raw = {"courses": [{
+            "course_id": "66136", "semester": "fall", "year": 2026,
+            "status": "in_progress",
+        }]}
+        result = extract_academic_history(
+            document, small_catalog, MockAcademicHistoryExtractor(raw),
+            schedule_database=app.DATA_DIR / "courses.sqlite",
+        )
+        self.assertEqual(result["courses"][0]["course_id"], course_id)
+        self.assertTrue(result["courses"][0]["catalog_validated"])
+        merged = merge_academic_history(
+            {}, result["courses"], small_catalog,
+            schedule_database=app.DATA_DIR / "courses.sqlite",
+        )
+        self.assertEqual(merged["student"]["in_progress_courses"], [course_id])
+
+    def test_documented_prior_credit_needs_no_invented_term(self):
+        raw = {"courses": [{
+            "course_id": "21120", "semester": None, "year": None,
+            "status": "completed", "grade": "AD",
+        }]}
+        result = extract_academic_history(
+            AcademicHistoryFile("sio.pdf", "application/pdf", b"%PDF-1.7\nfixture"),
+            self.catalog, MockAcademicHistoryExtractor(raw),
+        )
+        self.assertNotIn("term_needs_review", result["courses"][0]["issues"])
+        record = app.AcademicHistoryCourseRecord(**result["courses"][0])
+        self.assertIsNone(record.semester)
+        with self.assertRaises(ValidationError):
+            app.AcademicHistoryCourseRecord(
+                course_id="15-112", status="completed", grade=None,
+            )
+
     def test_normalization_accepts_only_unambiguous_five_digit_ids(self):
         self.assertEqual(normalize_course_id("15112"), "15-112")
         self.assertEqual(normalize_course_id("15 112"), "15-112")
@@ -132,6 +207,41 @@ class AcademicHistoryImportTests(unittest.TestCase):
         self.assertIn("15-112", state["completed_courses"])
         self.assertEqual(state["in_progress_courses"], ["21-127"])
         self.assertEqual(state["planned_courses"], ["36-200"])
+
+    def test_in_progress_course_is_used_for_plan_but_not_marked_completed(self):
+        merged_student = merge_academic_history(
+            {
+                "college": "dietrich",
+                "primary_major": "linguistics",
+                "year": 1,
+                "enrollment_status": "enrolled",
+                "current_term": "fall",
+            },
+            [{
+                "course_id": "21-127", "semester": "fall", "year": 2026,
+                "status": "in_progress",
+            }],
+            self.catalog,
+        )["student"]
+        state = derive_academic_state(merged_student, app.expand_completed_courses)
+        self.assertNotIn("21-127", state["completed_courses"])
+        self.assertIn("21-127", state["accumulated_courses"])
+        result = app.create_plan(app.PlanningRequest(
+            student=app.StudentState(**merged_student),
+            goals=[app.PlanningGoal(
+                type="internal_transfer", college="scs", program="computer-science",
+            )],
+        ))
+        self.assertNotIn("21-127", scheduled_course_ids(result))
+        merged_student["in_progress_courses"] = []
+        merged_student["academic_history"] = []
+        after_drop = app.create_plan(app.PlanningRequest(
+            student=app.StudentState(**merged_student),
+            goals=[app.PlanningGoal(
+                type="internal_transfer", college="scs", program="computer-science",
+            )],
+        ))
+        self.assertIn("21-127", scheduled_course_ids(after_drop))
 
     def test_manual_and_imported_source_have_identical_planning_effect(self):
         imported = merge_academic_history(

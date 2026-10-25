@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import patch
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from Scripts.data_pipeline.scrape_program_directory import (
     annotate_program_availability,
@@ -8,7 +9,10 @@ from Scripts.data_pipeline.scrape_program_directory import (
     merge_reviewed_inventory_entries,
     planning_identity,
 )
-from Scripts.data_pipeline.audit_program_coverage import transfer_policy_coverage
+from Scripts.data_pipeline.audit_program_coverage import (
+    cached_curriculum_quality,
+    transfer_policy_coverage,
+)
 
 
 class ProgramDirectoryPipelineTests(unittest.TestCase):
@@ -154,6 +158,42 @@ class ProgramDirectoryPipelineTests(unittest.TestCase):
         self.assertEqual(result["catalog_primary_major_count"], 3)
         self.assertEqual(result["published_transfer_profile_count"], 2)
         self.assertEqual(result["coverage_percent"], 66.7)
+
+    def test_cached_quality_audit_rechecks_old_validation_flags(self):
+        program = {
+            "id": "history--minor", "name": "History", "credential": "Minor",
+            "program_type": "minor", "source_url": "https://example.test/history/",
+        }
+        html = """
+        <main><h3>Curriculum</h3><h4>History minor 54 units</h4>
+        <h5>Survey Courses 18 units</h5><p>Choose two courses.</p>
+        <table><tr><td>79-110</td><td>Survey A</td><td>9</td></tr>
+        <tr><td>79-112</td><td>Survey B</td><td>9</td></tr></table>
+        <h5>History electives 36 units</h5><p>Complete 36 elective units.</p>
+        </main>
+        """
+        with TemporaryDirectory() as temporary:
+            cache = Path(temporary)
+            (cache / "history--minor.html").write_text(html, encoding="utf-8")
+            with patch(
+                "Scripts.data_pipeline.audit_program_coverage.SCRAPED_CURRICULA_DIR",
+                cache,
+            ), patch(
+                "Scripts.data_pipeline.audit_program_coverage.scheduled_course_ids",
+                return_value={"79-110", "79-112"},
+            ):
+                result = cached_curriculum_quality(
+                    [program],
+                    {"history--minor": {
+                        "source_hash": "old", "validation": {"promotion_ready": True},
+                    }},
+                )
+        assessment = result["assessments"]["history--minor"]
+        self.assertEqual(assessment["status"], "needs_review")
+        self.assertTrue(any("History electives 36 units" in item for item in assessment["blockers"]))
+        self.assertEqual(
+            result["summary"]["blocker_counts"]["unparsed_unit_requirement"], 1
+        )
 
 
 if __name__ == "__main__":

@@ -210,6 +210,95 @@ class MajorCurriculumPipelineTests(unittest.TestCase):
         self.assertEqual(result["track_rule"]["type"], "unresolved")
         self.assertTrue(any("track-selection" in blocker for blocker in validation["blockers"]))
 
+    def test_duplicate_choice_candidates_block_promotion(self):
+        curriculum = {
+            "fixed_courses": [],
+            "requirement_groups": [{
+                "id": "depth",
+                "choose": 2,
+                "options": ["15-210", "15-210"],
+            }],
+            "extraction": {"status": "high_confidence_candidate"},
+        }
+        validation = validate_curriculum(curriculum, {"15-210"})
+        self.assertFalse(validation["promotion_ready"])
+        self.assertTrue(any(
+            "Invalid choice counts" in blocker
+            for blocker in validation["blockers"]
+        ))
+
+    def test_prose_only_elective_units_block_incomplete_extraction(self):
+        html = """
+        <main><h3>Curriculum</h3><h4>Minor 54 units</h4>
+        <h5>Survey Courses 18 units</h5><p>Choose two courses.</p>
+        <table><tr><td>79-110</td><td>Survey A</td><td>9</td></tr>
+        <tr><td>79-112</td><td>Survey B</td><td>9</td></tr></table>
+        <h5>Elective Courses 36 units</h5>
+        <p>Complete 36 units of approved electives.</p></main>
+        """
+        program = {"id": "example--minor", "name": "Example", "credential": "Minor",
+                   "source_url": "https://example.test"}
+        curriculum = parse_curriculum_html(html, program)
+        curriculum["extraction"]["status"] = "high_confidence_candidate"
+        validation = validate_curriculum(curriculum, {"79-110", "79-112"})
+        self.assertFalse(validation["promotion_ready"])
+        self.assertTrue(any(
+            "Elective Courses 36 units" in blocker for blocker in validation["blockers"]
+        ))
+
+    def test_large_unit_bucket_is_not_three_ordinary_course_choices(self):
+        curriculum = {
+            "fixed_courses": [],
+            "requirement_groups": [{
+                "id": "general-studies", "choose": 3, "units": 194,
+                "options": ["48-025", "48-026", "76-101"],
+                "selection_rule": {"type": "minimum_units", "minimum_units": 194},
+            }],
+            "extraction": {"status": "high_confidence_candidate"},
+        }
+        validation = validate_curriculum(curriculum, {"48-025", "48-026", "76-101"})
+        self.assertFalse(validation["promotion_ready"])
+        self.assertTrue(any(
+            "requires 194 units" in blocker for blocker in validation["blockers"]
+        ))
+
+    def test_missing_required_course_or_insufficient_group_choices_blocks_planning(self):
+        curriculum = {
+            "fixed_courses": [{"id": "15-112", "units": 12}],
+            "requirement_groups": [{
+                "id": "electives", "choose": 2, "units": 18,
+                "options": ["15-122", "15-150", "15-210"],
+            }],
+            "extraction": {"status": "high_confidence_candidate"},
+        }
+        validation = validate_curriculum(curriculum, {"15-122"})
+        self.assertFalse(validation["promotion_ready"])
+        self.assertTrue(any("Required courses absent" in item for item in validation["blockers"]))
+        self.assertTrue(any("Too few schedulable" in item for item in validation["blockers"]))
+
+    def test_bundle_course_ids_are_checked_individually(self):
+        curriculum = {
+            "fixed_courses": [],
+            "requirement_groups": [{
+                "id": "calculus", "choose": 1, "units": 20,
+                "options": ["21-111 + 21-112", "21-120"],
+            }],
+            "extraction": {"status": "high_confidence_candidate"},
+        }
+        validation = validate_curriculum(curriculum, {"21-111", "21-112", "21-120"})
+        self.assertTrue(validation["promotion_ready"])
+        self.assertEqual(validation["missing_schedule_course_ids"], [])
+
+    def test_missing_schedule_database_does_not_pass_quality_gate(self):
+        curriculum = {
+            "fixed_courses": [{"id": "15-112", "units": 12}],
+            "requirement_groups": [],
+            "extraction": {"status": "high_confidence_candidate"},
+        }
+        validation = validate_curriculum(curriculum, set())
+        self.assertFalse(validation["promotion_ready"])
+        self.assertTrue(any("database is unavailable" in item for item in validation["blockers"]))
+
     def test_shared_credit_is_extracted_as_reviewable_policy_signal(self):
         signals = shared_credit_signals(
             "Students may double-count at most two courses with another minor. "

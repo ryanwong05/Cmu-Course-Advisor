@@ -1,5 +1,6 @@
 import unittest
 from copy import deepcopy
+from pathlib import Path
 
 import app
 from Engine.student_state import (
@@ -144,6 +145,37 @@ class AcademicStateTests(unittest.TestCase):
         self.assertNotIn("21-127", scheduled_course_ids(result["fastest"]["path"]))
         profile = app.get_program_profile("computer-science", "internal_transfer")
         self.assertIn("21-127", {course["id"] for course in profile["fixed_courses"]})
+
+    def test_in_progress_prerequisite_is_reserved_for_future_plan_and_path_edits(self):
+        request = app.PlanningRequest(
+            student=app.StudentState(
+                college="dietrich",
+                primary_major="stats-ml",
+                year=1,
+                completed_courses=[],
+                academic_history=[
+                    {"course_id": "21-127", "semester": "fall", "year": 2026, "status": "in_progress"},
+                    {"course_id": "15-112", "semester": "fall", "year": 2026, "status": "in_progress"},
+                ],
+            ),
+            goals=[app.PlanningGoal(
+                type="additional_major",
+                college="scs",
+                program="computer-science",
+            )],
+            constraints=app.PlanningConstraints(start_semester="spring"),
+        )
+        result = app.create_plan(request)
+        scheduled = scheduled_course_ids(result["fastest"]["path"])
+        self.assertIn("15-150", scheduled)
+        self.assertNotIn("21-127", scheduled)
+        self.assertNotIn("15-112", scheduled)
+
+        frontend = (Path(__file__).parents[1] / "static" / "app.js").read_text(encoding="utf-8")
+        self.assertIn("...(appState.student.in_progress_courses || [])", frontend)
+        self.assertIn("availableBeforePlan.has(prerequisite)", frontend)
+        continuation_reset = frontend.split("function clearTransferContinuation() {", 1)[1].split("\n}", 1)[0]
+        self.assertNotIn("student.in_progress_courses = []", continuation_reset)
 
     def test_locked_target_credit_is_not_scheduled_again(self):
         initial_result = app.create_plan(self.ece_transfer_request())

@@ -257,6 +257,7 @@ def build_degree_audits(
             ),
         }
     else:
+        is_catalog_draft = profile.get("policy_status") == "catalog_extracted_unverified"
         total = profile.get("minimum_courses", 0)
         official_fixed = set(profile.get("required_course_ids", []))
         remaining_fixed = path_result.get("remaining", [])
@@ -275,7 +276,9 @@ def build_degree_audits(
         goal_audit = {
             "type": goal.type,
             "program": goal.program,
-            "status": "scheduled" if all_scheduled else "partially_scheduled",
+            "status": "catalog_draft" if is_catalog_draft else (
+                "scheduled" if all_scheduled else "partially_scheduled"
+            ),
             "all_requirements_scheduled": all_scheduled,
             "total_requirements": total,
             "requirements_scheduled": placed,
@@ -288,11 +291,15 @@ def build_degree_audits(
                 profile, student.completed_courses
             ),
             "minimum_units": profile.get("minimum_units"),
-            "requirements_verified": True,
+            "requirements_verified": not is_catalog_draft,
             "message": (
-                "All published curriculum requirements are scheduled; they are not marked academically completed until the student reports completion."
-                if remaining == 0
-                else f"{remaining} curriculum requirements remain outside this planning horizon."
+                "Exploratory catalog draft only; unresolved rules require advisor review."
+                if is_catalog_draft
+                else (
+                    "All published curriculum requirements are scheduled; they are not marked academically completed until the student reports completion."
+                    if remaining == 0
+                    else f"{remaining} curriculum requirements remain outside this planning horizon."
+                )
             ),
             **_requirement_progress(
                 profile,

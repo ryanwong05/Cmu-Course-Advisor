@@ -6,7 +6,7 @@
 
 当前最危险的不是 UI 小瑕疵，而是三类可信度问题：**合法课程链无法排出、同一计划的不同 audit 给出不同数字、产品把“可转入”误写成“这个项目本身可规划”**。另外，Computational Biology minor 的已验证候选集不足以满足 choose-N，却被误报成 planning horizon 不够；结果页的手工编辑也没有回到后端 canonical state 重新审计。
 
-当前 173 个 `unittest` 全部通过。BUG-001 与 BUG-002 已修复并补回归，其余条目仍说明需要更多 cross-layer invariants。
+当前 176 个 `unittest` 全部通过。BUG-001、BUG-002 与 BUG-003 已修复并补回归，其余条目仍说明需要更多 cross-layer invariants。
 
 ## BUG-001 — 当前 CS 主修不会自动铺设先修链
 
@@ -37,7 +37,7 @@
 ## BUG-003 — Computational Biology minor 的 choose-3 只有两个不同候选
 
 - **Severity:** P1
-- **状态:** Confirmed data defect + misleading diagnostic
+- **状态:** Resolved in validation/diagnostics 2026-10-16；policy data 仍待补全
 - **影响文件:** `Data/processed/program_profiles.json:28`、`Backend/requirements.py`、`Engine/planning.py:195-325`
 - **复现:** Stats/ML current major + Computational Biology minor，规划到 Senior Spring。
 - **Expected:** `cb-electives` 的 verified candidate set 至少包含 3 个可区分的合法 300-level Computational Biology courses；若数据不足，项目不得标为完整可规划，并应提示 candidate set 不完整。
@@ -45,6 +45,7 @@
 - **Root cause:** profile 在 promotion 时没有校验 `distinct expanded candidates >= choose`；unscheduled diagnostics 只看到 option 非空，没有检测多个 slot 竞争同一不可复用候选。
 - **Smallest robust fix:** 在 data audit/promotion gate 加入 distinct-candidate cardinality check；补课程前必须核验官方 policy/catalog，不可猜测。Planner diagnostic 应识别 `insufficient_distinct_candidates`。
 - **Regression test:** 所有 planner-ready choose-N groups 在扣除 bundle/重复后候选数不少于 N；人工构造不足案例必须输出明确原因且不称为 horizon exhausted。
+- **Implemented:** 增加 course-disjoint candidate capacity 计算；CB minor 在目录中降级为 `needs_review`，并携带结构化 validation issue。若内部仍生成该计划，剩余 slot 明确返回 `insufficient_distinct_candidates`。没有猜测或补写新的 CMU 课程。
 
 ## BUG-004 — 广义 planning status 混淆“可转入”和“可作为当前主修规划”
 
@@ -140,7 +141,7 @@
 ## 修复顺序
 
 1. ✅ BUG-001（CS prerequisite closure）与 BUG-002（audit 单一口径）已完成。
-2. BUG-003（候选 cardinality/promotion gate）。
+2. ✅ BUG-003（候选 cardinality/promotion gate）已完成；官方候选数据仍待补全后再提升 CB minor readiness。
 3. BUG-004（readiness 诚实展示）。
 4. BUG-005（canonical edits/re-audit）。
 5. BUG-006（upload aggregate limits）。

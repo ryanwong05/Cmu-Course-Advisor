@@ -1,6 +1,6 @@
 {
   "catalog_year": "2026-2027",
-  "generated_at": "2026-09-23T20:23:29.626223+00:00",
+  "generated_at": "2026-10-19T03:05:27.381474+00:00",
   "overall": {
     "total": 213,
     "planning_ready": 25,
@@ -62,6 +62,21 @@
     "unique_curriculum_pages_extracted": 193,
     "automatic_promotion_candidates": 88,
     "verified_planner_ready": 25
+  },
+  "cached_curriculum_quality": {
+    "pages_checked": 193,
+    "structurally_valid_candidates": 46,
+    "needs_review_or_failed": 147,
+    "blocker_counts": {
+      "unresolved_selection_rule": 43,
+      "unparsed_unit_requirement": 41,
+      "missing_required_scheduling_data": 35,
+      "implausible_group_units": 19,
+      "insufficient_schedulable_choices": 17,
+      "implausible_total_units": 5,
+      "unresolved_track_rule": 4,
+      "possible_table_contamination": 1
+    }
   },
   "official_inventory_diff": {
     "a_z_directory_entries": 193,
@@ -579,7 +594,7 @@
     "note": "Transfer eligibility is an admission-policy dataset; degree curriculum extraction does not automatically create these profiles."
   },
   "pipeline_gaps": [
-    "All primary majors, additional majors, and minors are extracted, but ambiguous catalog structures remain in the review queue.",
+    "Cached pages have been structurally checked; this does not verify academic policy or authorize planner promotion.",
     "Unit-threshold, concentration, substitution, and shared-course rules need richer normalized policy data before automatic promotion.",
     "Internal-transfer admission policies remain a separate data source and cannot be inferred from degree curricula.",
     "Directory-only programs must not be promoted until requirement groups and sources are validated."
@@ -595,7 +610,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/undergraduatecomputerscience/computer-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": "computer-science--b-s"
       }
     ],
@@ -610,6 +626,11 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "8 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 79-278, 79-314, 79-317, 79-318, 79-332, 79-379",
+          "Too few schedulable course choices: regional-courses-1"
+        ],
         "requirements_source_program_id": "anthropology--b-a"
       },
       {
@@ -621,7 +642,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": "behavioral-economics--b-s"
       },
       {
@@ -634,6 +656,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-additional-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "2 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -646,6 +671,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-engineering-additional-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Multiple tracks require an explicit track-selection rule.",
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -658,6 +687,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofbiomedicalengineering/biomedical-technology-additional-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Multiple tracks require an explicit track-selection rule.",
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -669,7 +702,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-additional-major/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -682,6 +716,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": "chemistry--b-s"
       },
       {
@@ -693,7 +730,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 85-412"
+        ],
         "requirements_source_program_id": "cognitive-science--b-s"
       },
       {
@@ -706,7 +746,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": "computational-finance--b-s"
       },
       {
@@ -718,7 +759,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": "decision-science--b-s"
       },
       {
@@ -730,7 +772,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 9. Economics Electives 18 units"
+        ],
         "requirements_source_program_id": "economics-and-statistics--b-s"
       },
       {
@@ -743,6 +788,11 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/integratedinnovationinstitute/engineering-design-innovation-entrepreneurship-additional-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Home Department Engineering Design Capstone (12 units)",
+          "3 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 49-101"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -755,6 +805,17 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-arts-additional-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Architecture Electives (51 units minimum), Intermediate Studios (3 courses, 30 units), Dramaturgy Electives (50 units minimum), Music Composition Electives (23 units minimum), Music Performance Electives (23 units minimum)",
+          "Group architecture-required-courses-9-courses-57-units-minimum requires 57 units but its listed options can cover at most 36 units.",
+          "Group music-composition-required-courses-13-courses-85-units requires 85 units but its listed options can cover at most 36 units.",
+          "Group music-performance-required-courses-13-courses-85-units requires 85 units but its listed options can cover at most 36 units.",
+          "Group music-technology-audio-recording-production-required-courses-8-courses-49-units requires 49 units but its listed options can cover at most 36 units.",
+          "Group audio-recording-production-electives-59-units-minimum requires 59 units but its listed options can cover at most 36 units.",
+          "Group music-technology-sound-theory-practice-required-courses-7-courses-44-units requires 44 units but its listed options can cover at most 36 units.",
+          "Group sound-theory-practice-electives-64-units-minimum requires 64 units but its listed options can cover at most 36 units.",
+          "Extracted requirement total is implausible (643 units)."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -766,7 +827,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/engineering-public-policy-additional-major/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 19-101"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -778,7 +842,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-additional-major/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 03-128, 09-538, 19-101, 33-226, 66-237, 66-506, 73-427, 88-366"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -791,6 +858,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": "ethics-history-and-public-policy--b-a-b-s"
       },
       {
@@ -802,7 +872,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/health-humanities-additional-major/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Capstone Project (9 units)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -814,7 +887,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: V. Courses in Other Departments that Satisfy History Elective Requirements (up to 27 units)",
+          "Too few schedulable course choices: iv-history-elective-courses-45-units"
+        ],
         "requirements_source_program_id": "history--b-a"
       },
       {
@@ -826,7 +903,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Logic and Computation Electives 36 units"
+        ],
         "requirements_source_program_id": "logic-and-computation--b-s"
       },
       {
@@ -839,6 +919,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Extracted requirement total is implausible (425 units).",
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": "mathematical-sciences--b-s"
       },
       {
@@ -851,6 +935,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Area 6: Elective 27 units"
+        ],
         "requirements_source_program_id": "philosophy--b-a"
       },
       {
@@ -863,6 +950,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-additional-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -875,6 +965,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": "policy-and-management--b-s"
       },
       {
@@ -887,6 +980,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Advanced Courses 18 units, Natural Science Requirement, B.A./B.S. 18 units/27 units"
+        ],
         "requirements_source_program_id": "psychology--b-a-b-s"
       },
       {
@@ -899,6 +995,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": "science-technology-and-society--b-s"
       },
       {
@@ -910,7 +1007,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofengineeringandpublicpolicy/science-technology-public-policy-additional-major/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 19-101"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -922,7 +1022,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 7. Self-Defined Concentration Area (with advisor's approval) 36 units"
+        ],
         "requirements_source_program_id": "statistics-and-data-science--b-s"
       },
       {
@@ -934,7 +1037,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": "statistics-and-data-science-mathematical-sciences-track--b-s"
       },
       {
@@ -946,7 +1050,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Group 1-mathematical-foundations-prerequisites-39-52-units requires 52 units but its listed options can cover at most 36 units."
+        ],
         "requirements_source_program_id": "statistics-and-data-science-neuroscience-track--b-s"
       },
       {
@@ -958,7 +1065,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-machine-learning-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Group 6-machine-learning-computer-science-57-60-units requires 60 units but its listed options can cover at most 36 units."
+        ],
         "requirements_source_program_id": "statistics-and-machine-learning--b-s"
       }
     ],
@@ -973,6 +1083,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/additive-manufacturing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -984,7 +1095,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/african-african-american-studies-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 79-226, 79-227, 79-242"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -996,7 +1110,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/american-politics-law-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1009,6 +1124,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/animation-special-effects-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1020,7 +1136,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 79-314, 79-317, 79-332, 79-379"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1033,6 +1152,12 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/arabic-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 2. Arabic Studies and Interdisciplinary Electives (1 course, 9 units)",
+          "8 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 19-411, 85-421",
+          "Too few schedulable course choices: interdisciplinary-electives-1"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1044,7 +1169,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-design-fabrication-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1057,6 +1183,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-representation-visualization-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1068,7 +1197,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architectural-technology-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1080,7 +1210,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1093,6 +1224,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/architecture-history-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1105,6 +1237,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/art-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Too few schedulable course choices: art-studio-courses-choose-5-50-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1116,7 +1251,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/audio-engineering-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 57-329, 57-330"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1128,7 +1266,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1140,7 +1279,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1153,6 +1293,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/biomedical-engineering-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1165,6 +1306,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/building-science-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1176,7 +1320,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/business-analytics-optimization-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1189,6 +1334,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1201,6 +1347,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/chinese-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "6 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 85-421"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1213,6 +1363,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-neuroscience-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 85-314, 85-412, 85-432, 86-375"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1224,7 +1378,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/collaborative-piano-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1237,6 +1392,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/colloids-polymers-surfaces-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules.",
+          "Too few schedulable course choices: primary-requirement"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1249,6 +1408,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/computational-design-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1261,7 +1423,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1273,7 +1436,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/conducting-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1286,6 +1450,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 200-level or above English Elective (1 course) 9 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1297,7 +1464,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/cybersecurity-international-conflict-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1309,7 +1477,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-making-intelligent-systems-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 88-270",
+          "Too few schedulable course choices: integrating-ai-and-decision-making-advanced-course-9-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1322,6 +1494,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Elective Courses 18 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1334,6 +1509,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/design-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1346,6 +1522,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/design-learning-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Design for Learning Minor Minimum of 45 Units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1358,6 +1537,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/discrete-mathematics-logic-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1370,6 +1550,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/drama-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "2 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1381,7 +1564,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/economics-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Economics Electives (27 Units)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1394,6 +1580,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/electronic-materials-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Too few schedulable course choices: 54-units-from-the-following-courses-1-2-3"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1406,6 +1595,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/engineering-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 24-280"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1418,6 +1610,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/environmental-sustainability-studies/environmental-sustainability-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 66-237"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1430,6 +1625,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/ethics-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1442,6 +1638,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1453,7 +1650,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/financial-management-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1466,6 +1664,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/game-design-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1478,6 +1677,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/gender-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1490,6 +1690,11 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/german-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "6 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 85-421",
+          "Too few schedulable course choices: 1-foundational-courses-in-german-studies-5-courses-45-units, interdisciplinary-electives-1, interdisciplinary-electives-1"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1502,6 +1707,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/global-engineering-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1514,6 +1720,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-french-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 2. French and Francophone Studies Electives (1 course, 9 units)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1526,6 +1735,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/health-care-policy-management-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "4 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1538,6 +1750,11 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/hispanic-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "4 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 48-348",
+          "Too few schedulable course choices: list-b-interdisciplinary-electives-1"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1549,7 +1766,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: II. Elective Courses for the Minor in History 36 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1562,6 +1782,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/humanities-analytics-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1574,6 +1795,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/immersive-technologies-arts-culture-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1585,7 +1807,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/information-security-privacy-policy-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1597,7 +1820,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/innovation-entrepreneurship-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Innovation & Entrepreneurship Minor Minimum 54 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1610,6 +1836,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/intelligent-environments-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1621,7 +1848,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1634,6 +1862,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/japanese-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "5 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 85-421"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1646,6 +1878,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/language-technologies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 11-324"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1657,7 +1893,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 80-283, 80-286, 80-287, 80-288, 80-382, 80-385, 80-388, 80-484"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1670,6 +1909,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1682,6 +1922,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/logic-computation-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Logic and Computation Electives 27 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1694,6 +1937,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/materials-science-engineering-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1705,7 +1949,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1717,7 +1962,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/mechanical-behaviors-of-materials-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Too few schedulable course choices: core-courses-1-alternative-2"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1730,6 +1978,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/media-design-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1741,7 +1990,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/medical-decision-making-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1753,7 +2003,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/military-strategy-international-relations-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1765,7 +2016,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 57-329"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1777,7 +2031,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-education-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1789,7 +2044,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/music-technology-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 57-329"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1802,6 +2060,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neural-computation-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "4 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1814,6 +2075,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/neuroscience-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1826,6 +2088,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Philosophy Electives 18 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1838,6 +2103,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/photography-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Photography Studio Elective 10 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1850,6 +2118,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/physical-computing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Physical Computing Minor Minimum of 45 Units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1862,6 +2133,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1873,7 +2147,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1885,7 +2160,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 84-349"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1898,6 +2176,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/politics-public-policy-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1909,7 +2188,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/minors/product-management-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1922,6 +2202,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 200-level or Above English Elective (1 course) 9 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1934,6 +2217,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Advanced Psychology Courses 18 units, Psychology Elective 9 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1945,7 +2231,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/rationality-uncertainty-choice-formal-methods-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1957,7 +2244,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/religious-studies-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 79-110, 79-342, 79-392, 80-276, 82-215"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -1970,6 +2260,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/russian-studies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1981,7 +2272,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -1994,6 +2286,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/minors/scientific-computing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: D. Applied Scientific Computing Research Project(s) (9 units), E. Complete any (1) additional course from category C or D (9 units)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2006,6 +2301,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/societal-computing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "2 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2017,7 +2315,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/societal-human-impacts-future-technologies-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2030,6 +2329,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/sociology-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2042,6 +2342,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/soft-technologies-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Soft Technologies Minor Minimum of 45 Units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2053,7 +2356,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/schoolofcomputerscience/minors/software-engineering-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2066,6 +2370,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/ideate/sonic-arts-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Sonic Arts Minor Minimum of 45 Units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2077,7 +2384,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-minor/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2090,6 +2398,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/qatar/tech-entrepreneurship-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2102,6 +2411,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2114,6 +2424,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/minors/technology-policy-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 19-101"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2126,6 +2439,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/minors/history-arts-minor/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       }
     ],
@@ -2140,6 +2454,11 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/anthropology-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "8 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 79-278, 79-314, 79-317, 79-318, 79-332, 79-379",
+          "Too few schedulable course choices: regional-courses-1"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2151,7 +2470,12 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Group general-studies-electives-194-units requires 194 units but its listed options can cover at most 108 units.",
+          "Required courses absent from the scheduling database: 48-234",
+          "Too few schedulable course choices: general-studies-electives-194-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2164,6 +2488,12 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofarchitecture/architecture-barch/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Group general-studies-electives-122-units requires 122 units but its listed options can cover at most 108 units.",
+          "Extracted requirement total is implausible (438 units).",
+          "Required courses absent from the scheduling database: 48-234",
+          "Too few schedulable course choices: general-studies-electives-122-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2176,6 +2506,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofart/art-bfa/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2187,7 +2520,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/behavioral-economics-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2200,6 +2534,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2212,6 +2549,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Multiple tracks require an explicit track-selection rule.",
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2223,7 +2564,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofbiologicalsciences/biological-sciences-psychology-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Additional Advanced Elective 9 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2235,7 +2579,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduatebusinessadministrationprogram/business-administration-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2247,7 +2592,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofchemicalengineering/chemical-engineering-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 06-362"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2259,7 +2607,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2272,6 +2621,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2283,7 +2635,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofchemistry/chemistry-biological-chemistry-track-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Biological Chemistry Electives (minimum 27 units required)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2296,6 +2651,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/civil-engineering-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "9 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2307,7 +2665,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/cognitive-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 85-412"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2319,7 +2680,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/composition-bfa/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2332,7 +2694,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/computational-finance/computational-finance-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2345,6 +2708,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/creative-writing-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 300 or 400-Level English Electives (2 courses) 18 units minimum"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2356,7 +2722,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/decision-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2368,7 +2735,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdesign/design-bdes/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Too few schedulable course choices: fall-1-alternative-2"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2381,6 +2751,12 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofdrama/drama-bfa/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Implausibly large extracted curriculum; likely schedule/table contamination.",
+          "Extracted requirement total is implausible (446 units).",
+          "70 requirement groups have unresolved selection rules.",
+          "Required courses absent from the scheduling database: 54-011, 54-121, 54-122, 54-167, 54-168, 54-517"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2392,7 +2768,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Economics Electives (36 Units)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2404,7 +2783,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Economics Electives (54 Units)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2417,6 +2799,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/tepper/undergraduateeconomicsprogram/economics-mathematical-sciences-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Economic Electives (27 Units)",
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2428,7 +2814,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/economics-politics-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 84-500"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2440,7 +2829,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/economics-statistics-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 9. Economics Electives 18 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2452,7 +2844,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/electronic-music-bfa/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: FOURTH-YEAR FALL (45 units)",
+          "Required courses absent from the scheduling database: 57-359"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2465,6 +2861,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/engineering-studies-arts/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2477,6 +2874,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/departmentofcivilandenvironmentalengineering/environmental-engineering-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "5 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2489,6 +2889,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/interdisciplinary/ethics-history-public-policy-ba-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2501,6 +2904,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/film-visual-media-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2513,6 +2917,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/general-studies-major/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2525,6 +2930,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/global-cultures-emerging-technologies-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: III. Interdisciplinary Electives (3 courses; 27 units)",
+          "2 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2536,7 +2945,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/history-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: V. Courses in Other Departments that Satisfy History Elective Requirements (up to 27 units)",
+          "Too few schedulable course choices: iv-history-elective-courses-45-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2549,6 +2962,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/humanities-arts/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2560,7 +2974,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/international-relations-political-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Language Requirement 9 units",
+          "Too few schedulable course choices: senior-seminar-9-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2573,6 +2991,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentoflanguagesculturesappliedlinguistics/languages-cultures-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: II. LCAL Elective (1 course; 9 units), III. Language and Culture Concentration Courses (8 courses; 72 units minimum)"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2584,7 +3005,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/linguistics-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2597,6 +3019,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/literature-culture-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: English electives (3 courses) 27 units minimum"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2609,6 +3034,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeofengineering/materialsscienceandengineering/materials-science-engineering-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2620,7 +3048,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-ba/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2633,6 +3062,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Extracted requirement total is implausible (425 units).",
+          "6 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2645,6 +3078,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofmathematicalsciences/mathematical-sciences-economics-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Economics Electives (27 Units), Mathematical Sciences Electives (27 Units)",
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2656,7 +3093,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-performance-bfa/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: FOURTH-YEAR FALL (43 units), Second-Year Fall (52 units), Third-Year Fall (46 units), Third-Year Spring (47 units), Fourth-Year Fall (43 units), Fourth-Year Spring (44 units), FOURTH-YEAR FALL (43 units)",
+          "Required courses absent from the scheduling database: 57-010"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2669,6 +3110,16 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/collegeoffinearts/schoolofmusic/music-technology-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Group first-year-fall-52-units requires 52 units but its listed options can cover at most 36 units.",
+          "Group first-year-spring-58-units requires 58 units but its listed options can cover at most 36 units.",
+          "Group second-year-fall-52-units requires 52 units but its listed options can cover at most 36 units.",
+          "Group second-year-spring-53-units requires 53 units but its listed options can cover at most 36 units.",
+          "Group first-year-fall-55-units requires 55 units but its listed options can cover at most 36 units.",
+          "Group second-year-fall-50-units requires 50 units but its listed options can cover at most 36 units.",
+          "Group second-year-spring-52-units requires 52 units but its listed options can cover at most 36 units.",
+          "Extracted requirement total is implausible (613 units)."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2681,6 +3132,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/majors-minors/neuroscience-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "5 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2693,6 +3147,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofphilosophy/philosophy-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Area 6: Elective 27 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2705,6 +3162,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "2 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2717,6 +3177,10 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/melloncollegeofscience/departmentofphysics/physics-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Multiple tracks require an explicit track-selection rule.",
+          "7 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2729,6 +3193,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofsocialanddecisionsciences/policy-management-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2740,7 +3207,11 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/carnegiemelloninstituteforstrategyandtechnology/political-science-security-technology-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Required courses absent from the scheduling database: 84-349",
+          "Too few schedulable course choices: senior-seminar-9-units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2753,6 +3224,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/professional-writing-ba/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "1 requirement groups have unresolved selection rules."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2765,6 +3239,9 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-ba-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Advanced Courses 18 units, Natural Science Requirement, B.A./B.S. 18 units/27 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2776,7 +3253,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofpsychology/psychology-biological-sciences-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: Additional Advanced Elective 9 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2789,6 +3269,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/intercollegeprograms/bxaintercollege/science-arts/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2801,6 +3282,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofhistory/science-technology-society-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2812,7 +3294,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Unit requirements without parsed course choices: 7. Self-Defined Concentration Area (with advisor's approval) 36 units"
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2824,7 +3309,8 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-mathematical-sciences-track-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "structurally_valid_candidate",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       },
       {
@@ -2836,7 +3322,10 @@
         ],
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofstatistics/statistics-data-science-neuroscience-track-bs/",
         "planning_status": "directory_only",
-        "curriculum_extraction_status": "promotion_candidate",
+        "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [
+          "Group 1-mathematical-foundations-prerequisites-39-52-units requires 52 units but its listed options can cover at most 36 units."
+        ],
         "requirements_source_program_id": null
       },
       {
@@ -2849,6 +3338,7 @@
         "source_url": "https://coursecatalog.web.cmu.edu/schools-colleges/dietrichcollegeofhumanitiesandsocialsciences/departmentofenglish/technical-writing-bs/",
         "planning_status": "directory_only",
         "curriculum_extraction_status": "needs_review",
+        "curriculum_quality_blockers": [],
         "requirements_source_program_id": null
       }
     ]

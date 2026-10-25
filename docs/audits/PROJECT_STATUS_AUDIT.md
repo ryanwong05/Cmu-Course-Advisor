@@ -19,7 +19,7 @@
 
 ```text
 venv/bin/python -m unittest discover -s tests -v
-Ran 173 tests in 17.452s
+Ran 176 tests in 12.136s
 OK
 ```
 
@@ -30,7 +30,7 @@ venv/bin/python -m pytest -q
 No module named pytest
 ```
 
-因此不能声称 pytest 通过；当前仓库的真实测试入口是 `unittest`。173 个测试通过证明现有回归面较好，但不等价于 213 个项目都可用，尤其没有浏览器 E2E 测试。
+因此不能声称 pytest 通过；当前仓库的真实测试入口是 `unittest`。176 个测试通过证明现有回归面较好，但不等价于 213 个项目都可用，尤其没有浏览器 E2E 测试。
 
 ## 当前架构
 
@@ -169,7 +169,7 @@ localStorage snapshot（不是后端 canonical plan）
 
 | 项目 | 评价 |
 |---|---|
-| Backend unit/integration tests | 良好：173/173 通过 |
+| Backend unit/integration tests | 良好：176/176 通过 |
 | Frontend automated tests | 缺失 |
 | CI | 缺失 |
 | Dependency reproducibility | 一般：有版本范围，但缺 test dependencies/lockfile |
