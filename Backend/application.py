@@ -124,6 +124,12 @@ program_curriculum_registry = {
         "programs", []
     )
 }
+shared_credential_evidence = {
+    item["program_id"]: item
+    for item in load_json(DATA_DIR / "shared_credential_evidence.json").get(
+        "programs", []
+    )
+}
 
 INTENSITY_LABELS = {
     1: "Very light", 2: "Light", 3: "Moderate", 4: "Heavy", 5: "Very heavy"
@@ -488,6 +494,7 @@ def profile_for_goal(goal: PlanningGoal):
         curriculum,
         {course["id"] for course in catalog_draft_courses},
         goal.type,
+        shared_credential_evidence.get(entry["id"]),
     )
 
 

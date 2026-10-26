@@ -35,6 +35,9 @@ REPORT_PATH = ROOT / "Data" / "processed" / "major_curriculum_report.json"
 ALL_SCRAPED_DIR = ROOT / "Data" / "scraped" / "program_curricula"
 ALL_REGISTRY_PATH = ROOT / "Data" / "processed" / "program_curriculum_registry.json"
 ALL_REPORT_PATH = ROOT / "Data" / "processed" / "program_curriculum_report.json"
+SHARED_CREDENTIAL_EVIDENCE_PATH = (
+    ROOT / "Data" / "processed" / "shared_credential_evidence.json"
+)
 COURSE_DB_PATH = ROOT / "Data" / "processed" / "courses.sqlite"
 CATALOG_YEAR = "2026-2027"
 COURSE_RE = re.compile(r"\b\d{2}-\d{3}\b")
@@ -44,7 +47,7 @@ NUMBER_WORDS = {
 }
 IGNORE_HEADINGS = (
     "sample schedule", "suggested schedule", "example schedule",
-    "sample course sequence", "sample plan", "roadmap",
+    "sample course sequence", "sample plan", "sample programs", "roadmap",
     "four-year plan", "sample curricula", "sample curriculum",
     "course descriptions", "summary of degree", "recommended courses",
 )
@@ -62,6 +65,89 @@ def stable_id(value: str) -> str:
 
 def sha256_text(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def extract_shared_credential_evidence(
+    html: str, program: dict[str, object], parent_source_hash: str,
+) -> dict[str, object]:
+    """Read the credential's own catalog section, without promoting policy.
+
+    A shared page is not evidence that two credentials have the same rules.
+    Inheritance is a *draft-course* hint only when the section explicitly says
+    so and does not describe an exemption or replacement of core courses.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+    main = soup.find("main") or soup
+    heading_text = clean_text(str(program.get("evidence_heading") or ""))
+    headings = main.find_all(["h2", "h3", "h4", "h5", "h6"])
+    heading = next((
+        item for item in headings
+        if clean_text(item.get_text(" ", strip=True)).casefold()
+        == heading_text.casefold()
+    ), None)
+    if heading is None:
+        return {
+            "program_id": program["id"],
+            "source_program_id": program.get("requirements_source_program_id"),
+            "parent_source_hash": parent_source_hash,
+            "heading_found": False,
+            "may_inherit_base_courses": False,
+            "reason": "credential_heading_not_found",
+            "evidence_heading": heading_text,
+            "source_url": program.get("source_url"),
+        }
+    level = int(heading.name[1])
+    section_nodes = []
+    for sibling in heading.next_siblings:
+        if (
+            isinstance(sibling, Tag)
+            and sibling.name in {"h2", "h3", "h4", "h5", "h6"}
+            and int(sibling.name[1]) <= level
+        ):
+            break
+        if isinstance(sibling, Tag):
+            section_nodes.append(sibling)
+    section_text = clean_text(" ".join(
+        node.get_text(" ", strip=True) for node in section_nodes
+    ))
+    table_count = sum(
+        int(node.name == "table") + len(node.find_all("table"))
+        for node in section_nodes
+    )
+    inheritance_claim = bool(re.search(
+        r"requirements for [^.]{0,100}? (?:are|is) the same"
+        r"|(?:must|will) fulfill all(?: of the)? [^.]{0,110}? requirements"
+        r"|fulfill (?:all of the |the )?(?:same departmental|major) requirements as (?:listed|primary majors)"
+        r"|fulfill the same departmental requirements as primary majors",
+        section_text,
+        re.IGNORECASE,
+    ))
+    exceptions = bool(re.search(
+        r"\bexcept\b|\bwaiv(?:e|ed)\b|\bdo not need\b|\bbut not\b"
+        r"|\breplac(?:e|ed|es)\b",
+        section_text,
+        re.IGNORECASE,
+    ))
+    may_inherit = (
+        inheritance_claim and not exceptions and table_count == 0
+        and len(section_text) <= 5000
+    )
+    return {
+        "program_id": program["id"],
+        "source_program_id": program.get("requirements_source_program_id"),
+        "parent_source_hash": parent_source_hash,
+        "heading_found": True,
+        "may_inherit_base_courses": may_inherit,
+        "reason": (
+            "explicit_inheritance_without_course_exceptions" if may_inherit
+            else "credential_rules_require_review"
+        ),
+        "evidence_heading": heading_text,
+        "evidence_text": section_text,
+        "section_hash": sha256_text(section_text),
+        "section_table_count": table_count,
+        "source_url": program.get("source_url"),
+    }
 
 
 def parse_units(text: str) -> float | None:
@@ -843,6 +929,43 @@ def write_json(path: Path, payload: object) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def run_shared_credential_evidence() -> dict[str, object]:
+    """Extract the 20 shared-page credential sections from cached catalog HTML."""
+    directory = json.loads(DIRECTORY_PATH.read_text(encoding="utf-8"))
+    registry = {
+        item["program_id"]: item
+        for item in json.loads(ALL_REGISTRY_PATH.read_text(encoding="utf-8"))["programs"]
+    }
+    records = []
+    for program in directory:
+        source_id = program.get("requirements_source_program_id")
+        if not source_id:
+            continue
+        source = registry.get(source_id)
+        if source is None:
+            continue
+        cache = ALL_SCRAPED_DIR / f"{source_id}.html"
+        if not cache.exists():
+            continue
+        html = cache.read_text(encoding="utf-8")
+        main = BeautifulSoup(html, "html.parser").find("main")
+        cache_hash = sha256_text(clean_text(main.get_text(" ", strip=True))) if main else ""
+        evidence = extract_shared_credential_evidence(
+            html, program, str(source["source_hash"]),
+        )
+        if cache_hash != source["source_hash"]:
+            evidence["may_inherit_base_courses"] = False
+            evidence["reason"] = "source_cache_hash_mismatch"
+        records.append(evidence)
+    report = {
+        "catalog_year": CATALOG_YEAR,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "programs": records,
+    }
+    write_json(SHARED_CREDENTIAL_EVIDENCE_PATH, report)
+    return report
+
+
 def run(
     limit: int | None = None,
     offline: bool = False,
@@ -929,6 +1052,10 @@ def main() -> None:
     parser.add_argument("--limit", type=int)
     parser.add_argument("--offline", action="store_true")
     parser.add_argument(
+        "--shared-credentials-offline", action="store_true",
+        help="Extract shared-page credential evidence from cached catalog HTML.",
+    )
+    parser.add_argument(
         "--program-type",
         action="append",
         choices=(*PROGRAM_TYPES, "all"),
@@ -936,6 +1063,15 @@ def main() -> None:
         help="Repeat to select types, or pass 'all' for all catalog programs.",
     )
     args = parser.parse_args()
+    if args.shared_credentials_offline:
+        report = run_shared_credential_evidence()
+        print(json.dumps({
+            "shared_credentials": len(report["programs"]),
+            "explicit_inheritance_candidates": sum(
+                item["may_inherit_base_courses"] for item in report["programs"]
+            ),
+        }, indent=2))
+        return
     requested_types = args.program_types or ["primary_major"]
     program_types = PROGRAM_TYPES if "all" in requested_types else tuple(requested_types)
     report = run(limit=args.limit, offline=args.offline, program_types=program_types)

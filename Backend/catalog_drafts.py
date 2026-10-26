@@ -45,16 +45,25 @@ def build_catalog_draft_profile(
     curriculum: dict,
     scheduled_course_ids: set[str],
     goal_type: str,
+    credential_evidence: dict | None = None,
 ) -> dict:
     """Expose only concrete extractable choices, with unresolved work explicit.
 
     A shared page may contain different requirements for a major, additional
-    major, or degree. Until those sections are separated, no course on that
-    page is treated as a requirement for the secondary credential.
+    major, or degree. Base courses are tentative candidates for a secondary
+    credential only when its own section explicitly says to inherit them.
     """
     unresolved = []
     source_id = entry.get("requirements_source_program_id") or entry["id"]
     shared_page_variant = source_id != entry["id"]
+    inherited_course_hint = bool(
+        shared_page_variant
+        and credential_evidence
+        and credential_evidence.get("program_id") == entry["id"]
+        and credential_evidence.get("source_program_id") == source_id
+        and credential_evidence.get("parent_source_hash") == curriculum.get("source_hash")
+        and credential_evidence.get("may_inherit_base_courses")
+    )
     track_rule = curriculum.get("track_rule") or {}
     unresolved_track = (
         len(track_rule.get("tracks", [])) > 1
@@ -65,7 +74,11 @@ def build_catalog_draft_profile(
             "id": "credential-specific-rules",
             "name": f"{entry.get('credential', 'Program')} requirements",
             "reason": "credential_rules_not_separately_parsed",
-            "detail": "This credential shares a catalog page with another program. Its own rules must be reviewed before courses are assigned.",
+            "detail": (
+                "The official section says this credential follows the base major's courses. Those courses are tentative here; exceptions, double-counting, and additional conditions still need review."
+                if inherited_course_hint else
+                "This credential shares a catalog page with another program. Its own rules must be reviewed before courses are assigned."
+            ),
         })
     if unresolved_track:
         unresolved.append({
@@ -75,7 +88,7 @@ def build_catalog_draft_profile(
             "detail": "The catalog lists multiple tracks, but the extracted data cannot safely select one.",
         })
 
-    may_schedule = not shared_page_variant and not unresolved_track
+    may_schedule = (not shared_page_variant or inherited_course_hint) and not unresolved_track
     fixed = []
     groups = []
     if may_schedule:

@@ -2,6 +2,7 @@ import unittest
 
 from Scripts.data_pipeline.scrape_major_curricula import (
     choose_count,
+    extract_shared_credential_evidence,
     parse_curriculum_html,
     shared_credit_signals,
     validate_curriculum,
@@ -10,6 +11,29 @@ from Scripts.data_pipeline.build_major_template_candidates import build_candidat
 
 
 class MajorCurriculumPipelineTests(unittest.TestCase):
+    def test_shared_credential_evidence_requires_explicit_inheritance(self):
+        program = {
+            "id": "example--additional-major",
+            "requirements_source_program_id": "example--b-s",
+            "evidence_heading": "Additional Major",
+            "source_url": "https://example.test/program",
+        }
+        html = """<main><h2>Primary Major</h2><p>Primary rules.</p>
+        <h2>Additional Major</h2><p>Students must fulfill all of the
+        requirements of the Example major. Ask an advisor about double counting.</p>
+        <h2>Minor</h2><p>Minor requirements differ.</p></main>"""
+        evidence = extract_shared_credential_evidence(html, program, "hash")
+        self.assertTrue(evidence["may_inherit_base_courses"])
+        self.assertNotIn("Minor requirements", evidence["evidence_text"])
+
+        exception_html = html.replace(
+            "Ask an advisor about double counting.",
+            "Except for 21-201, which is waived.",
+        )
+        self.assertFalse(extract_shared_credential_evidence(
+            exception_html, program, "hash",
+        )["may_inherit_base_courses"])
+
     def test_extracts_fixed_courses_and_choose_groups(self):
         html = """
         <main><h2>Curriculum</h2><h3>Technical Core</h3>
